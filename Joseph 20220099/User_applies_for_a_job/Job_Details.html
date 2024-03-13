@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Details</title>
+    <style>
+      .job-details {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Job Title: Software Engineer</h1>
+    <div class="job-details">
+      <h2>Description:</h2>
+      <p>
+        A Software Engineer is an IT professional who designs, develops and
+        maintains computer software at a company. <br />
+        They use their creativity and technical skills and apply the principles
+        of software engineering to help solve new and ongoing problems for an
+        organization.
+      </p>
+    </div>
+    <div class="job-details">
+      <h2>Requirements:</h2>
+      <ul>
+        <li>Bachelor's degree in Computer Science or related field.</li>
+        <li>2+ years of experience in software development.</li>
+        <li>Proficiency in Java, Python, or similar programming languages.</li>
+        <li>Strong problem-solving skills.</li>
+      </ul>
+    </div>
+    <div class="job-details">
+      <h2>Responsibilities:</h2>
+      <ul>
+        <li>Developing high-quality software design and architecture.</li>
+        <li>
+          Identifying, prioritizing, and executing tasks in the software
+          development lifecycle.
+        </li>
+        <li>
+          Developing tools and applications by producing clean, efficient code.
+        </li>
+        <li>Automating tasks through appropriate tools and scripting.</li>
+      </ul>
+    </div>
+    <div class="job-details">
+      <h2>Application Deadline:</h2>
+      <p>January 1, 2025</p>
+    </div>
+    <button onclick="confirmApplication()">Apply</button>
+
+    <script>
+      function confirmApplication() {
+        if (confirm("Are you sure you want to apply for this job?")) {
+          window.location.href = "confirmation.html";
+        }
+      }
+    </script>
+  </body>
+</html>
