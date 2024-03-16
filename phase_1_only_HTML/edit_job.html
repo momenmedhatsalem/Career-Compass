@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<!-- ========== Joseph 20220099 ========== -->
-<html lang="en" data-bs-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Confirmation</title>
+<!DOCTYPE HTML>
+<!-- ========== Philopater ========== -->
+<html data-bs-theme="dark">
+    <head>
+        <meat charset="UTF-8">
+        <title> Edit Job</title>
     
   </head>
   <body style="margin: 0px;">
@@ -58,9 +57,49 @@
   
       </nav>
     </header>
-    <h1>Application Submitted Successfully</h1>
-    <p>Your application for the job has been successfully submitted.</p>
-    <a href="Job_Details.html">Back</a>
+    <h1>
+      <u>
+        Edit Job
+      </u>
+    </h1>
+    <form method="post">
+        <label for="id"> ID </label>
+        <input type="text" id="id" name="id" placeholder="Enter the Job Id" value="Static number" readonly>
+        <br> <br>
+        
+        <label for="job title"> Job Title </label>
+        <input type="text" id="job title" name="job title" placeholder="Enter the Job Title" required>
+        <br> <br>
+
+        <label for="company name"> Company Name </label>
+        <input type="text" id="company name" name="company name" placeholder="Enter the company name" required >
+        <br> <br>
+
+        <label for="years of experience"> Years Of Experience </label>
+        <input type="number" id="years of experience" name="years of experience" placeholder="Enter the number of years of experience">
+        <br> <br>
+
+        <label for="salary"> Salary </label>
+        <input type="text" id="salary" name="salary" placeholder="Enter the Salary">
+        <br> <br>
+    
+        <label >Job Status  </label>
+
+        <input type="radio" id="open" name="job status" value="open">
+        <label for="open">Open</label>
+        
+        <input type="radio" id="closed" name="job status" value="closed">
+        <label for="closed">Closed</label>
+        <br> <br>
+        <label for="description"> Description </label>
+        <textarea id="description" name="description" placeholder="Enter the description" rows="8" cols="25"></textarea>
+        <br> <br>
+
+        <label for="created by"> created by </label>
+        <input type="text" id="created by" name="created by" value="User name" readonly >
+        <br> <br>
+        <input type="submit" value="Save">
+    </form>
     <div class="container">
       <footer style="max-width: 80%; margin: auto;">
         <center>
@@ -124,5 +163,5 @@
     </div>
 
     
-</body>
+    </body>
 </html>
