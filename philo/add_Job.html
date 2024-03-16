@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!-- ========== Philopater ========== -->
+<html lang="en">
+    <head>
+        <meat charset="UTF-8">
+        <title> Add New Job</title>
+    
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="media/logopng.png" width="60px" alt="Logo" />
+          </a>
+         
+            <div class="offcanvas-body">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="signup.html">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Log In</a>
+                </li>
+              </ul>
+              <!-- Search form -->
+              <form class="d-flex mt-1" role="search">
+                <input
+                  class="form-control me-3"
+                  type="search"
+                  placeholder="Search a Job"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <h1>
+      <u>
+        Add New Job 
+      </u>
+    </h1>
+    <div>       
+      <form method="post">
+          <label for="id"> ID </label>
+          <input type="text" id="id" name="id" placeholder="Enter the Job Id" value="Static number" readonly>
+          <br> <br>
+          
+          <label for="job title"> Job Title </label>
+          <input type="text" id="job title" name="job title" placeholder="Enter the Job Title" required>
+          <br> <br>
+
+          <label for="company name"> Company Name </label>
+          <input type="text" id="company name" name="company name" placeholder="Enter the company name" required >
+          <br> <br>
+
+          <label for="years of experience"> Years Of Experience </label>
+          <input type="number" id="years of experience" name="years of experience" placeholder="Enter the number of years of experience">
+          <br> <br>
+
+          <label for="salary"> Salary </label>
+          <input type="text" id="salary" name="salary" placeholder="Enter the Salary">
+          <br> <br>
+      
+          <label >Job Status  </label>
+
+          <input type="radio" id="open" name="job status" value="open">
+          <label for="open">Open</label>
+          
+          <input type="radio" id="closed" name="job status" value="closed">
+          <label for="closed">Closed</label>
+          <br> <br>
+          
+          <label for="description"> Description </label>
+          <textarea id="description" name="description" placeholder="Enter the description" rows="8" cols="25"></textarea>
+          <br> <br>
+          
+          <label for="created by"> created by </label>
+          <input type="text" id="created by" name="created by" value="User name" readonly >
+          <br> <br>
+          
+          <input type="submit" value="add job">
+        </form>
+      </div>
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link px-2 text-body-secondary"
+              ><img src="media/logopng.png" width="50px" alt="Footer Logo"
+            /></a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link px-2 text-body-secondary"
+              >Home</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Premium</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="search.html" class="nav-link px-2 text-body-secondary"
+              >Search</a
+            >
+          </li>
+        </ul>
+        <p class="text-center text-body-secondary">
+          © 2024 Career Compass, Inc
+        </p>
+        <p class="text-center text-body-secondary">
+          Developed and Maintained by
+        </p>
+        <p class="text-center text-body-secondary">
+          <a href="https://github.com/momenmedhatsalem" class="text-light"
+            >Momen Medhat</a
+          >
+        </p>
+        <p class="text-center text-body-secondary">
+          <a href="https://github.com/philokaram" class="text-light"
+            >Philopater Karam</a
+          >
+        </p>
+        <p class="text-center text-body-secondary">
+          <a href="https://github.com/Joseph-Sameh-0" class="text-light"
+            >Joseph Sameh</a
+          >
+        </p>
+        <p class="text-center text-body-secondary">
+          <a href="https://github.com/Mahmoud3177Khaled" class="text-light"
+            >Mahmoud Khaled</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    </body>
+</html>
