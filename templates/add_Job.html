@@ -1,15 +1,10 @@
 <!DOCTYPE HTML>
 <!-- ========== Philopater ========== -->
-<html data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark">
     <head>
         <meat charset="UTF-8">
-        <title> Edit Job</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+        <title> Add New Job</title>
+
   </head>
   <body>
     <header>
@@ -81,68 +76,53 @@
         </div>
       </nav>
     </header>
-        <center>
-            <h1><u> Edit Job </u></h1>
-        </center>
-        <center>
-            <table border="5">
-                <tr>
-                    <td>
-                        <form method="post">
-                            <label for="id"> ID </label>
-                            <input type="text" id="id" name="id" placeholder="Enter the Job Id" value="Static number" readonly>
-                            <br> <br>
-                            
-                            <label for="job title"> Job Title </label>
-                            <input type="text" id="job title" name="job title" placeholder="Enter the Job Title" required>
-                            <br> <br>
+    <h1>
+      <u>
+        Add New Job 
+      </u>
+    </h1>
+    <div>       
+      <form method="post">
+          <label for="id"> ID </label>
+          <input type="text" id="id" name="id" placeholder="Enter the Job Id" value="Static number" readonly>
+          <br> <br>
+          
+          <label for="job title"> Job Title </label>
+          <input type="text" id="job title" name="job title" placeholder="Enter the Job Title" required>
+          <br> <br>
 
-                            <label for="company name"> Company Name </label>
-                            <input type="text" id="company name" name="company name" placeholder="Enter the company name" required >
-                            <br> <br>
+          <label for="company name"> Company Name </label>
+          <input type="text" id="company name" name="company name" placeholder="Enter the company name" required >
+          <br> <br>
 
-                            <label for="years of experience"> Years Of Experience </label>
-                            <input type="number" id="years of experience" name="years of experience" placeholder="Enter the number of years of experience">
-                            <br> <br>
+          <label for="years of experience"> Years Of Experience </label>
+          <input type="number" id="years of experience" name="years of experience" placeholder="Enter the number of years of experience">
+          <br> <br>
 
-                            <label for="salary"> Salary </label>
-                            <input type="text" id="salary" name="salary" placeholder="Enter the Salary">
-                            <br> <br>
-                        
-                            <label >Job Status  </label>
-                
-                            <input type="radio" id="open" name="job status" value="open">
-                            <label for="open">Open</label>
-                            
-                            <input type="radio" id="closed" name="job status" value="closed">
-                            <label for="closed">Closed</label>
-                            <br> <br>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <label for="description"> Description </label>
-                                    </td>
-                                    <td>
-                                        <textarea id="description" name="description" placeholder="Enter the description" rows="8" cols="25"></textarea>
-                            <br> <br>
-                                    </td>
-                                </tr>
-                            </table>
-                           
-                            
-                
-                            <label for="created by"> created by </label>
-                            <input type="text" id="created by" name="created by" value="User name" readonly >
-                            <br> <br>
-                            <center>
-                                <input type="submit" value="Save">
-                            </center>
-                        </form>
-                    </td>
-                </tr>
-            </table>
-        </center>
-       
+          <label for="salary"> Salary </label>
+          <input type="text" id="salary" name="salary" placeholder="Enter the Salary">
+          <br> <br>
+      
+          <label >Job Status  </label>
+
+          <input type="radio" id="open" name="job status" value="open">
+          <label for="open">Open</label>
+          
+          <input type="radio" id="closed" name="job status" value="closed">
+          <label for="closed">Closed</label>
+          <br> <br>
+          
+          <label for="description"> Description </label>
+          <textarea id="description" name="description" placeholder="Enter the description" rows="8" cols="25"></textarea>
+          <br> <br>
+          
+          <label for="created by"> created by </label>
+          <input type="text" id="created by" name="created by" value="User name" readonly >
+          <br> <br>
+          
+          <input type="submit" value="add job">
+        </form>
+      </div>
     <div class="container">
       <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
@@ -198,10 +178,5 @@
       </footer>
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
     </body>
 </html>
