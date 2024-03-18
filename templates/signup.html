@@ -2,12 +2,19 @@
 
 <!-- ========== Momen Medhat Salem 20221258 ========== -->
 
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
+    <link rel="stylesheet" href="../static/styles.css">
 
+    <style>
+
+      form div {
+        margin-bottom: 3%;
+      }
+    </style>
   </head>
   <body style="margin: 0px;">
     <header style="background-color: #ccc;">
@@ -23,9 +30,8 @@
             <td>
               <a href="index.html" style="margin-right: 15px;">Home</a>
             </td>
-  
-            <td>
-              <a href="#" style="margin-right: 15px;"">Features</a>
+              <td>
+              <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
   
               <td>
@@ -60,9 +66,22 @@
   
       </nav>
     </header>
+    <section class="main">
+
+
     <h1>Sign Up</h1>
     <div>
-      <form>
+      <form class="signupform">
+        <div>
+          <label for="username">Username</label>
+          <input
+            type="text"
+            
+            id="username"
+            name="username"
+            
+          />
+        </div>
         <div>
           <label for="First_name">First Name</label>
           <input
@@ -70,7 +89,7 @@
             
             id="First_name"
             name="First_name"
-            aria-describedby="emailHelp"
+            
           />
         </div>
         <div>
@@ -80,7 +99,7 @@
             
             id="last_name"
             name="last_name"
-            aria-describedby="emailHelp"
+            
           />
         </div>
         <div>
@@ -97,12 +116,21 @@
           </div>
         </div>
         <div>
-          <label for="InputPassword1">Password</label>
+          <label for="InputPassword">Password</label>
           <input
             type="password"
             
-            id="InputPassword1"
-            name="InputPassword1"
+            id="InputPassword"
+            name="InputPassword"
+          />
+        </div>
+        <div>
+          <label for="confirmpass">Confirm Password</label>
+          <input
+            type="password"
+            
+            id="confirmpass"
+            name="confirmpass"
           />
         </div>
 
@@ -115,6 +143,7 @@
       </div>
     </div>
   <div>
+  </section>
     <footer style="max-width: 80%; margin: auto;">
       <center>
         
