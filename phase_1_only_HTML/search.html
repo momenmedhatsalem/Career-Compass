@@ -9,6 +9,21 @@
 
     <script>
         // loop through BD ad get all job entries with provided substring
+
+        function show()
+        {
+          if(document.getElementById("filter").getAttribute("style") == "display: none;")
+          {
+            document.getElementById("filter").setAttribute("style", "display: inline;")
+          }
+          else if(document.getElementById("filter").getAttribute("style") == "display: inline;")
+          {
+            document.getElementById("filter").setAttribute("style", "display: none;")
+          }
+
+          //document.getElementById("filter").setAttribute("style", "display: inline;")
+        }
+        
     </script>
     
   </head>
@@ -28,7 +43,7 @@
             </td>
   
             <td>
-              <a href="#" style="margin-right: 15px;"">Features</a>
+              <a href="#" style="margin-right: 15px;">Features</a>
               </td>
   
               <td>
@@ -78,11 +93,25 @@
 
     <h2>Availalbe jobs based on your search: </h2>
 
+    
     <h3>
-        <strong>
-            <span>0</span> found in total
-        </strong>
+      <strong>
+        <span>0</span> found in total
+      </strong>
     </h3>
+    
+    <button onclick="show()">Filter Jobs</button>
+
+    <select name="filter" id="filter" style="display: none;">
+      <optgroup label="Filter by:">
+
+        <option value="title">Job title</option>
+        <option value="years_exp">Years of experience</option>
+        <option value="age">Age</option>
+
+      </optgroup>
+
+    </select>
 
     <ul>
 
