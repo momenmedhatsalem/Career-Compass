@@ -1,0 +1,10 @@
+.main {
+  padding: 5%;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: beige;
+}
+form div {
+  margin-bottom: 3%;
+}
