@@ -1,0 +1,29 @@
+
+form {
+    margin-left: 150px;
+    margin-right: 200px;
+    border: solid;
+    padding-top: 10px;
+    padding-left: 20px;
+    border: solid;
+}
+#id-label{
+    font-size: 1.5ch;
+}
+.input-box {
+    font-size: larger;
+    width: 95%;
+    height: 30px;
+}
+label {
+    font-size: 25px;
+}
+h1{
+    font-size: 40px;
+    padding-left: 35%;
+}
+#boutton-add-job{
+    margin-left: 40%;
+    margin-bottom: 10px;
+    font-size: larger;
+}
