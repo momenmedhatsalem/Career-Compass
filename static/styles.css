@@ -12,7 +12,7 @@ form div {
 
 /* Momen styles */
 /* Button Style */
-button[type="submit"] {
+.signupform button[type="submit"], .loginform button[type="submit"] {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -29,12 +29,12 @@ button[type="submit"] {
 }
 
 /* On hover */
-button[type="submit"]:hover {
+.signupform button[type="submit"]:hover, .loginform button[type="submit"]:hover {
   background-color: #45a049;
 }
 
 /* On click */
-button[type="submit"]:active {
+.signupform button[type="submit"]:active , .loginform button[type="submit"]:active  {
   background-color: #367528;
 }
 .signupform input, .loginform input {
