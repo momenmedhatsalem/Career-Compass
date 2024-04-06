@@ -1,178 +1,64 @@
 <!DOCTYPE html>
 <!-- ========== Joseph 20220099 ========== -->
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="../static/styles.css">
   </head>
-  <body>
-    <header>
-      <nav
-        class="navbar navbar-expand-lg bg-body-tertiary"
-        data-bs-theme="dark"
-      >
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
-            <img src="media/logopng.png" width="60px" alt="Logo" />
-          </a>
-          <!-- Off-canvas toggle button for small screens -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- Off-canvas content -->
-          <div
-            class="offcanvas offcanvas-start"
-            tabindex="-1"
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-          >
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-              <button
-                type="button"
-                class="btn-close text-reset"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html"
-                    >Home</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="signup.html">Sign Up</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="login.html">Log In</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="profile.html">Profile👩‍🏫</a>
-                </li>
-              </ul>
-              <!-- Search form -->
-              <form class="d-flex mt-1" role="search">
-                <input
-                  class="form-control me-3"
-                  type="search"
-                  placeholder="Search a Job"
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-success" type="submit">
+  <body style="margin: 0px;">
+    <header style="background-color: #ccc;">
+      <nav>
+        <table>
+          <tr>
+            <td>
+              <a href="index.html">
+                <img src="media/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
+              </a>
+            </td>
+  
+            <td>
+              <a href="index.html" style="margin-right: 15px;">Home</a>
+            </td>
+            <td>
+              <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
+              </td>
+  
+              <td>
+                <a href=" signup.html" style="margin-right: 15px;">Sign Up</a>
+            </td>
+  
+            <td>
+              <a href="search.html" style="margin-right: 15px;">Search</a>
+            </td>
+  
+            <td>
+              <a href="login.html" style="margin-right: 15px;">Log In</a>
+            </td>
+
+            <td>
+              <a href="profile.html" style="margin-right: 30px;">Profile</a>
+            </td>
+  
+            <td>
+  
+              <form role="search">
+                <input type="search" placeholder="Search a Job" aria-label="Search" />
+                <button type="submit">
                   Search
                 </button>
               </form>
-            </div>
-          </div>
-        </div>
+  
+            </td>
+  
+          </tr>
+        </table>
+  
       </nav>
     </header>
+        <section class="main">
     <div>
-      <!-- 
-        <header>
-            <div><a href="index.html"> <img src="../../media/logopng.png" width="100px" /></a></div>
-            <div>
-                <ul>
-                    <li><a href="#">Login/Sign up</a></li>
-                    <li><a href="Post_a_New_Job.html">Post a job</a></li>
-                </ul>
-            </div>
-
-
-            <nav>
-                <div>
-                    <ul>
-
-                        <li>
-                            <a href="#">Dashboard </a>
-                            <ul>
-                                <li>
-                                    <a href="#" target="_blank">Candidate Dashboard</a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">Employer Dashboard</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Job</a>
-                            <ul>
-                                <li>
-                                    <a href="#">Job List</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="#">Explore</a>
-                            <ul>
-
-                                <li>
-                                    <a href="#">Candidates</a>
-                                </li>
-
-                                <li>
-                                    <a href="company-v1.html">Company</a></p>
-                                </li>
-
-                                <li>
-                                    <div>
-                                        Essential
-                                        <ul>
-                                            <li>
-                                                <a href="#">About Us</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Register</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">404 Error</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-
-                        <li>
-                            <a href="Post_a_New_Job.html">Post a job</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </nav>
-
-        </header>
-        ->
-        <!---------------------------------------------------------------->
 
       <div>
         <h1>Find & Hire Experts for any Job.</h1>
@@ -191,7 +77,7 @@
               <h2>Most Demanding Categories.</h2>
             </div>
             <div>
-              <a href="#">Explore all fields</a>
+              <a href="list_of_jobs.html">Explore all fields</a>
             </div>
           </div>
 
@@ -260,116 +146,76 @@
           <div>
             <p>Find your dream job & earn from all world the leading brands.</p>
             <ul>
-              <li><a href="#">Looking for job?</a></li>
+              <li><a href="signup.html">Looking for job?</a></li>
               <!-- go to job list -->
-              <li><a href="#">Start Hiring</a></li>
+              <li><a href="login.html">Start Hiring</a></li>
               <!--  go to candidate/recruitment page -->
             </ul>
           </div>
         </div>
       </section>
       <!------------------------------------------------------------------------------------------------------------------------------------------------>
-      <div>
-        <div>
-          <div>
-            <a href="index.html">
-              <img src="../../media/logopng.png" width="100px" />
-            </a>
-          </div>
-          <div>
-            <h5>Services</h5>
-            <ul>
-              <li><a href="#">Browse Jobs</a></li>
-              <li><a href="#">Companies</a></li>
-              <li><a href="#">Candidates</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5>Company</h5>
-            <ul>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5>Support</h5>
-            <ul>
-              <li><a href="#">Terms of use</a></li>
-              <li><a href="#">Terms & conditions</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Cookie policy</a></li>
-            </ul>
-          </div>
-        </div>
+</div>
+  <div>
+      </section>
+    <footer style="max-width: 80%; margin: auto;">
+      <center>
+        
+        <table>
+          <tr>
+            <td>
+              <a href="index.html">
+                <img src="media/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
+              </a>
+            </td>
 
-        <div>
-          <ul>
-            <li><a href="#">Privacy & Terms.</a></li>
-            <li><a href="#"> Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+            <td>
+              <a href="index.html" style="margin-right: 10px;">Home</a>
+            </td>
 
-    <div class="container">
-      <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link px-2 text-body-secondary"
-              ><img src="media/logopng.png" width="50px" alt="Footer Logo"
-            /></a>
-          </li>
-          <li class="nav-item">
-            <a href="index.html" class="nav-link px-2 text-body-secondary"
-              >Home</a
-            >
-          </li>
+            <td>
+              <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
+              </td>
+  
 
-          <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">Premium</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
-          </li>
-          <li class="nav-item">
-            <a href="search.html" class="nav-link px-2 text-body-secondary"
-              >Search</a
-            >
-          </li>
-        </ul>
-        <p class="text-center text-body-secondary">
+            <td>
+              <a href="search.html" style="margin-right: 10px;">Search</a>
+            </td>
+
+          </tr>
+        </table>
+        
+
+        <hr>
+        <p>
           © 2024 Career Compass, Inc
         </p>
-        <p class="text-center text-body-secondary">
+        <p>
           Developed and Maintained by
         </p>
-        <p class="text-center text-body-secondary">
-          <a href="https://github.com/momenmedhatsalem" class="text-light"
-            >Momen Medhat</a
-          >
-        </p>
-        <p class="text-center text-body-secondary">
-          <a href="https://github.com/philokaram" class="text-light"
-            >Philopater Karam</a
-          >
-        </p>
-        <p class="text-center text-body-secondary">
-          <a href="https://github.com/Joseph-Sameh-0" class="text-light"
-            >Joseph Sameh</a
-          >
-        </p>
-        <p class="text-center text-body-secondary">
-          <a href="https://github.com/Mahmoud3177Khaled" class="text-light"
-            >Mahmoud Khaled</a
-          >
-        </p>
-      </footer>
-    </div>
+        <p>
+          <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+          &nbsp;•&nbsp;
+
+          <a href="https://github.com/philokaram">Philopater Karam</a>
+
+          &nbsp;•&nbsp;
+
+          <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
+
+          &nbsp;•&nbsp;
+
+          <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
+
+        </p>
+      </center>
+
+      <br><br>
+
+    </footer>
+  </div>
+
+
   </body>
 </html>

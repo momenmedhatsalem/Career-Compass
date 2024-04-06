@@ -2,8 +2,8 @@
 <!-- ========== Philopater ========== -->
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title> Add New Job</title>
+        <meat charset="UTF-8">
+        <title> List of jobs</title>
     <link rel="stylesheet" href="../static/styles.css">
   </head>
   <body style="margin: 0px;">
@@ -20,9 +20,10 @@
             <td>
               <a href="index.html" style="margin-right: 15px;">Home</a>
             </td>
-              <td>
+            <td>
               <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
+  
   
               <td>
                 <a href=" signup.html" style="margin-right: 15px;">Sign Up</a>
@@ -56,74 +57,81 @@
   
       </nav>
     </header>
-         <section class="main">
+        <section class="main">
     <h1>
-        <u>  
-          <!-- -------------- -->
-          Jobs You added 
-        </u>
-      </h1>
-      <table border="3">
-          <thead>
-              <td>ID</td>
-              <td>Information</td>
-          </thead>
-
-                    <tr>
-              <td>J1</td>
-              <td> 
-                  <h3> 
-                      <a href="Job_Details.html"><u> Software Developer </u></a>
-
-                  </h3> 
-                  <p>you will create new software and improve existing 
-                  <br>software applications. </p> 
-              </td>
-          </tr>
-
-
-
-
-          <tr>
-              <td>J2</td>
-              <td> 
-                  <h3>
-                      <u> Back-end web development </u>
-                      
-                       
-                  </h3> 
-                  <p>you will make it possible to access website information 
-                      <br> efficiently and securely. </p> 
-              </td>
-          </tr>
-          <tr>
-            
-              <td>J3</td>
-              <td> 
-                  <h3> 
-                      <u> Front-end web development </u>
-       
-                  </h3> 
-                  <p> you will create everything the user can see it on 
-                      <br> a web page. </p> 
-                  
-              </td>
-          </tr>
-          <tr>
-              <td>J4</td>
-              <td> 
-                  <h3>
-                      <u> Data Analyst </u>
-
-                  </h3> 
-                  <p>you will collect, clean, and interpret data sets in order 
-                      <br>to answer a question or solve a problem. </p> 
-              </td>
-          </tr> 
-      </table> 
-      </div>
-  <div>
-      </section>
+      <u>
+        list of Jobs 
+      </u>
+    </h1>
+    <table border="3">
+        <thead>
+            <td>ID</td>
+            <td>Information</td>
+        </thead>
+        <tr>
+            <td>J1</td>
+            <td> 
+                <h3> 
+                    <u> Front-end web development </u>
+                    <a href="Edit_Job.html">
+                      <input type="button" value="Edit"> 
+                    </a>
+                    <input type="button" value="Delete"> 
+                </h3> 
+                <p> you will create everything the user can see it on 
+                    <br> a web page. </p> 
+                
+            </td>
+        </tr>
+        <tr>
+            <td>J2</td>
+            <td> 
+                <h3>
+                    <u> Back-end web development </u>
+                    <a href="Edit_Job.html">
+                      <input type="button" value="Edit"> 
+                    </a> 
+                    <input type="button" value="Delete"> 
+                </h3> 
+                <p>you will make it possible to access website information 
+                    <br> efficiently and securely. </p> 
+            </td>
+        </tr>
+        <tr>
+            <td>J3</td>
+            <td> 
+                <h3> 
+                    <u> Software Developer </u>
+                    <a href="Edit_Job.html">
+                      <input type="button" value="Edit"> 
+                    </a>
+                    <input type="button" value="Delete"> 
+                </h3> 
+                <p>you will create new software and improve existing 
+                <br>software applications. </p> 
+            </td>
+        </tr>
+        <tr>
+            <td>J4</td>
+            <td> 
+                <h3>
+                    <u> Data Analyst </u>
+                    <a href="Edit_Job.html">
+                      <input type="button" value="Edit"> 
+                    </a> 
+                    <input type="button" value="Delete"> 
+                </h3> 
+                <p>you will collect, clean, and interpret data sets in order 
+                    <br>to answer a question or solve a problem. </p> 
+            </td>
+        </tr> 
+    </table> 
+    <br>
+    <a href="add_Job.html">
+      <input type="button" value="Add New Job"> 
+    </a>
+    <div>
+        </section>
     <footer style="max-width: 80%; margin: auto;">
       <center>
         
@@ -180,8 +188,7 @@
       <br><br>
 
     </footer>
-  </div>
-
+    </div>
 
     </body>
 </html>

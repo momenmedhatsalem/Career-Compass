@@ -1,0 +1,89 @@
+.Jheader {
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-evenly;
+  /* background-image: linear-gradient(45deg,red ,green,blue); */
+  background-image: linear-gradient(45deg, #2980b9, #27ae60);
+}
+
+.Jnav {
+  width: 90%;
+  /* justify-content:space-between; */
+}
+
+.Jnav ul {
+  list-style: none;
+}
+
+.Jnav > div > ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.Jnav .Explore > ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  /* display: grid;
+  grid-template-columns: repeat(3,auto); */
+}
+
+.Jnav li {
+  background-color: red;
+}
+.Jnav > div > ul > li {
+  width: fit-content;
+  height: fit-content;
+}
+
+.login_signup > ul {
+  width: 90%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Jnav > div > ul > li ul {
+  position: relative;
+  list-style: none;
+  padding: 0;
+}
+.Jnav > div > ul > li > ul > li {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+.Jnav > div > ul > li:hover > ul > li {
+  display: inline-block;
+}
+
+.Jheader {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: auto;
+  justify-items: center;
+  grid-template-areas: "Jlogo Jlogo Jnav Jnav Jnav Jnav Jnav Jnav Jnav Jnav login login login";
+}
+.header_logo {
+  grid-area: Jlogo;
+}
+.header_logo > img {
+  height: 130px;
+}
+.Jnav {
+  grid-area: Jnav;
+  font-size: 1.4vw;
+  justify-content: space-evenly;
+}
+.login_signup {
+  grid-area: login;
+  font-size: 1.3vw;
+  justify-content: space-evenly;
+  margin-right: 40px;
+}
+.login_signup ul {
+  width: 100%;
+}
