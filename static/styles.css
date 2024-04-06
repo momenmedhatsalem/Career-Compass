@@ -8,3 +8,46 @@ body {
 form div {
   margin-bottom: 3%;
 }
+
+
+/* Momen styles */
+/* Button Style */
+button[type="submit"] {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* On hover */
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* On click */
+button[type="submit"]:active {
+  background-color: #367528;
+}
+.signupform input, .loginform input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.signupform input:focus {
+  border-color: #4CAF50;
+  outline: 0;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+}
+/* END Momen styles */
