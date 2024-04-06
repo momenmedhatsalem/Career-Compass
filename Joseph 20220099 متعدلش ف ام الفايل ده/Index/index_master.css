@@ -1,89 +1,162 @@
-.Jheader {
-  /* display: flex; */
-  align-items: center;
-  justify-content: space-evenly;
-  /* background-image: linear-gradient(45deg,red ,green,blue); */
-  background-image: linear-gradient(45deg, #2980b9, #27ae60);
+.J9_html {
+  min-height: 5000px;
+}
+.J9_body {
+  margin: 0px;
+  margin-top: 11vmin;
+  background-color: #f5f5f5;
 }
 
-.Jnav {
+.J9_header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: linear-gradient(45deg, #00b0ff, #6dd5ed, #28c7fa);
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: auto;
+  justify-items: center;
+  grid-template-areas: "J9_logo_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid . login_in_grid login_in_grid .";
+  z-index: 5;
+}
+
+.J9_a_header_logo {
+  grid-area: J9_logo_in_grid;
+}
+
+.J9_header_logo {
+  height: 9vmin;
+}
+
+.J9_nav_in_header {
+  grid-area: J9_nav_in_grid;
+  /* font-size: 1.5vw; */
+  font-size: 1.5vmax;
+  justify-content: space-evenly;
   width: 90%;
-  /* justify-content:space-between; */
+  transition: all 0.3s ease-in-out 0s;
 }
 
-.Jnav ul {
+.J9_nav_ul_in_header {
   list-style: none;
-}
-
-.Jnav > div > ul {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  align-items: center;
-  /* background-color: red; */
 }
 
-.Jnav .Explore > ul {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  /* display: grid;
-  grid-template-columns: repeat(3,auto); */
-}
-
-.Jnav li {
-  background-color: red;
-}
-.Jnav > div > ul > li {
+.J9_nav_ul_item_in_header {
   width: fit-content;
   height: fit-content;
 }
 
-.login_signup > ul {
-  width: 90%;
+.J9_nav_ul_ul_in_header {
+  display: none;
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  border-radius: 10px;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+  padding: 10px 10px;
+}
+.J9_nav_ul_ul_explore_in_header {
+  display: contents;
+  list-style: none;
+}
+
+.J9_nav_ul_item_in_header:hover .J9_nav_ul_ul_in_header {
+  display: block;
+}
+
+.J9_explore_cols {
+  display: flex;
+  display: none;
+  z-index: 6;
+  position: absolute;
+  background-color: #ffffff;
+  width: max-content;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.12);
+  justify-content: space-evenly;
+  text-align: center;
+  width: 50vmin;
+  padding: 10px 10px;
+}
+
+.J9_nav_ul_item_in_header:hover .J9_explore_cols {
+  display: flex;
+}
+
+.J9_explore_col {
+  width: 33.333333%;
+  /* font-size: 60%; */
+  padding: 10px 0 5px;
+  display: inline-block;
+}
+
+.J9_login_signup {
+  grid-area: login_in_grid;
+  /* font-size: 1.3vw; */
+  font-size: 1.2vmax;
+  justify-content: space-evenly;
+  /* padding: 40px; */
+}
+
+.J9_login_signup_ul {
+  width: 100%;
   list-style: none;
   display: flex;
   justify-content: space-between;
 }
-
-.Jnav > div > ul > li ul {
-  position: relative;
-  list-style: none;
-  padding: 0;
-}
-.Jnav > div > ul > li > ul > li {
-  display: none;
-  position: absolute;
-  z-index: 1;
-}
-.Jnav > div > ul > li:hover > ul > li {
-  display: inline-block;
+.J9_login_signup_ul li:nth-of-type(1) {
+  padding: 12px 27px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0s;
 }
 
-.Jheader {
+.J9_login_signup_ul li:nth-of-type(1) a {
+  color: #000;
+}
+
+a:hover,
+a:focus,
+a:visited,
+a {
+  text-decoration: none;
+}
+
+.J9_login_signup_ul li:nth-of-type(2) {
+  padding: 13px 26px;
+  min-width: 12vmin;
+  text-align: center;
+  border-radius: 50px;
+  background: #00c853;
+  transition: all 0.3s ease-in-out 0s;
+}
+.J9_login_signup_ul li:nth-of-type(2) a {
+  color: #fff;
+}
+
+.J9_row {
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(13, 1fr);
-  grid-template-rows: auto;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   justify-items: center;
-  grid-template-areas: "Jlogo Jlogo Jnav Jnav Jnav Jnav Jnav Jnav Jnav Jnav login login login";
+  grid-template-areas: "topic_sentence" "quoted_text";
 }
-.header_logo {
-  grid-area: Jlogo;
+
+.J9_row_topic_sentence {
+  grid-area: topic_sentence;
 }
-.header_logo > img {
-  height: 130px;
-}
-.Jnav {
-  grid-area: Jnav;
-  font-size: 1.4vw;
-  justify-content: space-evenly;
-}
-.login_signup {
-  grid-area: login;
-  font-size: 1.3vw;
-  justify-content: space-evenly;
-  margin-right: 40px;
-}
-.login_signup ul {
-  width: 100%;
+.J9_row_quoted_text {
+  grid-area: quoted_text;
 }
