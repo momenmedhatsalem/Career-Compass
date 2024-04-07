@@ -1,0 +1,11 @@
+#add-new-job-button {
+    position: absolute;
+    top: 120px;
+    right: 25px;
+    font-size: 20px;
+}
+
+div.job-id{
+    background-color: blue;
+    color: blueviolet;
+}

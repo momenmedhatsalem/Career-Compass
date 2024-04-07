@@ -3,8 +3,9 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title> Add New Job</title>
+        <title> List of candidates</title>
         <link rel="stylesheet" href="../static/styles.css"">
+        <link rel="stylesheet" href="style/List of candidates.css">
   </head>
   <body style="margin: 0px;">
     <header style="background-color: #ccc;">
@@ -63,19 +64,18 @@
           List of candidates
         </u>
       </h1>
-      <table border="3">
+      <table>
           <thead>
-              <td>ID</td>
-              <td>Name of job </td>
-              <td> the candidates</td>
+              <td class="id-column">ID</td>
+              <td class="job-name-column">Name of job </td>
           </thead>
           <tr>
-              <td>J1</td>
-              <td> Front-end web development </td>
-              <td> 
-                  <ol>
+              <td class="id-column">J1</td>
+              <td class="job-name-column"> Front-end web development </td>
+              <td class="candidates-column"> 
+                  <ol class="candidate-list">
                       <li>mohmmed hany </li> 
-                      <a href="profile.html"><input type="button" value="show more"></a>
+                      <a href="profile.html"><input type="button" value="show more"></a> 
                       <input type="button" value="accept">
                       <input type="button" value="reject">
                       <li>ali ahmed</li>
@@ -94,7 +94,31 @@
                  
               </td>
           </tr>
-         
+          <tr>
+            <td class="id-column">J1</td>
+            <td class="job-name-column"> Front-end web development </td>
+            <td class="candidates-column"> 
+                <ol class="candidate-list">
+                    <li>mohmmed hany </li> 
+                    <a href="profile.html"><input type="button" value="show more"></a>
+                    <input type="button" value="accept">
+                    <input type="button" value="reject">
+                    <li>ali ahmed</li>
+                    <a href="profile.html"><input type="button" value="show more"></a>
+                    <input type="button" value="accept">
+                    <input type="button" value="reject">
+                    <li>jhon aymen</li>
+                    <a href="profile.html"><input type="button" value="show more"></a>
+                    <input type="button" value="accept">
+                    <input type="button" value="reject">
+                    <li>mona youseef</li>
+                    <input type="button" value="show more">
+                    <input type="button" value="accept">
+                    <input type="button" value="reject">
+                </ol>
+               
+            </td>
+        </tr>
       </table> 
       </div>
   <div>

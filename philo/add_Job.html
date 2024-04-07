@@ -5,69 +5,66 @@
         <meta charset="UTF-8">
         <title> Add New Job</title>
     <link rel="stylesheet" href="../static/styles.css">
-    <link rel="stylesheet" href="style/CSS.css">
+    <link rel="stylesheet" href="style/add job.css">
+   
   </head>
   <body style="margin: 0px;">
     <header style="background-color: #ccc;">
       <nav>
-        <table>
-          <tr>
-            <td>
+        <div class="table">
+            <div>
               <a href="index.html">
                 <img src="media/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
               </a>
-            </td>
+            </div>
   
-            <td>
+            <div>
               <a href="index.html" style="margin-right: 15px;">Home</a>
-            </td>
+            </div>
   
-            <td>
+            <div>
               <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
-              </td>
+            </div>
   
-              <td>
+              <div>
                 <a href=" signup.html" style="margin-right: 15px;">Sign Up</a>
-            </td>
+              </div>
   
-            <td>
+            <div>
               <a href="search.html" style="margin-right: 15px;">Search</a>
-            </td>
+            </div>
   
-            <td>
+            <div>
               <a href="login.html" style="margin-right: 15px;">Log In</a>
             </td>
 
-            <td>
+            <div>
               <a href="profile.html" style="margin-right: 30px;">Profile</a>
-            </td>
+            </div>
   
-            <td>
+            <div>
   
-              <form role="search">
                 <input type="search" placeholder="Search a Job" aria-label="Search" />
                 <button type="submit">
                   Search
                 </button>
-              </form>
+
   
-            </td>
+            </div>
   
-          </tr>
-        </table>
+        </div>
   
       </nav>
     </header>
         <section class="main">
-    <h1>
+    <h1 id="h1-add-new-job">
       Add New Job
     </h1>
     <div>       
       <form>
-          <label for="id"> <bold>ID <bold></label>
+          <label for="id"> ID </label>
           <br>
           <input type="text" id="id" name="id" class="input-box" placeholder="Enter the Job Id" value="Static number" readonly>
-          <br> <br>
           
           <label for="job title"> Job Title </label>
           <br>
@@ -86,11 +83,10 @@
 
           <label for="salary"> Salary </label>
           <br>
-          <input type="text" id="salary" name="salary" class="input-box" placeholder="Enter the Salary">
+          <input type="number" id="salary" name="salary" class="input-box" placeholder="Enter the Salary">
           <br> <br>
       
           <label >Job Status :  </label>
-          <br>
           <input type="radio" id="open" name="job status" value="open">
           <label for="open">Open</label>
           
@@ -103,10 +99,7 @@
           <textarea id="description" name="description"  placeholder="Enter the description" class="input-box"  > </textarea>
           <br> <br>
           
-          <label for="created by"> created by </label>
-          <br>
-          <input type="text" id="created by" name="created by"  class="input-box" value="User name" readonly >
-          <br> <br>
+          <p id="created by"> created by <span id="username"> user name </span> </p>
           
           <input type="submit" value="add job" id="boutton-add-job">
       </form>
@@ -170,6 +163,7 @@
     </footer>
   </div>
 
-
+  <script src="js/js.js">
+  </script>
     </body>
 </html>

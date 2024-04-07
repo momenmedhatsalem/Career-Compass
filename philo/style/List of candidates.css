@@ -1,0 +1,43 @@
+
+.id-column {
+    border-top-left-radius: 35%;
+    border-bottom-right-radius: 35%;
+    border: solid;
+    width: 10%;
+    background-color: #dfd6bf;
+    text-align: center
+}
+.job-name-column{
+    border: solid;
+    border-radius: 0%;
+    width: 85%;
+    text-align: center;
+    margin-right: 3.1%;
+}
+.candidates-column{
+    border: solid;
+    border-radius: 0%;
+    width: 85%;
+    margin-top: -3px;
+    margin-right: 3%;
+    margin-left: 11.1%;
+    /* text-align: center; */
+}
+.candidate-list{
+    list-style: inside;
+    list-style-type: upper-roman;
+}
+table{
+
+    width: 100%;  
+}
+tr{
+    width: 100%;
+    display: block;
+    vertical-align: top;
+    margin-top: 10px;
+}
+
+td{
+    display: inline-block;
+}

@@ -5,6 +5,7 @@
         <meat charset="UTF-8">
         <title> List of jobs</title>
     <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="style/jobs.css">
   </head>
   <body style="margin: 0px;">
     <header style="background-color: #ccc;">
@@ -58,19 +59,17 @@
       </nav>
     </header>
         <section class="main">
+          <a href="add_Job.html">
+            <input type="button"  id="add-new-job-button" value="+ Add New Job"> 
+          </a>
     <h1>
       <u>
         list of Jobs 
       </u>
     </h1>
-    <table border="3">
-        <thead>
-            <td>ID</td>
-            <td>Information</td>
-        </thead>
-        <tr>
-            <td>J1</td>
-            <td> 
+        <div class="job">
+            <div class="job-id">J1</div>
+            <div class="desc"> 
                 <h3> 
                     <u> Front-end web development </u>
                     <a href="Edit_Job.html">
@@ -81,11 +80,11 @@
                 <p> you will create everything the user can see it on 
                     <br> a web page. </p> 
                 
-            </td>
-        </tr>
-        <tr>
-            <td>J2</td>
-            <td> 
+            </div>
+        </div>
+        <div class="job">
+          <div calss="job-id">J2</div>
+          <div class="desc">
                 <h3>
                     <u> Back-end web development </u>
                     <a href="Edit_Job.html">
@@ -95,11 +94,11 @@
                 </h3> 
                 <p>you will make it possible to access website information 
                     <br> efficiently and securely. </p> 
-            </td>
-        </tr>
-        <tr>
-            <td>J3</td>
-            <td> 
+          </div>
+        </div>
+        <div class="job">
+          <div calss="job-id">J3</div>
+          <div class="desc"> 
                 <h3> 
                     <u> Software Developer </u>
                     <a href="Edit_Job.html">
@@ -109,11 +108,11 @@
                 </h3> 
                 <p>you will create new software and improve existing 
                 <br>software applications. </p> 
-            </td>
-        </tr>
-        <tr>
-            <td>J4</td>
-            <td> 
+          </div>
+        </div>
+        <div class="job">
+          <div calss="job-id">J4</div>
+          <div class="desc">
                 <h3>
                     <u> Data Analyst </u>
                     <a href="Edit_Job.html">
@@ -123,13 +122,10 @@
                 </h3> 
                 <p>you will collect, clean, and interpret data sets in order 
                     <br>to answer a question or solve a problem. </p> 
-            </td>
-        </tr> 
-    </table> 
+          </div>
+        </div> 
+    
     <br>
-    <a href="add_Job.html">
-      <input type="button" value="Add New Job"> 
-    </a>
     <div>
         </section>
     <footer style="max-width: 80%; margin: auto;">
