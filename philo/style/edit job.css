@@ -7,12 +7,12 @@
 
 form {
     position: relative;
-    left: 10%;
-    width: 80%;
+    left: 25%;
+    width: 50%;
     padding-top: 15px;
     padding-left: 20px;
     border: solid;
-    border-color: #dadada;
+    border-color: #edeaea;
     box-shadow: 6px 7px 9px #dadada9e;
     border-radius: 20px;
 }
@@ -20,19 +20,31 @@ form {
     font-size: 1.5ch;
 }
 .input-box {
-    font-size: larger;
+    font-size: 100%;
     width: 95%;
     height: 30px;
     padding-left: 16px;
+    margin-top: 1px;
 }
 form label,p {
     font-size: 25px;
+    margin-left: 10px;
+}
+#description{
+    height: 100px;
 }
 
 #boutton-save{
-    margin-left: 40%;
+    margin-left: 42%;
     margin-bottom: 10px;
-    font-size: larger;
+    width: 15%;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 12px;
+    background-color: #00b0ff;
+    color: white;
+    border-color: #00b0ff;
+    box-shadow: 5px 5px 5px #cfcfde;
 }
 
 

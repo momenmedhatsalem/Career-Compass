@@ -1,11 +1,75 @@
-#add-new-job-button {
+#add-new-job-button,#check_candidates-button {
+    font-size: 20px;
+}
+a {
+    text-decoration: none;
+}
+.button{
     position: absolute;
     top: 120px;
     right: 25px;
-    font-size: 20px;
+}
+h1{
+    text-align: center;
+    font-size: 40px;
+    background-color: springgreen;
+    border-radius: 25px;
+    width: 50%;
+    margin-left: 25%;
 }
 
-div.job-id{
+.job{
+    border: solid;
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    background-color: yellow;
+    border-radius: 14px;
+}
+.edit-delete-buttons{
+    position:absolute;
+    right: 1%;
+    top: 4%;
+}
+.job-id{
     background-color: blue;
-    color: blueviolet;
+    display: inline-block;
+    position: absolute;
+    left: 1%;
+    top: 10px;
+    width: 15%;
+    font-size: 25px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 35px;
+}
+.job-name{
+    display: inline-block;
+    position: absolute;
+    left: 17%;
+    top: 10px;
+    background-color: red;
+    width: 65%;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 25px;
+    line-height: 35px;
+}
+.desc{
+    margin-top: 50px;
+    margin-left: 1%;
+    background-color: green;
+    width: 96%;
+    padding-left: 25px;
+    padding-top: 15px;
+    border-radius: 25px;
+    line-height: 25px;
+    font-size: 20px;
+    height: 201px;
+}
+div.edit-delete-buttons button{
+    font-size: 20px;
+    border-radius: 42px;
+    width: 96px;
+    line-height: 28px;
 }

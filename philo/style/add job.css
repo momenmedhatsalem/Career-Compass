@@ -28,11 +28,21 @@ form {
 form label,p {
     font-size: 25px;
 }
+#description{
+    height: 100px;
+}
 
 #boutton-add-job{
-    margin-left: 40%;
+    margin-left: 42%;
     margin-bottom: 10px;
-    font-size: larger;
+    width: 15%;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 12px;
+    background-color: #00b0ff;
+    color: white;
+    border-color: #00b0ff;
+    box-shadow: 5px 5px 5px #cfcfde;
 }
 
 

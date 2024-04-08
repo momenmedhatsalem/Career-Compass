@@ -1,27 +1,35 @@
 
 .id-column {
-    border-top-left-radius: 35%;
-    border-bottom-right-radius: 35%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 25px;
     border: solid;
     width: 10%;
     background-color: #dfd6bf;
-    text-align: center
+    text-align: center;
+    font-size: 25px;
 }
 .job-name-column{
+    position: absolute;
+    top: 10px;
+    left: 12%;
+    background-color: red;
     border: solid;
-    border-radius: 0%;
+    border-radius: 25px;
     width: 85%;
     text-align: center;
-    margin-right: 3.1%;
+    font-size: 25px;
 }
 .candidates-column{
+    margin-top: 60px;
     border: solid;
-    border-radius: 0%;
+    border-radius: 25px;
     width: 85%;
-    margin-top: -3px;
-    margin-right: 3%;
-    margin-left: 11.1%;
-    /* text-align: center; */
+    background-color: greenyellow;
+    margin-left: 12%;
+    list-style: inside;
+    list-style-type: upper-roman;
 }
 .candidate-list{
     list-style: inside;
@@ -36,8 +44,32 @@ tr{
     display: block;
     vertical-align: top;
     margin-top: 10px;
+    border: solid;
+    position: relative;
 }
 
 td{
     display: inline-block;
 }
+li{
+    border: solid;
+    border-radius: 25px;
+    padding-left: 15px;
+    font-size: 20px;
+    height: 49px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+img{
+    width: 30px;
+    height: 30px;
+}
+button {
+    border-radius: 25px;
+    font-size: 15px;
+}
+button[value="accept"] ,button[value="reject"]{
+    background: none;
+    border: none;
+}
+
