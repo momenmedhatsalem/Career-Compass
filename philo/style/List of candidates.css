@@ -1,4 +1,12 @@
 
+h1{
+    text-align: center;
+    font-size: 40px;
+    background-color: springgreen;
+    border-radius: 25px;
+    width: 50%;
+    margin-left: 25%;
+}
 .id-column {
     position: absolute;
     top: 10px;
@@ -6,7 +14,7 @@
     border-radius: 25px;
     border: solid;
     width: 10%;
-    background-color: #dfd6bf;
+    background-color: blue;
     text-align: center;
     font-size: 25px;
 }
@@ -17,35 +25,34 @@
     background-color: red;
     border: solid;
     border-radius: 25px;
-    width: 85%;
+    width: 86%;
     text-align: center;
     font-size: 25px;
 }
 .candidates-column{
-    margin-top: 60px;
-    border: solid;
+    margin-top: 52px;
     border-radius: 25px;
-    width: 85%;
-    background-color: greenyellow;
-    margin-left: 12%;
+    width: 102%;
+    margin-left: -3%;
+    margin-bottom: 5px;
     list-style: inside;
-    list-style-type: upper-roman;
+    list-style-type: decimal;
 }
-.candidate-list{
-    list-style: inside;
-    list-style-type: upper-roman;
-}
+
 table{
 
     width: 100%;  
 }
 tr{
-    width: 100%;
+    width: 90%;
     display: block;
     vertical-align: top;
     margin-top: 10px;
+    margin-left: 5%;
     border: solid;
+    border-radius: 25px;
     position: relative;
+    background-color: yellow;
 }
 
 td{
@@ -55,10 +62,14 @@ li{
     border: solid;
     border-radius: 25px;
     padding-left: 15px;
+    padding-top: 1%;
+    padding-bottom: 1%;
     font-size: 20px;
-    height: 49px;
+    height: 30px;
     vertical-align: middle;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    background-color: greenyellow;
+    position: relative;
 }
 img{
     width: 30px;
@@ -67,9 +78,21 @@ img{
 button {
     border-radius: 25px;
     font-size: 15px;
+    position: absolute;
 }
 button[value="accept"] ,button[value="reject"]{
     background: none;
     border: none;
 }
-
+button[value="accept"]{
+    left: 17%;
+    top: 14%;
+}
+button[value="reject"]{
+    left: 21%;
+    top: 13%;
+}
+button[value="show more"]{
+    left: 25%;
+    top: 21%;
+}
