@@ -70,6 +70,8 @@ li{
     margin-bottom: 5px;
     background-color: greenyellow;
     position: relative;
+    display: inline-block;
+    width: 47%;
 }
 img{
     width: 30px;
@@ -79,20 +81,29 @@ button {
     border-radius: 25px;
     font-size: 15px;
     position: absolute;
+    cursor: pointer;
 }
 button[value="accept"] ,button[value="reject"]{
     background: none;
     border: none;
 }
 button[value="accept"]{
-    left: 17%;
+    right: 37%;
     top: 14%;
 }
 button[value="reject"]{
-    left: 21%;
+    right: 25%;
     top: 13%;
 }
 button[value="show more"]{
-    left: 25%;
+    right: 2%;
     top: 21%;
+}
+button[value="accept"]:hover{
+    transform: scale(1.5);
+    cursor: pointer;
+}
+button[value="reject"]:hover{
+    transform: scale(1.5);
+    cursor: pointer;
 }
