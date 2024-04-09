@@ -29,7 +29,7 @@
 
     padding: 2rem;
 
-    background-color: rgb(244, 248, 249);
+    background-color: rgb(240, 255, 240);
 
     border-radius: 13px;
     
@@ -56,11 +56,14 @@
     border-radius: 8px;
 
     border: 2px solid #999;
+
     transition: box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out;
     
 
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
+
+    opacity: 0.4;
     
 }
 /* .M7-field:hover{
@@ -86,8 +89,7 @@
     background-color: rgb(64, 108, 125);
     color: rgb(244, 248, 249);
 
-    transition: background 0.15s ease-in-out;
-    transition: padding 0.15s ease-in-out;
+    transition: background 0.15s ease-in-out, padding 0.15s ease-in-out;
 
     
 }
