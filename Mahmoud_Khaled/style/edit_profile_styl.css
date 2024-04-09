@@ -1,4 +1,4 @@
-h1{
+.M7-h1{
     font-size: xx-large;
     margin: 5px;
 }
@@ -9,7 +9,7 @@ h1{
     font-weight: 600;
 }
 
-.gradient-text {
+.M7-gradient-text {
     background: linear-gradient(to right, #ff416c, #ff4b2b);
     -webkit-background-clip: text;
     background-clip: text;
@@ -21,7 +21,7 @@ h1{
     text-align: center;
 }
 
-fieldset {
+.M7-fieldset {
     max-width: 700px;
     margin: auto;
 
@@ -29,6 +29,7 @@ fieldset {
 
     background-color: rgb(244, 248, 249);
 
+    border: 1px black solid;
     border-radius: 13px;
 
     
@@ -53,7 +54,9 @@ fieldset {
     
     border-radius: 8px;
 
-    border: 2px solid #999;
+    border: 1px solid #999;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out;
     
 
@@ -62,14 +65,14 @@ fieldset {
     
 }
 .M7-field:hover{
-    border: 2px solid skyblue;
-    box-shadow: 0 0 2px 2px skyblue;
+    border: 1px solid skyblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     outline: none;
 }
 
 .M7-field:focus{
-    border: 2px rgb(11, 107, 145) solid;
-    box-shadow: 0 0 1px 1px rgb(12, 112, 152);
+    border: 1px rgb(11, 107, 145) solid;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     outline: none;
 }
 
@@ -79,15 +82,26 @@ fieldset {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
 
-    border: 3px solid rgb(63, 101, 117);
+    border:none;
     border-radius: 32px;
     background-color: rgb(64, 108, 125);
     color: rgb(244, 248, 249);
+
+    transition: background 0.15s ease-in-out;
+    transition: padding 0.15s ease-in-out;
 }
 
 .M7-save:hover{
 
-    background-color: rgb(244, 248, 249);
-    color: rgb(64, 108, 125);
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+
+    padding: 1rem 2.4rem 1rem 2.4rem;
+    
+    color: rgb(244, 248, 249);
+    border:none;
+}
+
+.M7-save:active {
+    background: linear-gradient(to right, #972741, #972c1a);
 }
 
