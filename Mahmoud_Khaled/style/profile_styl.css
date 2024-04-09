@@ -1,4 +1,4 @@
-h1{
+.M7-h1{
     font-size: xx-large;
     margin: 5px;
 
@@ -11,7 +11,7 @@ h1{
     font-weight: 600;
 }
 
-.gradient-text {
+.M7-gradient-text {
     background: linear-gradient(to right, #ff416c, #ff4b2b);
     -webkit-background-clip: text;
     background-clip: text;
@@ -23,7 +23,7 @@ h1{
     text-align: center;
 }
 
-fieldset {
+.M7-fieldset {
     max-width: 700px;
     margin: auto;
 
@@ -32,7 +32,6 @@ fieldset {
     background-color: rgb(244, 248, 249);
 
     border-radius: 13px;
-
     
 }
 
@@ -48,6 +47,7 @@ fieldset {
     box-sizing:border-box;
 
     background-color: rgb(227, 241, 247);
+
 
     width: 100%;
 
@@ -81,15 +81,34 @@ fieldset {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
 
-    border: 3px solid rgb(63, 101, 117);
+    border:none;
     border-radius: 32px;
     background-color: rgb(64, 108, 125);
     color: rgb(244, 248, 249);
+
+    transition: background 0.15s ease-in-out;
+    transition: padding 0.15s ease-in-out;
+
+    
 }
 
-.M7-edit:hover{
+.M7-edit:hover {
 
-    background-color: rgb(244, 248, 249);
-    color: rgb(64, 108, 125);
+    /* background-color: rgb(244, 248, 249);
+    color: rgb(64, 108, 125); */
+
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+
+    padding: 1rem 2.4rem 1rem 2.4rem;
+    
+    color: rgb(244, 248, 249);
+    border:none;
+
+}
+
+.M7-edit:active {
+    
+    background: linear-gradient(to right, #972741, #972c1a);
+    
 }
 
