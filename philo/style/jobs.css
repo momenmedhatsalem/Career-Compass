@@ -33,13 +33,13 @@ h1 {
 }
 .edit-delete-buttons {
     position: absolute;
-    right: 2%;
-    top: 5%;
+    right: 75%;
+    top: 3%;
     z-index: 3;
-    width: 34px;
+    width: 100px;
 }
-.job-id {
-    background-color: #cccccc;
+.job-image-div {
+    background-color: #e7e7e7;
     display: inline-block;
     position: absolute;
     z-index: 8;
@@ -47,46 +47,84 @@ h1 {
     top: 80%;
     width: 75px;
     height: 75px;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     font-size: 37px;
-    border-radius: 64%;
+    border-radius: 50%;
     text-align: center;
-    line-height: 73px;
-    border: solid;
+    line-height: 110px;
+    /* border: solid; */
     box-shadow: -5px 5px 37px #0000009c;
+}
+img.job-img {
+    width: 60%;
+    height: 70%;
+    filter: blur(1px);
+}
+img {
+    width: 30px;
+    height: 30px;
+}
+user agent stylesheet
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.job-image-div {
+    background-color: #e7e7e7;
+    display: inline-block;
+    position: absolute;
+    z-index: 8;
+    left: 70%;
+    top: 0%;
+    width: 50%;
+    height: 100%;
+    /* vertical-align: middle; */
+    font-size: 37px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 318px;
+    /* border: solid; */
+    box-shadow: -5px 5px 37px #0000009c;
+}
+img.job-img:hover {
+    transform: scale(2.5);
+    filter: none;
 }
 .job-name {
     display: inline-block;
     position: absolute;
     z-index: 5;
-    left: 2%;
-    top: 92%;
+    left: 0%;
+    top: 80%;
     background-color: #00dcffe6;
-    width: 100%;
+    width: 96%;
     text-align: center;
     font-size: 20px;
-    border-radius: 25px;
+    border-radius: 10px;
     line-height: 40px;
 }
 .desc {
     margin-top: 0px;
-    margin-left: 1%;
+    margin-left: 0%;
     margin-bottom: 0%;
     border: solid;
     border-color: #b19b9b1f;
-    backdrop-filter: blur(6px);
     width: 100%;
-    padding-left: 20px;
-    padding-right: 45px;
-    padding-top: 16px;
+    padding-left: 0%;
+    padding-right: 28%;
+    padding-top: 10%;
     border-radius: 10px;
     line-height: 25px;
     font-size: 20px;
+    text-align: center;
     box-sizing: border-box;
     height: 200px;
     box-shadow: 9px 10px 45px #43008085;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-div.edit-delete-buttons button{
+div.edit-delete-buttons button {
     font-size: 20px;
     border-radius: 41px;
     width: 33px;
@@ -109,34 +147,6 @@ div.edit-delete-buttons button{
     border-radius: 14px;
     display: inline-block;
 }
-.job1 {
-    background-image: url(../media/front.png);
-    background-size: 51% 100%;
-    background-repeat: no-repeat;
-    background-position-x: 115px;
-    background-position-y: -9px;
-}
-.job2 {
-    background-image: url(../media/backend.png);
-    background-size: 51% 100%;
-    background-repeat: no-repeat;
-    background-position-x: 115px;
-    background-position-y: -9px;
-}
-.job3 {
-    background-image: url(../media/OIP\ .jpg);
-    background-size: 51% 100%;
-    background-repeat: no-repeat;
-    background-position-x: 115px;
-    background-position-y: -9px;
-}
-.job4 {
-    background-image: url(../media/R.png);
-    background-size: 51% 100%;
-    background-repeat: no-repeat;
-    background-position-x: 115px;
-    background-position-y: -9px;
-}
 
 img{
     width: 30px;
@@ -145,4 +155,27 @@ img{
 img:hover{
     transform: scale(1.2);
     cursor: pointer;
+}
+.salary {
+    /* margin-top: 8%; */
+    width: 50%;
+    /* border: solid; */
+    height: 35px;
+    color: rgba(36, 64, 52, .7);
+}
+.city {
+    width: 50%;
+    height: 35px;
+    color: rgba(36, 64, 52, .7);
+}
+.description {
+    width: 88%;
+    text-align: left;
+    border-top: solid;
+    border-width: 2px;
+    margin-top: -40px;
+    padding-top: 15px;
+    padding-right: 5px;
+    padding-left: 20px;
+    font-size: 17px;
 }
