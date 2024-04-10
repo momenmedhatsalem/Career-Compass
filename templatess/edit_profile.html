@@ -3,189 +3,399 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="auther" content="Mahmoud Khaled">
-    <link rel="stylesheet" href="../static/styles.css">
-    <title>Edit Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="auther" content="Mahmoud Khaled">
 
-  </head>
-  <body style="margin: 0px;">
-    <header style="background-color: #ccc;">
-      <nav>
-        <table>
-          <tr>
-            <td>
-              <a href="index.html">
-                <img src="media/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
-              </a>
-            </td>
-  
-            <td>
-              <a href="index.html" style="margin-right: 15px;">Home</a>
-            </td>
-              <td>
-              <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
+  <title>Your Profile</title>
+  <link rel="stylesheet" href="../static/styles.css">
+  <link rel="stylesheet" href="../Mahmoud_Khaled/style/edit_profile_styl.css">
+</head>
+
+<body style="margin: 0px;">
+  <header style="background-color: #ccc;">
+    <nav>
+      <table>
+        <tr>
+          <td>
+            <a href="index.html">
+              <img src="media/images/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
+            </a>
+          </td>
+
+          <td>
+            <a href="index.html" style="margin-right: 15px;">Home</a>
+          </td>
+          <td>
+            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
   
   
               <td>
                 <a href=" signup.html" style="margin-right: 15px;">Sign Up</a>
-            </td>
-  
-            <td>
-              <a href="search.html" style="margin-right: 15px;">Search</a>
-            </td>
-  
-            <td>
-              <a href="login.html" style="margin-right: 15px;">Log In</a>
-            </td>
+          </td>
 
-            <td>
-              <a href="profile.html" style="margin-right: 30px;">Profile</a>
-            </td>
-  
-            <td>
-  
-              <form role="search">
-                <input type="search" placeholder="Search a Job" aria-label="Search" />
-                <button type="submit">
-                  Search
-                </button>
-              </form>
-  
-            </td>
-  
-          </tr>
-        </table>
-  
-      </nav>
-    </header>
-        <section class="main">
+          <td>
+            <a href="search.html" style="margin-right: 15px;">Search</a>
+          </td>
+
+          <td>
+            <a href="login.html" style="margin-right: 15px;">Log In</a>
+          </td>
+
+          <td>
+            <a href="profile.html" style="margin-right: 30px;">Profile</a>
+          </td>
+
+          <td>
+
+            <form role="search">
+              <input type="search" placeholder="Search a Job" aria-label="Search" />
+              <button type="submit">
+                Search
+              </button>
+            </form>
+
+          </td>
+
+        </tr>
+      </table>
+
+    </nav>
+  </header>
+  <section class="main">
     <main>
-        <h1>Edit your profile</h1>
-
-        <h2>Add, remove or edit all your info</h2>
-
-        <fieldset>
-
-            <legend>
-                Account info
-            </legend>
-
-            <br>
-
-            <label for="fname">First name: </label>
-            <input type="text" name="fname" id="fname" value="">
-
-            <br>
-            <br>
-
-            <label for="lname">Last name: </label>
-            <input type="text" name="lname" id="lname" value="">
-
-            <br>
-            <br>
-
-            <label for="pemail">Personal E-mail: </label>
-            <input type="email" name="pemail" id="pemail" value="">
-
-            <br>
-            <br>
-
-            <label for="bemail">Business E-mail: </label>
-            <input type="email" name="bemail" id="bemail" value="">
-
-            <br>
-            <br>
-
-            <label for="cname">Company name: </label>
-            <input type="text" name="cname" id="cname" value="">
-
-            <br>
-            <br>
-
-            <label for="skills">Skills and Certificates: </label> <br>
-            <textarea name="skills" id="skills" cols="40" rows="5" placeholder="Add qualifications here"></textarea>
+      <section class="M7-fit">
 
 
-            <br>
-            <br>
-
-            <label for="">Bio: </label> <br>
-            <textarea name="bio" id="bio" cols="40" rows="5" placeholder="Tell us about yourself"></textarea>
-
-            <br>
-            <br>
-
-            <a href="user_account.html">
-                <button>Save</button>
-            </a>
-
-            <br>
-
-        </fieldset>
+        <h1 class=" M7-gradient-text M7-h1">Your Profile</h1>
 
         <br>
+        <form action="">
+
+          <fieldset class="M7-fieldset">
+
+            <table class="M7-table">
+              <tr class="M7-tr">
+                <td class="M7-td">
+                  <img src="../Mahmoud_Khaled/img/Audio & Video Editing.png" alt="User Image" class="M7-p_img">
+                </td>
+                <td class="M7-td">
+                  <button class="M7-p_img_button" onclick="change_img()">Change Profile Image</button>
+                </td>
+                <td class="M7-td">
+                  <button class="M7-p_img_button_clear">Delete</button>
+                </td>
+              </tr>
+
+            </table>
+
+            <!-- <legend class="M7-legend M7-gradient-text">Find all your Personal Info, Certificates and Bio here</legend> -->
+
+            <br>
+
+
+            <div>
+
+              <label for="fname" class="M7-label">Full Name: </label> <br><br>
+              <input type="text" name="fname" id="fname" value="Mahmoud Khaled" class="M7-field" required>
+
+            </div>
+
+            <br>
+            <br>
+
+            <div>
+
+              <label for="pemail" class="M7-label">Personal E-mail: </label> <br><br>
+              <input type="email" name="pemail" id="pemail" value="" class="M7-field" required>
+
+            </div>
+
+            <br>
+            <br>
+
+            <div>
+
+              <label for="bio" class="M7-label">Bio: </label> <br><br>
+              <textarea name="bio" id="bio" cols="40" rows="5" placeholder="Cairo University 2020"
+                class="M7-field"></textarea>
+
+            </div>
+
+
+          </fieldset>
+
+
+          <br><br>
+
+          <fieldset class="M7-fieldset">
+
+            <h1 class="M7-h1 M7-gradient-text">Business Info</h1>
+
+            <br>
+            <div>
+
+              <label for="cname" class="M7-label">Company name: </label> <br><br>
+              <input type="text" name="cname" id="cname" value="" class="M7-field" required>
+
+            </div>
+
+
+            <br>
+            <br>
+
+            <div>
+
+              <label for="bemail" class="M7-label">Business E-mail: </label> <br><br>
+              <input type="email" name="bemail" id="bemail" value="" class="M7-field" required>
+
+            </div>
+
+
+            <br>
+            <br>
+
+            <div>
+
+              <label for="skills" class="M7-label">Skills and Certificates: </label> <br><br>
+              <textarea name="skills" id="skills" cols="40" rows="5" placeholder="frontend Web Developer"
+                class="M7-field"></textarea>
+
+            </div>
+
+
+            <br>
+
+          </fieldset>
+
+          <br>
+          <br>
+
+          <fieldset class="M7-fieldset">
+
+            <h1 class="M7-h1 M7-gradient-text">Social Media</h1>
+
+            <br>
+
+            <div>
+
+              <label for="net1" class="M7-label">Network 1: </label> <br><br>
+              <input type="text" name="net1" id="net1" value="" class="M7-field" required>
+
+            </div>
+
+            <br>
+            <br>
+
+            <div>
+
+              <label for="net2" class="M7-label">Network 2: </label> <br><br>
+              <input type="text" name="net2" id="net2" value="" class="M7-field">
+
+            </div>
+
+            <br>
+            <br>
+
+            <button class="M7-p_img_button" style="margin-left: 0;">+ Add More Networks</button>
+
+
+          </fieldset>
+
+          <br>
+          <br>
+
+          <fieldset class="M7-fieldset">
+            <h1 class="M7-h1 M7-gradient-text">Address and Location</h1>
+
+            <br>
+            <br>
+
+            <div>
+
+              <label for="address" class="M7-label">Address: </label> <br><br>
+              <input type="text" name="address" id="address" value="" class="M7-field"
+                placeholder="Cowrasta, Chandana, Gazipur, Sadar" required>
+
+            </div>
+
+            <br>
+            <br>
+
+
+            <div>
+
+              <label for="country" class="M7-label">Country: </label> <br><br>
+              <select type="" name="country" id="country" value="" class="M7-field" required>
+                <option value="Egypt">Egypt</option>
+                <option value="Egypt">France</option>
+                <option value="Egypt">Germany</option>
+                <option value="Egypt">Spain</option>
+                <option value="Egypt">Poland</option>
+                <option value="Egypt">Scotland</option>
+                <option value="Egypt">United Kingdom</option>
+
+              </select>
+
+            </div>
+
+            <br>
+            <br>
+
+
+            <div>
+
+              <label for="city" class="M7-label">City: </label> <br><br>
+              <select type="" name="city" id="city" value="" class="M7-field" required>
+                <option value="Egypt">Cairo</option>
+                <option value="Egypt">Paris</option>
+                <option value="Egypt">Berlin</option>
+                <option value="Egypt">Los Angelos</option>
+                <option value="Egypt">New York</option>
+                <option value="Egypt">London</option>
+                <option value="Egypt">Moscow</option>
+              </select>
+
+            </div>
+
+            <br>
+            <br>
+
+
+            <div>
+
+              <label for="zip" class="M7-label">ZIP Code: </label> <br><br>
+              <input type="number" name="zip" id="zip" value="" class="M7-field" required>
+
+            </div>
+
+            <br>
+            <br>
+
+
+            <div>
+
+              <label for="state" class="M7-label">State/Governorat: </label> <br><br>
+              <select type="text" name="state" id="state" value="" class="M7-field" required>
+
+                <option value="Egypt">Cairo</option>
+                <option value="Egypt">Paris</option>
+                <option value="Egypt">Berlin</option>
+                <option value="Egypt">Los Angelos</option>
+                <option value="Egypt">New York</option>
+                <option value="Egypt">London</option>
+                <option value="Egypt">Moscow</option>
+
+              </select>
+
+            </div>
+
+            <br>
+            <br>
+
+
+            <div>
+
+              <label for="location" class="M7-label">Map Location: </label> <br><br>
+              <input type="" name="location" id="location" value="" class="M7-field" required>
+
+              <br><br>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d55248.10939663801!2d31.245867629638667!3d30.06533849829631!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1712729989894!5m2!1sen!2seg" width="650" height="400" style="border: 2px solid #999;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+            </div>
+
+          
+          </fieldset>
+
+          <br>
+
+          <div class="">
+
+            <a href="profile.html">
+              <button class="M7-edit" type="submit">Save Changes</button>
+            </a>
+
+            <a href="profile.html">
+            <button class="M7-p_img_button_clear" type="reset">Cancel</button>
+            </a>
+          </div>
+
+        </form>
+
+
+
+      </section>
 
     </main>
-  <div>
-      </section>
-    <footer style="max-width: 80%; margin: auto;">
-      <center>
-        
-        <table>
-          <tr>
-            <td>
-              <a href="index.html">
-                <img src="media/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
-              </a>
-            </td>
+    <div>
+      <div>
+  </section>
+  </section>
+  <footer style="max-width: 80%; margin: auto;">
+    <center>
 
-            <td>
-              <a href="index.html" style="margin-right: 10px;">Home</a>
-            </td>
-            <td>
-              <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
+      <table>
+        <tr>
+          <td>
+            <a href="index.html">
+              <img src="media/images/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
+            </a>
+          </td>
+
+          <td>
+            <a href="index.html" style="margin-right: 10px;">Home</a>
+          </td>
+
+          <td>
+            <a href="#" style="margin-right: 10px;">Premium</a>
+          </td>
+
+          <td>
+            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
   
 
             <td>
               <a href="search.html" style="margin-right: 10px;">Search</a>
-            </td>
+          </td>
 
-          </tr>
-        </table>
-        
+        </tr>
+      </table>
 
-        <hr>
-        <p>
-          © 2024 Career Compass, Inc
-        </p>
-        <p>
-          Developed and Maintained by
-        </p>
-        <p>
-          <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
 
-          &nbsp;•&nbsp;
+      <hr>
+      <p>
+        © 2024 Career Compass, Inc
+      </p>
+      <p>
+        Developed and Maintained by
+      </p>
+      <p>
+        <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
 
-          <a href="https://github.com/philokaram">Philopater Karam</a>
+        &nbsp;•&nbsp;
 
-          &nbsp;•&nbsp;
+        <a href="https://github.com/philokaram">Philopater Karam</a>
 
-          <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
+        &nbsp;•&nbsp;
 
-          &nbsp;•&nbsp;
+        <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
 
-          <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
+        &nbsp;•&nbsp;
 
-        </p>
-      </center>
+        <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
 
-      <br><br>
+      </p>
+    </center>
 
-    </footer>
+    <br><br>
+
+  </footer>
+  </div>
+
   </div>
 
 </body>

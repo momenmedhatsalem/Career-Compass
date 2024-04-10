@@ -1,36 +1,40 @@
 #add-new-job-button,#check_candidates-button {
     font-size: 20px;
+    height: 45px;
+    border: none;
+    margin-left: 10px;
+    text-align: center;
+    box-shadow: 3px 2px 6px 0px #00BCD4;
+    border-radius: 11px;
+    color: azure;
+    background: #00c853;
+}
+#add-new-job-button:hover,#check_candidates-button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 a {
     text-decoration: none;
 }
 .button{
     position: absolute;
-    top: 120px;
-    right: 25px;
+    top: 60px;
+    right: 20px;
 }
-h1{
+h1 {
     text-align: center;
     font-size: 40px;
-    background-color: springgreen;
+    background-color: #00c853;
+    color: aliceblue;
     border-radius: 25px;
-    width: 50%;
-    margin-left: 25%;
-}
-
-.job{
-    
-    position: relative;
-    width: 43%;
-    margin-right: 5%;
-    margin-bottom: 10%;
-    border-radius: 14px;
-    display: inline-block;
+    width: 35%;
+    margin-left: 32.5%;
+    box-shadow: 7px 0px 0px 0px #FF5722, -7px 0px 0px 0px #fb592a;
 }
 .edit-delete-buttons {
     position: absolute;
-    right: -2%;
-    top: 2%;
+    right: 2%;
+    top: 5%;
     z-index: 3;
     width: 34px;
 }
@@ -40,14 +44,14 @@ h1{
     position: absolute;
     z-index: 8;
     left: -3%;
-    top: 182px;
-    width: 65px;
-    height: 65px;
+    top: 80%;
+    width: 75px;
+    height: 75px;
     vertical-align: middle;
     font-size: 37px;
     border-radius: 64%;
     text-align: center;
-    line-height: 68px;
+    line-height: 73px;
     border: solid;
     box-shadow: -5px 5px 37px #0000009c;
 }
@@ -55,8 +59,8 @@ h1{
     display: inline-block;
     position: absolute;
     z-index: 5;
-    left: 5%;
-    top: 197px;
+    left: 2%;
+    top: 92%;
     background-color: #00dcffe6;
     width: 100%;
     text-align: center;
@@ -68,18 +72,18 @@ h1{
     margin-top: 0px;
     margin-left: 1%;
     margin-bottom: 0%;
-    /* background-color: green; */
     border: solid;
     border-color: #b19b9b1f;
     backdrop-filter: blur(6px);
-    width: 92%;
+    width: 100%;
     padding-left: 20px;
-    padding-right: 28px;
+    padding-right: 45px;
     padding-top: 16px;
     border-radius: 10px;
     line-height: 25px;
     font-size: 20px;
-    height: 201px;
+    box-sizing: border-box;
+    height: 200px;
     box-shadow: 9px 10px 45px #43008085;
 }
 div.edit-delete-buttons button{
@@ -90,9 +94,23 @@ div.edit-delete-buttons button{
     background: none;
     border: none;
 }
+.all-jobs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+.job {
+    position: relative;
+    width: 40%;
+    margin-right: 25px;
+    margin-bottom: 5%;
+    border-radius: 14px;
+    display: inline-block;
+}
 .job1 {
     background-image: url(../media/front.png);
-    background-size: cover;
     background-size: 51% 100%;
     background-repeat: no-repeat;
     background-position-x: 115px;
@@ -100,7 +118,6 @@ div.edit-delete-buttons button{
 }
 .job2 {
     background-image: url(../media/backend.png);
-    background-size: cover;
     background-size: 51% 100%;
     background-repeat: no-repeat;
     background-position-x: 115px;
@@ -108,7 +125,6 @@ div.edit-delete-buttons button{
 }
 .job3 {
     background-image: url(../media/OIP\ .jpg);
-    background-size: cover;
     background-size: 51% 100%;
     background-repeat: no-repeat;
     background-position-x: 115px;
@@ -116,20 +132,12 @@ div.edit-delete-buttons button{
 }
 .job4 {
     background-image: url(../media/R.png);
-    background-size: cover;
     background-size: 51% 100%;
     background-repeat: no-repeat;
     background-position-x: 115px;
     background-position-y: -9px;
 }
-.job {
-    position: relative;
-    width: 43%;
-    margin-right: 5%;
-    margin-bottom: 5%;
-    border-radius: 14px;
-    display: inline-block;
-}
+
 img{
     width: 30px;
     height:30px;
