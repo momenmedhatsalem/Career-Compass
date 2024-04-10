@@ -1,177 +1,180 @@
 <!DOCTYPE html>
 <!-- ========== Joseph 20220099 ========== -->
 <html lang="en" data-bs-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Job Details</title>
-    <style>
-      .job-details {
-        margin-bottom: 20px;
-      }
-    </style>
-    
-  </head>
-  <body style="margin: 0px;">
-    <header style="background-color: #ccc;">
-      <nav>
-        <table>
-          <tr>
-            <td>
-              <a href="index.html">
-                <img src="media/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
-              </a>
-            </td>
-  
-            <td>
-              <a href="index.html" style="margin-right: 15px;">Home</a>
-            </td>
-  
-            <td>
-              <a href="#" style="margin-right: 15px;"">Features</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Details</title>
+  <style>
+    .job-details {
+      margin-bottom: 20px;
+    }
+  </style>
+
+</head>
+
+<body style="margin: 0px;">
+  <header style="background-color: #ccc;">
+    <nav>
+      <table>
+        <tr>
+          <td>
+            <a href="index.html">
+              <img src="media/images/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
+            </a>
+          </td>
+
+          <td>
+            <a href="index.html" style="margin-right: 15px;">Home</a>
+          </td>
+
+          <td>
+            <a href="#" style="margin-right: 15px;"">Features</a>
               </td>
   
               <td>
                 <a href=" signup.html" style="margin-right: 15px;">Sign Up</a>
-            </td>
-  
+          </td>
+
+          <td>
+            <a href="search.html" style="margin-right: 15px;">Search</a>
+          </td>
+
+          <td>
+            <a href="login.html" style="margin-right: 15px;">Log In</a>
+          </td>
+
+          <td>
+            <a href="profile.html" style="margin-right: 30px;">Profile</a>
+          </td>
+
+          <td>
+
+            <form role="search">
+              <input type="search" placeholder="Search a Job" aria-label="Search" />
+              <button type="submit">
+                Search
+              </button>
+            </form>
+
+          </td>
+
+        </tr>
+      </table>
+
+    </nav>
+  </header>
+  <h1>Job Title: Software Engineer</h1>
+  <div class="job-details">
+    <h2>Description:</h2>
+    <p>
+      A Software Engineer is an IT professional who designs, develops and
+      maintains computer software at a company. <br />
+      They use their creativity and technical skills and apply the principles
+      of software engineering to help solve new and ongoing problems for an
+      organization.
+    </p>
+  </div>
+  <div class="job-details">
+    <h2>Requirements:</h2>
+    <ul>
+      <li>Bachelor's degree in Computer Science or related field.</li>
+      <li>2+ years of experience in software development.</li>
+      <li>Proficiency in Java, Python, or similar programming languages.</li>
+      <li>Strong problem-solving skills.</li>
+    </ul>
+  </div>
+  <div class="job-details">
+    <h2>Responsibilities:</h2>
+    <ul>
+      <li>Developing high-quality software design and architecture.</li>
+      <li>
+        Identifying, prioritizing, and executing tasks in the software
+        development lifecycle.
+      </li>
+      <li>
+        Developing tools and applications by producing clean, efficient code.
+      </li>
+      <li>Automating tasks through appropriate tools and scripting.</li>
+    </ul>
+  </div>
+  <div class="job-details">
+    <h2>Application Deadline:</h2>
+    <p>January 1, 2025</p>
+  </div>
+  <button onclick="confirmApplication()">Apply</button>
+
+  <script>
+    function confirmApplication() {
+      if (confirm("Are you sure you want to apply for this job?")) {
+        window.location.href = "confirmation.html";
+      }
+    }
+  </script>
+  <div class="container">
+    <footer style="max-width: 80%; margin: auto;">
+      <center>
+
+        <table>
+          <tr>
             <td>
-              <a href="search.html" style="margin-right: 15px;">Search</a>
-            </td>
-  
-            <td>
-              <a href="login.html" style="margin-right: 15px;">Log In</a>
+              <a href="index.html">
+                <img src="media/images/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
+              </a>
             </td>
 
             <td>
-              <a href="profile.html" style="margin-right: 30px;">Profile</a>
+              <a href="index.html" style="margin-right: 10px;">Home</a>
             </td>
-  
+
             <td>
-  
-              <form role="search">
-                <input type="search" placeholder="Search a Job" aria-label="Search" />
-                <button type="submit">
-                  Search
-                </button>
-              </form>
-  
+              <a href="#" style="margin-right: 10px;">Premium</a>
             </td>
-  
+
+            <td>
+              <a href="#" style="margin-right: 10px;">FAQs</a>
+            </td>
+
+            <td>
+              <a href="search.html" style="margin-right: 10px;">Search</a>
+            </td>
+
           </tr>
         </table>
-  
-      </nav>
-    </header>
-    <h1>Job Title: Software Engineer</h1>
-    <div class="job-details">
-      <h2>Description:</h2>
-      <p>
-        A Software Engineer is an IT professional who designs, develops and
-        maintains computer software at a company. <br />
-        They use their creativity and technical skills and apply the principles
-        of software engineering to help solve new and ongoing problems for an
-        organization.
-      </p>
-    </div>
-    <div class="job-details">
-      <h2>Requirements:</h2>
-      <ul>
-        <li>Bachelor's degree in Computer Science or related field.</li>
-        <li>2+ years of experience in software development.</li>
-        <li>Proficiency in Java, Python, or similar programming languages.</li>
-        <li>Strong problem-solving skills.</li>
-      </ul>
-    </div>
-    <div class="job-details">
-      <h2>Responsibilities:</h2>
-      <ul>
-        <li>Developing high-quality software design and architecture.</li>
-        <li>
-          Identifying, prioritizing, and executing tasks in the software
-          development lifecycle.
-        </li>
-        <li>
-          Developing tools and applications by producing clean, efficient code.
-        </li>
-        <li>Automating tasks through appropriate tools and scripting.</li>
-      </ul>
-    </div>
-    <div class="job-details">
-      <h2>Application Deadline:</h2>
-      <p>January 1, 2025</p>
-    </div>
-    <button onclick="confirmApplication()">Apply</button>
 
-    <script>
-      function confirmApplication() {
-        if (confirm("Are you sure you want to apply for this job?")) {
-          window.location.href = "confirmation.html";
-        }
-      }
-    </script>
-    <div class="container">
-      <footer style="max-width: 80%; margin: auto;">
-        <center>
-  
-          <table>
-            <tr>
-              <td>
-                <a href="index.html">
-                  <img src="media/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
-                </a>
-              </td>
-  
-              <td>
-                <a href="index.html" style="margin-right: 10px;">Home</a>
-              </td>
-  
-              <td>
-                <a href="#" style="margin-right: 10px;">Premium</a>
-              </td>
-  
-              <td>
-                <a href="#" style="margin-right: 10px;">FAQs</a>
-              </td>
-  
-              <td>
-                <a href="search.html" style="margin-right: 10px;">Search</a>
-              </td>
-  
-            </tr>
-          </table>
-  
-  
-          <hr>
-          <p class="text-center text-body-secondary">
-            © 2024 Career Compass, Inc
-          </p>
-          <p class="text-center text-body-secondary">
-            Developed and Maintained by
-          </p>
-          <p class="text-center text-body-secondary">
-            <a href="https://github.com/momenmedhatsalem" class="text-light">Momen Medhat</a>
-  
-            &nbsp;•&nbsp;
-  
-            <a href="https://github.com/philokaram" class="text-light">Philopater Karam</a>
-  
-            &nbsp;•&nbsp;
-  
-            <a href="https://github.com/Joseph-Sameh-0" class="text-light">Joseph Sameh</a>
-  
-            &nbsp;•&nbsp;
-  
-            <a href="https://github.com/Mahmoud3177Khaled" class="text-light">Mahmoud Khaled</a>
-  
-          </p>
-        </center>
-  
-        <br><br>
-  
-      </footer>
-    </div>
 
-    
-  </body>
+        <hr>
+        <p class="text-center text-body-secondary">
+          © 2024 Career Compass, Inc
+        </p>
+        <p class="text-center text-body-secondary">
+          Developed and Maintained by
+        </p>
+        <p class="text-center text-body-secondary">
+          <a href="https://github.com/momenmedhatsalem" class="text-light">Momen Medhat</a>
+
+          &nbsp;•&nbsp;
+
+          <a href="https://github.com/philokaram" class="text-light">Philopater Karam</a>
+
+          &nbsp;•&nbsp;
+
+          <a href="https://github.com/Joseph-Sameh-0" class="text-light">Joseph Sameh</a>
+
+          &nbsp;•&nbsp;
+
+          <a href="https://github.com/Mahmoud3177Khaled" class="text-light">Mahmoud Khaled</a>
+
+        </p>
+      </center>
+
+      <br><br>
+
+    </footer>
+  </div>
+
+
+</body>
+
 </html>

@@ -1,0 +1,224 @@
+.M7-h1{
+    font-size: xx-large;
+    margin: 5px;
+}
+
+.M7-fit {
+    max-width: 700px;
+    margin: auto;
+}
+
+.M7-gradient-text {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+
+.M7-center {
+    text-align: center;
+}
+
+.M7-fieldset {
+   
+
+    padding: 2rem;
+
+    background-color:white;
+
+    border-radius: 13px;
+
+    border: none;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+    
+}
+
+.M7-p_img {
+    width: 140px;
+    height: 140px;
+
+    border-radius: 100px;
+    display: block;
+
+    margin: 10px;
+
+    transition: width 0.15s ease-in-out, height 0.15s ease-in-out, opacity 0.15s ease-in-out;
+
+}
+
+.M7-p_img:hover {
+    width: 148px;
+    height: 148px;
+
+    border-radius: 100px;
+    display: block;
+
+    margin: 10px;
+}
+
+.M7-p_img_button{
+    box-sizing: border-box;
+    padding: 0.9rem 2rem 0.9rem 2rem;
+    margin-left: 17px;
+    
+
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+
+    border:none;
+    border-radius: 10px;
+    background-color: rgb(0, 124, 173);
+    color: rgb(244, 248, 249);
+
+    transition: padding 0.15s ease-in-out;
+
+    
+}
+
+.M7-p_img_button:hover {
+
+    /* background-color: rgb(244, 248, 249);
+    color: rgb(64, 108, 125); */
+
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+
+    padding: 0.9rem 2.4rem 0.9rem 2.4rem;
+    
+    color: rgb(244, 248, 249);
+    border:none;
+
+}
+
+.M7-p_img_button:active {
+    
+    background: linear-gradient(to right, #972741, #972c1a);
+    
+}
+
+.M7-p_img_button_clear{
+    padding: 1rem 2rem 1rem 2rem;
+    margin-left: 10px;
+    
+
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+
+    border:none;
+    border-radius: 32px;
+    color: rgb(0, 0, 0);
+
+    transition: padding 0.15s ease-in-out;
+
+    
+}
+
+.M7-p_img_button_clear:hover {
+
+    /* background-color: rgb(244, 248, 249);
+    color: rgb(64, 108, 125); */
+
+    color: #ff416c;
+
+    padding: 1rem 2.4rem 1rem 2.4rem;
+    border:none;
+
+}
+
+.M7-p_img_button_clear:active {
+    
+    background-color: darkgray;
+    
+}
+
+
+
+
+
+.M7-label {
+    font-size: 1.5rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 550;
+
+    height: 100px;
+}
+
+.M7-field {
+    box-sizing:border-box;
+
+    background: linear-gradient(to right, #f3eeec, #ede7e4fe);
+    color: black;
+
+
+    width: 100%;
+
+    padding: 14px;
+    
+    border-radius: 8px;
+
+    border: 1px solid #999;
+
+    
+    transition: box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    
+
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+    
+}
+.M7-field:hover{
+    /* border: 1px solid #ff416c; */
+    box-shadow: 0 0 10px #ff416d8b;
+    outline: none;
+}
+
+.M7-field:focus{
+    /* border: 1px rgb(11, 107, 145) solid; */
+    box-shadow: 0 0 10px rgb(12, 112, 152);
+    outline: none;
+}
+
+.M7-edit{
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+
+    border:none;
+    border-radius: 32px;
+    background-color: rgb(0, 124, 173);
+    color: rgb(244, 248, 249);
+
+    transition: padding 0.15s ease-in-out;
+
+    
+}
+
+.M7-edit:hover {
+
+    /* background-color: rgb(244, 248, 249);
+    color: rgb(64, 108, 125); */
+
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+
+    padding: 1rem 2.4rem 1rem 2.4rem;
+    
+    color: rgb(244, 248, 249);
+    border:none;
+
+}
+
+.M7-edit:active {
+    
+    background: linear-gradient(to right, #972741, #972c1a);
+    
+}
+
+.M7-table, .M7-tr, .M7-td {
+    margin: auto;
+}

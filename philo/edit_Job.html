@@ -1,171 +1,177 @@
 <!DOCTYPE HTML>
 <!-- ========== Philopater ========== -->
 <html lang="en">
-    <head>
-        <meat charset="UTF-8">
-        <title> Edit Job</title>
+
+<head>
+  <meat charset="UTF-8">
+    <title> Edit Job</title>
     <link rel="stylesheet" href="../static/styles.css">
     <link rel="stylesheet" href="style/edit job.css">
-  </head>
-  <body style="margin: 0px;">
-    <header style="background-color: #ccc;">
-      <nav>
-        <table>
-          <tr>
-            <td>
-              <a href="index.html">
-                <img src="media/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
-              </a>
-            </td>
-  
-            <td>
-              <a href="index.html" style="margin-right: 15px;">Home</a>
-            </td>
-              <td>
-              <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
+</head>
+
+<body style="margin: 0px;">
+  <header style="background-color: #ccc;">
+    <nav>
+      <table>
+        <tr>
+          <td>
+            <a href="index.html">
+              <img src="media/images/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
+            </a>
+          </td>
+
+          <td>
+            <a href="index.html" style="margin-right: 15px;">Home</a>
+          </td>
+          <td>
+            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
   
   
               <td>
                 <a href=" signup.html" style="margin-right: 15px;">Sign Up</a>
-            </td>
-  
-            <td>
-              <a href="search.html" style="margin-right: 15px;">Search</a>
-            </td>
-  
-            <td>
-              <a href="login.html" style="margin-right: 15px;">Log In</a>
-            </td>
+          </td>
 
-            <td>
-              <a href="profile.html" style="margin-right: 30px;">Profile</a>
-            </td>
-  
-            <td>
-  
-              <form role="search">
-                <input type="search" placeholder="Search a Job" aria-label="Search" />
-                <button type="submit">
-                  Search
-                </button>
-              </form>
-  
-            </td>
-  
-          </tr>
-        </table>
-  
-      </nav>
-    </header>
-        <section class="main">
+          <td>
+            <a href="search.html" style="margin-right: 15px;">Search</a>
+          </td>
+
+          <td>
+            <a href="login.html" style="margin-right: 15px;">Log In</a>
+          </td>
+
+          <td>
+            <a href="profile.html" style="margin-right: 30px;">Profile</a>
+          </td>
+
+          <td>
+
+            <form role="search">
+              <input type="search" placeholder="Search a Job" aria-label="Search" />
+              <button type="submit">
+                Search
+              </button>
+            </form>
+
+          </td>
+
+        </tr>
+      </table>
+
+    </nav>
+  </header>
+  <section class="main">
     <h1 id="h1-edit-job">
-        Edit Job
+      Edit Job
     </h1>
-    <div>       
+    <div>
       <form>
-          <label for="id"> ID </label>
-          <br>
-          <input type="text" id="id" name="id" class="input-box" placeholder="Enter the Job Id" value="Static number" readonly>
-          
-          <label for="job title"> Job Title </label>
-          <br>
-          <input type="text" id="job title" name="job title" class="input-box" placeholder="Enter the Job Title" required>
-          <br> <br>
+        <label for="id"> ID </label>
+        <br>
+        <input type="text" id="id" name="id" class="input-box" placeholder="Enter the Job Id" value="Static number"
+          readonly>
 
-          <label for="company name"> Company Name </label>
-          <br>
-          <input type="text" id="company name" name="company name" class="input-box" placeholder="Enter the company name" required >
-          <br> <br>
+        <label for="job title"> Job Title </label>
+        <br>
+        <input type="text" id="job title" name="job title" class="input-box" placeholder="Enter the Job Title" required>
+        <br> <br>
 
-          <label for="years of experience"> Years Of Experience </label>
-          <br>
-          <input type="number" id="years of experience" class="input-box" name="years of experience" placeholder="Enter the number of years of experience">
-          <br> <br>
+        <label for="company name"> Company Name </label>
+        <br>
+        <input type="text" id="company name" name="company name" class="input-box" placeholder="Enter the company name"
+          required>
+        <br> <br>
 
-          <label for="salary"> Salary </label>
-          <br>
-          <input type="number" id="salary" name="salary" class="input-box" placeholder="Enter the Salary">
-          <br> <br>
-      
-          <label >Job Status :  </label>
-          <input type="radio" id="open" name="job status" value="open">
-          <label for="open">Open</label>
-          
-          <input type="radio" id="closed" name="job status" value="closed">
-          <label for="closed">Closed</label>
-          <br> <br>
-          
-          <label for="description"> Description </label>
-          <br>
-          <textarea id="description" name="description"  placeholder="Enter the description" class="input-box"  > </textarea>
-          <br> <br>
-          
-          <p id="created by"> created by <span id="username"> user name </span> </p>
-          
-          <input type="submit" value="save" id="boutton-save">
+        <label for="years of experience"> Years Of Experience </label>
+        <br>
+        <input type="number" id="years of experience" class="input-box" name="years of experience"
+          placeholder="Enter the number of years of experience">
+        <br> <br>
+
+        <label for="salary"> Salary </label>
+        <br>
+        <input type="number" id="salary" name="salary" class="input-box" placeholder="Enter the Salary">
+        <br> <br>
+
+        <label>Job Status : </label>
+        <input type="radio" id="open" name="job status" value="open">
+        <label for="open">Open</label>
+
+        <input type="radio" id="closed" name="job status" value="closed">
+        <label for="closed">Closed</label>
+        <br> <br>
+
+        <label for="description"> Description </label>
+        <br>
+        <textarea id="description" name="description" placeholder="Enter the description" class="input-box"> </textarea>
+        <br> <br>
+
+        <p id="created by"> created by <span id="username"> user name </span> </p>
+
+        <input type="submit" value="save" id="boutton-save">
       </form>
     </div>
-  <div>
-      </section>
-    <footer style="max-width: 80%; margin: auto;">
-      <center>
-        
-        <table>
-          <tr>
-            <td>
-              <a href="index.html">
-                <img src="media/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
-              </a>
-            </td>
+    <div>
+  </section>
+  <footer style="max-width: 80%; margin: auto;">
+    <center>
 
-            <td>
-              <a href="index.html" style="margin-right: 10px;">Home</a>
-            </td>
+      <table>
+        <tr>
+          <td>
+            <a href="index.html">
+              <img src="media/images/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
+            </a>
+          </td>
 
-            <td>
-              <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
+          <td>
+            <a href="index.html" style="margin-right: 10px;">Home</a>
+          </td>
+
+          <td>
+            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
   
 
             <td>
-              <a href="search.html" style="margin-right: 10px;">Search</a>
-            </td>
+              <a href=" search.html" style="margin-right: 10px;">Search</a>
+          </td>
 
-          </tr>
-        </table>
-        
+        </tr>
+      </table>
 
-        <hr>
-        <p>
-          © 2024 Career Compass, Inc
-        </p>
-        <p>
-          Developed and Maintained by
-        </p>
-        <p>
-          <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
 
-          &nbsp;•&nbsp;
+      <hr>
+      <p>
+        © 2024 Career Compass, Inc
+      </p>
+      <p>
+        Developed and Maintained by
+      </p>
+      <p>
+        <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
 
-          <a href="https://github.com/philokaram">Philopater Karam</a>
+        &nbsp;•&nbsp;
 
-          &nbsp;•&nbsp;
+        <a href="https://github.com/philokaram">Philopater Karam</a>
 
-          <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
+        &nbsp;•&nbsp;
 
-          &nbsp;•&nbsp;
+        <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
 
-          <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
+        &nbsp;•&nbsp;
 
-        </p>
-      </center>
+        <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
 
-      <br><br>
+      </p>
+    </center>
 
-    </footer>
+    <br><br>
+
+  </footer>
   </div>
 
 
-    </body>
+</body>
+
 </html>
