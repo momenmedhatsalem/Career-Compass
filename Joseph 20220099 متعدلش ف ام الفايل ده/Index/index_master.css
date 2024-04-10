@@ -1,10 +1,10 @@
-/* .J9_html {
-  min-height: 5000px;
-} */
+.J9 * {
+  box-sizing: border-box;
+}
 
 .J9_body {
-  margin: 0px;
-  margin-top: 9vmin;
+  margin: 0;
+  margin-top: 10vh;
   background-color: #f5f5f5;
 }
 
@@ -18,42 +18,39 @@ a {
 .J9_header {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
+  height: 10vh;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-image: linear-gradient(45deg, #00b0ff, #6dd5ed, #28c7fa);
   display: grid;
-  grid-template-columns: repeat(15, 1fr);
-  grid-template-columns: 2fr repeat(11, 3fr) 6fr 6fr 2fr;
-  grid-template-rows: auto;
-  justify-items: center;
-  grid-template-areas: "J9_logo_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid J9_nav_in_grid login_in_grid login_in_grid login_in_grid . ";
+  /* grid-template-columns: repeat(15, 1fr); */
+  /* grid-template-columns: 2fr repeat(11, 3fr) 6fr 6fr 2fr; */
+  grid-template-columns: auto auto auto;
+  grid-template-areas: "J9_logo_in_grid J9_nav_in_grid login_in_grid";
   z-index: 5;
 }
 
-.J9_a_header_logo {
+.J9_header_logo {
   grid-area: J9_logo_in_grid;
 }
 
-.J9_header_logo {
-  height: 9vmin;
+.J9_header_logo img {
+  width: 10vh;
 }
 
 .J9_nav_in_header {
   grid-area: J9_nav_in_grid;
-  /* font-size: 1.5vw; */
-  font-size: 1.5vmax;
-  justify-content: space-evenly;
-  width: 90%;
-  transition: all 0.3s ease-in-out 0s;
-  justify-self: flex-end;
-  margin-right: 9vmin;
+  font-size: 1.8vw;
+  width: 60vw;
+  margin-right: 2vw;
 }
 
 .J9_nav_ul_in_header {
   list-style: none;
-  display: flex;
   width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
   justify-content: space-between;
 }
 
@@ -68,15 +65,12 @@ a {
   position: absolute;
   list-style: none;
   padding: 0;
-  border-radius: 10px;
+  border-radius: 1.5vw;
   box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.12);
   background-color: #ffffff;
-  padding: 10px 10px;
+  padding: 1vw;
   transition: all 0.3s ease-in-out 0s;
-}
-.J9_nav_ul_ul_explore_in_header {
-  display: contents;
-  list-style: none;
+  font-size: 1.6vw;
 }
 
 .J9_nav_ul_item_in_header:hover .J9_nav_ul_ul_in_header {
@@ -84,75 +78,71 @@ a {
   opacity: 1;
 }
 
+.J9_nav_ul_ul_explore_in_header {
+  display: contents;
+  list-style: none;
+}
+
 .J9_explore_cols {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
   display: none;
-  opacity: 0;
   z-index: 6;
   position: absolute;
   background-color: #ffffff;
-  width: max-content;
-  height: 150px;
-  border-radius: 10px;
+  border-radius: 1.5vw;
   box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.12);
-  justify-content: space-evenly;
+  justify-content: space-around;
   text-align: center;
-  width: 50vmin;
-  padding: 10px 10px;
+  width: 30vw;
+  padding: 1vw;
+  font-size: 1.6vw;
 }
 
 .J9_nav_ul_item_in_header:hover .J9_explore_cols {
-  display: flex;
+  display: grid;
   opacity: 1;
 }
 
 .J9_explore_col {
-  width: 33.333333%;
-  /* font-size: 60%; */
-  padding: 10px 0 5px;
-  display: inline-block;
+  padding: 1vh 1vw 1vh;
 }
 
 .J9_login_signup {
   grid-area: login_in_grid;
-  /* font-size: 1.3vw; */
-  font-size: 1.2vmax;
-  justify-content: space-evenly;
-  /* padding: 40px; */
-  justify-self: flex-end;
+  width: 20vw;
+  margin-right: 4vw;
 }
 
 .J9_login_signup_ul {
-  width: 36vmin;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   list-style: none;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto auto;
+  /* justify-content: space-between; */
+  gap: 1vw;
+  text-align: center;
+  font-size: 1.3vw;
+  /* margin-right: 1vw; */
+  line-height: 2.5vh;
+  height: 5vh;
+  transition: all 0.3s ease-in-out 0s;
 }
 .J9_login_signup_ul li:nth-of-type(1) {
-  padding: 3% 3vmin;
-  text-align: center;
+  padding: 1vh 1vw;
   border: 1px solid #fff;
-  border-radius: 50px;
-  text-align: center;
-  transition: all 0.3s ease-in-out 0s;
-  font-size: 2vmin;
-  width: 12vmin;
+  border-radius: 5vw;
+}
+.J9_login_signup_ul li:nth-of-type(2) {
+  padding: 1vh 1vw;
+  border-radius: 5vw;
+  background: #00c853;
 }
 
 .J9_login_signup_ul li:nth-of-type(1) a {
   color: #000;
-}
-
-.J9_login_signup_ul li:nth-of-type(2) {
-  padding: 3% 3vmin;
-  /* min-width: 12vmin; */
-  text-align: center;
-  border-radius: 50px;
-  background: #00c853;
-  transition: all 0.3s ease-in-out 0s;
-  align-self: center;
-  font-size: 2vmin;
-  width: 10vmin;
 }
 .J9_login_signup_ul li:nth-of-type(2) a {
   color: #fff;
@@ -160,16 +150,15 @@ a {
 
 .J9_row {
   display: grid;
-  font-size: 3vmin;
+  font-size: 2.5vw;
   color: rgba(0, 0, 0, 0.7);
   align-items: center;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: auto auto;
   justify-items: center;
   grid-template-areas: "topic_sentence" "quoted_text";
-  background-image: linear-gradient(97deg, #00b0ff, #6dd5ed, #28c7fa);
+  background-image: linear-gradient(105deg, #00b0ff, #6dd5ed, #28c7fa);
+  padding-top: 5vh;
 }
-
 .J9_row_topic_sentence {
   grid-area: topic_sentence;
 }
@@ -179,19 +168,19 @@ a {
 
 .J9_category_section {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: "J9_category_section_row " "J9_category_section_categorys";
+  grid-template-rows: auto auto;
+  grid-template-areas: "J9_category_section_row " "J9_category_section_categories";
 }
 .J9_category_section_row {
   grid-area: J9_category_section_row;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
+  grid-template-columns: auto auto;
   align-items: center;
   grid-template-areas: "J9_category_title J9_category_explore";
-  padding: 5vmin 5vmin 0;
-  font-size: 2vmin;
+  padding: 5vh 3vw 3vh;
+  font-size: 1.5vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 .J9_category_title {
   grid-area: J9_category_title;
@@ -199,79 +188,79 @@ a {
 .J9_category_explore {
   grid-area: J9_category_explore;
   justify-self: flex-end;
-  padding-right: 2vmin;
 }
 
-.J9_category_section_categorys {
-  grid-area: J9_category_section_categorys;
+.J9_category_section_categories {
+  grid-area: J9_category_section_categories;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: auto auto auto auto auto auto;
   align-items: center;
-  grid-template-areas: "auto auto auto auto auto auto";
-  justify-items: center;
-  /* font-size: 1.5vmin; */
-  font-size: 1vmax;
-  padding: 0 6vmin; /****************/
+  font-size: 1.5vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  gap: 1vw;
 }
 
-.J9_category_section_categorys a{
-color: black;
+.J9_category_section_categories a {
+  color: black;
 }
 
 .J9_category_section_category {
-  grid-area: auto;
-  padding: 1vmin 4vmin;
+  padding: 1vh 3vw;
   border: 1px solid black;
-  border-radius: 50px;
+  border-radius: 5vw;
   text-align: center;
   transition: all 0.3s ease-in-out 0s;
 }
 
 .J9_trending_job_section {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: auto;
-  grid-template-areas: "J9_trending_job_section_title" "J9_trending_jobs";
-
-  font-size: 2vmin;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "J9_trending_job_section_title"
+    "J9_trending_jobs";
+  font-size: 2vw;
 }
 
 .J9_trending_job_section_title {
   grid-row: J9_trending_job_section_title;
-  padding: 5vmin 5vmin 0;
-  font-size: 3vmin;
+  padding: 5vw 5vw 0;
+  font-size: 2.5vw;
 }
 
 .J9_trending_jobs {
   grid-row: J9_trending_jobs;
-  /* justify-self: center; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  grid-template-areas: "auto auto auto auto";
   justify-items: center;
+  gap: 1vw;
+  /* height: 352px; */
+  width: 100%;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  justify-content: space-between;
 }
 
 .J9_trending_job {
-  grid-column: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 1;
-  width: 100%;
+  width: 95%;
   max-width: 300px;
-  /* height: 352px; */
-  height: 39vmin;
+  height: 352px;
   display: flex;
   font-size: 4vmin;
   align-items: flex-end;
   position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 .J9_trending_job::after {
-  padding-left: 1vmin;
+  padding-left: 1vw;
   content: "";
-  width: 97%;
+  width: 95.5%;
   height: 30%;
   bottom: 0;
   left: 0;
@@ -295,7 +284,7 @@ color: black;
 }
 
 .J9_trending_job div {
-  padding-left: 1vmin;
+  padding-left: 1vw;
   z-index: 1;
   color: white;
 }
@@ -304,7 +293,7 @@ color: black;
   margin-top: 5vh;
   margin-bottom: 5vh;
   text-align: center;
-  font-size: 2.3vmin;
+  font-size: 2.3vmin; /* min */
 }
 .J9_do_yo_want_to_post_section div {
   display: inline-block;
@@ -338,8 +327,8 @@ color: black;
   background: url(Complete\ job\ portal.png) no-repeat center;
   background-size: cover;
   z-index: 1;
-  padding-bottom: 100px;
-  padding-top: 100px;
+  padding-bottom: 7vh;
+  padding-top: 7vh;
   position: relative;
 }
 
@@ -369,9 +358,9 @@ color: black;
 
 .J9_complete_job_portal {
   grid-area: J9_complete_job_portal;
-  font-size: 2vmax;
+  font-size: 3vw;
   line-height: 1.4;
-  padding-left: 5vmax;
+  padding-left: 5vw;
 }
 
 .J9_complete_job_portal_section_find {
@@ -384,7 +373,7 @@ color: black;
 
 .J9_complete_job_portal_section_find p {
   grid-area: J9_find;
-  font-size: 1.7vmax;
+  font-size: 2.6vw;
   line-height: 1.4;
 }
 
@@ -398,11 +387,11 @@ color: black;
 
 .J9_complete_job_portal_section_find ul li {
   border-radius: 6px;
-  padding: 1vmax 2vmax;
-  font-size: 1.4vmax;
+  padding: 1.2vw 2vw;
+  font-size: 1.8vw;
   text-align: center;
   border: 1px solid white;
-  margin-right: 1vmax;
+  margin-right: 1vw;
 }
 
 .J9_complete_job_portal_section_find ul li a {
@@ -417,51 +406,50 @@ color: black;
 .J9_footer {
   display: grid;
   background-image: linear-gradient(45deg, #0058dd, #187185, #256d85);
-  grid-template-columns: 1fr;
   grid-template-rows: repeat(2, auto);
   grid-template-areas: "J9_footer_row" "J9_footer_privacy_contact";
 }
+
 .J9_footer_row {
   grid-area: J9_footer_row;
   display: grid;
-  grid-template-columns: 10vmin 16vmin auto;
-  grid-template-rows: auto;
-  grid-template-areas: ". J9_footer_logo_col J9_footer_cols";
+  grid-template-columns: repeat(2, auto);
+  grid-template-areas: "J9_footer_logo_col J9_footer_cols";
 }
 .J9_footer_logo_col {
   grid-area: J9_footer_logo_col;
+  width: 15vw;
+  justify-self: center;
 }
 
 .J9_footer_logo {
-  width: 9vmin;
-  /* justify-self: center; */
-  margin-left: 4vmax;
-  margin-top: 5vmin;
+  width: 11vw;
+  margin-left: 9vw;
+  margin-top: 5vh;
 }
 
 .J9_footer_cols {
   grid-area: J9_footer_cols;
   display: grid;
-  grid-template-columns: 3fr 3fr 3fr 2fr;
-  grid-template-rows: 31vmin;
-  grid-template-areas: "J9_footer_col J9_footer_col J9_footer_col";
-  justify-items: center;
+  grid-template-columns: auto auto auto;
+  height: 30vh;
 }
 .J9_footer_col {
-  font-size: 2vmin;
-  margin-left: 5vmin;
-  margin-top: 3vmin;
+  font-size: 2vmin; /* min */
+  margin-left: 4vw;
+  margin-top: 3vh;
 }
 .J9_footer_col h5 {
-  font-size: 3vmin;
-  margin-bottom: 2vmin ;
+  font-size: 3vmin; /* min */
+  margin-bottom: 2vh;
   color: white;
 }
+
 .J9_footer_col ul {
   list-style: none;
   padding-left: 0;
   margin: 0;
-  line-height: 3vmin;
+  line-height: 2.5vh;
 }
 .J9_footer_col a {
   color: white;
@@ -469,24 +457,25 @@ color: black;
 
 .J9_footer_privacy_contact {
   grid-area: J9_footer_privacy_contact;
-  margin-left: 10vmax;
+  margin-left: 10vw;
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 30vw auto;
+  font-size: 2vmin; /* min */
 }
 
-.J9_footer_privacy_contact_ul{
+.J9_footer_privacy_contact_ul {
   display: flex;
   list-style: none;
   padding-left: 0;
 }
-.J9_footer_privacy_contact_ul li:nth-last-of-type(1){
-  margin-left: 4vmax;
+.J9_footer_privacy_contact_ul li:nth-last-of-type(1) {
+  margin-left: 4vw;
 }
-.J9_footer_privacy_contact_ul a{ 
+.J9_footer_privacy_contact_ul a {
   color: white;
- }
+}
 
-  .J9_footer_privacy_contact p{
-    color: white;
-  margin-left: 3vmin;
-  }
+.J9_footer_privacy_contact p {
+  color: white;
+  margin-left: 3vw;
+}
