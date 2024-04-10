@@ -4,21 +4,16 @@
 
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="auther" content="Mahmoud Khaled">
 
+  <title>Your Profile</title>
   <link rel="stylesheet" href="../static/styles.css">
   <link rel="stylesheet" href="../Mahmoud_Khaled/style/edit_profile_styl.css">
-
-  <title>Edit Profile</title>
-
 </head>
 
 <body style="margin: 0px;">
-
   <header style="background-color: #ccc;">
-
     <nav>
       <table>
         <tr>
@@ -67,122 +62,275 @@
       </table>
 
     </nav>
-
   </header>
-
   <section class="main">
     <main>
-      <h1 class="M7-center M7-gradient-text M7-h1">Edit Your Profile</h1>
-      <br>
+      <section class="M7-fit">
 
-      <form action="">
 
-        <fieldset class="M7-fieldset">
+        <h1 class=" M7-gradient-text M7-h1">Your Profile</h1>
 
-          <legend class="M7-legend M7-gradient-text">
-            Add, Remove or Edit All Your Info
-          </legend>
+        <br>
+        <form action="">
 
-          <div>
+          <fieldset class="M7-fieldset">
 
-            <label for="fname" class="M7-label">First name: </label><br><br>
-            <input type="text" name="fname" id="fname" value="" class="M7-field" required>
+            <table class="M7-table">
+              <tr class="M7-tr">
+                <td class="M7-td">
+                  <img src="../Mahmoud_Khaled/img/Audio & Video Editing.png" alt="User Image" class="M7-p_img">
+                </td>
+                <td class="M7-td">
+                  <button class="M7-p_img_button" onclick="change_img()">Change Profile Image</button>
+                </td>
+                <td class="M7-td">
+                  <button class="M7-p_img_button_clear">Delete</button>
+                </td>
+              </tr>
 
-          </div>
+            </table>
 
+            <!-- <legend class="M7-legend M7-gradient-text">Find all your Personal Info, Certificates and Bio here</legend> -->
+
+            <br>
+
+
+            <div>
+
+              <label for="fname" class="M7-label">Full Name: </label> <br><br>
+              <input type="text" name="fname" id="fname" value="Mahmoud Khaled" class="M7-field" required>
+
+            </div>
+
+            <br>
+            <br>
+
+            <div>
+
+              <label for="pemail" class="M7-label">Personal E-mail: </label> <br><br>
+              <input type="email" name="pemail" id="pemail" value="" class="M7-field" required>
+
+            </div>
+
+            <br>
+            <br>
+
+            <div>
+
+              <label for="bio" class="M7-label">Bio: </label> <br><br>
+              <textarea name="bio" id="bio" cols="40" rows="5" placeholder="Cairo University 2020"
+                class="M7-field"></textarea>
+
+            </div>
+
+
+          </fieldset>
+
+
+          <br><br>
+
+          <fieldset class="M7-fieldset">
+
+            <h1 class="M7-h1 M7-gradient-text">Business Info</h1>
+
+            <br>
+            <div>
+
+              <label for="cname" class="M7-label">Company name: </label> <br><br>
+              <input type="text" name="cname" id="cname" value="" class="M7-field" required>
+
+            </div>
+
+
+            <br>
+            <br>
+
+            <div>
+
+              <label for="bemail" class="M7-label">Business E-mail: </label> <br><br>
+              <input type="email" name="bemail" id="bemail" value="" class="M7-field" required>
+
+            </div>
+
+
+            <br>
+            <br>
+
+            <div>
+
+              <label for="skills" class="M7-label">Skills and Certificates: </label> <br><br>
+              <textarea name="skills" id="skills" cols="40" rows="5" placeholder="frontend Web Developer"
+                class="M7-field"></textarea>
+
+            </div>
+
+
+            <br>
+
+          </fieldset>
 
           <br>
           <br>
 
-          <div>
+          <fieldset class="M7-fieldset">
 
-            <label for="lname" class="M7-label">Last name: </label>
-            <br><br>
-            <input type="text" name="lname" id="lname" value="" class="M7-field" required>
+            <h1 class="M7-h1 M7-gradient-text">Social Media</h1>
 
-          </div>
+            <br>
 
+            <div>
 
-          <br>
-          <br>
+              <label for="net1" class="M7-label">Network 1: </label> <br><br>
+              <input type="text" name="net1" id="net1" value="" class="M7-field" required>
 
-          <div>
+            </div>
 
-            <label for="pemail" class="M7-label">Personal E-mail: </label><br><br>
-            <input type="email" name="pemail" id="pemail" value="" class="M7-field" required>
+            <br>
+            <br>
 
-          </div>
+            <div>
 
+              <label for="net2" class="M7-label">Network 2: </label> <br><br>
+              <input type="text" name="net2" id="net2" value="" class="M7-field">
 
-          <br>
-          <br>
+            </div>
 
-          <div>
+            <br>
+            <br>
 
-            <label for="bemail" class="M7-label">Business E-mail: </label><br><br>
-            <input type="email" name="bemail" id="bemail" value="" class="M7-field" required>
-
-          </div>
+            <button class="M7-p_img_button">+ Add More Networks</button>
 
 
-          <br>
-          <br>
-
-          <div>
-
-            <label for="cname" class="M7-label">Company name: </label><br><br>
-            <input type="text" name="cname" id="cname" value="" class="M7-field" required>
-
-          </div>
-
+          </fieldset>
 
           <br>
           <br>
 
-          <div>
+          <fieldset class="M7-fieldset">
+            <h1 class="M7-h1 M7-gradient-text">Address and Location</h1>
 
-            <label for="skills" class="M7-label">Skills and Certificates: </label> <br><br>
-            <textarea name="skills" id="skills" cols="40" rows="5" placeholder="Add qualifications here"
-              class="M7-field"></textarea>
+            <br>
+            <br>
 
-          </div>
+            <div>
+
+              <label for="address" class="M7-label">Address: </label> <br><br>
+              <input type="text" name="address" id="address" value="" class="M7-field"
+                placeholder="Cowrasta, Chandana, Gazipur, Sadar" required>
+
+            </div>
+
+            <br>
+            <br>
 
 
+            <div>
+
+              <label for="country" class="M7-label">Country: </label> <br><br>
+              <select type="" name="country" id="country" value="" class="M7-field" required>
+                <option value="Egypt">Egypt</option>
+                <option value="Egypt">France</option>
+                <option value="Egypt">Germany</option>
+                <option value="Egypt">Spain</option>
+                <option value="Egypt">Poland</option>
+                <option value="Egypt">Scotland</option>
+                <option value="Egypt">United Kingdom</option>
+
+              </select>
+
+            </div>
+
+            <br>
+            <br>
+
+
+            <div>
+
+              <label for="city" class="M7-label">City: </label> <br><br>
+              <select type="" name="city" id="city" value="" class="M7-field" required>
+                <option value="Egypt">Cairo</option>
+                <option value="Egypt">Paris</option>
+                <option value="Egypt">Berlin</option>
+                <option value="Egypt">Los Angelos</option>
+                <option value="Egypt">New York</option>
+                <option value="Egypt">London</option>
+                <option value="Egypt">Moscow</option>
+              </select>
+
+            </div>
+
+            <br>
+            <br>
+
+
+            <div>
+
+              <label for="zip" class="M7-label">ZIP Code: </label> <br><br>
+              <input type="number" name="zip" id="zip" value="" class="M7-field" required>
+
+            </div>
+
+            <br>
+            <br>
+
+
+            <div>
+
+              <label for="state" class="M7-label">State/Governorat: </label> <br><br>
+              <select type="text" name="state" id="state" value="" class="M7-field" required>
+
+                <option value="Egypt">Cairo</option>
+                <option value="Egypt">Paris</option>
+                <option value="Egypt">Berlin</option>
+                <option value="Egypt">Los Angelos</option>
+                <option value="Egypt">New York</option>
+                <option value="Egypt">London</option>
+                <option value="Egypt">Moscow</option>
+
+              </select>
+
+            </div>
+
+            <br>
+            <br>
+
+
+            <div>
+
+              <label for="location" class="M7-label">Map Location: </label> <br><br>
+              <input type="" name="location" id="location" value="" class="M7-field" required>
+
+            </div>
+
+            <br>
+            <br>
+
+
+          </fieldset>
 
           <br>
-          <br>
 
-          <div>
-
-            <label for="bio" class="M7-label">Bio: </label> <br><br>
-            <textarea name="bio" id="bio" cols="40" rows="5" placeholder="Tell us about yourself"
-              class="M7-field"></textarea>
-
-          </div>
-
-
-
-          <br>
-
-
-          <div class="M7-center">
+          <div class="">
 
             <a href="profile.html">
-              <button type="submit" class="M7-save">Save</button>
+              <button class="M7-edit" type="submit">Save Changes</button>
             </a>
 
+            <a href="profile.html">
+            <button class="M7-p_img_button_clear" type="reset">Cancel</button>
+            </a>
           </div>
 
+        </form>
 
 
-        </fieldset>
 
-      </form>
-
-      <br>
+      </section>
 
     </main>
     <div>
+      <div>
+  </section>
   </section>
   <footer style="max-width: 80%; margin: auto;">
     <center>
@@ -198,6 +346,11 @@
           <td>
             <a href="index.html" style="margin-right: 10px;">Home</a>
           </td>
+
+          <td>
+            <a href="#" style="margin-right: 10px;">Premium</a>
+          </td>
+
           <td>
             <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
@@ -239,6 +392,8 @@
     <br><br>
 
   </footer>
+  </div>
+
   </div>
 
 </body>
