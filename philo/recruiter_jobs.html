@@ -71,72 +71,64 @@
         Your own Jobs 
     </h1>
     <div class="all-jobs">
-        <div class="job job1" id="job job1">
-          <div class="job-id">
-            J1
+      <!-- ------------------------------------------------------------------------------------------------------------ -->
+        <div class="job" id="job1">
+          <div class="job-image-div">
+            <img src="media/front.png" class="job-img">
           </div>
-          <div class="job-name"> 
-            Front-end web development
-          </div> 
-          <div class="edit-delete-buttons">
-            <button type="button" value="Delete" onclick="remove(id)" id="job job1"><img src="media/delete.png"></button>
-            <a href="Edit_Job.html">
-               <button type="button" value="Edit">
-                <img src="media/pencil.png"></button> 
-            </a>
-          </div>
-          <p class="desc"> you will create everything the user can see it on a web page. </p>   
+          <div class="desc">
+            <div class="job-name"> Front-end Web Dvelopment </div> 
+            <div class="salary"> $3500/Monthly</div>
+            <div class="city"> USA, Palo Alto</div>
+            <div class="description">you will create everything the user can see it on a web page. </div>  
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="job1">Delete</button> 
+            <a href="Edit_Job.html" class="edit-ancor"> <button type="button" class="edit-button"  value="Edit">Edit</button></a>
         </div>
-        <div class="job job2" id="job job2">
-          <div class="job-id">
-            J2
-          </div>
-          <div class="job-name">
-             Back-end web development 
-          </div> 
-          <div class="edit-delete-buttons">
-            <button type="button" value="Delete"  onclick="remove(id)" id="job job2"><img src="media/delete.png"></button>
-            <a href="Edit_Job.html">
-               <button type="button" value="Edit">
-                <img src="media/pencil.png"></button> 
-            </a>
-          </div>
-          <p class="desc">you will make it possible to access website information efficiently and securely. </p> 
         </div>
-        <div class="job job3" id="job job3">
-          <div class="job-id">
-            J3
-          </div>
-          <div class="job-name"> 
-            Software Developer 
-          </div> 
-          <div class="edit-delete-buttons">
-            <button type="button" value="Delete"  onclick="remove(id)" id="job job3"><img src="media/delete.png"></button>
-            <a href="Edit_Job.html">
-               <button type="button" value="Edit">
-                <img src="media/pencil.png"></button> 
-            </a>
-          </div>
-          <p class="desc">you will create new software and improve existing software applications. </p> 
+        <!-- ------------------------------------------------------------------------------------------------------------------ -->
+        <div class="job" id="job2">
+          <div class="job-image-div">
+            <img src="media/backend.png" class="job-img">
+          </div>   
+          <div class="desc">
+            <div class="job-name"> Back-end Web Development </div> 
+            <div class="salary"> $3500/Monthly</div>
+            <div class="city"> USA, Palo Alto</div>
+            <div class="description">you will make it possible to access website information efficiently and securely.</div>
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="job2">Delete</button> 
+            <a href="Edit_Job.html" class="edit-ancor"> <button type="button" class="edit-button"  value="Edit">Edit</button></a>   
         </div>
-        <div class="job job4" id="job job4">
-          <div class="job-id">
-            J4
+        </div>
+        <!-- ------------------------------------------------------------------------------------------------------- -->
+        <div class="job " id="job3">
+          <div class="job-image-div">
+            <img src="media/OIP .jpg" class="job-img">
           </div>
-          <div class="job-name">
-            Data Analyst 
-          </div> 
-          <div class="edit-delete-buttons">
-            <button type="button" value="Delete"  onclick="remove(id)" id="job job4"><img src="media/delete.png"></button>
-            <a href="Edit_Job.html">
-               <button type="button" value="Edit">
-                <img src="media/pencil.png"></button> 
-            </a>
+          <div class="desc">
+            <div class="job-name"> Software Developer </div> 
+            <div class="salary"> $3500/Monthly</div>
+            <div class="city"> USA, Palo Alto</div>
+            <div class="description">you will create new software and improve existing software applications.</div>  
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="job3">Delete</button> 
+            <a href="Edit_Job.html" class="edit-ancor"> <button type="button" class="edit-button"  value="Edit">Edit</button></a>    
+        </div>
+        </div>
+        <!-- ------------------------------------------------------------------------------------------------------------- -->
+        <div class="job job4" id="job4">
+          <div class="job-image-div">
+            <img src="media/R.png" class="job-img">
           </div>
-          <p class="desc">you will collect, clean, and interpret data sets in order to answer a question or solve a problem. </p> 
+          <div class="desc">
+            <div class="job-name">Data Analyst </div> 
+            <div class="salary"> $3500/Monthly</div>
+            <div class="city"> USA, Palo Alto</div>
+            <div class="description">you will collect, clean, and interpret data sets in order to answer a question or solve a problem. </div>
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="job4">Delete</button> 
+            <a href="Edit_Job.html" class="edit-ancor"> <button type="button" class="edit-button"  value="Edit">Edit</button></a>      
+        </div>
         </div> 
+        <!-- ----------------------------------------------------------------------------------------------- -->
     </div>
-    <br>
     <div>
       <script src="js/recruiter_jobs.js">
       </script>

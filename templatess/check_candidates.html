@@ -1,163 +1,556 @@
 <!DOCTYPE HTML>
 <!-- ========== Philopater ========== -->
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title> Add New Job</title>
-  <link rel="stylesheet" href="../static/styles.css">
+    <head>
+        <meta charset="UTF-8">
+        <title> List of candidates</title>
+        <link rel="stylesheet" href="../static/styles.css"">
+        <link rel="stylesheet" href="style/List of candidates.css">
   </head>
-  <body style=" margin: 0px;">
-  <header style="background-color: #ccc;">
-    <nav>
-      <table>
-        <tr>
-          <td>
-            <a href="index.html">
-              <img src="media/images/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
-            </a>
-          </td>
-
-          <td>
-            <a href="index.html" style="margin-right: 15px;">Home</a>
-          </td>
-          <td>
-            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
+  <body style="margin: 0px;">
+    <header style="background-color: #ccc;">
+      <nav>
+        <table>
+          <tr>
+            <td>
+              <a href="index.html">
+                <img src="media/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
+              </a>
+            </td>
+  
+            <td>
+              <a href="index.html" style="margin-right: 15px;">Home</a>
+            </td>
+            <td>
+              <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
   
   
               <td>
                 <a href=" signup.html" style="margin-right: 15px;">Sign Up</a>
-          </td>
+            </td>
+  
+            <td>
+              <a href="search.html" style="margin-right: 15px;">Search</a>
+            </td>
+  
+            <td>
+              <a href="login.html" style="margin-right: 15px;">Log In</a>
+            </td>
 
-          <td>
-            <a href="search.html" style="margin-right: 15px;">Search</a>
-          </td>
-
-          <td>
-            <a href="login.html" style="margin-right: 15px;">Log In</a>
-          </td>
-
-          <td>
-            <a href="profile.html" style="margin-right: 30px;">Profile</a>
-          </td>
-
-          <td>
-
-            <form role="search">
-              <input type="search" placeholder="Search a Job" aria-label="Search" />
-              <button type="submit">
-                Search
-              </button>
-            </form>
-
-          </td>
-
-        </tr>
-      </table>
-
-    </nav>
-  </header>
-  <section class="main">
+            <td>
+              <a href="profile.html" style="margin-right: 30px;">Profile</a>
+            </td>
+  
+            <td>
+  
+              <form role="search">
+                <input type="search" placeholder="Search a Job" aria-label="Search" />
+                <button type="submit">
+                  Search
+                </button>
+              </form>
+  
+            </td>
+  
+          </tr>
+        </table>
+  
+      </nav>
+    </header>
+        <section class="main">
     <h1>
-      <u>
         List of candidates
-      </u>
-    </h1>
-    <table border="3">
-      <thead>
-        <td>ID</td>
-        <td>Name of job </td>
-        <td> the candidates</td>
-      </thead>
-      <tr>
-        <td>J1</td>
-        <td> Front-end web development </td>
-        <td>
-          <ol>
-            <li>mohmmed hany </li>
-            <a href="profile.html"><input type="button" value="show more"></a>
-            <input type="button" value="accept">
-            <input type="button" value="reject">
-            <li>ali ahmed</li>
-            <a href="profile.html"><input type="button" value="show more"></a>
-            <input type="button" value="accept">
-            <input type="button" value="reject">
-            <li>jhon aymen</li>
-            <a href="profile.html"><input type="button" value="show more"></a>
-            <input type="button" value="accept">
-            <input type="button" value="reject">
-            <li>mona youseef</li>
-            <input type="button" value="show more">
-            <input type="button" value="accept">
-            <input type="button" value="reject">
-          </ol>
-
-        </td>
-      </tr>
-
-    </table>
-    </div>
-    <div>
-  </section>
-  <footer style="max-width: 80%; margin: auto;">
-    <center>
-
+      </h1>
       <table>
-        <tr>
-          <td>
-            <a href="index.html">
-              <img src="media/images/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
-            </a>
+          <tr class="job">
+              <td class="job-name-column"> Front-end web development </td>
+              <td class="candidates-column"> 
+                  <ol class="candidate-list">
+                    <!-- ------------------------------------------------------------------------------------ -->
+                    <li id="1">                  
+                      <ul class="information">
+                        <img class="img-person" src="media/image.png"> 
+                          <li class="person-name"> Mohmmed Hany </li>
+                          <li class="job-title">Web Development</li>
+                          <li class="skills">
+                              <ul class="skills">
+                                  <li class="skill">HTML</li>
+                                  <li class="skill">CSS</li>
+                                  <li class="skill">java script</li>
+                              </ul>
+                          </li>
+                          <li>
+                            <table class="Salary-location-table">
+                              <tr class="Salary-location-table-header">
+                                <td class="Salary-heade"> Salary </td>
+                                <td class="Location-header">Location</td>
+                              </tr>
+                              <tr class="Salary-location-table-values">
+                                <td class="Salary-value">$45k-$55k/yr</td>
+                                <td class="Location-value">California, US</td>
+                              </tr>
+                            </table>
+                          </li>
+                          <li  class="buttons-list">
+                            <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
+                            <button type="button" value="accept"><img src="media/check-mark.png"></button>
+                            <button type="button" onclick="reject(name)" value="reject" name="1"><img src="media/cancel.png"></button>
+                          </li>
+                      </ul>
+                    </li>
+                    <!-- --------------------------------------------------------------------------------------- -->
+                    <li id="2">
+                             
+                      <ul class="information">
+                        <img class="img-person" src="media/image.png"> 
+                        <li class="person-name"> Ali Ahmed  </li>
+                        <li class="job-title">Web Development</li>
+                        <li class="skills">
+                          <ul class="skills">
+                            <li class="skill">HTML</li>
+                            <li class="skill">CSS</li>
+                            <li class="skill">java script</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <table class="Salary-location-table">
+                            <tr class="Salary-location-table-header">
+                              <td class="Salary-heade"> Salary </td>
+                              <td class="Location-header">Location</td>
+                            </tr>
+                            <tr class="Salary-location-table-values">
+                              <td class="Salary-value">$40k-$50k/yr</td>
+                              <td class="Location-value">California, US</td>
+                            </tr>
+                          </table>
+                        </li>
+                        <li  class="buttons-list">
+                          <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
+                          <button type="button" value="accept"><img src="media/check-mark.png"></button>
+                          <button type="button" onclick="reject(name)" value="reject" name="2"><img src="media/cancel.png"></button>
+                        </li>
+                      </ul>
+                    </li>
+                    <!-- ----------------------------------------------------------------------------------- -->
+                    <li id="3">
+                                                
+                          <ul class="information">
+                            <img class="img-person" src="media/image.png"> 
+                              <li class="person-name">John Aymen </li>
+                              <li class="job-title">Web Development</li>
+                              <li class="skills">
+                                  <ul class="skills">
+                                      <li class="skill">HTML</li>
+                                      <li class="skill">CSS</li>
+                                      <li class="skill">java script</li>
+                                  </ul>
+                              </li>
+                              <li>
+                                <table class="Salary-location-table">
+                                  <tr class="Salary-location-table-header">
+                                    <td class="Salary-heade"> Salary </td>
+                                    <td class="Location-header">Location</td>
+                                  </tr>
+                                  <tr class="Salary-location-table-values">
+                                    <td class="Salary-value">$50k-$60k/yr</td>
+                                    <td class="Location-value">California, US</td>
+                                  </tr>
+                                </table>
+                              </li>
+                              <li  class="buttons-list">
+                                <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
+                                <button type="button" value="accept"><img src="media/check-mark.png"></button>
+                                <button type="button" onclick="reject(name)" value="reject" name="3"><img src="media/cancel.png"></button>
+                                
+                              </li>
+                          </ul>
+                        </li>
+                        <!-- ----------------------------------------------------------------------------------- -->
+                          <li id="4">
+                                                    
+                              <ul class="information">
+                                <img class="img-person" src="media/image.png"> 
+                                  <li class="person-name"> Mona Youseef  </li>
+                                  <li class="job-title">Web Development</li>
+                                  <li class="skills">
+                                      <ul class="skills">
+                                          <li class="skill">HTML</li>
+                                          <li class="skill">CSS</li>
+                                          <li class="skill">java script</li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                    <table class="Salary-location-table">
+                                      <tr class="Salary-location-table-header">
+                                        <td class="Salary-heade"> Salary </td>
+                                        <td class="Location-header">Location</td>
+                                      </tr>
+                                      <tr class="Salary-location-table-values">
+                                        <td class="Salary-value">$45k-$55k/yr</td>
+                                        <td class="Location-value">California, US</td>
+                                      </tr>
+                                    </table>
+                                  </li>
+                                  <li  class="buttons-list">
+                                    <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
+                                    <button type="button" value="accept"><img src="media/check-mark.png"></button>
+                                    <button type="button" onclick="reject(name)" value="reject" name="4"><img src="media/cancel.png"></button>
+                                    
+                                  </li>
+                              </ul>
+                                                  
+                            </li>
+                            <!-- ----------------------------------------------------------------------------------- -->
+                            <li id="5">                        
+                              <ul class="information">
+                                <img class="img-person" src="media/image.png"> 
+                                  <li class="person-name"> Hoda Youseef  </li>
+                                  <li class="job-title">Web Development</li>
+                                  <li class="skills">
+                                      <ul class="skills">
+                                          <li class="skill">HTML</li>
+                                          <li class="skill">CSS</li>
+                                          <li class="skill">java script</li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                    <table class="Salary-location-table">
+                                      <tr class="Salary-location-table-header">
+                                        <td class="Salary-heade"> Salary </td>
+                                        <td class="Location-header">Location</td>
+                                      </tr>
+                                      <tr class="Salary-location-table-values">
+                                        <td class="Salary-value">$45k-$55k/yr</td>
+                                        <td class="Location-value">California, US</td>
+                                      </tr>
+                                    </table>
+                                  </li>
+                                  <li  class="buttons-list">
+                                    <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
+                                    <button type="button" value="accept"><img src="media/check-mark.png"></button>
+                                    <button type="button" onclick="reject(name)" value="reject" name="5"><img src="media/cancel.png"></button>
+                                    
+                                  </li>
+                              </ul>
+                                                  
+                            </li>
+                            <!-- ------------------------------------------------------------------------------------------- -->
+                            <li id="6">
+                                                    
+                              <ul class="information">
+                                <img class="img-person" src="media/image.png"> 
+                                  <li class="person-name"> Noha Youseef  </li>
+                                  <li class="job-title">Web Development</li>
+                                  <li class="skills">
+                                      <ul class="skills">
+                                          <li class="skill">HTML</li>
+                                          <li class="skill">CSS</li>
+                                          <li class="skill">java script</li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                    <table class="Salary-location-table">
+                                      <tr class="Salary-location-table-header">
+                                        <td class="Salary-heade"> Salary </td>
+                                        <td class="Location-header">Location</td>
+                                      </tr>
+                                      <tr class="Salary-location-table-values">
+                                        <td class="Salary-value">$45k-$55k/yr</td>
+                                        <td class="Location-value">California, US</td>
+                                      </tr>
+                                    </table>
+                                  </li>
+                                  <li  class="buttons-list">
+                                    <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
+                                    <button type="button" value="accept"><img src="media/check-mark.png"></button>
+                                    <button type="button" onclick="reject(name)" value="reject" name="6"><img src="media/cancel.png"></button>
+                                    
+                                  </li>
+                              </ul>
+                                                  
+                            </li>
+                            
+                            
+                  </ol>
+                 
+              </td>
+          </tr>
+          <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+          <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+          <tr class="job">
+            <td class="job-name-column"> Back-end web development </td>
+            <td class="candidates-column"> 
+              <ol class="candidate-list">
+                <li id="j1">                  
+                  <ul class="information">
+                    <img class="img-person" src="media/image.png"> 
+                      <li class="person-name"> Mohmmed Hany </li>
+                      <li class="job-title">Web Development</li>
+                      <li class="skills">
+                          <ul class="skills">
+                              <li class="skill">HTML</li>
+                              <li class="skill">CSS</li>
+                              <li class="skill">java script</li>
+                          </ul>
+                      </li>
+                      <li>
+                        <table class="Salary-location-table">
+                          <tr class="Salary-location-table-header">
+                            <td class="Salary-heade"> Salary </td>
+                            <td class="Location-header">Location</td>
+                          </tr>
+                          <tr class="Salary-location-table-values">
+                            <td class="Salary-value">$45k-$55k/yr</td>
+                            <td class="Location-value">California, US</td>
+                          </tr>
+                        </table>
+                      </li>
+                      <li  class="buttons-list">
+                        <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
+                        <button type="button" value="accept"><img src="media/check-mark.png"></button>
+                        <button type="button" onclick="reject(name)" value="reject" name="j1"><img src="media/cancel.png"></button>
+                      </li>
+                  </ul>
+                </li>
+                <!-- -------------------------------------------------------------------------------------------------- -->
+                <li id="j2">
+                         
+                  <ul class="information">
+                    <img class="img-person" src="media/image.png"> 
+                    <li class="person-name"> Ali Ahmed  </li>
+                    <li class="job-title">Web Development</li>
+                    <li class="skills">
+                      <ul class="skills">
+                        <li class="skill">HTML</li>
+                        <li class="skill">CSS</li>
+                        <li class="skill">java script</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <table class="Salary-location-table">
+                        <tr class="Salary-location-table-header">
+                          <td class="Salary-heade"> Salary </td>
+                          <td class="Location-header">Location</td>
+                        </tr>
+                        <tr class="Salary-location-table-values">
+                          <td class="Salary-value">$40k-$50k/yr</td>
+                          <td class="Location-value">California, US</td>
+                        </tr>
+                      </table>
+                    </li>
+                    <li  class="buttons-list">
+                      <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
+                      <button type="button" value="accept"><img src="media/check-mark.png"></button>
+                      <button type="button" onclick="reject(name)" value="reject" name="j2"><img src="media/cancel.png"></button>
+                    </li>
+                  </ul>
+                </li>
+                <!-- ----------------------------------------------------------------------------------------------------- -->
+                <li id="j3">
+                                            
+                      <ul class="information">
+                        <img class="img-person" src="media/image.png"> 
+                          <li class="person-name">John Aymen </li>
+                          <li class="job-title">Web Development</li>
+                          <li class="skills">
+                              <ul class="skills">
+                                  <li class="skill">HTML</li>
+                                  <li class="skill">CSS</li>
+                                  <li class="skill">java script</li>
+                              </ul>
+                          </li>
+                          <li>
+                            <table class="Salary-location-table">
+                              <tr class="Salary-location-table-header">
+                                <td class="Salary-heade"> Salary </td>
+                                <td class="Location-header">Location</td>
+                              </tr>
+                              <tr class="Salary-location-table-values">
+                                <td class="Salary-value">$50k-$60k/yr</td>
+                                <td class="Location-value">California, US</td>
+                              </tr>
+                            </table>
+                          </li>
+                          <li  class="buttons-list">
+                            <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
+                            <button type="button" value="accept"><img src="media/check-mark.png"></button>
+                            <button type="button" onclick="reject(name)" value="reject" name="j3"><img src="media/cancel.png"></button>
+                            
+                          </li>
+                      </ul>
+                    </li>
+                    <!-- ---------------------------------------------------------------------------------------------------- -->
+                      <li id="j4">
+                                                
+                          <ul class="information">
+                            <img class="img-person" src="media/image.png"> 
+                              <li class="person-name"> Mona Youseef  </li>
+                              <li class="job-title">Web Development</li>
+                              <li class="skills">
+                                  <ul class="skills">
+                                      <li class="skill">HTML</li>
+                                      <li class="skill">CSS</li>
+                                      <li class="skill">java script</li>
+                                  </ul>
+                              </li>
+                              <li>
+                                <table class="Salary-location-table">
+                                  <tr class="Salary-location-table-header">
+                                    <td class="Salary-heade"> Salary </td>
+                                    <td class="Location-header">Location</td>
+                                  </tr>
+                                  <tr class="Salary-location-table-values">
+                                    <td class="Salary-value">$45k-$55k/yr</td>
+                                    <td class="Location-value">California, US</td>
+                                  </tr>
+                                </table>
+                              </li>
+                              <li  class="buttons-list">
+                                <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
+                                <button type="button" value="accept"><img src="media/check-mark.png"></button>
+                                <button type="button" onclick="reject(name)" value="reject" name="j4"><img src="media/cancel.png"></button>
+                                
+                              </li>
+                          </ul>
+                                              
+                        </li>
+                        <!-- ----------------------------------------------------------------------------------------------------- -->
+                        <li id="j5">                        
+                          <ul class="information">
+                            <img class="img-person" src="media/image.png"> 
+                              <li class="person-name"> Hoda Youseef  </li>
+                              <li class="job-title">Web Development</li>
+                              <li class="skills">
+                                  <ul class="skills">
+                                      <li class="skill">HTML</li>
+                                      <li class="skill">CSS</li>
+                                      <li class="skill">java script</li>
+                                  </ul>
+                              </li>
+                              <li>
+                                <table class="Salary-location-table">
+                                  <tr class="Salary-location-table-header">
+                                    <td class="Salary-heade"> Salary </td>
+                                    <td class="Location-header">Location</td>
+                                  </tr>
+                                  <tr class="Salary-location-table-values">
+                                    <td class="Salary-value">$45k-$55k/yr</td>
+                                    <td class="Location-value">California, US</td>
+                                  </tr>
+                                </table>
+                              </li>
+                              <li  class="buttons-list">
+                                <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
+                                <button type="button" value="accept"><img src="media/check-mark.png"></button>
+                                <button type="button" onclick="reject(name)" value="reject" name="j5"><img src="media/cancel.png"></button>
+                                
+                              </li>
+                          </ul>
+                                              
+                        </li>
+                        <!-- ----------------------------------------------------------------------------------------- -->
+                        <li id="j6">
+                                                
+                          <ul class="information">
+                            <img class="img-person" src="media/image.png"> 
+                              <li class="person-name"> Noha Youseef  </li>
+                              <li class="job-title">Web Development</li>
+                              <li class="skills">
+                                  <ul class="skills">
+                                      <li class="skill">HTML</li>
+                                      <li class="skill">CSS</li>
+                                      <li class="skill">java script</li>
+                                  </ul>
+                              </li>
+                              <li>
+                                <table class="Salary-location-table">
+                                  <tr class="Salary-location-table-header">
+                                    <td class="Salary-heade"> Salary </td>
+                                    <td class="Location-header">Location</td>
+                                  </tr>
+                                  <tr class="Salary-location-table-values">
+                                    <td class="Salary-value">$45k-$55k/yr</td>
+                                    <td class="Location-value">California, US</td>
+                                  </tr>
+                                </table>
+                              </li>
+                              <li  class="buttons-list">
+                                <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
+                                <button type="button" value="accept"><img src="media/check-mark.png"></button>
+                                <button type="button" onclick="reject(name)" value="reject" name="j6"><img src="media/cancel.png"></button>
+                                
+                              </li>
+                          </ul>
+                                              
+                        </li>
+                        
+                        <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+              </ol>
+             
           </td>
+        </tr>
+      </table> 
+      </div>
+  <div>
+      </section>
+    <footer style="max-width: 80%; margin: auto;">
+      <center>
+        
+        <table>
+          <tr>
+            <td>
+              <a href="index.html">
+                <img src="media/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
+              </a>
+            </td>
 
-          <td>
-            <a href="index.html" style="margin-right: 10px;">Home</a>
-          </td>
-          <td>
-            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
+            <td>
+              <a href="index.html" style="margin-right: 10px;">Home</a>
+            </td>
+            <td>
+              <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
   
 
             <td>
-              <a href=" search.html" style="margin-right: 10px;">Search</a>
-          </td>
+              <a href="search.html" style="margin-right: 10px;">Search</a>
+            </td>
 
-        </tr>
-      </table>
+          </tr>
+        </table>
+        
 
+        <hr>
+        <p>
+          © 2024 Career Compass, Inc
+        </p>
+        <p>
+          Developed and Maintained by
+        </p>
+        <p>
+          <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
 
-      <hr>
-      <p>
-        © 2024 Career Compass, Inc
-      </p>
-      <p>
-        Developed and Maintained by
-      </p>
-      <p>
-        <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
+          &nbsp;•&nbsp;
 
-        &nbsp;•&nbsp;
+          <a href="https://github.com/philokaram">Philopater Karam</a>
 
-        <a href="https://github.com/philokaram">Philopater Karam</a>
+          &nbsp;•&nbsp;
 
-        &nbsp;•&nbsp;
+          <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
 
-        <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
+          &nbsp;•&nbsp;
 
-        &nbsp;•&nbsp;
+          <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
 
-        <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
+        </p>
+      </center>
 
-      </p>
-    </center>
+      <br><br>
 
-    <br><br>
-
-  </footer>
+    </footer>
   </div>
+<script src="js/check_candidates.js"></script>
 
-
-  </body>
-
+    </body>
 </html>
