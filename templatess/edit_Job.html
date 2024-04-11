@@ -1,170 +1,206 @@
 <!DOCTYPE HTML>
 <!-- ========== Philopater ========== -->
 <html lang="en">
-
-<head>
-  <meat charset="UTF-8">
-    <title> Edit Job</title>
+    <head>
+        <meat charset="UTF-8">
+        <title> Edit Job</title>
     <link rel="stylesheet" href="../static/styles.css">
-</head>
+    <link rel="stylesheet" href="../static/css/edit_job.css">
+      <link rel="stylesheet" href="../static/index.css">
+  </head>
+  <body style="margin: 0px;">
 
-<body style="margin: 0px;">
-  <header style="background-color: #ccc;">
-    <nav>
-      <table>
-        <tr>
-          <td>
-            <a href="index.html">
-              <img src="media/images/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
-            </a>
-          </td>
+  <header class="J9_header">
+    <a href="index.html" class="J9_header_logo">
+      <img class="J9_header_logo" src="../media/images/logopng.png" />
+    </a>
 
-          <td>
-            <a href="index.html" style="margin-right: 15px;">Home</a>
-          </td>
-          <td>
-            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
-              </td>
-  
-  
-              <td>
-                <a href=" signup.html" style="margin-right: 15px;">Sign Up</a>
-          </td>
+    <nav class="J9_nav_in_header">
+        <ul class="J9_nav_ul_in_header">
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Dashboard</a>
+            <div class="J9_nav_ul_item_dashboard_in_header">
+              <ul class="J9_nav_ul_ul_in_header">
+                <li class="J9_nav_ul_ul_item_in_header">
+                  <a href="#" target="_blank">Candidate Dashboard</a>
+                </li>
+                <li class="J9_nav_ul_ul_item_in_header">
+                  <a href="#" target="_blank">Employer Dashboard</a>
+                </li>
+              </ul>
+            </div>
+          </li>
 
-          <td>
-            <a href="search.html" style="margin-right: 15px;">Search</a>
-          </td>
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Home</a>
+          </li>
 
-          <td>
-            <a href="login.html" style="margin-right: 15px;">Log In</a>
-          </td>
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Job</a>
+            <ul class="J9_nav_ul_ul_in_header">
+              <li class="J9_nav_ul_ul_item_in_header">
+                <a href="#">Job List</a>
+              </li>
+            </ul>
+          </li>
 
-          <td>
-            <a href="profile.html" style="margin-right: 30px;">Profile</a>
-          </td>
+          <li class="J9_nav_ul_item_in_header J9_explore">
+            <a href="#">Explore</a>
+            <div class="J9_explore_cols">
+              <div class="J9_explore_col">
+                <a href="#">Candidates</a>
+              </div>
 
-          <td>
+              <div class="J9_explore_col">
+                <a href="#">Company</a></p>
+              </div>
 
-            <form role="search">
-              <input type="search" placeholder="Search a Job" aria-label="Search" />
-              <button type="submit">
-                Search
-              </button>
-            </form>
+              <div class="J9_explore_col">
+                Essential
+                <ul class="J9_nav_ul_ul_explore_in_header">
+                  <li class="J9_nav_ul_ul_item_in_header">
+                    <a href="#">About Us</a>
+                  </li>
+                  <li class="J9_nav_ul_ul_item_in_header">
+                    <a href="#">Register</a>
+                  </li>
+                  <li class="J9_nav_ul_ul_item_in_header">
+                    <a href="#">404 Error</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
 
-          </td>
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Contact</a>
+          </li>
 
-        </tr>
-      </table>
+          <li class="J9_nav_ul_item_in_header">
+            <a href="../post_new_job/Post_a_New_Job.html">Post a job</a>
+          </li>
 
+        </ul>
     </nav>
+
+    <div class="J9_login_signup">
+      <ul class="J9_login_signup_ul">
+        <li><a href="#">Login/Sign up</a></li>
+        <li><a href="../post_new_job/Post_a_New_Job.html">Post a job</a></li>
+      </ul>
+    </div>
   </header>
-  <section class="main">
-    <h1>
-      <u>
+
+
+
+        <section class="main">
+    <h1 id="h1-edit-job">
         Edit Job
-      </u>
     </h1>
-    <form>
-      <label for="id"> ID </label>
-      <input type="text" id="id" name="id" placeholder="Enter the Job Id" value="Static number" readonly>
-      <br> <br>
+    <div>       
+      <form>
+          <label for="id"> ID </label>
+          <br>
+          <input type="text" id="id" name="id" class="input-box" placeholder="Enter the Job Id" value="Static number" readonly>
+          
+          <label for="job title"> Job Title </label>
+          <br>
+          <input type="text" id="job title" name="job title" class="input-box" placeholder="Enter the Job Title" required>
+          <br> <br>
 
-      <label for="job title"> Job Title </label>
-      <input type="text" id="job title" name="job title" placeholder="Enter the Job Title" required>
-      <br> <br>
+          <label for="company name"> Company Name </label>
+          <br>
+          <input type="text" id="company name" name="company name" class="input-box" placeholder="Enter the company name" required >
+          <br> <br>
 
-      <label for="company name"> Company Name </label>
-      <input type="text" id="company name" name="company name" placeholder="Enter the company name" required>
-      <br> <br>
+          <label for="years of experience"> Years Of Experience </label>
+          <br>
+          <input type="number" id="years of experience" class="input-box" name="years of experience" placeholder="Enter the number of years of experience">
+          <br> <br>
 
-      <label for="years of experience"> Years Of Experience </label>
-      <input type="number" id="years of experience" name="years of experience"
-        placeholder="Enter the number of years of experience">
-      <br> <br>
+          <label for="salary"> Salary </label>
+          <br>
+          <input type="number" id="salary" name="salary" class="input-box" placeholder="Enter the Salary">
+          <br> <br>
+      
+          <label >Job Status :  </label>
+          <input type="radio" id="open" name="job status" value="open">
+          <label for="open">Open</label>
+          
+          <input type="radio" id="closed" name="job status" value="closed">
+          <label for="closed">Closed</label>
+          <br> <br>
+          
+          <label for="description"> Description </label>
+          <br>
+          <textarea id="description" name="description"  placeholder="Enter the description" class="input-box"  > </textarea>
+          <br> <br>
+          
+          <p id="created by"> created by <span id="username"> user name </span> </p>
+          
+          <input type="submit" value="save" id="boutton-save">
+      </form>
+    </div>
+  <div>
+      </section>
+    <footer style="max-width: 80%; margin: auto;">
+      <center>
+        
+        <table>
+          <tr>
+            <td>
+              <a href="index.html">
+                <img src="media/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
+              </a>
+            </td>
 
-      <label for="salary"> Salary </label>
-      <input type="text" id="salary" name="salary" placeholder="Enter the Salary">
-      <br> <br>
+            <td>
+              <a href="index.html" style="margin-right: 10px;">Home</a>
+            </td>
 
-      <label>Job Status </label>
-
-      <input type="radio" id="open" name="job status" value="open">
-      <label for="open">Open</label>
-
-      <input type="radio" id="closed" name="job status" value="closed">
-      <label for="closed">Closed</label>
-      <br> <br>
-      <label for="description"> Description </label>
-      <textarea id="description" name="description" placeholder="Enter the description" rows="8" cols="25"></textarea>
-      <br> <br>
-
-      <label for="created by"> created by </label>
-      <input type="text" id="created by" name="created by" value="User name" readonly>
-      <br> <br>
-      <input type="submit">
-    </form>
-    <div>
-  </section>
-  <footer style="max-width: 80%; margin: auto;">
-    <center>
-
-      <table>
-        <tr>
-          <td>
-            <a href="index.html">
-              <img src="media/images/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
-            </a>
-          </td>
-
-          <td>
-            <a href="index.html" style="margin-right: 10px;">Home</a>
-          </td>
-
-          <td>
-            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
+            <td>
+              <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
   
 
             <td>
-              <a href=" search.html" style="margin-right: 10px;">Search</a>
-          </td>
+              <a href="search.html" style="margin-right: 10px;">Search</a>
+            </td>
 
-        </tr>
-      </table>
+          </tr>
+        </table>
+        
 
+        <hr>
+        <p>
+          © 2024 Career Compass, Inc
+        </p>
+        <p>
+          Developed and Maintained by
+        </p>
+        <p>
+          <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
 
-      <hr>
-      <p>
-        © 2024 Career Compass, Inc
-      </p>
-      <p>
-        Developed and Maintained by
-      </p>
-      <p>
-        <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
+          &nbsp;•&nbsp;
 
-        &nbsp;•&nbsp;
+          <a href="https://github.com/philokaram">Philopater Karam</a>
 
-        <a href="https://github.com/philokaram">Philopater Karam</a>
+          &nbsp;•&nbsp;
 
-        &nbsp;•&nbsp;
+          <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
 
-        <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
+          &nbsp;•&nbsp;
 
-        &nbsp;•&nbsp;
+          <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
 
-        <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
+        </p>
+      </center>
 
-      </p>
-    </center>
+      <br><br>
 
-    <br><br>
-
-  </footer>
+    </footer>
   </div>
 
 
-</body>
-
+    </body>
 </html>

@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up</title>
   <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/index.css">
 
   <style>
     form div {
@@ -18,55 +19,87 @@
 </head>
 
 <body style="margin: 0px;">
-  <header style="background-color: #ccc;">
-    <nav>
-      <table>
-        <tr>
-          <td>
-            <a href="index.html">
-              <img src="media/images/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
-            </a>
-          </td>
+  <header class="J9_header">
+    <a href="index.html" class="J9_header_logo">
+      <img class="J9_header_logo" src="../media/images/logopng.png" />
+    </a>
 
-          <td>
-            <a href="index.html" style="margin-right: 15px;">Home</a>
-          </td>
-          <td>
-            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
-              </td>
-  
-              <td>
-                <a href=" signup.html" style="margin-right: 15px;">Sign Up</a>
-          </td>
+    <nav class="J9_nav_in_header">
+        <ul class="J9_nav_ul_in_header">
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Dashboard</a>
+            <div class="J9_nav_ul_item_dashboard_in_header">
+              <ul class="J9_nav_ul_ul_in_header">
+                <li class="J9_nav_ul_ul_item_in_header">
+                  <a href="#" target="_blank">Candidate Dashboard</a>
+                </li>
+                <li class="J9_nav_ul_ul_item_in_header">
+                  <a href="#" target="_blank">Employer Dashboard</a>
+                </li>
+              </ul>
+            </div>
+          </li>
 
-          <td>
-            <a href="search.html" style="margin-right: 15px;">Search</a>
-          </td>
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Home</a>
+          </li>
 
-          <td>
-            <a href="login.html" style="margin-right: 15px;">Log In</a>
-          </td>
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Job</a>
+            <ul class="J9_nav_ul_ul_in_header">
+              <li class="J9_nav_ul_ul_item_in_header">
+                <a href="#">Job List</a>
+              </li>
+            </ul>
+          </li>
 
-          <td>
-            <a href="profile.html" style="margin-right: 30px;">Profile</a>
-          </td>
+          <li class="J9_nav_ul_item_in_header J9_explore">
+            <a href="#">Explore</a>
+            <div class="J9_explore_cols">
+              <div class="J9_explore_col">
+                <a href="#">Candidates</a>
+              </div>
 
-          <td>
+              <div class="J9_explore_col">
+                <a href="#">Company</a></p>
+              </div>
 
-            <form role="search">
-              <input type="search" placeholder="Search a Job" aria-label="Search" />
-              <button type="submit">
-                Search
-              </button>
-            </form>
+              <div class="J9_explore_col">
+                Essential
+                <ul class="J9_nav_ul_ul_explore_in_header">
+                  <li class="J9_nav_ul_ul_item_in_header">
+                    <a href="#">About Us</a>
+                  </li>
+                  <li class="J9_nav_ul_ul_item_in_header">
+                    <a href="#">Register</a>
+                  </li>
+                  <li class="J9_nav_ul_ul_item_in_header">
+                    <a href="#">404 Error</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
 
-          </td>
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Contact</a>
+          </li>
 
-        </tr>
-      </table>
+          <li class="J9_nav_ul_item_in_header">
+            <a href="../post_new_job/Post_a_New_Job.html">Post a job</a>
+          </li>
 
+        </ul>
     </nav>
+
+    <div class="J9_login_signup">
+      <ul class="J9_login_signup_ul">
+        <li><a href="#">Login/Sign up</a></li>
+        <li><a href="../post_new_job/Post_a_New_Job.html">Post a job</a></li>
+      </ul>
+    </div>
   </header>
+
   <section class="main">
 
 

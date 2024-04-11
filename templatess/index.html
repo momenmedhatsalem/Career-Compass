@@ -1,166 +1,252 @@
 <!DOCTYPE html>
 <!-- ========== Joseph 20220099 ========== -->
-<html lang="en">
+<html class="J9" lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/index.css">
+
   <title>Document</title>
   <link rel="stylesheet" href="../static/styles.css">
 </head>
 
-<body style="margin: 0px;">
-  <header style="background-color: #ccc;">
-    <nav>
-      <table>
-        <tr>
-          <td>
-            <a href="index.html">
-              <img src="media/images/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
-            </a>
-          </td>
+<body class="J9_body">
+  <header class="J9_header">
+    <a href="index.html" class="J9_header_logo">
+      <img class="J9_header_logo" src="../media/images/logopng.png" />
+    </a>
 
-          <td>
-            <a href="index.html" style="margin-right: 15px;">Home</a>
-          </td>
-          <td>
-            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
-              </td>
-  
-              <td>
-                <a href=" signup.html" style="margin-right: 15px;">Sign Up</a>
-          </td>
+    <nav class="J9_nav_in_header">
+        <ul class="J9_nav_ul_in_header">
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Dashboard</a>
+            <div class="J9_nav_ul_item_dashboard_in_header">
+              <ul class="J9_nav_ul_ul_in_header">
+                <li class="J9_nav_ul_ul_item_in_header">
+                  <a href="#" target="_blank">Candidate Dashboard</a>
+                </li>
+                <li class="J9_nav_ul_ul_item_in_header">
+                  <a href="#" target="_blank">Employer Dashboard</a>
+                </li>
+              </ul>
+            </div>
+          </li>
 
-          <td>
-            <a href="search.html" style="margin-right: 15px;">Search</a>
-          </td>
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Home</a>
+          </li>
 
-          <td>
-            <a href="login.html" style="margin-right: 15px;">Log In</a>
-          </td>
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Job</a>
+            <ul class="J9_nav_ul_ul_in_header">
+              <li class="J9_nav_ul_ul_item_in_header">
+                <a href="#">Job List</a>
+              </li>
+            </ul>
+          </li>
 
-          <td>
-            <a href="profile.html" style="margin-right: 30px;">Profile</a>
-          </td>
+          <li class="J9_nav_ul_item_in_header J9_explore">
+            <a href="#">Explore</a>
+            <div class="J9_explore_cols">
+              <div class="J9_explore_col">
+                <a href="#">Candidates</a>
+              </div>
 
-          <td>
+              <div class="J9_explore_col">
+                <a href="#">Company</a></p>
+              </div>
 
-            <form role="search">
-              <input type="search" placeholder="Search a Job" aria-label="Search" />
-              <button type="submit">
-                Search
-              </button>
-            </form>
+              <div class="J9_explore_col">
+                Essential
+                <ul class="J9_nav_ul_ul_explore_in_header">
+                  <li class="J9_nav_ul_ul_item_in_header">
+                    <a href="#">About Us</a>
+                  </li>
+                  <li class="J9_nav_ul_ul_item_in_header">
+                    <a href="#">Register</a>
+                  </li>
+                  <li class="J9_nav_ul_ul_item_in_header">
+                    <a href="#">404 Error</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
 
-          </td>
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Contact</a>
+          </li>
 
-        </tr>
-      </table>
+          <li class="J9_nav_ul_item_in_header">
+            <a href="../post_new_job/Post_a_New_Job.html">Post a job</a>
+          </li>
 
+        </ul>
     </nav>
-  </header>
-  <section class="main">
-    <div>
 
-      <div>
-        <h1>Find & Hire Experts for any Job.</h1>
-        <p>
-          Unlock your potential with quality job & earn from world leading
-          brands.
-        </p>
+    <div class="J9_login_signup">
+      <ul class="J9_login_signup_ul">
+        <li><a href="#">Login/Sign up</a></li>
+        <li><a href="../post_new_job/Post_a_New_Job.html">Post a job</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!---------------------------------------------------------------->
+  <section class="J9_main">
+    <div class="J9_row">
+      <h1 class="J9_row_topic_sentence">Find & Hire Experts for any Job.</h1>
+      <p class="J9_row_quoted_text">
+        Unlock your potential with quality job & earn from world leading
+        brands.
+      </p>
+    </div>
+
+    <!---------------------------------------------------------------------------->
+    <section class="J9_category_section">
+      <div class="J9_category_section_row">
+        <div class="J9_category_title">
+          <h2>Most Demanding Categories.</h2>
+        </div>
+        <div class="J9_category_explore">
+          <a href="#"><u>Explore all fields</u> ></a>
+        </div>
       </div>
 
-      <!---------------------------------------------------------------->
-
-      <section>
-        <div>
-          <div>
-            <div>
-              <h2>Most Demanding Categories.</h2>
-            </div>
-            <div>
-              <a href="list_of_jobs.html">Explore all fields</a>
-            </div>
+      <div class="J9_category_section_categories">
+        <a href="#">
+          <div class="J9_category_section_category">
+            <div>UI/UX Design</div>
           </div>
-
-          <div>
-            <div>
-              <div>UI/UX Design</div>
-            </div>
-            <div>
-              <div>Development</div>
-            </div>
-            <div>
-              <div>Marketing</div>
-            </div>
-            <div>
-              <div>Telemarketing</div>
-            </div>
-            <div>
-              <div>Accounting</div>
-            </div>
-            <div>
-              <div>Editing</div>
-            </div>
+        </a>
+        <a href="#">
+          <div class="J9_category_section_category">
+            <div>Development</div>
           </div>
+        </a>
+        <a href="#">
+          <div class="J9_category_section_category">
+            <div>Marketing</div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="J9_category_section_category">
+            <div>Telemarketing</div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="J9_category_section_category">
+            <div>Accounting</div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="J9_category_section_category">
+            <div>Editing</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!------------------------------------------------------------------------------------------->
+
+    <section class="J9_trending_job_section">
+      <div class="J9_trending_job_section_title">
+        <h2>Trending Job</h2>
+      </div>
+      <div class="J9_trending_jobs">
+        <a href="#" class="J9_trending_job" id="audio_video_diting">
+          <div>Audio & <br> Video Editing</div>
+        </a>
+        <a href="#" class="J9_trending_job" id="product_branding_design">
+          <div>Product & <br> Branding Design</div>
+        </a>
+        <a href="#" class="J9_trending_job" id="admin_customer_support">
+          <div>Admin & <br> Customer Support</div>
+        </a>
+        <a href="#" class="J9_trending_job" id="wordpress_development">
+          <div>WordPress <br>Development</div>
+        </a>
+      </div>
+    </section>
+    <br />
+    <!---------------------------------------------------------------->
+
+    <section class="J9_do_yo_want_to_post_section">
+      <div>
+        Do you want to post a job for your company? <span>We can help.</span>
+        <a href="signup.html">Click here</a>
+      </div>
+    </section>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <section class="J9_complete_job_portal_section">
+      <div>
+        <div class="J9_complete_job_portal">
+          <h2>Complete job <br> portal for everyone.</h2>
         </div>
-      </section>
-
-      <!---------------------------------------------------------------->
-
-      <section>
-        <div>
-          <div>
-            <h2>Trending Job</h2>
-          </div>
-          <div>
-            <div>
-              <div>Audio & Video Editing.</div>
-            </div>
-            <div>
-              <div>Product & Branding Design</div>
-            </div>
-            <div>
-              <div>Admin & Customer Support</div>
-            </div>
-            <div>
-              <div>WordPress Development.</div>
-            </div>
-          </div>
+        <div class="J9_complete_job_portal_section_find">
+          <p>Find your dream job & earn from all world the leading brands.</p>
+          <ul>
+            <li><a href="#">Looking for job?</a></li>
+            <!-- go to job list -->
+            <li><a href="#">Start Hiring</a></li>
+            <!--  go to candidate/recruitment page -->
+          </ul>
         </div>
-      </section>
-      <br />
-      <!---------------------------------------------------------------->
-
-      <section>
-        <div>
-          Do you want to post a job for your company? We can help.
-          <a href="signup.html">Click here</a>
-        </div>
-      </section>
-
-      <!------------------------------------------------------------------------------------------------------------------------------------------------>
-      <section>
-        <div>
-          <div>
-            <h2>Complete job portal for everyone.</h2>
-          </div>
-          <div>
-            <p>Find your dream job & earn from all world the leading brands.</p>
-            <ul>
-              <li><a href="signup.html">Looking for job?</a></li>
-              <!-- go to job list -->
-              <li><a href="login.html">Start Hiring</a></li>
-              <!--  go to candidate/recruitment page -->
-            </ul>
-          </div>
-        </div>
-      </section>
-      <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    </div>
-    <div>
+      </div>
+    </section>
   </section>
-  <footer style="max-width: 80%; margin: auto;">
+
+
+  <section class="J9_footer">
+    <div class="J9_footer_row">
+      <div class="J9_footer_logo_col">
+        <a href="index.html">
+          <img class="J9_footer_logo" src="../media/images/logopng.png" width="100px" />
+        </a>
+      </div>
+      <div class="J9_footer_cols">
+        <div class="J9_footer_col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#">Browse Jobs</a></li>
+            <li><a href="#">Companies</a></li>
+            <li><a href="#">Candidates</a></li>
+          </ul>
+        </div>
+        <div class="J9_footer_col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="J9_footer_col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">Terms of use</a></li>
+            <li><a href="#">Terms & conditions</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="J9_footer_privacy_contact">
+      <ul class="J9_footer_privacy_contact_ul">
+        <li><a href="#">Privacy & Terms.</a></li>
+        <li><a href="#"> Contact Us</a></li>
+      </ul>
+      <p>
+        © 2024 Career Compass, Inc
+      </p>
+    </div>
+  </section>
+
+
+
+  <!-- <footer style="max-width: 80%; margin: auto;">
     <center>
 
       <table>
@@ -215,9 +301,7 @@
 
     <br><br>
 
-  </footer>
-  </div>
-
+  </footer> -->
 
 </body>
 
