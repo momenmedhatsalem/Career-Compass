@@ -1,201 +1,195 @@
 <!DOCTYPE HTML>
 <!-- ========== Philopater ========== -->
 <html lang="en">
-
-<head>
-  <meat charset="UTF-8">
-    <title> List of jobs</title>
+    <head>
+        <meat charset="UTF-8">
+        <title> recruiter jobs</title>
     <link rel="stylesheet" href="../static/styles.css">
-</head>
-
-<body style="margin: 0px;">
-  <header style="background-color: #ccc;">
-    <nav>
-      <table>
-        <tr>
-          <td>
-            <a href="index.html">
-              <img src="media/images/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
-            </a>
-          </td>
-
-          <td>
-            <a href="index.html" style="margin-right: 15px;">Home</a>
-          </td>
-          <td>
-            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
+    <link rel="stylesheet" href="style/jobs.css">
+  </head>
+  <body style="margin: 0px;">
+    <header style="background-color: #ccc;">
+      <nav>
+        <table>
+          <tr>
+            <td>
+              <a href="index.html">
+                <img src="media/logopng.png" width="65px" alt="Footer Logo" style="margin-right: 10px;">
+              </a>
+            </td>
+  
+            <td>
+              <a href="index.html" style="margin-right: 15px;">Home</a>
+            </td>
+            <td>
+              <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
   
   
               <td>
                 <a href=" signup.html" style="margin-right: 15px;">Sign Up</a>
-          </td>
+            </td>
+  
+            <td>
+              <a href="search.html" style="margin-right: 15px;">Search</a>
+            </td>
+  
+            <td>
+              <a href="login.html" style="margin-right: 15px;">Log In</a>
+            </td>
 
-          <td>
-            <a href="search.html" style="margin-right: 15px;">Search</a>
-          </td>
-
-          <td>
-            <a href="login.html" style="margin-right: 15px;">Log In</a>
-          </td>
-
-          <td>
-            <a href="profile.html" style="margin-right: 30px;">Profile</a>
-          </td>
-
-          <td>
-
-            <form role="search">
-              <input type="search" placeholder="Search a Job" aria-label="Search" />
-              <button type="submit">
-                Search
-              </button>
-            </form>
-
-          </td>
-
-        </tr>
-      </table>
-
-    </nav>
-  </header>
-  <section class="main">
+            <td>
+              <a href="profile.html" style="margin-right: 30px;">Profile</a>
+            </td>
+  
+            <td>
+  
+              <form role="search">
+                <input type="search" placeholder="Search a Job" aria-label="Search" />
+                <button type="submit">
+                  Search
+                </button>
+              </form>
+  
+            </td>
+  
+          </tr>
+        </table>
+  
+      </nav>
+    </header>
+        <section class="main">
+          <div class="button">
+          <a href="add_Job.html">
+            <button type="button"  id="add-new-job-button">+ Add new job</button> 
+          </a>
+          <a href="check_candidates.html">
+            <button type="=button" id="check_candidates-button"> check candidates </button>
+        </a>
+          </div>
     <h1>
-      <u>
-        list of Jobs
-      </u>
+        Your own Jobs 
     </h1>
-    <table border="3">
-      <thead>
-        <td>ID</td>
-        <td>Information</td>
-      </thead>
-      <tr>
-        <td>J1</td>
-        <td>
-          <h3>
-            <u> Front-end web development </u>
-            <a href="Edit_Job.html">
-              <input type="button" value="Edit">
-            </a>
-            <input type="button" value="Delete">
-          </h3>
-          <p> you will create everything the user can see it on
-            <br> a web page.
-          </p>
-
-        </td>
-      </tr>
-      <tr>
-        <td>J2</td>
-        <td>
-          <h3>
-            <u> Back-end web development </u>
-            <a href="Edit_Job.html">
-              <input type="button" value="Edit">
-            </a>
-            <input type="button" value="Delete">
-          </h3>
-          <p>you will make it possible to access website information
-            <br> efficiently and securely.
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>J3</td>
-        <td>
-          <h3>
-            <u> Software Developer </u>
-            <a href="Edit_Job.html">
-              <input type="button" value="Edit">
-            </a>
-            <input type="button" value="Delete">
-          </h3>
-          <p>you will create new software and improve existing
-            <br>software applications.
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>J4</td>
-        <td>
-          <h3>
-            <u> Data Analyst </u>
-            <a href="Edit_Job.html">
-              <input type="button" value="Edit">
-            </a>
-            <input type="button" value="Delete">
-          </h3>
-          <p>you will collect, clean, and interpret data sets in order
-            <br>to answer a question or solve a problem.
-          </p>
-        </td>
-      </tr>
-    </table>
-    <br>
-    <a href="add_Job.html">
-      <input type="button" value="Add New Job">
-    </a>
+    <div class="all-jobs">
+      <!-- ------------------------------------------------------------------------------------------------------------ -->
+        <div class="job" id="job1">
+          <div class="job-image-div">
+            <img src="media/front.png" class="job-img">
+          </div>
+          <div class="desc">
+            <div class="job-name"> Front-end Web Dvelopment </div> 
+            <div class="salary"> $3500/Monthly</div>
+            <div class="city"> USA, Palo Alto</div>
+            <div class="description">you will create everything the user can see it on a web page. </div>  
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="job1">Delete</button> 
+            <a href="Edit_Job.html" class="edit-ancor"> <button type="button" class="edit-button"  value="Edit">Edit</button></a>
+        </div>
+        </div>
+        <!-- ------------------------------------------------------------------------------------------------------------------ -->
+        <div class="job" id="job2">
+          <div class="job-image-div">
+            <img src="media/backend.png" class="job-img">
+          </div>   
+          <div class="desc">
+            <div class="job-name"> Back-end Web Development </div> 
+            <div class="salary"> $3500/Monthly</div>
+            <div class="city"> USA, Palo Alto</div>
+            <div class="description">you will make it possible to access website information efficiently and securely.</div>
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="job2">Delete</button> 
+            <a href="Edit_Job.html" class="edit-ancor"> <button type="button" class="edit-button"  value="Edit">Edit</button></a>   
+        </div>
+        </div>
+        <!-- ------------------------------------------------------------------------------------------------------- -->
+        <div class="job " id="job3">
+          <div class="job-image-div">
+            <img src="media/OIP .jpg" class="job-img">
+          </div>
+          <div class="desc">
+            <div class="job-name"> Software Developer </div> 
+            <div class="salary"> $3500/Monthly</div>
+            <div class="city"> USA, Palo Alto</div>
+            <div class="description">you will create new software and improve existing software applications.</div>  
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="job3">Delete</button> 
+            <a href="Edit_Job.html" class="edit-ancor"> <button type="button" class="edit-button"  value="Edit">Edit</button></a>    
+        </div>
+        </div>
+        <!-- ------------------------------------------------------------------------------------------------------------- -->
+        <div class="job job4" id="job4">
+          <div class="job-image-div">
+            <img src="media/R.png" class="job-img">
+          </div>
+          <div class="desc">
+            <div class="job-name">Data Analyst </div> 
+            <div class="salary"> $3500/Monthly</div>
+            <div class="city"> USA, Palo Alto</div>
+            <div class="description">you will collect, clean, and interpret data sets in order to answer a question or solve a problem. </div>
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="job4">Delete</button> 
+            <a href="Edit_Job.html" class="edit-ancor"> <button type="button" class="edit-button"  value="Edit">Edit</button></a>      
+        </div>
+        </div> 
+        <!-- ----------------------------------------------------------------------------------------------- -->
+    </div>
     <div>
-  </section>
-  <footer style="max-width: 80%; margin: auto;">
-    <center>
+      <script src="js/recruiter_jobs.js">
+      </script>
+        </section>
+    <footer style="max-width: 80%; margin: auto;">
+      <center>
+        
+        <table>
+          <tr>
+            <td>
+              <a href="index.html">
+                <img src="media/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
+              </a>
+            </td>
 
-      <table>
-        <tr>
-          <td>
-            <a href="index.html">
-              <img src="media/images/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
-            </a>
-          </td>
+            <td>
+              <a href="index.html" style="margin-right: 10px;">Home</a>
+            </td>
 
-          <td>
-            <a href="index.html" style="margin-right: 10px;">Home</a>
-          </td>
-
-          <td>
-            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
+            <td>
+              <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
   
 
             <td>
-              <a href=" search.html" style="margin-right: 10px;">Search</a>
-          </td>
+              <a href="search.html" style="margin-right: 10px;">Search</a>
+            </td>
 
-        </tr>
-      </table>
+          </tr>
+        </table>
+        
 
+        <hr>
+        <p>
+          © 2024 Career Compass, Inc
+        </p>
+        <p>
+          Developed and Maintained by
+        </p>
+        <p>
+          <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
 
-      <hr>
-      <p>
-        © 2024 Career Compass, Inc
-      </p>
-      <p>
-        Developed and Maintained by
-      </p>
-      <p>
-        <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
+          &nbsp;•&nbsp;
 
-        &nbsp;•&nbsp;
+          <a href="https://github.com/philokaram">Philopater Karam</a>
 
-        <a href="https://github.com/philokaram">Philopater Karam</a>
+          &nbsp;•&nbsp;
 
-        &nbsp;•&nbsp;
+          <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
 
-        <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
+          &nbsp;•&nbsp;
 
-        &nbsp;•&nbsp;
+          <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
 
-        <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
+        </p>
+      </center>
 
-      </p>
-    </center>
+      <br><br>
 
-    <br><br>
+    </footer>
+    </div>
 
-  </footer>
-  </div>
-
-</body>
-
+    </body>
 </html>
