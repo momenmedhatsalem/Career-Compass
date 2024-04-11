@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html class="J9" lang="en">
+<!-- ========== Joseph 20220099 ========== -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="employer_dashboard_post_job.css">
+    <link rel="stylesheet" href="../static/css/employer_dashboard_post_job.css">
     <title>Document</title>
 </head>
 
@@ -117,7 +118,7 @@
                     <div class="J9_emp_dash_post_job_right_side_body_container_skills_experience">
                         <h3>Skills & Experience</h3>
                         <div><label>Skills</label> <input type="text" />
-                            <div class="J9_emp_dash_post_job_right_side_body_container_skills_experience_buttons">
+                            <div class="J9_emp_dash_post_job_right_side_body_container_skills_buttons">
                                 <button>Design</button> <button>UI</button> <button>Graphics</button>
                                 <button>Developer</button> <button>Microsoft</button> <button>Photoshop</button>
                                 <button>Business</button> <button>IT & Technology</button> <button>Marketing</button>
@@ -125,7 +126,7 @@
                             </div>
                         </div>
 
-                        <div>
+                        <div class="J9_emp_dash_post_job_right_side_body_container_experience">
                             <div>
                                 <label>Experience</label>
                                 <select>
@@ -137,10 +138,10 @@
                             <div>
                                 <label>Location</label>
                                 <select>
-                                    <option>Washington DC</option>
-                                    <option>California, CA</option>
-                                    <option>New York</option>
-                                    <option>Miami</option>
+                                    <option>Giza</option>
+                                    <option>Cairo</option>
+                                    <option>Alex</option>
+                                    <option>Luxor</option>
                                 </select>
                             </div>
                             <div>
@@ -161,13 +162,20 @@
                             </div>
                         </div>
                     </div>
+
+
                     <div class="J9_emp_dash_post_job_right_side_body_container_file_attachment">
                         <h3>File Attachment</h3>
-                        <div>
+                        <div class="J9_emp_dash_post_job_right_side_body_container_file_attachment_file">
                             <label>File Attachment</label>
-                            <input value="guidline&requirements.doc" style="width: 180px;" disabled />
+                            <div>
+                                guidline&requirements.doc
+                            </div>
                         </div>
-                        <div>Upload File <input type="file" /></div>
+
+                        <div class="J9_emp_dash_post_job_right_side_body_container_file_attachment_upload">
+                            <label for="J9_file_input"> <b>+</b> Upload File </label><input id="J9_file_input" type="file" />
+                        </div>
                         <small>Upload file .pdf, .doc, .docx</small>
                     </div>
                     <div class="J9_emp_dash_post_job_right_side_body_emp_address_location">
