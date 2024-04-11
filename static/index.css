@@ -414,7 +414,7 @@ a {
   grid-area: J9_footer_row;
   display: grid;
   grid-template-columns: repeat(2, auto);
-  grid-template-columns: 30vw auto;
+  grid-template-columns: 30vw auto 1vw;
   grid-template-areas: "J9_footer_logo_col J9_footer_cols";
   gap: 3vw;
 }
