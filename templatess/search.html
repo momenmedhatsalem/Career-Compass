@@ -8,6 +8,7 @@
   <title>Search bt title</title>
 
   <link rel="stylesheet" href="../static/styles.css">
+  <link rel="stylesheet" href="../Mahmoud_Khaled/style/search_styl.css">
 
   <script>
     // loop through BD ad get all job entries with provided substring
@@ -78,48 +79,168 @@
 
     </nav>
   </header>
-  <section class="main">
+  <main class="M7-main">
+    <section class="M7-backg">
+
+      <!-- <h2>Search for availalbe job opportunities by title</h2> -->
+
+      <h1 class="M7-h1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search All Our Open Jobs <img
+          src="/Mahmoud_Khaled/img/mgnifying_lens_trans.png" width="50" alt="search"></h1>
 
 
 
-    <h1>Search jobs by title</h1>
-    <h2>Search for availalbe job opportunities by title</h2>
 
-    <br>
-    <label for="title">Enter job title here:</label>
-    <input type="text" placeholder="Search" name="title" id="title" value="">
+      <label for="titl" class="M7-search-label M7-gradient-text">What's Your Dream Job?</label>
 
-    <br><br>
-    <button onclick="filterlist()">Search</button>
-    <br><br>
-    <hr>
+      <div class="M7-search-wrapper">
+        <input type="text" list="jobs" placeholder="Eg. Software developer / UI/UX Designer" name="title" id="title"
+          value="" class="M7-search-field"><button onclick="filterlist()" class="M7-search-button">
+          <!-- <img src="/Mahmoud_Khaled/img/mgnifying_lens_trans.png" width="30" alt="search icon">  -->
+          Search!
+        </button>
 
-    <h2>Availalbe jobs based on your search: </h2>
+        <datalist id="jobs">
+          <option value="Software Developer">Software Developer</option>
+          <option value="Front-end Developer">Front-end Developer</option>
+          <option value="Back-end Developer">Back-end Developer</option>
+          <option value="Full-stack Developer">Full-stack Developer</option>
+          <option value="Graphics Designer">Graphics Designer</option>
+          <option value="Project Manager">Project Manager</option>
+          <option value="Sales Manager">Sales Manager</option>
+          <option value="Intern">Intern</option>
+        </datalist>
 
+      </div>
 
-    <h3>
-      <strong>
-        <span>0</span> found in total
-      </strong>
-    </h3>
+      <br>
 
-    <button onclick="show()">Filter Jobs</button>
+      <!-- <div class="M7-result">
 
-    <select name="filter" id="filter" style="display: none;">
-      <optgroup label="Filter by:">
-
-        <option value="title">Job title</option>
-        <option value="years_exp">Years of experience</option>
-        <option value="age">Age</option>
-
-      </optgroup>
-
-    </select>
+        <h2 class="M7-h2">Availalbe jobs based on your search</h2>
 
 
+        <h3 style="float:right; display: inline;">
+          <strong>
+            <span>0</span> found in total
+          </strong>
+        </h3>
 
-    <div>
-  </section>
+         <button onclick="show()" >Filter Jobs</button>
+
+        <select name="filter" id="filter" style="display: none;">
+          <optgroup label="Filter by:">
+
+            <option value="title">Job title</option>
+            <option value="years_exp">Years of experience</option>
+            <option value="age">Age</option>
+
+          </optgroup>
+
+        </select>
+
+      </div>
+
+
+      <br><br><br><br><br> -->
+
+
+      <div class="M7-card1">
+        <fieldset>
+
+          <img src="/Mahmoud_Khaled/img/job-position-icon-simple.jpg" alt="open job icon" width="120px">
+
+          <h2>Open Opportunities</h1>
+
+            <p>Check out all open jobs and positions availalbe on the entire platform, There is always more to find.</p>
+
+            <a href="">
+              <button class="M7-button">
+                Go there!
+              </button>
+            </a>
+        </fieldset>
+      </div>
+
+      <div class="M7-card1">
+        <fieldset>
+
+          <img src="/Mahmoud_Khaled/img/interns.png" alt="open job icon" width="120px">
+
+          <h2> Explore Internships</h1>
+
+            <p>Get a glimps of what Carrer Compass has to offer when it comes to Internships.</p>
+
+            <a href="">
+              <button class="M7-button">
+                Go there!
+              </button>
+            </a>
+        </fieldset>
+      </div>
+
+      <div class="M7-card1">
+        <fieldset>
+
+          <img src="/Mahmoud_Khaled/img/high_paying.png" alt="open job icon" width="120px" style="margin-top: 5px;">
+
+          <h2>Highest Paying</h1>
+
+            <p>Wanna find out what jobs pay the most? Check out Carrer Compass's top paying jobs for the year.</p>
+
+            <a href="">
+              <button class="M7-button">
+                Go there!
+              </button>
+            </a>
+        </fieldset>
+      </div>
+
+     
+        <div class="M7-card2">
+          <fieldset>
+
+            
+                  <img src="/Mahmoud_Khaled/img/manager.png" alt="open job icon" width="150px">
+                
+                  <h3>Exclusive Managerial
+                    Roles
+                    </h3>
+
+                    <p>Explore Career Compass's exclusive mangerial opportunities in the most
+                      professional on firm world-wide leve;.</p>
+
+                    <a href="">
+                      <button class="M7-button">
+                        Explore Roles!
+                      </button>
+
+                    </a>
+                
+          </fieldset>
+        </div>
+
+        <div class="M7-card1">
+          <fieldset>
+
+            <img src="/Mahmoud_Khaled/img/search-job-vacancy-icon-in-transparent-style-loupe-career-vector-illustration-on-isolated-background-find-employer-business-concept-T6WM25.png" alt="open job icon" width="120px" style="margin-top: 5px;">
+
+            <h2>Highest Paying</h1>
+
+              <p>Wanna find out what jobs pay the most? Check out Carrer Compass's top paying jobs for the year.</p>
+
+              <a href="">
+                <button class="M7-button">
+                  Go there!
+                </button>
+              </a>
+
+          </fieldset>
+        </div>
+
+      
+
+    </section>
+  </main>
   <footer style="max-width: 80%; margin: auto;">
     <center>
 
