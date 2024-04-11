@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .M7-h1{
     font-size: xx-large;
     margin: 5px;
