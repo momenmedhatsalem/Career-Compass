@@ -1,6 +1,9 @@
 .J9 * {
   box-sizing: border-box;
 }
+.J9_header *, .J9_footer * {
+  box-sizing: border-box;
+}
 
 .J9_body {
   margin: 0;
