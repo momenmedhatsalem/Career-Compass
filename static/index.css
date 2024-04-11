@@ -414,16 +414,18 @@ a {
   grid-area: J9_footer_row;
   display: grid;
   grid-template-columns: repeat(2, auto);
+  grid-template-columns: 30vw auto;
   grid-template-areas: "J9_footer_logo_col J9_footer_cols";
+  gap: 3vw;
 }
 .J9_footer_logo_col {
   grid-area: J9_footer_logo_col;
-  width: 15vw;
+  /* width: 15vw; */
   justify-self: center;
 }
 
 .J9_footer_logo {
-  width: 11vw;
+  width: 10vw;
   margin-left: 9vw;
   margin-top: 5vh;
 }
