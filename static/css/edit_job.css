@@ -1,0 +1,61 @@
+
+#h1-edit-job {
+    text-shadow: 0px 4px 4px rgb(52, 55, 255);
+    font-size: 40px;
+    text-align: center;
+}
+
+form {
+    position: relative;
+    left: 25%;
+    width: 50%;
+    padding-top: 15px;
+    padding-left: 20px;
+    border: solid;
+    border-color: #edeaea;
+    box-shadow: 6px 7px 9px #dadada9e;
+    border-radius: 20px;
+}
+#id-label{
+    font-size: 1.5ch;
+}
+.input-box {
+    font-size: 100%;
+    width: 95%;
+    height: 30px;
+    padding-left: 16px;
+    margin-top: 1px;
+}
+form label,p {
+    font-size: 25px;
+    margin-left: 10px;
+}
+#description{
+    height: 100px;
+}
+
+#boutton-save{
+    margin-left: 42%;
+    margin-bottom: 10px;
+    width: 15%;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 12px;
+    background-color: #00b0ff;
+    color: white;
+    border-color: #00b0ff;
+    box-shadow: 5px 5px 5px #cfcfde;
+}
+
+
+
+.table div{
+    display: inline-block;
+    vertical-align :middle;
+    /* width: 12.5%; */
+    
+}
+input {
+    border-radius: 20px;
+    padding-left: 12px;
+}
