@@ -22,6 +22,19 @@ form div {
   text-align: center;
   padding: 20px; /* Add some padding to make it look nicer */
 }
+.loginform {
+    position: relative;
+    left: 10%;
+    width: 80%;
+    padding-top: 15px;
+    padding-left: 20px;
+    border: solid;
+    border-color: #dadada;
+    box-shadow: 6px 7px 9px #dadada9e;
+    border-radius: 20px;
+  text-align: center;
+  padding: 20px; /* Add some padding to make it look nicer */
+}
 
 /* Momen styles */
 /* Button Style */
