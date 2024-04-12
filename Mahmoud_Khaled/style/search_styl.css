@@ -460,3 +460,12 @@ td, tr {
 
     border-radius: 20px 20px 0 0;
 } */
+
+
+.M7-filter-item h2, .M7-filter-item h4 {
+    font-size: 2vw;
+}
+
+.M7-filter-item p {
+    font-size: 1.1vw;
+}
