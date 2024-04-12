@@ -13,6 +13,13 @@
   <script>
     // loop through BD ad get all job entries with provided substring
 
+    function filterlist ()
+    {
+      document.getElementById("result").style.display = "flex";
+      
+      document.getElementById("result-grid").style.display = "flex";
+    }
+
     function show() {
       if (document.getElementById("filter").getAttribute("style") == "display: none;") {
         document.getElementById("filter").setAttribute("style", "display: inline;")
@@ -84,7 +91,7 @@
 
       <!-- <h2>Search for availalbe job opportunities by title</h2> -->
 
-      <h1 class="M7-h1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search All Our Open Jobs <img
+      <h1 class="M7-h1">&nbsp;&nbsp;&nbsp;&nbsp;Search All Our Open Jobs <img
           src="/Mahmoud_Khaled/img/mgnifying_lens_trans.png" width="50" alt="search"></h1>
 
 
@@ -94,8 +101,7 @@
 
       <div class="M7-search-wrapper">
         <input type="text" list="jobs" placeholder="Eg. Software developer / UI/UX Designer" name="title" id="title"
-          value="" class="M7-search-field"><button onclick="filterlist()" class="M7-search-button">
-          <!-- <img src="/Mahmoud_Khaled/img/mgnifying_lens_trans.png" width="30" alt="search icon">  -->
+          value="" class="M7-search-field"><button onclick="filterlist()"  class="M7-search-button">
           Search!
         </button>
 
@@ -114,20 +120,24 @@
 
       <br>
 
-      <!-- <div class="M7-result">
-
-        <h2 class="M7-h2">Availalbe jobs based on your search</h2>
+      <div class="M7-result">
 
 
-        <h3 style="float:right; display: inline;">
-          <strong>
-            <span>0</span> found in total
-          </strong>
-        </h3>
+        <div class="M7-result-flex" style="display: none;" id="result">      
+          <!-- Show using javascript when SEARCH is clicked set style > display = "flex"-->   <!-- VERY IMPORTANT-->
 
-         <button onclick="show()" >Filter Jobs</button>
+          <button onclick="show()" class="M7-filter-item M7-filter-button"><img
+              src="/Mahmoud_Khaled/img/filter-white.png" width="15" alt="filter img">&nbsp;Filter Jobs</button>
 
-        <select name="filter" id="filter" style="display: none;">
+          <span class="M7-filter-item M7-filter-header">&nbsp;&nbsp;&nbsp;&nbsp;Availalbe jobs based on your
+            search</span>
+
+          <span class="M7-filter-item">8 found in total </span>
+
+        </div>
+
+
+        <select name="filter" id="filter" style="display: none;" class="M7-filter-select">
           <optgroup label="Filter by:">
 
             <option value="title">Job title</option>
@@ -138,10 +148,154 @@
 
         </select>
 
+        <div class="M7-result-flex" style="display: none;" id="result-grid">
+          <!-- Show using javascript when SEARCH is clicked set style > display = "flex"-->   <!-- VERY IMPORTANT-->
+
+          <div class="M7-card1 M7-filter-item">
+            <fieldset>
+
+              <img src="/Mahmoud_Khaled/img/software.jpg" alt="open job icon" width="450px" height="150px">
+
+              <h4>Software Developer</h4>
+
+              <p>5-7 Years of Exp. | 5000$/M | USA</p>
+
+                <a href="">
+                  <button class="M7-button" style="display: inline;">
+                    Apply
+                  </button>
+                </a>
+            </fieldset>
+          </div>
+          <div class="M7-card1 M7-filter-item">
+            <fieldset>
+
+              <img src="/Mahmoud_Khaled/img/front end.jpg" alt="open job icon" width="450px" height="150px">
+
+              <h4>Front-end Developer</h4>
+
+              <p>1-3 Years of Exp. | 2000$/M | UK</p>
+
+                <a href="">
+                  <button class="M7-button" style="display: inline;">
+                    Apply
+                  </button>
+                </a>
+            </fieldset>
+          </div>
+
+          <div class="M7-card1 M7-filter-item">
+            <fieldset>
+
+              <img src="/Mahmoud_Khaled/img/Game dev.jpg" alt="open job icon" width="450px" height="150px">
+
+              <h4>Game Developer</h4>
+
+              <p>2-5 Years of Exp. | 5500$/M | Germany</p>
+
+                <a href="">
+                  <button class="M7-button" style="display: inline;">
+                    Apply
+                  </button>
+                </a>
+            </fieldset>
+          </div>
+
+          <br><br>
+
+          <div class="M7-card1 M7-filter-item">
+            <fieldset>
+
+              <img src="/Mahmoud_Khaled/img/sales manger.jpg" alt="open job icon" width="450px" height="150px">
+
+              <h4>Sales Manager</h4>
+
+              <p>3-4 Years of Exp. | 3000$/M | France</p>
+
+                <a href="">
+                  <button class="M7-button" style="display: inline;">
+                    Apply
+                  </button>
+                </a>
+            </fieldset>
+          </div>
+
+          <div class="M7-card1 M7-filter-item">
+            <fieldset>
+
+              <img src="/Mahmoud_Khaled/img/socail media.jpg" alt="open job icon" width="450px" height="150px">
+
+              <h4>Social Media Spicialist</h4>
+
+              <p>1-2 Years of Exp. | 300$/M | Egypt</p>
+
+                <a href="">
+                  <button class="M7-button" style="display: inline;">
+                    Apply
+                  </button>
+                </a>
+            </fieldset>
+          </div>
+
+          <div class="M7-card1 M7-filter-item">
+            <fieldset>
+
+              <img src="/Mahmoud_Khaled/img/data analyst.png" alt="open job icon" width="450px" height="150px">
+
+              <h4>Data Analyst</h4>
+
+              <p>3-5 Years of Exp. | 4500$/M | Sweden</p>
+
+                <a href="">
+                  <button class="M7-button" style="display: inline;">
+                    Apply
+                  </button>
+                </a>
+            </fieldset>
+          </div>
+
+          <div class="M7-card1 M7-filter-item">
+            <fieldset>
+
+              <img src="/Mahmoud_Khaled/img/graphics.jpg" alt="open job icon" width="450px" height="150px">
+
+              <h4>Graphics Designer</h4>
+
+              <p>1-3 Years of Exp. | 2500$/M | Norway</p>
+
+                <a href="">
+                  <button class="M7-button" style="display: inline;">
+                    Apply
+                  </button>
+                </a>
+            </fieldset>
+          </div>
+
+          <div class="M7-card1 M7-filter-item">
+            <fieldset>
+
+              <img src="/Mahmoud_Khaled/img/ui ux.jpg" alt="open job icon" width="450px" height="150px">
+
+              <h4>UI/UX Enigneer</h4>
+
+              <p>3-5 Years of Exp. | 4500$/M | UAE</p>
+
+                <a href="">
+                  <button class="M7-button" style="display: inline;">
+                    Apply
+                  </button>
+                </a>
+            </fieldset>
+          </div>
+
       </div>
 
 
-      <br><br><br><br><br> -->
+      <br>
+
+      <hr class="M7-card-hr">
+
+      <h1 class="M7-h1" style="color: black; padding: 30px 10px 30px 10px;">More Survices We Have To Offer</h1>
 
 
       <div class="M7-card1">
@@ -149,7 +303,7 @@
 
           <img src="/Mahmoud_Khaled/img/job-position-icon-simple.jpg" alt="open job icon" width="120px">
 
-          <h2>Open Opportunities</h1>
+          <h2 class="M7-h2">Open Opportunities</h2>
 
             <p>Check out all open jobs and positions availalbe on the entire platform, There is always more to find.</p>
 
@@ -164,9 +318,9 @@
       <div class="M7-card1">
         <fieldset>
 
-          <img src="/Mahmoud_Khaled/img/interns.png" alt="open job icon" width="120px">
+          <img src="/Mahmoud_Khaled/img/interns.png" alt="Interns icon" width="120px" style="margin-top: 23px;">
 
-          <h2> Explore Internships</h1>
+          <h2 class="M7-h2"> Explore Internships</h1>
 
             <p>Get a glimps of what Career Compass has to offer when it comes to Internships.</p>
 
@@ -181,9 +335,9 @@
       <div class="M7-card1">
         <fieldset>
 
-          <img src="/Mahmoud_Khaled/img/high_paying.png" alt="open job icon" width="120px" style="margin-top: 5px;">
+          <img src="/Mahmoud_Khaled/img/high_paying.png" alt="high paying icon" width="120px" style="margin-top: 5px;">
 
-          <h2>Highest Paying</h1>
+          <h2 class="M7-h2">Highest Paying</h1>
 
             <p>Wanna find out what jobs pay the most? Check out Career Compass's top paying jobs for the year.</p>
 
@@ -195,49 +349,51 @@
         </fieldset>
       </div>
 
-     
-        <div class="M7-card2">
-          <fieldset>
 
-            
-                  <img src="/Mahmoud_Khaled/img/manager.png" alt="open job icon" width="150px">
-                
-                  <h3>Exclusive Managerial
-                    Roles
-                    </h3>
+      <div class="M7-card2">
+        <fieldset>
 
-                    <p>Explore Career Compass's exclusive mangerial opportunities in the most
-                      professional on firm world-wide leve;.</p>
 
-                    <a href="">
-                      <button class="M7-button">
-                        Explore Roles!
-                      </button>
+          <img src="/Mahmoud_Khaled/img/manager.png" alt="manager icon" width="150px">
 
-                    </a>
-                
-          </fieldset>
-        </div>
+          <h2>Exclusive Managerial
+            Roles
+          </h2>
 
-        <div class="M7-card1">
-          <fieldset>
+          <p>Explore Career Compass's exclusive mangerial opportunities in the most
+            professional on firm world-wide leve;.</p>
 
-            <img src="/Mahmoud_Khaled/img/[removal.ai]_d7a44f8f-e9ba-4b9c-9664-0e4e4a5abe7c-search-job-vacancy-icon-in-trrans (1).png" alt="open job icon" width="120px" style="margin-top: 5px;">
+          <a href="">
+            <button class="M7-button">
+              Explore Roles!
+            </button>
 
-            <h2>Consult professional Hirers</h1>
+          </a>
 
-              <p>Consult our team of professional hirers to get advices and guidance regarding applying for jobs.</p>
+        </fieldset>
+      </div>
 
-              <a href="">
-                <button class="M7-button">
-                  Go there!
-                </button>
-              </a>
+      <div class="M7-card1">
+        <fieldset>
 
-          </fieldset>
-        </div>
+          <img
+            src="/Mahmoud_Khaled/img/[removal.ai]_d7a44f8f-e9ba-4b9c-9664-0e4e4a5abe7c-search-job-vacancy-icon-in-trrans (1).png"
+            alt="consault icon" width="120px" style="margin-top: 35px;">
 
-      
+          <h2 class="M7-h2">Consult professional Hirers</h1>
+
+            <p>Consult our team of professional hirers to get advices and guidance regarding applying for jobs.</p>
+
+            <a href="">
+              <button class="M7-button">
+                Go there!
+              </button>
+            </a>
+
+        </fieldset>
+      </div>
+
+
 
     </section>
   </main>
