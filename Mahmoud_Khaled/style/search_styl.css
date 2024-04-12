@@ -17,8 +17,12 @@
     font-size: 3rem;
 
     color: white;
-    ;
+
     
+}
+
+.M7-h2 {
+    font-size: larger;
 }
 
 .M7-gradient-text {
@@ -296,4 +300,149 @@ td, tr {
     padding: 1rem;
 
     text-align: center;
+}
+
+.M7-filter-button {
+    float: left;
+
+    transition: display 0.15s ease-in-out;
+}
+
+.M7-filter-header {
+    font-size: larger;
+    width: 50%;
+    text-align: center;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+
+}
+
+.M7-filter-select {
+    display: inline-block;
+    text-align:center;
+    
+    width: 13%;
+
+    margin: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+    
+    margin-left: 53px;
+
+    padding: 3px;
+    
+
+    font-size: medium;
+    font-weight: 500;
+
+    border: 1px solid #0084ff;
+    border-radius: 50px;
+
+    box-shadow: 0 0 10px #ccc;
+    
+    transition: box-shadow 0.2s ease-in-out;
+
+    background-color: #ddd;
+
+    
+  }
+
+  .M7-filter-select:hover {
+    box-shadow: 0 0 10px rgb(34, 85, 255);
+  }
+
+  .M7-filter-select:focus {
+    border: 1px solid #007bffc9;
+    box-shadow: 0 0 10px skyblue;
+    outline: none;
+  }
+
+
+.M7-result-flex {
+    display: flex;
+    justify-content:start;
+    flex-wrap: wrap;
+
+    margin-bottom: 10px;
+}
+
+.M7-filter-item {
+    /* flex-grow: 1; */
+    flex-direction: row;
+    margin: auto;
+    /* flex-basis: 900; */
+
+    margin-bottom: 35px;
+}
+
+.M7-filter-item fieldset {
+    padding: 0;
+}
+
+.M7-filter-item img {
+    border-radius: 20px 20px 0 0;
+}
+
+.M7-filter-item h4 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.M7-filter-item p {
+    font-weight: 600;
+}
+
+.M7-filter-item button {
+    margin-top: 0px;
+}
+
+
+
+
+
+
+.M7-filter-button {
+    
+    padding: 1rem 2rem 1rem 2rem;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    /* margin-left: 20px; */
+
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+
+    border:none;
+    border-radius: 32px;
+    background-color: rgb(0, 124, 173);
+    color: rgb(244, 248, 249);
+
+    transition: padding 0.15s ease-in-out;
+
+    
+}
+
+.M7-filter-button:hover {
+
+    /* background-color: rgb(244, 248, 249);
+    color: rgb(64, 108, 125); */
+
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+
+    padding: 1rem 2.4rem 1rem 2.4rem;
+    
+    color: rgb(244, 248, 249);
+    border:none;
+
+}
+
+.M7-filter-button:active {
+    
+    background: linear-gradient(to right, #972741, #972c1a);
+    
+}
+
+.M7-card-hr {
+    max-width: 90%;
 }
