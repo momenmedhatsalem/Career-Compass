@@ -446,3 +446,17 @@ td, tr {
 .M7-card-hr {
     max-width: 90%;
 }
+
+/* 
+.M7-card-img {
+    margin: 0;
+    border: 0;
+    padding: 0;
+
+    width: 28rem;
+    height: 8rem;
+
+    background-image: url(/media/software.jpg);
+
+    border-radius: 20px 20px 0 0;
+} */
