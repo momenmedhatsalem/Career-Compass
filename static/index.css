@@ -34,6 +34,10 @@ a {
   z-index: 5;
 }
 
+.J9_header a{
+  color: #000;
+}
+
 .J9_header_logo {
   grid-area: J9_logo_in_grid;
 }
