@@ -39,6 +39,12 @@
     "J9_emp_dash_post_job_aside_prof_pic";
 }
 
+.J9_emp_dash_post_job_aside_logo_prof_pic h3 {
+  font-size: 2vw;
+  justify-self: center;
+}
+
+
 .J9_emp_dash_post_job_aside_logo {
   display: block;
   align-self: center;
