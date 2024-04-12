@@ -183,7 +183,7 @@
   cursor: pointer;
 }
 .J9_emp_dash_jobs_right_side_top_nav_search_button img {
-  width: 2vmax;
+  width: 2vw;
 }
 
 .J9_emp_dash_jobs_right_side_top_nav_search_box {
@@ -293,14 +293,12 @@
   top: .5vw;
 }
 
-.J9_active::before {
+.J9_open::before {
   background: #00c853;
 }
-.J9_pending::before {
-  background: #ffa500;
-}
 
-.J9_expired::before {
+
+.J9_closed::before {
   background: #ff5050;
 }
 
@@ -364,9 +362,6 @@
   padding: 10px 0;
 }
 
-.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button:hover + ul{
-  display: block;
-}
 
 .J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots a {
   text-decoration: none;

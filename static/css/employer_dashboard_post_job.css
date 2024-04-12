@@ -183,7 +183,7 @@
   cursor: pointer;
 }
 .J9_emp_dash_post_job_right_side_top_nav_search_button img {
-  width: 2vmax;
+  width: 2vw;
 }
 
 .J9_emp_dash_post_job_right_side_top_nav_search_box {
@@ -280,7 +280,10 @@
   display: grid;
   grid-template-rows: repeat(4, auto);
 }
-
+.J9_emp_dash_post_job_right_side_body_container_job_details_job_status_years_of_experience{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 .J9_emp_dash_post_job_right_side_body_container_job_details_job_category_type_Salary {
   display: grid;
   grid-template-rows: repeat(2, auto);

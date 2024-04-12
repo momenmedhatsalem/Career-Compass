@@ -183,7 +183,7 @@
   cursor: pointer;
 }
 .J9_emp_dash_saved_candidates_right_side_top_nav_search_button img {
-  width: 2vmax;
+  width: 2vw;
 }
 
 .J9_emp_dash_saved_candidates_right_side_top_nav_search_box {
@@ -244,6 +244,7 @@
 
 .J9_emp_dash_saved_candidates_right_side_candidate_card_photo img {
   border-radius: 50%;
+  width: 8vw;
 }
 
 .J9_emp_dash_saved_candidates_right_side_candidate_card_details {
@@ -256,25 +257,140 @@
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   padding-left: 3vw;
+  font-size: 1.4vw;
 }
 
-.J9_emp_dash_saved_candidates_right_side_candidate_card_details_skills{
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_name h3 {
+  margin: 0;
+  margin-bottom: 0.2vh;
+}
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_name div,
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_salary span,
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_location span {
+  color: #00000088;
+  font-size: 1.2vw;
+}
+
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions {
+  justify-self: end;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+}
+
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions
+  > a
+  > img {
+  width: 4vw;
+}
+
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions button {
+  border: none;
+  /* outline: none; */
+  /* box-shadow: none; */
+  display: block;
+  /* padding: 0; */
+  /* cursor: pointer; */
+  background: rgba(0, 0, 0, 0);
+  /* color: inherit; */
+  cursor: pointer;
+  padding: 0.8vw;
+}
+
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button
+  span {
+  display: block;
+  position: relative;
+  width: 0.4vw;
+  height: 0.4vw;
+  border-radius: 50%;
+  background: rgba(43, 43, 43, 0.35);
+}
+
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button
+  span::before,
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button
+  span::after {
+  content: "";
+  position: absolute;
+  top: -0.7vw;
+  left: 0;
+  width: 0.4vw;
+  height: 0.4vw;
+  border: none;
+  border-radius: 50%;
+  background: rgba(43, 43, 43, 0.35);
+}
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button
+  span::after {
+  top: auto;
+  bottom: -0.7vw;
+}
+
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  list-style: none;
+  background-color: #fff;
+
+  min-width: 8vw;
+  border: 1px solid #f1f1f1;
+  border-radius: 7px;
+  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+.show {
+  display: block;
+}
+
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul a {
+  text-decoration: none;
+  padding: 0 15px;
+  line-height: 34px;
+  font-size: 1.2vw;
+  color: #000;
+  background: #fff;
+}
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul img {
+  display: inline-block;
+  vertical-align: -4px;
+  margin-right: 0.5vw;
+  width: 1.5vw;
+}
+
+
+
+/* 
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots a {
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots img {
+}
+
+
+
+
+*/
+
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_skills {
   display: grid;
   grid-template-columns: repeat(4, auto);
   justify-content: start;
   gap: 1vw;
   padding: 0.5vh 3vw;
 }
-.J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill{
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill {
   padding: 0.5vh 1vw;
   border-radius: 30px;
   color: rgba(0, 0, 0, 0.55);
   background: rgba(49, 121, 90, 0.1);
+  font-size: 1vw;
 }
-.J9_emp_dash_saved_candidates_right_side_candidate_card_details_skills :nth-child(4) {
+.J9_emp_dash_saved_candidates_right_side_candidate_card_details_skills
+  :nth-child(4) {
   background-color: #00c853cc;
   color: #000;
-}
-.J9_emp_dash_saved_candidates_right_side_candidate_card_details_name h3 {
-  font-size: 1.6vw;
 }

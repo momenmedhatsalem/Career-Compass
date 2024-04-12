@@ -7,6 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/employer_dashboard_jobs.css">
     <title>Document</title>
+
+    <script>
+
+        document.addEventListener("click", function (event) {
+            if (!event.target.matches('.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button')) {
+                var dropdowns = document.querySelectorAll('.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul');
+                dropdowns.forEach(function (dropdown) {
+                    if (dropdown.style.display === "block") {
+                        dropdown.style.display = "none";
+                    }
+                });
+            } else {
+                var dropdownContent = event.target.nextElementSibling;
+                if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
+                    dropdownContent.style.display = "block";
+                } else {
+                    dropdownContent.style.display = "none";
+                }
+            }
+        });
+    </script>
+
+
 </head>
 
 <body class="J9_emp_dash_jobs_body">
@@ -88,8 +111,8 @@
                                 <td>130 Applications</td>
                                 <td>
                                     <div
-                                        class="J9_active J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status">
-                                        Active
+                                        class="J9_open J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status">
+                                        open
                                     </div>
                                 </td>
                                 <td>
@@ -98,7 +121,7 @@
                                             class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button">
                                             <span></span>
                                         </button>
-                                        <ul>
+                                        <ul class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
                                             <li><a href="#"><img src="../media/icons/eye.svg"> View</a>
                                             </li>
                                             <li><a href="#"><img src="../media/icons/edit.svg"> Edit</a>
@@ -118,8 +141,8 @@
                                 <td>20 Applicants</td>
                                 <td>
                                     <div
-                                        class="J9_pending J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status">
-                                        Pending</div>
+                                        class="J9_closed J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status">
+                                        closed</div>
                                 </td>
                                 <td>
                                     <div class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots">
@@ -127,7 +150,7 @@
                                             class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button">
                                             <span></span>
                                         </button>
-                                        <ul>
+                                        <ul class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
                                             <li><a href="#"><img src="../media/icons/eye.svg"> View</a>
                                             </li>
                                             <li><a href="#"><img src="../media/icons/edit.svg"> Edit</a>
@@ -147,8 +170,8 @@
                                 <td>273 Applicants</td>
                                 <td>
                                     <div
-                                        class="J9_expired J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status">
-                                        Expired</div>
+                                        class="J9_closed J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status">
+                                        closed</div>
                                 </td>
                                 <td>
                                     <div class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots">
@@ -156,7 +179,7 @@
                                             class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button">
                                             <span></span>
                                         </button>
-                                        <ul>
+                                        <ul class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
                                             <li><a href="#"><img src="../media/icons/eye.svg"> View</a>
                                             </li>
                                             <li><a href="#"><img src="../media/icons/edit.svg"> Edit</a>
@@ -176,8 +199,8 @@
                                 <td>70 Applicants</td>
                                 <td>
                                     <div
-                                        class="J9_active J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status">
-                                        Active</div>
+                                        class="J9_open J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status">
+                                        open</div>
                                 </td>
                                 <td>
                                     <div class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots">
@@ -185,7 +208,7 @@
                                             class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button">
                                             <span></span>
                                         </button>
-                                        <ul>
+                                        <ul class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
                                             <li><a href="#"><img src="../media/icons/eye.svg"> View</a>
                                             </li>
                                             <li><a href="#"><img src="../media/icons/edit.svg"> Edit</a>

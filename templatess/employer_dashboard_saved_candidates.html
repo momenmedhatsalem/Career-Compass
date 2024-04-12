@@ -7,6 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/employer_dashboard_saved_candidates.css">
     <title>Document</title>
+
+    <script>
+
+        document.addEventListener("click", function (event) {
+            if (!event.target.matches('.J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button')) {
+                var dropdowns = document.querySelectorAll('.J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul');
+                dropdowns.forEach(function (dropdown) {
+                    if (dropdown.style.display === "block") {
+                        dropdown.style.display = "none";
+                    }
+                });
+            } else {
+                var dropdownContent = event.target.nextElementSibling;
+                if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
+                    dropdownContent.style.display = "block";
+                } else {
+                    dropdownContent.style.display = "none";
+                }
+            }
+        });
+    </script>
 </head>
 
 <body class="J9_emp_dash_saved_candidates_body">
@@ -65,7 +86,7 @@
 
             <div class="J9_emp_dash_saved_candidates_right_side_body">
                 <div class="J9_emp_dash_saved_candidates_right_side_body_title">
-                    <h2>Saved Candidates هكمل بكرة</h2>
+                    <h2>Saved Candidates</h2>
                 </div>
 
                 <div class="J9_emp_dash_saved_candidates_right_side_body_container">
@@ -88,21 +109,25 @@
                                     <div>Giza</div>
                                 </div>
                                 <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions">
-                                    <a href=""></a>
+                                    <a href=""><img src="../media/icons/eye2.svg" alt=""></a>
                                     <div class="div">
-                                        <button><span></span></button>
-                                        <ul>
-                                            <li><a href="#"><img src="" alt="">view</a></li>
-                                            <li><a href="#"><img src="" alt="">delete</a></li>
+                                        <button class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button" ><span></span></button>
+                                        <ul class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
+                                            <li><a href="#"><img src="../media/icons/eye2.svg" alt="">view</a></li>
+                                            <li><a href="#"><img src="../media/icons/delete.svg" alt="">delete</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skills">
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Design</span>
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">UI</span>
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Digital</span>
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">2+</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Design</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">UI</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Digital</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">2+</span>
                             </div>
                         </div>
                     </div>
@@ -127,21 +152,25 @@
                                     <div>Giza</div>
                                 </div>
                                 <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions">
-                                    <a href=""></a>
-                                    <div class="div">
-                                        <button><span></span></button>
-                                        <ul>
-                                            <li><a href="#"><img src="" alt="">view</a></li>
-                                            <li><a href="#"><img src="" alt="">delete</a></li>
+                                    <a href=""><img src="../media/icons/eye2.svg" alt=""></a>
+                                    <div>
+                                        <button class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button" ><span></span></button>
+                                        <ul class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
+                                            <li><a href="#"><img src="../media/icons/eye2.svg" alt="">view</a></li>
+                                            <li><a href="#"><img src="../media/icons/delete.svg" alt="">delete</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skills">
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Design</span>
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">UI</span>
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Digital</span>
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">2+</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Design</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">UI</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Digital</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">2+</span>
                             </div>
                         </div>
                     </div>
@@ -164,21 +193,25 @@
                                     <div>Giza</div>
                                 </div>
                                 <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions">
-                                    <a href=""></a>
+                                    <a href=""><img src="../media/icons/eye2.svg" alt=""></a>
                                     <div class="div">
-                                        <button><span></span></button>
-                                        <ul>
-                                            <li><a href="#"><img src="" alt="">view</a></li>
-                                            <li><a href="#"><img src="" alt="">delete</a></li>
+                                        <button class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button" ><span></span></button>
+                                        <ul class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
+                                            <li><a href="#"><img src="../media/icons/eye2.svg" alt="">view</a></li>
+                                            <li><a href="#"><img src="../media/icons/delete.svg" alt="">delete</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skills">
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Design</span>
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">UI</span>
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Digital</span>
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">2+</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Design</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">UI</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Digital</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">2+</span>
                             </div>
                         </div>
                     </div>
@@ -201,21 +234,25 @@
                                     <div>Giza</div>
                                 </div>
                                 <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions">
-                                    <a href=""></a>
+                                    <a href=""><img src="../media/icons/eye2.svg" alt=""></a>
                                     <div class="div">
-                                        <button><span></span></button>
-                                        <ul>
-                                            <li><a href="#"><img src="" alt="">view</a></li>
-                                            <li><a href="#"><img src="" alt="">delete</a></li>
+                                        <button class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button" ><span></span></button>
+                                        <ul class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
+                                            <li><a href="#"><img src="../media/icons/eye2.svg" alt="">view</a></li>
+                                            <li><a href="#"><img src="../media/icons/delete.svg" alt="">delete</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skills">
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Design</span>
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">UI</span>
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Digital</span>
-                                <span class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">2+</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Design</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">UI</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">Digital</span>
+                                <span
+                                    class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">2+</span>
                             </div>
                         </div>
                     </div>
