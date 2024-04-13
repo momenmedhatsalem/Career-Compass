@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
       var password = document.getElementById("InputPassword").value;
       var confirmPassword = document.getElementById("confirmpass").value;
 
+      // Check if password and confirm password match
+      if (password !== confirmPassword) {
+        // Passwords don't match, display an alert
+        alert("Passwords do not match. Please try again.");
+        return; // Exit the function
+      }
+
       // Save data to local storage
       localStorage.setItem("username", username);
       localStorage.setItem("firstName", firstName);
