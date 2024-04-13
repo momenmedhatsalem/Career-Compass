@@ -39,6 +39,12 @@
     "J9_emp_dash_jobs_aside_prof_pic";
 }
 
+.J9_emp_dash_jobs_aside_logo_prof_pic h3 {
+  font-size: 2vw;
+  justify-self: center;
+  margin: 0;
+}
+
 .J9_emp_dash_jobs_aside_logo {
   display: block;
   align-self: center;
@@ -92,7 +98,7 @@
   width: 80%;
   align-items: center;
   padding: 2vh 0.5vw 2vh 1vw;
-  border-radius: 2vw;
+  border-radius: 20px;
   margin-left: 10%;
   gap: 0.3vw;
   font-size: 1.3vw;
@@ -113,7 +119,7 @@
   width: 80%;
   align-items: center;
   padding: 2vh 0.5vw 2vh 1vw;
-  border-radius: 2vw;
+  border-radius: 20px;
   margin-left: 10%;
   gap: 0.3vw;
   font-size: 1.3vw;
@@ -128,7 +134,7 @@
   grid-area: J9_emp_dash_jobs_right_side;
   background-color: #f5f5f5;
   /* border-radius: 50px; */
-  border-radius: 6vw;
+  border-radius: 50px;
   display: grid;
   grid-template-columns: 5vw auto 5vw;
   grid-template-areas: "J9_emp_dash_jobs_right_side_left_space J9_emp_dash_jobs_right_side_container J9_emp_dash_jobs_right_side_right_space";
@@ -173,7 +179,7 @@
   height: 5vh;
   color: rgba(0, 0, 0, 0.5);
   border: none;
-  border-radius: 6vw;
+  border-radius: 50px;
   background: rgba(0, 0, 0, 0.05);
 }
 
@@ -183,7 +189,7 @@
   cursor: pointer;
 }
 .J9_emp_dash_jobs_right_side_top_nav_search_button img {
-  width: 2vmax;
+  width: 2vw;
 }
 
 .J9_emp_dash_jobs_right_side_top_nav_search_box {
@@ -194,7 +200,7 @@
   border: none;
   padding: 0 1vw 0 1vw;
   background: transparent;
-  border-radius: 6vw;
+  border-radius: 50px;
 }
 
 .J9_emp_dash_jobs_right_side_top_nav_post_button {
@@ -204,7 +210,7 @@
   width: 11vw;
   font-size: 1.5vw;
   line-height: 4vh;
-  border-radius: 5vw;
+  border-radius: 50px;
   background: #00c853;
   margin-left: 2vw;
 }
@@ -230,7 +236,7 @@
 .J9_emp_dash_jobs_right_side_body_emp_jobs {
   grid-area: J9_emp_dash_jobs_right_side_body_emp_jobs;
   background-color: #fff;
-  border-radius: 4vw;
+  border-radius: 40px;
   padding: 2vh 2vw;
   margin-bottom: 3vh;
 }
@@ -286,21 +292,18 @@
 .J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status::before {
   content: "";
   position: absolute;
-  width: .8vw;
-  height: .8vw;
+  width: 0.8vw;
+  height: 0.8vw;
   border-radius: 50%;
   left: 0;
-  top: .5vw;
+  top: 0.5vw;
 }
 
-.J9_active::before {
+.J9_open::before {
   background: #00c853;
 }
-.J9_pending::before {
-  background: #ffa500;
-}
 
-.J9_expired::before {
+.J9_closed::before {
   background: #ff5050;
 }
 
@@ -327,9 +330,9 @@
 }
 
 .J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button
-> span::before,
+  > span::before,
 .J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button
-> span::after {
+  > span::after {
   content: "";
   position: absolute;
   top: -7px;
@@ -362,10 +365,6 @@
   border-radius: 5px;
   box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
-}
-
-.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button:hover + ul{
-  display: block;
 }
 
 .J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots a {

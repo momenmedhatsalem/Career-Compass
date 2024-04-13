@@ -14,29 +14,31 @@
         <div class="J9_emp_dash_post_job_aside_fixed">
 
             <div class="J9_emp_dash_post_job_aside_logo_prof_pic">
-                <a class="J9_emp_dash_post_job_aside_logo" href="#"><img src="../media/images/logopng.png" alt=""></a>
-                <a class="J9_emp_dash_post_job_aside_prof_pic">
+                <a class="J9_emp_dash_post_job_aside_logo" href="index.html"><img src="../media/images/logopng.png"
+                        alt=""></a>
+                <a class="J9_emp_dash_post_job_aside_prof_pic" href="employer_dashboard_profile.html">
                     <img src="../media/images/employer.png" alt="profile photo">
                 </a>
+                <h3>Joseph Sameh</h3>
             </div>
             <div class="J9_emp_dash_post_job_aside_menu_bar">
-                <a class="J9_emp_dash_post_job_aside_menu_bar_button" href="#">
+                <a class="J9_emp_dash_post_job_aside_menu_bar_button" href="employer_dashboard_profile.html">
                     <img src="../media/icons/profile.svg" alt="profileIco">
                     <span>My Profile</span>
                 </a>
-                <a class="J9_emp_dash_post_job_aside_menu_bar_button" href="#">
+                <a class="J9_emp_dash_post_job_aside_menu_bar_button" href="employer_dashboard_jobs.html">
                     <img src="../media/icons/list.svg" alt="ListIco">
                     <span>My Jobs</span>
                 </a>
-                <a class="J9_emp_dash_post_job_aside_menu_bar_button" href="#">
+                <a class="J9_emp_dash_post_job_aside_menu_bar_button" href="employer_dashboard_post_job.html">
                     <img src="../media/icons/pen.svg" alt="penIco">
                     <span>Submit Job</span>
                 </a>
-                <a class="J9_emp_dash_post_job_aside_menu_bar_button" href="#">
+                <a class="J9_emp_dash_post_job_aside_menu_bar_button" href="employer_dashboard_saved_candidates.html">
                     <img src="../media/icons/bookmark.svg" alt="BookmarkIco">
                     <span>Saved candidates</span>
                 </a>
-                <a class="J9_emp_dash_post_job_aside_menu_bar_button" href="#">
+                <a class="J9_emp_dash_post_job_aside_menu_bar_button" href="employer_dashboard_settings.html">
                     <img src="../media/icons/setting.svg" alt="setting">
                     <span>Account Settings</span>
                 </a>
@@ -58,7 +60,8 @@
                     <input class="J9_emp_dash_post_job_right_side_top_nav_search_box" type="search"
                         placeholder="Search here..">
                 </form>
-                <a class="J9_emp_dash_post_job_right_side_top_nav_post_button" href="#">Post a Job</a>
+                <a class="J9_emp_dash_post_job_right_side_top_nav_post_button"
+                    href="employer_dashboard_post_job.html">Post a Job</a>
 
             </div>
             <div class="J9_emp_dash_post_job_right_side_body">
@@ -70,18 +73,37 @@
                 <div class="J9_emp_dash_post_job_right_side_body_container">
                     <div class="J9_emp_dash_post_job_right_side_body_container_job_details">
                         <h3 class="J9_emp_dash_post_job_right_side_body_container_job_details_title">Job Details</h3>
+                        <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_id">
+                            <label>Job ID*</label> <input type="number" placeholder="123" />
+                        </div>
                         <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_title">
-                            <label>Job Title</label> <input type="text" />
+                            <label>Job Title*</label> <input type="text" placeholder="Software Engineer" />
+                        </div>
+                        <div class="J9_emp_dash_post_job_right_side_body_container_job_details_company_name">
+                            <label>Company Name*</label> <input type="text" placeholder="Career compass" />
+                        </div>
+                        <div
+                            class="J9_emp_dash_post_job_right_side_body_container_job_details_job_status_years_of_experience">
+                            <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_status">
+                                <label>Job Status*</label>
+                                <select>
+                                    <option>open</option>
+                                    <option>closed</option>
+                                </select>
+                            </div>
+                            <div class="J9_emp_dash_post_job_right_side_body_container_job_details_years_of_experience">
+                                <label>years of experience*</label> <input type="number" placeholder="2" />
+                            </div>
                         </div>
                         <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_description">
-                            <label>Job Description</label><textarea></textarea>
+                            <label>Job Description*</label><textarea placeholder="Job Description....."></textarea>
                         </div>
 
                         <div
                             class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category_type_Salary">
                             <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category_type">
                                 <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category">
-                                    <label>Job Category</label>
+                                    <label>Job Category*</label>
                                     <select>
                                         <option>Designer</option>
                                         <option>It & Development</option>
@@ -90,7 +112,7 @@
                                     </select>
                                 </div>
                                 <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_type">
-                                    <label>Job Type</label><select>
+                                    <label>Job Type*</label><select>
                                         <option>Full time</option>
                                         <option>Part time</option>
                                         <option>Hourly-Contract</option>
@@ -100,7 +122,7 @@
                             </div>
                             <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_salary">
                                 <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_salary_type">
-                                    <label>Salary</label>
+                                    <label>Salary*</label>
                                     <select>
                                         <option>Monthly</option>
                                         <option>Weekly</option>
@@ -117,7 +139,7 @@
 
                     <div class="J9_emp_dash_post_job_right_side_body_container_skills_experience">
                         <h3>Skills & Experience</h3>
-                        <div><label>Skills</label> <input type="text" />
+                        <div><label>Skills*</label> <input type="text" placeholder="Design, UI, UX..." />
                             <div class="J9_emp_dash_post_job_right_side_body_container_skills_buttons">
                                 <button>Design</button> <button>UI</button> <button>Graphics</button>
                                 <button>Developer</button> <button>Microsoft</button> <button>Photoshop</button>
@@ -128,7 +150,7 @@
 
                         <div class="J9_emp_dash_post_job_right_side_body_container_experience">
                             <div>
-                                <label>Experience</label>
+                                <label>Experience*</label>
                                 <select>
                                     <option>Intermediate</option>
                                     <option>No-Experience</option>
@@ -136,7 +158,7 @@
                                 </select>
                             </div>
                             <div>
-                                <label>Location</label>
+                                <label>Location*</label>
                                 <select>
                                     <option>Giza</option>
                                     <option>Cairo</option>
@@ -145,14 +167,14 @@
                                 </select>
                             </div>
                             <div>
-                                <label>Industry</label>
+                                <label>Industry*</label>
                                 <select>
                                     <option>Select Industry</option>
                                     <option>Select Industry 2</option>
                                 </select>
                             </div>
                             <div>
-                                <label>English Fluency</label>
+                                <label>English Fluency*</label>
                                 <select>
                                     <option>Basic</option>
                                     <option>Conversational</option>
@@ -174,7 +196,8 @@
                         </div>
 
                         <div class="J9_emp_dash_post_job_right_side_body_container_file_attachment_upload">
-                            <label for="J9_file_input"> <b>+</b> Upload File </label><input id="J9_file_input" type="file" />
+                            <label for="J9_file_input"> <b>+</b> Upload File </label><input id="J9_file_input"
+                                type="file" />
                         </div>
                         <small>Upload file .pdf, .doc, .docx</small>
                     </div>

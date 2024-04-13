@@ -1,0 +1,218 @@
+
+#add-new-job-button, #check_candidates-button {
+    width: 45%;
+    margin-right: 2.5%;
+    /* margin-bottom: 42%; */
+    line-height: 45px;
+    font-size: 21px;
+    border-radius: 25px;
+    border: none;
+    background-color: darkgreen;
+    color: rgb(255 255 255);
+}
+#add-new-job-button:hover,#check_candidates-button:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    background-color: rgb(98, 255, 98);
+    color: #7e7e7e;
+}
+a {
+    text-decoration: none;
+}
+.button {
+    position: absolute;
+    top: 60px;
+    right: -1px;
+    width: 35%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 38px;
+    line-height: 50px;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 25px;
+    width: 35%;
+    margin-left: 32.5%;
+    box-shadow: 10px 0px 0px 0px #3922f9, -10px 0px 0px 0px #3922f9, 0px 1px 8px black;
+}
+.delete-button {
+    width: 45%;
+    margin-right: 2.5%;
+    margin-bottom: 2%;
+    line-height: 40px;
+    font-size: 23px;
+    border-radius: 25px;
+    border: none;
+    background-color: darkgreen;
+    color: rgb(255 255 255);
+}
+.edit-ancor {
+    width: 45%;
+    margin-bottom: 2%;
+}
+.edit-button {
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    margin-bottom: 4px;
+    line-height: 40px;
+    font-size: 23px;
+    border-radius: 25px;
+    border: none;
+    background-color: darkgreen;
+    color: rgb(255 255 255);
+}
+.delete-button:hover,.edit-button:hover{
+    transform: scale(1.2);
+    background-color: rgb(98, 255, 98);
+    color: #7e7e7e;
+}
+
+img.job-img {
+    width: 50px;
+    height: 50px;
+    filter: blur(1px);
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+user agent stylesheet
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.job-image-div {
+    /* box-shadow: -5px 5px 37px #0000009c; */
+    background-color: #ffffff40;
+    display: inline-block;
+    position: absolute;
+    z-index: 8;
+    left: 4%;
+    top: 4%;
+    width: 90px;
+    height: 90px;
+    /* vertical-align: middle; */
+    /* font-size: 37px; */
+    border-radius: 57%;
+    text-align: center;
+    line-height: 131px;
+    /* border: solid; */
+    box-shadow: -1px 4px 5px 0px #0000009c;
+    background-color: #f7f7f7cc;
+}
+
+
+img.job-img:hover {
+    transform: scale(2.5);
+    filter: none;
+}
+
+.job-name {
+    /* display: inline-block; */
+    /* position: absolute; */
+    /* z-index: 5; */
+    /* left: 0%; */
+    /* top: 80%; */
+    /* background-color: #00dcffe6; */
+    width: 88%;
+    height: 47px;
+    margin-left: 17%;
+    text-align: center;
+    font-size: 28px;
+    border-radius: 10px;
+    line-height: 50px;
+}
+.desc {
+    margin-top: 0px;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    border: solid;
+    border-color: #b19b9b1f;
+    /* width: 50%; */
+    height: 100%;
+    padding-left: 0%;
+    /* padding-right: 1px; */
+    padding-top: 4%;
+    border-radius: 10px;
+    line-height: 25px;
+    font-size: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    /* box-shadow: 9px 10px 45px #43008085; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-content: space-around;
+}
+div.edit-delete-buttons button {
+    font-size: 20px;
+    border-radius: 41px;
+    width: 33px;
+    line-height: 28px;
+    background: none;
+    border: none;
+}
+.all-jobs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+.job {
+    position: relative;
+    width: 45%;
+    /* height: 300px; */
+    margin-right: 25px;
+    margin-bottom: 45px;
+    border-radius: 14px;
+    display: inline-block;
+    background-color: white;
+    box-shadow: 5px 5px 15px 5px #39564ab8;
+}
+img{
+    width: 30px;
+    height:30px;
+}
+img:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.salary {
+    margin-left: 29%;
+    width: 20%;
+    /* border: solid; */
+    height: 40px;
+    font-size: 18px;
+    color: rgba(36, 64, 52, .7);
+}
+.city {
+    width: 50%;
+    height: 40px;
+    font-size: 18px;
+    color: rgba(36, 64, 52, .7);
+}
+.description {
+    width: 100%;
+    text-align: left;
+    /* border-top: solid; */
+    border-width: 1px;
+    /* border: solid; */
+    border-radius: 14px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 3%;
+    margin-bottom: 4%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 15px;
+    background-color: gainsboro;
+}
