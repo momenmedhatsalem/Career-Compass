@@ -6,8 +6,8 @@ function addHTML() {
   for (i = 0; i < el.length; i++) {
     domEl = el[i];
 
-    /*find the element having add-Joseph-footer attribute*/
-    fileName = domEl.getAttribute("add-Joseph-footer");
+    /*find the element having J9_add_html attribute*/
+    fileName = domEl.getAttribute("J9_add_html");
     if (fileName) {
       /*http request with attribute value as file name*/
       xmlHttp = new XMLHttpRequest();
@@ -21,7 +21,7 @@ function addHTML() {
           }
 
           /* Remove the attribute and invoke the function again*/
-          domEl.removeAttribute("add-Joseph-footer");
+          domEl.removeAttribute("J9_add_html");
           addHTML();
         }
       };
