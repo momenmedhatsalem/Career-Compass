@@ -41,9 +41,8 @@
 .J9_emp_dash_settings_aside_logo_prof_pic h3 {
   font-size: 2vw;
   justify-self: center;
+  margin: 0;
 }
-
-
 
 .J9_emp_dash_settings_aside_logo {
   display: block;
@@ -99,7 +98,7 @@
   width: 80%;
   align-items: center;
   padding: 2vh 0.5vw 2vh 1vw;
-  border-radius: 2vw;
+  border-radius: 20px;
   margin-left: 10%;
   gap: 0.3vw;
   font-size: 1.3vw;
@@ -120,7 +119,7 @@
   width: 80%;
   align-items: center;
   padding: 2vh 0.5vw 2vh 1vw;
-  border-radius: 2vw;
+  border-radius: 20px;
   margin-left: 10%;
   gap: 0.3vw;
   font-size: 1.3vw;
@@ -135,7 +134,7 @@
   grid-area: J9_emp_dash_settings_right_side;
   background-color: #f5f5f5;
   /* border-radius: 50px; */
-  border-radius: 6vw;
+  border-radius: 50px;
   display: grid;
   grid-template-columns: 5vw auto 5vw;
   grid-template-areas: "J9_emp_dash_settings_right_side_left_space J9_emp_dash_settings_right_side_container J9_emp_dash_settings_right_side_right_space";
@@ -180,7 +179,7 @@
   height: 5vh;
   color: rgba(0, 0, 0, 0.5);
   border: none;
-  border-radius: 6vw;
+  border-radius: 50px;
   background: rgba(0, 0, 0, 0.05);
 }
 
@@ -201,7 +200,7 @@
   border: none;
   padding: 0 1vw 0 1vw;
   background: transparent;
-  border-radius: 6vw;
+  border-radius: 50px;
 }
 
 .J9_emp_dash_settings_right_side_top_nav_post_button {
@@ -211,7 +210,7 @@
   width: 11vw;
   font-size: 1.5vw;
   line-height: 4vh;
-  border-radius: 5vw;
+  border-radius: 50px;
   background: #00c853;
   margin-left: 2vw;
 }
@@ -244,7 +243,7 @@
   height: calc(8vh + 7vw);
   width: 100%;
   border: 1px solid #e5e5e5;
-  border-radius: 2vw;
+  border-radius: 20px;
   padding: 1.5vh 2vw;
   resize: none;
   font-size: 1.6vw;
@@ -273,7 +272,7 @@
 
 .J9_emp_dash_settings_right_side_body_container {
   background-color: #fff;
-  border-radius: 4vw;
+  border-radius: 40px;
   padding: 2vh 4vw;
   display: grid;
   grid-template-rows: repeat(6, auto);
