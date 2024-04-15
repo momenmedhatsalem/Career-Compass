@@ -1,0 +1,129 @@
+#j0_main {
+    width: 70%;
+    padding: 2%;
+    margin-left: 300px;
+}
+
+#j0_upload {
+    margin-top: 20%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#j0_uploaded p {
+    background-color: #e7e7e7;
+    line-height: 25px;
+    padding: 15px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+#j0_uploaded span {
+    float: right;
+    color: #d00;
+    cursor: pointer;
+    font-size: large;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: lightgray;
+    color: green;
+    border: none;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #00c853;
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+/* education */
+.j0_education {
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.j0_education-item {
+    border: 1px solid #ddd;
+    line-height: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+#j0_edu_title {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.j0_education-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin: 10px;
+    padding-top: 10px;
+}
+
+.j0_education-content p {
+    padding: 15px;
+    margin: 0;
+}
+
+.j0_education input {
+    float: right;
+}
+
+.j0_education input:checked~.j0_education-content {
+    max-height: fit-content;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  input[type=text], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    resize: none;
+  }
+  select{
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    width: 100%;
+  }
+    
+  
+  .j0_label {
+    float: left;
+    width: 20%;
+    margin-top: auto;
+  }
+  
+  .j0_input {
+    float: right;
+    width: 80%;
+    margin-top: auto;
+  }
+  .j0_input_select {
+    float: left;
+    width: 40%;
+  }
+  label>img{
+    width: 10px;
+    float: right;
+  }
