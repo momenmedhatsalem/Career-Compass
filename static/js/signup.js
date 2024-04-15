@@ -6,10 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault(); // Prevent form submission
 
       // Get form inputs
-      var username = document.getElementById("username").value.toLowerCase();
-      var firstName = document.getElementById("First_name").value.toLowerCase();
-      var lastName = document.getElementById("last_name").value.toLowerCase();
-      var email = document.getElementById("InputEmail1").value.toLowerCase();
+      var username = document.getElementById("username");
+      var firstName = document.getElementById("First_name");
+      var lastName = document.getElementById("last_name");
+      var email = document.getElementById("InputEmail1");
+      var phone = document.getElementById("InputPhone");
       var password = document.getElementById("InputPassword").value;
       var confirmPassword = document.getElementById("confirmpass").value;
 
@@ -25,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("firstName", firstName);
       localStorage.setItem("lastName", lastName);
       localStorage.setItem("email", email);
+      localStorage.setItem("phone", phone);
       localStorage.setItem("password", password);
-      localStorage.setItem("confirmPassword", confirmPassword);
 
       // Optional: Display a message or perform any additional actions
       console.log("Data saved to local storage.");
