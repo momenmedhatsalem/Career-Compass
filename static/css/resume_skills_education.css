@@ -1,67 +1,10 @@
-/* sidebar */
-.j0sidebar {
-    width: 250px;
-    height: 100vh;
-    background: #333333;
-    padding: 20px 0;
-    position: fixed;
-    float: left;
-}
-
-.j0profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: #fff;
-    margin: 20px auto;
-    display: block;
-    overflow: hidden;
-}
-
-.j0profile-pic img {
-    width: 100%;
-    height: auto;
-}
-
-.j0menu {
-    list-style: none;
-    padding: 0;
-}
-
-.j0menu li {
-    padding: 15px;
-    margin: 5px;
-}
-
-.j0_selected_li {
-    border-radius: 10px;
-    background-color: #00B0ff;
-}
-
-.j0menu li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.j0menu li a:hover {
-    color: #1e90ff;
-}
-
-.j0icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 7px;
-}
-/* end sidebar */
-
-#j0_main{
+#j0_main {
     width: 70%;
     padding: 2%;
     margin-left: 300px;
 }
 
-#j0_upload{
+#j0_upload {
     margin-top: 20%;
     background-color: white;
     border-radius: 20px;
@@ -74,22 +17,113 @@
     padding: 15px 15px;
     margin: 10px 0;
     border-radius: 10px;
-  }
-  #j0_uploaded span {
+}
+
+#j0_uploaded span {
     float: right;
     color: #d00;
     cursor: pointer;
     font-size: large;
-  }
+}
 
-  button {
+button {
     padding: 10px 20px;
-    background-color: #5cb85c;
-    color: white;
+    background-color: lightgray;
+    color: green;
     border: none;
     border-radius: 3px;
-  }
-  button:hover {
-    background-color: #4cae4c;
+}
+
+button:hover {
+    background-color: #00c853;
+    color: #f5f5f5;
     cursor: pointer;
+}
+
+/* education */
+.j0_education {
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.j0_education-item {
+    border: 1px solid #ddd;
+    line-height: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+#j0_edu_title {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.j0_education-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin: 10px;
+    padding-top: 10px;
+}
+
+.j0_education-content p {
+    padding: 15px;
+    margin: 0;
+}
+
+.j0_education input {
+    float: right;
+}
+
+.j0_education input:checked~.j0_education-content {
+    max-height: fit-content;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  input[type=text], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    resize: none;
+  }
+  select{
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    width: 100%;
+  }
+    
+  
+  .j0_label {
+    float: left;
+    width: 20%;
+    margin-top: auto;
+  }
+  
+  .j0_input {
+    float: right;
+    width: 80%;
+    margin-top: auto;
+  }
+  .j0_input_select {
+    float: left;
+    width: 40%;
+  }
+  label>img{
+    width: 10px;
+    float: right;
   }

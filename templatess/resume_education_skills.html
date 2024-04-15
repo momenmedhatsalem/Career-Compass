@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="../static/styles.css">
   <link rel="stylesheet" href="../static/css/resume_skills_education.css">
   <link rel="stylesheet" href="../static/index.css">
+  <link rel="stylesheet" href="../Mahmoud_Khaled/style/profile_styl.css">
+
 
 </head>
 
@@ -107,8 +109,10 @@
   </div>
   <!-- /sidebar -->
 
- <div id="j0_main">
-    <div id="j0_upload">
+
+<div id="j0_main">
+  <!-- upload -->
+  <div id="j0_upload">
       <h2>Resume Attachment</h2>
       <div id="j0_uploaded">
         <p>MyCVResume.PDF <span>x</span></p>
@@ -116,6 +120,85 @@
       </div>
       <button type="button" id="upload-btn"> Upload CV</button>
       <input type="file" id="file-input" style="display: none;" multiple />
+  </div>
+
+<!-- education -->
+  <div class="j0_education">
+    <h2>Education</h2>
+    <div class="j0_education-item">
+     <label for="item1"><span id="j0_edu_title">*Add Education</span> <img for="item1" src="/media/up_down-arrow.png"></label>
+     
+      <input type="checkbox" id="item1" style="display:none ;">
+      <div class="j0_education-content">
+        <div class="j0_edu_form">
+          
+          <form action="">
+            <div class="row">
+              <div class="j0_label">
+                <label for="title">Title*</label>
+              </div>
+              <div class="j0_input">
+                <input type="text" id="title" name="title" placeholder="Product designer(google)">
+              </div>
+            </div>
+            <div class="row">
+              <div class="j0_label">
+                <label for="academy">Academy*</label>
+              </div>
+              <div class="j0_input">
+                <input type="text" id="academy" name="academy" placeholder="Google Arts Collage & University">
+              </div>
+            </div>
+            <div class="row">
+              <div class="j0_label">
+                <label for="year">Year*</label>
+              </div>
+
+              <div class="j0_input_select">
+                <select id="starYear" name="starYear">
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                </select>
+              </div>
+
+              <div class="j0_input_select">
+                <select id="endYear" name="endYear">
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="j0_label">
+                <label for="subject">Subject*</label>
+              </div>
+              <div class="j0_input">
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+              </div>
+            </div>
+            <br>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -208,6 +291,7 @@
       }
     });
   </script>
+
 </body>
 
 </html>
