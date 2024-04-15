@@ -216,6 +216,7 @@
     background: #333333;
     padding: 20px 0;
     position: fixed;
+    float: left;
 }
 
 .j0profile-pic {
@@ -259,8 +260,7 @@
 }
 
 .j0icon {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin-right: 7px;
 }
-/* jonathan */
