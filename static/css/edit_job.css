@@ -8,7 +8,8 @@
 form {
     /* position: relative; */
     /* left: 25%; */
-    /* width: 50%; */
+    width: 70%;
+    margin-left: 15%;
     padding-top: 15px;
     padding-left: 20px;
     border: solid;
@@ -36,8 +37,9 @@ form label, p {
     font-size: 25px;
     margin-left: 10px;
 }
-#description{
-    height: 100px;
+#description {
+    height: 150px;
+    font-size: 20px;
 }
 
 #boutton-save{
@@ -71,7 +73,7 @@ input#salary {
     text-align: center;
 }
 select {
-    width: 45%;
+    width: 40%;
     text-align: center;
     height: 60px;
     border-radius: 10px;
@@ -79,7 +81,19 @@ select {
     color: #424242;
 }
 span#per-word {
+    display: inline-block;
     font-size: 25px;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-left: 0%;
+    margin-right: 0%;
+    width: 10%;
+}
+label#salary-label {
+    display: inline-block;
+    width: 10%;
+}
+input#open {
+    margin-left: 10%;
+}
+input#closed {
+    margin-left: 10%;
 }
