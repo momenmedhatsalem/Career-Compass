@@ -110,23 +110,36 @@
   <!-- /sidebar -->
 
 
-<div id="j0_main">
-  <!-- upload -->
-  <div id="j0_upload">
-      <h2>Resume Attachment</h2>
-      <div id="j0_uploaded">
-        <p>MyCVResume.PDF <span>x</span></p>
-        <p>CandidateCV02.PDF <span>x</span></p>
-      </div>
-      <button type="button" id="upload-btn"> Upload CV</button>
-      <input type="file" id="file-input" style="display: none;" multiple />
-  </div>
-
+  <div id="j0_main">
+    <div class="dashboard-body">
+        <h2 class="main-title">My Resume</h2>
+  
+        <div class="j0upload">
+                    <h4 class="j0-title-three">Resume Attachment</h4>
+                    <div class="j0-input">
+                        <h4 for="">CV Attachment*</h4>
+                        
+                        <div class="j0-upload">
+                            <span>MyCvResume.PDF</span>
+                            <a href="#" class="j0-remove-btn"><i>x</i></a>
+                        </div>
+                        <div class="j0-upload">
+                            <span>CandidateCV02.PDF</span>
+                            <a href="#" class="j0-remove-btn"><i>x</i></a>
+                        </div>
+                    </div>
+                    <div class="j0-upload-btn">
+                        <label name="uploadCV">Upload CV</label> 
+                        <input type="file" id="j0-uploadCV" name="uploadCV" placeholder="">
+                    </div>
+                    <small>Upload file .pdf, .doc, .docx</small>
+                </div>
+      <!-- / upload  -->
 <!-- education -->
   <div class="j0_education">
     <h2>Education</h2>
     <div class="j0_education-item">
-     <label for="item1"><span id="j0_edu_title">*Add Education</span> <img for="item1" src="/media/up_down-arrow.png"></label>
+     <label for="item1"><span id="j0_edu_title">*Add Education</span> <img src="/media/arrow.png" alt="arrow"></label>
      
       <input type="checkbox" id="item1" style="display:none ;">
       <div class="j0_education-content">
