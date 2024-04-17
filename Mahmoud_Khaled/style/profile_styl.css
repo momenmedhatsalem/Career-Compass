@@ -242,24 +242,23 @@
 .j0menu li {
     padding: 15px;
     margin: 5px;
+    font-size: 20px;
 }
+.j0menu li span{
+    color: white;
+}
+
 
 .j0_selected_li {
     border-radius: 10px;
     background-color: #00B0ff;
 }
 
-.j0menu li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.j0menu li a:hover {
+.j0menu li :hover {
     color: #1e90ff;
 }
 
-.j0icon {
+li img{
     width: 30px;
     height: 30px;
     margin-right: 7px;

@@ -93,26 +93,26 @@
       </ul>
     </div>
   </header>
+
+
 <!-- sidebar -->
-  <div class="j0sidebar">
-    <div class="j0profile-pic">
-      <img src="../Mahmoud_Khaled/img/Audio & Video Editing.png" alt="Profile Picture">
-    </div>
-    <ul class="j0menu">
-      <li class="j0_1"><a href="#" ><img class="j0icon" src="../media/icon_1.png" alt="Dashboard"><span>Dashboard</span></a></li>
-      <li class="j0_1"><a href="/templatess/profile.html" ><img class="j0icon" src="../media/icon_2.png" alt="Profile"><span>Profile</span></a></li>
-      <li class="j0_1"><a href="#" ><img class="j0icon" src="../media/icon_3.png" alt="resume"><span>resume</span></a></li>
-      <li class="j0_1"><a href="/templatess/resume_education_skills.html" ><img class="j0icon" src="../media/upload_resume.png" alt="upload_resume"><span>upload resume</span></a></li>
-      <li class="j0_1"><a href="/templatess/resume_education_skills.html" ><img class="j0icon" src="../media/education.png" alt="Education"><span>Education</span></a></li>
-      <li class="j0_1"><a href="/templatess/resume_education_skills.html" ><img class="j0icon" src="../media/skills.png" alt="Skills"><span>Skills & Experience</span></a></li>
-    </ul>
+<div class="j0sidebar">
+  <div class="j0profile-pic">
+    <img src="../Mahmoud_Khaled/img/Audio & Video Editing.png" alt="Profile Picture">
   </div>
-  <!-- /sidebar -->
+  <ul class="j0menu">
+    <li><a href="#" ><img src="../media/icon_1.png" alt="Dashboard"><span>Dashboard</span></a></li>
+    <li><a href="/templatess/profile.html" ><img  src="../media/icon_2.png" alt="Profile"><span>Profile</span></a></li>
+    <li><a href="#" ><img src="../media/icon_3.png" alt="resume"><span>resume</span></a></li>
+    <li onclick="sidebar('1')"><a href="/templatess/resume_education_skills.html" ><img  src="../media/upload_resume.png" alt="upload_resume"><span>upload resume</span></a></li>
+    <li onclick="sidebar('2')" ><a href="/templatess/resume_education_skills.html" ><img  src="../media/education.png" alt="Education"><span>Education</span></a></li>
+    <li onclick="sidebar('3')"><a href="/templatess/resume_education_skills.html" ><img  src="../media/skills.png" alt="Skills"><span>Skills & Experience</span></a></li>
+  </ul>
+</div>
 
 
   <div id="j0_main">
     <div class="dashboard-body">
-        <h2 class="main-title">My Resume</h2>
   
         <div class="j0upload">
                     <h4 class="j0-title-three">Resume Attachment</h4>
@@ -128,20 +128,21 @@
                             <a href="#" class="j0-remove-btn"><i>x</i></a>
                         </div>
                     </div>
-                    <div class="j0-upload-btn">
+                    <div class="j0-upload j0-btn">
                         <label name="uploadCV">Upload CV</label> 
                         <input type="file" id="j0-uploadCV" name="uploadCV" placeholder="">
                     </div>
                     <small>Upload file .pdf, .doc, .docx</small>
                 </div>
       <!-- / upload  -->
+
 <!-- education -->
   <div class="j0_education">
     <h2>Education</h2>
     <div class="j0_education-item">
-     <label for="item1"><span id="j0_edu_title">*Add Education</span> <img src="/media/arrow.png" alt="arrow"></label>
+     <label for="item3"><span id="j0_edu_title">*Add Education</span> <img src="/media/arrow.png" alt="arrow"></label>
      
-      <input type="checkbox" id="item1" style="display:none ;">
+      <input type="checkbox" id="item3" style="display:none ;">
       <div class="j0_education-content">
         <div class="j0_edu_form">
           
@@ -209,13 +210,125 @@
                 <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
               </div>
             </div>
+          </form>
             <br>
         </div>
       </div>
     </div>
+    <div class="j0-btn j0-add-edu">
+      <label name="uploadCV" >+ Add more</label> 
+      <input type="file" id="j0-uploadCV" name="uploadCV" placeholder="">
+  </div>
   </div>
 
+<!-- skills -->
+      <div class="j0-skills">
+                  <h4 class="j0-title-three">Skills &amp; Experience</h4>
+        <div class="dash-input-wrapper mb-40">
+          <label for="">Add Skills*</label>
+          <div class="skills-wrapper">
+            <ul class="style-none d-flex flex-wrap align-items-center">
+              <li class="is_tag"><button>Figma <i class="bi bi-x">x</i></button></li>
+              <li class="is_tag"><button>HTML5 <i class="bi bi-x">x</i></button></li>
+              <li class="is_tag"><button>Illustrator <i class="bi bi-x">x</i></button></li>
+              <li class="is_tag"><button>Adobe Photoshop <i class="bi bi-x">x</i></button></li>
+              <li class="is_tag"><button>WordPress <i class="bi bi-x">x</i></button></li>
+              <li class="is_tag"><button>jQuery <i class="bi bi-x">x</i></button></li>
+              <li class="is_tag"><button>Web Design <i class="bi bi-x">x</i></button></li>
+              <li class="is_tag"><button>Adobe XD <i class="bi bi-x">x</i></button></li>
+              <li class="is_tag"><button>CSS <i class="bi bi-x">x</i></button></li>
+              <li class="more_tag"><button>+</button></li>
+            </ul>
+          </div>
+      </div>
 
+      <div class="j0-skills-ac">
+        <div class="j0-skills-ac-item">
+          <label class="j0-skills-ac-title" for="item2">Experience 1*<img src="/media/arrow.png" alt="arrow"></label>
+          <input type="checkbox" id="item2">
+          <div class="j0-skills-ac-content">
+            <div class="j0_edu_form">
+              <form action="">
+                <div class="row">
+                  <div class="j0_label">
+                    <label for="title">Title*</label>
+                  </div>
+                  <div class="j0_input">
+                    <input type="text" id="title" name="title" placeholder="Product designer(google)">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="j0_label">
+                    <label for="academy">Company**</label>
+                  </div>
+                  <div class="j0_input">
+                    <input type="text" id="academy" name="academy" placeholder="Google Arts Collage & University">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="j0_label">
+                    <label for="year">Year*</label>
+                  </div>
+    
+                  <div class="j0_input_select">
+                    <select id="starYear" name="starYear">
+                      <option value="2024">2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2022">2022</option>
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                      <option value="2020">2020</option>
+                      <option value="2019">2019</option>
+                      <option value="2018">2018</option>
+                      <option value="2017">2017</option>
+                      <option value="2016">2016</option>
+                      <option value="2015">2015</option>
+                      <option value="2014">2014</option>
+                    </select>
+                  </div>
+    
+                  <div class="j0_input_select">
+                    <select id="endYear" name="endYear">
+                      <option value="2024">2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2022">2022</option>
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                      <option value="2020">2020</option>
+                      <option value="2019">2019</option>
+                      <option value="2018">2018</option>
+                      <option value="2017">2017</option>
+                      <option value="2016">2016</option>
+                      <option value="2015">2015</option>
+                      <option value="2014">2014</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="j0_label">
+                    <label for="subject">Description</label>
+                  </div>
+                  <div class="j0_input">
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                  </div>
+                </div>
+                <br>
+              </form>
+            </div>
+           </div>
+          </div>
+          <div class="j0-btn j0-add-skills">
+            <label name="uploadCV" >+ Add more</label> 
+            <input type="file" id="j0-uploadCV" name="uploadCV" placeholder="">
+        </div>
+          </div>
+      </div>
+
+
+
+
+
+      <!-- footer -->
   <footer style="max-width: 80%; margin: auto;">
     <center>
 
@@ -278,32 +391,7 @@
   </footer>
   </div>
 
-  <script>
-    // JavaScript to handle file upload and list update
-    document.getElementById('upload-btn').addEventListener('click', function() {
-      document.getElementById('file-input').click();
-    });
-  
-    document.getElementById('file-input').addEventListener('change', function(event) {
-      var files = event.target.files;
-      var filesList = document.getElementById('j0_uploaded');
-  
-      for (var i = 0; i < files.length; i++) {
-        var file = files[i];
-        var p = document.createElement('p');
-        p.textContent = file.name;
-        var span = document.createElement('span');
-        span.textContent = ' x';
-        span.style.color = 'red';
-        span.style.cursor = 'pointer';
-        span.onclick = function() {
-          this.parentElement.remove();
-        };
-        p.appendChild(span);
-        filesList.appendChild(p);
-      }
-    });
-  </script>
+  </div>
 
 </body>
 
