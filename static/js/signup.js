@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault(); // Prevent form submission
 
       // Get form inputs
-      var username = document.getElementById("username");
-      var firstName = document.getElementById("First_name");
-      var lastName = document.getElementById("last_name");
-      var email = document.getElementById("InputEmail1");
-      var phone = document.getElementById("InputPhone");
+      var username = document.getElementById("username").value;
+      var firstName = document.getElementById("First_name").value;
+      var lastName = document.getElementById("last_name").value;
+      var email = document.getElementById("InputEmail1").value;
+      var phone = document.getElementById("InputPhone").value;
       var password = document.getElementById("InputPassword").value;
       var confirmPassword = document.getElementById("confirmpass").value;
 
