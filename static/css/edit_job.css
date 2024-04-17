@@ -6,13 +6,15 @@
 }
 
 form {
-    position: relative;
-    left: 25%;
-    width: 50%;
+    /* position: relative; */
+    /* left: 25%; */
+    width: 70%;
+    margin-left: 15%;
     padding-top: 15px;
     padding-left: 20px;
     border: solid;
     border-color: #edeaea;
+    background-color: white;
     box-shadow: 6px 7px 9px #dadada9e;
     border-radius: 20px;
 }
@@ -20,18 +22,24 @@ form {
     font-size: 1.5ch;
 }
 .input-box {
-    font-size: 100%;
+    font-size: 30px;
     width: 95%;
-    height: 30px;
+    height: 55px;
     padding-left: 16px;
-    margin-top: 1px;
+    margin-top: 6px;
+    margin-bottom: 25px;
+    border-width: 1px;
+    border-color: #e5e5e5;
+    background-color: #a9a9a908;
+    color: #afafaf;
 }
-form label,p {
+form label, p {
     font-size: 25px;
     margin-left: 10px;
 }
-#description{
-    height: 100px;
+#description {
+    height: 150px;
+    font-size: 20px;
 }
 
 #boutton-save{
@@ -56,6 +64,36 @@ form label,p {
     
 }
 input {
-    border-radius: 20px;
+    border-radius: 13px;
     padding-left: 12px;
+    /* font-size: 10px; */
+}
+input#salary {
+    width: 30%;
+    text-align: center;
+}
+select {
+    width: 40%;
+    text-align: center;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 25px;
+    color: #424242;
+}
+span#per-word {
+    display: inline-block;
+    font-size: 25px;
+    margin-left: 0%;
+    margin-right: 0%;
+    width: 10%;
+}
+label#salary-label {
+    display: inline-block;
+    width: 10%;
+}
+input#open {
+    margin-left: 10%;
+}
+input#closed {
+    margin-left: 10%;
 }

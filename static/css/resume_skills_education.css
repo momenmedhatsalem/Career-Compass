@@ -1,95 +1,166 @@
-/* sidebar */
-.j0sidebar {
-    width: 250px;
-    height: 100vh;
-    background: #333333;
-    padding: 20px 0;
-    position: fixed;
-    float: left;
+#j0_main {
+  width: 70%;
+  padding: 2%;
+  margin-left: 300px;
 }
 
-.j0profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: #fff;
+.dashboard-body {
+  min-height: 100vh;
+  border-radius: 50px 0 0 50px;
+  padding: 150px 55px 50px;
+}
+
+
+.j0upload{
+  background-color: white ;
+  padding: 45px 60px 50px;
+  border-radius: 20px;
+}
+
+.dashboard-body .j0-title-three {
+  font-family: "gordita";
+  font-size: 24px;
+  color: #1a237e;
+  margin: 0 0 30px;
+}
+
+.j0-input{
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: #254035;
+  margin-bottom: 20px;
+}
+.j0-upload{
+  height: 60px;
+  width: 100%;
+  border-radius: 10px;
+  background: #edf2f7;
+  padding: 0 20px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 15px;
+}
+
+.j0-remove-btn {
+  font-size: 15px;
+  font-weight: 700;
+  color: #00c853;
+}
+.j0-upload-btn{
+  font-size: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.15px;
+  border-radius: 7px;
+  line-height: 40px;
+  padding: 0 15px;
+  min-width: 135px;
+  text-align: center;
+  background: rgba(63, 99, 77, .2);
+  transition: all .2s ease-in-out 0s;
+  margin-right: 1rem !important;
+  position: relative !important;
+  display: inline-block !important;
+}
+.j0-upload-btn:hover{
+  background:#00c853;
+}
+#j0-uploadCV{
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+/* education */
+.j0_education {
     margin: 20px auto;
-    display: block;
-    overflow: hidden;
-}
-
-.j0profile-pic img {
-    width: 100%;
-    height: auto;
-}
-
-.j0menu {
-    list-style: none;
-    padding: 0;
-}
-
-.j0menu li {
-    padding: 15px;
-    margin: 5px;
-}
-
-.j0_selected_li {
-    border-radius: 10px;
-    background-color: #00B0ff;
-}
-
-.j0menu li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.j0menu li a:hover {
-    color: #1e90ff;
-}
-
-.j0icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 7px;
-}
-/* end sidebar */
-
-#j0_main{
-    width: 70%;
-    padding: 2%;
-    margin-left: 300px;
-}
-
-#j0_upload{
-    margin-top: 20%;
     background-color: white;
     border-radius: 20px;
     padding: 20px;
 }
 
-#j0_uploaded p {
-    background-color: #e7e7e7;
-    line-height: 25px;
-    padding: 15px 15px;
-    margin: 10px 0;
+.j0_education-item {
+    border: 1px solid #ddd;
+    line-height: 15px;
+    margin: 15px 0;
     border-radius: 10px;
-  }
-  #j0_uploaded span {
-    float: right;
-    color: #d00;
-    cursor: pointer;
-    font-size: large;
-  }
+}
 
-  button {
-    padding: 10px 20px;
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    border-radius: 3px;
+#j0_edu_title {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.j0_education-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin: 10px;
+    padding-top: 10px;
+}
+
+.j0_education-content p {
+    padding: 15px;
+    margin: 0;
+}
+
+.j0_education input {
+    float: right;
+}
+
+.j0_education input:checked~.j0_education-content {
+    max-height: fit-content;
+}
+
+* {
+    box-sizing: border-box;
   }
-  button:hover {
-    background-color: #4cae4c;
-    cursor: pointer;
+  
+  input[type=text], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    resize: none;
+  }
+  select{
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    width: 100%;
+  }
+    
+  
+  .j0_label {
+    float: left;
+    width: 20%;
+    margin-top: auto;
+  }
+  
+  .j0_input {
+    float: right;
+    width: 80%;
+    margin-top: auto;
+  }
+  .j0_input_select {
+    float: left;
+    width: 40%;
+  }
+  label>img{
+    width: 10px;
+    float: right;
   }
