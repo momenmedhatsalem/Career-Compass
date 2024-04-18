@@ -65,22 +65,22 @@ img.job-img {
     filter: blur(1px);
 }
 
-img {
+/* img {
     width: 30px;
     height: 30px;
-}
-user agent stylesheet
-img {
+} */
+
+/* img {
     overflow-clip-margin: content-box;
     overflow: clip;
-}
+} */
 
 .job-image-div {
     /* box-shadow: -5px 5px 37px #0000009c; */
     background-color: #ffffff40;
     display: inline-block;
     position: absolute;
-    z-index: 8;
+    z-index: 4;
     left: 4%;
     top: 4%;
     width: 20%;
@@ -158,10 +158,10 @@ img.job-img:hover {
     background-color: white;
     box-shadow: 0px 0px 0px 20px #00bcd46e;
 }
-img{
+/* img{
     width: 30px;
     height:30px;
-}
+} */
 img:hover{
     transform: scale(1.2);
     cursor: pointer;

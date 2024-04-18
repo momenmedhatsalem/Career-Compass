@@ -73,7 +73,7 @@ class job{
 
 
 // let array = localStorage.getItem("jobs");
-// let parentNode = document.getElementsByClassName("all-jobs");
+// let p = document.getElementsByClassName("all-jobs");
 // for (let i = 0 ;i < array.length ; i++ ){
 //     let txt = `<div class="job" id="${array[i].details.id}"> 
 //                     <div class="job-image-div">
@@ -88,6 +88,6 @@ class job{
 //                         <a href="#" class="view-ancor"> <button type="button" class="view-button"  value="view">view</button></a>
 //                     </div>
 //                 </div>`;
-//     parentNode.a
+//     p[0].appendChild(txt);
 // }
 
