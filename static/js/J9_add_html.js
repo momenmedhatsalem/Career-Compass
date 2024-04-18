@@ -35,37 +35,62 @@
 // }
 // addHTML();
 
+/*⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻*/
+
+// function addHTML() {
+//   // Select all elements with the "J9_add_html" attribute
+//   var elements = document.querySelectorAll("[J9_add_html]");
+
+//   // Iterate over the selected elements
+//   elements.forEach(function(element) {
+//     var fileName = element.getAttribute("J9_add_html");
+
+//     // Fetch the content of the file
+//     fetch(fileName)
+//       .then(response => {
+//         if (!response.ok) {
+//           throw new Error("Page not found.");
+//         }
+//         return response.text();
+//       })
+//       .then(html => {
+//         // Replace the inner HTML of the element with the fetched content
+//         element.innerHTML = html;
+//         // Remove the "J9_add_html" attribute
+//         element.removeAttribute("J9_add_html");
+//       })
+//       .catch(error => {
+//         // Handle errors
+//         element.innerHTML = error.message;
+//         // Remove the "J9_add_html" attribute even in case of error
+//         element.removeAttribute("J9_add_html");
+//       });
+//   });
+// }
+
+// // Call the function to start the process
+// addHTML();
+/*⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻*/
+
+// with Ajax
 
 function addHTML() {
   // Select all elements with the "J9_add_html" attribute
   var elements = document.querySelectorAll("[J9_add_html]");
 
   // Iterate over the selected elements
-  elements.forEach(function(element) {
+  elements.forEach(function (element) {
     var fileName = element.getAttribute("J9_add_html");
 
-    // Fetch the content of the file
-    fetch(fileName)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Page not found.");
-        }
-        return response.text();
-      })
-      .then(html => {
-        // Replace the inner HTML of the element with the fetched content
-        element.innerHTML = html;
-        // Remove the "J9_add_html" attribute
-        element.removeAttribute("J9_add_html");
-      })
-      .catch(error => {
-        // Handle errors
-        element.innerHTML = error.message;
-        // Remove the "J9_add_html" attribute even in case of error
-        element.removeAttribute("J9_add_html");
-      });
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        element.innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", fileName, true);
+    xhttp.send();
   });
 }
 
-// Call the function to start the process
 addHTML();
