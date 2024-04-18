@@ -252,7 +252,9 @@
   padding: 1.5vh 2vw;
   resize: none;
   font-size: 1.6vw;
+  margin-top: 1vh;
 }
+
 .J9_emp_dash_right_side_body input {
   width: 97%;
   height: 4.5vw; /* vw */

@@ -53,6 +53,10 @@
   display: grid;
   grid-template-rows: repeat(4, auto);
 }
+.J9_emp_dash_post_job_right_side_body_container_job_details > div{
+  margin-bottom: 2vh;
+}
+
 .J9_emp_dash_post_job_right_side_body_container_job_details_job_status_years_of_experience {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
