@@ -23,7 +23,7 @@
 }
 
 /**********************************************************************/
-.J9_emp_dash_settings_right_side_body_emp_profile_save_cancel_button {
+.J9_emp_dash_settings_right_side_body_emp_settings_save_cancel_button {
   width: 22vw;
   height: 6vh;
   /* margin-left: 3vw; */
@@ -33,18 +33,22 @@
   justify-items: center;
   gap: 1vmin;
   font-size: 1.6vw;
-  /* margin-bottom: 3vh; */
+  margin-bottom: 3vw;
 }
-.J9_emp_dash_settings_right_side_body_emp_profile_save_button {
+#J9_emp_dash_settings_right_side_body_emp_settings_save_button {
   text-decoration: none;
   border-radius: 5px;
   background-color: #00c853;
   color: white;
   padding: 1vh 3vw;
+  cursor: pointer;
 }
 
-.J9_emp_dash_settings_right_side_body_emp_profile_cancel_button {
+#J9_emp_dash_settings_right_side_body_emp_settings_cancel_button {
   text-decoration: none;
   color: black;
+  background-color: transparent;
+  border: none;
   border-radius: 3vw;
+  cursor: pointer;
 }
