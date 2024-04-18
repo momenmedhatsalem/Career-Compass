@@ -1,0 +1,150 @@
+.J9_emp_dash_post_job_right_side_body_container {
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 2vh 4vw;
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  margin-bottom: 5vh;
+}
+.J9_emp_dash_post_job_right_side_body label {
+  display: block;
+  font-size: 1.5vw;
+  /* margin-bottom: 1vh; */
+  margin-top: 1vh;
+}
+.J9_emp_dash_post_job_right_side_body h3 {
+  font-size: 2vw;
+}
+.J9_emp_dash_post_job_right_side_body textarea {
+  /* height: 15vh; */
+  height: calc(8vh + 7vw);
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  padding: 1.5vh 2vw;
+  resize: none;
+  font-size: 1.6vw;
+}
+.J9_emp_dash_post_job_right_side_body input {
+  width: 97%;
+  height: 4.5vw; /* vw */
+  border: 1px solid #e5e5e5;
+  border-radius: 1vw;
+  padding: 0 2vw;
+  font-size: 1.6vw;
+  margin-top: 1vh;
+}
+.J9_emp_dash_post_job_right_side_body select {
+  width: 97%;
+  height: 4.5vw;
+  border: 1px solid #e5e5e5;
+  border-radius: 1vw;
+  padding: 0 2.5vw 0 2vw;
+  font-size: 1.6vw;
+  margin-top: 1vh;
+}
+.J9_emp_dash_post_job_right_side_body option {
+  font-size: 1.6vw;
+}
+
+/************************************************************************/
+
+.J9_emp_dash_post_job_right_side_body_container_job_details {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+}
+.J9_emp_dash_post_job_right_side_body_container_job_details > div{
+  margin-bottom: 2vh;
+}
+
+.J9_emp_dash_post_job_right_side_body_container_job_details_job_status_years_of_experience {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.J9_emp_dash_post_job_right_side_body_container_job_details_job_category_type_Salary {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+}
+
+.J9_emp_dash_post_job_right_side_body_container_job_details_job_category_type {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.J9_emp_dash_post_job_right_side_body_container_job_details_job_salary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.J9_emp_dash_post_job_right_side_body_container_job_details_job_salary_min_max {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: end;
+  margin-top: 1.5vw;
+}
+
+/************************************************************************************************************/
+
+
+.J9_emp_dash_post_job_right_side_body_container_experience {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 3vh;
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_address_location {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  font-size: 1.6vw;
+  margin-top: 2vh;
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_address_location_title {
+  margin: 0 0 1vh;
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_address {
+  margin-bottom: 1.2vh;
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_location {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.J9_emp_dash_post_job_right_side_body_emp_location div {
+  margin-bottom: 1vh;
+  width: 100%; /*  */
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_address_location label {
+  display: block;
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_address_location select option {
+  font-size: 1.6vw;
+}
+.J9_emp_dash_post_job_right_side_body_emp_profile_save_cancel_button {
+  width: 22vw;
+  height: 6vh;
+  /* margin-left: 3vw; */
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-items: center;
+  gap: 1vmin;
+  font-size: 1.6vw;
+  margin: 3vh 0;
+}
+.J9_emp_dash_post_job_right_side_body_emp_profile_save_button {
+  text-decoration: none;
+  border-radius: 3vw;
+  background-color: #00c853;
+  color: white;
+  padding: 1vh 3vw;
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_profile_cancel_button {
+  text-decoration: none;
+  color: black;
+  border-radius: 3vw;
+}
