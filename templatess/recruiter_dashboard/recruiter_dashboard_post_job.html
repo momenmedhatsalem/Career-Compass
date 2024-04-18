@@ -1,36 +1,36 @@
-<div class="J9_emp_dash_post_job_right_side_body_container">
+<form class="J9_emp_dash_post_job_right_side_body_container">
     <div class="J9_emp_dash_post_job_right_side_body_container_job_details">
         <h3 class="J9_emp_dash_post_job_right_side_body_container_job_details_title">Job Details</h3>
         <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_id">
-            <label>Job ID*</label> <input type="number" placeholder="123" />
+            <label>Job ID*</label><input name="job_id" required type="number" placeholder="123" />
         </div>
         <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_title">
-            <label>Job Title*</label> <input type="text" placeholder="Software Engineer" />
+            <label>Job Title*</label><input name="job_title" required type="text" placeholder="Software Engineer" />
         </div>
         <div class="J9_emp_dash_post_job_right_side_body_container_job_details_company_name">
-            <label>Company Name*</label> <input type="text" placeholder="Career compass" />
+            <label>Company Name*</label><input name="company_name" required type="text" placeholder="Career compass" />
         </div>
         <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_status_years_of_experience">
             <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_status">
                 <label>Job Status*</label>
-                <select>
+                <select required name="job_status">
                     <option>open</option>
                     <option>closed</option>
                 </select>
             </div>
             <div class="J9_emp_dash_post_job_right_side_body_container_job_details_years_of_experience">
-                <label>years of experience*</label> <input type="number" placeholder="2" />
+                <label>years of experience*</label><input name="years_of_experience" required type="number" placeholder="2" />
             </div>
         </div>
         <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_description">
-            <label>Job Description*</label><textarea placeholder="Job Description....."></textarea>
+            <label>Job Description*</label><textarea name="job_desc" required placeholder="Job Description....."></textarea>
         </div>
 
         <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category_type_Salary">
             <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category_type">
                 <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category">
                     <label>Job Category*</label>
-                    <select>
+                    <select required name="job_category">
                         <option>Designer</option>
                         <option>It & Development</option>
                         <option>Web & Mobile Dev</option>
@@ -38,7 +38,8 @@
                     </select>
                 </div>
                 <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_type">
-                    <label>Job Type*</label><select>
+                    <label>Job Type*</label>
+                    <select required name="job_type">
                         <option>Full time</option>
                         <option>Part time</option>
                         <option>Hourly-Contract</option>
@@ -49,14 +50,14 @@
             <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_salary">
                 <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_salary_type">
                     <label>Salary*</label>
-                    <select>
+                    <select required name="salary">
                         <option>Monthly</option>
                         <option>Weekly</option>
                     </select>
                 </div>
                 <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_salary_min_max">
-                    <div><input type="number" placeholder="Min" /></div>
-                    <div><input type="number" placeholder="Max" /></div>
+                    <div><input name="min_salary" required type="number" placeholder="Min" /></div>
+                    <div><input name="max_salary" required type="number" placeholder="Max" /></div>
                 </div>
             </div>
         </div>
@@ -67,7 +68,7 @@
         <div class="J9_emp_dash_post_job_right_side_body_container_experience">
             <div>
                 <label>English Fluency*</label>
-                <select>
+                <select required name="english_fluency">
                     <option>Basic</option>
                     <option>Conversational</option>
                     <option>Fluent</option>
@@ -76,7 +77,7 @@
             </div>
             <div>
                 <label>Experience*</label>
-                <select>
+                <select required name="experience">
                     <option>Intermediate</option>
                     <option>No-Experience</option>
                     <option>Expert</option>
@@ -91,12 +92,12 @@
         </h3>
         <div class="J9_emp_dash_post_job_right_side_body_emp_address">
             <label>Address*</label>
-            <input type="text" placeholder="Egypt, Giza, Dokii">
+            <input name="address" required type="text" placeholder="Egypt, Giza, Dokii">
         </div>
         <div class="J9_emp_dash_post_job_right_side_body_emp_location">
             <div class="J9_emp_dash_post_job_right_side_body_emp_location_country">
-                <label> Country*</label>
-                <select>
+                <label>Country*</label>
+                <select required name="country">
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Albania">Albania</option>
                     <option value="Algeria">Algeria</option>
@@ -337,8 +338,8 @@
                 </select>
             </div>
             <div class="J9_emp_dash_post_job_right_side_body_emp_location_city">
-                <label> City*</label>
-                <select>
+                <label>City*</label>
+                <select required name="city">
                     <option value="cairo">Cairo</option>
                     <option value="alexandria">Alexandria</option>
                     <option value="giza">Giza</option>
@@ -375,12 +376,12 @@
                 </select>
             </div>
             <div class="J9_emp_dash_post_job_right_side_body_emp_location_zip_code">
-                <label> Zip Code*</label>
-                <input type="number" placeholder="3740614">
+                <label>Zip Code*</label>
+                <input name="zip_code" required type="number" placeholder="3740614">
             </div>
             <div class="J9_emp_dash_post_job_right_side_body_emp_location_state">
-                <label> State*</label>
-                <select>
+                <label>State*</label>
+                <select required name="stats">
                     <option value="cairo">Cairo</option>
                     <option value="alexandria">Alexandria</option>
                     <option value="giza">Giza</option>
@@ -421,7 +422,7 @@
     </div>
 
     <div class="J9_emp_dash_post_job_right_side_body_emp_profile_save_cancel_button">
-        <a class="J9_emp_dash_post_job_right_side_body_emp_profile_save_button" href="#">save</a>
-        <a class="J9_emp_dash_post_job_right_side_body_emp_profile_cancel_button" href="#">cancel</a>
+        <input id="J9_emp_dash_post_job_right_side_body_emp_profile_save_button" type="submit" value="Submit">
+        <input id="J9_emp_dash_post_job_right_side_body_emp_profile_cancel_button" type="button" value="Cancel">
     </div>
-</div>
+</form>
