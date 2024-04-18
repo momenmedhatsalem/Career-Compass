@@ -1,20 +1,7 @@
 
-#add-new-job-button, #check_candidates-button {
-    width: 45%;
-    margin-right: 2.5%;
-    /* margin-bottom: 42%; */
-    line-height: 45px;
-    font-size: 21px;
-    border-radius: 25px;
-    border: none;
-    background-color: darkgreen;
-    color: rgb(255 255 255);
-}
-#add-new-job-button:hover,#check_candidates-button:hover{
-    cursor: pointer;
-    transform: scale(1.2);
-    background-color: rgb(98, 255, 98);
-    color: #7e7e7e;
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
 }
 a {
     text-decoration: none;
@@ -28,14 +15,16 @@ a {
 
 h1 {
     text-align: center;
-    font-size: 38px;
-    line-height: 50px;
-    background-color: #ffffff;
-    color: black;
-    border-radius: 25px;
-    width: 35%;
-    margin-left: 32.5%;
-    box-shadow: 10px 0px 0px 0px #3922f9, -10px 0px 0px 0px #3922f9, 0px 1px 8px black;
+    font-size: 50px;
+    line-height: 300px;
+    background-color: #00BCD4;
+    color: white;
+    /* border-radius: 25px; */
+    width: 113%;
+    height: 300px;
+    margin-left: -6%;
+    margin-top: -5%;
+    /* box-shadow: 10px 0px 0px 0px #3922f9, -10px 0px 0px 0px #3922f9, 0px 1px 8px black; */
 }
 .delete-button {
     width: 45%;
@@ -48,11 +37,11 @@ h1 {
     background-color: darkgreen;
     color: rgb(255 255 255);
 }
-.edit-ancor {
+.view-ancor {
     width: 45%;
     margin-bottom: 2%;
 }
-.edit-button {
+.view-button {
     width: 100%;
     height: 100%;
     padding: 1px;
@@ -64,15 +53,15 @@ h1 {
     background-color: darkgreen;
     color: rgb(255 255 255);
 }
-.delete-button:hover,.edit-button:hover{
+.delete-button:hover,.view-button:hover{
     transform: scale(1.2);
     background-color: rgb(98, 255, 98);
     color: #7e7e7e;
 }
 
 img.job-img {
-    width: 50px;
-    height: 50px;
+    width: 75%;
+    height: 65%;
     filter: blur(1px);
 }
 
@@ -94,13 +83,13 @@ img {
     z-index: 8;
     left: 4%;
     top: 4%;
-    width: 90px;
-    height: 90px;
+    width: 20%;
+    height: 35%;
     /* vertical-align: middle; */
     /* font-size: 37px; */
     border-radius: 57%;
     text-align: center;
-    line-height: 131px;
+    line-height: 150px;
     /* border: solid; */
     box-shadow: -1px 4px 5px 0px #0000009c;
     background-color: #f7f7f7cc;
@@ -123,7 +112,7 @@ img.job-img:hover {
     height: 47px;
     margin-left: 17%;
     text-align: center;
-    font-size: 28px;
+    font-size: 2vw;
     border-radius: 10px;
     line-height: 50px;
 }
@@ -150,14 +139,7 @@ img.job-img:hover {
     align-content: flex-start;
     align-content: space-around;
 }
-div.edit-delete-buttons button {
-    font-size: 20px;
-    border-radius: 41px;
-    width: 33px;
-    line-height: 28px;
-    background: none;
-    border: none;
-}
+
 .all-jobs{
     display: flex;
     flex-wrap: wrap;
@@ -174,7 +156,7 @@ div.edit-delete-buttons button {
     border-radius: 14px;
     display: inline-block;
     background-color: white;
-    box-shadow: 5px 5px 15px 5px #39564ab8;
+    box-shadow: 0px 0px 0px 20px #00bcd46e;
 }
 img{
     width: 30px;
@@ -189,13 +171,13 @@ img:hover{
     width: 20%;
     /* border: solid; */
     height: 40px;
-    font-size: 18px;
+    font-size:1.6vw;
     color: rgba(36, 64, 52, .7);
 }
 .city {
     width: 50%;
     height: 40px;
-    font-size: 18px;
+    font-size: 1.6vw;
     color: rgba(36, 64, 52, .7);
 }
 .description {
