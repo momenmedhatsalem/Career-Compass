@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="../static/css/resume_skills_education.css">
   <link rel="stylesheet" href="../static/index.css">
   <link rel="stylesheet" href="../Mahmoud_Khaled/style/profile_styl.css">
-
-
 </head>
 
 <body style="margin: 0px;">
@@ -104,13 +102,12 @@
     <li><a href="#" ><img src="../media/icon_1.png" alt="Dashboard"><span>Dashboard</span></a></li>
     <li><a href="/templatess/profile.html" ><img  src="../media/icon_2.png" alt="Profile"><span>Profile</span></a></li>
     <li><a href="#" ><img src="../media/icon_3.png" alt="resume"><span>resume</span></a></li>
-    <li onclick="sidebar('1')"><a href="/templatess/resume_education_skills.html" ><img  src="../media/upload_resume.png" alt="upload_resume"><span>upload resume</span></a></li>
-    <li onclick="sidebar('2')" ><a href="/templatess/resume_education_skills.html" ><img  src="../media/education.png" alt="Education"><span>Education</span></a></li>
-    <li onclick="sidebar('3')"><a href="/templatess/resume_education_skills.html" ><img  src="../media/skills.png" alt="Skills"><span>Skills & Experience</span></a></li>
+    <li onclick="sidebar('1')" id='1'><img  src="../media/upload_resume.png" alt="upload_resume"><span>upload resume</span></li>
+    <li onclick="sidebar('2')" id='2' ><img  src="../media/education.png" alt="Education"><span>Education</span></li>
+    <li onclick="sidebar('3')" id='3'><img  src="../media/skills.png" alt="Skills"><span>Skills & Experience</span></li>
   </ul>
 </div>
-
-
+<a href="/templatess/resume_education_skills.html"></a>
   <div id="j0_main">
     <div class="dashboard-body">
   
@@ -217,7 +214,7 @@
     </div>
     <div class="j0-btn j0-add-edu">
       <label name="uploadCV" >+ Add more</label> 
-      <input type="file" id="j0-uploadCV" name="uploadCV" placeholder="">
+      <input  id="j0-uploadCV" name="uploadCV" placeholder="">
   </div>
   </div>
 
@@ -319,12 +316,10 @@
           </div>
           <div class="j0-btn j0-add-skills">
             <label name="uploadCV" >+ Add more</label> 
-            <input type="file" id="j0-uploadCV" name="uploadCV" placeholder="">
+            <input  id="j0-uploadCV" name="uploadCV" placeholder="">
         </div>
           </div>
       </div>
-
-
 
 
 
@@ -392,6 +387,8 @@
   </div>
 
   </div>
+
+  <script src="/static/js/sidebar.js"></script>
 
 </body>
 
