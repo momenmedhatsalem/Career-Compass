@@ -1,17 +1,11 @@
-/* .J9_emp_dash_prof_right_side_body_title {
-  grid-area: J9_emp_dash_prof_right_side_body_title;
-  background-color: #f5f5f5;
-  font-size: calc(2vw + 1vh);
-  padding-left: 2vw;
-  line-height: 3vh;
-} */
+
 
 .J9_emp_dash_prof_right_side_body_emp_divs {
   display: grid;
   grid-template-rows: repeat(4, auto);
   gap: 2vh;
 }
-/* .J9_emp_dash_prof_right_side_body_emp_divs > div { */
+
 .J9_emp_dash_prof_right_side_body_emp_information,
 .J9_emp_dash_prof_right_side_body_emp_social_media,
 .J9_emp_dash_prof_right_side_body_emp_address_location {
