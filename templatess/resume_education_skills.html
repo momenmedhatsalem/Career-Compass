@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../static/css/resume_skills_education.css">
   <link rel="stylesheet" href="../static/index.css">
   <link rel="stylesheet" href="../Mahmoud_Khaled/style/profile_styl.css">
+  <script src="../static/js/sidebar.js"></script>
 </head>
 
 <body style="margin: 0px;">
@@ -102,16 +103,17 @@
     <li><a href="#" ><img src="../media/icon_1.png" alt="Dashboard"><span>Dashboard</span></a></li>
     <li><a href="/templatess/profile.html" ><img  src="../media/icon_2.png" alt="Profile"><span>Profile</span></a></li>
     <li><a href="#" ><img src="../media/icon_3.png" alt="resume"><span>resume</span></a></li>
-    <li onclick="sidebar('1')" id='1'><img  src="../media/upload_resume.png" alt="upload_resume"><span>upload resume</span></li>
-    <li onclick="sidebar('2')" id='2' ><img  src="../media/education.png" alt="Education"><span>Education</span></li>
-    <li onclick="sidebar('3')" id='3'><img  src="../media/skills.png" alt="Skills"><span>Skills & Experience</span></li>
+<li id='1'><button onclick="manageTabs('j0_upload')"><img src="../media/upload_resume.png" alt="upload_resume"><span>Uploadz Resume</span></button></li>
+<li id='2'><button onclick="manageTabs('j0_education')"><img src="../media/education.png" alt="Education"><span>Education</span></button></li>
+<li id='3'><button onclick="manageTabs('j0_skills')"><img src="../media/skills.png" alt="Skills"><span>Skills & Experience</span></button></li>
   </ul>
 </div>
 <a href="/templatess/resume_education_skills.html"></a>
+
   <div id="j0_main">
     <div class="dashboard-body">
   
-        <div class="j0upload">
+        <div class="tab" id="j0_upload">
                     <h4 class="j0-title-three">Resume Attachment</h4>
                     <div class="j0-input">
                         <h4 for="">CV Attachment*</h4>
@@ -134,7 +136,7 @@
       <!-- / upload  -->
 
 <!-- education -->
-  <div class="j0_education">
+  <div class="tab" id="j0_education">
     <h2>Education</h2>
     <div class="j0_education-item">
      <label for="item3"><span id="j0_edu_title">*Add Education</span> <img src="/media/arrow.png" alt="arrow"></label>
@@ -219,7 +221,7 @@
   </div>
 
 <!-- skills -->
-      <div class="j0-skills">
+      <div class="tab" id="j0_skills">
                   <h4 class="j0-title-three">Skills &amp; Experience</h4>
         <div class="dash-input-wrapper mb-40">
           <label for="">Add Skills*</label>
@@ -388,7 +390,7 @@
 
   </div>
 
-  <script src="/static/js/sidebar.js"></script>
+
 
 </body>
 

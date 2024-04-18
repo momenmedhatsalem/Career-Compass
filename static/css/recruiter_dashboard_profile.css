@@ -144,8 +144,8 @@
 }
 
 .J9_emp_dash_prof_right_side_body_emp_profile_save_cancel_button {
-  width: 22vw;
-  height: 6vh;
+  width: 20vw;
+  /* height: 6vh; */
   margin-left: 3vw;
   display: grid;
   grid-template-columns: auto auto;
@@ -155,16 +155,21 @@
   font-size: 1.6vw;
   margin-bottom: 3vh;
 }
-.J9_emp_dash_prof_right_side_body_emp_profile_save_button {
+
+#J9_emp_dash_prof_right_side_body_emp_profile_save_button {
   text-decoration: none;
-  border-radius: 3vw;
+  border-radius: 30px;
   background-color: #00c853;
   color: white;
-  padding: 1vh 3vw;
+  /* padding: 1vh 3vw; */
+  cursor: pointer;
 }
 
-.J9_emp_dash_prof_right_side_body_emp_profile_cancel_button {
+#J9_emp_dash_prof_right_side_body_emp_profile_cancel_button {
   text-decoration: none;
+  background-color: transparent;
+  border: none;
   color: black;
   border-radius: 3vw;
+  cursor: pointer;
 }

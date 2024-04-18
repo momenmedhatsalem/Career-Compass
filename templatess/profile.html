@@ -10,6 +10,8 @@
   <title>Your Profile</title>
   <link rel="stylesheet" href="../static/styles.css">
   <link rel="stylesheet" href="../Mahmoud_Khaled/style/profile_styl.css">
+  <script src="/static/js/sidebar.js"></script>
+
 </head>
 
 
@@ -74,11 +76,13 @@
       <li><a href="#" ><img src="../media/icon_1.png" alt="Dashboard"><span>Dashboard</span></a></li>
       <li><a href="/templatess/profile.html" ><img  src="../media/icon_2.png" alt="Profile"><span>Profile</span></a></li>
       <li><a href="#" ><img src="../media/icon_3.png" alt="resume"><span>resume</span></a></li>
-      <li onclick="sidebar('1')" id='1'><img  src="../media/upload_resume.png" alt="upload_resume"><span>upload resume</span></li>
-      <li onclick="sidebar('2')" id='2' ><img  src="../media/education.png" alt="Education"><span>Education</span></li>
-      <li onclick="sidebar('3')" id='3'><img  src="../media/skills.png" alt="Skills"><span>Skills & Experience</span></li>
+  <li id='1'><button onclick="manageTabs('j0_upload')"><img src="../media/upload_resume.png" alt="upload_resume"><span>Uploadz Resume</span></button></li>
+  <li id='2'><button onclick="manageTabs('j0_education')"><img src="../media/education.png" alt="Education"><span>Education</span></button></li>
+  <li id='3'><button onclick="manageTabs('j0_skills')"><img src="../media/skills.png" alt="Skills"><span>Skills & Experience</span></button></li>
     </ul>
   </div>
+  <a href="/templatess/resume_education_skills.html"></a>
+  
   <!-- jonathan -->
 
 
@@ -394,7 +398,6 @@
   </div>
 
   </div>
-  <script src="/static/js/sidebar.js"></script>
 </body>
 
 </html>
