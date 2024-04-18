@@ -1,0 +1,50 @@
+
+.J9_emp_dash_settings_right_side_body_container {
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 2vh 4vw;
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  margin-bottom: 3vh;
+}
+
+/************************************************************************/
+.J9_emp_dash_settings_right_side_body_container_name {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.J9_emp_dash_settings_right_side_body_container_password_change {
+  font-size: 1.1vw;
+  color: #00000088;
+}
+.J9_emp_dash_settings_right_side_body_container_password_change a {
+  text-decoration: none;
+  color: #00c853;
+}
+
+/**********************************************************************/
+.J9_emp_dash_settings_right_side_body_emp_profile_save_cancel_button {
+  width: 22vw;
+  height: 6vh;
+  /* margin-left: 3vw; */
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-items: center;
+  gap: 1vmin;
+  font-size: 1.6vw;
+  /* margin-bottom: 3vh; */
+}
+.J9_emp_dash_settings_right_side_body_emp_profile_save_button {
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #00c853;
+  color: white;
+  padding: 1vh 3vw;
+}
+
+.J9_emp_dash_settings_right_side_body_emp_profile_cancel_button {
+  text-decoration: none;
+  color: black;
+  border-radius: 3vw;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="J9" lang="en">
+<!-- ========== Joseph 20220099 ========== -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/recruiter_dashboard.css">
+    <link rel="stylesheet" href="../../static/css/recruiter_dashboard_profile.css">
+    <link rel="stylesheet" href="../../static/css/recruiter_dashboard_jobs.css">
+    <link rel="stylesheet" href="../../static/css/recruiter_dashboard_post_job.css">
+    <link rel="stylesheet" href="../../static/css/recruiter_dashboard_saved_candidates.css">
+    <link rel="stylesheet" href="../../static/css/recruiter_dashboard_settings.css">
+
+
+    <title>Document</title>
+    <script src="../../static/js/recruiter_dashboard_jobs.js"></script>
+    <script src="../../static/js/recruiter_dashboard_saved_candidates.js"></script>
+
+</head>
+
+<body class="J9_emp_dash_body">
+    <aside class="J9_emp_dash_aside">
+        <div class="J9_emp_dash_aside_fixed">
+
+            <div class="J9_emp_dash_aside_logo_prof_pic">
+                <a class="J9_emp_dash_aside_logo" href="../index.html"><img src="../../media/images/logopng.png"
+                        alt=""></a>
+                <a class="J9_emp_dash_aside_prof_pic" href="recruiter_dashboard.html">
+                    <img src="../../media/images/employer.png" alt="profile photo">
+                </a>
+                <h3>Joseph Sameh</h3>
+            </div>
+            <div class="J9_emp_dash_aside_menu_bar">
+                <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="recruiter_dashboard_profile.html">
+                    <img J9_to_path="recruiter_dashboard_profile.html" src="../../media/icons/profile.svg" alt="profileIco">
+                    <span J9_to_path="recruiter_dashboard_profile.html" >My Profile</span>
+                </p>
+                <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="recruiter_dashboard_jobs.html">
+                    <img J9_to_path="recruiter_dashboard_jobs.html" src="../../media/icons/list.svg" alt="ListIco">
+                    <span J9_to_path="recruiter_dashboard_jobs.html" >My Jobs</span>
+                </p>
+                <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="recruiter_dashboard_post_job.html">
+                    <img J9_to_path="recruiter_dashboard_post_job.html" src="../../media/icons/pen.svg" alt="penIco">
+                    <span J9_to_path="recruiter_dashboard_post_job.html" >Submit Job</span>
+                </p>
+                <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="recruiter_dashboard_saved_candidates.html">
+                    <img J9_to_path="recruiter_dashboard_saved_candidates.html" src="../../media/icons/bookmark.svg" alt="BookmarkIco">
+                    <span J9_to_path="recruiter_dashboard_saved_candidates.html" >Saved candidates</span>
+                </p>
+                <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="recruiter_dashboard_settings.html">
+                    <img J9_to_path="recruiter_dashboard_settings.html" src="../../media/icons/setting.svg" alt="setting">
+                    <span J9_to_path="recruiter_dashboard_settings.html" >Account Settings</span>
+                </p>
+            </div>
+            <a class="J9_emp_dash_aside_logout" href="#">
+                <img src="../../media/icons/logout.svg" alt="LogoutIco">
+                <span>log out</span>
+            </a>
+        </div>
+    </aside>
+
+    <div class="J9_emp_dash_right_side">
+        <div class="J9_emp_dash_right_side_container">
+            <div class="J9_emp_dash_right_side_top_nav">
+
+                <form class="J9_emp_dash_right_side_top_nav_search_form" action="#">
+                    <button class="J9_emp_dash_right_side_top_nav_search_button"><img
+                            src="../../media/icons/search_icon.svg" alt=""></button>
+                    <input class="J9_emp_dash_right_side_top_nav_search_box" type="search" placeholder="Search here..">
+                </form>
+                <p class="J9_emp_dash_right_side_top_nav_post_button" J9_to_path="recruiter_dashboard_post_job.html">Post a Job</p>
+
+            </div>
+
+            <div class="J9_emp_dash_right_side_body">
+                <div class="J9_emp_dash_right_side_body_title">
+                    <h2>Account Settings</h2>
+                </div>
+
+                <div id="J9_main_container" J9_add_html="recruiter_dashboard_profile.html"></div>
+
+            </div>
+        </div>
+    </div>
+    <script src="../../static/js/J9_add_html.js"></script>
+    <script src="../../static/js/recruiter_dashboard.js"></script>
+
+</body>
+
+</html>
