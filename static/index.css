@@ -493,3 +493,10 @@ a {
   color: white;
   margin-left: 3vw;
 }
+
+.tab{
+  display: none;
+}
+#j0_upload {
+  display: block;
+}
