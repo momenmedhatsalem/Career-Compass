@@ -1,0 +1,149 @@
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs {
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 2vh 2vw;
+  margin-bottom: 3vh;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table {
+  border-collapse: collapse;
+
+  width: 100%;
+  margin-bottom: 1vh;
+  /* vertical-align: top; */
+  /* border-color: #dee2e6; */
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_head_row th {
+  border: 0;
+  padding: 1vh 1.5vw;
+  font-size: 1.5vw;
+  background: #f5f5f5;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_head_row th:first-of-type {
+  border-radius: 7px 0 0 7px;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_head_row th:last-of-type {
+  border-radius: 0 7px 7px 0;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_title :nth-child(1) {
+  color: #ffa500;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_title :nth-child(2) {
+  font-size: 1.1vw;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 0.2vh;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body td {
+  font-size: 1.4vw;
+  vertical-align: middle;
+  padding: 3vh 1.5vw;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row:last-child td {
+  border-bottom: none;
+}
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status {
+  position: relative;
+  padding-left: 1.8vw;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status::before {
+  content: "";
+  position: absolute;
+  width: 0.8vw;
+  height: 0.8vw;
+  border-radius: 50%;
+  left: 0;
+  top: 0.5vw;
+}
+
+.J9_open::before {
+  background: #00c853;
+}
+
+.J9_closed::before {
+  background: #ff5050;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots {
+  float: right;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button {
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  display: block;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button > span {
+  display: block;
+  position: relative;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(43, 43, 43, 0.35);
+  cursor: pointer;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button
+  > span::before,
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button
+  > span::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 4px;
+  height: 4px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(43, 43, 43, 0.35);
+  cursor: pointer;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button
+  > span::after {
+  top: auto;
+  bottom: -7px;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button + ul {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  list-style: none;
+  background-color: #fff;
+
+  min-width: 8vw;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots a {
+  text-decoration: none;
+  padding: 0 15px;
+  line-height: 34px;
+  font-size: 1.2vw;
+  color: #000;
+  background: #fff;
+}
+
+.J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots img {
+  display: inline-block;
+  vertical-align: -4px;
+  margin-right: 0.5vw;
+  width: 1.5vw;
+}
