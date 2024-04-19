@@ -10,14 +10,11 @@
   <link rel="stylesheet" href="../static/styles.css">
   <link rel="stylesheet" href="../Mahmoud_Khaled/style/search_styl.css">
 
+  <script src="/static/js/temp_add_job.js"></script>
+  <script src="/static/js/search.js"></script>
+
   <script>
     // loop through BD ad get all job entries with provided substring
-
-    function filterlist() {
-      document.getElementById("result").style.display = "flex";
-
-      document.getElementById("result-grid").style.display = "flex";
-    }
 
     function show() {
       if (document.getElementById("filter").getAttribute("style") == "display: none;") {
@@ -99,8 +96,8 @@
       <label for="titl" class="M7-search-label M7-gradient-text">What's Your Dream Job?</label>
 
       <div class="M7-search-wrapper">
-        <input type="text" list="jobs" placeholder="Eg. Software developer / UI/UX Designer" name="title" id="title"
-          value="" class="M7-search-field"><button onclick="filterlist()" class="M7-search-button">
+        <input type="text" list="jobs" placeholder="Eg. Software developer / UI/UX Designer" name="title"
+          id="search_text" value="" class="M7-search-field"><button onclick="search()" class="M7-search-button">
           Search!
         </button>
 
@@ -131,7 +128,7 @@
           <span class="M7-filter-item M7-filter-header">&nbsp;&nbsp;&nbsp;&nbsp;Availalbe jobs based on your
             search</span>
 
-          <span class="M7-filter-item">8 found in total </span>
+          <span class="M7-filter-item"> <span id="num_of_results"></span> found in total </span>
 
         </div>
 
@@ -148,11 +145,10 @@
         </select>
 
         <div class="M7-result-flex" style="display: none;" id="result-grid">
-          <!-- Show using javascript when SEARCH is clicked set style > display = "flex"--> <!-- VERY IMPORTANT-->
 
-          <div class="M7-card1 M7-filter-item">
+          <!-- <div class="M7-card1 M7-filter-item">
+
             <fieldset>
-
               <img src="../media/software.jpg" alt="open job icon" width="100%" height="30%">
 
               <h4>Software Developer</h4>
@@ -165,7 +161,9 @@
                 </button>
               </a>
             </fieldset>
+
           </div>
+
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
@@ -285,7 +283,7 @@
                 </button>
               </a>
             </fieldset>
-          </div>
+          </div> -->
 
         </div>
 
