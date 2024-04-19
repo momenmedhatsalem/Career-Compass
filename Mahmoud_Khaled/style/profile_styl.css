@@ -245,12 +245,14 @@
     font-size: 20px;
     background-color: #333333;
 }
+
 .j0menu li button {
     background-color: #333333;
     border: none;
     font-size: 15px;
 }
-.j0menu li span{
+
+.j0menu li span {
     color: white;
 }
 
@@ -260,50 +262,48 @@
     background-color: #00B0ff;
 }
 
-.j0menu li :hover {
+.j0menu li  :hover {
     color: #1e90ff;
 }
 
-li img{
+li img {
     width: 30px;
     height: 30px;
     margin-right: 7px;
 }
+
 #j0_main {
     width: 70%;
     padding: 2%;
     margin-left: 300px;
-  }
-  
-  .dashboard-body {
-    min-height: 100vh;
-    border-radius: 50px 0 0 50px;
-    padding: 50px;
-  }
-  
-  /* ----------------------upload----------------------- */
-  #j0_upload{
-    background-color: white ;
+}
+
+
+
+/* ----------------------upload----------------------- */
+#j0_upload {
+    background-color: white;
     padding: 45px 60px 50px;
     border-radius: 20px;
-    display:none;
-  }
-  
-  .dashboard-body .j0-title-three {
+    display: none;
+}
+
+.dashboard-body .j0-title-three {
     font-family: "gordita";
     font-size: 24px;
     color: #1a237e;
     margin: 0 0 30px;
-  }
-  
-  .j0-input{
+}
+
+.j0-input {
     display: block;
     font-size: 15px;
     font-weight: 500;
     color: #254035;
     margin-bottom: 20px;
-  }
-  .j0-upload{
+}
+
+.j0-upload {
     height: 60px;
     width: 100%;
     border-radius: 10px;
@@ -313,14 +313,16 @@ li img{
     align-items: center !important;
     justify-content: space-between !important;
     margin-bottom: 15px;
-  }
-  
-  .j0-remove-btn {
+}
+
+.j0-remove-btn {
     font-size: 15px;
     font-weight: 700;
     color: #00c853;
-  }
-  .j0-btn{
+    cursor: pointer;
+}
+
+#j0-btn {
     font-size: 15px;
     font-weight: 500;
     border-radius: 7px;
@@ -333,252 +335,291 @@ li img{
     position: relative !important;
     display: inline-block !important;
     max-width: 120px;
-  }
-  .j0-btn:hover{
-    background:#00c853;
-  }
-  #j0-uploadCV{
+}
+
+#j0-btn:hover {
+    background: #00c853;
+}
+
+#j0-uploadCV {
     position: absolute;
     opacity: 0;
     height: 100%;
     top: 0;
     left: 0;
-  }
-  
-  
-  /* ---------------------------------------------------------------education----------------------------------------------------------------- */
-  #j0_education {
-      margin: 20px auto;
-      background-color: white;
-      border-radius: 20px;
-      padding: 20px;
-      display: none;
-  }
-  
-  .j0_education-item {
-      border: 1px solid #ddd;
-      line-height: 15px;
-      margin: 15px 0;
-      border-radius: 10px;
-  }
-  
-  #j0_edu_title {
-      padding: 15px;
-      font-size: 16px;
-      font-weight: bold;
-      margin: 20px;
-  }
-  
-  .j0_education-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      margin: 0px 10px;
-  }
-  
-  .j0_education-content p {
-      padding: 15px;
-      margin: 0;
-  }
-  
-  input {
-      float: right;
-  }
-  
-  .j0_education input:checked~.j0_education-content {
-      max-height: fit-content;
-  }
-  
-  * {
-      box-sizing: border-box;
-    }
-    
-    input[type=text], textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      resize: none;
-    }
-    select{
-      width: 80%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    label {
-      padding: 12px 12px 12px 0;
-      display: inline-block;
-      width: 100%;
-    }
-      
-    
-    .j0_label {
-      float: left;
-      width: 20%;
-      margin-top: auto;
-    }
-    
-    .j0_input {
-      float: right;
-      width: 80%;
-      margin-top: auto;
-    }
-    .j0_input_select {
-      float: left;
-      width: 40%;
-    }
-    label>img{
-      width: 30px;
-      float: right;
-    }
-    .j0-add-btn{
-      background-color: #00c853;
-      border-radius: 10px;
-      padding: 10px 20px;
-      margin-top: 15px;
-    }
-  
-    /* ---------------------------------------------------------------skills-------------------------------------------------- */
-  
-    #j0_skills{
-     margin: 20px auto;
-      background-color: white;
-      border-radius: 20px;
-      padding: 20px;
-      display: none;
-  }
-  
-   .skills-wrapper {
-      padding: 15px 20px 10px;
-      background: #f7f7f7;
-      border-radius: 15px;
-  }
-  
-  div {
-      display: block;
-      unicode-bidi: isolate;
-  }
-  .dashboard-body .dash-input-wrapper .skills-wrapper ul {
-      margin: 0 -5px;
-  }
-  
-  .style-none {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 0;
-  }
-  .align-items-center {
-      align-items: center !important;
-  }
-  .flex-wrap {
-      flex-wrap: wrap !important;
-  }
-  .d-flex {
-      display: flex !important;
-  }
-  dl, ol, ul {
-      margin-top: 0;
-      margin-bottom: 1rem;
-  }
-  ol, ul {
-      padding-left: 2rem;
-  }
-  
-  *, ::after, ::before {
-      box-sizing: border-box;
-  }
-  ul {
-      display: block;
-      list-style-type: disc;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-      padding-inline-start: 40px;
-      unicode-bidi: isolate;
-  }
-  .dashboard-body .dash-input-wrapper .skills-wrapper ul li {
-      padding: 0 5px 15px;
-  }
-  li {
-      display: list-item;
-      text-align: -webkit-match-parent;
-      unicode-bidi: isolate;
-  }
-  .dashboard-body .dash-input-wrapper .skills-wrapper ul li.is_tag button {
-      font-size: 15px;
-      color: #31795a;
-      line-height: 42px;
-      padding: 0 40px 0 22px;
-      background: #fff;
-      box-shadow: 0px 15px 30px rgba(0,0,0,.0363735);
-      border-radius: 30px;
-      position: relative;
-  }
-  
-  [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
-      cursor: pointer;
-  }
-  button {
-      border: none;
-      outline: none;
-      box-shadow: none;
-      display: block;
-      padding: 0;
-      cursor: pointer;
-      background: rgba(0, 0, 0, 0);
-      color: inherit;
-  }
-  [type=button], [type=reset], [type=submit], button {
-      -webkit-appearance: button;
-  }
-  button, select {
-      text-transform: none;
-  }
-  .dashboard-body .dash-input-wrapper .skills-wrapper ul li.is_tag button i {
-      position: absolute;
-      font-size: 20px;
-      right: 10px;
-      top: 0;
-  }
-  .dashboard-body .dash-input-wrapper .skills-wrapper ul li.more_tag button {
-      font-size: 21px;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: #d2f34c;
-  }
-  
-  .j0-skills-ac {
+}
+
+
+/* ---------------------------------------------------------------education----------------------------------------------------------------- */
+#j0_education {
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: none;
+}
+
+.j0_education-item {
+    border: 1px solid #ddd;
+    line-height: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+#j0_edu_title {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.j0_education-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin: 0px 10px;
+}
+
+.j0_education-content p {
+    padding: 15px;
+    margin: 0;
+}
+
+input {
+    float: right;
+}
+
+.j0_education input:checked~.j0_education-content {
+    max-height: fit-content;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+select {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+
+.j0_label {
+    float: left;
+    width: 20%;
+    margin-top: auto;
+}
+
+.j0_input {
+    float: right;
+    width: 80%;
+    margin-top: auto;
+}
+
+.j0_input_select {
+    float: left;
+    width: 40%;
+}
+
+label>img {
+    width: 30px;
+    float: right;
+}
+
+.j0-add-btn {
+    background-color: #00c853;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 15px;
+}
+
+/* ---------------------------------------------------------------skills-------------------------------------------------- */
+
+#j0_skills {
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: none;
+}
+
+.skills-wrapper {
+    padding: 15px 20px 10px;
+    background: #f7f7f7;
+    border-radius: 15px;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.dashboard-body .dash-input-wrapper .skills-wrapper ul {
+    margin: 0 -5px;
+}
+
+.style-none {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+dl,
+ol,
+ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ol,
+ul {
+    padding-left: 2rem;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
+.dashboard-body .dash-input-wrapper .skills-wrapper ul li {
+    padding: 0 5px 15px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+
+.dashboard-body .dash-input-wrapper .skills-wrapper ul li.is_tag button {
+    font-size: 15px;
+    color: #31795a;
+    line-height: 42px;
+    padding: 0 40px 0 22px;
+    background: #fff;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, .0363735);
+    border-radius: 30px;
+    position: relative;
+}
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    padding: 0;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0);
+    color: inherit;
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+    -webkit-appearance: button;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+.dashboard-body .dash-input-wrapper .skills-wrapper ul li.is_tag button i {
+    position: absolute;
+    font-size: 20px;
+    right: 10px;
+    top: 0;
+}
+
+.dashboard-body .dash-input-wrapper .skills-wrapper ul li.more_tag button {
+    font-size: 21px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #d2f34c;
+}
+
+.j0-skills-ac {
     width: 100%;
     margin: 20px auto;
-  }
-  .j0-skills-ac-item {
+}
+
+.j0-skills-ac-item {
     border: 1px solid #eaeaea;
     border-radius: 15px;
     margin-bottom: 20px;
     width: 100%;
-  }
-  .j0-skills-ac-title {
+}
+
+.j0-skills-ac-title {
     padding: 15px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     border-bottom: 1px solid #ddd;
-  }
-  .j0-skills-ac-content {
+}
+
+.j0-skills-ac-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
     line-height: 15px;
     margin: 0px 10px;
-  }
-  
-  .j0-skills-ac input[id="item2"] {
+}
+
+.j0-skills-ac input[id="item2"] {
     display: none;
-  }
-  .j0-skills-ac input:checked ~ .j0-skills-ac-content {
-    max-height: 1000px; /* Adjust as needed */
-  }
-  
+}
+
+.j0-skills-ac input:checked~.j0-skills-ac-content {
+    max-height: 1000px;
+    /* Adjust as needed */
+}
