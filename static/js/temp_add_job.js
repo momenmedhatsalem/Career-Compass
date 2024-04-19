@@ -10,13 +10,13 @@ class job {
     }
 };
 
-var job0 = new job("software engineer", "3", 2000, "USA");
-var job1 = new job("software engineer", "2", 3400, "Germany");
-var job2 = new job("software engineer", "0", 3000, "France");
+var job0 = new job("software developer", "3", 2000, "USA");
+var job1 = new job("software developer", "2", 3400, "Germany");
+var job2 = new job("software developer", "0", 3000, "France");
 var job3 = new job("front-end developer", "5", 1500, "Egypt");
 var job4 = new job("front-end developer", "3", 2000, "UAE");
-var job5 = new job("graphics Designer", "6", 2300, "Spain");
-var job6 = new job("graphics Designer", "2", 1900, "Russia");
+var job5 = new job("graphics designer", "6", 2300, "Spain");
+var job6 = new job("graphics designer", "2", 1900, "Russia");
 var job7 = new job("game developer", "3", 4000, "Russia");
 
 var job_array = [];

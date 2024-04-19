@@ -108,41 +108,42 @@
           <option value="Full-stack Developer">Full-stack Developer</option>
           <option value="Graphics Designer">Graphics Designer</option>
           <option value="Project Manager">Project Manager</option>
+          <option value="Game Developer">Game Developer</option>
           <option value="Sales Manager">Sales Manager</option>
           <option value="Intern">Intern</option>
         </datalist>
 
       </div>
 
-      <br>
+      <!-- <br> -->
 
       <div class="M7-result">
 
 
-        <div class="M7-result-flex" style="display: none;" id="result">
+        <div class="M7-result-flex-up" style="display: none;" id="result">
           <!-- Show using javascript when SEARCH is clicked set style > display = "flex"--> <!-- VERY IMPORTANT-->
 
-          <button onclick="show()" class="M7-filter-item M7-filter-button"><img src="../media/filter-white.png"
-              width="15" alt="filter img">&nbsp;Filter Jobs</button>
+          <button onclick="show()" class="M7-filter-item-up M7-filter-button"><img src="../media/filter-white.png"
+              width="15" alt="filter img">&nbsp;Sort Jobs</button>
 
-          <span class="M7-filter-item M7-filter-header">&nbsp;&nbsp;&nbsp;&nbsp;Availalbe jobs based on your
+          <span class="M7-filter-item-up M7-filter-header">&nbsp;&nbsp;&nbsp;Availalbe jobs based on your
             search</span>
 
-          <span class="M7-filter-item"> <span id="num_of_results"></span> found in total </span>
+          <span class="M7-filter-item-up"> <span id="num_of_results"></span> found in total </span>
 
         </div>
 
 
         <select name="filter" id="filter" style="display: none;" class="M7-filter-select">
-          <optgroup label="Filter by:">
+          <optgroup label="Salary:">
 
-            <option value="title">Job title</option>
-            <option value="years_exp">Years of experience</option>
-            <option value="age">Age</option>
+            <option value="ascending">High - Low</option>
+            <option value="descending">Low - High</option>
 
           </optgroup>
 
         </select>
+        <br>
 
         <div class="M7-result-flex" style="display: none;" id="result-grid">
 
