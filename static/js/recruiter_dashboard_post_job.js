@@ -1,5 +1,5 @@
-var myForm = document.getElementById("J9_recruiter_add_job_form");
-if (myForm) {
+// var myForm = document.getElementById("J9_recruiter_add_job_form");
+// if (myForm) {
   document
     .getElementById("J9_recruiter_add_job_form")
     .addEventListener("submit", function (event) {
@@ -70,7 +70,7 @@ if (myForm) {
       // Optionally, you can display a confirmation message
       // alert("Form submitted successfully!");
     });
-}
+// }
 
 // IDs
 /*
