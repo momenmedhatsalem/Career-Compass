@@ -320,7 +320,7 @@ td, tr {
 
 .M7-filter-select {
     display: inline-block;
-    text-align:center;
+    /* text-align:center; */
     
     width: 13%;
 
@@ -330,7 +330,7 @@ td, tr {
     
     margin-left: 53px;
 
-    padding: 3px;
+    padding: 5px;
     
 
     font-size: medium;
@@ -358,6 +358,21 @@ td, tr {
     outline: none;
   }
 
+.M7-result-flex-up {
+    display: flex;
+    justify-content:start;
+    flex-wrap: wrap;
+
+    margin-bottom: 10px;
+}
+
+.M7-filter-item-up {   
+    flex-direction: row;
+    margin: auto;
+
+    margin-bottom: 35px;
+}
+
 
 .M7-result-flex {
     display: flex;
@@ -367,11 +382,8 @@ td, tr {
     margin-bottom: 10px;
 }
 
-.M7-filter-item {
-    /* flex-grow: 1; */
+.M7-filter-item {   
     flex-direction: row;
-    margin: auto;
-    /* flex-basis: 900; */
 
     margin-bottom: 35px;
 }

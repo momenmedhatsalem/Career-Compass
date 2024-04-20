@@ -10,14 +10,11 @@
   <link rel="stylesheet" href="../static/styles.css">
   <link rel="stylesheet" href="../Mahmoud_Khaled/style/search_styl.css">
 
+  <script src="/static/js/temp_add_job.js"></script>
+  <script src="/static/js/search.js"></script>
+
   <script>
     // loop through BD ad get all job entries with provided substring
-
-    function filterlist() {
-      document.getElementById("result").style.display = "flex";
-
-      document.getElementById("result-grid").style.display = "flex";
-    }
 
     function show() {
       if (document.getElementById("filter").getAttribute("style") == "display: none;") {
@@ -99,8 +96,8 @@
       <label for="titl" class="M7-search-label M7-gradient-text">What's Your Dream Job?</label>
 
       <div class="M7-search-wrapper">
-        <input type="text" list="jobs" placeholder="Eg. Software developer / UI/UX Designer" name="title" id="title"
-          value="" class="M7-search-field"><button onclick="filterlist()" class="M7-search-button">
+        <input type="text" list="jobs" placeholder="Eg. Software developer / UI/UX Designer" name="title"
+          id="search_text" value="" class="M7-search-field"><button onclick="search()" class="M7-search-button">
           Search!
         </button>
 
@@ -111,48 +108,48 @@
           <option value="Full-stack Developer">Full-stack Developer</option>
           <option value="Graphics Designer">Graphics Designer</option>
           <option value="Project Manager">Project Manager</option>
+          <option value="Game Developer">Game Developer</option>
           <option value="Sales Manager">Sales Manager</option>
           <option value="Intern">Intern</option>
         </datalist>
 
       </div>
 
-      <br>
+      <!-- <br> -->
 
       <div class="M7-result">
 
 
-        <div class="M7-result-flex" style="display: none;" id="result">
+        <div class="M7-result-flex-up" style="display: none;" id="result">
           <!-- Show using javascript when SEARCH is clicked set style > display = "flex"--> <!-- VERY IMPORTANT-->
 
-          <button onclick="show()" class="M7-filter-item M7-filter-button"><img src="../media/filter-white.png"
-              width="15" alt="filter img">&nbsp;Filter Jobs</button>
+          <button onclick="show()" class="M7-filter-item-up M7-filter-button"><img src="../media/filter-white.png"
+              width="15" alt="filter img">&nbsp;Sort Jobs</button>
 
-          <span class="M7-filter-item M7-filter-header">&nbsp;&nbsp;&nbsp;&nbsp;Availalbe jobs based on your
+          <span class="M7-filter-item-up M7-filter-header">&nbsp;&nbsp;&nbsp;Availalbe jobs based on your
             search</span>
 
-          <span class="M7-filter-item">8 found in total </span>
+          <span class="M7-filter-item-up"> <span id="num_of_results"></span> found in total </span>
 
         </div>
 
 
         <select name="filter" id="filter" style="display: none;" class="M7-filter-select">
-          <optgroup label="Filter by:">
+          <optgroup label="Salary:">
 
-            <option value="title">Job title</option>
-            <option value="years_exp">Years of experience</option>
-            <option value="age">Age</option>
+            <option value="ascending">High - Low</option>
+            <option value="descending">Low - High</option>
 
           </optgroup>
 
         </select>
+        <br>
 
         <div class="M7-result-flex" style="display: none;" id="result-grid">
-          <!-- Show using javascript when SEARCH is clicked set style > display = "flex"--> <!-- VERY IMPORTANT-->
 
-          <div class="M7-card1 M7-filter-item">
+          <!-- <div class="M7-card1 M7-filter-item">
+
             <fieldset>
-
               <img src="../media/software.jpg" alt="open job icon" width="100%" height="30%">
 
               <h4>Software Developer</h4>
@@ -165,7 +162,9 @@
                 </button>
               </a>
             </fieldset>
+
           </div>
+
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
@@ -285,7 +284,7 @@
                 </button>
               </a>
             </fieldset>
-          </div>
+          </div> -->
 
         </div>
 
