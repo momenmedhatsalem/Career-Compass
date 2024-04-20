@@ -1,17 +1,17 @@
 
 h1 {
     text-align: center;
-    font-size: 40px;
-    background-color: #5acef1;
-    border-bottom-right-radius: 15px;
-    /* border: solid; */
-    /* border-color: darkseagreen; */
-    border-width: 1px;
-    width: 44%;
-    line-height: 68px;
+    font-size: 50px;
+    line-height: 200px;
+    background-color: #6dd5ed;
+    color: white;
+    /* border-radius: 25px; */
+    width: 110%;
+    height: 200px;
     margin-left: -6%;
-    margin-top: -6%;
-    /* box-shadow: -15px -15px 0px 0px red, -30px -30px 0px 0px blue, -45px -45px 0px 0px green, -60px 60px 75px -8px black; */
+    margin-top: 5%;
+    margin-bottom: 5%;
+    box-shadow: -100px -30px 5px 0px #00ff4ed9, -200px -60px 4px 0px #0037ffd4, -300px -90px 5px #008000c9;
 }
 .job-name-column {
     position: absolute;

@@ -1,15 +1,3 @@
-//delete job
-function remove(num){
-    let response = window.confirm("Are you sure you want to delete this job?");
-    if (response){
-        let id = ""+num;
-        let element = document.getElementById(id);
-        let parent = element.parentNode;
-        parent.removeChild(element);
-    }
-    
-}
-
 //--------------------------------------------------------------------------------------------------------------------------
 class details{
     constructor(i,ti,cn,s,y,d,c,ty,sl){
@@ -72,31 +60,17 @@ class job{
 }
 //-------------------------------------------------------------------------------------------------------
 
-//add jos to page 
 
-// let array = localStorage.getItem("jobs");
-// let p = document.getElementsByClassName("all-jobs");
-// for (let i = 0 ;i < array.length ; i++ ){
-//     let txt = `<div class="job" id="${array[i].details.id}"> 
-//                     <div class="job-image-div">
-//                         <img src="../media/front.png" class="job-img">
-//                     </div>
-//                     <div class="desc">
-//                         <div class="job-name"> ${array[i].details.title} </div> 
-//                         <div class="salary"> ${array[i].details.salary}</div>
-//                         <div class="city"> ${array[i].address_and_location.country} , ${array[i].address_and_location.city}</div>
-//                         <div class="description">${array[i].details.description} </div>  
-//                         <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="${array[i].details.id}">Delete</button> 
-//                         <a href="#" class="view-ancor"> <button type="button" class="view-button"  value="view">view</button></a>
-//                     </div>
-//                 </div>`;
-//     p[0].appendChild(txt);
-// }
-
-//--------------------------------------------------------------------------------------------------------
-//view job
-
-function view (id){
-    
-
+let array = localStorage.getItem("jobs");
+let p = document.querySelector("table tr");
+for (let i = 0 ;i < array.length ; i++ ){
+    let txt = `<td class="td">
+                    <h3>
+                    <a class="p2a" href="Job_Details.html"> ${array.details.title} </a>
+                    </h3>
+                    <div class="salary"> ${array.details.salary}</div>
+                    <div class="location"> ${array.address_and_location.country}</div>
+                    <a class="p2a" href="#"><button>Apply</button></a>
+                </td>`;
+    p[0].appendChild(txt);
 }
