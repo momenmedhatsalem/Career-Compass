@@ -61,16 +61,17 @@ class job{
 //-------------------------------------------------------------------------------------------------------
 
 
-let array = localStorage.getItem("jobs");
+let array = JSON.parse(localStorage.getItem("my_jobs"));
 let p = document.querySelector("table tr");
-for (let i = 0 ;i < array.length ; i++ ){
-    let txt = `<td class="td">
-                    <h3>
-                    <a class="p2a" href="Job_Details.html"> ${array.details.title} </a>
-                    </h3>
-                    <div class="salary"> ${array.details.salary}</div>
-                    <div class="location"> ${array.address_and_location.country}</div>
-                    <a class="p2a" href="#"><button>Apply</button></a>
-                </td>`;
-    p[0].appendChild(txt);
+for (let job of array){
+    let txt = ` <h3>
+                <a class="p2a" href="Job_Details.html"> ${job.details.title} </a>
+                </h3>
+                <div class="salary"> ${job.details.salary}</div>
+                <div class="location"> ${job.address_and_location.country}</div>
+                <a class="p2a" href="#"><button>Apply</button></a>`;
+    let elem = document.createElement("td");
+    elem.setAttribute("class","td");
+    elem.innerHTML=txt;
+    p.appendChild(elem);
 }
