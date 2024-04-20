@@ -3,6 +3,16 @@
 
 function search() {
 
+    var images = [
+        "/media/data analyst.png",
+        "/media/front end.jpg",
+        "/media/Game dev.jpg",
+        "/media/graphics.jpg",
+        "/media/sales manger.jpg",
+        "/media/software.jpg",
+        "/media/ui ux.jpg"
+    ];
+
     // check if the search bar is empty or not
     if(document.getElementById("search_text").value == "")
         return;
@@ -68,7 +78,7 @@ function search() {
         document.getElementById("result-grid").innerHTML = 
         document.getElementById("result-grid").innerHTML +
 
-        "\<div class=\"M7-card1 M7-filter-item\"\>                                           <fieldset\>                                                                                  <img src=\"../media/software.jpg\" alt=\"open job icon\" width=\"100%\" height=\"30%\"\>   \<h4\> " + match.title + " \</h4\>                                                            \<p\> " + match.exp + " Exp. Years | " + match.pay + "$/M | " + match.country + "\</p\>                                                                                           \<a href=\"\"\>                                                                          \<button class=\"M7-button\" style=\"display: inline;\"\> Apply </button\>                      <a\>                                                                                              </fieldset\> </div\>";
+        "\<div class=\"M7-card1 M7-filter-item\"\>                                           <fieldset\>                                                                                  <img src=\"" + images[Math.floor(Math.random() * images.length)] + "\" alt=\"open job icon\" width=\"100%\" height=\"30%\"\>   \<h4\> " + match.title + " \</h4\>                                                            \<p\> " + match.exp + " Exp. Years | " + match.pay + "$/M | " + match.country + "\</p\>                                                                                           \<a href=\"\"\>                                                                          \<button class=\"M7-button\" style=\"display: inline;\"\> Apply </button\>                      <a\>                                                                                              </fieldset\> </div\>";
 
     }
 
