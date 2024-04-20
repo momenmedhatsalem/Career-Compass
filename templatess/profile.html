@@ -14,6 +14,18 @@
 
   <script src="/static/js/sidebar.js"></script>
   <script src="../static/js/show_profile_info.js"></script>
+  <script>
+    function show_side() {
+      if (document.getElementById("sidey").getAttribute("style") == "display: none;") {
+        document.getElementById("sidey").setAttribute("style", "display: inline;")
+      }
+      else if (document.getElementById("sidey").getAttribute("style") == "display: inline;") {
+        document.getElementById("sidey").setAttribute("style", "display: none;")
+      }
+
+      //document.getElementById("filter").setAttribute("style", "display: inline;")
+    }
+  </script>
 
 </head>
 
@@ -21,8 +33,14 @@
 
 <body style="margin: 0px;">
   <header class="J9_header" J9_add_html="Joseph_header.html"></header>
+
+  
+  <button onclick="show_side()" style="background-color: black;">
+    <img src="/media/icon_1.png" alt="sidebar on off" width="20px">
+  </button><br>
+
   <!-- jonathan -->
-  <div class="j0sidebar">
+  <div class="j0sidebar" id="sidey" style="display: none;">
     <div class="j0profile-pic">
       <img src="../Mahmoud_Khaled/img/Audio & Video Editing.png" alt="Profile Picture">
     </div>
@@ -36,8 +54,12 @@
             alt="Education"><span>Education</span></button></li>
       <li><button onclick="manageTabs('j0_skills')"><img src="../media/skills.png" alt="Skills"><span>Skills &
             Experience</span></button></li>
-      <li><button onclick="manageTabs('j0_saved')"><a href="/templatess/saved_jobs.html"><img src="../media/saved.png" alt="Skills"><span>Saved
-            jobs</span></button></li>
+      <li><button onclick="manageTabs('j0_saved')">
+          <a href="/templatess/saved_jobs.html">
+            <img src="../media/saved.png" alt="Skills">
+            <span>Saved jobs</span>
+            </a>
+        </button></li>
 
     </ul>
   </div>
@@ -171,10 +193,10 @@
 
           <br>
           <br>
-          <<<<<<< HEAD=======<br>
+          <!-- <<<<<<< HEAD=======<br>
             <br>
 
-            >>>>>>> c7261223dbdf6077339b2df0608f81b3a8a8e862
+            >>>>>>> c7261223dbdf6077339b2df0608f81b3a8a8e862 -->
         </fieldset>
 
         <br>
@@ -293,7 +315,7 @@
             <button class="M7-edit">Edit Profile</button>
           </a>
 
-          <<<<<<< HEAD=======>>>>>>> c7261223dbdf6077339b2df0608f81b3a8a8e862
+          <!-- <<<<<<< HEAD=======>>>>>>> c7261223dbdf6077339b2df0608f81b3a8a8e862 -->
         </div>
       </section>
 
