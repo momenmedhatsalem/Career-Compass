@@ -16,16 +16,29 @@
 
   <script>
     // loop through BD ad get all job entries with provided substring
-
+    var filter_on = true;
+    
     function show() {
+
+      if(filter_on == true)
+      {
+        filter_on = false;
+      }
+      else
+      {
+        filter_on = true;
+      }
+
       if (document.getElementById("filter").getAttribute("style") == "display: none;") {
         document.getElementById("filter").setAttribute("style", "display: inline;")
       }
-      else if (document.getElementById("filter").getAttribute("style") == "display: inline;") {
-        document.getElementById("filter").setAttribute("style", "display: none;")
-      }
+      // else if (document.getElementById("filter").getAttribute("style") == "display: inline;") {
+      //   document.getElementById("filter").setAttribute("style", "display: none;")
+      // }
 
       //document.getElementById("filter").setAttribute("style", "display: inline;")
+
+      search();
     }
 
   </script>
@@ -92,8 +105,8 @@
         <select name="filter" id="filter" style="display: none;" class="M7-filter-select">
           <optgroup label="Salary:">
 
-            <option value="ascending">High - Low</option>
-            <option value="descending">Low - High</option>
+            <option value="High - Low">High - Low</option>
+            <option value="Low - High">Low - High</option>
 
           </optgroup>
 

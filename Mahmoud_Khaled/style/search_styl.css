@@ -400,6 +400,8 @@ td, tr {
 .M7-filter-item h4 {
     margin-top: 10px;
     margin-bottom: 15px;
+
+    text-transform: capitalize;
 }
 
 .M7-filter-item p {

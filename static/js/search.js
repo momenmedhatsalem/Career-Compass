@@ -42,12 +42,22 @@ function search() {
     // the actual number of jobs we found ad already pushed inside "matches"
     document.getElementById("num_of_results").innerHTML = matches.length;
 
-    //test: --> ("matches" is populated correctly)
+    // test: --> ("matches" is populated correctly)
     // for(let match of matches)
     // {
-    //     console.log(match.title); 
+    //     console.log(match.pay); 
     // }
+    
+    // sort all matches in the order selected in the sort by field
 
+    if(document.getElementById("filter").value == "High - Low")
+    {
+        matches.sort((a, b) => b.pay - a.pay)   // Desc
+    }
+    else if(document.getElementById("filter").value == "Low - High")
+    {
+        matches.sort((a, b) => a.pay - b.pay)   // Asc
+    }
 
     // now we show the results in "matches" as cards in our page  بسم الله
 
