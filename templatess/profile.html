@@ -27,7 +27,7 @@
       <img src="../Mahmoud_Khaled/img/Audio & Video Editing.png" alt="Profile Picture">
     </div>
     <ul class="j0menu">
-      <li><a href="#"><img src="../media/icon_1.png" alt="Dashboard"><span>Dashboard</span></a></li>
+      <!-- <li><a href="#"><img src="../media/icon_1.png" alt="Dashboard"><span>Dashboard</span></a></li> -->
       <li><button onclick="manageTabs('j0_profile')"><img src="../media/icon_2.png"
             alt="upload_resume"><span>Profile</span></button></li>
       <li><button onclick="manageTabs('j0_upload')"><img src="../media/upload_resume.png"
@@ -36,7 +36,7 @@
             alt="Education"><span>Education</span></button></li>
       <li><button onclick="manageTabs('j0_skills')"><img src="../media/skills.png" alt="Skills"><span>Skills &
             Experience</span></button></li>
-      <li><button onclick="manageTabs('j0_saved')"><img src="../media/saved.png" alt="Skills"><span>Saved
+      <li><button onclick="manageTabs('j0_saved')"><a href="/templatess/saved_jobs.html"><img src="../media/saved.png" alt="Skills"><span>Saved
             jobs</span></button></li>
 
     </ul>
@@ -299,9 +299,7 @@
 
     </main>
 
-    <div>
-      <div>
- 
+
     <!-------------------------------------jonathan------------------------------------------->
 
     <div id="j0_main">
@@ -329,263 +327,233 @@
 
       <!-- education -->
       <div class="tab" id="j0_education">
-        <h2>Education</h2>
-        <div class="j0_education-item">
-          <label for="item3"><span id="j0_edu_title">*Add Education</span> <img src="/media/arrow.png"
-              alt="arrow"></label>
-
-          <input type="checkbox" id="item3" style="display:none ;">
-          <div class="j0_education-content">
-            <div class="j0_edu_form">
-
-              <form action="">
-                <div class="row">
-                  <div class="j0_label">
-                    <label for="title">Title*</label>
-                  </div>
-                  <div class="j0_input">
-                    <input type="text" id="title" name="title" placeholder="Product designer(google)">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="j0_label">
-                    <label for="academy">Academy*</label>
-                  </div>
-                  <div class="j0_input">
-                    <input type="text" id="academy" name="academy" placeholder="Google Arts Collage & University">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="j0_label">
-                    <label for="year">Year*</label>
-                  </div>
-
-                  <div class="j0_input_select">
-                    <select id="starYear" name="starYear">
-                      <option value="2024">2024</option>
-                      <option value="2023">2023</option>
-                      <option value="2022">2022</option>
-                      <option value="2022">2022</option>
-                      <option value="2021">2021</option>
-                      <option value="2020">2020</option>
-                      <option value="2019">2019</option>
-                      <option value="2018">2018</option>
-                      <option value="2017">2017</option>
-                      <option value="2016">2016</option>
-                      <option value="2015">2015</option>
-                      <option value="2014">2014</option>
-                    </select>
-                  </div>
-
-                  <div class="j0_input_select">
-                    <select id="endYear" name="endYear">
-                      <option value="2024">2024</option>
-                      <option value="2023">2023</option>
-                      <option value="2022">2022</option>
-                      <option value="2022">2022</option>
-                      <option value="2021">2021</option>
-                      <option value="2020">2020</option>
-                      <option value="2019">2019</option>
-                      <option value="2018">2018</option>
-                      <option value="2017">2017</option>
-                      <option value="2016">2016</option>
-                      <option value="2015">2015</option>
-                      <option value="2014">2014</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="j0_label">
-                    <label for="subject">Subject*</label>
-                  </div>
-                  <div class="j0_input">
-                    <textarea id="subject" name="subject" placeholder="Write something.."
-                      style="height:200px"></textarea>
-                  </div>
-                </div>
-              </form>
-              <br>
+        <h4 class="j0-title-three"> Education</h4>
+        <div id="accordion-container-edu">
+          <div class="j0_edu-accordion">
+            <div class="j0-accordion-header">education 1 <span style="float: right;">^</span>
+            </div>
+            <div class="j0-accordion-content" style="display: none;"><label for="title">Title*</label>
+              <input type="text" id="title" name="title" placeholder="Product designer(google)">
+              <label for="academy">Academy*</label><input type="text" id="academy" name="academy"
+                placeholder="Google Arts Collage &amp; University">
+              <label for="starYear">Start Year*</label><select id="starYear" name="starYear">
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+              </select><label for="endYear">End Year*</label><select id="endYear" name="endYear">
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+              </select><label for="subject">Subject*</label><textarea id="subject" name="subject"
+                placeholder="Write something.." style="height: 200px;"></textarea>
+            </div>
+          </div>
+          <div class="j0_edu-accordion">
+            <div class="j0-accordion-header">education 2 <span style="float: right;">^</span>
+            </div>
+            <div class="j0-accordion-content" style="display: none;"><label for="title">Title*</label>
+              <input type="text" id="title" name="title" placeholder="Product designer(google)">
+              <label for="academy">Academy*</label><input type="text" id="academy" name="academy"
+                placeholder="Google Arts Collage &amp; University">
+              <label for="starYear">Start Year*</label><select id="starYear" name="starYear">
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+              </select><label for="endYear">End Year*</label><select id="endYear" name="endYear">
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+              </select><label for="subject">Subject*</label><textarea id="subject" name="subject"
+                placeholder="Write something.." style="height: 200px;"></textarea>
             </div>
           </div>
         </div>
-        <button class="j0_btn" id="j0-edu-btn">+ Add more</button>
+        <button id="j0-edu-btn" class="j0_btn">+ Add more</button>
       </div>
 
       <!-- skills -->
       <div class="tab" id="j0_skills">
-        <h4 class="j0-title-three">Skills &amp; Experience</h4>
-        <div class="dash-input-wrapper mb-40">
-          <label for="">Add Skills*</label>
-          <div class="skills-wrapper">
-            <ul class="style-none d-flex flex-wrap align-items-center">
-              <li class="is_tag"><button>Figma <i class="bi bi-x">x</i></button></li>
-              <li class="is_tag"><button>HTML5 <i class="bi bi-x">x</i></button></li>
-              <li class="is_tag"><button>Illustrator <i class="bi bi-x">x</i></button></li>
-              <li class="is_tag"><button>Adobe Photoshop <i class="bi bi-x">x</i></button></li>
-              <li class="is_tag"><button>WordPress <i class="bi bi-x">x</i></button></li>
-              <li class="is_tag"><button>jQuery <i class="bi bi-x">x</i></button></li>
-              <li class="is_tag"><button>Web Design <i class="bi bi-x">x</i></button></li>
-              <li class="is_tag"><button>Adobe XD <i class="bi bi-x">x</i></button></li>
-              <li class="is_tag"><button>CSS <i class="bi bi-x">x</i></button></li>
-              <li class="more_tag"><button>+</button></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="j0-skills-ac">
-          <div class="j0-skills-ac-item">
-            <label class="j0-skills-ac-title" for="item2">Experience 1*<img src="/media/arrow.png" alt="arrow"></label>
-            <input type="checkbox" id="item2">
-            <div class="j0-skills-ac-content">
-              <div class="j0_edu_form">
-                <form action="">
-                  <div class="row">
-                    <div class="j0_label">
-                      <label for="title">Title*</label>
-                    </div>
-                    <div class="j0_input">
-                      <input type="text" id="title" name="title" placeholder="Product designer(google)">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="j0_label">
-                      <label for="academy">Company**</label>
-                    </div>
-                    <div class="j0_input">
-                      <input type="text" id="academy" name="academy" placeholder="Google Arts Collage & University">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="j0_label">
-                      <label for="year">Year*</label>
-                    </div>
-
-                    <div class="j0_input_select">
-                      <select id="starYear" name="starYear">
-                        <option value="2024">2024</option>
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                        <option value="2018">2018</option>
-                        <option value="2017">2017</option>
-                        <option value="2016">2016</option>
-                        <option value="2015">2015</option>
-                        <option value="2014">2014</option>
-                      </select>
-                    </div>
-
-                    <div class="j0_input_select">
-                      <select id="endYear" name="endYear">
-                        <option value="2024">2024</option>
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                        <option value="2018">2018</option>
-                        <option value="2017">2017</option>
-                        <option value="2016">2016</option>
-                        <option value="2015">2015</option>
-                        <option value="2014">2014</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="j0_label">
-                      <label for="subject">Description</label>
-                    </div>
-                    <div class="j0_input">
-                      <textarea id="subject" name="subject" placeholder="Write something.."
-                        style="height:200px"></textarea>
-                    </div>
-                  </div>
-                  <br>
-                </form>
-              </div>
+        <h4 class="j0-title-three"> Skills & Experience</h4>
+        <div id="accordion-container-skills">
+          <div class="j0-skills-accordion">
+            <div class="j0-accordion-header">Skills & Experience 1 <span style="float: right;">^</span>
+            </div>
+            <div class="j0-accordion-content" style="display: none;"><label for="title">Title*</label>
+              <input type="text" id="title" name="title" placeholder="Product designer(google)">
+              <label for="academy">Academy*</label><input type="text" id="academy" name="academy"
+                placeholder="Google Arts Collage &amp; University">
+              <label for="starYear">Start Year*</label><select id="starYear" name="starYear">
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+              </select><label for="endYear">End Year*</label><select id="endYear" name="endYear">
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+              </select><label for="subject">Subject*</label><textarea id="subject" name="subject"
+                placeholder="Write something.." style="height: 200px;"></textarea>
             </div>
           </div>
-          <button class="j0_btn" id="j0-skills-btn">+ Add more</button>
+          <div class="j0-skills-accordion">
+            <div class="j0-accordion-header">Skills & Experience 2 <span style="float: right;">^</span>
+            </div>
+            <div class="j0-accordion-content" style="display: none;"><label for="title">Title*</label>
+              <input type="text" id="title" name="title" placeholder="Product designer(google)">
+              <label for="academy">Academy*</label><input type="text" id="academy" name="academy"
+                placeholder="Google Arts Collage &amp; University">
+              <label for="starYear">Start Year*</label><select id="starYear" name="starYear">
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+              </select><label for="endYear">End Year*</label><select id="endYear" name="endYear">
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+              </select><label for="subject">Subject*</label><textarea id="subject" name="subject"
+                placeholder="Write something.." style="height: 200px;"></textarea>
+            </div>
+          </div>
         </div>
+
+        <button id="j0-skill-btn" class="j0_btn">+ Add more</button>
       </div>
-      
-    </div>
-    <!--------------------------------------jonathan------------------------------------------ -->
-      </section>
+      <!--------------------------------------jonathan------------------------------------------ -->
+  </section>
 
-   </section>
-    <center>
+  </section>
+  <center>
 
-      <table>
-        <tr>
-          <td>
-            <a href="index.html">
-              <img src="media/images/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
-            </a>
-          </td>
+    <table>
+      <tr>
+        <td>
+          <a href="index.html">
+            <img src="media/images/logopng.png" width="50px" alt="Footer Logo" style="margin-right: 10px;">
+          </a>
+        </td>
 
-          <td>
-            <a href="index.html" style="margin-right: 10px;">Home</a>
-          </td>
+        <td>
+          <a href="index.html" style="margin-right: 10px;">Home</a>
+        </td>
 
-          <td>
-            <a href="#" style="margin-right: 10px;">Premium</a>
-          </td>
+        <td>
+          <a href="#" style="margin-right: 10px;">Premium</a>
+        </td>
 
-          <td>
-            <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
+        <td>
+          <a href="list_of_jobs.html" style="margin-right: 15px;"">Jobs</a>
               </td>
   
 
             <td>
               <a href=" search.html" style="margin-right: 10px;">Search</a>
-          </td>
+        </td>
 
-        </tr>
-      </table>
+      </tr>
+    </table>
 
 
-      <hr>
-      <p>
-        © 2024 Career Compass, Inc
-      </p>
-      <p>
-        Developed and Maintained by
-      </p>
-      <p>
-        <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
+    <hr>
+    <p>
+      © 2024 Career Compass, Inc
+    </p>
+    <p>
+      Developed and Maintained by
+    </p>
+    <p>
+      <a href="https://github.com/momenmedhatsalem">Momen Medhat</a>
 
-        &nbsp;•&nbsp;
+      &nbsp;•&nbsp;
 
-        <a href="https://github.com/philokaram">Philopater Karam</a>
+      <a href="https://github.com/philokaram">Philopater Karam</a>
 
-        &nbsp;•&nbsp;
+      &nbsp;•&nbsp;
 
-        <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
+      <a href="https://github.com/Joseph-Sameh-0">Joseph Sameh</a>
 
-        &nbsp;•&nbsp;
+      &nbsp;•&nbsp;
 
-        <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
+      <a href="https://github.com/Mahmoud3177Khaled">Mahmoud Khaled</a>
 
-      </p>
-    </center>
+    </p>
+  </center>
 
-    <br><br>
+  <br><br>
 
-    </footer>
-    </div>
+  </footer>
+  </div>
 
-    </div>
-    =======
-    </div>
+  </div>
+  =======
+  </div>
 
-    </div>
-    <section class="J9_footer" J9_add_html="Joseph_footer.html"></section>
+  </div>
+  <section class="J9_footer" J9_add_html="Joseph_footer.html"></section>
 
-    <script src="../static/js/J9_add_html.js"></script>
+  <script src="../static/js/J9_add_html.js"></script>
 </body>
 
 </html>
