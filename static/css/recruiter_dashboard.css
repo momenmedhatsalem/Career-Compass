@@ -139,7 +139,10 @@
   border-radius: 50px;
   display: grid;
   grid-template-columns: 5vw auto 5vw;
-  grid-template-areas: "J9_emp_dash_right_side_left_space J9_emp_dash_right_side_container J9_emp_dash_right_side_right_space";
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "J9_emp_dash_right_side_left_space J9_emp_dash_right_side_container J9_emp_dash_right_side_right_space"
+    "J9_footer J9_footer J9_footer ";
 }
 
 .J9_emp_dash_right_side::before {
