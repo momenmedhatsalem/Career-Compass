@@ -1,8 +1,7 @@
-
 /* made by Philo */
 
 class job_details {
-  constructor(i, ti, cn, s, y, d, c, ty, sl,minS, maxS) {
+  constructor(i, ti, cn, s, y, d, c, ty, sl, minS, maxS) {
     this.id = i;
     this.title = ti;
     this.company_name = cn;
@@ -15,7 +14,7 @@ class job_details {
     this.MinSalary = minS;
     this.MaxSalary = maxS;
   }
-  job_details(d) {
+  set_job_details(d) {
     this.id = d.id;
     this.title = d.title;
     this.company_name = d.company_name;
@@ -35,7 +34,7 @@ class job_english_experience {
     this.english_fluency = ef;
     this.experience = e;
   }
-  job_english_experience(e) {
+  set_job_english_experience(e) {
     this.english_fluency = e.english_fluency;
     this.experience = e.experience;
   }
@@ -49,7 +48,7 @@ class job_address_and_location {
     this.zip_code = z;
     this.state = s;
   }
-  job_address_and_location(l) {
+  set_job_address_and_location(l) {
     this.address = l.address;
     this.country = l.country;
     this.city = l.city;
@@ -60,17 +59,27 @@ class job_address_and_location {
 
 class job {
   constructor(d, e, l) {
-    this.details = new job_details(d);
-    this.english_experience = new job_english_experience(e);
-    this.address_and_location = new job_address_and_location(l);
+    this.details = new job_details();
+    this.details.set_job_details(d);
+
+    this.english_experience = new job_english_experience();
+    this.english_experience.set_job_english_experience(e)
+
+
+    this.address_and_location = new job_address_and_location();
+    this.address_and_location.set_job_address_and_location(l);
   }
 }
 
+let ggg = new job_details();
+let hhh = new job_english_experience();
+let jjj = new job_address_and_location();
 
-// j1 = new job();
-// j1.details.id = 12;
-// j1.english_experience.experience = 2;
-// j1.address_and_location.city = "cairo";
-// console.log(j1.details.id);
-// console.log(j1.english_experience.experience);
-// console.log(j1.address_and_location.city);
+j1 = new job(ggg,hhh,jjj);
+
+j1.details.id = 12;
+j1.english_experience.experience = 2;
+j1.address_and_location.city = "cairo";
+console.log(j1.details.id);
+console.log(j1.english_experience.experience);
+console.log(j1.address_and_location.city);
