@@ -11,9 +11,7 @@
   <link rel="stylesheet" href="../static/styles.css">
   <link rel="stylesheet" href="../static/index.css">
   <link rel="stylesheet" href="../Mahmoud_Khaled/style/profile_styl.css">
-  <script src="../static/js/logout.js"
-
-  <script src="../static/js/sidebar.js"></script>
+  <script src="../static/js/logout.js" <script src="../static/js/sidebar.js"></script>
   <script src="../static/js/show_profile_info.js"></script>
   <script>
     function show_side() {
@@ -35,35 +33,41 @@
 <body style="margin: 0px;">
   <header class="J9_header" J9_add_html="Joseph_header.html"></header>
 
-  
-  <button onclick="show_side()" style="background-color: #49a7ff; width: 250px; border: none;">
-    <img src="/media/icon_1.png" alt="sidebar on off" width="20px">
-  </button><br>
+
+
 
   <!-- jonathan -->
-  <div class="j0sidebar" id="sidey" style="display: none;">
-    <div class="j0profile-pic">
-      <img src="../Mahmoud_Khaled/img/Audio & Video Editing.png" alt="Profile Picture">
-    </div>
-    <ul class="j0menu">
-      <!-- <li><a href="#"><img src="../media/icon_1.png" alt="Dashboard"><span>Dashboard</span></a></li> -->
-      <li><button onclick="manageTabs('j0_profile')"><img src="../media/icon_2.png"
-            alt="upload_resume"><span>Profile</span></button></li>
-      <li><button onclick="manageTabs('j0_upload')"><img src="../media/upload_resume.png"
-            alt="upload_resume"><span>Upload Resume</span></button></li>
-      <li><button onclick="manageTabs('j0_education')"><img src="../media/education.png"
-            alt="Education"><span>Education</span></button></li>
-      <li><button onclick="manageTabs('j0_skills')"><img src="../media/skills.png" alt="Skills"><span>Skills &
-            Experience</span></button></li>
-            <li><button onclick="manageTabs('j0_saved')">
-              <a href="/templatess/saved_jobs.html">
-                <img src="../media/saved.png" alt="Skills">
-                <span>Saved jobs</span>
-              </a>
-            </button></li>
-            <li><button onclick="logout()"><span>Logout</span></button></li>
+  <div style="position: fixed;">
 
-    </ul>
+    <button onclick="show_side()" style="background-color: #49a7ff; width: 250px; border: none;">
+      <img src="/media/icon_1.png" alt="sidebar on off" width="20px">
+    </button><br>
+
+    <div id="sidey" style="display: none;" class="j0sidebar" >
+
+      <div class="j0profile-pic">
+        <img src="../Mahmoud_Khaled/img/Audio & Video Editing.png" alt="Profile Picture">
+      </div>
+      <ul class="j0menu">
+        <!-- <li><a href="#"><img src="../media/icon_1.png" alt="Dashboard"><span>Dashboard</span></a></li> -->
+        <li><button onclick="manageTabs('j0_profile')"><img src="../media/icon_2.png"
+              alt="upload_resume"><span>Profile</span></button></li>
+        <li><button onclick="manageTabs('j0_upload')"><img src="../media/upload_resume.png"
+              alt="upload_resume"><span>Upload Resume</span></button></li>
+        <li><button onclick="manageTabs('j0_education')"><img src="../media/education.png"
+              alt="Education"><span>Education</span></button></li>
+        <li><button onclick="manageTabs('j0_skills')"><img src="../media/skills.png" alt="Skills"><span>Skills &
+              Experience</span></button></li>
+        <li><button onclick="manageTabs('j0_saved')">
+            <a href="/templatess/saved_jobs.html">
+              <img src="../media/saved.png" alt="Skills">
+              <span>Saved jobs</span>
+            </a>
+          </button></li>
+        <li><button onclick="logout()"><span>Logout</span></button></li>
+
+      </ul>
+    </div>
   </div>
 
   <!-- jonathan -->
@@ -317,7 +321,7 @@
             <button class="M7-edit">Edit Profile</button>
           </a>
 
-    
+
         </div>
       </section>
 
