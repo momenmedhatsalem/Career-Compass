@@ -69,3 +69,25 @@ document.addEventListener("click", function (event) {
     addHTML();
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Retrieve the user list from local storage
+  var userList = JSON.parse(localStorage.getItem("userList")) || [];
+  var loggedInUser = userList.find((user) => user.loggedin);
+
+  if (loggedInUser) {
+    // Prefill the last name input
+    var lastNameInput = document.querySelector('#j9Name');
+    if (lastNameInput) {
+      lastNameInput.value = loggedInUser.username || "";
+    }
+
+    // Prefill the email input
+    var emailInput = document.querySelector('#j9Email');
+    if (emailInput) {
+      emailInput.value = loggedInUser.email || "";
+    }
+  } else {
+    console.error("No logged-in user found.");
+  }
+});
