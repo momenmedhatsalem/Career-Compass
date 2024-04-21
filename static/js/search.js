@@ -1,6 +1,6 @@
 // document.addEventListener("DOMContentLoaded", function() {
 
-
+var matches = [];
 function search() {
 
     // check if the search bar is empty or not
@@ -21,13 +21,13 @@ function search() {
 
 
     let jobs = JSON.parse(localStorage.getItem("jobs"));
-    var matches = [];
+    
 
     // make "sub" lowerCase to standardize our search
     sub = sub.toLowerCase();
 
     // test: --> (jobs arrived safely from localstorage)
-    // console.log(jobs[2].pay);
+    // console.log(jobs[2].details.MaxSalary);
 
     // loop through "jobs" and push any "job" having a ".title" including a substring of "sub"
     for (let job of jobs) {
@@ -50,24 +50,35 @@ function search() {
     // test: --> ("matches" is populated correctly)
     // for(let match of matches)
     // {
-    //     console.log(match.pay); 
+    //     console.log(match.details.MaxSalary); 
     // }
     
     // sort all matches in the order selected in the sort by field
-
-    if(document.getElementById("filter").value == "High - Low")
-    {
-        matches.sort((a, b) => b.pay - a.pay)   // Desc
-    }
-    else if(document.getElementById("filter").value == "Low - High")
-    {
-        matches.sort((a, b) => a.pay - b.pay)   // Asc
-    }
+    console.log(document.getElementById("filter").value);
 
     // now we show the results in "matches" as cards in our page  بسم الله
 
     document.getElementById("result-grid").innerHTML = "";
 
+showmatches(matches);
+
+
+
+}
+
+function sort(dir) {
+        if (dir == "htl") {
+          matches.sort((a, b) => b.details.MaxSalary - a.details.MaxSalary); // Desc
+        } else{
+          matches.sort((a, b) => a.details.MaxSalary - b.details.MaxSalary); // Asc
+        }
+        showmatches()
+}
+
+// })
+
+function showmatches() {
+    document.getElementById("result-grid").innerHTML = "";
 for (let match of matches) {
   document.getElementById("result-grid").innerHTML +=
     '<div class="M7-card1 M7-filter-item">' +
@@ -77,8 +88,7 @@ for (let match of matches) {
     "</h4>" +
     "<p>" +
     match.details.status +
-    "</p>"
-    +
+    "</p>" +
     "<p>" +
     match.address_and_location.country +
     "</p>" +
@@ -89,11 +99,4 @@ for (let match of matches) {
     "</div>";
 }
 
-
-
-
 }
-
-
-
-// })
