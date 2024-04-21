@@ -38,7 +38,7 @@ function save_changes() {
 
     // Save the updated user data back to localStorage
     localStorage.setItem("userList", JSON.stringify(userList));
-
+    window.location.href = "profile.html";
     // Optional: Display a message or perform any additional actions
     console.log("User data updated and saved to local storage.");
   } else {
