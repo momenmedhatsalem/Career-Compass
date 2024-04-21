@@ -9,6 +9,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="../static/styles.css">
   <link rel="stylesheet" href="../static/index.css">
+      <script src="../static/js/signup.js"></script>
 </head>
 
 <body style="margin: 0px;">
@@ -17,6 +18,10 @@
     <h1>Recruiter Sign Up</h1>
     <div>
       <form class="signupform">
+        <div>
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" />
+        </div>
         <div>
           <label for="First_name">First Name</label>
           <input required type="text" id="First_name" name="First_name" aria-describedby="emailHelp">
@@ -37,7 +42,7 @@
         </div>
         <div>
           <label for="InputPassword1">Password</label>
-          <input required type="password" id="InputPassword1" name="InputPassword1">
+          <input required type="password" id="InputPassword" name="InputPassword">
         </div>
         <div>
           <label for="confirmpass">Confirm Password</label>
