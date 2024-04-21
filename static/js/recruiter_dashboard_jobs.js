@@ -4,6 +4,7 @@ let my_jobs_table = document.getElementById(
   "J9_emp_dash_jobs_right_side_body_emp_jobs_table_body"
 );
 
+if (my_jobs !== null) {
 my_jobs.forEach((element) => {
   let row = document.createElement("tr");
   row.className = "J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row";
@@ -42,7 +43,6 @@ my_jobs.forEach((element) => {
     my_jobs_table.appendChild(row);
   });
 }
-
 /*⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻*/
 
 document.addEventListener("click", function (event) {
