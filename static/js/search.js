@@ -1,7 +1,19 @@
 // document.addEventListener("DOMContentLoaded", function() {
 
-var matches = [];
-function search() {
+  
+  var images = [
+    "/media/data analyst.png",
+    "/media/front end.jpg",
+    "/media/Game dev.jpg",
+    "/media/graphics.jpg",
+    "/media/sales manger.jpg",
+    "/media/software.jpg",
+    "/media/ui ux.jpg"
+  ];
+  
+  var matches = [];
+  function search() {
+    
 
     // check if the search bar is empty or not
     if(document.getElementById("search_text").value == "")
@@ -30,12 +42,13 @@ function search() {
     // console.log(jobs[2].details.MaxSalary);
 
     // loop through "jobs" and push any "job" having a ".title" including a substring of "sub"
+    matches = [];
     for (let job of jobs) {
         console.log(job)
     // Check if job has 'details' property and 'title' property within it
     if (
-      job.details &&
-      job.details.title &&
+      // job.details &&
+      // job.details.title &&
       job.details.title.toLowerCase().includes(sub)
     ) {
       matches.push(job);
@@ -56,47 +69,49 @@ function search() {
     // sort all matches in the order selected in the sort by field
     console.log(document.getElementById("filter").value);
 
-    // now we show the results in "matches" as cards in our page  بسم الله
-
+    
     document.getElementById("result-grid").innerHTML = "";
-
-showmatches(matches);
-
-
-
-}
-
-function sort(dir) {
-        if (dir == "htl") {
+    
+    showmatches(matches);
+    // var matches = [];
+    
+    
+    
+  }
+  
+  function sort(dir) {
+    if (dir == "htl") {
           matches.sort((a, b) => b.details.MaxSalary - a.details.MaxSalary); // Desc
         } else{
           matches.sort((a, b) => a.details.MaxSalary - b.details.MaxSalary); // Asc
         }
         showmatches()
-}
+      }
 
 // })
 
+// now we show the results in "matches" as cards in our page  بسم الله
 function showmatches() {
-    document.getElementById("result-grid").innerHTML = "";
-for (let match of matches) {
-  document.getElementById("result-grid").innerHTML +=
+  document.getElementById("result-grid").innerHTML = "";
+  for (let match of matches) {
+    document.getElementById("result-grid").innerHTML +=
     '<div class="M7-card1 M7-filter-item">' +
     "<fieldset>" +
+    "<img src=\"" + images[Math.floor(Math.random() * images.length)] + "\" alt=\"open job icon\" width=\"100%\" height=\"30%\"\>" +
     "<h4>" +
     match.details.title +
     "</h4>" +
     "<p>" +
-    match.details.status +
+    match.details.status + " | " + match.details.years_of_experience + " Exp. years needed | " + match.address_and_location.country +
     "</p>" +
-    "<p>" +
-    match.address_and_location.country +
-    "</p>" +
+    // "<p>" +
+    // match.address_and_location.country +
+    // "</p>" +
     '<a href="#">' +
     '<button class="M7-button" style="display: inline;">Apply</button>' +
     "</a>" +
     "</fieldset>" +
     "</div>";
 }
-
+// var matches = [];
 }
