@@ -1178,13 +1178,10 @@
                         <h3>Edit & Update</h3>
                         <div class="J9_emp_dash_settings_right_side_body_container_name">
                             <div class="J9_emp_dash_settings_right_side_body_container_name_first">
-                                <label>First Name</label>
-                                <input class="j9Name" name="first_name" type="text" required value="Joseph">
+                                <label>UserName</label>
+                                <input id="fname" class="j9Name" name="first_name" type="text" required value="Joseph">
                             </div>
-                            <div  class="J9_emp_dash_settings_right_side_body_container_name_last">
-                                <label>Last Name</label>
-                                <input  name="last_name" type="text" required value="Sameh Fouad">
-                            </div>
+
                         </div>
 
                         <div  class="J9_emp_dash_settings_right_side_body_container_email">
@@ -1211,7 +1208,7 @@
                             </div>
                         </div>
                         <div class="J9_emp_dash_settings_right_side_body_emp_settings_save_cancel_button">
-                            <input id="J9_emp_dash_settings_right_side_body_emp_settings_save_button" type="submit"
+                            <input onclick="save_changes()" id="J9_emp_dash_settings_right_side_body_emp_settings_save_button" type="submit"
                                 value="Submit">
                             <input id="J9_emp_dash_settings_right_side_body_emp_settings_cancel_button" type="button"
                                 value="Cancel">
