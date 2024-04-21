@@ -9,6 +9,23 @@
       // var name = document.getElementById("name").value;
       // var email = document.getElementById("email").value;
       // console.log(5);
+
+      var jobId = document.getElementById("J9_recruiter_add_job_job_id").value;
+
+      // Check if the job ID is already in use
+      var jobsArray = JSON.parse(localStorage.getItem("jobs")) || [];
+      var isUnique = jobsArray.every(function (job) {
+        return job.details.id !== jobId;
+      });
+
+      if (!isUnique) {
+        // Alert the user that the job ID is not unique
+        alert("Job ID must be unique. Please choose a different ID.");
+        return; // Exit the function without adding the job
+      }
+
+
+
       var jobDetails = new job_details(
         document.getElementById("J9_recruiter_add_job_job_id").value,
         document.getElementById("J9_recruiter_add_job_job_title").value,
@@ -69,6 +86,19 @@
 
       // Optionally, you can display a confirmation message
       // alert("Form submitted successfully!");
+
+      window.location.reload();
+      var recruiterJobsElement = document.getElementById("recruiterjobs");
+
+      // Check if the element exists
+      if (recruiterJobsElement) {
+        // If the element exists, trigger a click event on it
+        recruiterJobsElement.click();
+      } else {
+        // If the element doesn't exist, log an error or handle it accordingly
+        console.error("Element with ID 'recruiterjobs' not found.");
+      }
+
     });
 // }
 
