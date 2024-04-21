@@ -43,7 +43,7 @@ my_jobs.forEach((element) => {
     my_jobs_table.appendChild(row);
   });
 
-  
+}
 
 
 /*⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻*/
