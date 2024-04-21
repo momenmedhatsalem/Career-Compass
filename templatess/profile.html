@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="../static/styles.css">
   <link rel="stylesheet" href="../static/index.css">
   <link rel="stylesheet" href="../Mahmoud_Khaled/style/profile_styl.css">
+  <script src="../static/js/logout.js"
 
-  <script src="/static/js/sidebar.js"></script>
+  <script src="../static/js/sidebar.js"></script>
   <script src="../static/js/show_profile_info.js"></script>
   <script>
     function show_side() {
@@ -54,12 +55,13 @@
             alt="Education"><span>Education</span></button></li>
       <li><button onclick="manageTabs('j0_skills')"><img src="../media/skills.png" alt="Skills"><span>Skills &
             Experience</span></button></li>
-      <li><button onclick="manageTabs('j0_saved')">
-          <a href="/templatess/saved_jobs.html">
-            <img src="../media/saved.png" alt="Skills">
-            <span>Saved jobs</span>
-            </a>
-        </button></li>
+            <li><button onclick="manageTabs('j0_saved')">
+              <a href="/templatess/saved_jobs.html">
+                <img src="../media/saved.png" alt="Skills">
+                <span>Saved jobs</span>
+              </a>
+            </button></li>
+            <li><button onclick="logout()"><span>Logout</span></button></li>
 
     </ul>
   </div>

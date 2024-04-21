@@ -1,3 +1,17 @@
+// Define the User class
+class User {
+  constructor(username, firstName, lastName, email, phone, password) {
+    this.username = username;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.phone = phone;
+    this.password = password;
+    this.type = "employee"; // Default type
+    this.loggedin = false; // Default loggedin status
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Event listener for form submission
   document
@@ -21,15 +35,29 @@ document.addEventListener("DOMContentLoaded", function () {
         return; // Exit the function
       }
 
-      // Save data to local storage
-      localStorage.setItem("username", username);
-      localStorage.setItem("firstName", firstName);
-      localStorage.setItem("lastName", lastName);
-      localStorage.setItem("email", email);
-      localStorage.setItem("phone", phone);
-      localStorage.setItem("password", password);
+      // Create a new User object
+      var newUser = new User(
+        username,
+        firstName,
+        lastName,
+        email,
+        phone,
+        password
+      );
+
+      // Get the list of users from localStorage or initialize an empty array
+      var userList = JSON.parse(localStorage.getItem("userList")) || [];
+
+      // Add the new user to the list
+      userList.push(newUser);
+
+      // Save the updated user list to localStorage
+      localStorage.setItem("userList", JSON.stringify(userList));
 
       // Optional: Display a message or perform any additional actions
-      console.log("Data saved to local storage.");
+      console.log("New user signed up:", newUser);
+
+      // Redirect the user to the login page
+      window.location.href = "login.html";
     });
 });
