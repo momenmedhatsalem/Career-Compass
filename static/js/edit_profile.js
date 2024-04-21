@@ -5,27 +5,32 @@ function save_changes() {
 
   if (loggedInUser) {
     // Get form inputs
-    var fullname = document.getElementById("fname").value;
-    var personal_email = document.getElementById("pemail").value;
-    var bio = document.getElementById("bio").value;
-    var company_name = document.getElementById("cname").value;
-    var business_email = document.getElementById("bemail").value;
-    var skills = document.getElementById("skills").value;
-    var network_1 = document.getElementById("net1").value;
-    var network_2 = document.getElementById("net2").value;
-    var address = document.getElementById("address").value;
-    var country = document.getElementById("country").value;
-    var city = document.getElementById("city").value;
-    var zip_code = document.getElementById("zip").value;
-    var States = document.getElementById("state").value;
-    var map_location = document.getElementById("location").value;
+    var fullname = getElementValueById("fname");
+    var personal_email = getElementValueById("pemail");
+    var bio = getElementValueById("bio");
+    var company_name = getElementValueById("cname");
+    var business_email = getElementValueById("bemail");
+    var skills = getElementValueById("skills");
+    var network_1 = getElementValueById("net1");
+    var network_2 = getElementValueById("net2");
+    var address = getElementValueById("address");
+    var country = getElementValueById("country");
+    var city = getElementValueById("city");
+    var zip_code = getElementValueById("zip");
+    var States = getElementValueById("state");
+    var map_location = getElementValueById("location");
 
     // Update the user's data with the form inputs
     loggedInUser.username = fullname;
     loggedInUser.email = personal_email;
     loggedInUser.bio = bio;
     loggedInUser.company_name = company_name;
-    loggedInUser.business_email = business_email;
+    if (business_email.trim() !== "") {
+      loggedInUser.business_email = business_email;
+    }
+    if (loggedInUser.email.trim() !== "") {
+      loggedInUser.email = personal_email;
+    }
     loggedInUser.skills = skills;
     loggedInUser.network_1 = network_1;
     loggedInUser.network_2 = network_2;
@@ -44,4 +49,9 @@ function save_changes() {
   } else {
     console.error("No logged-in user found.");
   }
+}
+
+function getElementValueById(id) {
+  var element = document.getElementById(id);
+  return element ? element.value : "";
 }
