@@ -119,6 +119,7 @@ document
       "recruiter_dashboard_profile",
       JSON.stringify(profile_info)
     );
+alert("your profile has been updated successfully 🫱🏻‍🫲🏻");
   });
 
 document.addEventListener("DOMContentLoaded", function () {
