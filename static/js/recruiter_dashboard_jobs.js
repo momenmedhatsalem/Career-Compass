@@ -29,7 +29,7 @@ my_jobs.forEach((element) => {
         </li>
         <li><a href="#"><img src="../../media/icons/edit.svg">Edit</a>
         </li>
-        <li><a href="#"><img src="../../media/icons/delete.svg">Delete</a></li>
+        <li><a href="#" onclick="deleteJob(${element.details.id})"><img src="../../media/icons/delete.svg">Delete</a></li>
       </ul>
     </div>
   </td>`;
@@ -67,3 +67,23 @@ document.addEventListener("click", function (event) {
     }
   }
 });
+
+
+function deleteJob (id) {
+  const jobs = JSON.parse(localStorage.getItem("my_jobs"));
+
+  console.log(id);
+  // Find the index of the job with the matching id
+  const indexToDelete = jobs.findIndex(
+    (job) => Number(job.details.id) === id
+  );
+
+  // If the job with the matching id is found, delete it
+  if (indexToDelete !== -1) {
+    jobs.splice(indexToDelete, 1); // Remove the job from the array
+    localStorage.setItem("my_jobs", JSON.stringify(jobs)); // Save the modified array back to local storage
+    console.log("Job deleted successfully.");
+  } else {
+    console.log("Job with the specified id not found.");
+  }
+}
