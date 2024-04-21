@@ -29,8 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("userList", JSON.stringify(userList));
 
         // Redirect to the URL specified in the clicked button's data-link attribute
-        var redirectUrl = event.submitter.getAttribute("data-link");
-        window.location.href = redirectUrl;
+        if (foundUser.type == "recruiter") {
+          window.location.href = "recruiter_dashboard.html";
+        }
+        else {
+
+          window.location.href = "profile.html";
+        }
       } else {
         // No user found with matching email and password, display an alert
         alert("Incorrect email or password. Please try again.");
