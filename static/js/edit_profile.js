@@ -1,7 +1,9 @@
-// document.addEventListener("DOMContentLoaded",
+function save_changes() {
+  // Retrieve the logged-in user from localStorage
+  var userList = JSON.parse(localStorage.getItem("userList")) || [];
+  var loggedInUser = userList.find((user) => user.loggedin);
 
-  function save_changes()
-  {
+  if (loggedInUser) {
     // Get form inputs
     var fullname = document.getElementById("fname").value;
     var personal_email = document.getElementById("pemail").value;
@@ -18,24 +20,28 @@
     var States = document.getElementById("state").value;
     var map_location = document.getElementById("location").value;
 
-    // Save data to local storage
-    localStorage.setItem("fname", fullname);
-    localStorage.setItem("pemail", personal_email);
-    localStorage.setItem("bio", bio);
-    localStorage.setItem("cname", company_name);
-    localStorage.setItem("bemail", business_email);
-    localStorage.setItem("skills", skills);
-    localStorage.setItem("net1", network_1);
-    localStorage.setItem("net2", network_2);
-    localStorage.setItem("address", address);
-    localStorage.setItem("country", country);
-    localStorage.setItem("city", city);
-    localStorage.setItem("zip", zip_code);
-    localStorage.setItem("state", States);
-    localStorage.setItem("location", map_location);
+    // Update the user's data with the form inputs
+    loggedInUser.username = fullname;
+    loggedInUser.email = personal_email;
+    loggedInUser.bio = bio;
+    loggedInUser.company_name = company_name;
+    loggedInUser.business_email = business_email;
+    loggedInUser.skills = skills;
+    loggedInUser.network_1 = network_1;
+    loggedInUser.network_2 = network_2;
+    loggedInUser.address = address;
+    loggedInUser.country = country;
+    loggedInUser.city = city;
+    loggedInUser.zip_code = zip_code;
+    loggedInUser.States = States;
+    loggedInUser.map_location = map_location;
+
+    // Save the updated user data back to localStorage
+    localStorage.setItem("userList", JSON.stringify(userList));
 
     // Optional: Display a message or perform any additional actions
-    console.log("Data saved to local storage.");
-
+    console.log("User data updated and saved to local storage.");
+  } else {
+    console.error("No logged-in user found.");
+  }
 }
-// );
