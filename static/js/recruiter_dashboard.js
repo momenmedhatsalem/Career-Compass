@@ -77,13 +77,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (loggedInUser) {
     // Prefill the last name input
-    var lastNameInput = document.querySelector('#j9Name');
+    var lastNameInput = document.querySelector('.j9Name');
     if (lastNameInput) {
       lastNameInput.value = loggedInUser.username || "";
     }
 
     // Prefill the email input
-    var emailInput = document.querySelector('#j9Email');
+    var emailInput = document.querySelector('.j9Email');
     if (emailInput) {
       emailInput.value = loggedInUser.email || "";
     }
