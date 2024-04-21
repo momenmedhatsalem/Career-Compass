@@ -283,16 +283,16 @@ a {
 }
 
 .J9_trending_job[id="audio_video_diting"] {
-  background-image: url(../media/images/Audio\ &\ Video\ Editing.png);
+  background-image: url(../../media/images/Audio\ &\ Video\ Editing.png);
 }
 .J9_trending_job[id="product_branding_design"] {
-  background-image: url(../media/images/Product\ &\ Branding\ Design.png);
+  background-image: url(../../media/images/Product\ &\ Branding\ Design.png);
 }
 .J9_trending_job[id="admin_customer_support"] {
-  background-image: url(../media/images/Admin\ &\ Customer\ Support.png);
+  background-image: url(../../media/images/Admin\ &\ Customer\ Support.png);
 }
 .J9_trending_job[id="wordpress_development"] {
-  background-image: url(../media/images/WordPress\ Development.png);
+  background-image: url(../../media/images/WordPress\ Development.png);
 }
 
 .J9_trending_job div {
@@ -336,7 +336,7 @@ a {
 }
 
 .J9_complete_job_portal_section {
-  background: url(../media/images/Complete\ job\ portal.png) no-repeat center;
+  background: url(../../media/images/Complete\ job\ portal.png) no-repeat center;
   background-size: cover;
   z-index: 1;
   padding-bottom: 7vh;
