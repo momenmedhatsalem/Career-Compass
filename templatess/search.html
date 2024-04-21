@@ -34,8 +34,8 @@
 
 
       <label for="titl" class="M7-search-label M7-gradient-text">What's Your Dream Job?</label>
-
-      <div class="M7-search-wrapper">
+      
+      <div class="M7-search-wrapper"  id="start">
         <input type="text" list="jobs" placeholder="Eg. Software developer / UI/UX Designer" name="title"
           id="search_text" value="" class="M7-search-field"><button onclick="search()" class="M7-search-button">
           Search!
@@ -52,8 +52,10 @@
           <option value="Sales Manager">Sales Manager</option>
           <option value="Intern">Intern</option>
         </datalist>
+        
 
       </div>
+
 
       <!-- <br> -->
 
@@ -67,8 +69,8 @@
           <button class="dropbtn"><img src="/media/filter-white.png" alt="" width="15px"> Sort by</button>
           <div class="dropdown-content">
             <a onclick="sort('htl')" class="no_hover">Salary: </a>
-            <a onclick="sort('htl')" href="#">High to Low</a>
-            <a onclick="sort('lth')" href="#">Low to High</a>
+            <a onclick="sort('htl')" href="#start">High to Low</a>
+            <a onclick="sort('lth')" href="#start">Low to High</a>
 
           </div>
         </div>
@@ -90,6 +92,7 @@
           </optgroup>
 
         </select>
+
         <br>
 
         <div class="M7-result-flex" style="display: none;" id="result-grid">
