@@ -13,6 +13,7 @@ class job_details {
     this.salary = sl;
     this.MinSalary = minS;
     this.MaxSalary = maxS;
+    this.creation_date = new Date();
   }
   set_job_details(d) {
     this.id = d.id;
@@ -26,6 +27,7 @@ class job_details {
     this.salary = d.salary;
     this.MinSalary = d.MinSalary;
     this.MaxSalary = d.MaxSalary;
+    this.creation_date = d.creation_date;
   }
 }
 
@@ -71,15 +73,15 @@ class job {
   }
 }
 
-let ggg = new job_details();
-let hhh = new job_english_experience();
-let jjj = new job_address_and_location();
+// let ggg = new job_details();
+// let hhh = new job_english_experience();
+// let jjj = new job_address_and_location();
 
-j1 = new job(ggg,hhh,jjj);
+// j1 = new job(ggg,hhh,jjj);
 
-j1.details.id = 12;
-j1.english_experience.experience = 2;
-j1.address_and_location.city = "cairo";
-console.log(j1.details.id);
-console.log(j1.english_experience.experience);
-console.log(j1.address_and_location.city);
+// j1.details.id = 12;
+// j1.english_experience.experience = 2;
+// j1.address_and_location.city = "cairo";
+// console.log(j1.details.id);
+// console.log(j1.english_experience.experience);
+// console.log(j1.address_and_location.city);

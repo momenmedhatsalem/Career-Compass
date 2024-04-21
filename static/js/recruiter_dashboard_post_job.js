@@ -8,7 +8,7 @@
       // Get form values
       // var name = document.getElementById("name").value;
       // var email = document.getElementById("email").value;
-      console.log(5);
+      // console.log(5);
       var jobDetails = new job_details(
         document.getElementById("J9_recruiter_add_job_job_id").value,
         document.getElementById("J9_recruiter_add_job_job_title").value,
