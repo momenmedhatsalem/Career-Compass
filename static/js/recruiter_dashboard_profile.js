@@ -119,7 +119,7 @@ document
       "recruiter_dashboard_profile",
       JSON.stringify(profile_info)
     );
-alert("your profile has been updated successfully 🫱🏻‍🫲🏻");
+    alert("your profile has been updated successfully 🫱🏻‍🫲🏻");
   });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -167,14 +167,13 @@ document.addEventListener("DOMContentLoaded", function () {
       "J9_emp_dash_prof_right_side_body_emp_information_about_company"
     ).value = userprofile.details.aboutCompany;
 
-if (userprofile.socialMedia.length > 1) {
-    for (let i = 0; i < userprofile.socialMedia.length - 1; i++) {
-      J9_rec_social_media_add_link()
-      
+    if (userprofile.socialMedia.length > 1) {
+      for (let i = 0; i < userprofile.socialMedia.length - 1; i++) {
+        J9_rec_social_media_add_link();
+      }
     }
-}
 
-var recruiter_social_media_links = userprofile.socialMedia;
+    var recruiter_social_media_links = userprofile.socialMedia;
     let socialMediaInputs = document.getElementsByName("social_media_link");
     socialMediaInputs.forEach((input, index) => {
       if (recruiter_social_media_links[index]) {
