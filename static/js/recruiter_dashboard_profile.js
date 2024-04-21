@@ -1,6 +1,6 @@
 class Profile {
   constructor(
-    photo,
+    // photo,
     recruiterName,
     email,
     website,
@@ -17,7 +17,7 @@ class Profile {
     state
   ) {
     this.details = {
-      photo: photo,
+      // photo: photo,
       recruiterName: recruiterName,
       email: email,
       website: website,
@@ -72,7 +72,7 @@ document
     });
 
     var profile_info = new Profile(
-      document.getElementById("J9_recruiter_profile_photo").value,
+      // document.getElementById("J9_recruiter_profile_photo").value,
       document.getElementById(
         "J9_emp_dash_prof_right_side_body_emp_information_name"
       ).value,
@@ -115,7 +115,10 @@ document
       ).value
     );
 
-    localStorage.setItem("recruiter_dashboard_profile", JSON.stringify(profile_info));
+    localStorage.setItem(
+      "recruiter_dashboard_profile",
+      JSON.stringify(profile_info)
+    );
   });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -136,6 +139,67 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById(
       "J9_emp_dash_prof_right_side_body_emp_information_phone_number"
     ).value = loggedInUser.phone;
+
+    var userprofile =
+      JSON.parse(localStorage.getItem("recruiter_dashboard_profile")) || [];
+
+    // document.getElementById("J9_recruiter_viewed_profile_photo").src =
+    //   userprofile.details.photo;
+
+    document.getElementById(
+      "J9_emp_dash_prof_right_side_body_emp_information_website"
+    ).value = userprofile.details.website;
+
+    document.getElementById(
+      "J9_emp_dash_prof_right_side_body_emp_information_founded_date"
+    ).value = userprofile.details.foundedDate;
+
+    document.getElementById(
+      "J9_emp_dash_prof_right_side_body_emp_information_company_size"
+    ).value = userprofile.details.companySize;
+
+    document.getElementById(
+      "J9_emp_dash_prof_right_side_body_emp_information_category"
+    ).value = userprofile.details.category;
+
+    document.getElementById(
+      "J9_emp_dash_prof_right_side_body_emp_information_about_company"
+    ).value = userprofile.details.aboutCompany;
+
+if (userprofile.socialMedia.length > 1) {
+    for (let i = 0; i < userprofile.socialMedia.length - 1; i++) {
+      J9_rec_social_media_add_link()
+      
+    }
+}
+
+var recruiter_social_media_links = userprofile.socialMedia;
+    let socialMediaInputs = document.getElementsByName("social_media_link");
+    socialMediaInputs.forEach((input, index) => {
+      if (recruiter_social_media_links[index]) {
+        input.value = recruiter_social_media_links[index];
+      }
+    });
+    /***************************************************************/
+    document.getElementById(
+      "J9_emp_dash_prof_right_side_body_emp_address"
+    ).value = userprofile.addressAndLocation.address;
+
+    document.getElementById(
+      "J9_emp_dash_prof_right_side_body_emp_location_country"
+    ).value = userprofile.addressAndLocation.country;
+
+    document.getElementById(
+      "J9_emp_dash_prof_right_side_body_emp_location_city"
+    ).value = userprofile.addressAndLocation.city;
+
+    document.getElementById(
+      "J9_emp_dash_prof_right_side_body_emp_location_zip_code"
+    ).value = userprofile.addressAndLocation.zipCode;
+
+    document.getElementById(
+      "J9_emp_dash_prof_right_side_body_emp_location_state"
+    ).value = userprofile.addressAndLocation.state;
   }
 });
 
