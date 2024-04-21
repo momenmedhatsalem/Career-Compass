@@ -4,6 +4,7 @@ let my_jobs_table = document.getElementById(
   "J9_emp_dash_jobs_right_side_body_emp_jobs_table_body"
 );
 
+if (my_jobs !== null) {
 my_jobs.forEach((element) => {
   let row = document.createElement("tr");
   row.className = "J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row";
@@ -29,7 +30,7 @@ my_jobs.forEach((element) => {
         <ul class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
         <li><a href="#"><img src="../../media/icons/eye.svg">View</a>
         </li>
-        <li><a href="#"><img src="../../media/icons/edit.svg" onclick="edit(${element.details.id})">Edit</a>
+        <li><a href="#"  onclick="edit(${element.details.id})"><img src="../../media/icons/edit.svg">Edit</a>
         </li>
         <li><a href="#" onclick="deleteJob(${
           element.details.id
@@ -41,6 +42,8 @@ my_jobs.forEach((element) => {
 
     my_jobs_table.appendChild(row);
   });
+
+}
 
 
 /*⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻*/
