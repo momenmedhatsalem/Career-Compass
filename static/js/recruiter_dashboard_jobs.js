@@ -29,7 +29,7 @@ my_jobs.forEach((element) => {
         <ul class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
         <li><a href="#"><img src="../../media/icons/eye.svg">View</a>
         </li>
-        <li><a href="../../templatess/edit_Job.html"><img src="../../media/icons/edit.svg" onclick="edit(${element.details.id})">Edit</a>
+        <li><a href="#"><img src="../../media/icons/edit.svg" onclick="edit(${element.details.id})">Edit</a>
         </li>
         <li><a href="#" onclick="deleteJob(${
           element.details.id
@@ -41,7 +41,7 @@ my_jobs.forEach((element) => {
 
     my_jobs_table.appendChild(row);
   });
-}
+
 
 /*⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻*/
 
@@ -89,19 +89,12 @@ function deleteJob (id) {
   } else {
     console.log("Job with the specified id not found.");
   }
-
-  //delete from page
-  let response = window.confirm("Are you sure you want to remove this job?");
-  if (response){
-      let job_id = ""+id;
-      let element = document.getElementById(job_id);
-      let parent = element.parentNode;
-      parent.removeChild(element);
-  }
 }
 
 //-------------------------------------------------------------------------------
 function edit(job_id){
+  localStorage.removeItem("id_of_edit_job");
   localStorage.setItem("id_of_edit_job",JSON.stringify(job_id));
+  window.location.href ="../../templatess/edit_Job.html"
 }
 
