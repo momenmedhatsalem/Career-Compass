@@ -45,6 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
         password
       );
 
+      // Set user type based on form ID
+      if (event.target.id === "recruiterSignUpForm") {
+        newUser.type = "recruiter";
+      }
+
       // Get the list of users from localStorage or initialize an empty array
       var userList = JSON.parse(localStorage.getItem("userList")) || [];
 
@@ -61,3 +66,4 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "login.html";
     });
 });
+
