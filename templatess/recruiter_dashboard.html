@@ -17,10 +17,11 @@
     <title>Document</title>
     <script src="../static/js/recruiter_dashboard_saved_candidates.js"></script>
     <script src="../static/js/job.js"></script>
+    <script src="../static/js/logout.js"></script>
 </head>
 
 <body class="J9_emp_dash_body">
-    <header class="J9_header" J9_add_html="Joseph_header.html"></header>
+
     <aside class="J9_emp_dash_aside">
         <div class="J9_emp_dash_aside_fixed">
 
@@ -56,8 +57,9 @@
                     <span J9_to_path="J9_recruiter_dashboard_settings">Account
                         Settings</span>
                 </p>
+
             </div>
-            <a class="J9_emp_dash_aside_logout" href="#">
+            <a onclick="logout()" class="J9_emp_dash_aside_logout" href="#">
                 <img src="../media/icons/logout.svg" alt="LogoutIco">
                 <span>log out</span>
             </a>

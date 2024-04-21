@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (loggedInUser) {
     // Prefill profile fields with user data
     document.getElementById("fname").value =
-      loggedInUser.firstName + " " + loggedInUser.lastName;
+      loggedInUser.username;
     document.getElementById("pemail").value = loggedInUser.email;
   } else {
 
