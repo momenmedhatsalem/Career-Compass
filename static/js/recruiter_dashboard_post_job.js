@@ -42,7 +42,7 @@
       );
 
       // Get the existing array of jobs from local storage
-      var jobsArray = JSON.parse(localStorage.getItem("my_jobs"));
+      var jobsArray = JSON.parse(localStorage.getItem("jobs"));
 
       // If the array doesn't exist, create it
       if (!Array.isArray(jobsArray)) {
@@ -53,7 +53,7 @@
       jobsArray.push(newJob);
 
       // Store the updated array back into local storage
-      localStorage.setItem("my_jobs", JSON.stringify(jobsArray));
+      localStorage.setItem("jobs", JSON.stringify(jobsArray));
 
       // // Get existing data from local storage or initialize an empty array
       // var dataArray = JSON.parse(localStorage.getItem("formData")) || [];

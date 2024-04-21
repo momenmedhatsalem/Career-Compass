@@ -1,4 +1,4 @@
-var my_jobs = JSON.parse(localStorage.getItem("my_jobs"));
+var my_jobs = JSON.parse(localStorage.getItem("jobs"));
 
 let my_jobs_table = document.getElementById(
   "J9_emp_dash_jobs_right_side_body_emp_jobs_table_body"
@@ -70,7 +70,7 @@ document.addEventListener("click", function (event) {
 
 
 function deleteJob (id) {
-  const jobs = JSON.parse(localStorage.getItem("my_jobs"));
+  const jobs = JSON.parse(localStorage.getItem("jobs"));
 
   console.log(id);
   // Find the index of the job with the matching id
@@ -81,7 +81,7 @@ function deleteJob (id) {
   // If the job with the matching id is found, delete it
   if (indexToDelete !== -1) {
     jobs.splice(indexToDelete, 1); // Remove the job from the array
-    localStorage.setItem("my_jobs", JSON.stringify(jobs)); // Save the modified array back to local storage
+    localStorage.setItem("jobs", JSON.stringify(jobs)); // Save the modified array back to local storage
     console.log("Job deleted successfully.");
   } else {
     console.log("Job with the specified id not found.");

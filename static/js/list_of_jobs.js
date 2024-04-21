@@ -61,7 +61,7 @@ class job{
 //-------------------------------------------------------------------------------------------------------
 
 
-let array = JSON.parse(localStorage.getItem("my_jobs"));
+let array = JSON.parse(localStorage.getItem("jobs"));
 let p = document.querySelector("table tr");
 for (let job of array){
     let txt = ` <h3>

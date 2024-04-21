@@ -17,6 +17,9 @@ function search() {
     // and "matches" to store atching jobs based on "sub"
 
     var sub = document.getElementById("search_text").value;
+
+
+
     let jobs = JSON.parse(localStorage.getItem("jobs"));
     var matches = [];
 
@@ -27,16 +30,18 @@ function search() {
     // console.log(jobs[2].pay);
 
     // loop through "jobs" and push any "job" having a ".title" including a substring of "sub"
-    for(let job of jobs)
-    {
-        // test: --> (a "job" from "jobs" arrived and has all properties correctly)
-        // console.log(job.pay);
-
-        if(job.title.includes(sub))
-        {
-            matches.push(job);
-        }
+    for (let job of jobs) {
+        console.log(job)
+    // Check if job has 'details' property and 'title' property within it
+    if (
+      job.details &&
+      job.details.title &&
+      job.details.title.toLowerCase().includes(sub)
+    ) {
+      matches.push(job);
     }
+    }
+
 
     // set our "# of found jobs" in the html page to
     // the actual number of jobs we found ad already pushed inside "matches"
@@ -63,14 +68,27 @@ function search() {
 
     document.getElementById("result-grid").innerHTML = "";
 
-    for(let match of matches)
-    {
-        document.getElementById("result-grid").innerHTML = 
-        document.getElementById("result-grid").innerHTML +
+for (let match of matches) {
+  document.getElementById("result-grid").innerHTML +=
+    '<div class="M7-card1 M7-filter-item">' +
+    "<fieldset>" +
+    "<h4>" +
+    match.details.title +
+    "</h4>" +
+    "<p>" +
+    match.details.status +
+    "</p>"
+    +
+    "<p>" +
+    match.address_and_location.country +
+    "</p>" +
+    '<a href="#">' +
+    '<button class="M7-button" style="display: inline;">Apply</button>' +
+    "</a>" +
+    "</fieldset>" +
+    "</div>";
+}
 
-        "\<div class=\"M7-card1 M7-filter-item\"\>                                           <fieldset\>                                                                                  <img src=\"" + match.image + "\" alt=\"open job icon\" width=\"100%\" height=\"30%\"\>   \<h4\> " + match.title + " \</h4\>                                                            \<p\> " + match.exp + " Exp. Years | " + match.pay + "$/M | " + match.country + "\</p\>                                                                                           \<a href=\"\"\>                                                                          \<button class=\"M7-button\" style=\"display: inline;\"\> Apply </button\>                      <a\>                                                                                              </fieldset\> </div\>";
-
-    }
 
 
 
