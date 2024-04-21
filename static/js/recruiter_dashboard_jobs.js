@@ -4,11 +4,10 @@ let my_jobs_table = document.getElementById(
   "J9_emp_dash_jobs_right_side_body_emp_jobs_table_body"
 );
 
-if (my_jobs !== null) {
-  my_jobs.forEach((element) => {
-    let row = document.createElement("tr");
-    row.className = "J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row";
-    let html = `
+my_jobs.forEach((element) => {
+  let row = document.createElement("tr");
+  row.className = "J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row";
+  let html = `
   <td class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_title">
     <div>${element.details.title}</div>
     <div>${element.details.type} . ${element.address_and_location.country}</div>
@@ -30,7 +29,7 @@ if (my_jobs !== null) {
         <ul class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
         <li><a href="#"><img src="../../media/icons/eye.svg">View</a>
         </li>
-        <li><a href="#"><img src="../../media/icons/edit.svg">Edit</a>
+        <li><a href="../../templatess/edit_Job.html"><img src="../../media/icons/edit.svg" onclick="edit(${element.details.id})">Edit</a>
         </li>
         <li><a href="#" onclick="deleteJob(${
           element.details.id
@@ -75,7 +74,7 @@ document.addEventListener("click", function (event) {
 
 /**********************************************************/
 
-function deleteJob(id) {
+function deleteJob (id) {
   const jobs = JSON.parse(localStorage.getItem("jobs"));
   
   console.log(id);
@@ -90,5 +89,19 @@ function deleteJob(id) {
   } else {
     console.log("Job with the specified id not found.");
   }
+
+  //delete from page
+  let response = window.confirm("Are you sure you want to remove this job?");
+  if (response){
+      let job_id = ""+id;
+      let element = document.getElementById(job_id);
+      let parent = element.parentNode;
+      parent.removeChild(element);
+  }
+}
+
+//-------------------------------------------------------------------------------
+function edit(job_id){
+  localStorage.setItem("id_of_edit_job",JSON.stringify(job_id));
 }
 
