@@ -77,17 +77,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (loggedInUser) {
     // Prefill the last name input
-    var lastNameInput = document.querySelector('.j9Name');
-    if (lastNameInput) {
-      lastNameInput.value = loggedInUser.username || "";
-    }
+    var lastNameInputs = document.querySelectorAll(".j9Name");
+    lastNameInputs.forEach(function (lastNameInput) {
+      if (lastNameInput) {
+        lastNameInput.value = loggedInUser.username || "";
+      }
+    });
 
     // Prefill the email input
-    var emailInput = document.querySelector('.j9Email');
-    if (emailInput) {
-      emailInput.value = loggedInUser.email || "";
-    }
+    var emailInputs = document.querySelectorAll(".j9Email");
+    emailInputs.forEach(function (emailInput) {
+      if (emailInput) {
+        emailInput.value = loggedInUser.email || "";
+      }
+    });
   } else {
     console.error("No logged-in user found.");
   }
 });
+

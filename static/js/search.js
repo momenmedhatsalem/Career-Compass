@@ -102,7 +102,7 @@ function showmatches() {
     match.details.title +
     "</h4>" +
     "<p>" +
-    match.details.status + " | " + match.details.years_of_experience + " Exp. years needed | " + match.address_and_location.country +
+    match.details.MaxSalary + "$ | " + match.details.years_of_experience + " Exp. years needed | " + match.address_and_location.country +
     "</p>" +
     // "<p>" +
     // match.address_and_location.country +
