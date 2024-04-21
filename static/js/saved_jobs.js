@@ -1,3 +1,4 @@
+//delete job
 function remove(num){
     let response = window.confirm("Are you sure you want to delete this job?");
     if (response){
@@ -32,8 +33,10 @@ class details{
         this.category = d.category;
         this.type =  d.type;
         this.salary = d.salary;
+        return this;
     }
-}
+    
+}   
 
 class english_experience {
     costactor(ef,e){
@@ -64,30 +67,61 @@ class address_and_location{
 
 class job{
     constructor(d,l,e){
-        this.details = new details(d);
-        this.address_and_location = new address_and_location(l);
-        this.english_experience = new english_experience(e);
+        this.details = d;
+        this.english_experience = l;
+        this.address_and_location = e;
     }
 }
 //-------------------------------------------------------------------------------------------------------
 
+//add jos to page 
 
-// let array = localStorage.getItem("jobs");
-// let p = document.getElementsByClassName("all-jobs");
-// for (let i = 0 ;i < array.length ; i++ ){
-//     let txt = `<div class="job" id="${array[i].details.id}"> 
+let array1 = JSON.parse(localStorage.getItem("jobs"))
+let array2 = JSON.parse(localStorage.getItem("my_jobs"));
+let p = document.getElementsByClassName("all-jobs");
+console.log(array2);
+// for (let job of array1 ){
+//     let txt = `
 //                     <div class="job-image-div">
 //                         <img src="../media/front.png" class="job-img">
 //                     </div>
 //                     <div class="desc">
-//                         <div class="job-name"> ${array[i].details.title} </div> 
-//                         <div class="salary"> ${array[i].details.salary}</div>
-//                         <div class="city"> ${array[i].address_and_location.country} , ${array[i].address_and_location.city}</div>
-//                         <div class="description">${array[i].details.description} </div>  
-//                         <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="${array[i].details.id}">Delete</button> 
+//                         <div class="job-name"> ${job.details.title} </div> 
+//                         <div class="salary"> ${job.details.salary}</div>
+//                         <div class="city"> ${job.address_and_location.country} , ${job.address_and_location.city}</div>
+//                         <div class="description">${job.details.description} </div>  
+//                         <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="${job.details.id}">Delete</button> 
 //                         <a href="#" class="view-ancor"> <button type="button" class="view-button"  value="view">view</button></a>
-//                     </div>
-//                 </div>`;
-//     p[0].appendChild(txt);
+//                     </div>`;
+//     let element = document.createElement("div");
+//     element.setAttribute("class","job");
+//     element.setAttribute("id",job.details.id);
+//     element.innerHTML= txt;
+//     p[0].appendChild(element);
 // }
+for (let job of array2 ){
+    let txt = `
+                    <div class="job-image-div">
+                        <img src="../media/front.png" class="job-img">
+                    </div>
+                    <div class="desc">
+                        <div class="job-name"> ${job.details.title} </div> 
+                        <div class="salary"> ${job.details.salary}</div>
+                        <div class="city"> ${job.address_and_location.country} , ${job.address_and_location.city}</div>
+                        <div class="description">${job.details.description} </div>  
+                        <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="${job.details.id}">Delete</button> 
+                        <a href="#" class="view-ancor"> <button type="button" class="view-button"  value="view">view</button></a>
+                    </div>`;
+    let element = document.createElement("div");
+    element.setAttribute("class","job");
+    element.setAttribute("id",job.details.id);
+    element.innerHTML= txt;
+    p[0].appendChild(element);
+}
+//--------------------------------------------------------------------------------------------------------
+//view job
 
+function view (id){
+    
+
+}

@@ -87,11 +87,13 @@ button {
     height: 35px;
     font-size: 25px;
     border-radius: 25px;
-    background-color: darkgreen;
+    border: none;
+    background-color: #25c75d;
     color: rgb(255 255 255);
 }
 button:hover {
     transform: scale(1.2);
     background-color: rgb(98, 255, 98);
     color: #7e7e7e;
+    cursor:pointer;
 }

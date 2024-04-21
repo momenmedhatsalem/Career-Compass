@@ -42,12 +42,22 @@ function search() {
     // the actual number of jobs we found ad already pushed inside "matches"
     document.getElementById("num_of_results").innerHTML = matches.length;
 
-    //test: --> ("matches" is populated correctly)
+    // test: --> ("matches" is populated correctly)
     // for(let match of matches)
     // {
-    //     console.log(match.title); 
+    //     console.log(match.pay); 
     // }
+    
+    // sort all matches in the order selected in the sort by field
 
+    if(document.getElementById("filter").value == "High - Low")
+    {
+        matches.sort((a, b) => b.pay - a.pay)   // Desc
+    }
+    else if(document.getElementById("filter").value == "Low - High")
+    {
+        matches.sort((a, b) => a.pay - b.pay)   // Asc
+    }
 
     // now we show the results in "matches" as cards in our page  بسم الله
 
@@ -58,7 +68,7 @@ function search() {
         document.getElementById("result-grid").innerHTML = 
         document.getElementById("result-grid").innerHTML +
 
-        "\<div class=\"M7-card1 M7-filter-item\"\>                                           <fieldset\>                                                                                  <img src=\"../media/software.jpg\" alt=\"open job icon\" width=\"100%\" height=\"30%\"\>   \<h4\> " + match.title + " \</h4\>                                                            \<p\> " + match.exp + " Exp. Years | " + match.pay + "$/M | " + match.country + "\</p\>                                                                                           \<a href=\"\"\>                                                                          \<button class=\"M7-button\" style=\"display: inline;\"\> Apply </button\>                      <a\>                                                                                              </fieldset\> </div\>";
+        "\<div class=\"M7-card1 M7-filter-item\"\>                                           <fieldset\>                                                                                  <img src=\"" + match.image + "\" alt=\"open job icon\" width=\"100%\" height=\"30%\"\>   \<h4\> " + match.title + " \</h4\>                                                            \<p\> " + match.exp + " Exp. Years | " + match.pay + "$/M | " + match.country + "\</p\>                                                                                           \<a href=\"\"\>                                                                          \<button class=\"M7-button\" style=\"display: inline;\"\> Apply </button\>                      <a\>                                                                                              </fieldset\> </div\>";
 
     }
 

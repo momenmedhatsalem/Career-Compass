@@ -1,15 +1,16 @@
 
 #h1-edit-job {
-    text-shadow: 0px 4px 4px rgb(52, 55, 255);
+    /* text-shadow: 0px 4px 4px rgb(52, 55, 255); */
     font-size: 40px;
     text-align: center;
+    color: #31795a;
 }
 
 form {
     /* position: relative; */
     /* left: 25%; */
-    width: 70%;
-    margin-left: 15%;
+    width: 60%;
+    margin-left: 20%;
     padding-top: 15px;
     padding-left: 20px;
     border: solid;
@@ -22,39 +23,47 @@ form {
     font-size: 1.5ch;
 }
 .input-box {
-    font-size: 30px;
-    width: 95%;
+    font-size: 25px;
+    width: 85%;
     height: 55px;
     padding-left: 16px;
-    margin-top: 6px;
+    margin-top: 10px;
+    margin-left: 5%;
     margin-bottom: 25px;
     border-width: 1px;
     border-color: #e5e5e5;
-    background-color: #a9a9a908;
+    /* background-color: #a9a9a908; */
     color: #afafaf;
 }
 form label, p {
-    font-size: 25px;
-    margin-left: 10px;
+    font-size: 30px;
+    color: #254035;
+    margin-left: 5%;
+    margin-top: 20px;
 }
 #description {
     height: 150px;
-    font-size: 20px;
+    font-size: 25px;
+    margin-top: 10px;
 }
 
-#boutton-save{
-    margin-left: 42%;
-    margin-bottom: 10px;
-    width: 15%;
+#boutton-save {
+    margin-left: 40%;
+    margin-bottom: 20px;
+    width: 20%;
+    line-height: 50px;
     text-align: center;
-    font-size: 30px;
-    border-radius: 12px;
-    background-color: #00b0ff;
+    font-size: 35px;
+    border-radius: 15px;
+    background-color: #25c75d;
     color: white;
-    border-color: #00b0ff;
+    border: none;
     box-shadow: 5px 5px 5px #cfcfde;
 }
 
+#boutton-save:hover{
+    cursor: pointer;
+}
 
 
 .table div{
@@ -69,11 +78,11 @@ input {
     /* font-size: 10px; */
 }
 input#salary {
-    width: 30%;
+    width: 25%;
     text-align: center;
 }
 select {
-    width: 40%;
+    width: 30%;
     text-align: center;
     height: 60px;
     border-radius: 10px;
