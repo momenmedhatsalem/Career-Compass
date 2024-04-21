@@ -61,9 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Optional: Display a message or perform any additional actions
       console.log("New user signed up:", newUser);
-
+      logout();
       // Redirect the user to the login page
-      window.location.href = "login.html";
+      // window.location.href = "login.html";
     });
 });
 

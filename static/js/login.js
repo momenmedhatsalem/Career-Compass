@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (foundUser) {
         // Update the loggedin status of the found user
+          userList.forEach((user) => {
+            if (user.loggedin) {
+              user.loggedin = false;
+            }
+          });
         foundUser.loggedin = true;
 
         // Save the updated user list back to localStorage
