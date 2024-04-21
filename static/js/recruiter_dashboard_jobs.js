@@ -15,7 +15,9 @@ my_jobs.forEach((element) => {
     <td>${element.details.creation_date}</td>
     <td>${Math.floor(Math.random() * (300 - 10 + 1)) + 10} Applications</td>
     <td>
-    <div class="${ element.details.status === "open" ? "J9_open" : "J9_closed" } J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status">
+    <div class="${
+      element.details.status === "open" ? "J9_open" : "J9_closed"
+    } J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_status">
     ${element.details.status}
     </div>
   </td>
@@ -27,17 +29,19 @@ my_jobs.forEach((element) => {
         <ul class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
         <li><a href="#"><img src="../../media/icons/eye.svg">View</a>
         </li>
-        <li><a href="#"><img src="../../media/icons/edit.svg">Edit</a>
+        <li><a href="../../templatess/edit_Job.html"><img src="../../media/icons/edit.svg" onclick="edit(${element.details.id})">Edit</a>
         </li>
-        <li><a href="#" onclick="deleteJob(${element.details.id})"><img src="../../media/icons/delete.svg">Delete</a></li>
+        <li><a href="#" onclick="deleteJob(${
+          element.details.id
+        })"><img src="../../media/icons/delete.svg">Delete</a></li>
       </ul>
     </div>
   </td>`;
-  row.innerHTML = html;
+    row.innerHTML = html;
 
-  my_jobs_table.appendChild(row);
-});
-
+    my_jobs_table.appendChild(row);
+  });
+}
 
 /*⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻*/
 
@@ -68,16 +72,15 @@ document.addEventListener("click", function (event) {
   }
 });
 
+/**********************************************************/
 
 function deleteJob (id) {
   const jobs = JSON.parse(localStorage.getItem("jobs"));
-
+  
   console.log(id);
   // Find the index of the job with the matching id
-  const indexToDelete = jobs.findIndex(
-    (job) => Number(job.details.id) === id
-  );
-
+  const indexToDelete = jobs.findIndex((job) => Number(job.details.id) === id);
+  
   // If the job with the matching id is found, delete it
   if (indexToDelete !== -1) {
     jobs.splice(indexToDelete, 1); // Remove the job from the array
@@ -86,4 +89,19 @@ function deleteJob (id) {
   } else {
     console.log("Job with the specified id not found.");
   }
+
+  //delete from page
+  let response = window.confirm("Are you sure you want to remove this job?");
+  if (response){
+      let job_id = ""+id;
+      let element = document.getElementById(job_id);
+      let parent = element.parentNode;
+      parent.removeChild(element);
+  }
 }
+
+//-------------------------------------------------------------------------------
+function edit(job_id){
+  localStorage.setItem("id_of_edit_job",JSON.stringify(job_id));
+}
+
