@@ -1,7 +1,7 @@
 // document.addEventListener("DOMContentLoaded", function() {
 
-  
-  var images = [
+
+var images = [
     "/media/data analyst.png",
     "/media/front end.jpg",
     "/media/Game dev.jpg",
@@ -9,14 +9,14 @@
     "/media/sales manger.jpg",
     "/media/software.jpg",
     "/media/ui ux.jpg"
-  ];
-  
-  var matches = [];
-  function search() {
-    
+];
+
+var matches = [];
+function search() {
+
 
     // check if the search bar is empty or not
-    if(document.getElementById("search_text").value == "")
+    if (document.getElementById("search_text").value == "")
         return;
 
     // show the results html block which carries the results as cards
@@ -33,7 +33,7 @@
 
 
     let jobs = JSON.parse(localStorage.getItem("jobs"));
-    
+
 
     // make "sub" lowerCase to standardize our search
     sub = sub.toLowerCase();
@@ -45,14 +45,14 @@
     matches = [];
     for (let job of jobs) {
         console.log(job)
-    // Check if job has 'details' property and 'title' property within it
-    if (
-      // job.details &&
-      // job.details.title &&
-      job.details.title.toLowerCase().includes(sub)
-    ) {
-      matches.push(job);
-    }
+        // Check if job has 'details' property and 'title' property within it
+        if (
+            // job.details &&
+            // job.details.title &&
+            job.details.title.toLowerCase().includes(sub)
+        ) {
+            matches.push(job);
+        }
     }
 
 
@@ -65,53 +65,63 @@
     // {
     //     console.log(match.details.MaxSalary); 
     // }
-    
+
     // sort all matches in the order selected in the sort by field
     console.log(document.getElementById("filter").value);
 
-    
+
     document.getElementById("result-grid").innerHTML = "";
-    
+
     showmatches(matches);
     // var matches = [];
-    
-    
-    
-  }
-  
-  function sort(dir) {
+
+
+
+}
+
+function sort(dir) {
     if (dir == "htl") {
-          matches.sort((a, b) => b.details.MaxSalary - a.details.MaxSalary); // Desc
-        } else{
-          matches.sort((a, b) => a.details.MaxSalary - b.details.MaxSalary); // Asc
-        }
-        showmatches()
-      }
+        matches.sort((a, b) => b.details.MaxSalary - a.details.MaxSalary); // Desc
+    }
+    else if (dir == "lth") 
+    {
+        matches.sort((a, b) => a.details.MaxSalary - b.details.MaxSalary); // Asc
+    }
+    else if (dir == "htly") 
+    {
+        matches.sort((a, b) => b.details.years_of_experience - a.details.years_of_experience); // Desc
+    }
+    else if (dir == "lthy") 
+    {
+        matches.sort((a, b) => a.details.years_of_experience - b.details.years_of_experience); // Asc
+    }
+    showmatches()
+}
 
 // })
 
 // now we show the results in "matches" as cards in our page  بسم الله
 function showmatches() {
-  document.getElementById("result-grid").innerHTML = "";
-  for (let match of matches) {
-    document.getElementById("result-grid").innerHTML +=
-    '<div class="M7-card1 M7-filter-item">' +
-    "<fieldset>" +
-    "<img src=\"" + images[Math.floor(Math.random() * images.length)] + "\" alt=\"open job icon\" width=\"100%\" height=\"30%\"\>" +
-    "<h4>" +
-    match.details.title +
-    "</h4>" +
-    "<p>" +
-    match.details.MaxSalary + "$ | " + match.details.years_of_experience + " Exp. years needed | " + match.address_and_location.country +
-    "</p>" +
-    // "<p>" +
-    // match.address_and_location.country +
-    // "</p>" +
-    '<a href="#">' +
-    '<button class="M7-button" style="display: inline;">Apply</button>' +
-    "</a>" +
-    "</fieldset>" +
-    "</div>";
-}
-// var matches = [];
+    document.getElementById("result-grid").innerHTML = "";
+    for (let match of matches) {
+        document.getElementById("result-grid").innerHTML +=
+            '<div class="M7-card1 M7-filter-item">' +
+            "<fieldset>" +
+            "<img src=\"" + images[Math.floor(Math.random() * images.length)] + "\" alt=\"open job icon\" width=\"100%\" height=\"30%\"\>" +
+            "<h4>" +
+            match.details.title +
+            "</h4>" +
+            "<p>" +
+            match.details.MaxSalary + "$ | " + match.details.years_of_experience + " Exp. years needed | " + match.address_and_location.country +
+            "</p>" +
+            // "<p>" +
+            // match.address_and_location.country +
+            // "</p>" +
+            '<a href="#">' +
+            '<button class="M7-button" style="display: inline;">Apply</button>' +
+            "</a>" +
+            "</fieldset>" +
+            "</div>";
+    }
+    // var matches = [];
 }
