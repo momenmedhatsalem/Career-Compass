@@ -12,7 +12,7 @@
     text-align: center;
     margin: 0;
     margin-top: 62px;
-    padding: 70px 10px 60px 10px;
+    padding: 70px 10px 40px 10px;
 
     font-size: 3rem;
 
@@ -51,7 +51,7 @@
 
     margin: auto;
     margin-right: 0;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 
     padding: 15px;
     padding-left: 4rem;
@@ -125,6 +125,58 @@
     display: block;
     text-align: center;
 }
+
+.choice {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 40px;
+    background-color: #ddd;
+
+    padding-top: 8px;
+    padding-left: 0;
+    padding-right: 0;
+    
+    height: 28px;
+    width: fit-content;
+
+    border-radius: 20px;
+}
+
+.choice a {
+    box-sizing: border-box;
+    margin: 0;
+
+    display: inline;
+
+    padding: 8px;
+
+    background-color: #ddd;
+
+    border-radius: 20px;
+
+    color: black;
+
+    font-size: large;
+
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.choice a:hover {
+    box-sizing: border-box;
+    margin: 0;
+
+    background-color: rgb(0, 136, 255);
+    color: white;
+
+    border-radius: 20px;
+}
+
+.selected {
+    background-color: rgb(0, 136, 255);
+}
+
+
+
 
 .M7-result {
     /* background-color: #111; */
