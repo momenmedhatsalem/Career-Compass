@@ -1,4 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function() {
 
 
 var images = [
@@ -22,25 +21,25 @@ function set_search_by(opt = "title")
 
     search_by = opt;
     old_option = search_by;
-
+    
     matches = [];
-
+    
     document.getElementById("result").style.display = "none";
     document.getElementById("result-grid").style.display = "none";
-
+    
     document.getElementById(opt).style.backgroundColor = "rgb(0, 136, 255)";
     document.getElementById(opt).style.color = "white";
-
+    
 }
 
-set_search_by();
+document.addEventListener("load", set_search_by());
 
 function search() {
 
     // check if the search bar is empty or not
     if (document.getElementById("search_text").value == "")
         return;
-
+    
     // show the results html block which carries the results as cards
     document.getElementById("result").style.display = "flex";
     document.getElementById("result-grid").style.display = "flex";
