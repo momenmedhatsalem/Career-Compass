@@ -17,7 +17,7 @@
 
 </head>
 
-<body style="margin: 0px;">
+<body style="margin: 0px;" onload="set_search_by()">
 
   <header class="J9_header" J9_add_html="Joseph_header.html"></header>
 
@@ -27,7 +27,7 @@
 
       <!-- <h2>Search for availalbe job opportunities by title</h2> -->
 
-      <h1 class="M7-h1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search All Our Open Jobs <img
+      <h1 class="M7-h1">&nbsp;&nbsp;&nbsp;&nbsp;Search All Our Open Jobs <img
           src="../media/mgnifying_lens_trans.png" width="50" alt="search"></h1>
 
 
@@ -52,6 +52,12 @@
           <option value="Sales Manager">Sales Manager</option>
           <option value="Intern">Intern</option>
         </datalist>
+
+        <div class="choice">
+            <a id="title" onclick="set_search_by('title')" href="#">Job Title</a>
+            <a id="years" onclick="set_search_by('years')" href="#">Years of Exp.</a>
+            <a id="country" onclick="set_search_by('country')" href="#">Country</a>
+        </div>
         
 
       </div>
@@ -68,9 +74,13 @@
         <div class="dropdown M7-filter-item-up" style="margin-bottom: 31px;">
           <button class="dropbtn"><img src="/media/filter-white.png" alt="" width="15px"> Sort by</button>
           <div class="dropdown-content">
-            <a onclick="sort('htl')" class="no_hover">Salary: </a>
+            <span class="no_hover" style="margin-left: 5px;padding-left: 5px;  font-weight: 600"> Salary: </span>
             <a onclick="sort('htl')" href="#start">High to Low</a>
             <a onclick="sort('lth')" href="#start">Low to High</a>
+
+            <span class="no_hover" style="margin-left: 5px;padding-left: 5px; font-weight: 600;"> Years of Exp: </span>
+            <a onclick="sort('htly')" href="#start">High to Low</a>
+            <a onclick="sort('lthy')" href="#start">Low to High</a>
 
           </div>
         </div>
