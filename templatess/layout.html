@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <!-- ========== Momen Medhat Salem 20221258 ========== -->
 <html lang="en" data-bs-theme="dark">
@@ -6,15 +7,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% block title %}Career Compass{% endblock %}</title>
-  <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="{% static 'js/header.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+  <title>Document</title>
+
 </head>
 
-<body style="margin: 0px;">
-  <header style="background-color: #ccc;">
+<body class="J9_body" style="margin: 0px;">
+  <header class="J9_header" style="background-color: #ccc;">
 
   
   <a href="index.html" class="J9_header_logo">
-    <img class="J9_header_logo" src="../media/images/logopng.png" />
+<img class="J9_header_logo" src="{% static 'images/logopng.png' %}" width="100px" />
   </a>
 
   <nav class="J9_nav_in_header">
@@ -79,16 +85,16 @@
   </div>
 
   </header>
-  <section class="main">
+
           {% block content %}
         <!-- Default content block -->
         {% endblock %}
-  </section>
-  <footer style="max-width: 80%; margin: auto;">
+  
+  <footer class="J9_footer" style="max-width: 100%; margin: auto;">
 <div class="J9_footer_row">
   <div class="J9_footer_logo_col">
     <a href="index.html">
-      <img class="J9_footer_logo" src="../media/images/logopng.png" width="100px" />
+<img class="J9_footer_logo" src="{% static 'images/logopng.png' %}" width="100px" />
     </a>
   </div>
   <div class="J9_footer_cols">

@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<!-- ========== Joseph 20220099 ========== -->
-<html class="J9" lang="en">
+{% extends 'layout.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../static/css/index.css">
+{% block title %}Home{% endblock %}
 
-  <title>Document</title>
-  <link rel="stylesheet" href="../static/css/styles.css">
-</head>
+{% block content %}
 
-<body class="J9_body">
-  <header class="J9_header" J9_add_html="Joseph_header.html"></header>
 
   <!---------------------------------------------------------------->
   <section class="J9_main">
@@ -119,11 +110,6 @@
     </section>
   </section>
 
+{% endblock %}
 
-  <section class="J9_footer" J9_add_html="Joseph_footer.html"></section>
 
-  <script src="../static/js/J9_add_html.js"></script>
-  <script src="../static/js/header.js"></script>
-</body>
-
-</html>
