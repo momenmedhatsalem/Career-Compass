@@ -75,5 +75,10 @@ form div {
   border-color: #4CAF50;
   outline: 0;
   box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+}    
+form div {
+      margin-bottom: 3%;
 }
 /* END Momen styles */
+
+

@@ -1,28 +1,8 @@
-<!DOCTYPE html>
+{% extends 'layout.html' %}
 
-<!-- ========== Momen Medhat Salem 20221258 ========== -->
+{% block title %}Signup{% endblock %}
 
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up</title>
-  <link rel="stylesheet" href="../static/css/styles.css">
-    <link rel="stylesheet" href="../static/css/index.css">
-    <script src="../static/js/signup.js"></script>
-    <script src="../static/js/logout.js"></script>
-  <style>
-    form div {
-      margin-bottom: 3%;
-    }
-  </style>
-
-</head>
-
-<body style="margin: 0px;" class="J9_body">
-  <header class="J9_header" J9_add_html="Joseph_header.html"></header>
-
+{% block content %}
 
 
   <section class="main">
@@ -76,11 +56,4 @@
     </div>
     <div>
   </section>
-  <section class="J9_footer" J9_add_html="Joseph_footer.html"></section>
-
-  <script src="../static/js/J9_add_html.js"></script>
-  </div>
-
-</body>
-
-</html>
+{% endblock %}
