@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- ========== Momen Medhat Salem 20221258 ========== -->
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Career Compass{% endblock %}</title>
+  <link rel="stylesheet" href="../static/styles.css">
+</head>
+
+<body style="margin: 0px;">
+  <header style="background-color: #ccc;">
+
+  
+  <a href="index.html" class="J9_header_logo">
+    <img class="J9_header_logo" src="../media/images/logopng.png" />
+  </a>
+
+  <nav class="J9_nav_in_header">
+      <ul class="J9_nav_ul_in_header">
+        <li class="J9_nav_ul_item_in_header">
+          <a onclick="loadProfile()" href="#">Profile</a>
+        </li>
+
+        <li class="J9_nav_ul_item_in_header">
+          <a href="#">Job</a>
+          <ul class="J9_nav_ul_ul_in_header">
+            <li class="J9_nav_ul_ul_item_in_header">
+              <a href="list_of_jobs.html">Job List</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="J9_nav_ul_item_in_header J9_explore">
+          <a href="#">Explore</a>
+          <div class="J9_explore_cols">
+            <div class="J9_explore_col">
+              <a href="index.html">Home</a>
+            </div>
+
+            <div class="J9_explore_col">
+              <a href="About_us.html">About Us</a>
+            </div>
+
+            <div class="J9_explore_col">
+
+              <ul class="J9_nav_ul_ul_explore_in_header">
+
+                <li class="J9_nav_ul_ul_item_in_header">
+                  <a href="signup.html">Register</a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </li>
+<!-- 
+        <li class="J9_nav_ul_item_in_header">
+          <a href="#">Contact</a>
+        </li> -->
+
+        <li class="J9_nav_ul_item_in_header">
+          <a href="/templatess/search.html">Search</a>
+        </li>
+        
+        <li class="J9_nav_ul_item_in_header">
+          <a href="/templatess/About_us.html">About Us</a>
+        </li>
+
+      </ul>
+  </nav>
+
+  <div id="J9_login_signup" class="J9_login_signup">
+    <ul class="J9_login_signup_ul">
+      <li><a href="login.html">Login/Sign up</a></li>
+      <!-- <li><a href="/templatess/recruiter_dashboard.html">Post a job</a></li> -->
+    </ul>
+  </div>
+
+  </header>
+  <section class="main">
+          {% block content %}
+        <!-- Default content block -->
+        {% endblock %}
+  </section>
+  <footer style="max-width: 80%; margin: auto;">
+<div class="J9_footer_row">
+  <div class="J9_footer_logo_col">
+    <a href="index.html">
+      <img class="J9_footer_logo" src="../media/images/logopng.png" width="100px" />
+    </a>
+  </div>
+  <div class="J9_footer_cols">
+    <div class="J9_footer_col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="list_of_jobs.html">Browse Jobs</a></li>
+        <!-- <li><a href="#">Companies</a></li> -->
+        <li><a href="check_candidates.html">Candidates</a></li>
+      </ul>
+    </div>
+    <div class="J9_footer_col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="/templatess/About_us.html">About us</a></li>
+        <!-- <li><a href="#">Contact</a></li> -->
+      </ul>
+    </div>
+    <div class="J9_footer_col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Terms of use</a></li>
+        <li><a href="#">Terms & conditions</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="J9_footer_privacy_contact">
+  <ul class="J9_footer_privacy_contact_ul">
+    <li><a href="#">Privacy & Terms.</a></li>
+    <!-- <li><a href="#"> Contact Us</a></li> -->
+  </ul>
+  <p>
+    © 2024 Career Compass, Inc
+  </p>
+</div>
+
+  </footer>
+ 
+
+
+
+</body>
+
+</html>
