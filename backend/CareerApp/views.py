@@ -21,3 +21,6 @@ def savedJobs(request):
 
 def about(request):
     return render(request, "About_us.html")
+
+def jobs(request):
+    return render(request, "list_of_jobs.html")
