@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<!-- ========== Joseph 20220099 ========== -->
-<html lang="en">
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Application Confirmation{% endblock %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Application Confirmation</title>
-  <link rel="stylesheet" href="../static/css/styles.css">
-    <link rel="stylesheet" href="../static/css/index.css">
-</head>
+{% block content %}
 
-<body style="margin: 0px;">
-<header class="J9_header" J9_add_html="Joseph_header.html"></header>
+    <!-- ========== Joseph 20220099 ========== -->
 
   <section class="main">
     <h1>Application Submitted Successfully</h1>
@@ -22,9 +15,4 @@
 
   </div>
 
-  <section class="J9_footer" J9_add_html="Joseph_footer.html"></section>
-
-  <script src="../static/js/J9_add_html.js"></script>
-</body>
-
-</html>
+{% endblock %}
