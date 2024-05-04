@@ -1,18 +1,12 @@
-<!DOCTYPE HTML>
-<!-- ========== Philopater ========== -->
-<html lang="en">
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}List of candidates{% endblock %}
 
-<head>
-  <meta charset="UTF-8">
-  <title> List of candidates</title>
-  <link rel="stylesheet" href="../static/css/styles.css"">
-        <link rel=" stylesheet" href="../static/css/candidates_list.css">
-  <link rel="stylesheet" href="../static/css/index.css">
-</head>
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/candidates_list.css' %}">
 
-<body style="margin: 0px;">
-<header class="J9_header" J9_add_html="Joseph_header.html"></header>
-
+  
+  <!-- ========== Philopater ========== -->
   <section class="main">
     <h1>
       List of candidates
@@ -25,7 +19,7 @@
             <!-- ------------------------------------------------------------------------------------ -->
             <li id="1">
               <ul class="information">
-                <img class="img-person" src="../media/image.png">
+                <img class="img-person" src="{% static 'image.png' %}">
                 <li class="person-name"> Mohmmed Hany </li>
                 <li class="job-title">Web Development</li>
                 <li class="skills">
@@ -49,9 +43,9 @@
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="../media/check-mark.png"></button>
+                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
                   <button type="button" onclick="reject(name)" value="reject" name="1"><img
-                      src="../media/cancel.png"></button>
+                      src="{% static 'cancel.png' %}"></button>
                 </li>
               </ul>
             </li>
@@ -59,7 +53,7 @@
             <li id="2">
 
               <ul class="information">
-                <img class="img-person" src="../media/image.png">
+                <img class="img-person" src="{% static 'image.png' %}">
                 <li class="person-name"> Ali Ahmed </li>
                 <li class="job-title">Web Development</li>
                 <li class="skills">
@@ -83,9 +77,9 @@
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="../media/check-mark.png"></button>
+                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
                   <button type="button" onclick="reject(name)" value="reject" name="2"><img
-                      src="../media/cancel.png"></button>
+                      src="{% static 'cancel.png' %}"></button>
                 </li>
               </ul>
             </li>
@@ -93,7 +87,7 @@
             <li id="3">
 
               <ul class="information">
-                <img class="img-person" src="../media/image.png">
+                <img class="img-person" src="{% static 'image.png' %}">
                 <li class="person-name">John Aymen </li>
                 <li class="job-title">Web Development</li>
                 <li class="skills">
@@ -117,9 +111,9 @@
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="../media/check-mark.png"></button>
+                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
                   <button type="button" onclick="reject(name)" value="reject" name="3"><img
-                      src="../media/cancel.png"></button>
+                      src="{% static 'cancel.png' %}"></button>
 
                 </li>
               </ul>
@@ -128,7 +122,7 @@
             <li id="4">
 
               <ul class="information">
-                <img class="img-person" src="../media/images/candidate3.jpg">
+                <img class="img-person" src="{% static 'images/candidate3.jpg' %}">
                 <li class="person-name"> Mona Youseef </li>
                 <li class="job-title">Web Development</li>
                 <li class="skills">
@@ -152,9 +146,9 @@
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="../media/check-mark.png"></button>
+                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
                   <button type="button" onclick="reject(name)" value="reject" name="4"><img
-                      src="../media/cancel.png"></button>
+                      src="{% static 'cancel.png' %}"></button>
 
                 </li>
               </ul>
@@ -163,7 +157,7 @@
             <!-- ----------------------------------------------------------------------------------- -->
             <li id="5">
               <ul class="information">
-                <img class="img-person" src="../media/images/candidate3.jpg">
+                <img class="img-person" src="{% static 'images/candidate3.jpg' %}">
                 <li class="person-name"> Hoda Youseef </li>
                 <li class="job-title">Web Development</li>
                 <li class="skills">
@@ -187,9 +181,9 @@
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="../media/check-mark.png"></button>
+                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
                   <button type="button" onclick="reject(name)" value="reject" name="5"><img
-                      src="../media/cancel.png"></button>
+                      src="{% static 'cancel.png' %}"></button>
 
                 </li>
               </ul>
@@ -199,7 +193,7 @@
             <li id="6">
 
               <ul class="information">
-                <img class="img-person" src="../media/images/candidate3.jpg">
+                <img class="img-person" src="{% static 'images/candidate3.jpg' %}">
                 <li class="person-name"> Noha Youseef </li>
                 <li class="job-title">Web Development</li>
                 <li class="skills">
@@ -223,9 +217,9 @@
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="../media/check-mark.png"></button>
+                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
                   <button type="button" onclick="reject(name)" value="reject" name="6"><img
-                      src="../media/cancel.png"></button>
+                      src="{% static 'cancel.png' %}"></button>
 
                 </li>
               </ul>
@@ -245,7 +239,7 @@
           <ol class="candidate-list">
             <li id="j1">
               <ul class="information">
-                <img class="img-person" src="../media/image.png">
+                <img class="img-person" src="{% static 'image.png' %}">
                 <li class="person-name"> Mohmmed Hany </li>
                 <li class="job-title">Web Development</li>
                 <li class="skills">
@@ -269,9 +263,9 @@
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="../media/check-mark.png"></button>
+                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
                   <button type="button" onclick="reject(name)" value="reject" name="j1"><img
-                      src="../media/cancel.png"></button>
+                      src="{% static 'cancel.png' %}"></button>
                 </li>
               </ul>
             </li>
@@ -279,7 +273,7 @@
             <li id="j2">
 
               <ul class="information">
-                <img class="img-person" src="../media/image.png">
+                <img class="img-person" src="{% static 'image.png' %}">
                 <li class="person-name"> Ali Ahmed </li>
                 <li class="job-title">Web Development</li>
                 <li class="skills">
@@ -303,9 +297,9 @@
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="../media/check-mark.png"></button>
+                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
                   <button type="button" onclick="reject(name)" value="reject" name="j2"><img
-                      src="../media/cancel.png"></button>
+                      src="{% static 'cancel.png' %}"></button>
                 </li>
               </ul>
             </li>
@@ -313,7 +307,7 @@
             <li id="j3">
 
               <ul class="information">
-                <img class="img-person" src="../media/image.png">
+                <img class="img-person" src="{% static 'image.png' %}">
                 <li class="person-name">John Aymen </li>
                 <li class="job-title">Web Development</li>
                 <li class="skills">
@@ -337,9 +331,9 @@
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="../media/check-mark.png"></button>
+                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
                   <button type="button" onclick="reject(name)" value="reject" name="j3"><img
-                      src="../media/cancel.png"></button>
+                      src="{% static 'cancel.png' %}"></button>
 
                 </li>
               </ul>
@@ -348,7 +342,7 @@
             <li id="j4">
 
               <ul class="information">
-                <img class="img-person" src="../media/images/candidate3.jpg">
+                <img class="img-person" src="{% static 'images/candidate3.jpg' %}">
                 <li class="person-name"> Mona Youseef </li>
                 <li class="job-title">Web Development</li>
                 <li class="skills">
@@ -372,9 +366,9 @@
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="../media/check-mark.png"></button>
+                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
                   <button type="button" onclick="reject(name)" value="reject" name="j4"><img
-                      src="../media/cancel.png"></button>
+                      src="{% static 'cancel.png' %}"></button>
 
                 </li>
               </ul>
@@ -383,7 +377,7 @@
             <!-- ----------------------------------------------------------------------------------------------------- -->
             <li id="j5">
               <ul class="information">
-                <img class="img-person" src="../media/images/candidate3.jpg">
+                <img class="img-person" src="{% static 'images/candidate3.jpg' %}">
                 <li class="person-name"> Hoda Youseef </li>
                 <li class="job-title">Web Development</li>
                 <li class="skills">
@@ -407,9 +401,9 @@
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="../media/check-mark.png"></button>
+                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
                   <button type="button" onclick="reject(name)" value="reject" name="j5"><img
-                      src="../media/cancel.png"></button>
+                      src="{% static 'cancel.png' %}"></button>
 
                 </li>
               </ul>
@@ -419,7 +413,7 @@
             <li id="j6">
 
               <ul class="information">
-                <img class="img-person" src="../media/images/candidate3.jpg">
+                <img class="img-person" src="{% static 'images/candidate3.jpg' %}">
                 <li class="person-name"> Noha Youseef </li>
                 <li class="job-title">Web Development</li>
                 <li class="skills">
@@ -443,9 +437,9 @@
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="../media/check-mark.png"></button>
+                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
                   <button type="button" onclick="reject(name)" value="reject" name="j6"><img
-                      src="../media/cancel.png"></button>
+                      src="{% static 'cancel.png' %}"></button>
 
                 </li>
               </ul>
@@ -462,10 +456,6 @@
     <div>
   </section>
 
-  </div>
-  <script src="../static/js/check_candidates.js"></script>
-  <section class="J9_footer" J9_add_html="Joseph_footer.html"></section>
-    <script src="../static/js/J9_add_html.js"></script>
-</body>
+<script src="{% static 'js/check_candidates.js' %}"></script>
 
-</html>
+{% endblock %}
