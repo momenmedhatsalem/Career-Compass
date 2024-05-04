@@ -283,16 +283,16 @@ a {
 }
 
 .J9_trending_job[id="audio_video_diting"] {
-  background-image: url(../media/Editing.png);
+  background-image: url(../media/images/Editing.png);
 }
 .J9_trending_job[id="product_branding_design"] {
-  background-image: url(../../media/images/Product\ &\ Branding\ Design.png);
+  background-image: url(../media/images/Product\ &\ Branding\ Design.png);
 }
 .J9_trending_job[id="admin_customer_support"] {
-  background-image: url(../../media/images/Admin\ &\ Customer\ Support.png);
+  background-image: url(../media/images/Admin\ &\ Customer\ Support.png);
 }
 .J9_trending_job[id="wordpress_development"] {
-  background-image: url(../../media/images/WordPress\ Development.png);
+  background-image: url(../media/images/WordPress\ Development.png);
 }
 
 .J9_trending_job div {
