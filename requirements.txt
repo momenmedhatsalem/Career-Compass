@@ -2,4 +2,4 @@ Django==4.2
 pillow==10.3.0
 asgiref==3.6
 sqlparse==0.4.2
-# python==3.9.6
+python==3.9.6
