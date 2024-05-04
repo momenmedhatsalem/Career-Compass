@@ -336,7 +336,7 @@ a {
 }
 
 .J9_complete_job_portal_section {
-  background: url(../../media/images/Complete\ job\ portal.png) no-repeat center;
+  background: url(../media/images/Complete\ job\ portal.png) no-repeat center;
   background-size: cover;
   z-index: 1;
   padding-bottom: 7vh;
