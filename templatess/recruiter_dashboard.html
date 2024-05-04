@@ -1,66 +1,61 @@
-<!DOCTYPE html>
-<html class="J9" lang="en">
-<!-- ========== Joseph 20220099 ========== -->
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Signup{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/index.css">
-    <link rel="stylesheet" href="../static/css/recruiter_dashboard.css">
-    <link rel="stylesheet" href="../static/css/recruiter_dashboard_profile.css">
-    <link rel="stylesheet" href="../static/css/recruiter_dashboard_jobs.css">
-    <link rel="stylesheet" href="../static/css/recruiter_dashboard_post_job.css">
-    <link rel="stylesheet" href="../static/css/recruiter_dashboard_saved_candidates.css">
-    <link rel="stylesheet" href="../static/css/recruiter_dashboard_settings.css">
+{% block content %}
 
 
-    <title>Document</title>
-    <script src="../static/js/recruiter_dashboard_saved_candidates.js"></script>
-    <script src="../static/js/job.js"></script>
-    <script src="../static/js/logout.js"></script>
-    <script src="../static/js/edit_profile.js"></script>
-</head>
+<link rel="stylesheet" href="{% static 'css/recruiter_dashboard.css' %}">
+<link rel="stylesheet" href="{% static 'css/recruiter_dashboard_profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/recruiter_dashboard_jobs.css' %}">
+<link rel="stylesheet" href="{% static 'css/recruiter_dashboard_post_job.css' %}">
+<link rel="stylesheet" href="{% static 'css/recruiter_dashboard_saved_candidates.css' %}">
+<link rel="stylesheet" href="{% static 'css/recruiter_dashboard_settings.css' %}">
 
-<body class="J9_emp_dash_body">
+<script src="{% static 'js/recruiter_dashboard_saved_candidates.js' %}"></script>
+<script src="{% static 'js/job.js' %}"></script>
+<script src="{% static 'js/logout.js' %}"></script>
+<script src="{% static 'js/edit_profile.js' %}"></script>
+
 
     <aside class="J9_emp_dash_aside">
         <div class="J9_emp_dash_aside_fixed">
 
             <div class="J9_emp_dash_aside_logo_prof_pic">
-                <a class="J9_emp_dash_aside_logo" href="index.html"><img src="../media/images/logopng.png" alt=""></a>
+<a class="J9_emp_dash_aside_logo" href="index.html"><img src="{% static 'images/logopng.png' %}" alt=""></a>
                 <a class="J9_emp_dash_aside_prof_pic" href="recruiter_dashboard.html">
-                    <img src="../media/images/employer.png" alt="profile photo">
+                    <img src="{% static 'images/employer.png' %}" alt="profile photo">
                 </a>
                 <h3 id="J9_emp_dash_aside_prof_username"></h3>
             </div>
             <div class="J9_emp_dash_aside_menu_bar">
                 <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_profile">
-                    <img J9_to_path="J9_recruiter_dashboard_profile" src="../media/icons/profile.svg" alt="profileIco">
+                    <img J9_to_path="J9_recruiter_dashboard_profile" src="{% static 'icons/profile.svg' %}" alt="profileIco">
                     <span J9_to_path="J9_recruiter_dashboard_profile">My Profile</span>
                 </p>
                 <p  class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_jobs">
-                    <img J9_to_path="J9_recruiter_dashboard_jobs" src="../media/icons/list.svg" alt="ListIco">
+                    <img J9_to_path="J9_recruiter_dashboard_jobs" src="{% static 'icons/list.svg' %}" alt="ListIco">
                     <span J9_to_path="J9_recruiter_dashboard_jobs">My Jobs</span>
                 </p>
                 <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_post_job">
-                    <img J9_to_path="J9_recruiter_dashboard_post_job" src="../media/icons/pen.svg" alt="penIco">
+                    <img J9_to_path="J9_recruiter_dashboard_post_job" src="{% static 'icons/pen.svg' %}" alt="penIco">
                     <span J9_to_path="J9_recruiter_dashboard_post_job">Submit Job</span>
                 </p>
                 <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_saved_candidates">
-                    <img J9_to_path="J9_recruiter_dashboard_saved_candidates" src="../media/icons/bookmark.svg"
+                    <img J9_to_path="J9_recruiter_dashboard_saved_candidates" src="{% static 'icons/bookmark.svg' %}"
                         alt="BookmarkIco">
                     <span J9_to_path="J9_recruiter_dashboard_saved_candidates">Saved
                         candidates</span>
                 </p>
                 <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_settings">
-                    <img J9_to_path="J9_recruiter_dashboard_settings" src="../media/icons/setting.svg" alt="setting">
+                    <img J9_to_path="J9_recruiter_dashboard_settings" src="{% static 'icons/setting.svg' %}" alt="setting">
                     <span J9_to_path="J9_recruiter_dashboard_settings">Account
                         Settings</span>
                 </p>
 
             </div>
             <a onclick="logout()" class="J9_emp_dash_aside_logout" href="#">
-                <img src="../media/icons/logout.svg" alt="LogoutIco">
+                <img src="{% static 'icons/logout.svg' %}" alt="LogoutIco">
                 <span>log out</span>
             </a>
         </div>
@@ -85,10 +80,10 @@
                     <form class="J9_emp_dash_prof_right_side_body_emp_divs" id="J9_employer_profile_form">
                         <div class="J9_emp_dash_prof_right_side_body_emp_information">
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_photo">
-                                <img id="J9_recruiter_viewed_profile_photo" src="../../media/images/employer.png" alt="profile photo">
+                                <img id="J9_recruiter_viewed_profile_photo" src="../images/employer.png' %}" alt="profile photo">
                                 <div>
                                     <label class="J9_custom_file_upload">Upload new photo <input id="J9_recruiter_profile_photo" name="profile_photo"
-                                            type="file" accept="image/x-png,image/jpg" /> </label>
+                                            type="file" accept="image/x-png' %},image/jpg" /> </label>
                                 </div>
                                 <button
                                     class="J9_emp_dash_prof_right_side_body_emp_information_photo_delete">Delete</button>
@@ -981,7 +976,7 @@
                     <div class="J9_emp_dash_saved_candidates_right_side_body_container">
                         <div class="J9_emp_dash_saved_candidates_right_side_candidate_card">
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_photo">
-                                <a href="#"><img src="../../media/images/candidate1.jpg" alt=""></a>
+                                <a href="#"><img src="../images/candidate1.jpg" alt=""></a>
                             </div>
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details">
                                 <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_information">
@@ -999,15 +994,15 @@
                                         <div>Giza</div>
                                     </div>
                                     <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions">
-                                        <a href="#"><img src="../../media/icons/eye2.svg" alt=""></a>
+                                        <a href="#"><img src="../icons/eye2.svg' %}" alt=""></a>
                                         <div class="div">
                                             <button
                                                 class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button"><span></span></button>
                                             <ul
                                                 class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
-                                                <li><a href="#"><img src="../../media/icons/eye2.svg" alt="">view</a>
+                                                <li><a href="#"><img src="../icons/eye2.svg' %}" alt="">view</a>
                                                 </li>
-                                                <li><a href="#"><img src="../../media/icons/delete.svg"
+                                                <li><a href="#"><img src="../icons/delete.svg' %}"
                                                             alt="">delete</a></li>
                                             </ul>
                                         </div>
@@ -1029,7 +1024,7 @@
 
                         <div class="J9_emp_dash_saved_candidates_right_side_candidate_card">
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_photo">
-                                <a href="#"><img src="../../media/images/candidate2.jpg" alt=""></a>
+                                <a href="#"><img src="../images/candidate2.jpg" alt=""></a>
                             </div>
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details">
                                 <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_information">
@@ -1047,15 +1042,15 @@
                                         <div>Giza</div>
                                     </div>
                                     <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions">
-                                        <a href="#"><img src="../../media/icons/eye2.svg" alt=""></a>
+                                        <a href="#"><img src="../icons/eye2.svg' %}" alt=""></a>
                                         <div>
                                             <button
                                                 class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button"><span></span></button>
                                             <ul
                                                 class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
-                                                <li><a href="#"><img src="../../media/icons/eye2.svg" alt="">view</a>
+                                                <li><a href="#"><img src="../icons/eye2.svg' %}" alt="">view</a>
                                                 </li>
-                                                <li><a href="#"><img src="../../media/icons/delete.svg"
+                                                <li><a href="#"><img src="../icons/delete.svg' %}"
                                                             alt="">delete</a></li>
                                             </ul>
                                         </div>
@@ -1075,7 +1070,7 @@
                         </div>
                         <div class="J9_emp_dash_saved_candidates_right_side_candidate_card">
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_photo">
-                                <a href="#"><img src="../../media/images/candidate1.jpg" alt=""></a>
+                                <a href="#"><img src="../images/candidate1.jpg" alt=""></a>
                             </div>
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details">
                                 <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_information">
@@ -1093,15 +1088,15 @@
                                         <div>Giza</div>
                                     </div>
                                     <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions">
-                                        <a href="#"><img src="../../media/icons/eye2.svg" alt=""></a>
+                                        <a href="#"><img src="../icons/eye2.svg' %}" alt=""></a>
                                         <div class="div">
                                             <button
                                                 class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button"><span></span></button>
                                             <ul
                                                 class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
-                                                <li><a href="#"><img src="../../media/icons/eye2.svg" alt="">view</a>
+                                                <li><a href="#"><img src="../icons/eye2.svg' %}" alt="">view</a>
                                                 </li>
-                                                <li><a href="#"><img src="../../media/icons/delete.svg"
+                                                <li><a href="#"><img src="../icons/delete.svg' %}"
                                                             alt="">delete</a></li>
                                             </ul>
                                         </div>
@@ -1121,7 +1116,7 @@
                         </div>
                         <div class="J9_emp_dash_saved_candidates_right_side_candidate_card">
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_photo">
-                                <a href="#"><img src="../../media/images/candidate3.jpg" alt=""></a>
+                                <a href="#"><img src="../images/candidate3.jpg" alt=""></a>
                             </div>
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details">
                                 <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_information">
@@ -1139,15 +1134,15 @@
                                         <div>Giza</div>
                                     </div>
                                     <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions">
-                                        <a href="#"><img src="../../media/icons/eye2.svg" alt=""></a>
+                                        <a href="#"><img src="../icons/eye2.svg' %}" alt=""></a>
                                         <div class="div">
                                             <button
                                                 class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button"><span></span></button>
                                             <ul
                                                 class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
-                                                <li><a href="#"><img src="../../media/icons/eye2.svg" alt="">view</a>
+                                                <li><a href="#"><img src="../icons/eye2.svg' %}" alt="">view</a>
                                                 </li>
-                                                <li><a href="#"><img src="../../media/icons/delete.svg"
+                                                <li><a href="#"><img src="../icons/delete.svg' %}"
                                                             alt="">delete</a></li>
                                             </ul>
                                         </div>
@@ -1221,17 +1216,14 @@
 
 
         </div>
-        <section class="J9_footer" J9_add_html="Joseph_footer.html"></section>
     </div>
 
-    <script src="../static/js/J9_add_html.js"></script>
-    <script src="../static/js/recruiter_dashboard.js"></script>
-    <script src="../static/js/recruiter_dashboard_jobs.js"></script>
-    <script src="../static/js/recruiter_dashboard_post_job.js"></script>
-    <script src="../static/js/recruiter_dashboard_saved_candidates.js"></script>
-    <script src="../static/js/recruiter_dashboard_profile.js"></script>
-    <script src="../static/js/recruiter_dashboard_settings.js"></script>
+<script src="{% static 'js/recruiter_dashboard.js' %}"></script>
+<script src="{% static 'js/recruiter_dashboard_jobs.js' %}"></script>
+<script src="{% static 'js/recruiter_dashboard_post_job.js' %}"></script>
+<script src="{% static 'js/recruiter_dashboard_saved_candidates.js' %}"></script>
+<script src="{% static 'js/recruiter_dashboard_profile.js' %}"></script>
+<script src="{% static 'js/recruiter_dashboard_settings.js' %}"></script>
 
-</body>
 
-</html>
+{% endblock %}
