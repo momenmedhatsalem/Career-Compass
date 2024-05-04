@@ -131,8 +131,8 @@ a {
   padding: 0;
   width: 100%;
   list-style: none;
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  /* grid-template-columns: auto auto; */
   /* justify-content: space-between; */
   gap: 1vw;
   text-align: center;
@@ -146,11 +146,13 @@ a {
   padding: 1vh 1vw;
   border: 1px solid #fff;
   border-radius: 50px;
+  max-width: 70%;
 }
 .J9_login_signup_ul li:nth-of-type(2) {
   padding: 1vh 1vw;
   border-radius: 50px;
   background: #00c853;
+  max-width: 70%;
 }
 
 .J9_login_signup_ul li:nth-of-type(1) a {
