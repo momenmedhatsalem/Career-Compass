@@ -1,22 +1,15 @@
-<!DOCTYPE HTML>
-<!-- ========== Philopater ========== -->
-<html lang="en">
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}/ist of jobs{% endblock %}
 
-<head>
-  <meta charset="UTF-8">
-  <title>  list of jobs</title>
-  <link rel="stylesheet" href="../static/css/styles.css">
-  <link rel="stylesheet" href="../static/css/list_of_jobs.css">
-  <link rel="stylesheet" href="../static/css/index.css">
-</head>
+{% block content %}
 
-<body style="margin: 0px;">
-<header class="J9_header" J9_add_html="Joseph_header.html"></header>
+<link rel="stylesheet" href="{% static 'css/list_of_jobs.css' %}">
 
   <!-- ----------------------------------------------------------------------------------- -->
   <section class="main">
     <div class="title">
-    <img class="img-h1" src="../media/job.png">
+    <img class="img-h1" src="{% static 'job.png; %}">
     <h1>
       Jobs
     </h1>
@@ -69,11 +62,5 @@
     <div>
   </section>
 
-  </div>
-  <section class="J9_footer" J9_add_html="Joseph_footer.html"></section>
-  <script src="../static/js/J9_add_html.js"></script>
-  <script src="../static/js/list_of_jobs.js"></script>
 
-</body>
-
-</html>
+{% endblock %}
