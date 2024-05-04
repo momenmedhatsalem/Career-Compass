@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
@@ -11,7 +11,7 @@
       <!-- ------------------------------------------------------------------------------------------------------------ -->
         <div class="job" id="job1">
           <div class="job-image-div">
-            <img src="{ static '../media/front.png'} " class="job-img">
+            <img src="{% static '/front.png' %}" class="job-img">
           </div>
           <div class="desc">
             <div class="job-name"> Front-end Web Dvelopment </div> 
@@ -25,7 +25,7 @@
         <!-- ------------------------------------------------------------------------------------------------------------------ -->
         <div class="job" id="job2">
           <div class="job-image-div">
-            <img src="{ static '../media/backend.png'} " class="job-img">
+            <img src="{% static '/backend.png' %}" class="job-img">
           </div>   
           <div class="desc">
             <div class="job-name"> Back-end Web Development </div> 
@@ -39,7 +39,7 @@
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <div class="job " id="job3">
           <div class="job-image-div">
-            <img src="{ static '../media/OIP .jpg'} " class="job-img">
+            <img src="{% static '/OIP .jpg' %}" class="job-img">
           </div>
           <div class="desc">
             <div class="job-name"> Software Developer </div> 
@@ -53,7 +53,7 @@
         <!-- ------------------------------------------------------------------------------------------------------------- -->
         <div class="job job4" id="job4">
           <div class="job-image-div">
-            <img src="{ static '../media/R.png'} " class="job-img">
+            <img src="{% static '/R.png' %}" class="job-img">
           </div>
           <div class="desc">
             <div class="job-name">Data Analyst </div> 
@@ -67,12 +67,12 @@
         <!-- ----------------------------------------------------------------------------------------------- -->
     </div>
     <div>
-      <script src="../static/js/saved_jobs.js">
-      </script>
+
         </section>
 
     </div>
 
-              <script src="../static/js/saved_jobs.js"></script>
+<script src="{% static 'js/saved_jobs.js' %}"></script>
+
     <link rel="stylesheet" href="{% static 'css/saved_jobs.css' %}">
 {% endblock %}
