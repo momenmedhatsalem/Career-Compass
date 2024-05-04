@@ -28,6 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
 
     // Redirect to the login page or perform any other action as needed
-    window.location.href = "login.html";
+    // window.location.href = "login.html";
   }
 });

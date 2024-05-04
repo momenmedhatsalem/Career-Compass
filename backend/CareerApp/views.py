@@ -7,6 +7,9 @@ def signup(request):
     return render(request, "signup.html")
 
 def profile(request):
+    return render(request, "profile.html")
+
+def recruiterDashboard(request):
     return render(request, "recruiter_dashboard.html")
 
 def savedJobs(request):

@@ -1,56 +1,44 @@
-<!DOCTYPE html>
-<!-- ========== Mahmoud 20220317 ========== -->
-<html lang="en">
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="auther" content="Mahmoud Khaled">
-
-  <title>Your Profile</title>
-  <link rel="stylesheet" href="../static/css/styles.css">
-  <link rel="stylesheet" href="../static/css/index.css">
-  <link rel="stylesheet" href="../Mahmoud_Khaled/style/profile_styl.css">
-  <script src="../static/js/logout.js"></script>
-  <script src="../static/js/sidebar.js"></script>
-  <script src="../static/js/show_profile_info.js"></script>
+{% block content %}
 
 
-</head>
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/profile_style.css' %}">
+<script src="{% static 'js/logout.js' %}"></script>
+<script src="{% static 'js/sidebar.js' %}"></script>
+<script src="{% static 'js/show_profile_info.js' %}"></script>
 
 
-
-<body style="margin: 0px;">
-  <header class="J9_header" J9_add_html="Joseph_header.html"></header>
-
-
-
-
-  <!-- jonathan -->
-  <div style="position: fixed;">
-
-    <!-- <button onclick="show_side()" style="background-color: #49a7ff; width: 250px; border: none;">
-      <img src="/media/icon_1.png" alt="sidebar on off" width="20px">
-    </button><br> -->
-
-    <div id="sidey" style="display: block;" class="j0sidebar">
-
-      <div class="j0profile-pic">
-        <img src="../Mahmoud_Khaled/img/Audio & Video Editing.png" alt="Profile Picture">
+<!-- jonathan -->
+<div style="position: fixed;">
+  
+  <!-- <button onclick="show_side()" style="background-color: #49a7ff; width: 250px; border: none;">
+    <img src="/media/icon_1.png' %}" alt="sidebar on off" width="20px">
+  </button><br> -->
+  
+  <div id="sidey" style="display: block;" class="j0sidebar">
+    
+    
+    <div class="j0profile-pic">
+      <img src="{% static 'Editing.png' %}" alt="Profile Picture">
       </div>
       <ul class="j0menu">
-        <!-- <li><a href="#"><img src="../media/icon_1.png" alt="Dashboard"><span>Dashboard</span></a></li> -->
-        <li><button onclick="manageTabs('j0_profile')"><img src="../media/icon_2.png"
+        <!-- <li><a href="#"><img src="{% static 'icon_1.png' %}" alt="Dashboard"><span>Dashboard</span></a></li> -->
+        <li><button onclick="manageTabs('j0_profile')"><img src="{% static 'icon_2.png' %}"
               alt="upload_resume"><span>Profile</span></button></li>
-        <li><button onclick="manageTabs('j0_upload')"><img src="../media/upload_resume.png"
+        <li><button onclick="manageTabs('j0_upload')"><img src="{% static 'upload_resume.png' %}"
               alt="upload_resume"><span>Upload Resume</span></button></li>
-        <li><button onclick="manageTabs('j0_education')"><img src="../media/education.png"
+        <li><button onclick="manageTabs('j0_education')"><img src="{% static 'education.png' %}"
               alt="Education"><span>Education</span></button></li>
-        <li><button onclick="manageTabs('j0_skills')"><img src="../media/skills.png" alt="Skills"><span>Skills &
+        <li><button onclick="manageTabs('j0_skills')"><img src="{% static 'skills.png' %}" alt="Skills"><span>Skills &
               Experience</span></button></li>
         <li><button onclick="manageTabs('j0_saved')">
             <a href="/templatess/saved_jobs.html">
-              <img src="../media/saved.png" alt="Skills">
+              <img src="{% static 'saved.png' %}" alt="Skills">
               <span>Saved jobs</span>
             </a>
           </button></li>
@@ -89,7 +77,7 @@
         <fieldset class="M7-fieldset">
 
           <legend class="M7-p_img">
-            <img src="../Mahmoud_Khaled/img/Audio & Video Editing.png" alt="User Image" class="M7-p_img"
+            <img src="{% static 'Editing.png' %}" alt="User Image" class="M7-p_img"
               style="display: inline-block;">
           </legend>
 
@@ -513,9 +501,6 @@
   </div>
 
   </div>
-  <section style="margin-left: 250px;" class="J9_footer" J9_add_html="Joseph_footer.html"></section>
 
-  <script src="../static/js/J9_add_html.js"></script>
-</body>
 
-</html>
+{% endblock %}
