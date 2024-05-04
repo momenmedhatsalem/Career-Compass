@@ -1,23 +1,10 @@
-<!DOCTYPE html>
-<!-- ========== Mahmoud 20220317 ========== -->
-<html lang="en">
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Edit Profile{% endblock %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="auther" content="Mahmoud Khaled">
+{% block content %}
 
-  <title>Your Profile</title>
-  <link rel="stylesheet" href="../static/css/styles.css">
-  <link rel="stylesheet" href="../Mahmoud_Khaled/style/edit_profile_style.css">
-  <link rel="stylesheet" href="../static/css/index.css">
-  <script src="../static/js/show_profile_info.js"></script>
-  <script src="../static/js/edit_profile.js"></script>
-
-</head>
-
-<body style="margin: 0px;">
-<header class="J9_header" J9_add_html="Joseph_header.html"></header>
+  <!-- ========== Mahmoud 20220317 ========== -->
   <section class="main">
     <main>
       <section class="M7-fit">
@@ -33,7 +20,7 @@
             <table class="M7-table">
               <tr class="M7-tr">
                 <td class="M7-td">
-                  <img src="../Mahmoud_Khaled/img/Audio & Video Editing.png" alt="User Image" class="M7-p_img">
+                  <img src="{% static 'Editing.png' %}" alt="User Image" class="M7-p_img">
                 </td>
                 <td class="M7-td">
                   <button class="M7-p_img_button" onclick="change_img()" type="button">Change Profile Image</button>
@@ -287,15 +274,7 @@
     </main>
     <div>
       <div>
-  </section>
-  </section>
 
-  </div>
 
-  </div>
-  <section class="J9_footer" J9_add_html="Joseph_footer.html"></section>
 
-  <script src="../static/js/J9_add_html.js"></script>
-</body>
-
-</html>
+{% endblock %}
