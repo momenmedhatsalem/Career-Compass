@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<!-- ========== Mahmoud Khaled Mahmoud 20220317 ========== -->
-<html lang="en">
+{% extends 'layout.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search by title</title>
+{% block title %}Search by title{% endblock %}
 
-  <link rel="stylesheet" href="../static/css/styles.css">
-  <link rel="stylesheet" href="../static/css/index.css">
-  <link rel="stylesheet" href="../static/css/search_style.css">
-
-
-  <script src="/static/js/search.js"></script>
-
-
-</head>
-
-<body style="margin: 0px;" onload="set_search_by()">
-
-  <header class="J9_header" J9_add_html="Joseph_header.html"></header>
-
+{% block content %}
 
   <main class="M7-main">
     <section class="M7-backg">
@@ -28,7 +10,7 @@
       <!-- <h2>Search for availalbe job opportunities by title</h2> -->
 
       <h1 class="M7-h1">&nbsp;&nbsp;&nbsp;&nbsp;Search All Our Open Jobs <img
-          src="../media/mgnifying_lens_trans.png" width="50" alt="search"></h1>
+          src="{% static '../media/mgnifying_lens_trans.png' }" width="50" alt="search"></h1>
 
 
 
@@ -72,7 +54,7 @@
           <!-- Show using javascript when SEARCH is clicked set style > display = "flex"--> <!-- VERY IMPORTANT-->
 
         <div class="dropdown M7-filter-item-up" style="margin-bottom: 31px;">
-          <button class="dropbtn"><img src="/media/filter-white.png" alt="" width="15px"> Sort by</button>
+          <button class="dropbtn"><img src="{% static '../media/filter-white.png' }" alt="" width="15px"> Sort by</button>
           <div class="dropdown-content">
             <span class="no_hover" style="margin-left: 5px;padding-left: 5px;  font-weight: 600"> Salary: </span>
             <a onclick="sort('htl')" href="#start">High to Low</a>
@@ -110,7 +92,7 @@
           <!-- <div class="M7-card1 M7-filter-item">
 
             <fieldset>
-              <img src="../media/software.jpg" alt="open job icon" width="100%" height="30%">
+              <img src="{% static '../media/software.jpg" alt="open job icon" width="100%" height="30%">
 
               <h4>Software Developer</h4>
 
@@ -128,7 +110,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="../media/front end.jpg" alt="open job icon" width="100%" height="30%">
+              <img src="{% static '../media/front end.jpg" alt="open job icon" width="100%" height="30%">
 
               <h4>Front-end Developer</h4>
 
@@ -145,7 +127,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="../media/Game dev.jpg" alt="open job icon" width="100%" height="30%">
+              <img src="{% static '../media/Game dev.jpg" alt="open job icon" width="100%" height="30%">
 
               <h4>Game Developer</h4>
 
@@ -164,7 +146,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="../media/sales manger.jpg" alt="open job icon" width="100%" height="30%">
+              <img src="{% static '../media/sales manger.jpg" alt="open job icon" width="100%" height="30%">
 
               <h4>Sales Manager</h4>
 
@@ -181,7 +163,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="../media/socail media.jpg" alt="open job icon" width="100%" height="30%">
+              <img src="{% static '../media/socail media.jpg" alt="open job icon" width="100%" height="30%">
 
               <h4>Social Media Spicialist</h4>
 
@@ -198,7 +180,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="../media/data analyst.png" alt="open job icon" width="100%" height="30%">
+              <img src="{% static '../media/data analyst.png' }" alt="open job icon" width="100%" height="30%">
 
               <h4>Data Analyst</h4>
 
@@ -215,7 +197,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="../media/graphics.jpg" alt="open job icon" width="100%" height="30%">
+              <img src="{% static '../media/graphics.jpg" alt="open job icon" width="100%" height="30%">
 
               <h4>Graphics Designer</h4>
 
@@ -232,7 +214,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="../media/ui ux.jpg" alt="open job icon" width="100%" height="30%">
+              <img src="{% static '../media/ui ux.jpg" alt="open job icon" width="100%" height="30%">
 
               <h4>UI/UX Enigneer</h4>
 
@@ -257,7 +239,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="../media/job-position-icon-simple.jpg" alt="open job icon" width="120px">
+              <img src="{% static '../media/job-position-icon-simple.jpg" alt="open job icon" width="120px">
 
               <h2 class="M7-h2">Open Opportunities</h2>
 
@@ -275,7 +257,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="../media/interns.png" alt="open job icon" width="120px">
+              <img src="{% static '../media/interns.png' }" alt="open job icon" width="120px">
 
               <h2 class="M7-h2"> Explore Internships</h1>
 
@@ -292,7 +274,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="../media/high_paying.png" alt="open job icon" width="120px" style="margin-top: 5px;">
+              <img src="{% static '../media/high_paying.png' }" alt="open job icon" width="120px" style="margin-top: 5px;">
 
               <h2 class="M7-h2">Highest Paying</h1>
 
@@ -311,7 +293,7 @@
             <fieldset>
 
 
-              <img src="../media/manager.png" alt="manager icon" width="150px">
+              <img src="{% static '../media/manager.png' }" alt="manager icon" width="150px">
 
               <h2>Exclusive Managerial
                 Roles
@@ -334,7 +316,7 @@
             <fieldset>
 
               <img
-                src="../media/[removal.ai]_d7a44f8f-e9ba-4b9c-9664-0e4e4a5abe7c-search-job-vacancy-icon-in-trrans (1).png"
+                src="{% static '../media/[removal.ai]_d7a44f8f-e9ba-4b9c-9664-0e4e4a5abe7c-search-job-vacancy-icon-in-trrans (1).png' }"
                 alt="consault icon" width="120px" style="margin-top: 35px;">
 
               <h2 class="M7-h2">Consult professional Hirers</h1>
@@ -355,16 +337,7 @@
 
     </section>
 
-    <!-- <section class="J9_footer" J9_add_html="Joseph_footer.html"></section> -->
 
-  <!-- <script src="../static/js/J9_add_html.js"></script> -->
   </main>
-  <section class="J9_footer" J9_add_html="Joseph_footer.html"></section>
 
-  <script src="../static/js/J9_add_html.js"></script>
-  </div>
-
-
-</body>
-
-</html>
+{% endblock %}

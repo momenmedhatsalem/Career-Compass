@@ -1,16 +1,9 @@
-<!DOCTYPE HTML>
-<!-- ========== Philopater ========== -->
-<html lang="en">
-    <head>
-        <meat charset="UTF-8">
-        <title> saved jobs</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-    <link rel="stylesheet" href="../static/css/saved_jobs.css">
-    <link rel="stylesheet" href="../static/css/index.css">
-  </head>
-  <body style="margin: 0px;">
-    <header class="J9_header" J9_add_html="Joseph_header.html"></header>
-    <section class="main">
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="main">
     <h1>
         Saved Jobs 
     </h1>
@@ -18,7 +11,7 @@
       <!-- ------------------------------------------------------------------------------------------------------------ -->
         <div class="job" id="job1">
           <div class="job-image-div">
-            <img src="../media/front.png" class="job-img">
+            <img src="{ static '../media/front.png'} " class="job-img">
           </div>
           <div class="desc">
             <div class="job-name"> Front-end Web Dvelopment </div> 
@@ -32,7 +25,7 @@
         <!-- ------------------------------------------------------------------------------------------------------------------ -->
         <div class="job" id="job2">
           <div class="job-image-div">
-            <img src="../media/backend.png" class="job-img">
+            <img src="{ static '../media/backend.png'} " class="job-img">
           </div>   
           <div class="desc">
             <div class="job-name"> Back-end Web Development </div> 
@@ -46,7 +39,7 @@
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <div class="job " id="job3">
           <div class="job-image-div">
-            <img src="../media/OIP .jpg" class="job-img">
+            <img src="{ static '../media/OIP .jpg'} " class="job-img">
           </div>
           <div class="desc">
             <div class="job-name"> Software Developer </div> 
@@ -60,7 +53,7 @@
         <!-- ------------------------------------------------------------------------------------------------------------- -->
         <div class="job job4" id="job4">
           <div class="job-image-div">
-            <img src="../media/R.png" class="job-img">
+            <img src="{ static '../media/R.png'} " class="job-img">
           </div>
           <div class="desc">
             <div class="job-name">Data Analyst </div> 
@@ -79,7 +72,4 @@
         </section>
 
     </div>
-    <section class="J9_footer" J9_add_html="Joseph_footer.html"></section>
-    <script src="../static/js/J9_add_html.js"></script>
-    </body>
-</html>
+{% endblock %}
