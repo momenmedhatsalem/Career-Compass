@@ -1,2 +1,5 @@
-django==4.2
-Pillow
+Django==4.2
+pillow==9.0.1
+asgiref==3.6
+psycopg2-binary==2.9.3
+sqlparse==0.4.2
