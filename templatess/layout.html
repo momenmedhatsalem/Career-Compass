@@ -7,20 +7,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% block title %}Career Compass{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <script src="{% static 'js/header.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <script src="../static/js/signup.js"></script>
-    <script src="../static/js/logout.js"></script>
-    <script src="../static/js/login.js"></script>
-    <script src="../static/js/logout.js"></script>
-    
-    
-    <!--Mahmoud files -->
-    <link rel="stylesheet" href="{% static 'css/search_style.css' %}">
-    <script src="/static/js/search.js"></script>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <script src="{% static 'js/header.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <script src="../static/js/signup.js"></script>
+  <script src="../static/js/logout.js"></script>
+  <script src="../static/js/login.js"></script>
+  <script src="../static/js/logout.js"></script>
 
-    <!--Philo-->
+
+  <!--Mahmoud files -->
+  <link rel="stylesheet" href="{% static 'css/search_style.css' %}">
+  <script src="/static/js/search.js"></script>
+
+  <!--Philo-->
 
   <title>Document</title>
 
@@ -29,12 +29,12 @@
 <body class="J9_body" style="margin: 0px;">
   <header class="J9_header" style="background-color: #ccc;">
 
-  
-  <a href="index.html" class="J9_header_logo">
-<img class="J9_header_logo" src="{% static 'images/logopng.png' %}" width="100px" />
-  </a>
 
-  <nav class="J9_nav_in_header">
+    <a href="index.html" class="J9_header_logo">
+      <img class="J9_header_logo" src="{% static 'images/logopng.png' %}" width="100px" />
+    </a>
+
+    <nav class="J9_nav_in_header">
       <ul class="J9_nav_ul_in_header">
         <li class="J9_nav_ul_item_in_header">
           <a onclick="loadProfile()" href="#">Profile</a>
@@ -67,12 +67,12 @@
                 <li class="J9_nav_ul_ul_item_in_header">
                   <a href="signup.html">Register</a>
                 </li>
-                
+
               </ul>
             </div>
           </div>
         </li>
-<!-- 
+        <!-- 
         <li class="J9_nav_ul_item_in_header">
           <a href="#">Contact</a>
         </li> -->
@@ -80,73 +80,75 @@
         <li class="J9_nav_ul_item_in_header">
           <a href="/templatess/search.html">Search</a>
         </li>
-        
+
         <li class="J9_nav_ul_item_in_header">
           <a href="/templatess/About_us.html">About Us</a>
         </li>
 
       </ul>
-  </nav>
+    </nav>
 
-  <div id="J9_login_signup_container" class="J9_login_signup">
-    <ul class="J9_login_signup_ul">
-      <li id="J9_login_signup" ><a href="login.html">Login/Sign up</a></li>
-      <li id="J9_login_signup_post" ><a href="/templatess/recruiter_dashboard.html">Post a job</a></li>
-    </ul>
-  </div>
+    <a class="J9_login_signup_find_post" id="J9_login_signup" href="login.html">Login/Sign up</a>
+    <!-- <div id="J9_login_signup_container" class="J9_login_signup">
+      <ul class="J9_login_signup_ul">
+        <li id="J9_login_signup" style="display: none;"><a href="login.html">Login/Sign up</a></li>
+        <li id="J9_login_signup_post" style="display: none;"><a href="/templatess/recruiter_dashboard.html">Post a
+            job</a></li>
+      </ul>
+    </div> -->
 
   </header>
 
-          {% block content %}
-        <!-- Default content block -->
-        {% endblock %}
-  
-  <footer class="J9_footer" style="max-width: 100%; margin: auto;">
-<div class="J9_footer_row">
-  <div class="J9_footer_logo_col">
-    <a href="index.html">
-<img class="J9_footer_logo" src="{% static 'images/logopng.png' %}" width="100px" />
-    </a>
-  </div>
-  <div class="J9_footer_cols">
-    <div class="J9_footer_col">
-      <h5>Services</h5>
-      <ul>
-        <li><a href="list_of_jobs.html">Browse Jobs</a></li>
-        <!-- <li><a href="#">Companies</a></li> -->
-        <li><a href="check_candidates.html">Candidates</a></li>
-      </ul>
-    </div>
-    <div class="J9_footer_col">
-      <h5>Company</h5>
-      <ul>
-        <li><a href="/templatess/About_us.html">About us</a></li>
-        <!-- <li><a href="#">Contact</a></li> -->
-      </ul>
-    </div>
-    <div class="J9_footer_col">
-      <h5>Support</h5>
-      <ul>
-        <li><a href="#">Terms of use</a></li>
-        <li><a href="#">Terms & conditions</a></li>
-        <li><a href="#">Privacy</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+  {% block content %}
+  <!-- Default content block -->
+  {% endblock %}
 
-<div class="J9_footer_privacy_contact">
-  <ul class="J9_footer_privacy_contact_ul">
-    <li><a href="#">Privacy & Terms.</a></li>
-    <!-- <li><a href="#"> Contact Us</a></li> -->
-  </ul>
-  <p>
-    © 2024 Career Compass, Inc
-  </p>
-</div>
+  <footer class="J9_footer" style="max-width: 100%; margin: auto;">
+    <div class="J9_footer_row">
+      <div class="J9_footer_logo_col">
+        <a href="index.html">
+          <img class="J9_footer_logo" src="{% static 'images/logopng.png' %}" width="100px" />
+        </a>
+      </div>
+      <div class="J9_footer_cols">
+        <div class="J9_footer_col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="list_of_jobs.html">Browse Jobs</a></li>
+            <!-- <li><a href="#">Companies</a></li> -->
+            <li><a href="check_candidates.html">Candidates</a></li>
+          </ul>
+        </div>
+        <div class="J9_footer_col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="/templatess/About_us.html">About us</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
+          </ul>
+        </div>
+        <div class="J9_footer_col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">Terms of use</a></li>
+            <li><a href="#">Terms & conditions</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="J9_footer_privacy_contact">
+      <ul class="J9_footer_privacy_contact_ul">
+        <li><a href="#">Privacy & Terms.</a></li>
+        <!-- <li><a href="#"> Contact Us</a></li> -->
+      </ul>
+      <p>
+        © 2024 Career Compass, Inc
+      </p>
+    </div>
 
   </footer>
- 
+
 
 
 

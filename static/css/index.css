@@ -120,9 +120,23 @@ a {
   padding: 1vh 1vw 1vh;
 }
 
-.J9_login_signup {
+.J9_login_signup_find_post{
+  margin: 0;
+  padding: 0;
+  margin-right: 7vw;
+  text-align: center;
+  font-size: 1.3vw;
+  line-height: 2.5vh;
+  height: 5vh;
+  transition: all 0.3s ease-in-out 0s;
+  padding: 1vh 2vw;
+  border: 1px solid #fff;
+  border-radius: 50px;
+}
+
+/* .J9_login_signup {
   grid-area: login_in_grid;
-  width: 20vw;
+  width: 100%;
   margin-right: 4vw;
 }
 
@@ -132,12 +146,9 @@ a {
   width: 100%;
   list-style: none;
   display: flex;
-  /* grid-template-columns: auto auto; */
-  /* justify-content: space-between; */
   gap: 1vw;
   text-align: center;
   font-size: 1.3vw;
-  /* margin-right: 1vw; */
   line-height: 2.5vh;
   height: 5vh;
   transition: all 0.3s ease-in-out 0s;
@@ -153,7 +164,7 @@ a {
   border-radius: 50px;
   background: #00c853;
   max-width: 70%;
-}
+} */
 
 .J9_login_signup_ul li:nth-of-type(1) a {
   color: #000;
