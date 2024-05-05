@@ -5,7 +5,9 @@
 .J9_footer * {
   box-sizing: border-box;
 }
-
+.J9_html::-webkit-scrollbar {
+  display: none;
+}
 .J9_body {
   margin: 0;
   margin-top: 10vh;

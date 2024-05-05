@@ -1,7 +1,9 @@
 .J9 * {
   box-sizing: border-box;
 }
-
+.J9_html::-webkit-scrollbar {
+  display: none;
+}
 .J9_emp_dash_body {
   display: grid;
   grid-template-columns: 2fr 8fr;
