@@ -14,7 +14,6 @@
   <script src="../static/js/logout.js"></script>
   <script src="../static/js/login.js"></script>
   <script src="../static/js/logout.js"></script>
-  <script src="../static/js/load_profile.js"></script>
 
 
   <!--Mahmoud files -->
@@ -31,7 +30,7 @@
   <header class="J9_header" style="background-color: #ccc;">
 
 
-    <a href="index" class="J9_header_logo">
+    <a href="/index" class="J9_header_logo">
       <img class="J9_header_logo" src="{% static 'images/logopng.png' %}" width="100px" />
     </a>
 
@@ -74,9 +73,9 @@
           </div>
         </li>
         <!-- 
-        <li class="J9_nav_ul_item_in_header">
-          <a href="#">Contact</a>
-        </li> -->
+          <li class="J9_nav_ul_item_in_header">
+            <a href="#">Contact</a>
+          </li> -->
 
         <li class="J9_nav_ul_item_in_header">
           <a href="/search">Search</a>
@@ -94,10 +93,11 @@
       <ul class="J9_login_signup_ul">
         <li id="J9_login_signup" style="display: none;"><a href="login.html">Login/Sign up</a></li>
         <li id="J9_login_signup_post" style="display: none;"><a href="/templatess/recruiter_dashboard.html">Post a
-            job</a></li>
-      </ul>
-    </div> -->
+          job</a></li>
+        </ul>
+      </div> -->
 
+    <script src="../static/js/load_profile.js"></script>
   </header>
 
   {% block content %}
