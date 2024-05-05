@@ -11,7 +11,7 @@
 .J9_emp_dash_prof_right_side_body_emp_address_location {
   background-color: #fff;
   border-radius: 40px;
-  padding: 2vh 2vw;
+  padding: 5vh 3vw;
 }
 
 .J9_emp_dash_prof_right_side_body_emp_information {
@@ -91,7 +91,7 @@
 }
 
 .J9_emp_dash_prof_right_side_body_emp_social_media_links {
-  padding-left: 2vw;
+  /* padding-left: 2vw; */
   font-size: 1.6vw;
 }
 .J9_emp_dash_prof_right_side_body_emp_social_media_link {
@@ -107,7 +107,7 @@
   border-radius: 1vw;
   line-height: 3vw;
   padding: 0 2vw;
-  margin-left: 2vw;
+  /* margin-left: 2vw; */
   width: 16vw;
   text-align: center;
   color: black;
