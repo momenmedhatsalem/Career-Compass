@@ -1,16 +1,19 @@
 {% extends 'layout.html' %}
+{% load static %}
 
 {% block title %}Search by title{% endblock %}
 
 {% block content %}
 
-  <main class="M7-main">
-    <section class="M7-backg">
+ 
+
+  <main class="M7-main" onload="set_search_by('title')">
+    <section class="M7-backg">  
 
       <!-- <h2>Search for availalbe job opportunities by title</h2> -->
 
       <h1 class="M7-h1">&nbsp;&nbsp;&nbsp;&nbsp;Search All Our Open Jobs <img
-          src="{% static '../media/mgnifying_lens_trans.png' }" width="50" alt="search"></h1>
+          src="{% static 'mgnifying_lens_trans.png' %}" width="50" alt="search"></h1>
 
 
 
@@ -54,7 +57,7 @@
           <!-- Show using javascript when SEARCH is clicked set style > display = "flex"--> <!-- VERY IMPORTANT-->
 
         <div class="dropdown M7-filter-item-up" style="margin-bottom: 31px;">
-          <button class="dropbtn"><img src="{% static '../media/filter-white.png' }" alt="" width="15px"> Sort by</button>
+          <button class="dropbtn"><img src="{% static 'filter-white.png' %}" alt="" width="15px"> Sort by</button>
           <div class="dropdown-content">
             <span class="no_hover" style="margin-left: 5px;padding-left: 5px;  font-weight: 600"> Salary: </span>
             <a onclick="sort('htl')" href="#start">High to Low</a>
@@ -239,7 +242,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="{% static '../media/job-position-icon-simple.jpg" alt="open job icon" width="120px">
+              <img src="{% static 'job-position-icon-simple.jpg' %}" alt="open job icon" width="120px">
 
               <h2 class="M7-h2">Open Opportunities</h2>
 
@@ -257,7 +260,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="{% static '../media/interns.png' }" alt="open job icon" width="120px">
+              <img src="{% static 'interns.png' %}" alt="open job icon" width="120px">
 
               <h2 class="M7-h2"> Explore Internships</h1>
 
@@ -274,7 +277,7 @@
           <div class="M7-card1 M7-filter-item">
             <fieldset>
 
-              <img src="{% static '../media/high_paying.png' }" alt="open job icon" width="120px" style="margin-top: 5px;">
+              <img src="{% static 'high_paying.png' %}" alt="open job icon" width="120px" style="margin-top: 5px;">
 
               <h2 class="M7-h2">Highest Paying</h1>
 
@@ -293,7 +296,7 @@
             <fieldset>
 
 
-              <img src="{% static '../media/manager.png' }" alt="manager icon" width="150px">
+              <img src="{% static 'manager.png' %}" alt="manager icon" width="150px">
 
               <h2>Exclusive Managerial
                 Roles
@@ -316,7 +319,7 @@
             <fieldset>
 
               <img
-                src="{% static '../media/[removal.ai]_d7a44f8f-e9ba-4b9c-9664-0e4e4a5abe7c-search-job-vacancy-icon-in-trrans (1).png' }"
+                src="{% static '[removal.ai]_d7a44f8f-e9ba-4b9c-9664-0e4e4a5abe7c-search-job-vacancy-icon-in-trrans (1).png' %}"
                 alt="consault icon" width="120px" style="margin-top: 35px;">
 
               <h2 class="M7-h2">Consult professional Hirers</h1>
@@ -339,5 +342,9 @@
 
 
   </main>
+
+  <script>
+    document.addEventListener("load", set_search_by());
+  </script>
 
 {% endblock %}

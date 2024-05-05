@@ -11,7 +11,7 @@ var images = [
 ];
 
 var matches = [];
-search_by = "";
+var search_by = "";
 old_option = "title";
 
 function set_search_by(opt = "title")
@@ -32,7 +32,7 @@ function set_search_by(opt = "title")
     
 }
 
-document.addEventListener("load", set_search_by());
+// document.addEventListener("load", set_search_by());
 
 function search() {
 
@@ -50,9 +50,10 @@ function search() {
     // and "matches" to store atching jobs based on "sub"
 
     var sub = document.getElementById("search_text").value;
-    let jobs = JSON.parse(localStorage.getItem("jobs"));
 
 
+    // let jobs = JSON.parse(localStorage.getItem("jobs"));
+    let jobs = []
     // make "sub" lowerCase to standardize our search
     
     
@@ -66,6 +67,7 @@ function search() {
     matches = [];
 
     console.log(search_by);
+    console.log(jobs);
 
     if(search_by == "title")
     {

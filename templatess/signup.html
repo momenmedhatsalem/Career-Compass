@@ -10,7 +10,8 @@
 
     <h1>Sign Up</h1>
     <div>
-      <form class="signupform">
+      <form class="signupform" method="post" action="{% url 'signup' 'applicant' %}">
+        {% csrf_token %}
         <div>
           <label for="username">Username</label>
           <input type="text" id="username" name="username" />
@@ -25,18 +26,18 @@
         </div>
         <div>
           <label for="InputPhone">Phone</label>
-          <input type="tel" id="InputPhone" name="InputPhone" />
+          <input type="tel" id="InputPhone" name="phone" />
         </div>
         <div>
           <label for="InputEmail1">Email address</label>
-          <input type="email" id="InputEmail1" name="InputEmail1" aria-describedby="emailHelp" />
+          <input type="email" id="InputEmail1" name="email" aria-describedby="emailHelp" />
           <div id="emailHelp">
             We'll never share your email with anyone else.
           </div>
         </div>
         <div>
           <label for="InputPassword">Password</label>
-          <input type="password" id="InputPassword" name="InputPassword" />
+          <input type="password" id="InputPassword" name="password" />
         </div>
         <div>
           <label for="confirmpass">Confirm Password</label>
