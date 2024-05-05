@@ -41,11 +41,11 @@ a {
 
 .J9_header a {
   color: #000;
-  margin-left: 2vw;
 }
 
 .J9_header_logo {
   grid-area: J9_logo_in_grid;
+  margin-left: 2vw;
 }
 
 .J9_header_logo img {
