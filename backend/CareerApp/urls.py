@@ -13,4 +13,5 @@ urlpatterns = [
     path("signup/", view=views.signup, name="signup"),
     path("login/", view=views.login, name="login"),
     path("recruiterSignup/", view=views.recruiterSignup, name="recruiterSignup"),
+    path("checkCandidates/", view=views.checkCandidates, name="checkCandidates"),
 ]

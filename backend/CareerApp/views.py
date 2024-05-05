@@ -33,3 +33,6 @@ def login(request):
 
 def recruiterSignup(request):
     return render(request, "recruitersignup.html")
+
+def checkCandidates(request):
+    return render(request, "check_candidates.html")
