@@ -7,9 +7,9 @@ function loadProfile() {
     // Determine the profile page URL based on the user's type
     var profilePageUrl;
     if (loggedInUser.type === "employee") {
-      profilePageUrl = "profile.html";
+      profilePageUrl = "/profile";
     } else if (loggedInUser.type === "recruiter") {
-      profilePageUrl = "recruiter_profile.html";
+      profilePageUrl = "/recruiterDashboard";
     } else {
       // Unknown user type, handle accordingly
       console.error("Unknown user type:", loggedInUser.type);
