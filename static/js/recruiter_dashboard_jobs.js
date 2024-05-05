@@ -8,6 +8,7 @@ if (my_jobs !== null) {
 my_jobs.forEach((element) => {
   let row = document.createElement("tr");
   row.className = "J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row";
+  row.id = `${"J9_job"+element.details.id}`;
   let html = `
   <td class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_title">
     <div>${element.details.title}</div>
@@ -78,6 +79,7 @@ document.addEventListener("click", function (event) {
 /**********************************************************/
 
 function deleteJob (id) {
+  document.getElementById("J9_job" + id).style.display = "none";
   const jobs = JSON.parse(localStorage.getItem("jobs"));
   
   console.log(id);
