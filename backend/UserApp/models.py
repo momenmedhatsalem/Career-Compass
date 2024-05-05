@@ -4,10 +4,11 @@ from django.contrib.auth.models import AbstractUser
 class CustomUser(AbstractUser):
     photo = models.ImageField(upload_to='profile_photos/', null=True, blank=True)
     email = models.EmailField(verbose_name='email address', max_length=255, unique=True)
+    phone = models.CharField(max_length=15) 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['username']
     def __str__(self):
-        return self.username
+        return self.email
 
 class Applicant(CustomUser):
     bio = models.TextField(blank=True, null=True)

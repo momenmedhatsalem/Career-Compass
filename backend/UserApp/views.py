@@ -7,13 +7,11 @@ def signup(request, mode):
     if request.method == 'POST':
         username = request.POST.get('username')
         email = request.POST.get('email')
-        phone = request.POST.get('phone')
+        phone = request.POST.get('InputPhone')
         password1 = request.POST.get('password1')
-        password2 = request.POST.get('password2')
-        
+
         if mode == "applicant":
             user = Applicant.objects.create_user(username=username, email=email, phone=phone, password=password1)
-
             user.save()
         elif mode == "recruiter":
             company_name = request.POST.get('company_name')
@@ -23,7 +21,7 @@ def signup(request, mode):
         user = authenticate(username=email, password=password1)
         login(request, user)
         
-        return redirect('home')  # Replace 'home' with the name of your home page URL pattern
+        return redirect('profile')  
     else:
         if mode == "applicant":
             return render(request, 'signup.html')

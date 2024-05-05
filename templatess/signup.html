@@ -10,8 +10,8 @@
 
     <h1>Sign Up</h1>
     <div>
-      <form class="signupform" method="post" action="{% url 'signup' %}">
-
+      <form class="signupform" method="post" action="{% url 'signup' 'applicant' %}">
+        {% csrf_token %}
         <div>
           <label for="username">Username</label>
           <input type="text" id="username" name="username" />

@@ -20,5 +20,5 @@ from django.conf import settings
 from . import views
 
 urlpatterns = [
-    path("signup/<str:mode>", view=views.jobs, name="signup"),
+    path("signup/<str:mode>/", view=views.signup, name="signup"),
 ]
