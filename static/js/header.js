@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       document.getElementById("J9_login_signup").id = "J9_look_for_a_job";
       document.getElementById("J9_look_for_a_job").innerHTML = "look for a job";
-      document.getElementById("J9_post_job").href = "/jobs";
+      document.getElementById("J9_look_for_a_job").href = "/jobs";
     }
   }
 
