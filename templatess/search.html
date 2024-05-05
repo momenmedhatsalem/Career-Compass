@@ -5,7 +5,9 @@
 
 {% block content %}
 
-  <main class="M7-main" onload="set_search_by()">
+ 
+
+  <main class="M7-main" onload="set_search_by('title')">
     <section class="M7-backg">  
 
       <!-- <h2>Search for availalbe job opportunities by title</h2> -->
@@ -340,5 +342,9 @@
 
 
   </main>
+
+  <script>
+    document.addEventListener("load", set_search_by());
+  </script>
 
 {% endblock %}
