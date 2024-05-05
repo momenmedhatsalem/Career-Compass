@@ -28,13 +28,13 @@ my_jobs.forEach((element) => {
         <span></span>
         </button>
         <ul class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
-        <li><a href="#"><img src="../../media/icons/eye.svg">View</a>
+        <li><a href="#"><img src="../static/icons/eye.svg">View</a>
         </li>
-        <li><a href="#"  onclick="edit(${element.details.id})"><img src="../../media/icons/edit.svg">Edit</a>
+        <li><a href="#"  onclick="edit(${element.details.id})"><img src="../static/icons/edit.svg">Edit</a>
         </li>
         <li><a href="#" onclick="deleteJob(${
           element.details.id
-        })"><img src="../../media/icons/delete.svg">Delete</a></li>
+        })"><img src="../static/icons/delete.svg">Delete</a></li>
       </ul>
     </div>
   </td>`;
@@ -58,7 +58,7 @@ document.addEventListener("click", function (event) {
       ".J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul"
     );
     dropdowns.forEach(function (dropdown) {
-      if (dropdown.style.display === "block") {
+      if (dropdown.style.display === "grid") {
         dropdown.style.display = "none";
       }
     });
@@ -68,7 +68,7 @@ document.addEventListener("click", function (event) {
       dropdownContent.style.display === "none" ||
       dropdownContent.style.display === ""
     ) {
-      dropdownContent.style.display = "block";
+      dropdownContent.style.display = "grid";
     } else {
       dropdownContent.style.display = "none";
     }

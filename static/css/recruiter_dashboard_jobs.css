@@ -130,6 +130,7 @@
   border-radius: 5px;
   box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
+  justify-items: start;
 }
 
 .J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots a {
