@@ -30,3 +30,6 @@ def signup(request):
 
 def login(request):
     return render(request, "login.html")
+
+def recruiterSignup(request):
+    return render(request, "recruitersignup.html")
