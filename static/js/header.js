@@ -17,17 +17,17 @@ document.addEventListener("DOMContentLoaded", function () {
   if (loggedInUser) {
     document.getElementById("J9_login_signup").style.border = "none";
     document.getElementById("J9_login_signup").style.backgroundColor =
-      "#00c853";
+    "#00c853";
     document.getElementById("J9_login_signup").style.color = "#eee";
-
-    if (user.type == "recruiter") {
+    
+    if (loggedInUser.type == "recruiter") {
       document.getElementById("J9_login_signup").id = "J9_post_job";
       document.getElementById("J9_post_job").innerHTML = "Post a job";
-      document.getElementById("J9_post_job").href = "#";
+      document.getElementById("J9_post_job").href = "/recruiterDashboard";
     } else {
       document.getElementById("J9_login_signup").id = "J9_look_for_a_job";
       document.getElementById("J9_look_for_a_job").innerHTML = "look for a job";
-      document.getElementById("J9_post_job").href = "#";
+      document.getElementById("J9_post_job").href = "/jobs";
     }
   }
 

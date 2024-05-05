@@ -4,7 +4,7 @@
 
 .J9_emp_dash_body {
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 2fr 8fr;
   /* grid-template-rows: auto; */
   /* grid-template-areas: "J9_emp_dash_aside J9_emp_dash_right_side"; */
   box-sizing: border-box;
@@ -32,8 +32,8 @@
   /* position: fixed; */
   z-index: 1000;
   height: 90vh;
-  width: 260px;
-  width: calc(100vw / 6);
+  /* width: 260px;
+  width: calc(100vw / 6); */
   background: #fff;
 }
 
@@ -44,6 +44,7 @@
   grid-template-areas:
     "J9_emp_dash_aside_logo"
     "J9_emp_dash_aside_prof_pic"; */
+    margin-top: 1vh;
 }
 .J9_emp_dash_aside_logo_prof_pic h3 {
   font-size: 2vw;
