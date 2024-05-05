@@ -88,7 +88,7 @@ function deleteJob (id) {
   if (indexToDelete !== -1) {
     jobs.splice(indexToDelete, 1); // Remove the job from the array
     localStorage.setItem("jobs", JSON.stringify(jobs)); // Save the modified array back to local storage
-    console.log("Job deleted successfully.");
+    alert("Job deleted successfully.");
   } else {
     console.log("Job with the specified id not found.");
   }
@@ -98,6 +98,6 @@ function deleteJob (id) {
 function edit(job_id){
   localStorage.removeItem("id_of_edit_job");
   localStorage.setItem("id_of_edit_job",JSON.stringify(job_id));
-  window.location.href ="../../templatess/edit_Job.html"
+  window.location.href ="/edit_Job"
 }
 

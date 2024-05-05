@@ -12,4 +12,5 @@ urlpatterns = [
     path("index/", view=views.index, name="index"),
     path("recruiterSignup/", view=views.recruiterSignup, name="recruiterSignup"),
     path("checkCandidates/", view=views.checkCandidates, name="checkCandidates"),
+    path("edit_Job/", view=views.edit_Job, name="edit_Job"),
 ]

@@ -36,3 +36,6 @@ def recruiterSignup(request):
 
 def checkCandidates(request):
     return render(request, "check_candidates.html")
+
+def edit_Job(request):
+    return render(request, "edit_Job.html")
