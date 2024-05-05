@@ -21,4 +21,5 @@ from . import views
 
 urlpatterns = [
     path("signup/<str:mode>/", view=views.signup, name="signup"),
+    path("login/", view=views.login_user, name="login"),
 ]
