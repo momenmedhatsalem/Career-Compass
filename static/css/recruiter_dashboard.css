@@ -44,7 +44,7 @@
   grid-template-areas:
     "J9_emp_dash_aside_logo"
     "J9_emp_dash_aside_prof_pic"; */
-    margin-top: 1vh;
+    margin-top: 4vh;
 }
 .J9_emp_dash_aside_logo_prof_pic h3 {
   font-size: 2vw;
