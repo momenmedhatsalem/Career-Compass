@@ -10,16 +10,16 @@ class CustomUser(AbstractUser):
         return self.username
 
 class Applicant(CustomUser):
-    bio = models.TextField()
-    resume = models.FileField(upload_to='resumes/')
+    bio = models.TextField(blank=True, null=True)
+    resume = models.FileField(upload_to='resumes/', blank=True, null=True)
 
     def __str__(self):
         return self.username
 
 class Recruiter(CustomUser):
     company_name = models.CharField(max_length=200)
-    company_description = models.TextField()
-    company_website = models.URLField()
+    company_description = models.TextField(blank=True, null=True)
+    company_website = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.username

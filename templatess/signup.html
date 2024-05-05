@@ -10,7 +10,8 @@
 
     <h1>Sign Up</h1>
     <div>
-      <form class="signupform">
+      <form class="signupform" method="post" action="{% url 'signup' %}">
+
         <div>
           <label for="username">Username</label>
           <input type="text" id="username" name="username" />
