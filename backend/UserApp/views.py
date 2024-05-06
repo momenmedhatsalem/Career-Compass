@@ -8,14 +8,21 @@ def signup(request, mode):
         username = request.POST.get('username')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
         password1 = request.POST.get('password')
 
         if mode == "applicant":
-            user = Applicant.objects.create_user(username=username, email=email, phone=phone, password=password1)
+            user = Applicant.objects.create_user(username=username,
+                                                  email=email, phone=phone, password=password1,
+                                                    first_name=first_name, last_name=last_name)
             user.save()
         elif mode == "recruiter":
             company_name = request.POST.get('company_name')
-            user = Recruiter.objects.create_user(username=username, email=email, phone=phone, password=password1, company_name=company_name)
+            user = Recruiter.objects.create_user(username=username,
+                                                  email=email, phone=phone, password=password1,
+                                                    company_name=company_name, first_name=first_name,
+                                                      last_name=last_name)
         
         # Log in the user after signup
         user = authenticate(username=email, password=password1)
