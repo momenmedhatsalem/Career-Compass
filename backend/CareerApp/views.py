@@ -30,3 +30,6 @@ def checkCandidates(request):
 
 def edit_Job(request):
     return render(request, "edit_Job.html")
+
+def AppliedCandidateProfile(request):
+    return render(request, "AppliedCandidateProfile.html")
