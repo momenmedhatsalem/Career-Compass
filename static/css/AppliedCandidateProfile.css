@@ -1,0 +1,81 @@
+.J9_main,
+.J9_main * {
+  box-sizing: border-box;
+}
+
+.J9_main {
+  margin: 15vh auto;
+  gap: 2vh;
+  display: grid;
+  justify-content: center;
+}
+.J9_AppliedCanProf_header {
+  text-align: center;
+  font-size: 3vw;
+  color: #e9391e;
+}
+.J9_AppliedCanProf_body {
+  display: grid;
+  gap: 2vh;
+}
+.J9_AppliedCanProf_pic {
+  width: 25vw;
+  height: 25vw;
+  border-radius: 50%;
+  justify-self: center;
+  object-fit: cover;
+  position: absolute;
+}
+@media screen and (min-width: 800px) {
+  .J9_AppliedCanProf_pic {
+    width: 230px;
+    height: 230px;
+  }
+}
+.J9_AppliedCanProf_pic ~ div {
+  display: grid;
+  gap: 1vh;
+  justify-content: center;
+
+  padding: 3vw;
+  border-radius: 13px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.J9_AppliedCanProf_pic ~ div > h1 {
+  font-size: 3vw;
+}
+.J9_AppliedCanProf_pic ~ div:first-of-type {
+  padding-top: 12vw;
+  margin-top: 12vw;
+}
+
+.J9_AppliedCanProf_pic ~ div > div {
+  display: grid;
+  width: 90vmin;
+}
+
+.J9_AppliedCanProf_pic ~ div > div > label {
+  font-size: 2.5vmin;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+}
+.J9_AppliedCanProf_pic ~ div > div > input,
+.J9_AppliedCanProf_pic ~ div > div > select {
+  height: 6vh;
+  border-radius: 8px;
+  background-color: rgb(226, 226, 226);
+  width: 100%;
+}
+
+.J9_AppliedCanProf_pic ~ div > div > textarea {
+  height: 20vh;
+  border-radius: 8px;
+  resize: none;
+  background-color: rgb(226, 226, 226);
+}
+
+@media screen and (max-width: 800px) {
+  .J9_AppliedCanProf_pic ~ div > div {
+    width: 70vmin;
+  }
+}
