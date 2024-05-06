@@ -4,7 +4,6 @@ from .models import Applicant, Recruiter
 
 class EmailAuthenticationBackend(ModelBackend):
     def authenticate(self, request, username=None, password=None, **kwargs):
-        print(username)
         
         try:
             applicant = Applicant.objects.get(email=username)
