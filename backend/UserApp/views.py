@@ -6,6 +6,11 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 
+from django.shortcuts import render, redirect, reverse
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth import authenticate, login
+from .models import Applicant, Recruiter
+
 def signup(request, mode):
     if mode not in ["applicant", "recruiter"]:
         # Redirect to the applicant signup page by default
@@ -22,25 +27,29 @@ def signup(request, mode):
         if mode == "applicant":
             user = Applicant.objects.create_user(username=username,
                                                   email=email, phone=phone, password=password1,
-                                                    first_name=first_name, last_name=last_name)
-            user.save()
+                                                  first_name=first_name, last_name=last_name)
         elif mode == "recruiter":
             company_name = request.POST.get('company_name')
             user = Recruiter.objects.create_user(username=username,
                                                   email=email, phone=phone, password=password1,
-                                                    company_name=company_name, first_name=first_name,
-                                                      last_name=last_name)
+                                                  company_name=company_name, first_name=first_name,
+                                                  last_name=last_name)
         
         # Log in the user after signup
         user = authenticate(username=email, password=password1)
-        login(request, user, backend='UserApp.authentication.EmailAuthenticationBackend')
-        
-        return redirect('profile')  
+        if user is not None:
+            login(request, user, backend='UserApp.authentication.EmailAuthenticationBackend')
+            return redirect('profile') if mode == "applicant" else redirect('recruiterDashboard')
+        else:
+            # Handle authentication failure
+            return HttpResponse("Authentication failed")
+
     else:
         if mode == "applicant":
             return render(request, 'signup.html')
         elif mode == "recruiter":
-            return render(request, 'recruiter_dashboard.html')
+            return render(request, 'recruitersignup.html')
+
 
 
 from django.shortcuts import render, redirect

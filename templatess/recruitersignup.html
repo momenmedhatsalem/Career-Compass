@@ -12,7 +12,8 @@
   <section class="main">
     <h1>Recruiter Sign Up</h1>
     <div>
-      <form class="signupform" id="recruiterSignUpForm">
+      <form class="signupform" id="recruiterSignUpForm" method="post" action="{% url 'signup' 'recruiter' %}">
+          {% csrf_token %}
         <div>
           <label for="username">Username</label>
           <input type="text" id="username" name="username" />

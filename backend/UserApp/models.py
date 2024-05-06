@@ -14,6 +14,9 @@ class Applicant(CustomUser):
     bio = models.TextField(blank=True, null=True)
     resume = models.FileField(upload_to='resumes/', blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'Applicant'
+        verbose_name_plural = 'Applicants'
     def __str__(self):
         return self.username
 
@@ -21,6 +24,8 @@ class Recruiter(CustomUser):
     company_name = models.CharField(max_length=200)
     company_description = models.TextField(blank=True, null=True)
     company_website = models.URLField(blank=True, null=True)
-
+    class Meta:
+        verbose_name = 'Recruiter'
+        verbose_name_plural = 'Recruiters'
     def __str__(self):
         return self.username
