@@ -25,15 +25,6 @@ def about(request):
 def jobs(request):
     return render(request, "list_of_jobs.html")
 
-def signup(request):
-    return render(request, "signup.html")
-
-def login(request):
-    return render(request, "login.html")
-
-def recruiterSignup(request):
-    return render(request, "recruitersignup.html")
-
 def checkCandidates(request):
     return render(request, "check_candidates.html")
 

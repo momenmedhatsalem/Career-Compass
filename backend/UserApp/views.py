@@ -2,8 +2,15 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from .models import CustomUser, Applicant, Recruiter
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
 
 def signup(request, mode):
+    if mode not in ["applicant", "recruiter"]:
+        # Redirect to the applicant signup page by default
+        return HttpResponseRedirect(reverse('signup', args=['applicant']))
+
     if request.method == 'POST':
         username = request.POST.get('username')
         email = request.POST.get('email')
