@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Get form inputs
       var username = document.getElementById("username").value;
-      var firstName = document.getElementById("First_name").value;
+      var firstName = document.getElementById("first_name").value;
       var lastName = document.getElementById("last_name").value;
-      var email = document.getElementById("InputEmail1").value;
-      var phone = document.getElementById("InputPhone").value;
-      var password = document.getElementById("InputPassword").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var password = document.getElementById("password").value;
       var confirmPassword = document.getElementById("confirmpass").value;
 
       // Check if password and confirm password match
