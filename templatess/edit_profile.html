@@ -45,7 +45,7 @@
             <div>
 
               <label for="fname" class="M7-label">Full Name: </label> <br><br>
-              <input type="text" name="fname" id="fname" class="M7-field" required>
+              <input type="text" name="fname" id="fname" class="M7-field" required value=" {{ user.username }} {{ user.lastname }}">
 
             </div>
 
@@ -55,7 +55,7 @@
             <div>
 
               <label for="pemail" class="M7-label">Personal E-mail: </label> <br><br>
-              <input type="email" name="pemail" id="pemail" value="" class="M7-field" required>
+              <input type="email" name="pemail" id="pemail" value="{{ user.email }}" class="M7-field" required>
 
             </div>
 
@@ -66,7 +66,7 @@
 
               <label for="bio" class="M7-label">Bio: </label> <br><br>
               <textarea name="bio" id="bio" cols="40" rows="5" placeholder="Cairo University 2020"
-                class="M7-field" itemid="bio"></textarea>
+                class="M7-field" itemid="bio">{{ applicant_user.bio }}</textarea>
 
             </div>
 
@@ -84,7 +84,7 @@
             <div>
 
               <label for="cname" class="M7-label">Company name: </label> <br><br>
-              <input type="text" name="cname" id="cname" value="" class="M7-field" >
+              <input type="text" name="cname" id="cname" value="{{ applicant_user.company_name }}" class="M7-field" >
 
             </div>
 
@@ -95,7 +95,7 @@
             <div>
 
               <label for="bemail" class="M7-label">Business E-mail: </label> <br><br>
-              <input type="email" name="bemail" id="bemail" value="" class="M7-field" >
+              <input type="email" name="bemail" id="bemail" value="{{ applicant_user.business_email }}" class="M7-field" >
 
             </div>
 
@@ -107,7 +107,7 @@
 
               <label for="skills" class="M7-label">Skills and Certificates: </label> <br><br>
               <textarea name="skills" id="skills" cols="40" rows="5" placeholder="frontend Web Developer"
-                class="M7-field" itemid="skills"></textarea>
+                class="M7-field" itemid="skills">{{ applicant_user.skills }}</textarea>
 
             </div>
 
@@ -128,7 +128,7 @@
             <div>
 
               <label for="net1" class="M7-label">Network 1: </label> <br><br>
-              <input type="text" name="net1" id="net1" value="" class="M7-field" >
+              <input type="text" name="net1" id="net1" value="{{ applicant_user.network1 }}" class="M7-field" >
 
             </div>
 
@@ -138,7 +138,7 @@
             <div>
 
               <label for="net2" class="M7-label">Network 2: </label> <br><br>
-              <input type="text" name="net2" id="net2" value="" class="M7-field">
+              <input type="text" name="net2" id="net2" value="{{ applicant_user.network2 }}" class="M7-field">
 
             </div>
 
@@ -159,7 +159,7 @@
             <div>
 
               <label for="address" class="M7-label">Address: </label> <br><br>
-              <input type="text" name="address" id="address" value="" class="M7-field"
+              <input type="text" name="address" id="address" value="{{ applicant_user.address }}" class="M7-field"
                 placeholder="Cowrasta, Chandana, Gazipur, Sadar" >
 
             </div>
@@ -171,7 +171,8 @@
             <div>
 
               <label for="country" class="M7-label">Country: </label> <br><br>
-              <select type="" name="country" id="country" value="" class="M7-field" >
+              <input type="text" name="country" list="countries" id="country" value="{{ applicant_user.country }}" class="M7-field">
+              <datalist id="countries">
                 <option value="Egypt">Egypt</option>
                 <option value="France">France</option>
                 <option value="Germany">Germany</option>
@@ -179,8 +180,12 @@
                 <option value="Poland">Poland</option>
                 <option value="Scotland">Scotland</option>
                 <option value="United Kingdom">United Kingdom</option>
+              </datalist>
 
-              </select>
+              <!-- <select type="" name="country" id="country" value="" class="M7-field" >
+                <
+
+              </select> -->
 
             </div>
 
@@ -191,7 +196,8 @@
             <div>
 
               <label for="city" class="M7-label">City: </label> <br><br>
-              <select type="" name="city" id="city" value="" class="M7-field" >
+              <input type="text" name="city" id="city" list="cities" value="{{ applicant_user.city }}" class="M7-field" >
+              <datalist id="cities">
                 <option value="Cairo">Cairo</option>
                 <option value="Paris">Paris</option>
                 <option value="Berlin">Berlin</option>
@@ -199,7 +205,7 @@
                 <option value="New York">New York</option>
                 <option value="London">London</option>
                 <option value="Moscow">Moscow</option>
-              </select>
+              </datalist>
 
             </div>
 
@@ -210,7 +216,7 @@
             <div>
 
               <label for="zip" class="M7-label">ZIP Code: </label> <br><br>
-              <input type="number" name="zip" id="zip" value="" class="M7-field" >
+              <input type="number" name="zip" id="zip" value="{{ applicant_user.zip }}" class="M7-field" >
 
             </div>
 
@@ -221,8 +227,8 @@
             <div>
 
               <label for="state" class="M7-label">State/Governorat: </label> <br><br>
-              <select type="text" name="state" id="state" value="" class="M7-field" >
-
+              <input type="text" name="state" id="state" list="states" value="{{ applicant_user.state }}" class="M7-field" >
+              <datalist id="states">
                 <option value="Cairo">Cairo</option>
                 <option value="Paris">Paris</option>
                 <option value="Berlin">Berlin</option>
@@ -230,8 +236,7 @@
                 <option value="New York">New York</option>
                 <option value="London">London</option>
                 <option value="Moscow">Moscow</option>
-
-              </select>
+              </datalist>
 
             </div>
 

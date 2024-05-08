@@ -59,7 +59,15 @@ def edit_Job(request):
     return render(request, "edit_Job.html")
 
 def edit_profile(request):
-    return render(request, "edit_profile.html")
+    user = request.user
+    if user.is_applicant:
+        applicant_user = Applicant.objects.get(user = request.user)
+
+        # User is an applicant
+        return render(request, "edit_profile.html", { 'applicant_user': applicant_user })
+    elif user.is_recruiter:
+        # User is a recruiter
+        return redirect('recruiterDashboard')
 
 def AppliedCandidateProfile(request):
     return render(request, "AppliedCandidateProfile.html")
