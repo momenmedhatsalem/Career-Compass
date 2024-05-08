@@ -78,7 +78,7 @@
       <fieldset class="M7-fieldset">
 
         <legend class="M7-p_img">
-          <img {% if user.photo.url != null %} src="{{user.photo.url}}" {% endif %} alt="User Image" class="M7-p_img" style="display: inline-block;">
+          <img {% if user.photo.url != null %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png"{% endif %} alt="User Image" class="M7-p_img" style="display: inline-block;">
         </legend>
 
 
