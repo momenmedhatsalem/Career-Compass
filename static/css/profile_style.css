@@ -1,11 +1,12 @@
 .M7-h1 {
     font-size: xx-large;
     margin: 5px;
+    padding: 10px;
 }
 
 .M7-fit {
     max-width: 700px;
-    margin: auto;
+    margin-left: 350px;
 }
 
 .M7-gradient-text {
@@ -182,6 +183,8 @@
     border-radius: 32px;
     background-color: rgb(0, 124, 173);
     color: rgb(244, 248, 249);
+
+    /* margin-top: 65px; */
 
     transition: padding 0.15s ease-in-out;
 
