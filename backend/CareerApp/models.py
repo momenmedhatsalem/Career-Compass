@@ -15,7 +15,7 @@ class Job(models.Model):
     location = models.CharField(max_length=100)
     category = models.ForeignKey(JobCategory, on_delete=models.CASCADE)
     recruiter = models.ForeignKey(Recruiter, on_delete=models.CASCADE, related_name="jobs")
-
+    #yearsOfExperience
     posted_date = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
 

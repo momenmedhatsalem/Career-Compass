@@ -3,7 +3,6 @@ from django.shortcuts import render
 def index(request):
     return render(request, "index.html")
 
-
 def profile(request):
     return render(request, "profile.html")
 
@@ -22,8 +21,12 @@ def savedJobs(request):
 def about(request):
     return render(request, "About_us.html")
 
+from .models import Job
+
 def jobs(request):
-    return render(request, "list_of_jobs.html")
+    jobs = Job.objects.all()
+    return render(request, "list_of_jobs.html", {"jobs": jobs})
+
 
 def checkCandidates(request):
     return render(request, "check_candidates.html")
