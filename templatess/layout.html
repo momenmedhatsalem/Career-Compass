@@ -87,11 +87,8 @@
 
       </ul>
     </nav>
-    <a class="J9_login_signup_find_post"
-    {% if user is None% }
-    id="J9_login_signup"
-    href="{% url 'login' %}">Login/Sign up</a>
-    {% elif not (user.is_applicant or user.is_recruiter) %}
+    <a class="J9_login_signup_find_post" 
+    {% if user.is_applicant != True and user.is_recruiter != True %}
     id="J9_login_signup"
     href="{% url 'login' %}">Login/Sign up</a>
     {% elif user.is_applicant %}
