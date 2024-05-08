@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login
 from .models import CustomUser, Applicant, Recruiter
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-
+from django.contrib.auth import get_user_model
 
 from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponseRedirect, HttpResponse
@@ -25,15 +25,18 @@ def signup(request, mode):
         password1 = request.POST.get('password')
 
         if mode == "applicant":
-            user = Applicant.objects.create_user(username=username,
+            user = get_user_model().objects.create_user(username=username,
                                                   email=email, phone=phone, password=password1,
-                                                  first_name=first_name, last_name=last_name)
+                                                  first_name=first_name, last_name=last_name, 
+                                                  is_applicant=True)
+            Applicant.objects.create(user=user)
         elif mode == "recruiter":
+            user = get_user_model().objects.create_user(username=username,
+                                                    email=email, phone=phone, password=password1,
+                                                    first_name=first_name, last_name=last_name, 
+                                                    is_recruiter=True)
             company_name = request.POST.get('company_name')
-            user = Recruiter.objects.create_user(username=username,
-                                                  email=email, phone=phone, password=password1,
-                                                  company_name=company_name, first_name=first_name,
-                                                  last_name=last_name)
+            user = Recruiter.objects.create(user=user, company_name=company_name)
         
         # Log in the user after signup
         user = authenticate(username=email, password=password1)
@@ -65,16 +68,8 @@ def login_user(request):
         user = authenticate(username=email, password=password)
         print("user" ,user)
         if user is not None:
-            # Check user's type
-            if isinstance(user, Applicant):
-                print("appp")   
-                # User is an applicant
-                return redirect('profile')  
-            elif isinstance(user, Recruiter):
-                # User is a recruiter
-                return redirect('recruiterDashboard')  
-            else:
-                return redirect('home')
+            login(request, user, backend='UserApp.authentication.EmailAuthenticationBackend')
+            return redirect('profile')  
                 
         else:
             # Invalid credentials, show an error message

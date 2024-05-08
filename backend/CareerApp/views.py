@@ -1,12 +1,29 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from UserApp.models import Applicant, Recruiter
+from django.contrib.auth import get_user_model
 
 def index(request):
     return render(request, "index.html")
 
+@login_required
 def profile(request):
-    return render(request, "profile.html")
+    user = request.user  
+    if user.is_applicant:
+        # User is an applicant
+        return render(request, "profile.html")
+    elif user.is_recruiter:
+        # User is a recruiter
+        return redirect('recruiterDashboard')
 
+
+
+
+@login_required
 def recruiterDashboard(request):
+    if request.user.is_applicant:
+        # User is an applicant
+        return redirect('profile')
     return render(request, "recruiter_dashboard.html")
 
 def search(request):
