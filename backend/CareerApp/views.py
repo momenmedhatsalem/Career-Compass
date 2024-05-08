@@ -33,3 +33,15 @@ def checkCandidates(request):
 
 def edit_Job(request):
     return render(request, "edit_Job.html")
+
+def AppliedCandidateProfile(request):
+    return render(request, "AppliedCandidateProfile.html")
+
+def login(request):
+    return render(request, "login.html")
+
+def signup(request):
+    return render(request, "signup.html")
+
+def recruitersignup(request):
+    return render(request, "recruitersignup.html")
