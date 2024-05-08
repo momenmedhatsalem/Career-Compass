@@ -13,7 +13,6 @@ class CustomUser(AbstractUser):
         return self.email
 
 class Applicant(models.Model):
-    profile_image = models.ImageField(upload_to='profile_photos/', null=True, blank=True)
 
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
     bio = models.TextField(blank=True, null=True)
