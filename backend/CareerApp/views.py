@@ -99,7 +99,7 @@ def save_profile(request):
         # Create a new instance of MyModel and set the values
         user.photo = profile_photo
 
-        user.first_name = bio
+        user.first_name = fname
         user.email = pemail
         applicant_user.bio = bio
 
