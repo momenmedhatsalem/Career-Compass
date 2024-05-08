@@ -48,10 +48,10 @@
       </form>
       <div>
         <h5>
-          Already have an account?<a href="/login">Login</a>
+          Already have an account?<a href="{% url 'login' %}">Login</a>
         </h5>
         <h5>
-          Are you a company owner?<a href="/recruitersignup">Click here</a>
+          Are you a company owner?<a href="{% url 'signup' 'recruiter' %}">Click here</a>
         </h5>
       </div>
     </div>
