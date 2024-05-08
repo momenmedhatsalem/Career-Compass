@@ -34,6 +34,9 @@ def search(request):
 
 @login_required
 def savedJobs(request):
+    if not request.user.is_applicant:
+        # User is a recruiter
+        return redirect('home')
     saved_jobs = SavedJob.objects.filter(applicant=request.user)
 
     return render(request, "saved_jobs.html",{"jobs":saved_jobs})
