@@ -114,27 +114,7 @@ def save_profile(request):
 
         user.save()
         applicant_user.save()
-
-        # new_record = MyModel(
-
-        #     # field1=field1,
-        #     # field2=field2,
-        #     # field3=field3,
-        #     # field4=field4,
-        #     # field5=field5,
-        #     # field6=field6,
-        #     # field7=field7,
-        #     # field8=field8,
-        #     # field9=field9,
-        #     # field10=field10
-        # )
         
-        # Save to the database
-        # new_record.save()
-
-        # return redirect('success')  # Redirect to a success page after saving
-
-    # If the request is not POST, return the form template
     return render(request, "profile.html", { 'applicant_user': applicant_user })
 
 def AppliedCandidateProfile(request):
