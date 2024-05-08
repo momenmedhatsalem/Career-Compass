@@ -136,7 +136,13 @@ a {
   border: 1px solid #fff;
   border-radius: 50px;
 }
-
+.J9_login_signup_find_post[id ~= "J9_look_for_a_job"],
+.J9_login_signup_find_post[id ~= "J9_post_job"]
+{
+  border: none;
+  background-color: #00c853;
+  color: #eee;
+}
 /* .J9_login_signup {
   grid-area: login_in_grid;
   width: 100%;
