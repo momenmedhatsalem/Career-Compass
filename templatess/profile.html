@@ -218,7 +218,8 @@
         <div>
 
           <label for="country" class="M7-label">Country: </label> <br>
-          <select type="" name="country" id="country" value="" class="M7-field" disabled="yes" >
+          <input type="text" name="country" id="country" value="{{ applicant_user.country }}" class="M7-field" disabled="yes">
+          <!-- <select type="" name="country" id="country" value="" class="M7-field" disabled="yes" >
             <option value="Egypt">Egypt</option>
             <option value="France">France</option>
             <option value="Germany">Germany</option>
@@ -227,7 +228,7 @@
             <option value="Scotland">Scotland</option>
             <option value="United Kingdom">United Kingdom</option>
 
-          </select>
+          </select> -->
 
         </div>
 
@@ -238,7 +239,9 @@
         <div>
 
           <label for="city" class="M7-label">City: </label> <br>
-          <select type="" name="city" id="city" value="" class="M7-field" disabled="yes">
+          <input type="text" name="city" id="city" value="{{ applicant_user.city }}" class="M7-field" disabled="yes">
+
+          <!-- <select type="" name="city" id="city" value="" class="M7-field" disabled="yes">
             <option value="Cairo">Cairo</option>
             <option value="Paris">Paris</option>
             <option value="Berlin">Berlin</option>
@@ -246,7 +249,7 @@
             <option value="New York">New York</option>
             <option value="London">London</option>
             <option value="Moscow">Moscow</option>
-          </select>
+          </select> -->
 
         </div>
 
@@ -269,7 +272,8 @@
         <div>
 
           <label for="state" class="M7-label">State/Governorat: </label> <br>
-          <select type="text" name="state" id="state" value="" class="M7-field" disabled="yes">
+          <input type="text" name="state" id="state" value="{{ applicant_user.state }}" class="M7-field" disabled="yes">
+          <!-- <select type="text" name="state" id="state" value="" class="M7-field" disabled="yes">
 
             <option value="Cairo">Cairo</option>
             <option value="Paris">Paris</option>
@@ -279,7 +283,7 @@
             <option value="London">London</option>
             <option value="Moscow">Moscow</option>
 
-          </select>
+          </select> -->
 
         </div>
 
@@ -287,7 +291,7 @@
         <br>
 
 
-        <div>
+        <!-- <div>
 
           <label for="location" class="M7-label">Map Location: </label> <br>
           <input type="" name="location" id="location" value="" class="M7-field" disabled="yes">
@@ -297,7 +301,7 @@
         <br>
         <br>
         <br>
-        <br>
+        <br> -->
 
 
       </fieldset>
