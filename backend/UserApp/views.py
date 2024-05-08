@@ -83,3 +83,10 @@ def login_user(request):
     else:
         # If request method is not POST, render the login form
         return render(request, 'login.html')
+
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
+def logout_user(request):
+    logout(request)  # Log out the user
+    return redirect('home')  # Redirect to the home page after logout
