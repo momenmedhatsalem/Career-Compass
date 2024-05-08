@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 class CustomUser(AbstractUser):
     photo = models.ImageField(upload_to='profile_photos/', null=True, blank=True)
     email = models.EmailField(verbose_name='email address', max_length=255, unique=True)
-    phone = models.CharField(max_length=15) 
+    phone = models.CharField(max_length=15)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
     is_applicant = models.BooleanField(default=False)
@@ -44,9 +44,22 @@ class Applicant(models.Model):
 
 class Recruiter(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
-    company_name = models.CharField(max_length=200)
-    company_description = models.TextField(blank=True, null=True)
-    company_website = models.URLField(blank=True, null=True)
+    recruiter_name = models.CharField(max_length=100, null=True)
+
+    company_name = models.CharField(max_length=200, null=True)
+    about_company = models.TextField(blank=True, null=True)
+    company_size = models.CharField(max_length=100, null=True)
+    founded_date = models.DateField(null=True)
+    website = models.URLField(blank=True, null=True)
+    category = models.CharField(max_length=100, null=True)
+
+    social_media = models.JSONField(default=list)
+
+    address = models.CharField(max_length=200, null=True)
+    country = models.CharField(max_length=100, null=True)
+    city = models.CharField(max_length=100, null=True)
+    zip_code = models.CharField(max_length=10, null=True)
+    state = models.CharField(max_length=100, null=True)
 
     class Meta:
         verbose_name = 'Recruiter'

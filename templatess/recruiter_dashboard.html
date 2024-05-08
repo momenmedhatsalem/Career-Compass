@@ -25,7 +25,7 @@
             <div class="J9_emp_dash_aside_logo_prof_pic">
                 <!-- <a class="J9_emp_dash_aside_logo" href="index.html"><img src="{% static 'images/logopng.png' %}" alt=""></a> -->
                 <a class="J9_emp_dash_aside_prof_pic" href="recruiter_dashboard.html">
-                    <img {% if user.photo.url != null %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png"{% endif %} alt="profile photo">
+                    <img {% if rec.user.photo.url != null %} src="{{rec.user.photo.url}}" {% else %} src="../static/arrow.png"{% endif %} alt="profile photo">
                 </a>
                 <h3 id="J9_emp_dash_aside_prof_username"></h3>
             </div>
@@ -82,7 +82,7 @@
                     <form class="J9_emp_dash_prof_right_side_body_emp_divs" id="J9_employer_profile_form">
                         <div class="J9_emp_dash_prof_right_side_body_emp_information">
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_photo">
-                                <img id="J9_recruiter_viewed_profile_photo" {% if user.photo.url != null %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png"{% endif %}
+                                <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo.url != null %} src="{{rec.user.photo.url}}" {% else %} src="../static/arrow.png"{% endif %}
                                     alt="profile photo">
                                 <div>
                                     <label class="J9_custom_file_upload">Upload new photo <input
@@ -96,7 +96,7 @@
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_name">
                                 <label>Employer Name</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_name" class="j9Name"
-                                    name="employer_name" type="text" disabled value="{{ user.first_name }}">
+                                    name="employer_name" type="text" disabled value="{{ rec.user.first_name }}">
                             </div>
     
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_email">
@@ -547,7 +547,7 @@
                             <div class="J9_emp_dash_post_job_right_side_body_container_job_details_company_name">
                                 <label>Company Name*</label><input name="company_name"
                                     id="J9_recruiter_add_job_company_name" required type="text"
-                                    placeholder="Career compass" value="{{ user.company_name }}" />
+                                    placeholder="Career compass" value="{{ rec.user.company_name }}" />
                             </div>
                             <div
                                 class="J9_emp_dash_post_job_right_side_body_container_job_details_job_status_years_of_experience">

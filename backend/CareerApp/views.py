@@ -27,7 +27,9 @@ def recruiterDashboard(request):
     if request.user.is_applicant:
         # User is an applicant
         return redirect('profile')
-    return render(request, "recruiter_dashboard.html")
+    elif request.user.is_recruiter:
+        rec = Recruiter.objects.get(user = request.user)
+    return render(request, "recruiter_dashboard.html", {'rec' : rec})
 
 def search(request):
     return render(request, "search.html")

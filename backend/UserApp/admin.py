@@ -6,7 +6,7 @@ class ApplicantAdmin(admin.ModelAdmin):
     list_display = ('user', 'bio', 'resume')  # Specify fields to display in the list view
 
 class RecruiterAdmin(admin.ModelAdmin):
-    list_display = ('user', 'company_name', 'company_description', 'company_website')  # Specify fields to display in the list view
+    list_display = ('user', 'company_name', 'about_company', 'website')  # Specify fields to display in the list view
 
 # Register the models and their corresponding admin classes
 admin.site.register(Applicant, ApplicantAdmin)
