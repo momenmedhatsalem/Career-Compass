@@ -78,7 +78,7 @@
       <fieldset class="M7-fieldset">
 
         <legend class="M7-p_img">
-          <img src="{% static 'Editing.png' %}" alt="User Image" class="M7-p_img" style="display: inline-block;">
+          <img src="{{user.photo}}" alt="User Image" class="M7-p_img" style="display: inline-block;">
         </legend>
 
 
@@ -109,7 +109,7 @@
 
           <label for="bio" class="M7-label">Bio: </label> <br>
           <textarea name="bio" id="bio" cols="40" rows="5" placeholder="Cairo University 2020" class="M7-field"
-            disabled="yes">{{ user.bio }}</textarea>
+            disabled="yes">{{ applicant_user.bio }}</textarea>
 
         </div>
 
@@ -128,7 +128,7 @@
         <div>
 
           <label for="cname" class="M7-label">Company name: </label> <br>
-          <input type="text" name="cname" id="cname" value="" class="M7-field" disabled="yes">
+          <input type="text" name="cname" id="cname" value="{{ applicant_user.company_name }}" class="M7-field" disabled="yes">
 
         </div>
 
@@ -140,7 +140,7 @@
         <div>
 
           <label for="bemail" class="M7-label">Business E-mail: </label> <br>
-          <input type="email" name="bemail" id="bemail" value="" class="M7-field" disabled="yes">
+          <input type="email" name="bemail" id="bemail" value="{{ applicant_user.business_email }}" class="M7-field" disabled="yes">
 
         </div>
 
@@ -153,7 +153,7 @@
 
           <label for="skills" class="M7-label">Skills and Certificates: </label> <br>
           <textarea name="skills" id="skills" cols="40" rows="5" placeholder="frontend Web Developer" class="M7-field"
-            disabled="yes"></textarea>
+            disabled="yes">{{ applicant_user.skills }}</textarea>
 
         </div>
 
@@ -174,7 +174,7 @@
         <div>
 
           <label for="net1" class="M7-label">Network 1: </label> <br>
-          <input type="text" name="net1" id="net1" value="" class="M7-field" disabled="yes">
+          <input type="text" name="net1" id="net1" value="{{ applicant_user.network1 }}" class="M7-field" disabled="yes">
 
         </div>
 
@@ -185,7 +185,7 @@
         <div>
 
           <label for="net2" class="M7-label">Network 2: </label> <br>
-          <input type="text" name="net2" id="net2" value="" class="M7-field" disabled="yes">
+          <input type="text" name="net2" id="net2" value="{{ applicant_user.network1 }}" class="M7-field" disabled="yes">
 
         </div>
 
@@ -205,7 +205,7 @@
         <div>
 
           <label for="address" class="M7-label">Address: </label> <br>
-          <input type="text" name="address" id="address" value="" class="M7-field" disabled="yes"
+          <input type="text" name="address" id="address" value="{{ applicant_user.address }}" class="M7-field" disabled="yes"
             placeholder="Cowrasta, Chandana, Gazipur, Sadar">
 
         </div>
@@ -218,7 +218,8 @@
         <div>
 
           <label for="country" class="M7-label">Country: </label> <br>
-          <select type="" name="country" id="country" value="" class="M7-field" disabled="yes">
+          <input type="text" name="country" id="country" value="{{ applicant_user.country }}" class="M7-field" disabled="yes">
+          <!-- <select type="" name="country" id="country" value="" class="M7-field" disabled="yes" >
             <option value="Egypt">Egypt</option>
             <option value="France">France</option>
             <option value="Germany">Germany</option>
@@ -227,7 +228,7 @@
             <option value="Scotland">Scotland</option>
             <option value="United Kingdom">United Kingdom</option>
 
-          </select>
+          </select> -->
 
         </div>
 
@@ -238,7 +239,9 @@
         <div>
 
           <label for="city" class="M7-label">City: </label> <br>
-          <select type="" name="city" id="city" value="" class="M7-field" disabled="yes">
+          <input type="text" name="city" id="city" value="{{ applicant_user.city }}" class="M7-field" disabled="yes">
+
+          <!-- <select type="" name="city" id="city" value="" class="M7-field" disabled="yes">
             <option value="Cairo">Cairo</option>
             <option value="Paris">Paris</option>
             <option value="Berlin">Berlin</option>
@@ -246,7 +249,7 @@
             <option value="New York">New York</option>
             <option value="London">London</option>
             <option value="Moscow">Moscow</option>
-          </select>
+          </select> -->
 
         </div>
 
@@ -257,7 +260,7 @@
         <div>
 
           <label for="zip" class="M7-label">ZIP Code: </label> <br>
-          <input type="number" name="zip" id="zip" value="" class="M7-field" disabled="yes">
+          <input type="number" name="zip" id="zip" value="{{ applicant_user.zip }}" class="M7-field" disabled="yes">
 
         </div>
 
@@ -269,7 +272,8 @@
         <div>
 
           <label for="state" class="M7-label">State/Governorat: </label> <br>
-          <select type="text" name="state" id="state" value="" class="M7-field" disabled="yes">
+          <input type="text" name="state" id="state" value="{{ applicant_user.state }}" class="M7-field" disabled="yes">
+          <!-- <select type="text" name="state" id="state" value="" class="M7-field" disabled="yes">
 
             <option value="Cairo">Cairo</option>
             <option value="Paris">Paris</option>
@@ -279,7 +283,7 @@
             <option value="London">London</option>
             <option value="Moscow">Moscow</option>
 
-          </select>
+          </select> -->
 
         </div>
 
@@ -287,7 +291,7 @@
         <br>
 
 
-        <div>
+        <!-- <div>
 
           <label for="location" class="M7-label">Map Location: </label> <br>
           <input type="" name="location" id="location" value="" class="M7-field" disabled="yes">
@@ -297,7 +301,7 @@
         <br>
         <br>
         <br>
-        <br>
+        <br> -->
 
 
       </fieldset>

@@ -13,12 +13,27 @@ class CustomUser(AbstractUser):
         return self.email
 
 class Applicant(models.Model):
+
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
     bio = models.TextField(blank=True, null=True)
     resume = models.FileField(upload_to='resumes/', blank=True, null=True)
+
     company_name = models.CharField(max_length=200, blank=True, null=True)
     business_email = models.CharField(max_length=200, blank=True, null=True)
     skills = models.CharField(max_length=200, blank=True, null=True)
+
+    network1 = models.CharField(max_length=200, blank=True, null=True)
+    network2 = models.CharField(max_length=200, blank=True, null=True)
+
+    address = models.CharField(max_length=200, blank=True, null=True)
+
+    zip = models.CharField(max_length=200, blank=True, null=True)
+
+    country = models.CharField(max_length=200, blank=True, null=True)
+    city = models.CharField(max_length=200, blank=True, null=True)
+    state = models.CharField(max_length=200, blank=True, null=True)
+
+
     class Meta:
         verbose_name = 'Applicant'
         verbose_name_plural = 'Applicants'

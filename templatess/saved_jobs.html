@@ -9,7 +9,7 @@
     </h1>
     <div class="all-jobs">
       <!-- ------------------------------------------------------------------------------------------------------------ -->
-      {{% for sjob in jobs %}} 
+      {% for sjob in jobs %} 
       <div class="job" id="{{sjob.job.job_id}}">
           <div class="job-image-div">
             <img src="{% static '/front.png' %}" class="job-img">
@@ -23,7 +23,7 @@
             <a href="#" class="view-ancor"> <button type="button" class="view-button"  value="view" name="{{sjob.job.job_id}}" onclick="view(name)">view</button></a>
         </div>
         </div>
-        {{% endfor %}}
+        {% endfor %}
         <!-- ------------------------------------------------------------------------------------------------------------------ -->
         <div class="job" id="job2">
           <div class="job-image-div">
