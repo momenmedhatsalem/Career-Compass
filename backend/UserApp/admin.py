@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Applicant, Recruiter
+from .models import Applicant, Recruiter,CustomUser
 
 # Define custom admin classes for Applicant and Recruiter models
 class ApplicantAdmin(admin.ModelAdmin):
@@ -11,3 +11,4 @@ class RecruiterAdmin(admin.ModelAdmin):
 # Register the models and their corresponding admin classes
 admin.site.register(Applicant, ApplicantAdmin)
 admin.site.register(Recruiter, RecruiterAdmin)
+admin.site.register(CustomUser)

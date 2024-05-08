@@ -55,7 +55,7 @@ class SavedJob(models.Model):
     applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE, related_name="saved_jobs")
     job = models.ForeignKey(Job, on_delete=models.CASCADE)
     saved_date = models.DateTimeField(auto_now_add=True)
-
+    
     class Meta:
         unique_together = ('applicant', 'job')
 

@@ -9,10 +9,12 @@ def index(request):
 
 @login_required
 def profile(request):
-    user = request.user  
+    user = request.user
     if user.is_applicant:
+        applicant_user = Applicant.objects.get(user = request.user)
+
         # User is an applicant
-        return render(request, "profile.html")
+        return render(request, "profile.html", { 'applicant_user': applicant_user })
     elif user.is_recruiter:
         # User is a recruiter
         return redirect('recruiterDashboard')
