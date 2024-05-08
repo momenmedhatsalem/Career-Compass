@@ -83,9 +83,10 @@ DATABASES = {
     }
 }
 
-MEDIA_ROOT = BASE_DIR.parent / "backend" / "profile_photos"
-MEDIA_URL = '/profile_photos/'
+import os
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
