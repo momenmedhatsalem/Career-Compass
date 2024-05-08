@@ -85,7 +85,7 @@
         <div>
 
           <label for="fname" class="M7-label">Full Name: </label> <br>
-          <input type="text" name="fname" id="fname" value="Mahmoud Khaled" class="M7-field" disabled="yes">
+          <input type="text" name="fname" id="fname" value=" {{ user.username }} {{ user.lastname }}" class="M7-field" disabled="yes">
 
         </div>
 
@@ -97,7 +97,7 @@
         <div>
 
           <label for="pemail" class="M7-label">Personal E-mail: </label> <br>
-          <input type="email" name="pemail" id="pemail" value="" class="M7-field" disabled="yes">
+          <input type="email" name="pemail" id="pemail" value="{{ user.email }}" class="M7-field" disabled="yes">
 
         </div>
 
@@ -109,7 +109,7 @@
 
           <label for="bio" class="M7-label">Bio: </label> <br>
           <textarea name="bio" id="bio" cols="40" rows="5" placeholder="Cairo University 2020" class="M7-field"
-            disabled="yes"></textarea>
+            disabled="yes">{{ user.bio }}</textarea>
 
         </div>
 
