@@ -32,8 +32,10 @@ def recruiterDashboard(request):
 def search(request):
     return render(request, "search.html")
 
+@login_required
 def savedJobs(request):
-    saved_jobs = SavedJob.objects.filter(applicant = request.user)
+    saved_jobs = SavedJob.objects.filter(applicant=request.user)
+
     return render(request, "saved_jobs.html",{"jobs":saved_jobs})
 
 def about(request):
