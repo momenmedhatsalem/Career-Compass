@@ -9,19 +9,21 @@
     </h1>
     <div class="all-jobs">
       <!-- ------------------------------------------------------------------------------------------------------------ -->
-        <div class="job" id="job1">
+      {{% for sjob in jobs %}} 
+      <div class="job" id="{{sjob.job.job_id}}">
           <div class="job-image-div">
             <img src="{% static '/front.png' %}" class="job-img">
           </div>
           <div class="desc">
-            <div class="job-name"> Front-end Web Dvelopment </div> 
-            <div class="salary"> $3500/Monthly</div>
-            <div class="city"> USA, Palo Alto</div>
-            <div class="description">you will create everything the user can see it on a web page. </div>  
-            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="job1">Delete</button> 
-            <a href="#" class="view-ancor"> <button type="button" class="view-button"  value="view" name="job1" onclick="view(name)">view</button></a>
+            <div class="job-name"> {{sjob.job.title}} </div> 
+            <div class="salary"> ${{sjob.job.MinSalary}} - {{sjob.job.MaxSalary}} / {{sjob.job.salary}}</div>
+            <div class="city"> {{sjob.job.city}}, {{sjob.job.country}}</div>
+            <div class="description">{{sjob.job.description}} </div>  
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="{{sjob.job.job_id}}">Delete</button> 
+            <a href="#" class="view-ancor"> <button type="button" class="view-button"  value="view" name="{{sjob.job.job_id}}" onclick="view(name)">view</button></a>
         </div>
         </div>
+        {{% endfor %}}
         <!-- ------------------------------------------------------------------------------------------------------------------ -->
         <div class="job" id="job2">
           <div class="job-image-div">

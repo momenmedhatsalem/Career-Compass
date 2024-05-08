@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from UserApp.models import Applicant, Recruiter
+from .models import SavedJob
 from django.contrib.auth import get_user_model
 
 def index(request):
@@ -30,10 +31,8 @@ def search(request):
     return render(request, "search.html")
 
 def savedJobs(request):
-    return render(request, "saved_jobs.html")
-
-def savedJobs(request):
-    return render(request, "saved_jobs.html")
+    saved_jobs = SavedJob.objects.filter(applicant = request.user)
+    return render(request, "saved_jobs.html",{"jobs":saved_jobs})
 
 def about(request):
     return render(request, "About_us.html")
