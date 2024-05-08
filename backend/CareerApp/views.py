@@ -65,6 +65,10 @@ def edit_profile(request):
 
         # User is an applicant
         return render(request, "edit_profile.html", { 'applicant_user': applicant_user })
+    
+        
+
+
     elif user.is_recruiter:
         # User is a recruiter
         return redirect('recruiterDashboard')

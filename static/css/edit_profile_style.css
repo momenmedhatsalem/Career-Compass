@@ -61,6 +61,8 @@
     display: block;
 
     margin: 10px;
+
+    filter: brightness(0.7);
 }
 
 .M7-p_img_button{
@@ -90,7 +92,7 @@
 
     background: linear-gradient(to right, #ff416c, #ff4b2b);
 
-    padding: 0.9rem 2.4rem 0.9rem 2.4rem;
+    padding: 0.9rem 2.35rem 0.9rem 2.35rem;
     
     color: rgb(244, 248, 249);
     border:none;
@@ -128,7 +130,7 @@
 
     color: #ff416c;
 
-    padding: 1rem 2.4rem 1rem 2.4rem;
+    padding: 1rem 2.35rem 1rem 2.35rem;
     border:none;
 
 }
