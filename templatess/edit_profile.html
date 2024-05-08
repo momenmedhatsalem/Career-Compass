@@ -29,7 +29,7 @@
               <img {% if user.photo.url != null %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %} alt="User Image" class="M7-p_img">
             </td>
             <td class="M7-td">
-              <button class="M7-p_img_button" onclick="change_img()" type="button">Change Profile Image</button>
+              <!-- <button class="M7-p_img_button" onclick="change_img()" type="button">Change Profile Image</button> -->
             </td>
             <td class="M7-td">
               <button class="M7-p_img_button_clear" type="button">Delete</button>
@@ -42,6 +42,8 @@
 
         <form action="{% url 'save_profile' %}" method="post">
           {% csrf_token %}
+          <input type="file" name="profile_photo">
+
           <div>
 
             <label for="fname" class="M7-label">Full Name: </label> <br><br>
