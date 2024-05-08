@@ -4,268 +4,272 @@
 
 {% block content %}
 
-  <!-- ========== Mahmoud 20220317 ========== -->
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<!-- ========== Mahmoud 20220317 ========== -->
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <link rel="stylesheet" href="{% static 'css/edit_profile_style.css' %}">
 <script src="{% static 'js/show_profile_info.js' %}"></script>
 <script src="{% static 'js/edit_profile.js' %}"></script>
 
-  <section class="main">
-    <main>
-      <section class="M7-fit">
+<section class="main">
+  <main>
+    <section class="M7-fit">
 
 
-        <h1 class="M7-gradient-text M7-h1" style="padding: 20px;">Your Profile</h1>
+      <h1 class="M7-gradient-text M7-h1" style="padding: 20px;">Your Profile</h1>
+
+      <br>
+
+
+
+      <fieldset class="M7-fieldset">
+
+        <table class="M7-table">
+          <tr class="M7-tr">
+            <td class="M7-td">
+              <img {% if user.photo.url != null %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %} alt="User Image" class="M7-p_img">
+            </td>
+            <td class="M7-td">
+              <button class="M7-p_img_button" onclick="change_img()" type="button">Change Profile Image</button>
+            </td>
+            <td class="M7-td">
+              <button class="M7-p_img_button_clear" type="button">Delete</button>
+            </td>
+          </tr>
+
+        </table>
 
         <br>
-        <form action="" class="edit-profile">
 
-          <fieldset class="M7-fieldset">
+        <form action="{% url 'save_profile' %}" method="post">
+          {% csrf_token %}
+          <div>
 
-            <table class="M7-table">
-              <tr class="M7-tr">
-                <td class="M7-td">
-                  <img {% if user.photo.url != null %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png"{% endif %} alt="User Image" class="M7-p_img">
-                </td>
-                <td class="M7-td">
-                  <button class="M7-p_img_button" onclick="change_img()" type="button">Change Profile Image</button>
-                </td>
-                <td class="M7-td">
-                  <button class="M7-p_img_button_clear" type="button">Delete</button>
-                </td>
-              </tr>
+            <label for="fname" class="M7-label">Full Name: </label> <br><br>
+            <input type="text" name="fname" id="fname" class="M7-field" required
+              value=" {{ user.first_name }} {{ user.last_name }}">
 
-            </table>
-
-            <br>
-
-
-            <div>
-
-              <label for="fname" class="M7-label">Full Name: </label> <br><br>
-              <input type="text" name="fname" id="fname" class="M7-field" required value=" {{ user.username }} {{ user.lastname }}">
-
-            </div>
-
-            <br>
-            <br>
-
-            <div>
-
-              <label for="pemail" class="M7-label">Personal E-mail: </label> <br><br>
-              <input type="email" name="pemail" id="pemail" value="{{ user.email }}" class="M7-field" required>
-
-            </div>
-
-            <br>
-            <br>
-
-            <div>
-
-              <label for="bio" class="M7-label">Bio: </label> <br><br>
-              <textarea name="bio" id="bio" cols="40" rows="5" placeholder="Cairo University 2020"
-                class="M7-field" itemid="bio">{{ applicant_user.bio }}</textarea>
-
-            </div>
-
-
-          </fieldset>
-
-
-          <br><br>
-
-          <fieldset class="M7-fieldset">
-
-            <h1 class="M7-h1 M7-gradient-text" style="padding: 20px;">Business Info</h1>
-
-            <br>
-            <div>
-
-              <label for="cname" class="M7-label">Company name: </label> <br><br>
-              <input type="text" name="cname" id="cname" value="{{ applicant_user.company_name }}" class="M7-field" >
-
-            </div>
-
-
-            <br>
-            <br>
-
-            <div>
-
-              <label for="bemail" class="M7-label">Business E-mail: </label> <br><br>
-              <input type="email" name="bemail" id="bemail" value="{{ applicant_user.business_email }}" class="M7-field" >
-
-            </div>
-
-
-            <br>
-            <br>
-
-            <div>
-
-              <label for="skills" class="M7-label">Skills and Certificates: </label> <br><br>
-              <textarea name="skills" id="skills" cols="40" rows="5" placeholder="frontend Web Developer"
-                class="M7-field" itemid="skills">{{ applicant_user.skills }}</textarea>
-
-            </div>
-
-
-            <br>
-
-          </fieldset>
+          </div>
 
           <br>
           <br>
 
-          <fieldset class="M7-fieldset">
+          <div>
 
-            <h1 class="M7-h1 M7-gradient-text" style="padding: 20px;">Social Media</h1>
+            <label for="pemail" class="M7-label">Personal E-mail: </label> <br><br>
+            <input type="email" name="pemail" id="pemail" value="{{ user.email }}" class="M7-field" required>
 
-            <br>
-
-            <div>
-
-              <label for="net1" class="M7-label">Network 1: </label> <br><br>
-              <input type="text" name="net1" id="net1" value="{{ applicant_user.network1 }}" class="M7-field" >
-
-            </div>
-
-            <br>
-            <br>
-
-            <div>
-
-              <label for="net2" class="M7-label">Network 2: </label> <br><br>
-              <input type="text" name="net2" id="net2" value="{{ applicant_user.network2 }}" class="M7-field">
-
-            </div>
-
-            <br>
-            <br>
-
-          </fieldset>
+          </div>
 
           <br>
           <br>
 
-          <fieldset class="M7-fieldset">
-            <h1 class="M7-h1 M7-gradient-text" style="padding: 20px;">Address and Location</h1>
+          <div>
 
-            <br>
-            <br>
+            <label for="bio" class="M7-label">Bio: </label> <br><br>
+            <textarea name="bio" id="bio" cols="40" rows="5" placeholder="Cairo University 2020" class="M7-field"
+              itemid="bio">{{ applicant_user.bio }}</textarea>
 
-            <div>
-
-              <label for="address" class="M7-label">Address: </label> <br><br>
-              <input type="text" name="address" id="address" value="{{ applicant_user.address }}" class="M7-field"
-                placeholder="Cowrasta, Chandana, Gazipur, Sadar" >
-
-            </div>
-
-            <br>
-            <br>
+          </div>
 
 
-            <div>
+      </fieldset>
 
-              <label for="country" class="M7-label">Country: </label> <br><br>
-              <input type="text" name="country" list="countries" id="country" value="{{ applicant_user.country }}" class="M7-field">
-              <datalist id="countries">
-                <option value="Egypt">Egypt</option>
-                <option value="France">France</option>
-                <option value="Germany">Germany</option>
-                <option value="Spain">Spain</option>
-                <option value="Poland">Poland</option>
-                <option value="Scotland">Scotland</option>
-                <option value="United Kingdom">United Kingdom</option>
-              </datalist>
 
-              <!-- <select type="" name="country" id="country" value="" class="M7-field" >
+      <br><br>
+
+      <fieldset class="M7-fieldset">
+
+        <h1 class="M7-h1 M7-gradient-text" style="padding: 20px;">Business Info</h1>
+
+        <br>
+        <div>
+
+          <label for="cname" class="M7-label">Company name: </label> <br><br>
+          <input type="text" name="cname" id="cname" value="{{ applicant_user.company_name }}" class="M7-field">
+
+        </div>
+
+
+        <br>
+        <br>
+
+        <div>
+
+          <label for="bemail" class="M7-label">Business E-mail: </label> <br><br>
+          <input type="email" name="bemail" id="bemail" value="{{ applicant_user.business_email }}" class="M7-field">
+
+        </div>
+
+
+        <br>
+        <br>
+
+        <div>
+
+          <label for="skills" class="M7-label">Skills and Certificates: </label> <br><br>
+          <textarea name="skills" id="skills" cols="40" rows="5" placeholder="frontend Web Developer" class="M7-field"
+            itemid="skills">{{ applicant_user.skills }}</textarea>
+
+        </div>
+
+
+        <br>
+
+      </fieldset>
+
+      <br>
+      <br>
+
+      <fieldset class="M7-fieldset">
+
+        <h1 class="M7-h1 M7-gradient-text" style="padding: 20px;">Social Media</h1>
+
+        <br>
+
+        <div>
+
+          <label for="net1" class="M7-label">Network 1: </label> <br><br>
+          <input type="text" name="net1" id="net1" value="{{ applicant_user.network1 }}" class="M7-field">
+
+        </div>
+
+        <br>
+        <br>
+
+        <div>
+
+          <label for="net2" class="M7-label">Network 2: </label> <br><br>
+          <input type="text" name="net2" id="net2" value="{{ applicant_user.network2 }}" class="M7-field">
+
+        </div>
+
+        <br>
+        <br>
+
+      </fieldset>
+
+      <br>
+      <br>
+
+      <fieldset class="M7-fieldset">
+        <h1 class="M7-h1 M7-gradient-text" style="padding: 20px;">Address and Location</h1>
+
+        <br>
+        <br>
+
+        <div>
+
+          <label for="address" class="M7-label">Address: </label> <br><br>
+          <input type="text" name="address" id="address" value="{{ applicant_user.address }}" class="M7-field"
+            placeholder="Cowrasta, Chandana, Gazipur, Sadar">
+
+        </div>
+
+        <br>
+        <br>
+
+
+        <div>
+
+          <label for="country" class="M7-label">Country: </label> <br><br>
+          <input type="text" name="country" list="countries" id="country" value="{{ applicant_user.country }}"
+            class="M7-field">
+          <datalist id="countries">
+            <option value="Egypt">Egypt</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Spain">Spain</option>
+            <option value="Poland">Poland</option>
+            <option value="Scotland">Scotland</option>
+            <option value="United Kingdom">United Kingdom</option>
+          </datalist>
+
+          <!-- <select type="" name="country" id="country" value="" class="M7-field" >
                 <
 
               </select> -->
 
-            </div>
+        </div>
 
-            <br>
-            <br>
-
-
-            <div>
-
-              <label for="city" class="M7-label">City: </label> <br><br>
-              <input type="text" name="city" id="city" list="cities" value="{{ applicant_user.city }}" class="M7-field" >
-              <datalist id="cities">
-                <option value="Cairo">Cairo</option>
-                <option value="Paris">Paris</option>
-                <option value="Berlin">Berlin</option>
-                <option value="Los Angelos">Los Angelos</option>
-                <option value="New York">New York</option>
-                <option value="London">London</option>
-                <option value="Moscow">Moscow</option>
-              </datalist>
-
-            </div>
-
-            <br>
-            <br>
+        <br>
+        <br>
 
 
-            <div>
+        <div>
 
-              <label for="zip" class="M7-label">ZIP Code: </label> <br><br>
-              <input type="number" name="zip" id="zip" value="{{ applicant_user.zip }}" class="M7-field" >
+          <label for="city" class="M7-label">City: </label> <br><br>
+          <input type="text" name="city" id="city" list="cities" value="{{ applicant_user.city }}" class="M7-field">
+          <datalist id="cities">
+            <option value="Cairo">Cairo</option>
+            <option value="Paris">Paris</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Los Angelos">Los Angelos</option>
+            <option value="New York">New York</option>
+            <option value="London">London</option>
+            <option value="Moscow">Moscow</option>
+          </datalist>
 
-            </div>
+        </div>
 
-            <br>
-            <br>
-
-
-            <div>
-
-              <label for="state" class="M7-label">State/Governorat: </label> <br><br>
-              <input type="text" name="state" id="state" list="states" value="{{ applicant_user.state }}" class="M7-field" >
-              <datalist id="states">
-                <option value="Cairo">Cairo</option>
-                <option value="Paris">Paris</option>
-                <option value="Berlin">Berlin</option>
-                <option value="Los Angelos">Los Angelos</option>
-                <option value="New York">New York</option>
-                <option value="London">London</option>
-                <option value="Moscow">Moscow</option>
-              </datalist>
-
-            </div>
-
-            <br>
-            <br>
-
-          </fieldset>
-
-          <br>
-
-          <div class="">
-
-            <a href="/templatess/profile.html">
-              <button class="M7-edit" type="submit" onclick="save_changes()">Save Changes</button>
-            </a>
-
-            <a href="profile.html">
-            <button class="M7-p_img_button_clear" type="reset">Cancel</button>
-            </a>
-          </div>
-
-        </form>
+        <br>
+        <br>
 
 
+        <div>
 
-      </section>
+          <label for="zip" class="M7-label">ZIP Code: </label> <br><br>
+          <input type="number" name="zip" id="zip" value="{{ applicant_user.zip }}" class="M7-field">
 
-    </main>
+        </div>
+
+        <br>
+        <br>
+
+
+        <div>
+
+          <label for="state" class="M7-label">State/Governorat: </label> <br><br>
+          <input type="text" name="state" id="state" list="states" value="{{ applicant_user.state }}" class="M7-field">
+          <datalist id="states">
+            <option value="Cairo">Cairo</option>
+            <option value="Paris">Paris</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Los Angelos">Los Angelos</option>
+            <option value="New York">New York</option>
+            <option value="London">London</option>
+            <option value="Moscow">Moscow</option>
+          </datalist>
+
+        </div>
+
+        <br>
+        <br>
+
+      </fieldset>
+
+      <br>
+
+      <div class="">
+
+        <a href="">
+          <button class="M7-edit" type="submit">Save Changes</button>
+        </a>
+
+        <a href="profile.html">
+          <button class="M7-p_img_button_clear" type="reset">Cancel</button>
+        </a>
+      </div>
+
+      </form>
+
+
+
+    </section>
+
+  </main>
+  <div>
     <div>
-      <div>
 
 
 
-{% endblock %}
+      {% endblock %}
