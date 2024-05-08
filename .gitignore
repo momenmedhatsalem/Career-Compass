@@ -1,3 +1,4 @@
 
 .Joseph
 venv
+backend/db.sqlite3
