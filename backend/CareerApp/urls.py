@@ -13,7 +13,4 @@ urlpatterns = [
     path("checkCandidates/", view=views.checkCandidates, name="checkCandidates"),
     path("edit_Job/", view=views.edit_Job, name="edit_Job"),
     path("AppliedCandidateProfile/", view=views.AppliedCandidateProfile, name="AppliedCandidateProfile"),
-    path("login/", view=views.login, name="login"),
-    path("signup/", view=views.signup, name="signup"),
-    path("recruitersignup/", view=views.recruitersignup, name="recruitersignup"),
 ]
