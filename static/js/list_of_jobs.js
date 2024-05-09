@@ -77,27 +77,33 @@
 //     elem.innerHTML=txt;
 //     p.appendChild(elem);
 // }
-
 function save(id){
     // const xhttp = new XMLHttpRequest();
     // xhttp.open("GET", "save_job#"+id);
     // xhttp.send();
-    button = document.querySelector(f`[onclick='save${id}']`);
-    // if (button.styleback == )
-    var dataToSend = {
-        'id': id,
-    };
-    ajax({
-        type: 'POST',
-        url: '/receive_job_to_save_it/',
-        data: dataToSend,
-        dataType: 'json',
-        success: function(response) {
-            // Handle the response from the server
-            console.log(response);
-        },
-        error: function(xhr, errmsg, err) {
-            console.log(xhr.status + ": " + xhr.responseText);
-        }
-    });
+    button = document.getElementById(id);
+    if (button.style.backgroundColor === 'transparent' ){
+        console.log(56548545);
+        button.style.backgroundColor ='green'; 
+        var dataToSend = {
+            'id': id,
+        };
+        ajax({
+            type: 'POST',
+            url: '/receive_job_to_save_it/',
+            data: dataToSend,
+            dataType: 'json',
+            success: function(response) {
+                // Handle the response from the server
+                console.log(response);
+            },
+            error: function(xhr, errmsg, err) {
+                console.log(xhr.status + ": " + xhr.responseText);
+            }
+        });
+    }
+    else{
+        
+    }
+   
 }

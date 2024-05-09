@@ -22,7 +22,7 @@
                 {{ job.title  }}
               </h3>
               <div class="save-button-div">
-                <button class="save-button " onclick="save(name)" name="{{job.id}}"><img src="{% static 'saved.png' %}" title="save job" class="save-button-img"> </button>
+                <button class="save-button " onclick="save(id)" id="55"><img src="{% static 'saved.png' %}" title="save job" class="save-button-img"> </button>
               </div>
               <div class="salary">${{job.MinSalary}} - {{job.MaxSalary}} / {{job.salary}}</div>
               <div class="location">{{job.city}}, {{job.country}}</div>
@@ -34,6 +34,7 @@
     </div>
     <div>
   </section>
+  <script src="{%static 'js/list_of_jobs.js' %}"></script>
 
 
 {% endblock %}
