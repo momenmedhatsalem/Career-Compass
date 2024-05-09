@@ -1,6 +1,6 @@
 # Create your models here.
 from django.db import models
-from UserApp.models import Applicant, Recruiter
+from UserApp.models import Applicant, Recruiter ,CustomUser
 from django.utils import timezone
 
 class JobCategory(models.Model):
@@ -52,15 +52,15 @@ class Job(models.Model):
 
 
 class SavedJob(models.Model):
-    applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE, related_name="saved_jobs")
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="saved_jobs")
     job = models.ForeignKey(Job, on_delete=models.CASCADE)
     saved_date = models.DateTimeField(auto_now_add=True)
     
     class Meta:
-        unique_together = ('applicant', 'job')
+        unique_together = ('user', 'job')
 
     def __str__(self):
-        return f"{self.applicant.username} saved {self.job.title}"
+        return f"{self.user.username} saved {self.job.title}"
 
 
 class Application(models.Model):
