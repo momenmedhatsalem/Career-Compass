@@ -18,14 +18,15 @@
 <script src="{% static 'js/edit_profile.js' %}"></script>
 
 <div class="J9_emp_dash_body J9">
-    
+
     <aside class="J9_emp_dash_aside">
         <div class="J9_emp_dash_aside_fixed">
-    
+
             <div class="J9_emp_dash_aside_logo_prof_pic">
                 <!-- <a class="J9_emp_dash_aside_logo" href="index.html"><img src="{% static 'images/logopng.png' %}" alt=""></a> -->
                 <a class="J9_emp_dash_aside_prof_pic" href="recruiter_dashboard.html">
-                    <img {% if rec.user.photo.url != null %} src="{{rec.user.photo.url}}" {% else %} src="../static/images/employer.png"{% endif %} alt="profile photo">
+                    <img {% if rec.user.photo.url !=null %} src="{{rec.user.photo.url}}" {% else %}
+                        src="../static/images/employer.png" {% endif %} alt="profile photo">
                 </a>
                 <h3 id="J9_emp_dash_aside_prof_username"></h3>
             </div>
@@ -50,11 +51,12 @@
                         candidates</span>
                 </p>
                 <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_settings">
-                    <img J9_to_path="J9_recruiter_dashboard_settings" src="{% static 'icons/setting.svg' %}" alt="setting">
+                    <img J9_to_path="J9_recruiter_dashboard_settings" src="{% static 'icons/setting.svg' %}"
+                        alt="setting">
                     <span J9_to_path="J9_recruiter_dashboard_settings">Account
                         Settings</span>
                 </p>
-    
+
             </div>
             <a href="{% url 'logout'%}" class="J9_emp_dash_aside_logout" href="#">
                 <img src="{% static 'icons/logout.svg' %}" alt="LogoutIco">
@@ -62,7 +64,7 @@
             </a>
         </div>
     </aside>
-    
+
     <div class="J9_emp_dash_right_side">
         <div class="J9_emp_dash_right_side_container">
             <!-- <div class="J9_emp_dash_right_side_top_nav">
@@ -72,18 +74,19 @@
                     Post a Job</p>
     
             </div> -->
-    
+
             <div class="J9_emp_dash_right_side_body">
                 <div class="J9_emp_dash_right_side_body_title">
                     <h2 id="J9_emp_dash_right_side_body_title">Profile</h2>
                 </div>
-    
+
                 <div id="J9_recruiter_dashboard_profile">
                     <form class="J9_emp_dash_prof_right_side_body_emp_divs" id="J9_employer_profile_form">
                         <div class="J9_emp_dash_prof_right_side_body_emp_information">
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_photo">
-                                <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo.url != null %} src="{{rec.user.photo.url}}" {% else %} src="../static/images/employer.png"{% endif %}
-                                    alt="profile photo">
+                                <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo.url !=null %}
+                                    src="{{rec.user.photo.url}}" {% else %} src="../static/images/employer.png" {% endif
+                                    %} alt="profile photo">
                                 <div>
                                     <label class="J9_custom_file_upload">Upload new photo <input
                                             id="J9_recruiter_profile_photo" name="profile_photo" type="file"
@@ -92,60 +95,60 @@
                                 <button
                                     class="J9_emp_dash_prof_right_side_body_emp_information_photo_delete">Delete</button>
                             </div>
-    
+
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_name">
                                 <label>Employer Name</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_name" class="j9Name"
                                     name="employer_name" type="text" disabled value="{{ rec.user.first_name }}">
                             </div>
-    
+
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_email">
                                 <label>Email</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_email" class="j9Email"
                                     name="employer_email" type="email" disabled value="20220099@stud.fci-cu.edu.eg">
                             </div>
-    
+
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_website">
                                 <label>Website</label>
-                                <input id="J9_emp_dash_prof_right_side_body_emp_information_website" name="employer_website"
-                                    type="text" placeholder="http://something.com">
+                                <input id="J9_emp_dash_prof_right_side_body_emp_information_website"
+                                    name="employer_website" type="text" placeholder="http://something.com">
                             </div>
-    
+
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_founded_date">
                                 <label>Founded Date</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_founded_date"
                                     name="founded_date" type="date" required>
                             </div>
-    
+
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_company_size">
                                 <label>Company Size</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_company_size"
                                     name="company_size" type="number" value="600">
                             </div>
-    
+
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_phone_number">
                                 <label>Phone Number</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_phone_number"
                                     name="phone_number" type="tel" disabled value="">
                             </div>
-    
+
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_category">
                                 <label>Category*</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_category" name="category"
                                     type="text" required placeholder="Account, Finance, Marketing">
                             </div>
-    
+
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_about_company">
                                 <label>About Company*</label>
                                 <textarea id="J9_emp_dash_prof_right_side_body_emp_information_about_company" required
                                     placeholder="About Company....."></textarea>
                             </div>
-    
+
                         </div>
-    
+
                         <div class="J9_emp_dash_prof_right_side_body_emp_social_media">
                             <h3 class="J9_emp_dash_prof_right_side_body_emp_social_media_title">Social Media</h3>
-    
+
                             <div class="J9_emp_dash_prof_right_side_body_emp_social_media_links"
                                 id="J9_emp_dash_prof_right_side_body_emp_social_media_links">
                                 <div class="J9_emp_dash_prof_right_side_body_emp_social_media_link">
@@ -154,20 +157,20 @@
                                     <input name="social_media_link" type="text" value="">
                                 </div>
                             </div>
-    
+
                             <a href="#" onclick="J9_rec_social_media_add_link()"
                                 class="J9_emp_dash_prof_right_side_body_emp_social_media_add_link"> <b>+</b> Add
                                 more
                                 link</a>
                         </div>
-    
+
                         <div class="J9_emp_dash_prof_right_side_body_emp_address_location">
                             <h3 class="J9_emp_dash_prof_right_side_body_emp_address_location_title">Address & Location
                             </h3>
                             <div class="J9_emp_dash_prof_right_side_body_emp_address">
                                 <label>Address*</label>
-                                <input id="J9_emp_dash_prof_right_side_body_emp_address" name="address" type="text" required
-                                    value="Giza">
+                                <input id="J9_emp_dash_prof_right_side_body_emp_address" name="address" type="text"
+                                    required value="Giza">
                             </div>
                             <div class="J9_emp_dash_prof_right_side_body_emp_location">
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_country">
@@ -418,7 +421,8 @@
                                 </div>
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_city">
                                     <label>City*</label>
-                                    <select id="J9_emp_dash_prof_right_side_body_emp_location_city" name="city" required>
+                                    <select id="J9_emp_dash_prof_right_side_body_emp_location_city" name="city"
+                                        required>
                                         <option value="cairo">Cairo</option>
                                         <option value="alexandria">Alexandria</option>
                                         <option value="giza">Giza</option>
@@ -461,7 +465,8 @@
                                 </div>
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_state">
                                     <label>State*</label>
-                                    <select id="J9_emp_dash_prof_right_side_body_emp_location_state" name="state" required>
+                                    <select id="J9_emp_dash_prof_right_side_body_emp_location_state" name="state"
+                                        required>
                                         <option value="cairo">Cairo</option>
                                         <option value="alexandria">Alexandria</option>
                                         <option value="giza">Giza</option>
@@ -496,21 +501,22 @@
                                         <option value="el-faiyum">El-Faiyum</option>
                                         <option value="tahta">Tahta</option>
                                     </select>
-    
+
                                 </div>
                             </div>
                         </div>
-    
-    
+
+
                         <div class="J9_emp_dash_prof_right_side_body_emp_profile_save_cancel_button">
-                            <input id="J9_emp_dash_prof_right_side_body_emp_profile_save_button" type="submit" value="save">
+                            <input id="J9_emp_dash_prof_right_side_body_emp_profile_save_button" type="submit"
+                                value="save">
                             <input id="J9_emp_dash_prof_right_side_body_emp_profile_cancel_button" type="button"
                                 value="Cancel">
                         </div>
-    
+
                     </form>
                 </div>
-    
+
                 <div id="J9_recruiter_dashboard_jobs" style="display: none;">
                     <div class="J9_emp_dash_jobs_right_side_body_emp_jobs">
                         <table class="J9_emp_dash_jobs_right_side_body_emp_jobs_table">
@@ -528,9 +534,9 @@
                             </tbody>
                         </table>
                     </div>
-    
+
                 </div>
-    
+
                 <div id="J9_recruiter_dashboard_post_job" style="display: none;">
                     <form id="J9_recruiter_add_job_form" class="J9_emp_dash_post_job_right_side_body_container">
                         <div class="J9_emp_dash_post_job_right_side_body_container_job_details">
@@ -558,21 +564,25 @@
                                         <option>closed</option>
                                     </select>
                                 </div>
-                                <div class="J9_emp_dash_post_job_right_side_body_container_job_details_years_of_experience">
+                                <div
+                                    class="J9_emp_dash_post_job_right_side_body_container_job_details_years_of_experience">
                                     <label>years of experience*</label><input name="years_of_experience"
                                         id="J9_recruiter_add_job_years_of_experience" required type="number"
                                         placeholder="2" />
                                 </div>
                             </div>
                             <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_description">
-                                <label>Job Description*</label><textarea name="job_desc" id="J9_recruiter_add_job_job_desc"
-                                    required placeholder="Job Description....."></textarea>
+                                <label>Job Description*</label><textarea name="job_desc"
+                                    id="J9_recruiter_add_job_job_desc" required
+                                    placeholder="Job Description....."></textarea>
                             </div>
-    
+
                             <div
                                 class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category_type_Salary">
-                                <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category_type">
-                                    <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category">
+                                <div
+                                    class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category_type">
+                                    <div
+                                        class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category">
                                         <label>Job Category*</label>
                                         <select required name="job_category" id="J9_recruiter_add_job_job_category">
                                             <option>Designer</option>
@@ -592,7 +602,8 @@
                                     </div>
                                 </div>
                                 <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_salary">
-                                    <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_salary_type">
+                                    <div
+                                        class="J9_emp_dash_post_job_right_side_body_container_job_details_job_salary_type">
                                         <label>Salary*</label>
                                         <select required name="salary" id="J9_recruiter_add_job_salary">
                                             <option>Monthly</option>
@@ -609,7 +620,7 @@
                                 </div>
                             </div>
                         </div>
-    
+
                         <div class="J9_emp_dash_post_job_right_side_body_container_skills_experience">
                             <h3>English Experience</h3>
                             <div class="J9_emp_dash_post_job_right_side_body_container_experience">
@@ -632,8 +643,8 @@
                                 </div>
                             </div>
                         </div>
-    
-    
+
+
                         <div class="J9_emp_dash_post_job_right_side_body_emp_address_location">
                             <h3 class="J9_emp_dash_post_job_right_side_body_emp_address_location_title">Address &
                                 Location
@@ -968,11 +979,11 @@
                                         <option value="el-faiyum">El-Faiyum</option>
                                         <option value="tahta">Tahta</option>
                                     </select>
-    
+
                                 </div>
                             </div>
                         </div>
-    
+
                         <div class="J9_emp_dash_post_job_right_side_body_emp_profile_save_cancel_button">
                             <input id="J9_emp_dash_post_job_right_side_body_emp_profile_save_button" type="submit"
                                 value="Submit">
@@ -981,7 +992,7 @@
                         </div>
                     </form>
                 </div>
-    
+
                 <div id="J9_recruiter_dashboard_saved_candidates" style="display: none;">
                     <a href="/checkCandidates">
                         <h3>All Candidates</h3>
@@ -1001,7 +1012,8 @@
                                         <span>Salary</span>
                                         <div>20$ - 50$</div>
                                     </div>
-                                    <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_location">
+                                    <div
+                                        class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_location">
                                         <span>Location</span>
                                         <div>Giza</div>
                                     </div>
@@ -1014,7 +1026,8 @@
                                                 class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
                                                 <li><a href="#"><img src="../static/icons/eye2.svg" alt="">view</a>
                                                 </li>
-                                                <li><a href="#"><img src="../static/icons/delete.svg" alt="">delete</a></li>
+                                                <li><a href="#"><img src="../static/icons/delete.svg" alt="">delete</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1031,8 +1044,8 @@
                                 </div>
                             </div>
                         </div>
-    
-    
+
+
                         <div class="J9_emp_dash_saved_candidates_right_side_candidate_card">
                             <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_photo">
                                 <a href="#"><img src="../static/images/candidate2.jpg" alt=""></a>
@@ -1047,7 +1060,8 @@
                                         <span>Salary</span>
                                         <div>20$ - 50$</div>
                                     </div>
-                                    <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_location">
+                                    <div
+                                        class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_location">
                                         <span>Location</span>
                                         <div>Giza</div>
                                     </div>
@@ -1060,7 +1074,8 @@
                                                 class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
                                                 <li><a href="#"><img src="../static/icons/eye2.svg" alt="">view</a>
                                                 </li>
-                                                <li><a href="#"><img src="../static/icons/delete.svg" alt="">delete</a></li>
+                                                <li><a href="#"><img src="../static/icons/delete.svg" alt="">delete</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1091,7 +1106,8 @@
                                         <span>Salary</span>
                                         <div>20$ - 50$</div>
                                     </div>
-                                    <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_location">
+                                    <div
+                                        class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_location">
                                         <span>Location</span>
                                         <div>Giza</div>
                                     </div>
@@ -1104,7 +1120,8 @@
                                                 class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
                                                 <li><a href="#"><img src="../static/icons/eye2.svg" alt="">view</a>
                                                 </li>
-                                                <li><a href="#"><img src="../static/icons/delete.svg" alt="">delete</a></li>
+                                                <li><a href="#"><img src="../static/icons/delete.svg" alt="">delete</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1135,7 +1152,8 @@
                                         <span>Salary</span>
                                         <div>20$ - 50$</div>
                                     </div>
-                                    <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_location">
+                                    <div
+                                        class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_location">
                                         <span>Location</span>
                                         <div>Giza</div>
                                     </div>
@@ -1148,7 +1166,8 @@
                                                 class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
                                                 <li><a href="#"><img src="../static/icons/eye2.svg" alt="">view</a>
                                                 </li>
-                                                <li><a href="#"><img src="../static/icons/delete.svg" alt="">delete</a></li>
+                                                <li><a href="#"><img src="../static/icons/delete.svg" alt="">delete</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1168,9 +1187,10 @@
                         <p class="J9_demo">It's a demo version</p>
                     </div>
                 </div>
-    
+
                 <div id="J9_recruiter_dashboard_settings" style="display: none;">
-                    <form id="J9_recruiter_dashboard_settings_form" class="J9_emp_dash_settings_right_side_body_container">
+                    <form id="J9_recruiter_dashboard_settings_form"
+                        class="J9_emp_dash_settings_right_side_body_container">
                         <h3>Edit & Update</h3>
                         <div class="J9_emp_dash_settings_right_side_body_container_name">
                             <div class="J9_emp_dash_settings_right_side_body_container_name_first">
@@ -1184,19 +1204,19 @@
                                     type="text" required value="">
                             </div>
                         </div>
-    
+
                         <div class="J9_emp_dash_settings_right_side_body_container_email">
                             <label>Email</label>
-                            <input id="J9_emp_dash_settings_right_side_body_container_email" class="j9Email" name="email"
-                                type="text" required value="">
+                            <input id="J9_emp_dash_settings_right_side_body_container_email" class="j9Email"
+                                name="email" type="text" required value="">
                         </div>
-    
+
                         <div class="J9_emp_dash_settings_right_side_body_container_phone_num">
                             <label>Phone Number</label>
                             <input id="J9_emp_dash_settings_right_side_body_container_phone_num" name="phone_number"
                                 type="text" required value="">
                         </div>
-    
+
                         <div class="J9_emp_dash_settings_right_side_body_container_password">
                             <div class="J9_emp_dash_settings_right_side_body_container_password_input">
                                 <label>Password</label>
@@ -1208,7 +1228,7 @@
                                     Want to change the password?
                                     <a href="#">Click here</a>
                                 </p>
-    
+
                             </div>
                         </div>
                         <div class="J9_emp_dash_settings_right_side_body_emp_settings_save_cancel_button">
@@ -1218,16 +1238,16 @@
                                 value="Cancel">
                         </div>
                     </form>
-    
+
                 </div>
-    
-    
+
+
             </div>
-    
-    
+
+
         </div>
     </div>
-    
+
 </div>
 <script src="{% static 'js/recruiter_dashboard.js' %}"></script>
 <script src="{% static 'js/recruiter_dashboard_jobs.js' %}"></script>
