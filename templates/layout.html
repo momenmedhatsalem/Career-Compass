@@ -87,17 +87,18 @@
 
       </ul>
     </nav>
-    <a class="J9_login_signup_find_post" 
+    <a class="J9_login_signup_find_post"
     {% if user.is_applicant != True and user.is_recruiter != True %}
     id="J9_login_signup"
-    href="{% url 'login' %}">Login/Sign up</a>
+    href="{% url 'login' %}">Login/Sign up
     {% elif user.is_applicant %}
     id="J9_look_for_a_job"
-    href="{% url 'jobs' %}">look for a job</a>
+    href="{% url 'jobs' %}">look for a job
     {% else %}
     id="J9_post_job"
-    href="{% url 'recruiterDashboard' %}">Post a job</a>
+    href="{% url 'recruiterDashboard' %}">Post a job
     {% endif %}
+    </a>
     <!-- <div id="J9_login_signup_container" class="J9_login_signup">
       <ul class="J9_login_signup_ul">
         <li id="J9_login_signup" style="display: none;"><a href="login.html">Login/Sign up</a></li>
