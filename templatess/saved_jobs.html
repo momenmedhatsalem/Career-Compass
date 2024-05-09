@@ -15,12 +15,12 @@
             <img src="{% static '/front.png' %}" class="job-img">
           </div>
           <div class="desc">
-            <div class="job-name"> {{job.title}} </div> 
-            <div class="salary"> ${{job.MinSalary}} - {{job.MaxSalary}} / {{job.salary}}</div>
-            <div class="city"> {{job.city}}, {{job.country}}</div>
-            <div class="description">{{job.description}} </div>  
-            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="{{job.job.job_id}}">Delete</button> 
-            <a href="#" class="view-ancor"> <button type="button" class="view-button"  value="view" name="{{job.job.job_id}}" onclick="view(name)">view</button></a>
+            <div class="job-name"> {{job.job.title}} </div> 
+            <div class="salary"> ${{job.job.MinSalary}} - {{job.job.MaxSalary}} / {{job.job.salary}}</div>
+            <div class="city"> {{job.job.city}}, {{job.job.country}}</div>
+            <div class="description">{{job.job.description}} </div>  
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="{{job.job.job.job.job_id}}">Delete</button> 
+            <a href="#" class="view-ancor"> <button type="button" class="view-button"  value="view" name="{{job.job.job.job.job_id}}" onclick="view(name)">view</button></a>
         </div>
         </div>
         {% endfor %}
