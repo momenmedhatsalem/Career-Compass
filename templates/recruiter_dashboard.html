@@ -104,43 +104,42 @@
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_email">
                                 <label>Email</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_email" class="j9Email"
-                                    name="employer_email" type="email" disabled value="20220099@stud.fci-cu.edu.eg">
+                                    name="employer_email" type="email" disabled value="{{ rec.user.email }}">
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_website">
                                 <label>Website</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_website"
-                                    name="employer_website" type="text" placeholder="http://something.com">
+                                    name="employer_website" type="text" {% if rec.website %} value="{{ rec.website }}" {% endif %} placeholder="http://something.com">
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_founded_date">
                                 <label>Founded Date</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_founded_date"
-                                    name="founded_date" type="date" required>
+                                    name="founded_date" type="date" required value="{{ rec.founded_date }}">
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_company_size">
                                 <label>Company Size</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_company_size"
-                                    name="company_size" type="number" value="600">
+                                    name="company_size" type="number" value="{{ rec.founded_date }}" placeholder="600">
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_phone_number">
                                 <label>Phone Number</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_phone_number"
-                                    name="phone_number" type="tel" disabled value="">
+                                    name="phone_number" type="tel" disabled value="{{ rec.user.phone }}">
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_category">
                                 <label>Category*</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_category" name="category"
-                                    type="text" required placeholder="Account, Finance, Marketing">
+                                    type="text" required {% if rec.category %}  value="{{ rec.category }}" {% endif %} placeholder="Account, Finance, Marketing">
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_about_company">
                                 <label>About Company*</label>
-                                <textarea id="J9_emp_dash_prof_right_side_body_emp_information_about_company" required
-                                    placeholder="About Company....."></textarea>
+                                <textarea id="J9_emp_dash_prof_right_side_body_emp_information_about_company" required {% if rec.about_company %} value="{{ rec.about_company }}" {% endif %} placeholder="About Company....."></textarea>
                             </div>
 
                         </div>
@@ -164,18 +163,19 @@
                         </div>
 
                         <div class="J9_emp_dash_prof_right_side_body_emp_address_location">
-                            <h3 class="J9_emp_dash_prof_right_side_body_emp_address_location_title">Address & Location
+                            <h3 class="J9_emp_dash_prof_right_side_body_emp_address_location_title">Address &amp; Location</h3>
                             </h3>
                             <div class="J9_emp_dash_prof_right_side_body_emp_address">
                                 <label>Address*</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_address" name="address" type="text"
-                                    required value="Giza">
+                                    required {% if rec.address %} value="{{ rec.address }}" {% endif %} placeholder="Giza">
                             </div>
                             <div class="J9_emp_dash_prof_right_side_body_emp_location">
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_country">
                                     <label>Country*</label>
                                     <select id="J9_emp_dash_prof_right_side_body_emp_location_country" name="country"
-                                        required>
+                                        required {% if user.countary %} value="{{ user.countary }}" {% endif %} >
+                                        <option value="" selected disabled hidden>Country</option>
                                         <option value="Afghanistan">Afghanistan</option>
                                         <option value="Albania">Albania</option>
                                         <option value="Algeria">Algeria</option>
@@ -205,8 +205,6 @@
                                         <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
                                         <option value="Botswana">Botswana</option>
                                         <option value="Brazil">Brazil</option>
-                                        <option value="British Indian Ocean Territory">British Indian Ocean Territory
-                                        </option>
                                         <option value="Brunei Darussalam">Brunei Darussalam</option>
                                         <option value="Bulgaria">Bulgaria</option>
                                         <option value="Burkina Faso">Burkina Faso</option>
@@ -421,7 +419,7 @@
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_city">
                                     <label>City*</label>
                                     <select id="J9_emp_dash_prof_right_side_body_emp_location_city" name="city"
-                                        required>
+                                        required {% if user.city %} value="{{ user.city }}" {% endif %}>
                                         <option value="cairo">Cairo</option>
                                         <option value="alexandria">Alexandria</option>
                                         <option value="giza">Giza</option>
@@ -460,12 +458,12 @@
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_zip_code">
                                     <label>Zip Code*</label>
                                     <input id="J9_emp_dash_prof_right_side_body_emp_location_zip_code" name="zip_code"
-                                        type="number" required value="3740614">
+                                        type="number" required {% if user.zip_cpde %} value="{{ user.zip_cpde }}" {% endif %} placeholder="3740614">
                                 </div>
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_state">
                                     <label>State*</label>
                                     <select id="J9_emp_dash_prof_right_side_body_emp_location_state" name="state"
-                                        required>
+                                        required {% if user.state %} value="{{ user.state }}" {% endif %}>
                                         <option value="cairo">Cairo</option>
                                         <option value="alexandria">Alexandria</option>
                                         <option value="giza">Giza</option>
