@@ -1,3 +1,5 @@
+
+
 //--------------------------------------------------------------------------------------------------------------------------
 // class details{
 //     constructor(i,ti,cn,s,y,d,c,ty,sl){
@@ -61,17 +63,41 @@
 //-------------------------------------------------------------------------------------------------------
 
 
-let array = JSON.parse(localStorage.getItem("jobs"));
-let p = document.querySelector("table tr");
-for (let job of array){
-    let txt = ` <h3>
-                <a class="p2a" href="Job_Details.html"> ${job.details.title} </a>
-                </h3>
-                <div class="salary">${job.details.MinSalary}$ - ${job.details.MaxSalary}$ / ${job.details.salary}</div>
-                <div class="location">${job.address_and_location.city},${job.address_and_location.country}</div>
-                <a class="p2a" href="#"><button>Apply</button></a>`;
-    let elem = document.createElement("td");
-    elem.setAttribute("class","td");
-    elem.innerHTML=txt;
-    p.appendChild(elem);
+// let array = JSON.parse(localStorage.getItem("jobs"));
+// let p = document.querySelector("table tr");
+// for (let job of array){
+//     let txt = ` <h3>
+//                 <a class="p2a" href="Job_Details.html"> ${job.details.title} </a>
+//                 </h3>
+//                 <div class="salary">${job.details.MinSalary}$ - ${job.details.MaxSalary}$ / ${job.details.salary}</div>
+//                 <div class="location">${job.address_and_location.city},${job.address_and_location.country}</div>
+//                 <a class="p2a" href="#"><button>Apply</button></a>`;
+//     let elem = document.createElement("td");
+//     elem.setAttribute("class","td");
+//     elem.innerHTML=txt;
+//     p.appendChild(elem);
+// }
+
+function save(id){
+    // const xhttp = new XMLHttpRequest();
+    // xhttp.open("GET", "save_job#"+id);
+    // xhttp.send();
+    button = document.querySelector(f`[onclick='save${id}']`);
+    // if (button.styleback == )
+    var dataToSend = {
+        'id': id,
+    };
+    ajax({
+        type: 'POST',
+        url: '/receive_job_to_save_it/',
+        data: dataToSend,
+        dataType: 'json',
+        success: function(response) {
+            // Handle the response from the server
+            console.log(response);
+        },
+        error: function(xhr, errmsg, err) {
+            console.log(xhr.status + ": " + xhr.responseText);
+        }
+    });
 }
