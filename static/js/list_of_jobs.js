@@ -82,7 +82,7 @@ function save(id){
     // xhttp.open("GET", "save_job#"+id);
     // xhttp.send();
     button = document.getElementById(id);
-    if (button.style.backgroundColor === '' ){
+    if (button.style.backgroundColor === 'transparent' ){
         console.log(56548545);
         button.style.backgroundColor ='green'; 
         var dataToSend = {
