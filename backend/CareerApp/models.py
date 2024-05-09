@@ -49,18 +49,16 @@ class Job(models.Model):
         unique_together = ('job_id', 'recruiter',)
 
 
-
-
 class SavedJob(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="saved_jobs")
+    applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE, related_name="saved_jobs")
     job = models.ForeignKey(Job, on_delete=models.CASCADE)
     saved_date = models.DateTimeField(auto_now_add=True)
     
     class Meta:
-        unique_together = ('user', 'job')
+        unique_together = ('applicant', 'job')
 
     def __str__(self):
-        return f"{self.user.username} saved {self.job.title}"
+        return f"{self.applicant.user.username} saved {self.job.title}"
 
 
 class Application(models.Model):
