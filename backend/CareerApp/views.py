@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from UserApp.models import Applicant, Recruiter
 from .models import SavedJob
 from django.contrib.auth import get_user_model
+from django.http import JsonResponse
+
 
 def index(request):
     return render(request, "index.html")
@@ -43,6 +45,19 @@ def savedJobs(request):
     saved_jobs = SavedJob.objects.filter(applicant=user)
 
     return render(request, "saved_jobs.html",{"jobs":saved_jobs})
+
+def receive_job_to_save_it(request):
+    if request.method == 'POST' and request.is_ajax():
+        data_received = request.POST
+        job_id = data_received.get('id')
+        selected_job = Job.objects.filter(job_id = job_id)
+        SavedJob.objects.create(Applicant= Applicant.objects.get(user = request.user), job= selected_job)
+
+        # Return a JSON response
+        response_data = {'message': 'Data received successfully'}
+        return JsonResponse(response_data)
+    else:
+        return JsonResponse({'error': 'Invalid request'})
 
 def about(request):
     return render(request, "About_us.html")
