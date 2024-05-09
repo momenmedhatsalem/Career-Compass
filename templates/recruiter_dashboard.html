@@ -174,7 +174,7 @@
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_country">
                                     <label>Country*</label>
                                     <select id="J9_emp_dash_prof_right_side_body_emp_location_country" name="country"
-                                        required value="{{ user.countary |default:"Egypt" }}" >
+                                        required {% if user.countary %} value="{{ user.countary }}" {% endif %} >
                                         <option value="" selected disabled hidden>Country</option>
                                         <option value="Afghanistan">Afghanistan</option>
                                         <option value="Albania">Albania</option>
@@ -419,7 +419,7 @@
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_city">
                                     <label>City*</label>
                                     <select id="J9_emp_dash_prof_right_side_body_emp_location_city" name="city"
-                                        required>
+                                        required {% if user.city %} value="{{ user.city }}" {% endif %}>
                                         <option value="cairo">Cairo</option>
                                         <option value="alexandria">Alexandria</option>
                                         <option value="giza">Giza</option>
@@ -458,12 +458,12 @@
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_zip_code">
                                     <label>Zip Code*</label>
                                     <input id="J9_emp_dash_prof_right_side_body_emp_location_zip_code" name="zip_code"
-                                        type="number" required value="3740614">
+                                        type="number" required {% if user.zip_cpde %} value="{{ user.zip_cpde }}" {% endif %} placeholder="3740614">
                                 </div>
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_state">
                                     <label>State*</label>
                                     <select id="J9_emp_dash_prof_right_side_body_emp_location_state" name="state"
-                                        required>
+                                        required {% if user.state %} value="{{ user.state }}" {% endif %}>
                                         <option value="cairo">Cairo</option>
                                         <option value="alexandria">Alexandria</option>
                                         <option value="giza">Giza</option>
