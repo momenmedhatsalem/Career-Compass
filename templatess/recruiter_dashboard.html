@@ -25,7 +25,7 @@
             <div class="J9_emp_dash_aside_logo_prof_pic">
                 <!-- <a class="J9_emp_dash_aside_logo" href="index.html"><img src="{% static 'images/logopng.png' %}" alt=""></a> -->
                 <a class="J9_emp_dash_aside_prof_pic" href="recruiter_dashboard.html">
-                    <img {% if rec.user.photo.url != null %} src="{{rec.user.photo.url}}" {% else %} src="../static/arrow.png"{% endif %} alt="profile photo">
+                    <img {% if rec.user.photo.url != null %} src="{{rec.user.photo.url}}" {% else %} src="../static/images/employer.png"{% endif %} alt="profile photo">
                 </a>
                 <h3 id="J9_emp_dash_aside_prof_username"></h3>
             </div>
@@ -82,7 +82,7 @@
                     <form class="J9_emp_dash_prof_right_side_body_emp_divs" id="J9_employer_profile_form">
                         <div class="J9_emp_dash_prof_right_side_body_emp_information">
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_photo">
-                                <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo.url != null %} src="{{rec.user.photo.url}}" {% else %} src="../static/arrow.png"{% endif %}
+                                <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo.url != null %} src="{{rec.user.photo.url}}" {% else %} src="../static/images/employer.png"{% endif %}
                                     alt="profile photo">
                                 <div>
                                     <label class="J9_custom_file_upload">Upload new photo <input
