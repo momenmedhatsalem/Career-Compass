@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "CareerApp",
     "UserApp",
-   
 ]
 
 MIDDLEWARE = [
@@ -57,7 +56,7 @@ ROOT_URLCONF = "backend.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR.parent / "templatess"],
+        "DIRS": [BASE_DIR.parent / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -85,8 +84,8 @@ DATABASES = {
 
 import os
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -122,8 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 STATICFILES_DIRS = [
     BASE_DIR.parent / "static",
-    BASE_DIR.parent / 'media',
-    
+    BASE_DIR.parent / "media",
 ]
 STATIC_URL = "static/"
 
@@ -132,10 +130,10 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = 'UserApp.CustomUser'
+AUTH_USER_MODEL = "UserApp.CustomUser"
 
 
 AUTHENTICATION_BACKENDS = [
-    'UserApp.authentication.EmailAuthenticationBackend',
-    'django.contrib.auth.backends.ModelBackend',
-]  
+    "UserApp.authentication.EmailAuthenticationBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
