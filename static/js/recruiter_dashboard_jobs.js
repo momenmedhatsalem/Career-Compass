@@ -5,11 +5,11 @@ let my_jobs_table = document.getElementById(
 );
 
 if (my_jobs !== null) {
-my_jobs.forEach((element) => {
-  let row = document.createElement("tr");
-  row.className = "J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row";
-  row.id = `${"J9_job"+element.details.id}`;
-  let html = `
+  my_jobs.forEach((element) => {
+    let row = document.createElement("tr");
+    row.className = "J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row";
+    row.id = `${"J9_job" + element.details.id}`;
+    let html = `
   <td class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_title">
     <div>${element.details.title}</div>
     <div>${element.details.type} . ${element.address_and_location.country}</div>
@@ -31,7 +31,9 @@ my_jobs.forEach((element) => {
         <ul class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
         <li><a href="#"><img src="../static/icons/eye.svg">View</a>
         </li>
-        <li><a href="#"  onclick="edit(${element.details.id})"><img src="../static/icons/edit.svg">Edit</a>
+        <li><a href="#"  onclick="edit(${
+          element.details.id
+        })"><img src="../static/icons/edit.svg">Edit</a>
         </li>
         <li><a href="#" onclick="deleteJob(${
           element.details.id
@@ -43,9 +45,7 @@ my_jobs.forEach((element) => {
 
     my_jobs_table.appendChild(row);
   });
-
 }
-
 
 /*⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻*/
 
@@ -78,14 +78,14 @@ document.addEventListener("click", function (event) {
 
 /**********************************************************/
 
-function deleteJob (id) {
+function deleteJob(id) {
   document.getElementById("J9_job" + id).style.display = "none";
   const jobs = JSON.parse(localStorage.getItem("jobs"));
-  
+
   console.log(id);
   // Find the index of the job with the matching id
   const indexToDelete = jobs.findIndex((job) => Number(job.details.id) === id);
-  
+
   // If the job with the matching id is found, delete it
   if (indexToDelete !== -1) {
     jobs.splice(indexToDelete, 1); // Remove the job from the array
@@ -97,9 +97,20 @@ function deleteJob (id) {
 }
 
 //-------------------------------------------------------------------------------
-function edit(job_id){
+function edit(job_id) {
   localStorage.removeItem("id_of_edit_job");
-  localStorage.setItem("id_of_edit_job",JSON.stringify(job_id));
-  window.location.href ="/edit_Job"
+  localStorage.setItem("id_of_edit_job", JSON.stringify(job_id));
+  window.location.href = "/edit_Job";
 }
 
+function generateRandNum() {
+  return Math.floor(Math.random() * (300 - 10 + 1)) + 10;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  Array.from(document
+    .getElementsByClassName("J9_randomNumberOfApplications"))
+    .forEach((element) => {
+      element.innerHTML = `${generateRandNum()} Applications`;
+    });
+});
