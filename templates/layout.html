@@ -78,7 +78,7 @@
           </li> -->
 
         <li class="J9_nav_ul_item_in_header">
-          <a href="/search">Search</a>
+          <a {% if user.is_recruiter %} href="{% url "checkCandidates" %}" {% else %} href="{% url "search" %}" {% endif %} >Search</a>
         </li>
 
         <li class="J9_nav_ul_item_in_header">
