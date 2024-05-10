@@ -87,7 +87,8 @@ def logout_user(request):
     return redirect('home')  # Redirect to the home page after logout
 
 def viewCandidate(request, candidate_username):
-    viewedCandidate = Applicant.objects.filter(username=candidate_username).first()
+    get_user  = CustomUser.objects.filter(username=candidate_username).first()
+    viewedCandidate = Applicant.objects.filter(user = get_user).first()
     context={'viewedCandidate':viewedCandidate}
     return render(request,'viewCandidate.html',context)
 

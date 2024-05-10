@@ -17,5 +17,5 @@ urlpatterns = [
     path("index/", view=views.index, name="index"),
     path("checkCandidates/", view=views.checkCandidates, name="checkCandidates"),
     path("edit_Job/", view=views.edit_Job, name="edit_Job"),
-    path("viewCandidate/", view=views.viewCandidate, name="viewCandidate"),
+    # path("viewCandidate/", view=views.viewCandidate, name="viewCandidate"),
 ]

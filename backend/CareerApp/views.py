@@ -150,8 +150,8 @@ def save_profile(request):
     return render(request, "profile.html", {"applicant_user": applicant_user})
 
 
-def viewCandidate(request):
-    return render(request, "viewCandidate.html")
+# def viewCandidate(request):
+#     return render(request, "viewCandidate.html")
 
 
 def login(request):
