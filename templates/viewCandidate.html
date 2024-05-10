@@ -19,15 +19,15 @@
     <div>
       <div>
         <label for="fname">Full Name: </label>
-        <input type="text" id="fname" disabled>
+        <input type="text" id="fname" value = "{{ viewedCandidate.user.first_name}} {{viewedCandidate.user.last_name }}" disabled>
       </div>
       <div>
         <label for="pemail">Personal E-mail: </label>
-        <input type="email" id="pemail" disabled>
+        <input type="email" id="pemail" value = "{{ viewedCandidate.user.email}}" disabled>
       </div>
       <div>
         <label for="bio">Bio: </label>
-        <textarea id="bio" cols="40" rows="5" disabled></textarea>
+        <textarea id="bio" cols="40" rows="5" disabled>{% if viewedCandidate.bio %} {{ viewedCandidate.bio }} {% endif %}</textarea>
       </div>
     </div>
 
@@ -35,15 +35,15 @@
       <h1>Business Info</h1>
       <div>
         <label for="cname">Company name: </label>
-        <input type="text" id="cname" disabled>
+        <input type="text" id="cname" {% if viewedCandidate.company_name %} value = "{{ viewedCandidate.company_name }}" {% endif %} disabled>
       </div>
       <div>
         <label for="bemail">Business E-mail: </label>
-        <input type="email" id="bemail" disabled>
+        <input type="email" id="bemail" {% if viewedCandidate.business_email %} value = "{{ viewedCandidate.business_email }}" {% endif %} disabled>
       </div>
       <div>
         <label for="skills">Skills and Certificates: </label>
-        <textarea id="skills" cols="40" rows="5" disabled></textarea>
+        <textarea id="skills" cols="40" rows="5" disabled>{% if viewedCandidate.skills %} {{ viewedCandidate.skills }} {% endif %}</textarea>
       </div>
     </div>
 
@@ -51,11 +51,11 @@
       <h1>Social Media</h1>
       <div>
         <label for="net1">Network 1: </label>
-        <input type="text" id="net1" disabled>
+        <input type="text" id="net1" {% if viewedCandidate.network1 %} value = "{{ viewedCandidate.network1 }}" {% endif %} disabled>
       </div>
       <div>
         <label for="net2">Network 2: </label>
-        <input type="text" id="net2" disabled>
+        <input type="text" id="net2" {% if viewedCandidate.network2 %} value = "{{ viewedCandidate.network2 }}" {% endif %} disabled>
       </div>
     </div>
 
@@ -63,51 +63,23 @@
       <h1>Address and Location</h1>
       <div>
         <label for="address">Address: </label>
-        <input type="text" id="address" disabled>
+        <input type="text" id="address" {% if  viewedCandidate.address %} value = "{{ viewedCandidate.address }}" {% endif %} disabled>
       </div>
       <div>
         <label for="country">Country: </label>
-        <select type="" id="country" disabled>
-          <option value="Egypt">Egypt</option>
-          <option value="France">France</option>
-          <option value="Germany">Germany</option>
-          <option value="Spain">Spain</option>
-          <option value="Poland">Poland</option>
-          <option value="Scotland">Scotland</option>
-          <option value="United Kingdom">United Kingdom</option>
-        </select>
+        <input type="" id="country" {% if  viewedCandidate.country %} value = "{{ viewedCandidate.country }}" {% endif %} disabled>
       </div>
       <div>
         <label for="city">City: </label>
-        <select type="" id="city" disabled>
-          <option value="Cairo">Cairo</option>
-          <option value="Paris">Paris</option>
-          <option value="Berlin">Berlin</option>
-          <option value="Los Angelos">Los Angelos</option>
-          <option value="New York">New York</option>
-          <option value="London">London</option>
-          <option value="Moscow">Moscow</option>
-        </select>
+        <input type="" id="city" {% if  viewedCandidate.city %} value = "{{ viewedCandidate.city }}" {% endif %} disabled>
       </div>
       <div>
         <label for="zip">ZIP Code: </label>
-        <input type="number" id="zip" disabled>
+        <input type="number" id="zip" {% if  viewedCandidate.zip %} value = "{{ viewedCandidate.zip }}" {% endif %} disabled>
       </div>
       <div>
         <label for="state">State/Governorat: </label>
-        <select type="text" id="state" disabled>
-          <option value="Cairo">Cairo</option>
-          <option value="Paris">Paris</option>
-          <option value="Berlin">Berlin</option>
-          <option value="Los Angelos">Los Angelos</option>
-          <option value="New York">New York</option>
-          <option value="London">London</option>
-          <option value="Moscow">Moscow</option>
-        </select>
-      </div>
-      <div>
-        <label for="location">Map Location: </label>
-        <input type="" id="location" disabled>
+        <input type="text" id="state" {% if viewedCandidate.state %} value = "{{ viewedCandidate.state }}" {% endif %} disabled>
       </div>
     </div>
 

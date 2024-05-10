@@ -26,12 +26,12 @@
   object-fit: cover;
   position: absolute;
 }
-@media screen and (min-width: 800px) {
+/* @media screen and (min-width: 800px) {
   .J9_AppliedCanProf_pic {
     width: 230px;
     height: 230px;
   }
-}
+} */
 .J9_AppliedCanProf_pic ~ div {
   display: grid;
   gap: 1vh;
@@ -59,8 +59,8 @@
   margin-top: 2vh;
   margin-bottom: 1vh;
 }
-.J9_AppliedCanProf_pic ~ div > div > input,
-.J9_AppliedCanProf_pic ~ div > div > select {
+.J9_AppliedCanProf_pic ~ div > div > input/* ,
+.J9_AppliedCanProf_pic ~ div > div > select */ {
   height: 6vh;
   border-radius: 8px;
   background-color: rgb(226, 226, 226);
