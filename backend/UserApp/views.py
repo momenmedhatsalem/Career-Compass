@@ -85,3 +85,9 @@ from django.shortcuts import redirect
 def logout_user(request):
     logout(request)  # Log out the user
     return redirect('home')  # Redirect to the home page after logout
+
+def viewCandidate(request, candidate_username):
+    viewedCandidate = Applicant.objects.filter(username=candidate_username).first()
+    context={'viewedCandidate':viewedCandidate}
+    return render(request,'viewCandidate.html',context)
+

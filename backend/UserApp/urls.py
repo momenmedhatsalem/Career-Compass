@@ -23,4 +23,5 @@ urlpatterns = [
     path("signup/<str:mode>/", view=views.signup, name="signup"),
     path("login/", view=views.login_user, name="login"),
     path('logout/', view=views.logout_user, name='logout'),
+    path("candidate/<str:candidate_username>/", view=views.viewCandidate, name="viewCandidate"),
 ]
