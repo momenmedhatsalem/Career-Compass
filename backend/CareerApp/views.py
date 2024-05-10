@@ -9,60 +9,67 @@ from django.http import JsonResponse
 def index(request):
     return render(request, "index.html")
 
+
 @login_required
 def profile(request):
     user = request.user
     if user.is_applicant:
-        applicant_user = Applicant.objects.get(user = request.user)
+        applicant_user = Applicant.objects.get(user=request.user)
 
         # User is an applicant
-        return render(request, "profile.html", { 'applicant_user': applicant_user })
+        return render(request, "profile.html", {"applicant_user": applicant_user})
     elif user.is_recruiter:
         # User is a recruiter
-        return redirect('recruiterDashboard')
-
-
+        return redirect("recruiterDashboard")
 
 
 @login_required
 def recruiterDashboard(request):
     if request.user.is_applicant:
         # User is an applicant
-        return redirect('profile')
+        return redirect("profile")
     elif request.user.is_recruiter:
-        rec = Recruiter.objects.get(user = request.user)
-    return render(request, "recruiter_dashboard.html", {'rec' : rec})
+        rec = Recruiter.objects.get(user=request.user)
+    return render(request, "recruiter_dashboard.html", {"rec": rec})
+
 
 def search(request):
     return render(request, "search.html")
+
 
 @login_required
 def savedJobs(request):
     if not request.user.is_applicant:
         # User is a recruiter
-        return redirect('home')
+        return redirect("home")
     user = Applicant.objects.get(user=request.user.id)
     saved_jobs = SavedJob.objects.filter(applicant=user)
 
-    return render(request, "saved_jobs.html",{"jobs":saved_jobs})
+    return render(request, "saved_jobs.html", {"jobs": saved_jobs})
+
 
 def receive_job_to_save_it(request):
-    if request.method == 'POST' and request.is_ajax():
+    if request.method == "POST" and request.is_ajax():
         data_received = request.POST
-        job_id = data_received.get('id')
-        selected_job = Job.objects.filter(job_id = job_id)
-        SavedJob.objects.create(Applicant= Applicant.objects.get(user = request.user), job= selected_job)
+        job_id = data_received.get("id")
+        selected_job = Job.objects.filter(job_id=job_id)
+        SavedJob.objects.create(
+            Applicant=Applicant.objects.get(user=request.user), job=selected_job
+        )
 
         # Return a JSON response
-        response_data = {'message': 'Data received successfully'}
+        response_data = {"message": "Data received successfully"}
         return JsonResponse(response_data)
     else:
-        return JsonResponse({'error': 'Invalid request'})
+        return JsonResponse({"error": "Invalid request"})
+
 
 def about(request):
     return render(request, "About_us.html")
 
+
 from .models import Job
+
 
 def jobs(request):
     jobs = Job.objects.all()
@@ -72,46 +79,49 @@ def jobs(request):
 def checkCandidates(request):
     return render(request, "check_candidates.html")
 
+
 def edit_Job(request):
     return render(request, "edit_Job.html")
+
 
 def edit_profile(request):
     user = request.user
     if user.is_applicant:
-        applicant_user = Applicant.objects.get(user = request.user)
+        applicant_user = Applicant.objects.get(user=request.user)
 
         # User is an applicant
-        return render(request, "edit_profile.html", { 'applicant_user': applicant_user })
-    
+        return render(request, "edit_profile.html", {"applicant_user": applicant_user})
+
     elif user.is_recruiter:
         # User is a recruiter
-        return redirect('recruiterDashboard')
+        return redirect("recruiterDashboard")
+
 
 def save_profile(request):
     user = request.user
-    applicant_user = Applicant.objects.get(user = user)
+    applicant_user = Applicant.objects.get(user=user)
 
-    if request.method == 'POST':
+    if request.method == "POST":
         # Get data from the form
 
-        profile_photo = request.FILES.get('profile_photo')
+        profile_photo = request.FILES.get("profile_photo")
 
-        fname = request.POST.get('fname')
-        pemail = request.POST.get('pemail')
-        bio = request.POST.get('bio')
+        fname = request.POST.get("fname")
+        pemail = request.POST.get("pemail")
+        bio = request.POST.get("bio")
 
-        cname = request.POST.get('cname')
-        bemail = request.POST.get('bemail')
-        skills = request.POST.get('skills')
+        cname = request.POST.get("cname")
+        bemail = request.POST.get("bemail")
+        skills = request.POST.get("skills")
 
-        net1 = request.POST.get('net1')
-        net2 = request.POST.get('net2')
+        net1 = request.POST.get("net1")
+        net2 = request.POST.get("net2")
 
-        address = request.POST.get('address')
-        country = request.POST.get('country')
-        city = request.POST.get('city')
-        zip = request.POST.get('zip')
-        state = request.POST.get('state')
+        address = request.POST.get("address")
+        country = request.POST.get("country")
+        city = request.POST.get("city")
+        zip = request.POST.get("zip")
+        state = request.POST.get("state")
 
         # Create a new instance of MyModel and set the values
         user.photo = profile_photo
@@ -137,16 +147,20 @@ def save_profile(request):
         user.save()
         applicant_user.save()
 
-    return render(request, "profile.html", { 'applicant_user': applicant_user })
+    return render(request, "profile.html", {"applicant_user": applicant_user})
 
-def AppliedCandidateProfile(request):
-    return render(request, "AppliedCandidateProfile.html")
+
+def viewCandidate(request):
+    return render(request, "viewCandidate.html")
+
 
 def login(request):
     return render(request, "login.html")
 
+
 def signup(request):
     return render(request, "signup.html")
+
 
 def recruitersignup(request):
     return render(request, "recruitersignup.html")
