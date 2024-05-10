@@ -90,13 +90,20 @@
     <a class="J9_login_signup_find_post"
     {% if user.is_applicant != True and user.is_recruiter != True %}
     id="J9_login_signup"
-    href="{% url 'login' %}">Login/Sign up
+    href="{% url 'login' %}"
     {% elif user.is_applicant %}
     id="J9_look_for_a_job"
-    href="{% url 'jobs' %}">look for a job
+    href="{% url 'jobs' %}"
     {% else %}
     id="J9_post_job"
-    href="{% url 'recruiterDashboard' %}">Post a job
+    href="{% url 'recruiterDashboard' %}"
+    {% endif %}>
+    {% if user.is_applicant != True and user.is_recruiter != True %}
+    Login/Sign up
+    {% elif user.is_applicant %}
+    look for a job
+    {% else %}
+    Post a job
     {% endif %}
     </a>
     <!-- <div id="J9_login_signup_container" class="J9_login_signup">
