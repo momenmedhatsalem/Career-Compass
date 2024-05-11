@@ -42,12 +42,16 @@ class Applicant(models.Model):
 
 
 class Resume(models.Model):
+    Resume_id = models.AutoField(primary_key=True, default=None)
     user = models.ForeignKey(Applicant, on_delete=models.CASCADE)  # Link resume to User model
     filename = models.CharField(max_length=255)
     file = models.FileField(upload_to='resumes/', blank=True, null=True)
 
     def __str__(self):
         return self.filename
+    
+    class Meta:
+        unique_together = ('Resume_id', 'user',)
 
 
 

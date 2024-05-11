@@ -11,19 +11,19 @@ document.addEventListener("DOMContentLoaded", function () {
       loggedInUser.username;
     document.getElementById("pemail").value = loggedInUser.email;
     document.getElementById("cname").value = loggedInUser.company_name || "";
-        document.getElementById("bemail").value =
-          loggedInUser.business_email || "";
-        document.getElementById("skills").value = loggedInUser.skills || "";
-        document.getElementById("net1").value = loggedInUser.network_1 || "";
-        document.getElementById("net2").value = loggedInUser.network_2 || "";
-        document.getElementById("bio").value = loggedInUser.bio || "";
+    document.getElementById("bemail").value =
+      loggedInUser.business_email || "";
+    document.getElementById("skills").value = loggedInUser.skills || "";
+    document.getElementById("net1").value = loggedInUser.network_1 || "";
+    document.getElementById("net2").value = loggedInUser.network_2 || "";
+    document.getElementById("bio").value = loggedInUser.bio || "";
 
-        document.getElementById("address").value = loggedInUser.address || "";
-        document.getElementById("country").value = loggedInUser.country || "";
-        document.getElementById("city").value = loggedInUser.city || "";
-        document.getElementById("zip").value = loggedInUser.zip_code || "";
-        document.getElementById("state").value = loggedInUser.States || "";
-        document.getElementById("location").value = loggedInUser.map_location || "";
+    document.getElementById("address").value = loggedInUser.address || "";
+    document.getElementById("country").value = loggedInUser.country || "";
+    document.getElementById("city").value = loggedInUser.city || "";
+    document.getElementById("zip").value = loggedInUser.zip_code || "";
+    document.getElementById("state").value = loggedInUser.States || "";
+    document.getElementById("location").value = loggedInUser.map_location || "";
 
   } else {
 
@@ -38,13 +38,7 @@ const uploadedResumesContainer = document.getElementById('uploaded-resumes-conta
 uploadCVInput.addEventListener('change', async (event) => {
   const file = event.target.files[0];
 
-  // Basic file validation (optional)
-  if (!file || !file.type.match(/^(application\/pdf|application\/msword|application\/vnd\.openxmlformats-officedocument\.wordprocessingml\.document)$/)) {
-    alert('Please upload a valid PDF, DOC, or DOCX file.');
-    return;
-  }
-
-  // Send the file data to the Django backend (using Fetch API)
+ 
   const formData = new FormData();
   formData.append('uploadCV', file);
 
@@ -78,14 +72,14 @@ async function updateUploadedResumesList() {
 
   const uploadedResumes = await response.json();
 
-  uploadedResumesContainer.innerHTML = ''; 
+  uploadedResumesContainer.innerHTML = '';
 
   uploadedResumes.forEach((resume) => {
     const resumeContainer = document.createElement('div');
     resumeContainer.classList.add('j0-upload');
 
     const resumeLink = document.createElement('a');
-    resumeLink.href = `/download-resume/${resume.id}`; 
+    resumeLink.href = `/download-resume/${resume.id}`;
     resumeLink.textContent = resume.filename;
 
     const removeButton = document.createElement('span');
