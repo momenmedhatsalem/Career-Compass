@@ -1,4 +1,34 @@
 
+// Create an object with the data to send to the backend
+var dataToSend = {
+    '0': 'value1',
+    '1': 'value2'
+  };
+// var dataToSend = "i sent you this";
+  
+  // Make the AJAX request
+  fetch('/filter_search/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dataToSend)
+  })
+    .then(response => response.json())
+    .then(ResponseData => {
+      // Handle the response from the backend
+    //   JSON.parse(ResponseData);
+      console.log(ResponseData);
+      console.log(ResponseData.result['0'] + "\n" + ResponseData.result['1']);
+    })
+    // .catch(error => {
+    //   console.error('Error:', error);
+    // });
+
+
+
+
+
 
 var images = [
     "/media/data analyst.png",

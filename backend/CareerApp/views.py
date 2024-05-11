@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from UserApp.models import Applicant, Recruiter
 from .models import SavedJob
 from django.contrib.auth import get_user_model
+from django.views.decorators.csrf import csrf_exempt
+import json
 from django.http import JsonResponse
 
 
@@ -158,6 +160,25 @@ def save_profile(request):
 # def viewCandidate(request):
 #     return render(request, "viewCandidate.html")
 
+@csrf_exempt
+def filter_search(request):
+    print("connected")
+
+    if request.method == 'POST':
+        # Retrieve the data from the request's body
+        data = "data from django"
+        data = json.loads(request.body)
+
+        # Process the data or perform any necessary actions
+        result = {
+            0: data['0'] + ", this is the first value",
+            1: data['1'] + ", this is the second value"
+        }
+
+        # Return the result as a JSON response
+        return JsonResponse({'result': result})
+
+    return render(request, "search.html")
 
 def login(request):
     return render(request, "login.html")
