@@ -14,6 +14,7 @@ class CustomUser(AbstractUser):
 
 class Applicant(models.Model):
 
+    resume = models.FileField(upload_to='resumes/', blank=True, null=True)
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
     bio = models.TextField(blank=True, null=True)
 
@@ -32,7 +33,6 @@ class Applicant(models.Model):
     city = models.CharField(max_length=200, blank=True, null=True)
     state = models.CharField(max_length=200, blank=True, null=True)
 
-
     class Meta:
         verbose_name = 'Applicant'
         verbose_name_plural = 'Applicants'
@@ -41,17 +41,6 @@ class Applicant(models.Model):
         return self.user.email  # Accessing the email address of the associated user
 
 
-class Resume(models.Model):
-    Resume_id = models.AutoField(primary_key=True, default=None)
-    user = models.ForeignKey(Applicant, on_delete=models.CASCADE)  # Link resume to User model
-    filename = models.CharField(max_length=255)
-    file = models.FileField(upload_to='resumes/', blank=True, null=True)
-
-    def __str__(self):
-        return self.filename
-    
-    class Meta:
-        unique_together = ('Resume_id', 'user',)
 
 
 

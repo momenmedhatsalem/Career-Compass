@@ -95,39 +95,41 @@ def viewCandidate(request, candidate_username):
 
 
 
-from django.shortcuts import render, redirect
-from django.http import HttpResponseBadRequest, JsonResponse
+# from django.shortcuts import render, redirect
+# from django.http import HttpResponseBadRequest, JsonResponse
 from django.contrib.auth.decorators import login_required
-from .models import Resume
+# from .models import Resume
 
+# views.py
+from django.shortcuts import render
+from django.http import JsonResponse
 @login_required
 def upload_resume(request):
-    if request.method == 'POST':
-        if request.FILES.get('uploadCV'):
-            resume_file = request.FILES['uploadCV']
-            filename = resume_file.name
+    if request.method == 'POST' and request.FILES['resumeFile']:
+        resume_file = request.FILES['resumeFile']
+        # Save the resume file or process it further
+        applicant = Applicant.objects.get(user=request.user.id)
+        applicant.resume = resume_file
+        applicant.save()
+        return redirect('profile') 
+    else:
+        return JsonResponse({'error': 'No file found'}, status=400)
 
-            new_resume = Resume(user=request.user, filename=filename, file=resume_file)
-            new_resume.save()
-            return JsonResponse({'message': 'Resume uploaded successfully!'})
-        else:
-            return HttpResponseBadRequest('No file uploaded.')
-    return render(request, 'profile.html')  
 
-@login_required
-def get_uploaded_resumes(request):
-    if request.method == 'GET':
-        resumes = Resume.objects.filter(user=request.user)
-        return JsonResponse([{'id': resume.id, 'filename': resume.filename} for resume in resumes], safe=False)
-    return HttpResponseBadRequest('Invalid request method.')
+# @login_required
+# def get_uploaded_resumes(request):
+#     if request.method == 'GET':
+#         resumes = Resume.objects.filter(user=request.user)
+#         return JsonResponse([{'id': resume.id, 'filename': resume.filename} for resume in resumes], safe=False)
+#     return HttpResponseBadRequest('Invalid request method.')
 
-@login_required
-def delete_resume(request, resume_id):
-    if request.method == 'DELETE':
-        try:
-            resume = Resume.objects.get(pk=resume_id, user=request.user)  # Filter by user for security
-            resume.delete()
-            return JsonResponse({'message': 'Resume deleted successfully!'})
-        except Resume.DoesNotExist:
-            return HttpResponseBadRequest('Resume not found.')
-    return HttpResponseBadRequest('Invalid request method.')
+# @login_required
+# def delete_resume(request, resume_id):
+#     if request.method == 'DELETE':
+#         try:
+#             resume = Resume.objects.get(pk=resume_id, user=request.user)  # Filter by user for security
+#             resume.delete()
+#             return JsonResponse({'message': 'Resume deleted successfully!'})
+#         except Resume.DoesNotExist:
+#             return HttpResponseBadRequest('Resume not found.')
+#     return HttpResponseBadRequest('Invalid request method.')

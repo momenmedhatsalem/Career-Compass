@@ -24,8 +24,8 @@ urlpatterns = [
     path("login/", view=views.login_user, name="login"),
     path('logout/', view=views.logout_user, name='logout'),
     path("candidate/<str:candidate_username>/", view=views.viewCandidate, name="viewCandidate"),
-    path('profile/', views.upload_resume, name='upload_resume'),
-    path('profile/', views.get_uploaded_resumes, name='get_uploaded_resumes'),
-    path('profile/', views.delete_resume, name='delete_resume'),
+    path('uploadResume/', views.upload_resume, name='upload_resume'),
+    # path('profile/', views.get_uploaded_resumes, name='get_uploaded_resumes'),
+    # path('profile/', views.delete_resume, name='delete_resume'),
 ]
 

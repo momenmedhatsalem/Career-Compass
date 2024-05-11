@@ -327,7 +327,13 @@
       </div>
       <div id="j0-btn" class="j0_btn">
         <label for="j0-uploadCV">Upload CV</label>
-        <input type="file" id="j0-uploadCV" name="uploadCV" accept=".pdf,.doc,.docx">
+        <form id="uploadForm" action="{% url 'upload_resume' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+    <input type="file" name="resumeFile" id="j0-uploadCV" accept=".pdf,.doc,.docx">
+    <button type="submit">Confirm and submit</button>
+</form>
+
+ 
       </div>
       <small>Upload file .pdf, .doc, .docx</small>
     </div>
