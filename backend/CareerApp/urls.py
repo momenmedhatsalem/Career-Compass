@@ -19,4 +19,5 @@ urlpatterns = [
     path("checkCandidates/", view=views.checkCandidates, name="checkCandidates"),
     path("edit_Job/", view=views.edit_Job, name="edit_Job"),
     # path("viewCandidate/", view=views.viewCandidate, name="viewCandidate"),
+    path('save_recruiter_profile/', views.save_recruiter_profile, name='save_recruiter_profile'),
 ]

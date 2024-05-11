@@ -81,7 +81,8 @@
                 </div>
 
                 <div id="J9_recruiter_dashboard_profile">
-                    <form class="J9_emp_dash_prof_right_side_body_emp_divs" id="J9_employer_profile_form">
+                    <form class="J9_emp_dash_prof_right_side_body_emp_divs" id="J9_employer_profile_form" action="{% url 'save_recruiter_profile' %}" method="post">
+                        {% csrf_token %}
                         <div class="J9_emp_dash_prof_right_side_body_emp_information">
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_photo">
                                 <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo.url != null %}
@@ -92,7 +93,7 @@
                                             accept="image/x-png,image/jpg" /> </label>
                                 </div>
                                 <button
-                                    class="J9_emp_dash_prof_right_side_body_emp_information_photo_delete">Delete</button>
+                                    class="J9_emp_dash_prof_right_side_body_emp_information_photo_delete" {% if rec.user.phone.url == null %} disabled {% endif %}>Delete</button>
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_name">
@@ -110,13 +111,13 @@
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_website">
                                 <label>Website</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_website"
-                                    name="employer_website" type="text" {% if rec.website %} value="{{ rec.website }}" {% endif %} placeholder="http://something.com">
+                                    name="rec_website" type="text" {% if rec.website %} value="{{ rec.website }}" {% endif %} placeholder="http://something.com">
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_founded_date">
                                 <label>Founded Date</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_founded_date"
-                                    name="founded_date" type="date" required value="{{ rec.founded_date }}">
+                                    name="founded_date" type="date" required value="{{ rec.founded_date|date:"Y-m-d" }}">
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_company_size">
@@ -139,7 +140,7 @@
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_about_company">
                                 <label>About Company*</label>
-                                <textarea id="J9_emp_dash_prof_right_side_body_emp_information_about_company" required placeholder="About Company.....">{% if rec.about_company %}{{ rec.about_company }}{% endif %}</textarea>
+                                <textarea id="J9_emp_dash_prof_right_side_body_emp_information_about_company" name="about_company" required placeholder="About Company.....">{% if rec.about_company %}{{ rec.about_company }}{% endif %}</textarea>
                             </div>
 
                         </div>
@@ -149,11 +150,12 @@
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_social_media_links"
                                 id="J9_emp_dash_prof_right_side_body_emp_social_media_links">
+                                {% for link in rec.social_media %}
                                 <div class="J9_emp_dash_prof_right_side_body_emp_social_media_link">
-                                    <label class="J9_emp_dash_prof_right_side_body_emp_social_media_link_number">Network
-                                        1</label>
-                                    <input name="social_media_link" type="text" value="">
+                                    <label class="J9_emp_dash_prof_right_side_body_emp_social_media_link_number">Network {{forloop.counter}}</label>
+                                    <input name="social_media_link" type="text" value="{{link}}">
                                 </div>
+                                    {% endfor %}
                             </div>
 
                             <a href="#" onclick="J9_rec_social_media_add_link()"
@@ -194,7 +196,7 @@
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_zip_code">
                                     <label>Zip Code*</label>
                                     <input id="J9_emp_dash_prof_right_side_body_emp_location_zip_code" name="zip_code"
-                                        type="number" required {% if user.zip_cpde %} value="{{ user.zip_cpde }}" {% endif %} placeholder="3740614">
+                                        type="number" required {% if rec.zip_code %} value="{{ rec.zip_code }}" {% endif %} placeholder="3740614">
                                 </div>
                                 <div class="J9_emp_dash_prof_right_side_body_emp_location_state">
                                     <label>State*</label>
@@ -214,7 +216,7 @@
                         <div class="J9_emp_dash_prof_right_side_body_emp_profile_save_cancel_button">
                             <input id="J9_emp_dash_prof_right_side_body_emp_profile_save_button" type="submit"
                                 value="save">
-                            <input id="J9_emp_dash_prof_right_side_body_emp_profile_cancel_button" type="button"
+                            <input id="J9_emp_dash_prof_right_side_body_emp_profile_cancel_button" type="reset"
                                 value="Cancel">
                         </div>
 
@@ -725,7 +727,7 @@
                         <div class="J9_emp_dash_post_job_right_side_body_emp_profile_save_cancel_button">
                             <input id="J9_emp_dash_post_job_right_side_body_emp_profile_save_button" type="submit"
                                 value="Submit">
-                            <input id="J9_emp_dash_post_job_right_side_body_emp_profile_cancel_button" type="button"
+                            <input id="J9_emp_dash_post_job_right_side_body_emp_profile_cancel_button" type="reset"
                                 value="Cancel">
                         </div>
                     </form>
@@ -972,7 +974,7 @@
                         <div class="J9_emp_dash_settings_right_side_body_emp_settings_save_cancel_button">
                             <input id="J9_emp_dash_settings_right_side_body_emp_settings_save_button" type="submit"
                                 value="Submit">
-                            <input id="J9_emp_dash_settings_right_side_body_emp_settings_cancel_button" type="button"
+                            <input id="J9_emp_dash_settings_right_side_body_emp_settings_cancel_button" type="reset"
                                 value="Cancel">
                         </div>
                     </form>
