@@ -42,7 +42,7 @@ class Applicant(models.Model):
 
 
 class Resume(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Link resume to User model
+    user = models.ForeignKey(Applicant, on_delete=models.CASCADE)  # Link resume to User model
     filename = models.CharField(max_length=255)
     file = models.FileField(upload_to='resumes/', blank=True, null=True)
 
