@@ -78,14 +78,16 @@
       <fieldset class="M7-fieldset">
 
         <legend class="M7-p_img">
-          <img {% if user.photo.url != null %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png"{% endif %} alt="User Image" class="M7-p_img" style="display: inline-block;">
+          <img {% if user.photo.url !=null %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %}
+            alt="User Image" class="M7-p_img" style="display: inline-block;">
         </legend>
 
 
         <div>
 
           <label for="fname" class="M7-label">Full Name: </label> <br>
-          <input type="text" name="fname" id="fname" value=" {{ user.first_name }} {{ user.last_name }}" class="M7-field" disabled="yes">
+          <input type="text" name="fname" id="fname" value=" {{ user.first_name }} {{ user.last_name }}"
+            class="M7-field" disabled="yes">
 
         </div>
 
@@ -128,7 +130,8 @@
         <div>
 
           <label for="cname" class="M7-label">Company name: </label> <br>
-          <input type="text" name="cname" id="cname" value="{{ applicant_user.company_name }}" class="M7-field" disabled="yes">
+          <input type="text" name="cname" id="cname" value="{{ applicant_user.company_name }}" class="M7-field"
+            disabled="yes">
 
         </div>
 
@@ -140,7 +143,8 @@
         <div>
 
           <label for="bemail" class="M7-label">Business E-mail: </label> <br>
-          <input type="email" name="bemail" id="bemail" value="{{ applicant_user.business_email }}" class="M7-field" disabled="yes">
+          <input type="email" name="bemail" id="bemail" value="{{ applicant_user.business_email }}" class="M7-field"
+            disabled="yes">
 
         </div>
 
@@ -174,7 +178,8 @@
         <div>
 
           <label for="net1" class="M7-label">Network 1: </label> <br>
-          <input type="text" name="net1" id="net1" value="{{ applicant_user.network1 }}" class="M7-field" disabled="yes">
+          <input type="text" name="net1" id="net1" value="{{ applicant_user.network1 }}" class="M7-field"
+            disabled="yes">
 
         </div>
 
@@ -185,7 +190,8 @@
         <div>
 
           <label for="net2" class="M7-label">Network 2: </label> <br>
-          <input type="text" name="net2" id="net2" value="{{ applicant_user.network2 }}" class="M7-field" disabled="yes">
+          <input type="text" name="net2" id="net2" value="{{ applicant_user.network2 }}" class="M7-field"
+            disabled="yes">
 
         </div>
 
@@ -205,8 +211,8 @@
         <div>
 
           <label for="address" class="M7-label">Address: </label> <br>
-          <input type="text" name="address" id="address" value="{{ applicant_user.address }}" class="M7-field" disabled="yes"
-            placeholder="Cowrasta, Chandana, Gazipur, Sadar">
+          <input type="text" name="address" id="address" value="{{ applicant_user.address }}" class="M7-field"
+            disabled="yes" placeholder="Cowrasta, Chandana, Gazipur, Sadar">
 
         </div>
 
@@ -218,7 +224,8 @@
         <div>
 
           <label for="country" class="M7-label">Country: </label> <br>
-          <input type="text" name="country" id="country" value="{{ applicant_user.country }}" class="M7-field" disabled="yes">
+          <input type="text" name="country" id="country" value="{{ applicant_user.country }}" class="M7-field"
+            disabled="yes">
           <!-- <select type="" name="country" id="country" value="" class="M7-field" disabled="yes" >
             <option value="Egypt">Egypt</option>
             <option value="France">France</option>
@@ -322,22 +329,26 @@
       <h4 class="j0-title-three">Resume Attachment</h4>
       <div class="j0-input">
         <h4>CV Attachment*</h4>
+        {% if applicant.resume !=null %}
         <div id="uploaded-resumes-container">
-          </div>
+          Uploaded Resume: {{ applicant.resume }} <br>
+        </div>
+        {% endif %}
+
       </div>
       <div id="j0-btn" class="j0_btn">
         <label for="j0-uploadCV">Upload CV</label>
         <form id="uploadForm" action="{% url 'upload_resume' %}" method="post" enctype="multipart/form-data">
           {% csrf_token %}
-    <input type="file" name="resumeFile" id="j0-uploadCV" accept=".pdf,.doc,.docx">
-    <button type="submit">Confirm and submit</button>
-</form>
+          <input type="file" name="resumeFile" id="j0-uploadCV" accept=".pdf,.doc,.docx">
+          <button type="submit">Confirm and submit</button>
+        </form>
 
- 
+
       </div>
       <small>Upload file .pdf, .doc, .docx</small>
     </div>
-    
+
 
     <!-- education -->
     <div class="tab" id="j0_education">
