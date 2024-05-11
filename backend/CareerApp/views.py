@@ -170,10 +170,12 @@ def filter_search(request):
         data = json.loads(request.body)
 
         # Process the data or perform any necessary actions
-        result = {
-            0: data['0'] + ", this is the first value",
-            1: data['1'] + ", this is the second value"
-        }
+        # result = {
+        #     0: data['0'] + ", this is the first value",
+        #     1: data['1'] + ", this is the second value"
+        # }
+
+        result = data
 
         # Return the result as a JSON response
         return JsonResponse({'result': result})
