@@ -321,23 +321,17 @@
     <div class="tab" id="j0_upload">
       <h4 class="j0-title-three">Resume Attachment</h4>
       <div class="j0-input">
-        <h4 for="">CV Attachment*</h4>
-
-        <div class="j0-upload" id="r1">
-          MyCvResume.PDF
-          <span class="j0-remove-btn">x</span>
-        </div>
-        <div class="j0-upload">
-          CandidateCV02.PDF
-          <span class="j0-remove-btn">x</span>
-        </div>
+        <h4>CV Attachment*</h4>
+        <div id="uploaded-resumes-container">
+          </div>
       </div>
       <div id="j0-btn" class="j0_btn">
-        <label name="uploadCV">Upload CV</label>
-        <input type="file" id="j0-uploadCV" name="uploadCV" placeholder="">
+        <label for="j0-uploadCV">Upload CV</label>
+        <input type="file" id="j0-uploadCV" name="uploadCV" accept=".pdf,.doc,.docx">
       </div>
       <small>Upload file .pdf, .doc, .docx</small>
     </div>
+    
 
     <!-- education -->
     <div class="tab" id="j0_education">

@@ -16,7 +16,6 @@ class Applicant(models.Model):
 
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
     bio = models.TextField(blank=True, null=True)
-    resume = models.FileField(upload_to='resumes/', blank=True, null=True)
 
     company_name = models.CharField(max_length=200, blank=True, null=True)
     business_email = models.CharField(max_length=200, blank=True, null=True)
@@ -40,6 +39,16 @@ class Applicant(models.Model):
 
     def __str__(self):
         return self.user.email  # Accessing the email address of the associated user
+
+
+class Resume(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Link resume to User model
+    filename = models.CharField(max_length=255)
+    file = models.FileField(upload_to='resumes/', blank=True, null=True)
+
+    def __str__(self):
+        return self.filename
+
 
 
 class Recruiter(models.Model):
