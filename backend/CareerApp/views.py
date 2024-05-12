@@ -73,19 +73,6 @@ def receive_job_to_save_it(request):
         return JsonResponse({"status": "success", "data_received": data}, status=200)
     except json.JSONDecodeError:
         return JsonResponse({"status": "error", "message": "Invalid JSON"}, status=400)
-    # if request.method == "POST" and request.is_ajax():
-    #     data_received = request.POST
-    #     job_id = data_received.get("id")
-    #     selected_job = Job.objects.filter(job_id=job_id)
-    #     SavedJob.objects.create(
-    #         Applicant=Applicant.objects.get(user=request.user), job=selected_job
-    #     )
-
-    #     # Return a JSON response
-    #     response_data = {"message": "Data received successfully"}
-    #     return JsonResponse(response_data)
-    # else:
-    #     return JsonResponse({"error": "Invalid request"})
 
 
 def about(request):

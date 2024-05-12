@@ -37,7 +37,7 @@
       <li><button onclick="manageTabs('j0_skills')"><img src="{% static 'skills.png' %}" alt="Skills"><span>Skills &
             Experience</span></button></li>
       <li><button onclick="manageTabs('j0_saved')">
-          <a href="/templates/saved_jobs.html">
+          <a href="/`saved_jobs/">
             <img src="{% static 'saved.png' %}" alt="Skills">
             <span>Saved jobs</span>
           </a>
@@ -78,7 +78,8 @@
       <fieldset class="M7-fieldset">
 
         <legend class="M7-p_img">
-          <img {% if user.photo.url != null %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png"{% endif %} alt="User Image" class="M7-p_img" style="display: inline-block;">
+          <img {% if user.photo.url %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %}
+            alt="User Image" class="M7-p_img" style="display: inline-block;">
         </legend>
 
 
@@ -330,7 +331,8 @@
         <h4>CV Attachment*</h4>
         {% if applicant.resume %}
         <div id="uploaded-resumes-container">
-          </div>
+        </div>
+        {% endif %}
       </div>
       <div id="j0-btn" class="j0_btn">
         <label for="j0-uploadCV">Upload CV</label>
@@ -512,6 +514,4 @@
 </div>
 
 </div>
-
-
 {% endblock %}
