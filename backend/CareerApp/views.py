@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from UserApp.models import Applicant, Recruiter
-from .models import SavedJob
+from .models import SavedJob , Job
 from django.contrib.auth import get_user_model
+from django.views.decorators.csrf import csrf_exempt
+import json
 from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods
 
 
 def index(request):
@@ -33,8 +36,8 @@ def recruiterDashboard(request):
     countries = ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla" "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados" "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana" "Brazil", "Brunei Darussalam", "Bulgaria" "Burkina Faso" "Burundi", "Cambodia" "Cameroon" "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad" "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia" "Comoros", "Congo", "Cook Islands" "Costa Rica", "Croatia", "Cuba" "Cyprus", "Czech Republic", "Denmark", "Djibouti" "Dominica" "Dominican Republic" "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia" "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji" "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam" "Guatemala", "Guernsey" "Guinea", "Guinea-bissau", "Guyana", "Haiti", "Holy See (Vatican City State)" "Honduras" "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran, Islamic Republic of" "Iraq" "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati" "Korea, Republic of" "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Madagascar", "Malawi", "Malaysia" "Maldives" "Mali" "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia" "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue" "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman" "Pakistan" "Palau", "Palestinian Territory, Occupied", "Panama", "Papua New Guinea", "Paraguay" "Peru" "Philippines", "Pitcairn" "Poland", "Portugal" "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation" "Rwanda", "Saint Helena" "Saint Kitts and Nevis" "Saint Lucia", "Saint Pierre and Miquelon" "Saint Vincent and The Grenadines" "Samoa", "San Marino", "Sao Tome and Principe" "Saudi Arabia" "Senegal", "Serbia", "Seychelles", "Sierra Leone" "Singapore", "Slovakia" "Slovenia" "Solomon Islands" "Somalia", "South Africa" "Spain", "Sri Lanka", "Sudan", "Suriname" "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan", "Tajikistan", "Tanzania, United Republic of", "Thailand" "Timor-leste", "Togo" "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan" "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam" "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia", "Zimbabwe"]
     cities = ["Cairo", "Alexandria", "Giza", "Luxor", "Aswan", "Sharm El Sheikh", "Hurghada", "Port Said", "Suez", "Ismailia", "Tanta", "Mansoura", "Fayoum", "Beni Suef", "Sohag", "Zagazig", "Qena", "Damanhur", "Minya", "Luxor", "Port Said", "Kafr El Sheikh", "Damietta", "Asyut", "Sohag", "Assiut", "El-Mahalla El-Kubra", "El-Mansoura", "El-Minya", "Shubra El-Kheima", "Luxor", "El-Faiyum", "Tahta"]
     states = ["Cairo", "Alexandria", "Giza", "Luxor", "Aswan", "Sharm El Sheikh", "Hurghada", "Port Said", "Suez", "Ismailia", "Tanta", "Mansoura", "Fayoum", "Beni Suef", "Sohag", "Zagazig", "Qena", "Damanhur", "Minya", "Luxor", "Port Said", "Kafr El Sheikh", "Damietta", "Asyut", "Sohag", "Assiut", "El-Mahalla El-Kubra", "El-Mansoura", "El-Minya", "Shubra El-Kheima", "Luxor", "El-Faiyum", "Tahta"]
-    rec_jobs = Job.objects.all().order_by('-creation_date')
-    # rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('-creation_date')
+    # rec_jobs = Job.objects.all().order_by('-creation_date')
+    rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('creation_date')
     return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs})
 
 
@@ -52,21 +55,38 @@ def savedJobs(request):
 
     return render(request, "saved_jobs.html", {"jobs": saved_jobs})
 
-
+@csrf_exempt  
+@require_http_methods(["POST"])
 def receive_job_to_save_it(request):
-    if request.method == "POST" and request.is_ajax():
-        data_received = request.POST
-        job_id = data_received.get("id")
-        selected_job = Job.objects.filter(job_id=job_id)
-        SavedJob.objects.create(
-            Applicant=Applicant.objects.get(user=request.user), job=selected_job
-        )
+    try:
+        data = json.loads(request.body)
+        id_for_job =data['id_for_job_will_save']
+        action = data['action']
+        jobs = SavedJob.objects.all()
+        if action == "save":
+            retrieve_job = Job.objects.filter(job_id = id_for_job).values()
+            applicant_user = Applicant.objects.filter(user=request.user).values()
+            newSavedJob = SavedJob.objects.create(applicant = applicant_user , job = retrieve_job )
+        else:
+            for j in jobs:
+                if j.job.job_id == id_for_job and j.applicant == request.user :
+                    j.delete()
+        return JsonResponse({"status": "success", "data_received": data}, status=200)
+    except json.JSONDecodeError:
+        return JsonResponse({"status": "error", "message": "Invalid JSON"}, status=400)
+    # if request.method == "POST" and request.is_ajax():
+    #     data_received = request.POST
+    #     job_id = data_received.get("id")
+    #     selected_job = Job.objects.filter(job_id=job_id)
+    #     SavedJob.objects.create(
+    #         Applicant=Applicant.objects.get(user=request.user), job=selected_job
+    #     )
 
-        # Return a JSON response
-        response_data = {"message": "Data received successfully"}
-        return JsonResponse(response_data)
-    else:
-        return JsonResponse({"error": "Invalid request"})
+    #     # Return a JSON response
+    #     response_data = {"message": "Data received successfully"}
+    #     return JsonResponse(response_data)
+    # else:
+    #     return JsonResponse({"error": "Invalid request"})
 
 
 def about(request):
@@ -158,6 +178,27 @@ def save_profile(request):
 # def viewCandidate(request):
 #     return render(request, "viewCandidate.html")
 
+@csrf_exempt
+def filter_search(request):
+    print("connected")
+
+    if request.method == 'POST':
+        # Retrieve the data from the request's body
+        data = "data from django"
+        data = json.loads(request.body)
+
+        # Process the data or perform any necessary actions
+        # result = {
+        #     0: data['0'] + ", this is the first value",
+        #     1: data['1'] + ", this is the second value"
+        # }
+
+        result = data
+
+        # Return the result as a JSON response
+        return JsonResponse({'result': result})
+
+    return render(request, "search.html")
 
 def login(request):
     return render(request, "login.html")
@@ -169,3 +210,58 @@ def signup(request):
 
 def recruitersignup(request):
     return render(request, "recruitersignup.html")
+
+
+def save_recruiter_profile(request):
+    rec = Recruiter.objects.get(user = request.user)
+
+    if request.method == "POST":
+        # Get data from the form
+
+        rec.user.photo = request.FILES.get("profile_photo")
+        rec.website = request.POST.get("rec_website")
+        rec.founded_date = request.POST.get("founded_date")
+        rec.company_size = request.POST.get("company_size")
+        rec.category = request.POST.get("category")
+        rec.about_company = request.POST.get("about_company")
+        rec.social_media = request.POST.getlist("social_media_link")
+        rec.address = request.POST.get("address")
+        rec.country = request.POST.get("country")
+        rec.city = request.POST.get("city")
+        rec.zip_code = request.POST.get("zip_code")
+        rec.state = request.POST.get("state")
+        # rec.user.save()
+        rec.save()
+
+    countries = ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla" "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados" "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana" "Brazil", "Brunei Darussalam", "Bulgaria" "Burkina Faso" "Burundi", "Cambodia" "Cameroon" "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad" "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia" "Comoros", "Congo", "Cook Islands" "Costa Rica", "Croatia", "Cuba" "Cyprus", "Czech Republic", "Denmark", "Djibouti" "Dominica" "Dominican Republic" "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia" "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji" "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam" "Guatemala", "Guernsey" "Guinea", "Guinea-bissau", "Guyana", "Haiti", "Holy See (Vatican City State)" "Honduras" "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran, Islamic Republic of" "Iraq" "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati" "Korea, Republic of" "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Madagascar", "Malawi", "Malaysia" "Maldives" "Mali" "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia" "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue" "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman" "Pakistan" "Palau", "Palestinian Territory, Occupied", "Panama", "Papua New Guinea", "Paraguay" "Peru" "Philippines", "Pitcairn" "Poland", "Portugal" "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation" "Rwanda", "Saint Helena" "Saint Kitts and Nevis" "Saint Lucia", "Saint Pierre and Miquelon" "Saint Vincent and The Grenadines" "Samoa", "San Marino", "Sao Tome and Principe" "Saudi Arabia" "Senegal", "Serbia", "Seychelles", "Sierra Leone" "Singapore", "Slovakia" "Slovenia" "Solomon Islands" "Somalia", "South Africa" "Spain", "Sri Lanka", "Sudan", "Suriname" "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan", "Tajikistan", "Tanzania, United Republic of", "Thailand" "Timor-leste", "Togo" "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan" "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam" "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia", "Zimbabwe"]
+    cities = ["Cairo", "Alexandria", "Giza", "Luxor", "Aswan", "Sharm El Sheikh", "Hurghada", "Port Said", "Suez", "Ismailia", "Tanta", "Mansoura", "Fayoum", "Beni Suef", "Sohag", "Zagazig", "Qena", "Damanhur", "Minya", "Luxor", "Port Said", "Kafr El Sheikh", "Damietta", "Asyut", "Sohag", "Assiut", "El-Mahalla El-Kubra", "El-Mansoura", "El-Minya", "Shubra El-Kheima", "Luxor", "El-Faiyum", "Tahta"]
+    states = ["Cairo", "Alexandria", "Giza", "Luxor", "Aswan", "Sharm El Sheikh", "Hurghada", "Port Said", "Suez", "Ismailia", "Tanta", "Mansoura", "Fayoum", "Beni Suef", "Sohag", "Zagazig", "Qena", "Damanhur", "Minya", "Luxor", "Port Said", "Kafr El Sheikh", "Damietta", "Asyut", "Sohag", "Assiut", "El-Mahalla El-Kubra", "El-Mansoura", "El-Minya", "Shubra El-Kheima", "Luxor", "El-Faiyum", "Tahta"]
+    # rec_jobs = Job.objects.all().order_by('-creation_date')
+    rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('-creation_date')
+    return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs})
+
+
+def post_job(request):
+    rec = Recruiter.objects.get(user = request.user)
+    newJob = Job.objects.create(
+        job_id=request.POST.get("job_id"),
+        recruiter=rec,
+        title=request.POST.get("job_title"),
+        company_name=request.POST.get("company_name"),
+        status=request.POST.get("job_status"),
+        years_of_experience=request.POST.get("years_of_experience"),
+        description=request.POST.get("job_desc"),
+        category=request.POST.get("job_category"),
+        type=request.POST.get("job_type"),
+        salary=request.POST.get("salary"),
+        MinSalary=request.POST.get("min_salary"),
+        MaxSalary=request.POST.get("max_salary"),
+        english_fluency=request.POST.get("english_fluency"),
+        experience=request.POST.get("experience"),
+        address=request.POST.get("address"),
+        country=request.POST.get("country"),
+        city=request.POST.get("city"),
+        zip_code=request.POST.get("zip_code"),
+        state=request.POST.get("state"),
+    )
+    newJob.save()

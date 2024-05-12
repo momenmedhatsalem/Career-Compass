@@ -83,27 +83,52 @@ function save(id){
     // xhttp.send();
     button = document.getElementById(id);
     if (button.style.backgroundColor === 'transparent' ){
-        console.log(56548545);
         button.style.backgroundColor ='green'; 
-        var dataToSend = {
-            'id': id,
+
+        const url = '/receive_job_to_save_it/'; 
+        const data = {
+            id_for_job_will_save: id,
+            action : 'save'
         };
-        ajax({
-            type: 'POST',
-            url: '/receive_job_to_save_it/',
-            data: dataToSend,
-            dataType: 'json',
-            success: function(response) {
-                // Handle the response from the server
-                console.log(response);
+
+        fetch(url, {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
             },
-            error: function(xhr, errmsg, err) {
-                console.log(xhr.status + ": " + xhr.responseText);
-            }
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
         });
     }
     else{
+        button.style.backgroundColor = 'transparent';
         
+        const url = '/receive_job_to_save_it/'; 
+        const data = {
+            id_for_job_will_save: id,
+            action : 'unsave'
+        };
+
+        fetch(url, {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
     }
    
 }

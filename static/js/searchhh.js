@@ -1,5 +1,48 @@
 
 
+
+// search_button = document.getElementById('search_button')
+
+// Create an object with the data to send to the backend
+var dataToSend = {
+    '0': 'value1',
+    '1': 'value2'
+};
+// var dataToSend = "i sent you this";
+
+function requestBackend() {
+
+    search_text = document.getElementById('search_text').value
+
+    // Make the AJAX request
+    fetch('/filter_search/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        // body: JSON.stringify(dataToSend)
+        body: JSON.stringify(search_text)
+    })
+        .then(response => response.json())
+        .then(ResponseData => {
+            // Handle the response from the backend
+            //   JSON.parse(ResponseData);
+            console.log(ResponseData);
+            // console.log(ResponseData.result['0'] + "\n" + ResponseData.result['1']);
+            console.log(ResponseData.result);
+
+        })
+    // .catch(error => {
+    //   console.error('Error:', error);
+    // });
+
+}
+
+
+
+
+
+
 var images = [
     "/media/data analyst.png",
     "/media/front end.jpg",
@@ -14,22 +57,21 @@ var matches = [];
 var search_by = "";
 old_option = "title";
 
-function set_search_by(opt = "title")
-{
+function set_search_by(opt = "title") {
     document.getElementById(old_option).style.backgroundColor = "#ddd";
     document.getElementById(old_option).style.color = "black";
 
     search_by = opt;
     old_option = search_by;
-    
+
     matches = [];
-    
+
     document.getElementById("result").style.display = "none";
     document.getElementById("result-grid").style.display = "none";
-    
+
     document.getElementById(opt).style.backgroundColor = "rgb(0, 136, 255)";
     document.getElementById(opt).style.color = "white";
-    
+
 }
 
 // document.addEventListener("load", set_search_by());
@@ -39,7 +81,7 @@ function search() {
     // check if the search bar is empty or not
     if (document.getElementById("search_text").value == "")
         return;
-    
+
     // show the results html block which carries the results as cards
     document.getElementById("result").style.display = "flex";
     document.getElementById("result-grid").style.display = "flex";
@@ -55,8 +97,8 @@ function search() {
     // let jobs = JSON.parse(localStorage.getItem("jobs"));
     let jobs = []
     // make "sub" lowerCase to standardize our search
-    
-    
+
+
     // sub = sub.toLowerCase();
 
 
@@ -69,45 +111,35 @@ function search() {
     console.log(search_by);
     console.log(jobs);
 
-    if(search_by == "title")
-    {
+    if (search_by == "title") {
 
-        for (let job of jobs)
-        {
+        for (let job of jobs) {
             // console.log(job)
             // Check if job has 'details' property and 'title' property within it
-            if (job.details.title.toLowerCase().includes(sub.toLowerCase())) 
-            {
+            if (job.details.title.toLowerCase().includes(sub.toLowerCase())) {
                 matches.push(job);
             }
         }
     }
-    else if(search_by == "years")
-    {
-        
-        for (let job of jobs)
-        {
+    else if (search_by == "years") {
+
+        for (let job of jobs) {
             // console.log(job)
             // Check if job has 'details' property and 'title' property within it
-            if (job.details.years_of_experience <= sub) 
-            {
+            if (job.details.years_of_experience <= sub) {
                 matches.push(job);
             }
         }
 
-        if(isNaN(sub))
-        {
+        if (isNaN(sub)) {
             matches = [];
         }
     }
-    else if(search_by == "country")
-    {
-        for (let job of jobs)
-        {
+    else if (search_by == "country") {
+        for (let job of jobs) {
             //console.log(job)
             // Check if job has 'details' property and 'title' property within it
-            if (job.address_and_location.country.toLowerCase().includes(sub.toLowerCase()))
-            {
+            if (job.address_and_location.country.toLowerCase().includes(sub.toLowerCase())) {
                 matches.push(job);
             }
         }
@@ -141,16 +173,13 @@ function sort(dir) {
     if (dir == "htl") {
         matches.sort((a, b) => b.details.MaxSalary - a.details.MaxSalary); // Desc
     }
-    else if (dir == "lth") 
-    {
+    else if (dir == "lth") {
         matches.sort((a, b) => a.details.MaxSalary - b.details.MaxSalary); // Asc
     }
-    else if (dir == "htly") 
-    {
+    else if (dir == "htly") {
         matches.sort((a, b) => b.details.years_of_experience - a.details.years_of_experience); // Desc
     }
-    else if (dir == "lthy") 
-    {
+    else if (dir == "lthy") {
         matches.sort((a, b) => a.details.years_of_experience - b.details.years_of_experience); // Asc
     }
     showmatches()
