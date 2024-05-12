@@ -28,15 +28,13 @@ function requestBackend() {
             'Content-Type': 'application/json',
         },
         // body: JSON.stringify(dataToSend)
-        body: JSON.stringify(search_text)
+        body: JSON.stringify(search_text.toLowerCase())
     })
         .then(response => response.json())
         .then(ResponseData => {
             
             search_results = ResponseData.result
-            //console.log(ResponseData);
-            // console.log(ResponseData.result['0'] + "\n" + ResponseData.result['1']);
-            //console.log(search_results);
+            
             console.log(search_results);
             console.log(search_results[0]);
             document.getElementById("num_of_results").innerHTML = search_results.length;
@@ -59,7 +57,7 @@ function requestBackend() {
                     result['title'] +
                     "</h4>" +
                     "<p>" +
-                     result['pay'] + "$ | " + result['exp'] + " Exp. years | " + result['country'] +
+                     result['salary'] + "$ | " + result['exp'] + " Exp. years | " + result['country'] +
                     "</p>" +
                     '<a href="#">' +
                     '<button class="M7-button" style="display: inline;">Apply</button>' +

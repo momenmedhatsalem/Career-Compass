@@ -209,30 +209,34 @@ def filter_search(request):
         data = "data from django"
         data = json.loads(request.body)
         # result = data
-        jobs = Job.objects.filter(title = data)
+        jobs = Job.objects.all().filter(title = data)
+
+        print(jobs)
 
         result = [] 
-        # for job in jobs:
-        #     result.append({
-        #         'title': job.title,
-        #         'salary': job.salary,
-        #         'exp': job.years_of_experience,
-        #         'country': job.country,
-        #     })
+        for job in jobs:
+            #print(job.MaxSalary)
+            result.append({
+                'title': job.title,
+                'salary': job.MaxSalary,
+                'exp': job.years_of_experience,
+                'country': job.country,
+            })
+        
 
         # test only vvvvvvvvvvvvv
-        result.append({
-            'title': "Software Engineer",
-            'pay': "2000",
-            'exp': "3",
-            'country': "France",
-        })
-        result.append({
-            'title': "Front end",
-            'pay': "5000",
-            'exp': '5',
-            'country': "Egypt",
-        })
+        # result.append({
+        #     'title': "Software Engineer",
+        #     'pay': "2000",
+        #     'exp': "3",
+        #     'country': "France",
+        # })
+        # result.append({
+        #     'title': "Front end",
+        #     'pay': "5000",
+        #     'exp': '5',
+        #     'country': "Egypt",
+        # })
 
         # result.append({
         #     'title': "Software Engineer",
@@ -261,7 +265,7 @@ def recruitersignup(request):
 
 
 def save_recruiter_profile(request):
-    rec = Recruiter.objects.get(user = request.user)
+    rec = Recruiter.objects.get(user = request.user.id)
 
     if request.method == "POST":
         # Get data from the form
