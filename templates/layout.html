@@ -94,7 +94,7 @@
     href="{% url 'jobs' %}" {% else %} id="J9_post_job" href="{% url 'recruiterDashboard' %}" 
     {% endif %}>
 
-    {% if user.is_applicant != True and user.is_recruiter != True %}
+    {% if not request.user.is_authenticated %}
     Login/Sign up
     {% elif user.is_applicant %}
     look for a job
@@ -110,7 +110,7 @@
           job</a></li>
         </ul>
       </div> -->
-      {% if user.is_applicant or user.is_recruiter %}
+      {% if user.is_authenticated %}
       <a href="{% url 'logout'%}" class="J9_floating_log_out_button">
         <span>log out</span>
       </a>
