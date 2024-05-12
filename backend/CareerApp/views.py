@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from UserApp.models import Applicant, Recruiter
 from .models import SavedJob , Job
@@ -203,10 +203,36 @@ def filter_search(request):
         jobs = Job.objects.filter(title = data)
 
         result = [] 
-        for job in jobs:
-            result.append(job.title)
+        # for job in jobs:
+        #     result.append({
+        #         'title': job.title,
+        #         'salary': job.salary,
+        #         'exp': job.years_of_experience,
+        #         'country': job.country,
+        #     })
 
-        result.append("Software Engineer")
+        # test only vvvvvvvvvvvvv
+        result.append({
+            'title': "Software Engineer",
+            'pay': "2000",
+            'exp': "3",
+            'country': "France",
+        })
+        result.append({
+            'title': "Front end",
+            'pay': "5000",
+            'exp': '5',
+            'country': "Egypt",
+        })
+
+        # result.append({
+        #     'title': "Software Engineer",
+        #     'pay': "2000"
+        # })
+        # result.append({
+        #     'title': "Front end",
+        #     'pay': "5000"
+        # })
 
         # Return the result as a JSON response
         return JsonResponse({'result': result})
@@ -299,3 +325,28 @@ def saveRecSettings(request):
     # rec_jobs = Job.objects.all().order_by('-creation_date')
     rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('-creation_date')
     return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs})
+
+def viewJob(request, job_id):
+    pass
+    job = get_object_or_404(Job, pk=job_id)
+    return render(request, 'Job_Details.html', {'job': job})
+
+def editJob(request, job_id):
+    pass
+    job = get_object_or_404(Job, pk=job_id)
+    if request.method == 'POST':
+        # Handle the job editing form submission
+        pass
+    else:
+        # Render the job editing form
+        return render(request, 'edit_Job.html', {'job': job})
+
+def deleteJob(request, job_id):
+    pass
+    job = get_object_or_404(Job, pk=job_id)
+    if request.method == 'POST':
+        # Handle the job deletion
+        pass
+    else:
+        # Render the job deletion confirmation page
+        return render(request, 'delete_job_confirmation.html', {'job': job})
