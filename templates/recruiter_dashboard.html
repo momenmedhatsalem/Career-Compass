@@ -636,8 +636,8 @@
                 </div>
 
                 <div id="J9_recruiter_dashboard_settings" style="display: none;">
-                    <form id="J9_recruiter_dashboard_settings_form"
-                        class="J9_emp_dash_settings_right_side_body_container">
+                    <form id="J9_recruiter_dashboard_settings_form" class="J9_emp_dash_settings_right_side_body_container" action="{% url 'saveRecSettings' %}" method="post">
+                        {% csrf_token %}
                         <h3>Edit & Update</h3>
                         <div class="J9_emp_dash_settings_right_side_body_container_name">
                             <div class="J9_emp_dash_settings_right_side_body_container_name_first">
@@ -661,7 +661,7 @@
                         <div class="J9_emp_dash_settings_right_side_body_container_phone_num">
                             <label>Phone Number</label>
                             <input id="J9_emp_dash_settings_right_side_body_container_phone_num" name="phone_number"
-                                type="text" required value="{{ rec.user.phone }}">
+                                type="number" required value="{{ rec.user.phone }}">
                         </div>
 
                         <div class="J9_emp_dash_settings_right_side_body_container_password">
