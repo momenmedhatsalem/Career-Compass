@@ -261,11 +261,11 @@
                                             <span></span>
                                             </button>
                                             <ul class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
-                                            <li><a href="#"><img src=" {% static "icons/eye.svg" %} ">View</a>
+                                            <li><a {% comment %} href="{% url "viewJob" "job.job_id" %}" {% endcomment %}><img src=" {% static "icons/eye.svg" %} ">View</a>
                                             </li>
-                                            <li><a href="#"  onclick="edit({{job.job_id}})"><img src=" {% static "icons/edit.svg" %} ">Edit</a>
+                                            <li><a {% comment %} href="{% url "editJob"  "job.job_id" "edit" %}" {% endcomment %}  onclick="edit({{job.job_id}})"><img src=" {% static "icons/edit.svg" %} ">Edit</a>
                                             </li>
-                                            <li><a href="#" onclick="deleteJob({{job.job_id}})"><img src=" {% static "icons/delete.svg" %} ">Delete</a></li>
+                                            <li><a {% comment %} href="{% url "deleteJob"  "job.job_id" "delete" %}" {% endcomment %} onclick="deleteJob({{job.job_id}})"><img src=" {% static "icons/delete.svg" %} ">Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
