@@ -513,3 +513,18 @@ a {
   margin-left: 10%;
 }
 
+
+.J9_floating_log_out_button{
+  background-color: red;
+  position: fixed;
+  bottom: 3vh;
+  right: 2vw;
+  /* text-align: center; */
+  font-size: 1vw;
+  width:  6vw;
+  height:  3vw;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

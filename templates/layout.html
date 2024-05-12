@@ -101,7 +101,8 @@
     {% else %}
     Post a job
     {% endif %}
-    </a>
+
+  </a>
     <!-- <div id="J9_login_signup_container" class="J9_login_signup">
       <ul class="J9_login_signup_ul">
         <li id="J9_login_signup" style="display: none;"><a href="login.html">Login/Sign up</a></li>
@@ -109,7 +110,11 @@
           job</a></li>
         </ul>
       </div> -->
-
+      {% if user.is_applicant or user.is_recruiter %}
+      <a href="{% url 'logout'%}" class="J9_floating_log_out_button">
+        <span>log out</span>
+      </a>
+      {% endif %}
     <script src= "{% static "load_profile.js" %}"></script>
   </header>
 
