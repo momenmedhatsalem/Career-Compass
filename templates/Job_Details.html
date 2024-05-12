@@ -16,7 +16,7 @@
     </div>
     {% endif %}
 
-    <div class="J9_emp_dash_post_job_right_side_body_container">
+    <div class="J9_view_container">
       <div class="J9_view_apply_job_details">
         <h3 class="J9_view_apply_job_details_title">Job Details</h3>
 
@@ -97,33 +97,33 @@
         </div>
       </div>
 
-      <div class="J9_emp_dash_post_job_right_side_body_emp_address_location">
-        <h3 class="J9_emp_dash_post_job_right_side_body_emp_address_location_title">Address &
+      <div class="J9_view_emp_address_location">
+        <h3 class="J9_view_emp_address_location_title">Address &
           Location
         </h3>
 
-        <div class="J9_emp_dash_post_job_right_side_body_emp_address">
+        <div class="J9_view_emp_address">
           <label>Address</label>
           <input type="text" value="{{ job.address }}" disabled>
         </div>
         
-        <div class="J9_emp_dash_post_job_right_side_body_emp_location">
-          <div class="J9_emp_dash_post_job_right_side_body_emp_location_country">
+        <div class="J9_view_emp_location">
+          <div class="J9_view_emp_location_country">
             <label>Country</label>
             <input type="text" value="{{ job.country }}"disabled>
           </div>
           
-          <div class="J9_emp_dash_post_job_right_side_body_emp_location_city">
+          <div class="J9_view_emp_location_city">
             <label>City</label>
             <input type="text" value="{{ job.city }}"disabled>
           </div>
 
-          <div class="J9_emp_dash_post_job_right_side_body_emp_location_zip_code">
+          <div class="J9_view_emp_location_zip_code">
             <label>Zip Code</label>
             <input type="number" value="{{  job.zip_code }}" disabled/>
           </div>
           
-          <div class="J9_emp_dash_post_job_right_side_body_emp_location_state">
+          <div class="J9_view_emp_location_state">
             <label>State</label>
             <input type="text" value="{{  job.state }}" disabled/>
           </div>
