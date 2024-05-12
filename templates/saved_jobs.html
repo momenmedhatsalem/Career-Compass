@@ -4,16 +4,10 @@
 
 {% block content %}
 <section class="main">
-    <h1>
-        Saved Jobs 
-    </h1>
     <div class="all-jobs">
       <!-- ------------------------------------------------------------------------------------------------------------ -->
       {% for saved_job in jobs %} 
       <div class="job" id="{{saved_job.job.job_id}}">
-          <div class="job-image-div">
-            <img src="{% static '/front.png' %}" class="job-img">
-          </div>
           <div class="desc">
             <div class="job-name"> {{saved_job.job.title}} </div> 
             <div class="salary"> ${{saved_job.job.MinSalary}} - {{saved_job.job.MaxSalary}} / {{saved_job.job.salary}}</div>
@@ -25,10 +19,7 @@
         </div>
         {% endfor %}
         <!-- ------------------------------------------------------------------------------------------------------------------ -->
-        <div class="job" id="job2">
-          <div class="job-image-div">
-            <img src="{% static '/backend.png' %}" class="job-img">
-          </div>   
+        <div class="job" id="job2">  
           <div class="desc">
             <div class="job-name"> Back-end Web Development </div> 
             <div class="salary"> $3500/Monthly</div>
@@ -40,9 +31,6 @@
         </div>
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <div class="job " id="job3">
-          <div class="job-image-div">
-            <img src="{% static '/OIP .jpg' %}" class="job-img">
-          </div>
           <div class="desc">
             <div class="job-name"> Software Developer </div> 
             <div class="salary"> $3500/Monthly</div>
@@ -54,9 +42,6 @@
         </div>
         <!-- ------------------------------------------------------------------------------------------------------------- -->
         <div class="job job4" id="job4">
-          <div class="job-image-div">
-            <img src="{% static '/R.png' %}" class="job-img">
-          </div>
           <div class="desc">
             <div class="job-name">Data Analyst </div> 
             <div class="salary"> $3500/Monthly</div>
