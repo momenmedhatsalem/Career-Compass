@@ -216,7 +216,7 @@ def filter_search(request):
 
         result = [] 
         for job in jobs:
-            print(job.MaxSalary)
+            #print(job.MaxSalary)
             result.append({
                 'title': job.title,
                 'salary': job.MaxSalary,
