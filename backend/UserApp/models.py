@@ -41,6 +41,35 @@ class Applicant(models.Model):
         return self.user.email  # Accessing the email address of the associated user
 
 
+# class education (models.Model):
+#     applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE, default=None)
+#     title =  models.CharField(max_length=200, blank=True, null=True)
+#     Academy =  models.CharField(max_length=200, blank=True, null=True)
+#     startDate = models.DateTimeField(auto_now_add=True)
+#     endDate = models.DateTimeField(auto_now_add=True)
+#     description = models.CharField(max_length=200, blank=True, null=True)
+
+    
+#     class Meta:
+#         unique_together = ('applicant', 'title')
+
+
+# class education (models.Model):
+#     applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE, default=None)
+#     title =  models.CharField(max_length=200, blank=True, null=True)
+#     Company =  models.CharField(max_length=200, blank=True, null=True)
+#     startDate = models.DateTimeField(auto_now_add=True)
+#     endDate = models.DateTimeField(auto_now_add=True)
+#     description = models.CharField(max_length=200, blank=True, null=True)
+
+    
+#     class Meta:
+#         unique_together = ('applicant', 'title')
+
+
+
+
+
 
 
 

@@ -78,8 +78,7 @@
       <fieldset class="M7-fieldset">
 
         <legend class="M7-p_img">
-          <img {% if user.photo.url is not null %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %}
-            alt="User Image" class="M7-p_img" style="display: inline-block;">
+          <img {% if user.photo.url != null %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png"{% endif %} alt="User Image" class="M7-p_img" style="display: inline-block;">
         </legend>
 
 
@@ -329,8 +328,9 @@
       <h4 class="j0-title-three">Resume Attachment</h4>
       <div class="j0-input">
         <h4>CV Attachment*</h4>
+        {% if applicant.resume %}
         <div id="uploaded-resumes-container">
-        </div>
+          </div>
       </div>
       <div id="j0-btn" class="j0_btn">
         <label for="j0-uploadCV">Upload CV</label>

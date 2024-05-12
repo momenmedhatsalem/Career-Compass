@@ -13,7 +13,6 @@ urlpatterns = [
     path("index/", view=views.index, name="index"),
     path("checkCandidates/", view=views.checkCandidates, name="checkCandidates"),
     path("edit_Job/", view=views.edit_Job, name="edit_Job"),
-    # path("AppliedCandidateProfile/", view=views.AppliedCandidateProfile, name="AppliedCandidateProfile"),
     path('save_recruiter_profile/', views.save_recruiter_profile, name='save_recruiter_profile'),
     path("receive_job_to_save_it/", view=views.receive_job_to_save_it, name="receive_job_to_save_it"),
     path("post_job/", view=views.post_job, name="post_job"),
