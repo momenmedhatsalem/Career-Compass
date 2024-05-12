@@ -97,7 +97,21 @@ from .models import Job
 
 def jobs(request):
     jobs = Job.objects.all()
-    return render(request, "list_of_jobs.html", {"jobs": jobs})
+    if request.user.is_authenticated :
+        if request.user.is_applicant:
+            user = Applicant.objects.get(user=request.user.id)
+            saved_jobs = SavedJob.objects.filter(applicant=user)
+            return render(request, "list_of_jobs.html", {"jobs": jobs , "saved_jobs":saved_jobs})
+    return render(request, "list_of_jobs.html", {"jobs": jobs })
+    # # if request.user is Applicant :
+    #     sjobs = SavedJob.objects.all().filter(applicant = request.user)
+    #     print(sjobs)
+    #     # jobs = Job.objects.all()
+    #     # print(jobs)
+    #     return render(request, "list_of_jobs.html", {"jobs": jobs,"saved_jobs":sjobs})
+    # # else:
+    #     jobs = Job.objects.all()
+    #     return render(request, "list_of_jobs.html", {"jobs": jobs})
 
 
 def checkCandidates(request):
@@ -185,14 +199,14 @@ def filter_search(request):
         # Retrieve the data from the request's body
         data = "data from django"
         data = json.loads(request.body)
+        # result = data
+        jobs = Job.objects.filter(title = data)
 
-        # Process the data or perform any necessary actions
-        # result = {
-        #     0: data['0'] + ", this is the first value",
-        #     1: data['1'] + ", this is the second value"
-        # }
+        result = [] 
+        for job in jobs:
+            result.append(job.title)
 
-        result = data
+        result.append("Software Engineer")
 
         # Return the result as a JSON response
         return JsonResponse({'result': result})

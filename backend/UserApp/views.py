@@ -116,12 +116,12 @@ def upload_resume(request):
         return JsonResponse({'error': 'No file found'}, status=400)
 
 
-# @login_required
-# def get_uploaded_resumes(request):
-#     if request.method == 'GET':
-#         resumes = Resume.objects.filter(user=request.user)
-#         return JsonResponse([{'id': resume.id, 'filename': resume.filename} for resume in resumes], safe=False)
-#     return HttpResponseBadRequest('Invalid request method.')
+@login_required
+def get_uploaded_resumes(request):
+    if request.method == 'GET':
+        applicant = Applicant.objects.get(user=request.user)
+        resume = applicant.resume
+        return render(request, "profile.html", {"resume": resume})
 
 # @login_required
 # def delete_resume(request, resume_id):

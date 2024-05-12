@@ -14,34 +14,34 @@
         {% csrf_token %}
         <div>
           <label for="username">Username</label>
-          <input required type="text" id="username" name="username" />
+          <input required type="text" id="username" name="username">
         </div>
         <div>
           <label for="first_name">First Name</label>
-          <input required type="text" id="first_name" name="first_name" />
+          <input required type="text" id="first_name" name="first_name">
         </div>
         <div>
           <label for="last_name">Last Name</label>
-          <input required type="text" id="last_name" name="last_name" />
+          <input required type="text" id="last_name" name="last_name">
         </div>
         <div>
           <label for="InputPhone">Phone</label>
-          <input required type="tel" id="InputPhone" name="phone" />
+          <input required type="tel" id="InputPhone" name="phone" pattern="[0-9]{11}" placeholder="eg. 01077722211">
         </div>
         <div>
           <label for="InputEmail1">Email address</label>
-          <input required type="email" id="InputEmail1" name="email" aria-describedby="emailHelp" />
+          <input required type="email" id="InputEmail1" name="email" aria-describedby="emailHelp">
           <div id="emailHelp">
             We'll never share your email with anyone else.
           </div>
         </div>
         <div>
           <label for="InputPassword">Password</label>
-          <input required type="password" id="InputPassword" name="password" />
+          <input required type="password" id="InputPassword" name="password">
         </div>
         <div>
           <label for="confirmpass">Confirm Password</label>
-          <input required type="password" id="confirmpass" name="confirmpass" />
+          <input required type="password" id="confirmpass" name="confirmpass">
         </div>
 
         <button id="submitBtn" type="submit">Submit</button>
