@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var uploadContainer = document.querySelector('.j0-input');
     var uploadedFileDiv = document.createElement('div');
     uploadedFileDiv.classList.add('j0-upload');
-    uploadedFileDiv.innerHTML = fileName + '<span class="j0-remove-btn"">x</span>';
+    uploadedFileDiv.innerHTML = fileName;
     uploadContainer.appendChild(uploadedFileDiv);
 
   }
@@ -32,16 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-
-
-  // Event delegation to handle removal of uploaded files
-  document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('j0-remove-btn')) {
-      event.preventDefault();
-      event.target.closest('.j0-upload').remove();
-      updateUploadedFilesDisplay(files[i].name);
-    }
-  });
 
 });
 
