@@ -1,7 +1,28 @@
 //delete job
 function remove(num){
-    let response = window.confirm("Are you sure you want to delete this job?");
+    let response = window.confirm("Are you sure you want to unsaved this job?");
     if (response){
+        const url = '/receive_job_to_save_it/'; 
+        const data = {
+            id_for_job_will_save: num,
+            action : 'unsave'
+        };
+
+        fetch(url, {
+            method: 'PUT', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
         let id = ""+num;
         let element = document.getElementById(id);
         let parent = element.parentNode;
@@ -79,7 +100,7 @@ class job{
 let array1 = JSON.parse(localStorage.getItem("jobs"))
 let array2 = JSON.parse(localStorage.getItem("my_jobs"));
 let p = document.getElementsByClassName("all-jobs");
-console.log(array2);
+//console.log(array2);
 // for (let job of array1 ){
 //     let txt = `
 //                     <div class="job-image-div">
@@ -117,11 +138,4 @@ for (let job of array2 ){
     element.setAttribute("id",job.details.id);
     element.innerHTML= txt;
     p[0].appendChild(element);
-}
-//--------------------------------------------------------------------------------------------------------
-//view job
-
-function view (id){
-    
-
-}
+    }

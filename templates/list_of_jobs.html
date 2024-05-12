@@ -29,7 +29,7 @@
           <a class="view-button" href="#">View details</a>
         </td>
     {% endfor %}   
-        {% for job in jobs %}
+        {% for job in other_jobs %}
             <td class="td">
               <h3>
                 {{ job.title  }}
@@ -41,7 +41,17 @@
               <div class="location">{{job.city}}, {{job.country}}</div>
               <a class="view-button" href="#">View details</a>
             </td>
-        {% endfor %}    
+        {% endfor %}   
+        {% for job in jobs %}
+        <td class="td">
+          <h3>
+            {{ job.title  }}
+          </h3>
+          <div class="salary">${{job.MinSalary}} - {{job.MaxSalary}} / {{job.salary}}</div>
+          <div class="location">{{job.city}}, {{job.country}}</div>
+          <a class="view-button" href="#">View details</a>
+        </td>
+    {% endfor %}   
   </tr>
     </table>
     </div>
