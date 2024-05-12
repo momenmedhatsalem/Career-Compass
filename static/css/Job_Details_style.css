@@ -1,69 +1,212 @@
-.main{
-    width: 80%;
-    margin: auto;
-    background-color:white;
-    padding: 2%;
-    position: relative;
+.main {
+  width: 70%;
+  margin: auto;
+  background-color: white;
+  padding: 2%;
+  position: relative;
 }
-body{
-    background-color:  #f5f5f5 ;
-    
+body {
+  background-color: #f5f5f5;
 }
-.job_title{
-    text-align: center;
-    color: #1a237e;
+.job_title {
+  text-align: center;
+  color: #1a237e;
 }
 h2 {
-    color: #1a237e;
+  color: #1a237e;
 }
 
-[onclick="confirmApplication()"]{
-    display: block;
-    width: 200px;
-    padding: 10px;
-    margin: 30px auto;
-    background-color: #00b0ff;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
+[onclick="confirmApplication()"] {
+  display: block;
+  width: 200px;
+  padding: 10px;
+  margin: 30px auto;
+  background-color: #00b0ff;
+  color: #fff;
+  text-align: center;
+  border-radius: 50px;
 }
 [onclick="confirmApplication()"]:hover {
-    background-color: #00c853;
-  }
-  .save-button-div {
-    background-color: #69696900;
-    border: solid;
-    border-color: #0000001f;
-    border-width: 1px;
-    width: 6%;
-    height: 8%;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 6%;
-    /* margin-right: 1%; */
-    position: absolute;
-    top: -6%;
-    right: 6%;
+  background-color: #00c853;
 }
-
+.save-button-div {
+  background-color: #69696900;
+  border: solid;
+  border-color: #0000001f;
+  border-width: 1px;
+  width: 6%;
+  height: 8%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6%;
+  /* margin-right: 1%; */
+  position: absolute;
+  top: -6%;
+  right: 6%;
+}
 
 .save-button {
-    width: 100%;
-    height: 100%;
-    border:none;
-    border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 50%;
 }
 .save-button-img {
-    width: 95%;
-    height: 80%;
-    display: block;
-    filter: contrast(0.5);
+  width: 95%;
+  height: 80%;
+  display: block;
+  filter: contrast(0.5);
 }
 .save-button:hover {
-    transform: scale(1.2);
-    background-color: rgb(98 255 98 / 50%);
-    color: #7e7e7e;
-    cursor: pointer;
+  transform: scale(1.2);
+  background-color: rgb(98 255 98 / 50%);
+  color: #7e7e7e;
+  cursor: pointer;
+}
+/**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.J9_emp_dash_post_job_right_side_body_container label {
+    display: block;
+    font-size: 1.5vw;
+    /* margin-bottom: 1vh; */
+    margin-top: 1vh;
+}
+.J9_emp_dash_post_job_right_side_body_container h3 {
+    font-size: 2vw;
+}
+.J9_emp_dash_post_job_right_side_body_container textarea {
+    /* height: 15vh; */
+    height: calc(8vh + 7vw);
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    padding: 1.5vh 2vw;
+    resize: none;
+    font-size: 1.6vw;
+}
+.J9_emp_dash_post_job_right_side_body_container input {
+  width: 97%;
+  height: 4.5vw; /* vw */
+  border: 1px solid #e5e5e5;
+  border-radius: 1vw;
+  padding: 0 2vw;
+  font-size: 1.6vw;
+  margin-top: 1vh;
+}
+/************************************************************************/
+
+.J9_emp_dash_post_job_right_side_body_container {
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 2vh 4vw 3vw;
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  margin-bottom: 5vh;
+}
+.J9_view_apply_job_details {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+}
+.J9_view_apply_job_details > div {
+  margin-bottom: 2vh;
+}
+
+.J9_view_apply_job_details_job_status_years_of_experience {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.J9_view_apply_job_details_job_category_type_Salary {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+}
+
+.J9_view_apply_job_details_job_category_type {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.J9_view_apply_job_details_job_salary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.J9_view_apply_job_details_job_salary_min_max {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: end;
+  margin-top: 1.5vw;
+}
+
+/************************************************************************************************************/
+* {
+    box-sizing: border-box;
+}
+.J9_view_apply_experience {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 3vh;
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_address_location {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  font-size: 1.6vw;
+  margin-top: 2vh;
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_address_location_title {
+  margin: 0 0 1vh;
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_address {
+  margin-bottom: 1.2vh;
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_location {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.J9_emp_dash_post_job_right_side_body_emp_location div {
+  margin-bottom: 1vh;
+  width: 100%; /*  */
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_address_location label {
+  display: block;
+}
+
+.J9_emp_dash_post_job_right_side_body_emp_address_location select option {
+  font-size: 1.6vw;
+}
+.J9_emp_dash_post_job_right_side_body_emp_profile_save_cancel_button {
+  width: 22vw;
+  height: 6vh;
+  /* margin-left: 3vw; */
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-items: center;
+  gap: 1vmin;
+  font-size: 1.6vw;
+  margin: 3vh 0;
+}
+
+#J9_emp_dash_post_job_right_side_body_emp_profile_save_button {
+  text-decoration: none;
+  border-radius: 3vw;
+  background-color: #00c853;
+  color: white;
+  padding: 1vh 3vw;
+  cursor: pointer;
+}
+
+#J9_emp_dash_post_job_right_side_body_emp_profile_cancel_button {
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+  border: none;
+  border-radius: 3vw;
+  cursor: pointer;
 }

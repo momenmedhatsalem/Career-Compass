@@ -9,10 +9,129 @@
 
   <section class="main">
     <h1 class="job_title">Job Title: {{job.title}}</h1>
+
+    {% if user.is_applicant %}
     <div class="save-button-div">
       <button class="save-button "><img src="{% static 'saved.png' %}" title="save job" class="save-button-img"> </button>
     </div>
-    <div class="job-details">
+    {% endif %}
+
+    <div class="J9_emp_dash_post_job_right_side_body_container">
+      <div class="J9_view_apply_job_details">
+        <h3 class="J9_view_apply_job_details_title">Job Details</h3>
+
+        {% if user.is_recruiter %}
+        <div class="J9_view_apply_job_details_job_id">
+          <label>Job ID</label>
+          <input type="number" value="{{ job.job_id }}" disabled/>
+        </div>
+        {% endif %}
+
+        <div class="J9_view_apply_job_details_job_title">
+          <label>Job Title</label>
+          <input type="text" value="{{ job.title }}" disabled/>
+        </div>
+
+        <div class="J9_view_apply_job_details_company_name">
+          <label>Company Name</label>
+          <input type="text" value="{{ job.company_name }}" disabled />
+        </div>
+        
+        <div class="J9_view_apply_job_details_job_status_years_of_experience">
+          <div class="J9_view_apply_job_details_job_status">
+            <label>Job Status</label>
+            <input type="text" value="{{ job.status }}" disabled />
+            
+          </div>
+          <div class="J9_view_apply_job_details_years_of_experience">
+            <label>years of experience</label>
+            <input type="number" value="{{ job.years_of_experience }}" disabled />
+          </div>
+
+        </div>
+        <div class="J9_view_apply_job_details_job_description">
+          <label>Job Description</label>
+          <textarea disabled>{{ job.description }}</textarea>
+        </div>
+
+        <div class="J9_view_apply_job_details_job_category_type_Salary">
+          <div class="J9_view_apply_job_details_job_category_type">
+            <div class="J9_view_apply_job_details_job_category">
+              <label>Job Category</label>
+              <input type="text" value="{{ job.category }}" disabled />
+            </div>
+            
+            <div class="J9_view_apply_job_details_job_type">
+              <label>Job Type</label>
+              <input type="text" value= "{{ job.type }}" disabled />
+            </div>
+          </div>
+
+          <div class="J9_view_apply_job_details_job_salary">
+            <div class="J9_view_apply_job_details_job_salary_type">
+              <label>Salary</label>
+              <input type="text" value="{{ job.salary }}" disabled />
+            </div>
+
+            <div class="J9_view_apply_job_details_job_salary_min_max">
+              <div><input type="number" value="{{ job.MinSalary }}" disabled /></div>
+              <div><input type="number" value="{{ job.MaxSalary }}" disabled /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="J9_view_apply_skills_experience">
+        <h3>English Experience</h3>
+        <div class="J9_view_apply_experience">
+          <div>
+            <label>English Fluency</label>
+            <div><input type="text" value="{{ job.english_fluency }}" disabled/></div>
+          </div>
+
+          <div>
+            <label>Experience</label>
+            <div><input type="text" value="{{ job.experience }}" disabled /></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="J9_emp_dash_post_job_right_side_body_emp_address_location">
+        <h3 class="J9_emp_dash_post_job_right_side_body_emp_address_location_title">Address &
+          Location
+        </h3>
+
+        <div class="J9_emp_dash_post_job_right_side_body_emp_address">
+          <label>Address</label>
+          <input type="text" value="{{ job.address }}" disabled>
+        </div>
+        
+        <div class="J9_emp_dash_post_job_right_side_body_emp_location">
+          <div class="J9_emp_dash_post_job_right_side_body_emp_location_country">
+            <label>Country</label>
+            <input type="text" value="{{ job.country }}"disabled>
+          </div>
+          
+          <div class="J9_emp_dash_post_job_right_side_body_emp_location_city">
+            <label>City</label>
+            <input type="text" value="{{ job.city }}"disabled>
+          </div>
+
+          <div class="J9_emp_dash_post_job_right_side_body_emp_location_zip_code">
+            <label>Zip Code</label>
+            <input type="number" value="{{  job.zip_code }}" disabled/>
+          </div>
+          
+          <div class="J9_emp_dash_post_job_right_side_body_emp_location_state">
+            <label>State</label>
+            <input type="text" value="{{  job.state }}" disabled/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% comment %} <div class="job-details">
       <h2>Description:</h2>
       <p>{{ job.description }}</p>
     </div>
@@ -42,16 +161,19 @@
     <div class="job-details">
       <h2>Application Deadline:</h2>
       <p>January 1, 2025</p>
-    </div>
+    </div> {% endcomment %}
+
+
     <button onclick="confirmApplication()">Apply</button>
 
-    <script>
+    {% comment %} <script>
       function confirmApplication() {
         if (confirm("Are you sure you want to apply for this job?")) {
-          window.location.href = "Confirmation.html";
+          window.location.href = {% url "apply" job.id  job.recruiter.user.username %};
         }
       }
-    </script>
+    </script> {% endcomment %}
+
     <div>
   </section>
 
