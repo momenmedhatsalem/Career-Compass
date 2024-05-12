@@ -329,9 +329,9 @@
       <h4 class="j0-title-three">Resume Attachment</h4>
       <div class="j0-input">
         <h4>CV Attachment*</h4>
-        {% if user.Resume %}
+        {% if applicant_user.resume %}
         <div id="uploaded-resumes-container">
-          "{{user.Resume}}"
+          "{{applicant_user.resume}}"
         </div>
         {% endif %}
       </div>
