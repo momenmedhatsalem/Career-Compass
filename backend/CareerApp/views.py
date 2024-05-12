@@ -96,13 +96,22 @@ from .models import Job
 
 
 def jobs(request):
-    if request.user.is_applicant:
-        sjobs = SavedJob.objects.all().filter(applicant = request.user)
-        jobs = Job.objects.all()
-        return render(request, "list_of_jobs.html", {"jobs": jobs,"saved_jobs":sjobs})
-    else:
-        jobs = Job.objects.all()
-        return render(request, "list_of_jobs.html", {"jobs": jobs})
+    jobs = Job.objects.all()
+    if request.user.is_authenticated :
+        if request.user.is_applicant:
+            user = Applicant.objects.get(user=request.user.id)
+            saved_jobs = SavedJob.objects.filter(applicant=user)
+            return render(request, "list_of_jobs.html", {"jobs": jobs , "saved_jobs":saved_jobs})
+    return render(request, "list_of_jobs.html", {"jobs": jobs })
+    # # if request.user is Applicant :
+    #     sjobs = SavedJob.objects.all().filter(applicant = request.user)
+    #     print(sjobs)
+    #     # jobs = Job.objects.all()
+    #     # print(jobs)
+    #     return render(request, "list_of_jobs.html", {"jobs": jobs,"saved_jobs":sjobs})
+    # # else:
+    #     jobs = Job.objects.all()
+    #     return render(request, "list_of_jobs.html", {"jobs": jobs})
 
 
 def checkCandidates(request):
