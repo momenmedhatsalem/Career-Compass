@@ -56,21 +56,20 @@ def savedJobs(request):
     return render(request, "saved_jobs.html", {"jobs": saved_jobs})
 
 @csrf_exempt  
-@require_http_methods(["POST"])
+@require_http_methods(["PUT"])
 def receive_job_to_save_it(request):
     try:
         data = json.loads(request.body)
         id_for_job =data['id_for_job_will_save']
         action = data['action']
         jobs = SavedJob.objects.all()
+        retrieve_job = Job.objects.get(job_id = id_for_job)
+        applicant_user = Applicant.objects.get(user=request.user.id)
         if action == "save":
-            retrieve_job = Job.objects.filter(job_id = id_for_job).values()
-            applicant_user = Applicant.objects.filter(user=request.user).values()
             newSavedJob = SavedJob.objects.create(applicant = applicant_user , job = retrieve_job )
         else:
-            for j in jobs:
-                if j.job.job_id == id_for_job and j.applicant == request.user :
-                    j.delete()
+            savedJob =SavedJob.objects.get(applicant = applicant_user ,job=retrieve_job)
+            savedJob.delete()
         return JsonResponse({"status": "success", "data_received": data}, status=200)
     except json.JSONDecodeError:
         return JsonResponse({"status": "error", "message": "Invalid JSON"}, status=400)

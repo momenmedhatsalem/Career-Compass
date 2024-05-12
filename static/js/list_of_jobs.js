@@ -81,7 +81,8 @@ function save(id){
     // const xhttp = new XMLHttpRequest();
     // xhttp.open("GET", "save_job#"+id);
     // xhttp.send();
-    button = document.getElementById(id);
+    console.log(id);
+    button = document.getElementById("x"+id);
     if (button.style.backgroundColor === 'transparent' ){
         button.style.backgroundColor ='green'; 
 
@@ -92,7 +93,7 @@ function save(id){
         };
 
         fetch(url, {
-            method: 'POST', 
+            method: 'PUT', 
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -116,7 +117,7 @@ function save(id){
         };
 
         fetch(url, {
-            method: 'POST', 
+            method: 'PUT', 
             headers: {
                 'Content-Type': 'application/json',
             },
