@@ -101,7 +101,7 @@ def jobs(request):
         if request.user.is_applicant:
             user = Applicant.objects.get(user=request.user.id)
             saved_jobs = SavedJob.objects.filter(applicant=user)
-            cjob = []
+            other_jobs = []
             for j in jobs :
                 exist = False
                 for sj in saved_jobs :
@@ -109,9 +109,8 @@ def jobs(request):
                         exist = True
                         break
                 if not exist:
-                    cjob.append(j)
-            print(cjob)
-            return render(request, "list_of_jobs.html", {"jobs": cjob , "saved_jobs":saved_jobs})
+                    other_jobs.append(j)
+            return render(request, "list_of_jobs.html", {"other_jobs": other_jobs , "saved_jobs":saved_jobs})
     return render(request, "list_of_jobs.html", {"jobs": jobs })
     # # if request.user is Applicant :
     #     sjobs = SavedJob.objects.all().filter(applicant = request.user)
