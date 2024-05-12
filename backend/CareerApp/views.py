@@ -96,8 +96,13 @@ from .models import Job
 
 
 def jobs(request):
-    jobs = Job.objects.all()
-    return render(request, "list_of_jobs.html", {"jobs": jobs})
+    if request.user.is_applicant:
+        sjobs = SavedJob.objects.all().filter(applicant = request.user)
+        jobs = Job.objects.all()
+        return render(request, "list_of_jobs.html", {"jobs": jobs,"saved_jobs":sjobs})
+    else:
+        jobs = Job.objects.all()
+        return render(request, "list_of_jobs.html", {"jobs": jobs})
 
 
 def checkCandidates(request):
