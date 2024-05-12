@@ -7,7 +7,6 @@ urlpatterns = [
     path("recruiterDashboard/", view=views.recruiterDashboard, name="recruiterDashboard"),
     path("saved_jobs/", view=views.savedJobs, name="saved_jobs"),
     path("search/", view=views.search, name="search"),
-    path("filter_search/", view=views.filter_search, name="filter_search"),
     path("about/", view=views.about, name="about"),
     path("jobs/", view=views.jobs, name="jobs"),
     # path("job_Details/<int:id>", view=views.job_details(id), name="job_details"),

@@ -25,7 +25,8 @@ function requestBackend() {
     })
         .then(response => response.json())
         .then(ResponseData => {
-            
+            // Handle the response from the backend
+            //   JSON.parse(ResponseData);
             console.log(ResponseData);
             // console.log(ResponseData.result['0'] + "\n" + ResponseData.result['1']);
             console.log(ResponseData.result);
