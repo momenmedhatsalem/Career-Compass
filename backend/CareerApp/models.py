@@ -19,7 +19,7 @@ class Job(models.Model):
     description = models.TextField(default=None)
     category = models.CharField(max_length=100, default=None)
     type = models.CharField(max_length=100, default=None)
-    salary = models.DecimalField(max_digits=10, decimal_places=2, default=None)
+    salary = models.CharField(max_length=100, default=None)
     MinSalary = models.DecimalField(max_digits=10, decimal_places=2, default=None)
     MaxSalary = models.DecimalField(max_digits=10, decimal_places=2, default=None)
     creation_date = models.DateTimeField(default=timezone.now)
