@@ -189,43 +189,43 @@ a {
   align-items: center;
   grid-template-rows: auto auto;
   justify-items: center;
-  grid-template-areas: "topic_sentence" "quoted_text";
+  /* grid-template-areas: "topic_sentence" "quoted_text"; */
   background-image: linear-gradient(105deg, #00b0ff, #6dd5ed, #28c7fa);
   padding-top: 5vh;
 }
-.J9_row_topic_sentence {
+/* .J9_row_topic_sentence {
   grid-area: topic_sentence;
 }
 .J9_row_quoted_text {
   grid-area: quoted_text;
-}
+} */
 
 .J9_category_section {
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-areas: "J9_category_section_row " "J9_category_section_categories";
+  /* grid-template-areas: "J9_category_section_row " "J9_category_section_categories"; */
 }
 .J9_category_section_row {
-  grid-area: J9_category_section_row;
+  /* grid-area: J9_category_section_row; */
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
-  grid-template-areas: "J9_category_title J9_category_explore";
+  /* grid-template-areas: "J9_category_title J9_category_explore"; */
   padding: 5vh 3vw 3vh;
   font-size: 1.5vw;
   margin-left: 5vw;
   margin-right: 5vw;
 }
-.J9_category_title {
+/* .J9_category_title {
   grid-area: J9_category_title;
-}
+} */
 .J9_category_explore {
-  grid-area: J9_category_explore;
+  /* grid-area: J9_category_explore; */
   justify-self: flex-end;
 }
 
 .J9_category_section_categories {
-  grid-area: J9_category_section_categories;
+  /* grid-area: J9_category_section_categories; */
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
   align-items: center;
@@ -250,20 +250,20 @@ a {
 .J9_trending_job_section {
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-areas:
+  /* grid-template-areas:
     "J9_trending_job_section_title"
-    "J9_trending_jobs";
+    "J9_trending_jobs"; */
   font-size: 2vw;
 }
 
 .J9_trending_job_section_title {
-  grid-row: J9_trending_job_section_title;
+  /* grid-row: J9_trending_job_section_title; */
   padding: 5vw 5vw 0;
   font-size: 2.5vw;
 }
 
 .J9_trending_jobs {
-  grid-row: J9_trending_jobs;
+  /* grid-row: J9_trending_jobs; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
