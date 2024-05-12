@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from UserApp.models import Applicant, Recruiter
-from .models import SavedJob
+from .models import SavedJob , Job
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods
+
 
 
 def index(request):
@@ -54,21 +56,38 @@ def savedJobs(request):
 
     return render(request, "saved_jobs.html", {"jobs": saved_jobs})
 
-
+@csrf_exempt  
+@require_http_methods(["POST"])
 def receive_job_to_save_it(request):
-    if request.method == "POST" and request.is_ajax():
-        data_received = request.POST
-        job_id = data_received.get("id")
-        selected_job = Job.objects.filter(job_id=job_id)
-        SavedJob.objects.create(
-            Applicant=Applicant.objects.get(user=request.user), job=selected_job
-        )
+    try:
+        data = json.loads(request.body)
+        id_for_job =data['id_for_job_will_save']
+        action = data['action']
+        jobs = SavedJob.objects.all()
+        if action == "save":
+            retrieve_job = Job.objects.filter(job_id = id_for_job).values()
+            applicant_user = Applicant.objects.filter(user=request.user).values()
+            newSavedJob = SavedJob.objects.create(applicant = applicant_user , job = retrieve_job )
+        else:
+            for j in jobs:
+                if j.job.job_id == id_for_job and j.applicant == request.user :
+                    j.delete()
+        return JsonResponse({"status": "success", "data_received": data}, status=200)
+    except json.JSONDecodeError:
+        return JsonResponse({"status": "error", "message": "Invalid JSON"}, status=400)
+    # if request.method == "POST" and request.is_ajax():
+    #     data_received = request.POST
+    #     job_id = data_received.get("id")
+    #     selected_job = Job.objects.filter(job_id=job_id)
+    #     SavedJob.objects.create(
+    #         Applicant=Applicant.objects.get(user=request.user), job=selected_job
+    #     )
 
-        # Return a JSON response
-        response_data = {"message": "Data received successfully"}
-        return JsonResponse(response_data)
-    else:
-        return JsonResponse({"error": "Invalid request"})
+    #     # Return a JSON response
+    #     response_data = {"message": "Data received successfully"}
+    #     return JsonResponse(response_data)
+    # else:
+    #     return JsonResponse({"error": "Invalid request"})
 
 
 def about(request):
