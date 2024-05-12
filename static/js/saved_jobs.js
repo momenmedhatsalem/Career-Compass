@@ -1,7 +1,28 @@
 //delete job
 function remove(num){
-    let response = window.confirm("Are you sure you want to delete this job?");
+    let response = window.confirm("Are you sure you want to unsaved this job?");
     if (response){
+        const url = '/receive_job_to_save_it/'; 
+        const data = {
+            id_for_job_will_save: num,
+            action : 'unsave'
+        };
+
+        fetch(url, {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+        
         let id = ""+num;
         let element = document.getElementById(id);
         let parent = element.parentNode;
