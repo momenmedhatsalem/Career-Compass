@@ -199,14 +199,14 @@ def filter_search(request):
         # Retrieve the data from the request's body
         data = "data from django"
         data = json.loads(request.body)
+        # result = data
+        jobs = Job.objects.filter(title = data)
 
-        # Process the data or perform any necessary actions
-        # result = {
-        #     0: data['0'] + ", this is the first value",
-        #     1: data['1'] + ", this is the second value"
-        # }
+        result = [] 
+        for job in jobs:
+            result.append(job.title)
 
-        result = data
+        result.append("Software Engineer")
 
         # Return the result as a JSON response
         return JsonResponse({'result': result})
