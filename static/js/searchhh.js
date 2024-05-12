@@ -54,16 +54,13 @@ function requestBackend() {
                 document.getElementById("result-grid").innerHTML +=
                     '<div class="M7-card1 M7-filter-item">' +
                     "<fieldset>" +
-                    "<img src=\"" + "{% static \"high_paying.png\" %}" + "\" alt=\"open job icon\" width=\"100%\" height=\"30%\"\>" +
+                    "<img src=\"" + images[Math.floor(Math.random() * images.length)] + "\" alt=\"open job icon\" width=\"100%\" height=\"30%\"\>" +
                     "<h4>" +
-                    result +
+                    result['title'] +
                     "</h4>" +
                     "<p>" +
-                    /*match.details.MaxSalary*/ '1' + "$ | " + /*match.details.years_of_experience*/ '2' + " Exp. years | " + /*match.address_and_location.country*/ '3' +
+                     result['pay'] + "$ | " + result['exp'] + " Exp. years | " + result['country'] +
                     "</p>" +
-                    // "<p>" +
-                    // match.address_and_location.country +
-                    // "</p>" +
                     '<a href="#">' +
                     '<button class="M7-button" style="display: inline;">Apply</button>' +
                     "</a>" +
@@ -78,7 +75,6 @@ function requestBackend() {
 
 }
 
-var matches = [];
 var search_by = "";
 old_option = "title";
 

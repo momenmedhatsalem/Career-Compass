@@ -203,10 +203,36 @@ def filter_search(request):
         jobs = Job.objects.filter(title = data)
 
         result = [] 
-        for job in jobs:
-            result.append(job.title)
+        # for job in jobs:
+        #     result.append({
+        #         'title': job.title,
+        #         'salary': job.salary,
+        #         'exp': job.years_of_experience,
+        #         'country': job.country,
+        #     })
 
-        result.append("Software Engineer")
+        # test only vvvvvvvvvvvvv
+        result.append({
+            'title': "Software Engineer",
+            'pay': "2000",
+            'exp': "3",
+            'country': "France",
+        })
+        result.append({
+            'title': "Front end",
+            'pay': "5000",
+            'exp': '5',
+            'country': "Egypt",
+        })
+
+        # result.append({
+        #     'title': "Software Engineer",
+        #     'pay': "2000"
+        # })
+        # result.append({
+        #     'title': "Front end",
+        #     'pay': "5000"
+        # })
 
         # Return the result as a JSON response
         return JsonResponse({'result': result})
