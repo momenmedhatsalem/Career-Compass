@@ -62,15 +62,18 @@ def receive_job_to_save_it(request):
         data = json.loads(request.body)
         id_for_job =data['id_for_job_will_save']
         action = data['action']
-        jobs = SavedJob.objects.all()
         if action == "save":
             retrieve_job = Job.objects.filter(job_id = id_for_job).values()
-            applicant_user = Applicant.objects.filter(user=request.user).values()
-            newSavedJob = SavedJob.objects.create(applicant = applicant_user , job = retrieve_job )
+            applicant_user = Applicant.objects.filter(user = request.user)
+            # newSavedJob = SavedJob.objects.create(applicant = applicant_user[0] , job = retrieve_job[0] )
+            # newSavedJob.save()
+            # print(newSavedJob)
         else:
-            for j in jobs:
-                if j.job.job_id == id_for_job and j.applicant == request.user :
-                    j.delete()
+            jobs = SavedJob.objects.all()
+            print(jobs)
+        #     for j in jobs:
+        #         if j.job.job_id == id_for_job and j.applicant == request.user :
+        #             j.delete()
         return JsonResponse({"status": "success", "data_received": data}, status=200)
     except json.JSONDecodeError:
         return JsonResponse({"status": "error", "message": "Invalid JSON"}, status=400)
