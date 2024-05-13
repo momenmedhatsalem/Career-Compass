@@ -11,14 +11,21 @@
     <h1 class="job_title">Job Title: {{job.title}}</h1>
 
     {% if user.is_applicant %}
-    <div class="save-button-div">
-      <button class="save-button "><img src="{% static 'saved.png' %}" title="save job" class="save-button-img"> </button>
-    </div>
+      {% if saved == 1 %}
+      <div class="save-button-div">
+        <button class="save-button " onclick="save(`{{job.job_id}}`)" id="x{{job.job_id}}" style="background-color: green;"><img src="{% static 'saved.png' %}" title="save job" class="save-button-img"> </button>
+      </div>
+
+      {% else %}
+      <div class="save-button-div">
+        <button class="save-button " onclick="save(`{{job.job_id}}`)" id="x{{job.job_id}}" style="background-color: transparent;"><img src="{% static 'saved.png' %}" title="save job" class="save-button-img"> </button>
+      </div>
+      {% endif %}
     {% endif %}
 
     <div class="J9_view_container">
-      <div class="J9_view_apply_job_details">
-        <h3 class="J9_view_apply_job_details_title">Job Details</h3>
+      <div class="J9_view_apy_job_details">
+        <h3 class="J9_view_plapply_job_details_title">Job Details</h3>
 
         {% if user.is_recruiter %}
         <div class="J9_view_apply_job_details_job_id">
@@ -181,4 +188,5 @@
   </section>
 
   </div>
+  <script src="{%static 'js/list_of_jobs.js' %}"></script>
 {% endblock %}

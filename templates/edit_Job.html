@@ -17,7 +17,7 @@
       <form action="{% url "editJob"  job_id=job.job_id recruiter_username=job.recruiter.user.username  %}" method="post">
         {% csrf_token %}
         <label for="id" id="job-id-label"> Job ID </label>
-        <input type="text" id="id" name="id" class="input-box" placeholder="Enter the Job Id" value="{{ job.job_id }}">
+        <input type="text" id="id" name="job-id" class="input-box" placeholder="Enter the Job Id" value="{{ job.job_id }}">
         <br>
         <label for="job-title" id="job-title-label"> Job Title </label>
         <input type="text" id="job-title" name="job-title" class="input-box" value="{{ job.title }}" required>
