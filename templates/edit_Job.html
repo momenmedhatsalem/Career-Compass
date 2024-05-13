@@ -10,59 +10,153 @@
 
 
   <section class="main">
-    <h1 id="h1-edit-job">
-      Edit Job
-    </h1>
+    <h1 id="h1-edit-job">Edit Job</h1>
+
     <div>
-      <form  >
+
+      <form action="{% url "editJob"  job_id=job.job_id recruiter_username=job.recruiter.user.username  %}" method="post">
+        {% csrf_token %}
         <label for="id" id="job-id-label"> Job ID </label>
-        <input type="text" id="id" name="id" class="input-box" placeholder="Enter the Job Id" value="123" readonly>
+        <input type="text" id="id" name="id" class="input-box" placeholder="Enter the Job Id" value="{{ job.job_id }}">
         <br>
         <label for="job-title" id="job-title-label"> Job Title </label>
-        <input type="text" id="job-title" name="job-title" class="input-box" value="SoftWare Engineer" required>
+        <input type="text" id="job-title" name="job-title" class="input-box" value="{{ job.title }}" required>
 
         <br>
         <label for="company-name" id="company-name-label"> Company Name </label>
-        <input type="text" id="company-name" name="company-name" class="input-box" value="Career compass"
+        <input type="text" id="company-name" name="company-name" class="input-box" value="{{ job.company_name }}"
           required>
 
           <br>
         <label for="years-of-experience" id="years-of-experience-label"> Years Of Experience </label>
-        <input type="number" id="years-of-experience" class="input-box" name="years-of-experience" value="2">
+        <input type="number" id="years-of-experience" class="input-box" name="years-of-experience" value="{{ job.years_of_experience }}">
+        <br>
+        <label>Job Category</label>
+        <select required name="job-category" style="width: 50%; margin-left: 2vw;" >
+            <option>Designer</option>
+            <option>It & Development</option>
+            <option>Web & Mobile Dev</option>
+            <option>Writing</option>
+        </select>
+        <br>
+        <br>
+        <label>Job Type</label>
+        <select required name="job_type" style="width: 65%; margin-left: 2vw;">
+            <option>Full time</option>
+            <option>Part time</option>
+            <option>Hourly-Contract</option>
+            <option>Fixed-Price</option>
+        </select>
+        <br>
         <br>
         <label for="salary" id="salary-label"> Salary </label>
-        <input type="number" id="salary" name="salary" class="input-box" value="900">
-        <span id="per-word">$ per</span> 
-        <select>
-          <option>Week</option>
-          <option>Month</option>
-          <option>Year</option>
+        <select required name="salary" value="{{ job.salary }}" style="width:75%;margin-left: 2vw; margin-right: 1vw;">
+          <option>Monthly</option>
+          <option>Weekly</option>
         </select>
-
         <br><br>
+        <div style="display: grid; grid-template-columns: auto auto; justify-items:center;">
+          <label> min salary </label>
+          <label> max salary </label>
+          <input name="min-salary" class="input-box" style="width: 80%;" required type="number" value="{{ job.MinSalary }}" />
+          <input name="max-salary" class="input-box" style="width: 80%;" required type="number" value="{{ job.MaxSalary }}" />
+        </div>
+
         <label id="job-status-label">Job Status : </label>
         <br>
-        <input type="radio" id="open" name="job status" value="open">
+        <input type="radio" id="open" {% if job.status == "open" %} checked {% endif %} name="job-status" value="open">
         <label for="open">Open</label>
         <br>
-        <input type="radio" id="closed" name="job status" value="closed">
+        <input type="radio" id="closed" name="job-status" {% if job.status == "closed" %} checked {% endif %} value="closed">
         <label for="closed">Closed</label>
     
-<br><br>
+        <br><br>
         <label for="description" id="description"> Description </label>
   
-        <textarea id="description" name="description"  class="input-box">you will create new software and improve existing software applications. </textarea>
+        <textarea id="description" name="description"  class="input-box">{{job.description}}</textarea>
        
+        <div class="J9_emp_dash_post_job_right_side_body_container_skills_experience">
+          <h3>English Experience</h3>
+          <div>
+              <div>
+                  <label>English Fluency</label>
+                  <select required name="english_fluency" style="width:50%;margin-left: 2vw; margin-right: 1vw;">
+                    <option {% if job.english_fluency == "Basic" %}selected{% endif %}>Basic</option>
+                    <option {% if job.english_fluency == "Conversational" %}selected{% endif %}>Conversational</option>
+                    <option {% if job.english_fluency == "Fluent" %}selected{% endif %}>Fluent</option>
+                    <option {% if job.english_fluency == "Native/Bilingual" %}selected{% endif %}>Native/Bilingual</option>
+                </select>
+              </div>
 
-        <p id="created by"> created by <span id="username" > user name </span> </p>
+              <div>
+                  <label>Experience</label>
+                  <select required name="experience" style="width:59%;margin-left: 2vw; margin-right: 1vw;">
+                    <option {% if job.experience == "Intermediate" %}selected{% endif %}>Intermediate</option>
+                    <option {% if job.experience == "No-Experience" %}selected{% endif %}>No-Experience</option>
+                    <option {% if job.experience == "Expert" %}selected{% endif %}>Expert</option>
+                  </select>
+              </div>
 
-        <input type="submit" value="save" id="boutton-save" onclick="save_edit()">
+              <div class="J9_emp_dash_post_job_right_side_body_emp_address_location">
+                <h3 class="J9_emp_dash_post_job_right_side_body_emp_address_location_title">Address &
+                    Location
+                </h3>
+                <div class="J9_emp_dash_post_job_right_side_body_emp_address">
+                    <label>Address</label>
+                    <input name="address" class="input-box" value="{{job.address}}" id="J9_recruiter_add_job_address" required type="text" >
+                </div>
+                <div class="J9_emp_dash_post_job_right_side_body_emp_location">
+                    <div class="J9_emp_dash_post_job_right_side_body_emp_location_country">
+                        <label>Country</label>
+                        <select required name="country" id="J9_recruiter_add_job_country" style="width:65%;margin-left: 2vw; margin-right: 1vw;">
+                            <option value="" selected disabled hidden>Country</option>
+                            {% for country in countries %}
+                            <option {% if job.country == country %} selected {% endif %} value="{{ country }}">{{ country }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="J9_emp_dash_post_job_right_side_body_emp_location_city">
+                        <label>City</label>
+                        <select required name="city" id="J9_recruiter_add_job_city" style="width:65%;margin-left: 2vw; margin-right: 1vw;">
+                            <option value="" selected disabled hidden>City</option>
+                            {% for city in cities %}
+                            <option {% if job.city == city %} selected {% endif %} value="{{ city }}">{{ city }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="J9_emp_dash_post_job_right_side_body_emp_location_zip_code">
+                        <label>Zip Code</label>
+                        <input name="zip_code" class="input-box" style="width:65%;margin-left: 2vw; margin-right: 1vw;" id="J9_recruiter_add_job_zip_code" required type="number" value="{{ job.zip_code }}">
+                    </div>
+                    <div class="J9_emp_dash_post_job_right_side_body_emp_location_state">
+                        <label>State</label>
+                        <select required name="state" id="J9_recruiter_add_job_state" style="width:65%;margin-left: 2vw; margin-right: 1vw;">
+                            <option value="" selected disabled hidden>State</option>
+                            {% for state in states %}
+                            <option {% if job.state == state %} selected {% endif %} value="{{ state }}">{{ state }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+          </div>
+        </div>
+
+
+        <p id="created by"> created by <span id="username" > {{ job.recruiter.user.username }} </span> </p>
+        <div style="display:grid; grid-template-columns: auto auto; justify-content:center; gap:3vw;">
+  
+          <input type="submit" value="Save" id="boutton-save">
+          <input type="reset" value="Cancel" id="boutton-save">
+  
+        </div>
       </form>
+
     </div>
-    <div>
   </section>
 
-  </div>
 <script src="{% static 'js/edit_job.js' %}"></script>
 
 {% endblock %}

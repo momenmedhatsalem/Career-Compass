@@ -13,6 +13,7 @@ form {
     margin-left: 20%;
     padding-top: 15px;
     padding-left: 20px;
+    padding-right: 20px;
     border: solid;
     border-color: #edeaea;
     background-color: white;
@@ -23,9 +24,9 @@ form {
     font-size: 1.5ch;
 }
 .input-box {
-    font-size: 25px;
+    font-size: 2vw;
     width: 85%;
-    height: 55px;
+    height: 6vh;
     padding-left: 16px;
     margin-top: 10px;
     margin-left: 5%;
@@ -36,24 +37,25 @@ form {
     color: #afafaf;
 }
 form label, p {
-    font-size: 30px;
+    font-size: 2.5vw;
     color: #254035;
     margin-left: 5%;
     margin-top: 20px;
 }
 #description {
     height: 150px;
-    font-size: 25px;
+    font-size: 2vw;
     margin-top: 10px;
+    resize: vertical;
 }
 
 #boutton-save {
-    margin-left: 40%;
+    /* margin-left: 40%; */
     margin-bottom: 20px;
-    width: 20%;
+    /* width: 20%; */
     line-height: 50px;
     text-align: center;
-    font-size: 35px;
+    font-size: 3vw;
     border-radius: 15px;
     background-color: #25c75d;
     color: white;
@@ -84,9 +86,9 @@ input#salary {
 select {
     width: 30%;
     text-align: center;
-    height: 60px;
+    height: 6vh;
     border-radius: 10px;
-    font-size: 25px;
+    font-size: 2vw;
     color: #424242;
 }
 span#per-word {
