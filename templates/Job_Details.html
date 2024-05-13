@@ -163,8 +163,11 @@
       <p>January 1, 2025</p>
     </div> {% endcomment %}
 
-
+    {% if user.is_applicant %}
     <button onclick="confirmApplication()">Apply</button>
+    {% elif user.is_recruiter %}
+    <a class "J9_edit_button" href="{% url "editJob" job_id=job.job_id %}" >Edit</a>
+    {% endif %}
 
     {% comment %} <script>
       function confirmApplication() {
