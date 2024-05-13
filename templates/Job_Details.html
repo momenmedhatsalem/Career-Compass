@@ -173,7 +173,7 @@
     {% if user.is_applicant %}
     <button onclick="confirmApplication()">Apply</button>
     {% elif user.is_recruiter %}
-    <a class="J9_edit_button" href="{% url "editJob" job_id=job.job_id %}" >Edit</a>
+    <a class="J9_edit_button" href="{% url "editJob" job_id=job.job_id recruiter_username=job.recruiter.user.username  %}" >Edit</a>
     {% endif %}
 
     {% comment %} <script>
