@@ -20,7 +20,7 @@ urlpatterns = [
     path("receive_job_to_save_it/", view=views.receive_job_to_save_it, name="receive_job_to_save_it"),
     path("post_job/", view=views.post_job, name="post_job"),
     path("saveRecSettings/", view=views.saveRecSettings, name="saveRecSettings"),
-    
+
     path('job/<int:job_id>/<str:recruiter_username>/', views.viewJob, name='viewJob'),
     path('job/<int:job_id>/<str:recruiter_username>/edit/', views.editJob, name='editJob'),
     path('job/<int:job_id>/<str:recruiter_username>/delete/', views.deleteJob, name='deleteJob'),
