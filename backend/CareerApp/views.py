@@ -142,6 +142,8 @@ def apply_to_job(request):
     applicant = Applicant.objects.get(user =applicant_id ) 
     new_application = Application.objects.create(job = job,applicant = applicant )
     return JsonResponse({'success': True, 'redirect_url': '/Confirmation/'})
+
+
 def Confirmation(request):
     return render(request, "Confirmation.html")
 
