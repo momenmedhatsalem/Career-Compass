@@ -16,7 +16,8 @@ h2 {
   color: #1a237e;
 }
 
-[onclick="confirmApplication()"] {
+[onclick="confirmApplication()"],
+.J9_edit_button{
   display: block;
   width: 200px;
   padding: 10px;
@@ -26,7 +27,9 @@ h2 {
   text-align: center;
   border-radius: 50px;
 }
-[onclick="confirmApplication()"]:hover {
+[onclick="confirmApplication()"]:hover,
+.J9_edit_button:hover
+{
   background-color: #00c853;
 }
 .save-button-div {
