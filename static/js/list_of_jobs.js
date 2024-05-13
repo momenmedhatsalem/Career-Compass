@@ -78,9 +78,6 @@
 //     p.appendChild(elem);
 // }
 function save(id){
-    // const xhttp = new XMLHttpRequest();
-    // xhttp.open("GET", "save_job#"+id);
-    // xhttp.send();
     console.log(id);
     button = document.getElementById("x"+id);
     if (button.style.backgroundColor === 'transparent' ){

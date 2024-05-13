@@ -18,7 +18,6 @@ states = ["Cairo", "Alexandria", "Giza", "Luxor", "Aswan", "Sharm El Sheikh", "H
 def index(request):
     return render(request, "index.html")
 
-
 @login_required
 def profile(request):
     user = request.user
@@ -325,7 +324,18 @@ def saveRecSettings(request):
 
 def viewJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
-    return render(request, 'Job_Details.html', {'job': job})
+    if request.user.is_authenticated :
+        if request.user.is_applicant: 
+            all_saved_jobs = SavedJob.objects.all()
+            saved = False
+            for j in all_saved_jobs:
+                if j.job.job_id == job_id and j.applicant.user.username == request.user.username :
+                    saved = True
+                    break
+    if saved :
+        return render(request, 'Job_Details.html', {'job': job,'saved':1})
+    else:
+        return render(request, 'Job_Details.html', {'job': job})
 
 def editJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)

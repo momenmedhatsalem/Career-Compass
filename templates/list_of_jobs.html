@@ -20,7 +20,7 @@
           </div>
           <div class="salary">${{job.job.MinSalary}} - {{job.job.MaxSalary}} / {{job.job.salary}}</div>
           <div class="location">{{job.job.city}}, {{job.job.country}}</div>
-          <a class="view-button" href="#">View details</a>
+          <a class="view-button" href="/job/{{job.job.job_id}}/{{job.job.recruiter.user.username}}/">View details</a>
         </td>
     {% endfor %}   
         {% for job in other_jobs %}
@@ -33,7 +33,7 @@
               </div>
               <div class="salary">${{job.MinSalary}} - {{job.MaxSalary}} / {{job.salary}}</div>
               <div class="location">{{job.city}}, {{job.country}}</div>
-              <a class="view-button" href="#">View details</a>
+              <a class="view-button" href="/job/{{job.job_id}}/{{job.recruiter.user.username}}/">View details</a>
             </td>
         {% endfor %}   
         {% for job in jobs %}
@@ -43,7 +43,7 @@
           </h3>
           <div class="salary">${{job.MinSalary}} - {{job.MaxSalary}} / {{job.salary}}</div>
           <div class="location">{{job.city}}, {{job.country}}</div>
-          <a class="view-button" href="#">View details</a>
+          <a class="view-button" href="/job/{{job.job_id}}/{{job.recruiter.user.username}}/">View details</a>
         </td>
     {% endfor %}   
   </tr>
