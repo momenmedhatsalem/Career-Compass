@@ -209,47 +209,27 @@ def filter_search(request):
 
     if request.method == 'POST':
         # Retrieve the data from the request's body
-        data = "data from django"
         data = json.loads(request.body)
-        # result = data
-        jobs = Job.objects.all().filter(title = data)
 
-        print(jobs)
-
-        result = [] 
-        for job in jobs:
-            #print(job.MaxSalary)
-            result.append({
-                'title': job.title,
-                'salary': job.MaxSalary,
-                'exp': job.years_of_experience,
-                'country': job.country,
-            })
+        print(data['mode'])
         
+        if data['mode'] == 'title':
+            jobs = Job.objects.all().filter(title__contains = data['text'])
+        elif data['mode'] == 'years':
+            jobs = Job.objects.all().filter(years_of_experience = data['text'])
+        elif data['mode'] == 'country':
+            jobs = Job.objects.all().filter(country__contains = data['text'])
 
-        # test only vvvvvvvvvvvvv
-        # result.append({
-        #     'title': "Software Engineer",
-        #     'pay': "2000",
-        #     'exp': "3",
-        #     'country': "France",
-        # })
-        # result.append({
-        #     'title': "Front end",
-        #     'pay': "5000",
-        #     'exp': '5',
-        #     'country': "Egypt",
-        # })
-
-        # result.append({
-        #     'title': "Software Engineer",
-        #     'pay': "2000"
-        # })
-        # result.append({
-        #     'title': "Front end",
-        #     'pay': "5000"
-        # })
-
+        result = []
+        for job in jobs:
+            if job.status == 'open':
+                result.append({
+                    'title': job.title,
+                    'salary': job.MaxSalary,
+                    'exp': job.years_of_experience,
+                    'country': job.country,
+                })
+    
         # Return the result as a JSON response
         return JsonResponse({'result': result})
 
