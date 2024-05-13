@@ -331,6 +331,7 @@ def editJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
     if request.method == 'POST':
         # Handle the job editing form submission
+        job.job_id = request.POST.get("job-id")
         job.title = request.POST.get("job-title")
         job.company_name = request.POST.get("company-name")
         job.years_of_experience = request.POST.get("years-of-experience")
