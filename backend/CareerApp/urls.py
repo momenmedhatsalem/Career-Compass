@@ -12,7 +12,6 @@ urlpatterns = [
     path("filter_search/", view=views.filter_search, name="filter_search"),
     path("about/", view=views.about, name="about"),
     path("jobs/", view=views.jobs, name="jobs"),
-    # path("job_Details/<int:id>", view=views.job_details(id), name="job_details"),
     path("index/", view=views.index, name="index"),
     path("checkCandidates/", view=views.checkCandidates, name="checkCandidates"),
     path("edit_Job/", view=views.edit_Job, name="edit_Job"),
@@ -20,6 +19,10 @@ urlpatterns = [
     path("receive_job_to_save_it/", view=views.receive_job_to_save_it, name="receive_job_to_save_it"),
     path("post_job/", view=views.post_job, name="post_job"),
     path("saveRecSettings/", view=views.saveRecSettings, name="saveRecSettings"),
+    path("apply_to_job/", view=views.apply_to_job, name="apply_to_job"),
+    path("Confirmation/", view=views.Confirmation, name="Confirmation"),
+
+
     
     path('job/<int:job_id>/<str:recruiter_username>/', views.viewJob, name='viewJob'),
     path('job/<int:job_id>/<str:recruiter_username>/edit/', views.editJob, name='editJob'),
