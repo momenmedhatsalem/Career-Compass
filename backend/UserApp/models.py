@@ -43,11 +43,11 @@ class Applicant(models.Model):
 
 class Education (models.Model):
     applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE, default=None)
-    title =  models.CharField(max_length=200, blank=True, null=True)
-    Academy =  models.CharField(max_length=200, blank=True, null=True)
-    startDate = models.DateTimeField(auto_now_add=True)
-    endDate = models.DateTimeField(auto_now_add=True)
-    description = models.CharField(max_length=200, blank=True, null=True)
+    title =  models.CharField(max_length=200,default="none")
+    Academy =  models.CharField(max_length=200,default="none") 
+    startDate = models.IntegerField()
+    endDate = models.IntegerField()
+    description = models.CharField(max_length=200,default="none")
 
     class Meta:
         unique_together = ('applicant', 'title')
@@ -55,11 +55,11 @@ class Education (models.Model):
 
 class Experience (models.Model):
     applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE, default=None)
-    title =  models.CharField(max_length=200, blank=True, null=True)
-    Company =  models.CharField(max_length=200, blank=True, null=True)
-    startDate = models.DateTimeField(auto_now_add=True)
-    endDate = models.DateTimeField(auto_now_add=True)
-    description = models.CharField(max_length=200, blank=True, null=True)
+    title =  models.CharField(max_length=200,default="none")
+    Company =  models.CharField(max_length=200,default="none")
+    startDate = models.IntegerField()
+    endDate = models.IntegerField()
+    description = models.CharField(max_length=200,default="none")
 
     class Meta:
         unique_together = ('applicant', 'title')

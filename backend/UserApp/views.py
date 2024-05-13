@@ -102,7 +102,6 @@ from django.contrib.auth.decorators import login_required
 
 # views.py
 from django.shortcuts import render
-from django.http import JsonResponse
 @login_required
 def upload_resume(request):
     if request.method == 'POST' and request.FILES['resumeFile']:
@@ -113,4 +112,14 @@ def upload_resume(request):
         applicant.save()
         return redirect('profile') 
 
+from .models import Education,Experience
+@login_required
+def education(request):
+    educations = Education.objects.get(applicant=request.user)
+    return render(request,"profile.html",{"educations": educations})
+
+@login_required
+def experience(request):
+    experiences = Experience.objects.get(applicant=request.user)
+    return render(request,"profile.html",{"experiences": experiences})
 
