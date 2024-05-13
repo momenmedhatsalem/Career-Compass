@@ -10,16 +10,43 @@ var images = [
 
 // Create an object with the data to send to the backend
 // var dataToSend = {
-//     '0': 'value1',
-//     '1': 'value2'
-// };
-// var dataToSend = "i sent you this";
-
+    //     '0': 'value1',
+    //     '1': 'value2'
+    // };
+    // var dataToSend = "i sent you this";
+    var search_by = "";
+    old_option = "title";
+    
+    function set_search_by(opt = "title") {
+        document.getElementById(old_option).style.backgroundColor = "#ddd";
+        document.getElementById(old_option).style.color = "black";
+    
+        search_by = opt;
+        old_option = search_by;
+    
+        matches = [];
+    
+        document.getElementById("result").style.display = "none";
+        document.getElementById("result-grid").style.display = "none";
+    
+        document.getElementById(opt).style.backgroundColor = "rgb(0, 136, 255)";
+        document.getElementById(opt).style.color = "white";
+    
+    }
+    
 var search_results = []
 
 function requestBackend() {
 
-    search_text = document.getElementById('search_text').value
+    search_text = document.getElementById('search_text').value;
+    search_text = search_text.toLowerCase();
+
+    search_mode = "none"
+
+    RequestData = {
+        'text': search_text,
+        'mode': search_by
+    };
 
     // Make the AJAX request
     fetch('/filter_search/', {
@@ -28,7 +55,7 @@ function requestBackend() {
             'Content-Type': 'application/json',
         },
         // body: JSON.stringify(dataToSend)
-        body: JSON.stringify(search_text.toLowerCase())
+        body: JSON.stringify(RequestData)
     })
         .then(response => response.json())
         .then(ResponseData => {
@@ -73,25 +100,6 @@ function requestBackend() {
 
 }
 
-var search_by = "";
-old_option = "title";
-
-function set_search_by(opt = "title") {
-    document.getElementById(old_option).style.backgroundColor = "#ddd";
-    document.getElementById(old_option).style.color = "black";
-
-    search_by = opt;
-    old_option = search_by;
-
-    matches = [];
-
-    document.getElementById("result").style.display = "none";
-    document.getElementById("result-grid").style.display = "none";
-
-    document.getElementById(opt).style.backgroundColor = "rgb(0, 136, 255)";
-    document.getElementById(opt).style.color = "white";
-
-}
 
 // // document.addEventListener("load", set_search_by());
 
