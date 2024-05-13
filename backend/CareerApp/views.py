@@ -180,7 +180,7 @@ def save_profile(request):
 
         cname = request.POST.get("cname")
         bemail = request.POST.get("bemail")
-        skills = request.POST.get("skills")
+        #skills = request.POST.get("skills")
 
         net1 = request.POST.get("net1")
         net2 = request.POST.get("net2")
@@ -200,7 +200,7 @@ def save_profile(request):
 
         applicant_user.company_name = cname
         applicant_user.business_email = bemail
-        applicant_user.skills = skills
+        #applicant_user.skills = skills
 
         applicant_user.network1 = net1
         applicant_user.network2 = net2
@@ -223,14 +223,21 @@ def save_profile(request):
 
 @csrf_exempt
 def filter_search(request):
+
+    # tests
     print("connected")
 
+    # we make sure the method is correct first
     if request.method == 'POST':
-        # Retrieve the data from the request's body
+
+        # we retrieve the dictionary from the request to use it to filter jobs
         data = json.loads(request.body)
 
+        # test mode is correct
         print(data['mode'])
         
+        # we query the database according to the sent searching mode using the 
+        # sent searching text from the search bar
         if data['mode'] == 'title':
             jobs = Job.objects.all().filter(title__contains = data['text'])
         elif data['mode'] == 'years':
@@ -238,20 +245,28 @@ def filter_search(request):
         elif data['mode'] == 'country':
             jobs = Job.objects.all().filter(country__contains = data['text'])
 
+        # we prepare our response as an array of dictionaries carrying desired data
+        # as key-value pairs to be easy in manipulations on the frontend
         result = []
         for job in jobs:
+            # check that this job is open and is accepting applicants
             if job.status == 'open':
+                # if yes, we append its dictionary to the array
                 result.append({
                     'title': job.title,
                     'salary': job.MaxSalary,
                     'exp': job.years_of_experience,
                     'country': job.country,
                 })
+                # else we move on to the next one
     
-        # Return the result as a JSON response
+        # return the resulting array as a JSON response to to the frontend
         return JsonResponse({'result': result})
 
+    #if the method is not 'POST' we just render the same page
     return render(request, "search.html")
+
+                        #     Thank You very much ^^
 
 def login(request):
     return render(request, "login.html")
@@ -285,11 +300,7 @@ def save_recruiter_profile(request):
         rec.state = request.POST.get("state")
         # rec.user.save()
         rec.save()
-
-    # rec_jobs = Job.objects.all().order_by('-creation_date')
-    rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('-creation_date')
-    return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs})
-
+    return redirect("recruiterDashboard")
 
 def post_job(request):
     rec = Recruiter.objects.get(user = request.user)
@@ -315,12 +326,7 @@ def post_job(request):
         state=request.POST.get("state"),
     )
     newJob.save()
-    countries = ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla" "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados" "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana" "Brazil", "Brunei Darussalam", "Bulgaria" "Burkina Faso" "Burundi", "Cambodia" "Cameroon" "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad" "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia" "Comoros", "Congo", "Cook Islands" "Costa Rica", "Croatia", "Cuba" "Cyprus", "Czech Republic", "Denmark", "Djibouti" "Dominica" "Dominican Republic" "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia" "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji" "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam" "Guatemala", "Guernsey" "Guinea", "Guinea-bissau", "Guyana", "Haiti", "Holy See (Vatican City State)" "Honduras" "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran, Islamic Republic of" "Iraq" "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati" "Korea, Republic of" "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Madagascar", "Malawi", "Malaysia" "Maldives" "Mali" "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia" "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue" "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman" "Pakistan" "Palau", "Palestinian Territory, Occupied", "Panama", "Papua New Guinea", "Paraguay" "Peru" "Philippines", "Pitcairn" "Poland", "Portugal" "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation" "Rwanda", "Saint Helena" "Saint Kitts and Nevis" "Saint Lucia", "Saint Pierre and Miquelon" "Saint Vincent and The Grenadines" "Samoa", "San Marino", "Sao Tome and Principe" "Saudi Arabia" "Senegal", "Serbia", "Seychelles", "Sierra Leone" "Singapore", "Slovakia" "Slovenia" "Solomon Islands" "Somalia", "South Africa" "Spain", "Sri Lanka", "Sudan", "Suriname" "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan", "Tajikistan", "Tanzania, United Republic of", "Thailand" "Timor-leste", "Togo" "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan" "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam" "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia", "Zimbabwe"]
-    cities = ["Cairo", "Alexandria", "Giza", "Luxor", "Aswan", "Sharm El Sheikh", "Hurghada", "Port Said", "Suez", "Ismailia", "Tanta", "Mansoura", "Fayoum", "Beni Suef", "Sohag", "Zagazig", "Qena", "Damanhur", "Minya", "Luxor", "Port Said", "Kafr El Sheikh", "Damietta", "Asyut", "Sohag", "Assiut", "El-Mahalla El-Kubra", "El-Mansoura", "El-Minya", "Shubra El-Kheima", "Luxor", "El-Faiyum", "Tahta"]
-    states = ["Cairo", "Alexandria", "Giza", "Luxor", "Aswan", "Sharm El Sheikh", "Hurghada", "Port Said", "Suez", "Ismailia", "Tanta", "Mansoura", "Fayoum", "Beni Suef", "Sohag", "Zagazig", "Qena", "Damanhur", "Minya", "Luxor", "Port Said", "Kafr El Sheikh", "Damietta", "Asyut", "Sohag", "Assiut", "El-Mahalla El-Kubra", "El-Mansoura", "El-Minya", "Shubra El-Kheima", "Luxor", "El-Faiyum", "Tahta"]
-    # rec_jobs = Job.objects.all().order_by('-creation_date')
-    rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('-creation_date')
-    return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs})
+    return redirect("recruiterDashboard")
 
 from django.contrib.auth import authenticate
 def saveRecSettings(request):
@@ -337,9 +343,7 @@ def saveRecSettings(request):
         rec.user.phone = request.POST.get("phone")
         rec.user.save()
         rec.save()
-    # rec_jobs = Job.objects.all().order_by('-creation_date')
-    rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('-creation_date')
-    return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs})
+    return redirect("recruiterDashboard")
 
 def viewJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
@@ -384,12 +388,7 @@ def editJob(request, job_id, recruiter_username):
         # Render the job editing form
         return render(request, 'edit_Job.html', {'job': job,"countries":countries, "cities":cities, "states":states})
 
-def deleteJob(request, job_id):
-    pass
-    job = get_object_or_404(Job, pk=job_id)
-    if request.method == 'POST':
-        # Handle the job deletion
-        pass
-    else:
-        # Render the job deletion confirmation page
-        return render(request, 'delete_job_confirmation.html', {'job': job})
+def deleteJob(request, job_id, recruiter_username):
+    job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
+    job.delete()
+    return redirect("recruiterDashboard")

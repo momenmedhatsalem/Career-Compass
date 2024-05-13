@@ -8,6 +8,13 @@
 //   }
 // });
 
+function J9_delete_job(job_id, username) {
+  if (confirm("Are you sure you want to delete this job?")) {
+      window.location.href = `/job/${job_id}/${username}/delete/`;
+  }
+}
+
+
 document.addEventListener("click", function (event) {
   var J9_to_path = event.target.getAttribute("J9_to_path");
   if (J9_to_path !== null) {
