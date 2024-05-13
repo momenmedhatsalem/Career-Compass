@@ -324,9 +324,15 @@ def post_job(request):
     rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('-creation_date')
     return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs})
 
+from django.contrib.auth import authenticate
 def saveRecSettings(request):
-    rec = Recruiter.objects.get(user = request.user)
-    if request.POST.get("password") == rec.user.password:
+    rec = Recruiter.objects.get(user = request.user.id)
+
+    email = request.user.email
+    password = request.POST.get("password")
+
+    user = authenticate(email=email, password=password)
+    if user is not None:
         rec.user.first_name = request.POST.get("first_name")
         rec.user.last_name = request.POST.get("last_name")
         rec.user.email = request.POST.get("email")
