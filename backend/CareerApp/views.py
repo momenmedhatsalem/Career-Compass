@@ -365,12 +365,10 @@ def editJob(request, job_id, recruiter_username):
         # Render the job editing form
         return render(request, 'edit_Job.html', {'job': job,"countries":countries, "cities":cities, "states":states})
 
-def deleteJob(request, job_id):
-    pass
-    job = get_object_or_404(Job, pk=job_id)
-    if request.method == 'POST':
-        # Handle the job deletion
-        pass
-    else:
-        # Render the job deletion confirmation page
-        return render(request, 'delete_job_confirmation.html', {'job': job})
+def deleteJob(request, job_id, recruiter_username):
+    job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
+    job.delete()
+    rec = Recruiter.objects.get(user = request.user.id)
+    rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('-creation_date')
+    return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs})
+
