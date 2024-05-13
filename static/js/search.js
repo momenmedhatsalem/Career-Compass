@@ -1,19 +1,4 @@
-var images = [
-    "../media/Game dev.jpg",
-    "/media/front end.jpg",
-    "/media/Game dev.jpg",
-    "/media/graphics.jpg",
-    "/media/sales manger.jpg",
-    "/media/software.jpg",
-    "/media/ui ux.jpg"
-];
 
-// Create an object with the data to send to the backend
-// var dataToSend = {
-    //     '0': 'value1',
-    //     '1': 'value2'
-    // };
-    // var dataToSend = "i sent you this";
     var search_by = "";
     old_option = "title";
     
@@ -85,7 +70,7 @@ function showmatches(search_results) {
         document.getElementById("result-grid").innerHTML +=
         '<div class="M7-card1 M7-filter-item">' +
         "<fieldset>" +
-        "<img src=\"" + images[Math.floor(Math.random() * images.length)] + "\" alt=\"open job icon\" width=\"100%\" height=\"30%\"\>" +
+        //"<img src=\"" + images[Math.floor(Math.random() * images.length)] + "\" alt=\"open job icon\" width=\"100%\" height=\"30%\"\>" +
         "<h4>" +
         result['title'] +
         "</h4>" +
