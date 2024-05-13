@@ -112,24 +112,5 @@ def upload_resume(request):
         applicant.resume = resume_file
         applicant.save()
         return redirect('profile') 
-    else:
-        return JsonResponse({'error': 'No file found'}, status=400)
 
 
-# @login_required
-# def get_uploaded_resumes(request):
-#     if request.method == 'GET':
-#         applicant = Applicant.objects.get(user=request.user)
-#         resume = applicant.resume
-#         return render(request, "profile.html", {"resume": resume})
-
-# @login_required
-# def delete_resume(request, resume_id):
-#     if request.method == 'DELETE':
-#         try:
-#             resume = Resume.objects.get(pk=resume_id, user=request.user)  # Filter by user for security
-#             resume.delete()
-#             return JsonResponse({'message': 'Resume deleted successfully!'})
-#         except Resume.DoesNotExist:
-#             return HttpResponseBadRequest('Resume not found.')
-#     return HttpResponseBadRequest('Invalid request method.')

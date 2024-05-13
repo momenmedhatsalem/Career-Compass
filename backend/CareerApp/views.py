@@ -161,7 +161,7 @@ def save_profile(request):
 
         cname = request.POST.get("cname")
         bemail = request.POST.get("bemail")
-        skills = request.POST.get("skills")
+        #skills = request.POST.get("skills")
 
         net1 = request.POST.get("net1")
         net2 = request.POST.get("net2")
@@ -181,7 +181,7 @@ def save_profile(request):
 
         applicant_user.company_name = cname
         applicant_user.business_email = bemail
-        applicant_user.skills = skills
+        #applicant_user.skills = skills
 
         applicant_user.network1 = net1
         applicant_user.network2 = net2
