@@ -346,9 +346,8 @@ def saveRecSettings(request):
     rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('-creation_date')
     return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs})
 
-def viewJob(request, job_id):
-    pass
-    job = get_object_or_404(Job, pk=job_id)
+def viewJob(request, job_id, recruiter_username):
+    job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
     return render(request, 'Job_Details.html', {'job': job})
 
 def editJob(request, job_id):
