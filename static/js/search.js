@@ -26,8 +26,6 @@ function requestBackend() {
     search_text = document.getElementById('search_text').value;
     search_text = search_text.toLowerCase();
 
-    search_mode = "none"
-
     RequestData = {
         'text': search_text,
         'mode': search_by

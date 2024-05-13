@@ -206,10 +206,8 @@ def filter_search(request):
 
     if request.method == 'POST':
         # Retrieve the data from the request's body
-        data = "data from django"
         data = json.loads(request.body)
-        # result = data
-        result = []
+
         print(data['mode'])
         
         if data['mode'] == 'title':
@@ -219,6 +217,7 @@ def filter_search(request):
         elif data['mode'] == 'country':
             jobs = Job.objects.all().filter(country__contains = data['text'])
 
+        result = []
         for job in jobs:
             if job.status == 'open':
                 result.append({
