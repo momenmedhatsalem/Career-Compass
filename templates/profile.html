@@ -14,147 +14,147 @@
 
 <div style="overflow-y: scroll;height: 100vh;">
 
-<!-- jonathan -->
-<div>
+  <!-- jonathan -->
+  <div>
 
-  <!-- <button onclick="show_side()" style="background-color: #49a7ff; width: 250px; border: none;">
+    <!-- <button onclick="show_side()" style="background-color: #49a7ff; width: 250px; border: none;">
     <img src="/media/icon_1.png' %}" alt="sidebar on off" width="20px">
   </button><br> -->
 
-  <div id="sidey" style="display: block; position:absolute;" class="j0sidebar">
+    <div id="sidey" style="display: block; position:absolute;" class="j0sidebar">
 
 
-    <div class="j0profile-pic">
-      <img src="{% static 'Editing.png' %}" alt="Profile Picture">
+      <div class="j0profile-pic">
+        <img src="{% static 'Editing.png' %}" alt="Profile Picture">
+      </div>
+      <ul class="j0menu">
+        <!-- <li><a href="#"><img src="{% static 'icon_1.png' %}" alt="Dashboard"><span>Dashboard</span></a></li> -->
+        <li><button onclick="manageTabs('j0_profile')"><img src="{% static 'icon_2.png' %}"
+              alt="upload_resume"><span>Profile</span></button></li>
+        <li><button onclick="manageTabs('j0_upload')"><img src="{% static 'upload_resume.png' %}"
+              alt="upload_resume"><span>Upload Resume</span></button></li>
+        <li><button onclick="manageTabs('j0_education')"><img src="{% static 'education.png' %}"
+              alt="Education"><span>Education</span></button></li>
+        <li><button onclick="manageTabs('j0_skills')"><img src="{% static 'skills.png' %}" alt="Skills"><span>Skills &
+              Experience</span></button></li>
+        <li><button onclick="manageTabs('j0_saved')">
+            <a href="/saved_jobs/">
+              <img src="{% static 'saved.png' %}" alt="Skills">
+              <span>Saved jobs</span>
+            </a>
+          </button></li>
+        <li><a href="{% url 'logout'%}"><span>Logout</span></a></li>
+
+      </ul>
     </div>
-    <ul class="j0menu">
-      <!-- <li><a href="#"><img src="{% static 'icon_1.png' %}" alt="Dashboard"><span>Dashboard</span></a></li> -->
-      <li><button onclick="manageTabs('j0_profile')"><img src="{% static 'icon_2.png' %}"
-            alt="upload_resume"><span>Profile</span></button></li>
-      <li><button onclick="manageTabs('j0_upload')"><img src="{% static 'upload_resume.png' %}"
-            alt="upload_resume"><span>Upload Resume</span></button></li>
-      <li><button onclick="manageTabs('j0_education')"><img src="{% static 'education.png' %}"
-            alt="Education"><span>Education</span></button></li>
-      <li><button onclick="manageTabs('j0_skills')"><img src="{% static 'skills.png' %}" alt="Skills"><span>Skills &
-            Experience</span></button></li>
-      <li><button onclick="manageTabs('j0_saved')">
-          <a href="/saved_jobs/">
-            <img src="{% static 'saved.png' %}" alt="Skills">
-            <span>Saved jobs</span>
-          </a>
-        </button></li>
-      <li><a href="{% url 'logout'%}"><span>Logout</span></a></li>
-
-    </ul>
   </div>
-</div>
 
-<!-- jonathan -->
-
+  <!-- jonathan -->
 
 
-<section class="main">
 
-  <main class="tab" id="j0_profile">
+  <section class="main">
 
-    <section class="M7-fit">
+    <main class="tab" id="j0_profile">
 
-      <br><br>
+      <section class="M7-fit">
 
-      <div style="
+        <br><br>
+
+        <div style="
         display: flex;
         justify-content:space-between;
         flex-wrap: wrap;
         height: 100px;">
 
-        <h1 class=" M7-gradient-text M7-h1">Your Profile</h1>
+          <h1 class=" M7-gradient-text M7-h1">Your Profile</h1>
 
-        <a href="/edit_profile">
-          <button class="M7-edit">Edit Profile</button>
-        </a>
-      </div>
-
-
-
-      <fieldset class="M7-fieldset">
-
-        <legend class="M7-p_img">
-          <img {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %}
-            alt="User Image" class="M7-p_img" style="display: inline-block;">
-        </legend>
-
-
-        <div>
-
-          <label for="fname" class="M7-label">Full Name: </label> <br>
-          <input type="text" name="fname" id="fname" value=" {{ user.first_name }} {{ user.last_name }}"
-            class="M7-field" disabled="yes">
-
-        </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <div>
-
-          <label for="pemail" class="M7-label">Personal E-mail: </label> <br>
-          <input type="email" name="pemail" id="pemail" value="{{ user.email }}" class="M7-field" disabled="yes">
-
-        </div>
-
-        <br>
-        <br><br>
-        <br>
-
-        <div>
-
-          <label for="bio" class="M7-label">Bio: </label> <br>
-          <textarea name="bio" id="bio" cols="40" rows="5" placeholder="Cairo University 2020" class="M7-field"
-            disabled="yes">{{ applicant_user.bio }}</textarea>
-
+          <a href="/edit_profile">
+            <button class="M7-edit">Edit Profile</button>
+          </a>
         </div>
 
 
-      </fieldset>
+
+        <fieldset class="M7-fieldset">
+
+          <legend class="M7-p_img">
+            <img {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %}
+              alt="User Image" class="M7-p_img" style="display: inline-block;">
+          </legend>
 
 
-      <br><br><br>
-      <br>
+          <div>
 
-      <fieldset class="M7-fieldset">
+            <label for="fname" class="M7-label">Full Name: </label> <br>
+            <input type="text" name="fname" id="fname" value=" {{ user.first_name }} {{ user.last_name }}"
+              class="M7-field" disabled="yes">
 
-        <h1 class="M7-h1 M7-gradient-text">Business Info</h1>
+          </div>
 
+          <br>
+          <br>
+          <br>
+          <br>
+
+          <div>
+
+            <label for="pemail" class="M7-label">Personal E-mail: </label> <br>
+            <input type="email" name="pemail" id="pemail" value="{{ user.email }}" class="M7-field" disabled="yes">
+
+          </div>
+
+          <br>
+          <br><br>
+          <br>
+
+          <div>
+
+            <label for="bio" class="M7-label">Bio: </label> <br>
+            <textarea name="bio" id="bio" cols="40" rows="5" placeholder="Cairo University 2020" class="M7-field"
+              disabled="yes">{{ applicant_user.bio }}</textarea>
+
+          </div>
+
+
+        </fieldset>
+
+
+        <br><br><br>
         <br>
-        <div>
 
-          <label for="cname" class="M7-label">Company name: </label> <br>
-          <input type="text" name="cname" id="cname" value="{{ applicant_user.company_name }}" class="M7-field"
-            disabled="yes">
+        <fieldset class="M7-fieldset">
 
-        </div>
+          <h1 class="M7-h1 M7-gradient-text">Business Info</h1>
 
+          <br>
+          <div>
 
-        <br><br>
-        <br>
-        <br>
+            <label for="cname" class="M7-label">Company name: </label> <br>
+            <input type="text" name="cname" id="cname" value="{{ applicant_user.company_name }}" class="M7-field"
+              disabled="yes">
 
-        <div>
-
-          <label for="bemail" class="M7-label">Business E-mail: </label> <br>
-          <input type="email" name="bemail" id="bemail" value="{{ applicant_user.business_email }}" class="M7-field"
-            disabled="yes">
-
-        </div>
+          </div>
 
 
-        <br><br>
-        <br>
-        <br>
+          <br><br>
+          <br>
+          <br>
 
-        <!-- <div>
+          <div>
+
+            <label for="bemail" class="M7-label">Business E-mail: </label> <br>
+            <input type="email" name="bemail" id="bemail" value="{{ applicant_user.business_email }}" class="M7-field"
+              disabled="yes">
+
+          </div>
+
+
+          <br><br>
+          <br>
+          <br>
+
+          <!-- <div>
 
           <label for="skills" class="M7-label">Skills and Certificates: </label> <br>
           <textarea name="skills" id="skills" cols="40" rows="5" placeholder="frontend Web Developer" class="M7-field"
@@ -163,71 +163,71 @@
         </div> -->
 
 
-        <br>
+          <br>
 
-      </fieldset>
-
-      <br>
-      <br>
-
-      <fieldset class="M7-fieldset">
-
-        <h1 class="M7-h1 M7-gradient-text">Social Media</h1>
-
-        <br>
-
-        <div>
-
-          <label for="net1" class="M7-label">Network 1: </label> <br>
-          <input type="text" name="net1" id="net1" value="{{ applicant_user.network1 }}" class="M7-field"
-            disabled="yes">
-
-        </div>
-
-        <br><br>
-        <br>
-        <br>
-
-        <div>
-
-          <label for="net2" class="M7-label">Network 2: </label> <br>
-          <input type="text" name="net2" id="net2" value="{{ applicant_user.network2 }}" class="M7-field"
-            disabled="yes">
-
-        </div>
+        </fieldset>
 
         <br>
         <br>
 
-      </fieldset>
+        <fieldset class="M7-fieldset">
 
-      <br>
-      <br>
+          <h1 class="M7-h1 M7-gradient-text">Social Media</h1>
 
-      <fieldset class="M7-fieldset">
-        <h1 class="M7-h1 M7-gradient-text">Address and Location</h1>
+          <br>
+
+          <div>
+
+            <label for="net1" class="M7-label">Network 1: </label> <br>
+            <input type="text" name="net1" id="net1" value="{{ applicant_user.network1 }}" class="M7-field"
+              disabled="yes">
+
+          </div>
+
+          <br><br>
+          <br>
+          <br>
+
+          <div>
+
+            <label for="net2" class="M7-label">Network 2: </label> <br>
+            <input type="text" name="net2" id="net2" value="{{ applicant_user.network2 }}" class="M7-field"
+              disabled="yes">
+
+          </div>
+
+          <br>
+          <br>
+
+        </fieldset>
 
         <br>
-
-        <div>
-
-          <label for="address" class="M7-label">Address: </label> <br>
-          <input type="text" name="address" id="address" value="{{ applicant_user.address }}" class="M7-field"
-            disabled="yes" placeholder="Cowrasta, Chandana, Gazipur, Sadar">
-
-        </div>
-
-        <br><br>
-        <br>
         <br>
 
+        <fieldset class="M7-fieldset">
+          <h1 class="M7-h1 M7-gradient-text">Address and Location</h1>
 
-        <div>
+          <br>
 
-          <label for="country" class="M7-label">Country: </label> <br>
-          <input type="text" name="country" id="country" value="{{ applicant_user.country }}" class="M7-field"
-            disabled="yes">
-          <!-- <select type="" name="country" id="country" value="" class="M7-field" disabled="yes" >
+          <div>
+
+            <label for="address" class="M7-label">Address: </label> <br>
+            <input type="text" name="address" id="address" value="{{ applicant_user.address }}" class="M7-field"
+              disabled="yes" placeholder="Cowrasta, Chandana, Gazipur, Sadar">
+
+          </div>
+
+          <br><br>
+          <br>
+          <br>
+
+
+          <div>
+
+            <label for="country" class="M7-label">Country: </label> <br>
+            <input type="text" name="country" id="country" value="{{ applicant_user.country }}" class="M7-field"
+              disabled="yes">
+            <!-- <select type="" name="country" id="country" value="" class="M7-field" disabled="yes" >
             <option value="Egypt">Egypt</option>
             <option value="France">France</option>
             <option value="Germany">Germany</option>
@@ -238,18 +238,18 @@
 
           </select> -->
 
-        </div>
+          </div>
 
-        <br>
+          <br>
 
 
 
-        <div>
+          <div>
 
-          <label for="city" class="M7-label">City: </label> <br>
-          <input type="text" name="city" id="city" value="{{ applicant_user.city }}" class="M7-field" disabled="yes">
+            <label for="city" class="M7-label">City: </label> <br>
+            <input type="text" name="city" id="city" value="{{ applicant_user.city }}" class="M7-field" disabled="yes">
 
-          <!-- <select type="" name="city" id="city" value="" class="M7-field" disabled="yes">
+            <!-- <select type="" name="city" id="city" value="" class="M7-field" disabled="yes">
             <option value="Cairo">Cairo</option>
             <option value="Paris">Paris</option>
             <option value="Berlin">Berlin</option>
@@ -259,29 +259,30 @@
             <option value="Moscow">Moscow</option>
           </select> -->
 
-        </div>
+          </div>
 
-        <br><br>
-
-
-
-        <div>
-
-          <label for="zip" class="M7-label">ZIP Code: </label> <br>
-          <input type="number" name="zip" id="zip" value="{{ applicant_user.zip }}" class="M7-field" disabled="yes">
-
-        </div>
-
-        <br><br>
-        <br>
-        <br>
+          <br><br>
 
 
-        <div>
 
-          <label for="state" class="M7-label">State/Governorat: </label> <br>
-          <input type="text" name="state" id="state" value="{{ applicant_user.state }}" class="M7-field" disabled="yes">
-          <!-- <select type="text" name="state" id="state" value="" class="M7-field" disabled="yes">
+          <div>
+
+            <label for="zip" class="M7-label">ZIP Code: </label> <br>
+            <input type="number" name="zip" id="zip" value="{{ applicant_user.zip }}" class="M7-field" disabled="yes">
+
+          </div>
+
+          <br><br>
+          <br>
+          <br>
+
+
+          <div>
+
+            <label for="state" class="M7-label">State/Governorat: </label> <br>
+            <input type="text" name="state" id="state" value="{{ applicant_user.state }}" class="M7-field"
+              disabled="yes">
+            <!-- <select type="text" name="state" id="state" value="" class="M7-field" disabled="yes">
 
             <option value="Cairo">Cairo</option>
             <option value="Paris">Paris</option>
@@ -293,13 +294,13 @@
 
           </select> -->
 
-        </div>
+          </div>
 
-        <br>
-        <br>
+          <br>
+          <br>
 
 
-        <!-- <div>
+          <!-- <div>
 
           <label for="location" class="M7-label">Map Location: </label> <br>
           <input type="" name="location" id="location" value="" class="M7-field" disabled="yes">
@@ -312,100 +313,111 @@
         <br> -->
 
 
-      </fieldset>
+        </fieldset>
 
-      <br>
-
-
-    </section>
-
-  </main>
+        <br>
 
 
-  <!-------------------------------------jonathan------------------------------------------->
+      </section>
 
-  <div id="j0_main">
-    <!--  upload  -->
-    <div class="tab" id="j0_upload">
-      <h4 class="j0-title-three">Resume Attachment</h4>
-      <div class="j0-input">
-        <h4>CV Attachment*</h4>
-        {% if applicant_user.resume %}
-        <div class="j0-upload">
-          "{{applicant_user.resume}}"
+    </main>
+
+
+    <!-------------------------------------jonathan------------------------------------------->
+
+    <div id="j0_main">
+      <!--  upload  -->
+      <div class="tab" id="j0_upload">
+        <h4 class="j0-title-three">Resume Attachment</h4>
+        <div class="j0-input">
+          <h4>CV Attachment*</h4>
+          {% if applicant_user.resume %}
+          <div class="j0-upload">
+            "{{applicant_user.resume}}"
+          </div>
+          {% endif %}
         </div>
-        {% endif %}
+        <div id="j0-btn" class="j0_btn">
+          <label for="j0-uploadCV">Upload CV</label>
+          <form id="uploadForm" action="{% url 'upload_resume' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="resumeFile" id="j0-uploadCV" accept=".pdf,.doc,.docx">
+
+            <button type="submit">submit</button>
+          </form>
+
+
+        </div>
+        <small>Upload file .pdf, .doc, .docx</small>
       </div>
-      <div id="j0-btn" class="j0_btn">
-        <label for="j0-uploadCV">Upload CV</label>
-        <form id="uploadForm" action="{% url 'upload_resume' %}" method="post" enctype="multipart/form-data">
+
+
+      <!-- education -->
+      <div class="tab" id="j0_education">
+        <h4 class="j0-title-three"> Education</h4>
+        <form method="post" action="{% url 'education' %}">
           {% csrf_token %}
-          <input type="file" name="resumeFile" id="j0-uploadCV" accept=".pdf,.doc,.docx">
-
-          <button type="submit">Confirm and submit</button>
+          <div id="accordion-container-edu">
+            {% for education in educations %}
+            <div class="j0_edu-accordion">
+              <div class="j0-accordion-header">education 1 <span style="float: right;">^</span>
+              </div>
+              <div class="j0-accordion-content" style="display: none;"><label for="title">Title*</label>
+                <input type="text" id="title" name="title" placeholder="Product designer(google)"
+                  value="{{ education.title }}">
+                <label for="academy">Academy*</label>
+                <input type="text" id="academy" name="Academy" placeholder="Google Arts Collage &amp; University"
+                  value="{{ education.Academy }}">
+                <label for="starYear">Start Year*</label>
+                <input for="number" id="starYear" name="startDate" placeholder="2022" value="{{ education.startDate }}">
+                <label for="endYear">End Year*</label>
+                <input for="number" id="endYear" name="endDate" placeholder="2026" value="{{ education.endDate }}">
+                <label for="subject">Subject*</label>
+                <textarea id="subject" name="subject" placeholder="Write something.."
+                  style="height: 200px;">"{{ education.description }}"</textarea>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <button type="submit">submit</button>
         </form>
-
-
+        <button id="j0-edu-btn" class="j0_btn">+ Add more</button>
       </div>
-      <small>Upload file .pdf, .doc, .docx</small>
-    </div>
 
 
-    <!-- education -->
-    <div class="tab" id="j0_education">
-      <h4 class="j0-title-three"> Education</h4>
-      <div id="accordion-container-edu">
-        {% for education in educations %}
-        <div class="j0_edu-accordion">
-          <div class="j0-accordion-header">education 1 <span style="float: right;">^</span>
-          </div>
-          <div class="j0-accordion-content" style="display: none;"><label for="title">Title*</label>
-            <input type="text" id="title" name="title" placeholder="Product designer(google)"value= "{{ education.title }}">
-            <label for="academy">Academy*</label>
-            <input type="text" id="academy" name="academy"placeholder="Google Arts Collage &amp; University"value= "{{ education.Academy }}">
-            <label for="starYear">Start Year*</label>
-            <input for ="number" id="starYear" name="starYear" placeholder="2022"value= "{{ education.startDate }}">
-            <label for="endYear">End Year*</label>
-            <input for ="number" id="endYear" name="endYear" placeholder="2026" value= "{{ education.endDate }}">
-<label for="subject">Subject*</label>
-            <textarea id="subject" name="subject"placeholder="Write something.." style="height: 200px;">"{{ education.description }}"</textarea>
-          </div>
-        </div>
-        {% endfor %}
+      <!-- experience -->
+      <div class="tab" id="j0_skills">
+        <h4 class="j0-title-three"> Skills & Experience</h4>
+        <form method="post" action="{% url 'experience' %}">
+          {% csrf_token %}
+          <div id="accordion-container-skills">
+            {% for experience in experiences %}
+            <div class="j0_edu-accordion">
+              <div class="j0-accordion-header">experience 1 <span style="float: right;">^</span>
+              </div>
+              <div class="j0-accordion-content" style="display: none;"><label for="title">Title*</label>
+                <input type="text" id="title" name="title" placeholder="Product designer(google)"
+                  value="{{ experience.title }}">
+                <label for="academy">Academy*</label>
+                <input type="text" id="academy" name="academy" placeholder="Google Arts Collage &amp; University"
+                  value="{{ experience.Academy }}">
+                <label for="starYear">Start Year*</label>
+                <input for="number" id="starYear" name="starYear" placeholder="2022" value="{{ experience.startDate }}">
+                <label for="endYear">End Year*</label>
+                <input for="number" id="endYear" name="endYear" placeholder="2026" value="{{ experience.endDate }}">
+                <label for="subject">Subject*</label>
+                <textarea id="subject" name="subject" placeholder="Write something.."
+                  style="height: 200px;">"{{ experience.description }}"</textarea>
+              </div>
+            </div>
+            {% endfor %}
+
+            <button type="submit">Confirm and submit</button>
+        </form>
+        <button id="j0-skill-btn" class="j0_btn">+ Add more</button>
       </div>
-      <form method="get"></form>
-      <button id="j0-edu-btn" class="j0_btn">+ Add more</button>
-      <button type="submit">Confirm and submit</button>
-    </div>
-
-    
-    <!-- experience -->
-    <div class="tab" id="j0_skills">
-      <h4 class="j0-title-three"> Skills & Experience</h4>
-      <div id="accordion-container-skills">
-        {% for experience in experiences %}
-        <div class="j0_edu-accordion">
-          <div class="j0-accordion-header">experience 1 <span style="float: right;">^</span>
-          </div>
-          <div class="j0-accordion-content" style="display: none;"><label for="title">Title*</label>
-            <input type="text" id="title" name="title" placeholder="Product designer(google)"value= "{{ experience.title }}">
-            <label for="academy">Academy*</label>
-            <input type="text" id="academy" name="academy"placeholder="Google Arts Collage &amp; University"value= "{{ experience.Academy }}">
-            <label for="starYear">Start Year*</label>
-            <input for ="number" id="starYear" name="starYear" placeholder="2022"value= "{{ experience.startDate }}">
-            <label for="endYear">End Year*</label>
-            <input for ="number" id="endYear" name="endYear" placeholder="2026" value= "{{ experience.endDate }}">
-            <label for="subject">Subject*</label>
-            <textarea id="subject" name="subject"placeholder="Write something.." style="height: 200px;">"{{ experience.description }}"</textarea>
-          </div>
-        </div>
-        {% endfor %}
-
-      <button id="j0-skill-btn" class="j0_btn">+ Add more</button>
-      <button type="submit">Confirm and submit</button>
-    </div>
-    <!--------------------------------------jonathan------------------------------------------ -->
-</section>
+      <!--------------------------------------jonathan------------------------------------------ -->
+  </section>
 
 </div>
 

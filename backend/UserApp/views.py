@@ -115,11 +115,39 @@ def upload_resume(request):
 from .models import Education,Experience
 @login_required
 def education(request):
-    educations = Education.objects.get(applicant=request.user)
+    education = Education.objects.get(applicant=request.user.id)
+    if request.method == 'POST':
+        education.title = request.POST.get('title')
+        education.Academy = request.POST.get('Academy')
+        education.startDate = request.POST.get('startDate')
+        education.endDate = request.POST.get('endDate')
+        education.description = request.POST.get('description')
+        
+        education.save()
+        
+    educations = Education.objects.get(applicant=request.user.id)
     return render(request,"profile.html",{"educations": educations})
 
 @login_required
 def experience(request):
-    experiences = Experience.objects.get(applicant=request.user)
+    experience = Experience.objects.get(applicant=request.user.id)
+    if experience:
+        experience.title = request.POST.get('title')
+        experience.Company = request.POST.get('Academy')
+        experience.startDate = request.POST.get('startDate')
+        experience.endDate = request.POST.get('endDate')
+        experience.description = request.POST.get('description')
+        experience.save()
+    else :
+        newexperience = Experience.objects.create(
+            applicant=request.user.id,
+            title = request.POST.get('title'),
+            Company = request.POST.get('Academy'),
+            startDate = request.POST.get('startDate'),
+            endDate = request.POST.get('endDate'),
+            description = request.POST.get('description'),)
+        newexperience.save()
+        
+    experiences = Experience.objects.get(applicant=request.user.id)
     return render(request,"profile.html",{"experiences": experiences})
 
