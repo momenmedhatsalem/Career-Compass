@@ -204,14 +204,21 @@ def save_profile(request):
 
 @csrf_exempt
 def filter_search(request):
+
+    # tests
     print("connected")
 
+    # we make sure the method is correct first
     if request.method == 'POST':
-        # Retrieve the data from the request's body
+
+        # we retrieve the dictionary from the request to use it to filter jobs
         data = json.loads(request.body)
 
+        # test mode is correct
         print(data['mode'])
         
+        # we query the database according to the sent searching mode using the 
+        # sent searching text from the search bar
         if data['mode'] == 'title':
             jobs = Job.objects.all().filter(title__contains = data['text'])
         elif data['mode'] == 'years':
@@ -219,20 +226,28 @@ def filter_search(request):
         elif data['mode'] == 'country':
             jobs = Job.objects.all().filter(country__contains = data['text'])
 
+        # we prepare our response as an array of dictionaries carrying desired data
+        # as key-value pairs to be easy in manipulations on the frontend
         result = []
         for job in jobs:
+            # check that this job is open and is accepting applicants
             if job.status == 'open':
+                # if yes, we append its dictionary to the array
                 result.append({
                     'title': job.title,
                     'salary': job.MaxSalary,
                     'exp': job.years_of_experience,
                     'country': job.country,
                 })
+                # else we move on to the next one
     
-        # Return the result as a JSON response
+        # return the resulting array as a JSON response to to the frontend
         return JsonResponse({'result': result})
 
+    #if the method is not 'POST' we just render the same page
     return render(request, "search.html")
+
+                        #     Thank You very much ^^
 
 def login(request):
     return render(request, "login.html")
@@ -313,10 +328,10 @@ def saveRecSettings(request):
 
 def viewJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
+    saved = False
     if request.user.is_authenticated :
         if request.user.is_applicant: 
             all_saved_jobs = SavedJob.objects.all()
-            saved = False
             for j in all_saved_jobs:
                 if j.job.job_id == job_id and j.applicant.user.username == request.user.username :
                     saved = True
@@ -324,7 +339,7 @@ def viewJob(request, job_id, recruiter_username):
     if saved :
         return render(request, 'Job_Details.html', {'job': job,'saved':1})
     else:
-        return render(request, 'Job_Details.html', {'job': job})
+        return render(request, 'Job_Details.html', {'job': job,'saved':0})
 
 def editJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
