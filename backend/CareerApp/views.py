@@ -220,13 +220,13 @@ def filter_search(request):
             jobs = Job.objects.all().filter(country__contains = data['text'])
 
         for job in jobs:
-            # print(job.status)
-            result.append({
-                'title': job.title,
-                'salary': job.MaxSalary,
-                'exp': job.years_of_experience,
-                'country': job.country,
-            })
+            if job.status == 'open':
+                result.append({
+                    'title': job.title,
+                    'salary': job.MaxSalary,
+                    'exp': job.years_of_experience,
+                    'country': job.country,
+                })
     
         # Return the result as a JSON response
         return JsonResponse({'result': result})
