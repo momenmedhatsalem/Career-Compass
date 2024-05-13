@@ -324,10 +324,10 @@ def saveRecSettings(request):
 
 def viewJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
+    saved = False
     if request.user.is_authenticated :
         if request.user.is_applicant: 
             all_saved_jobs = SavedJob.objects.all()
-            saved = False
             for j in all_saved_jobs:
                 if j.job.job_id == job_id and j.applicant.user.username == request.user.username :
                     saved = True
@@ -335,7 +335,7 @@ def viewJob(request, job_id, recruiter_username):
     if saved :
         return render(request, 'Job_Details.html', {'job': job,'saved':1})
     else:
-        return render(request, 'Job_Details.html', {'job': job})
+        return render(request, 'Job_Details.html', {'job': job,'saved':0})
 
 def editJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)

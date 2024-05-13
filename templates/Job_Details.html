@@ -15,12 +15,12 @@
       <div class="save-button-div">
         <button class="save-button " onclick="save(`{{job.job_id}}`)" id="x{{job.job_id}}" style="background-color: green;"><img src="{% static 'saved.png' %}" title="save job" class="save-button-img"> </button>
       </div>
-      {% endif %}
-      {% if saved != 1 %}
+
+      {% else %}
       <div class="save-button-div">
         <button class="save-button " onclick="save(`{{job.job_id}}`)" id="x{{job.job_id}}" style="background-color: transparent;"><img src="{% static 'saved.png' %}" title="save job" class="save-button-img"> </button>
       </div>
-      {% endif %}  
+      {% endif %}
     {% endif %}
 
     <div class="J9_view_container">
