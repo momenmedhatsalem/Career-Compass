@@ -22,6 +22,6 @@ urlpatterns = [
     path("saveRecSettings/", view=views.saveRecSettings, name="saveRecSettings"),
     
     path('job/<int:job_id>/<str:recruiter_username>/', views.viewJob, name='viewJob'),
-    path('job/<int:job_id>/edit/', views.editJob, name='editJob'),
+    path('job/<int:job_id>/<str:recruiter_username>/edit/', views.editJob, name='editJob'),
     path('job/<int:job_id>/delete/', views.deleteJob, name='deleteJob'),
 ]
