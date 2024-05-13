@@ -18,7 +18,7 @@
               <ul class="information">
                 <img {% if candidate.user.photo %} src="{{candidate.user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %} alt="User Image" class="img-person" style="display: inline-block;">
                 <li class="person-name">  {{candidate.user.first_name}} </li>
-                <li class="jobs">
+                <!-- <li class="jobs">
                   <ul class="jobs">
                     {% for application in applications %}
                       {% if application.applicant.user.id == candidate.user.id %}
@@ -27,23 +27,18 @@
                     {% endfor %}
                   </ul>
                 </li>
-                <li>
+                <li> -->
                   <table class="Salary-location-table">
-                    <tr class="Salary-location-table-header">
-                      <td class="Salary-heade"> Salary </td>
-                      <td class="Location-header">Location</td>
-                    </tr>
                     <tr class="Salary-location-table-values">
-                      <td class="Salary-value">$45k-$55k/yr</td>
                       <td class="Location-value">{{candidate.city}}, {{candidate.country}}</td>
                     </tr>
                   </table>
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
-                  <button type="button" onclick="reject(name)" value="reject" name="1"><img
-                      src="{% static 'cancel.png' %}"></button>
+                  <div class="save-button-div">
+                    <button class="save-button " onclick="save(`{{job.job.job_id}}`)" id="x{{job.job.job_id}}" style="background-color: #36c665;"> Save </button>
+                  </div>
                 </li>
               </ul>
             </li>
