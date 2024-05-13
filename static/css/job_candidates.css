@@ -56,7 +56,7 @@ li[id] {
     /* background-color: #009688; */
     position: relative;
     display: block;
-    width: 30%;
+    width: 40%;
     /* box-sizing: border-box; */
     /* height: 575px; */
     margin-bottom: 10px;
@@ -65,14 +65,12 @@ li[id] {
     /* padding-left: 0px; */
 }
 img.img-person {
-    /* background: black; */
-    /* position: absolute; */
-    /* top: -26%; */
-    /* right: 25%; */
+    background: black;
+    position: absolute;
+    top: -26%;
+    right: 25%;
     width: 50%;
     height: 43%;
-    margin-left: 25%;
-    margin-top: 15%;
     border-radius: 50%;
     border: solid;
     border-color: #ebebeb;
@@ -83,31 +81,19 @@ img {
 
 }
 button {
-    /* border-radius: 25px; */
+    border-radius: 25px;
     font-size: 15px;
     cursor: pointer;
-    width: 100%;
-    font-size: 30px;
-    line-height: 50px;
-    /* border-bottom-left-radius: 25px; */
-    /* border-bottom-right-radius: 25px; */
-    margin-right: -3px;
-    padding-bottom: 1px;
 }
 li.buttons-list {
     display: flex;
     margin-top: 12px;
-    margin-bottom: -4px;
+    margin-bottom: 5px;
     justify-content: space-around;
-    border: solid;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    margin-left: -3px;
-    margin-right: -4px;
 }
 a {
     /* flex-grow: 1.5; */
-    width: 50%;
+    width: 70%;
 }
 button[value="accept"], button[value="reject"] {
     background: none;
@@ -117,18 +103,12 @@ button[value="accept"], button[value="reject"] {
 button[value="View profile"] {
     width: 100%;
     font-size: 25px;
-    line-height: 50px;
+    line-height: 47px;
     background-color: #25c75d;
     color: #f0fbf4;
     margin-left: 5px;
     border: none;
     /* box-shadow: -2px 6px 14px 0px black; */
-    border-bottom-left-radius: 25px;
-    /* border-bottom-right-radius: 25px; */
-    margin-left: 0px;
-    padding-bottom: 3px;
-    /* border-right: solid; */
-    /* border: solid; */
 }
 button[value="View profile"]:hover {
     background-color: rgb(98, 255, 98);
@@ -151,7 +131,7 @@ ul.information {
     /* height: 75%; */
     /* margin-top: 32px; */
     border: solid;
-    /* border-color: whitesmoke; */
+    border-color: whitesmoke;
     border-radius: 25px;
     background-color: white;
     list-style-type: none;
@@ -161,12 +141,16 @@ ul.information {
 }
 li.person-name {
     /* padding-top: 30%; */
-    margin-top: 5%;
+    margin-top: 25%;
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
     color: black;
 }
-
+li.job-title {
+    text-align: center;
+    color: gray;
+    font-size: 19px;
+}
 
 ul {
     display: flex;
@@ -252,22 +236,4 @@ td.Salary-value {
     margin-left: 3%;
     margin-right: 13%;
     /* font-size: 20px; */
-}
-td, tr {
-    /* padding: 1rem; */
-    text-align: center;
-    /* margin-bottom: -8px; */
-}
-.save-button-div {
-    width: 50%;
-    font-size: 25px;
-    line-height: 50px;
-}
-.save-button {
-    background-color: #36c665;
-    color: #f0fbf4;
-    /* border-bottom-left-radius: 25px; */
-    border-bottom-right-radius: 23px;
-    border-left: solid;
-    border-color: black;
 }

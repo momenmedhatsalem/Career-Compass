@@ -23,8 +23,7 @@
         <div class="J9_emp_dash_aside_fixed">
 
             <div class="J9_emp_dash_aside_logo_prof_pic">
-                <!-- <a class="J9_emp_dash_aside_logo" href="index.html"><img src="{% static 'images/logopng.png' %}" alt=""></a> -->
-                <a class="J9_emp_dash_aside_prof_pic" href="recruiter_dashboard.html">
+                <a class="J9_emp_dash_aside_prof_pic" href="{% url "recruiterDashboard" %}">
                     <img {% if rec.user.photo.url != null %} src="{{rec.user.photo.url}}" {% else %}
                         src=" {% static "images/employer.png" %}" {% endif %} alt="profile photo">
                 </a>

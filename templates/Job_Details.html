@@ -171,22 +171,16 @@
     </div> {% endcomment %}
 
     {% if user.is_applicant %}
+    <button class="apply_button" onclick="confirmApplication({{job.job_id}},{{user.id}})">Apply</button>
+    {% elif user.is_recruiter %}
     <button onclick="confirmApplication()">Apply</button>
     {% elif user.is_recruiter and job.recruiter.user.username == user.username%}
     <a class="J9_edit_button" href="{% url "editJob" job_id=job.job_id recruiter_username=job.recruiter.user.username  %}" >Edit</a>
     {% endif %}
 
-    {% comment %} <script>
-      function confirmApplication() {
-        if (confirm("Are you sure you want to apply for this job?")) {
-          window.location.href = {% url "apply" job.id  job.recruiter.user.username %};
-        }
-      }
-    </script> {% endcomment %}
-
     <div>
   </section>
 
   </div>
-  <script src="{%static 'js/list_of_jobs.js' %}"></script>
+  <script src="{%static 'js/job_Details.js' %}"></script>
 {% endblock %}

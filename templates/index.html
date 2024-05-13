@@ -22,7 +22,7 @@
           <h2>Most Demanding Categories.</h2>
         </div>
         <div class="J9_category_explore">
-          <a href="search.html"><u>Explore all fields</u> ></a>
+          <a href="{% url "search" %}"><u>Explore all fields</u> ></a>
         </div>
       </div>
 
@@ -87,7 +87,7 @@
     <section class="J9_do_yo_want_to_post_section">
       <div>
         Do you want to post a job for your company? <span>We can help.</span>
-        <a href="signup.html">Click here</a>
+        <a href="{% url "signup" "recruiter" %}">Click here</a>
       </div>
     </section>
 
@@ -102,7 +102,7 @@
           <ul>
             <li><a href="{% url 'jobs' %}">Looking for a job?</a></li>
             <!-- go to job list -->
-            <li><a href="recruitersignup.html">Start Hiring</a></li>
+            <li><a href="{% url "signup" "recruiter" %}">Start Hiring</a></li>
             <!--  go to candidate/recruitment page -->
           </ul>
         </div>

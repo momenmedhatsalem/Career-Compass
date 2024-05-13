@@ -3,7 +3,7 @@
 <footer class="J9_footer" style="max-width: 100%; margin: auto;">
   <div class="J9_footer_row">
     <div class="J9_footer_logo_col">
-      <a href="index.html">
+      <a href="{% url "index" %}">
         <img class="J9_footer_logo" src="{% static 'images/logopng.png' %}" width="100px" />
       </a>
     </div>
@@ -11,15 +11,15 @@
       <div class="J9_footer_col">
         <h5>Services</h5>
         <ul>
-          <li><a href="list_of_jobs.html">Browse Jobs</a></li>
+          <li><a href="{% url "jobs" %}">Browse Jobs</a></li>
           <!-- <li><a href="#">Companies</a></li> -->
-          <li><a href="check_candidates.html">Candidates</a></li>
+          <li><a href="{% url "checkCandidates" %}">Candidates</a></li>
         </ul>
       </div>
       <div class="J9_footer_col">
         <h5>Company</h5>
         <ul>
-          <li><a href="/templates/About_us.html">About us</a></li>
+          <li><a href="{% url "about" %}">About us</a></li>
           <!-- <li><a href="#">Contact</a></li> -->
         </ul>
       </div>

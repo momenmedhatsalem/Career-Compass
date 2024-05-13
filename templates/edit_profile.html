@@ -26,7 +26,7 @@
         <table class="M7-table">
           <tr class="M7-tr">
             <td class="M7-td">
-              <img {% if user.photo.url != null %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %} alt="User Image" class="M7-p_img">
+              <img {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %} alt="User Image" class="M7-p_img">
             </td>
             <td class="M7-td">
               <!-- <button class="M7-p_img_button" onclick="change_img()" type="button">Change Profile Image</button> -->
@@ -106,13 +106,13 @@
         <br>
         <br>
 
-        <div>
+        <!-- <div>
 
           <label for="skills" class="M7-label">Skills and Certificates: </label> <br><br>
           <textarea name="skills" id="skills" cols="40" rows="5" placeholder="frontend Web Developer" class="M7-field"
             itemid="skills">{{ applicant_user.skills }}</textarea>
 
-        </div>
+        </div> -->
 
 
         <br>
@@ -269,9 +269,7 @@
     </section>
 
   </main>
-  <div>
-    <div>
+</section>
 
 
-
-      {% endblock %}
+{% endblock %}

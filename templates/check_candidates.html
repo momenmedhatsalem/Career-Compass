@@ -8,47 +8,41 @@
   
   <!-- ========== Philopater ========== -->
   <section class="main">
-    <h1>
-      List of candidates
-    </h1>
     <table>
       <tr class="job">
-        <td class="job-name-column"> Front-end web development </td>
         <td class="candidates-column">
           <ol class="candidate-list">
             <!-- ------------------------------------------------------------------------------------ -->
-            <li id="1">
+            {% for candidate in candidates %}
+            <li id="{{candidate.user.id}}">
               <ul class="information">
-                <img class="img-person" src="{% static 'image.png' %}">
-                <li class="person-name"> Mohmmed Hany </li>
-                <li class="job-title">Web Development</li>
-                <li class="skills">
-                  <ul class="skills">
-                    <li class="skill">HTML</li>
-                    <li class="skill">CSS</li>
-                    <li class="skill">java script</li>
+                <img {% if candidate.user.photo %} src="{{candidate.user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %} alt="User Image" class="img-person" style="display: inline-block;">
+                <li class="person-name">  {{candidate.user.first_name}} </li>
+                <!-- <li class="jobs">
+                  <ul class="jobs">
+                    {% for application in applications %}
+                      {% if application.applicant.user.id == candidate.user.id %}
+                        <li class="job">{{application.job.title}}</li>
+                      {% endif %}
+                    {% endfor %}
                   </ul>
                 </li>
-                <li>
+                <li> -->
                   <table class="Salary-location-table">
-                    <tr class="Salary-location-table-header">
-                      <td class="Salary-heade"> Salary </td>
-                      <td class="Location-header">Location</td>
-                    </tr>
                     <tr class="Salary-location-table-values">
-                      <td class="Salary-value">$45k-$55k/yr</td>
-                      <td class="Location-value">California, US</td>
+                      <td class="Location-value">{{candidate.city}}, {{candidate.country}}</td>
                     </tr>
                   </table>
                 </li>
                 <li class="buttons-list">
                   <a href="profile.html"><button type="button" value="View profile">View profile</button></a>
-                  <button type="button" value="accept"><img src="{% static 'check-mark.png' %}"></button>
-                  <button type="button" onclick="reject(name)" value="reject" name="1"><img
-                      src="{% static 'cancel.png' %}"></button>
+                  <div class="save-button-div">
+                    <button class="save-button " onclick="save(`{{job.job.job_id}}`)" id="x{{job.job.job_id}}" style="background-color: #36c665;"> Save </button>
+                  </div>
                 </li>
               </ul>
             </li>
+            {% endfor %}
             <!-- --------------------------------------------------------------------------------------- -->
             <li id="2">
 

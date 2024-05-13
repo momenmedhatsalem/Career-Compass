@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from UserApp.models import Applicant, Recruiter
-from .models import SavedJob , Job
+from .models import SavedJob , Job, Application
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -126,7 +126,26 @@ def jobs(request):
 
 
 def checkCandidates(request):
-    return render(request, "check_candidates.html")
+    all_candidates =Applicant.objects.all()
+    print(all_candidates[0].city)
+    all_applications = Application.objects.all()
+    print(all_applications)
+    return render(request, "check_candidates.html",{"candidates":all_candidates,"applications":all_applications})
+
+@csrf_exempt  
+@require_http_methods(["PUT"])
+def apply_to_job(request):
+    data = json.loads(request.body)
+    job_id = data["job"]
+    applicant_id = data["applicant"]
+    job = Job.objects.get(job_id =job_id)
+    applicant = Applicant.objects.get(user =applicant_id ) 
+    new_application = Application.objects.create(job = job,applicant = applicant )
+    return JsonResponse({'success': True, 'redirect_url': '/Confirmation/'})
+
+
+def Confirmation(request):
+    return render(request, "Confirmation.html")
 
 
 def edit_Job(request):
@@ -161,7 +180,7 @@ def save_profile(request):
 
         cname = request.POST.get("cname")
         bemail = request.POST.get("bemail")
-        skills = request.POST.get("skills")
+        #skills = request.POST.get("skills")
 
         net1 = request.POST.get("net1")
         net2 = request.POST.get("net2")
@@ -181,7 +200,7 @@ def save_profile(request):
 
         applicant_user.company_name = cname
         applicant_user.business_email = bemail
-        applicant_user.skills = skills
+        #applicant_user.skills = skills
 
         applicant_user.network1 = net1
         applicant_user.network2 = net2
