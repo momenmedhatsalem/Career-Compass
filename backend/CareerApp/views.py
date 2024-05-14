@@ -22,10 +22,10 @@ def index(request):
 def profile(request):
     user = request.user
     if user.is_applicant:
-        applicant_user = Applicant.objects.get(user=request.user)
+        applicant_user = Applicant.objects.get(user=user.id)
 
-        experiences = Experience.objects.get(applicant=request.user.id)
-        educations = Education.objects.get(applicant=request.user.id)
+        experiences = Experience.objects.filter(applicant=applicant_user)
+        educations = Education.objects.filter(applicant=applicant_user)
 
 
         # User is an applicant
