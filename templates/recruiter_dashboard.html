@@ -118,7 +118,7 @@
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_founded_date">
                                 <label>Founded Date</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_founded_date"
-                                    name="founded_date" type="date" required value="{{ rec.founded_date }}">
+                                    name="founded_date" type="date" required value="{{ rec.founded_date|date:"Y-m-d" }}">
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_company_size">
