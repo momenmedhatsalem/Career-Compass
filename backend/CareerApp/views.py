@@ -24,8 +24,8 @@ def profile(request):
     if user.is_applicant:
         applicant_user = Applicant.objects.get(user=request.user)
 
-        experiences = Experience.objects.get(applicant=request.user)
-        educations = Education.objects.get(applicant=request.user)
+        experiences = Experience.objects.get(applicant=request.user.id)
+        educations = Education.objects.get(applicant=request.user.id)
 
 
         # User is an applicant
