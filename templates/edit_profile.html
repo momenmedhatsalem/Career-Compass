@@ -40,7 +40,7 @@
 
         <br>
 
-        <form action="{% url 'save_profile' %}" method="post">
+        <form action="{% url 'save_profile' %}" method="post"enctype="multipart/form-data">
           {% csrf_token %}
           <input type="file" name="profile_photo">
 
