@@ -146,7 +146,6 @@ def education(request):
 
 
 @login_required
-@login_required
 def experience(request):
     if request.method == 'POST':
         applicant_id = request.user.id
