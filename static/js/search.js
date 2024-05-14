@@ -103,7 +103,7 @@ function showmatches(search_results) {
         "</p>" +
         //'<a href="#">' +
         '<button class="M7-button" style="display: inline;"' +
-        ' onclick="view_job_details(' + result['job_id']  + ', \'' + result['rec_username'] + '\')">Apply</button>' +
+        ' onclick="view_job_details(' + result['job_id']  + ', \'' + result['rec_username'] + '\')">More info</button>' +
         //"</a>" +
         "</fieldset>" +
         "</div>";
