@@ -22,6 +22,8 @@ urlpatterns = [
     path("saveRecSettings/", view=views.saveRecSettings, name="saveRecSettings"),
     path("apply_to_job/", view=views.apply_to_job, name="apply_to_job"),
     path("Confirmation/", view=views.Confirmation, name="Confirmation"),
+    path("saved_candidate/", view=views.saved_candidate, name="save_candidate"),
+
 
 
     

@@ -172,8 +172,6 @@
 
     {% if user.is_applicant %}
     <button class="apply_button" onclick="confirmApplication({{job.job_id}},{{user.id}})">Apply</button>
-    {% elif user.is_recruiter %}
-    <button onclick="confirmApplication()">Apply</button>
     {% elif user.is_recruiter and job.recruiter.user.username == user.username%}
     <a class="J9_edit_button" href="{% url "editJob" job_id=job.job_id recruiter_username=job.recruiter.user.username  %}" >Edit</a>
     {% endif %}
