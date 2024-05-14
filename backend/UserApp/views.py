@@ -115,18 +115,28 @@ def upload_resume(request):
 from .models import Education,Experience
 @login_required
 def education(request):
-    education = Education.objects.get(applicant=request.user.id)
     if request.method == 'POST':
-        education.title = request.POST.get('title')
-        education.Academy = request.POST.get('Academy')
-        education.startDate = request.POST.get('startDate')
-        education.endDate = request.POST.get('endDate')
-        education.description = request.POST.get('description')
-        
+        applicant_id = request.user.id
+        title = request.POST.get('title')
+        institution = request.POST.get('institution')
+        start_date = request.POST.get('start_date')  # Assuming date-parsing logic is handled
+        end_date = request.POST.get('end_date')  # Handle optional end date
+        description = request.POST.get('description')
+
+
+        applicant = Applicant.objects.get(pk=applicant_id)  # Retrieve applicant
+        education = Education(
+            applicant=applicant,
+            title=title,
+            institution=institution,
+            start_date=start_date,
+            end_date=end_date,
+            description=description,
+        )
         education.save()
-        
-    educations = Education.objects.get(applicant=request.user.id)
-    return render(request,"profile.html",{"educations": educations})
+
+        return redirect('profile') 
+
 
 @login_required
 def experience(request):
@@ -149,5 +159,5 @@ def experience(request):
         newexperience.save()
         
     experiences = Experience.objects.get(applicant=request.user.id)
-    return render(request,"profile.html",{"experiences": experiences})
+    return redirect('profile') 
 

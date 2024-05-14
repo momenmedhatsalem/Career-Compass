@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from UserApp.models import Applicant, Recruiter
+from UserApp.models import Applicant, Recruiter, Experience,Education
 from .models import SavedJob , Job, Application
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
@@ -24,8 +24,12 @@ def profile(request):
     if user.is_applicant:
         applicant_user = Applicant.objects.get(user=request.user)
 
+        experiences = Experience.objects.get(applicant=request.user)
+        educations = Education.objects.get(applicant=request.user)
+
+
         # User is an applicant
-        return render(request, "profile.html", {"applicant_user": applicant_user})
+        return render(request, "profile.html", {"applicant_user": applicant_user,"educations": educations,"experiences": experiences})
     elif user.is_recruiter:
         # User is a recruiter
         return redirect("recruiterDashboard")
