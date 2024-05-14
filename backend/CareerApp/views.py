@@ -194,7 +194,11 @@ def save_profile(request):
         city = request.POST.get("city")
         zip = request.POST.get("zip")
         state = request.POST.get("state")
-
+        
+        if request.POST.get('delete_profile_photo'):
+            if user.photo:
+                user.photo.delete()
+                user.photo = None
         # Create a new instance of MyModel and set the values
         user.photo = profile_photo
 
@@ -220,6 +224,19 @@ def save_profile(request):
         applicant_user.save()
 
     return redirect("profile")
+
+
+
+
+def delete_profile_photo(request):
+    if request.method == "POST":
+        user = request.user
+        user.photo.delete()  # Delete the actual file from the server
+        user.photo = None  # Set the photo field to None
+        user.save()
+        return redirect("profile")
+
+
 
 
 # def viewCandidate(request):

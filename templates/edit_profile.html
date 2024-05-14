@@ -32,7 +32,11 @@
               <!-- <button class="M7-p_img_button" onclick="change_img()" type="button">Change Profile Image</button> -->
             </td>
             <td class="M7-td">
-              <button class="M7-p_img_button_clear" type="button">Delete</button>
+              <form method="post" action="{% url 'delete_profile_photo' %}">
+                {% csrf_token %}
+                <button name="delete_profile_photo" class="M7-p_img_button_clear" type="submit">Delete</button>
+            </form>
+            
             </td>
           </tr>
 
