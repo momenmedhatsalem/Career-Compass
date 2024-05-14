@@ -5,24 +5,24 @@
 var search_by = "";
 old_option = "title";
     
-    function set_search_by(opt = "title") {
-        // change css of past selected mode back to normal
-        document.getElementById(old_option).style.backgroundColor = "#ddd";
-        document.getElementById(old_option).style.color = "black";
-    
-        // set the current searching mode according to what is sent as a parameter 'opt'
-        search_by = opt;
-        old_option = search_by;
+function set_search_by(opt = "title") {
+    // change css of past selected mode back to normal
+    document.getElementById(old_option).style.backgroundColor = "#ddd";
+    document.getElementById(old_option).style.color = "black";
 
-        // make results section disappear again to be ready for a new search
-        document.getElementById("result").style.display = "none";
-        document.getElementById("result-grid").style.display = "none";
+    // set the current searching mode according to what is sent as a parameter 'opt'
+    search_by = opt;
+    old_option = search_by;
 
-        // make the selected mode blue in color and white in backg color
-        document.getElementById(opt).style.backgroundColor = "rgb(0, 136, 255)";
-        document.getElementById(opt).style.color = "white";
-    
-    }
+    // make results section disappear again to be ready for a new search
+    document.getElementById("result").style.display = "none";
+    document.getElementById("result-grid").style.display = "none";
+
+    // make the selected mode blue in color and white in backg color
+    document.getElementById(opt).style.backgroundColor = "rgb(0, 136, 255)";
+    document.getElementById(opt).style.color = "white";
+
+}
 // make the array we will use to get array of dictionaries with matching jobs
 var search_results = []
 
