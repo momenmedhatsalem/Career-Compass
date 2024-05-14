@@ -10,6 +10,7 @@ urlpatterns = [
     path("saved_jobs/", view=views.savedJobs, name="saved_jobs"),
     path("search/", view=views.search, name="search"),
     path("filter_search/", view=views.filter_search, name="filter_search"),
+    #path('job/<int:job_id>/<str:recruiter_username>/', views.load_Job_details, name='load_Job_details'),
     path("about/", view=views.about, name="about"),
     path("jobs/", view=views.jobs, name="jobs"),
     path("index/", view=views.index, name="index"),
