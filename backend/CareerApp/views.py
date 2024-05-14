@@ -235,6 +235,14 @@ def delete_profile_photo(request):
         user.photo = None  # Set the photo field to None
         user.save()
         return redirect("profile")
+    
+def delete_rec_photo(request):
+    if request.method == "POST":
+        user = request.user
+        user.photo.delete()  # Delete the actual file from the server
+        user.photo = None  # Set the photo field to None
+        user.save()
+        return redirect("recruiterDashboard")
 
 
 
@@ -304,12 +312,12 @@ def recruitersignup(request):
 
 
 def save_recruiter_profile(request):
-    rec = Recruiter.objects.get(user = request.user.id)
-
+    user = request.user
+    rec = Recruiter.objects.get(user = user)
     if request.method == "POST":
         # Get data from the form
 
-        rec.user.photo = request.FILES.get("profile_photo")
+        user.photo = request.FILES.get("profile_photo")
         rec.website = request.POST.get("rec_website")
         rec.founded_date = request.POST.get("founded_date")
         rec.company_size = request.POST.get("company_size")
@@ -322,6 +330,7 @@ def save_recruiter_profile(request):
         rec.zip_code = request.POST.get("zip_code")
         rec.state = request.POST.get("state")
         # rec.user.save()
+        user.save()
         rec.save()
     return redirect("recruiterDashboard")
 

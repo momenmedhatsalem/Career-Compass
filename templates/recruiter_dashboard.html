@@ -84,15 +84,17 @@
                         {% csrf_token %}
                         <div class="J9_emp_dash_prof_right_side_body_emp_information">
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_photo">
-                                <img id="J9_recruiter_viewed_profile_photo" {% if user.photo %}
-                                    src="{{user.photo.url}}" {% else %} src=" {% static 'images/employer.png' %}" {% endif %} alt="profile photo">
+                                <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo %}
+                                    src="{{rec.user.photo.url}}" {% else %} src=" {% static 'images/employer.png' %}" {% endif %} alt="profile photo">
                                 <div>
                                     <label class="J9_custom_file_upload">Upload new photo 
                                         <input id="J9_recruiter_profile_photo" name="profile_photo" type="file"
                                             accept="image/x-png,image/jpg" /> </label>
                                 </div>
-                                <button
-                                    class="J9_emp_dash_prof_right_side_body_emp_information_photo_delete" {% if rec.user.phone.url == null %} disabled {% endif %}>Delete</button>
+                                <form method="post" action="{% url 'delete_rec_photo' %}">
+                                    {% csrf_token %}
+                                <button class="J9_emp_dash_prof_right_side_body_emp_information_photo_delete" type="submit">Delete</button>
+                                </form>
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_name">
