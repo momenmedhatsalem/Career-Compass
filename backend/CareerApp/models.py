@@ -60,6 +60,10 @@ class SavedJob(models.Model):
     def __str__(self):
         return f"{self.applicant.user.username} saved {self.job.title}"
 
+class SavedCandidate(models.Model):
+    applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE, related_name="SavedCandidate")
+    recruiter = models.ForeignKey(Recruiter, on_delete=models.CASCADE, default=None)
+
 
 class Application(models.Model):
     job = models.ForeignKey(Job, on_delete=models.CASCADE)

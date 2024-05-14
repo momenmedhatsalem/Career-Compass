@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from UserApp.models import Applicant, Recruiter, Experience,Education
-from .models import SavedJob , Job, Application
+from .models import SavedJob , Job, Application ,SavedCandidate
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -396,3 +396,18 @@ def deleteJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
     job.delete()
     return redirect("recruiterDashboard")
+@csrf_exempt  
+@require_http_methods(["PUT"])
+def saved_candidate(request):
+    data = json.loads(request.body)
+    id_for_applicant =data['id_for_applicant']
+    action = data['action']
+    recruiter_user = Recruiter.objects.get(user=request.user.id)
+    applicant_user = Applicant.objects.get(user=id_for_applicant)
+    if action == "save":
+        newSavedCandidate = SavedCandidate.objects.create(applicant = applicant_user , recruiter = recruiter_user )
+        return JsonResponse({"status": "success", "save": 1}, status=200)
+    else:
+        savedCa =SavedCandidate.objects.get(applicant = applicant_user ,recruiter = recruiter_user)
+        savedCa.delete()
+        return JsonResponse({"status": "success", "unsaved": 1}, status=200)
