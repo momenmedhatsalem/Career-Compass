@@ -24,8 +24,8 @@
 
             <div class="J9_emp_dash_aside_logo_prof_pic">
                 <a class="J9_emp_dash_aside_prof_pic" href="{% url "recruiterDashboard" %}">
-                    <img {% if rec.user.photo.url != null %} src="{{rec.user.photo.url}}" {% else %}
-                        src=" {% static "images/employer.png" %}" {% endif %} alt="profile photo">
+                    <img {% if rec.user.photo %} src="{{rec.user.photo.url}}" {% else %}
+                        src=" {% static 'images/employer.png' %}" {% endif %} alt="profile photo">
                 </a>
                 <h3 id="J9_emp_dash_aside_prof_username" >{{ rec.user.username }}</h3>
             </div>
@@ -80,15 +80,15 @@
                 </div>
 
                 <div id="J9_recruiter_dashboard_profile">
-                    <form class="J9_emp_dash_prof_right_side_body_emp_divs" id="J9_employer_profile_form" action="{% url 'save_recruiter_profile' %}" method="post">
+                    <form class="J9_emp_dash_prof_right_side_body_emp_divs" id="J9_employer_profile_form" action="{% url 'save_recruiter_profile' %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="J9_emp_dash_prof_right_side_body_emp_information">
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_photo">
-                                <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo.url != null %}
-                                    src="{{rec.user.photo.url}}" {% else %} src=" {% static "images/employer.png" %} " {% endif %} alt="profile photo">
+                                <img id="J9_recruiter_viewed_profile_photo" {% if user.photo %}
+                                    src="{{user.photo.url}}" {% else %} src=" {% static 'images/employer.png' %}" {% endif %} alt="profile photo">
                                 <div>
-                                    <label class="J9_custom_file_upload">Upload new photo <input
-                                            id="J9_recruiter_profile_photo" name="profile_photo" type="file"
+                                    <label class="J9_custom_file_upload">Upload new photo 
+                                        <input id="J9_recruiter_profile_photo" name="profile_photo" type="file"
                                             accept="image/x-png,image/jpg" /> </label>
                                 </div>
                                 <button
