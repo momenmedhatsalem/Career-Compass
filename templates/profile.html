@@ -25,7 +25,7 @@
 
 
       <div class="j0profile-pic">
-        <img src="{% static 'Editing.png' %}" alt="Profile Picture">
+        <img {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {%endif%} alt="User Image">
       </div>
       <ul class="j0menu">
         <!-- <li><a href="#"><img src="{% static 'icon_1.png' %}" alt="Dashboard"><span>Dashboard</span></a></li> -->
@@ -79,7 +79,7 @@
         <fieldset class="M7-fieldset">
 
           <legend class="M7-p_img">
-            <img {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %}
+            <img {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %}
               alt="User Image" class="M7-p_img" style="display: inline-block;">
           </legend>
 
