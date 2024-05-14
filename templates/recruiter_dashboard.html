@@ -151,12 +151,19 @@
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_social_media_links"
                                 id="J9_emp_dash_prof_right_side_body_emp_social_media_links">
-                                {% for link in rec.social_media %}
-                                <div class="J9_emp_dash_prof_right_side_body_emp_social_media_link">
-                                    <label class="J9_emp_dash_prof_right_side_body_emp_social_media_link_number">Network {{forloop.counter}}</label>
-                                    <input name="social_media_link" type="text" value="{{link}}">
-                                </div>
+                                {% if rec.social_media %}
+                                    {% for link in rec.social_media %}
+                                        <div class="J9_emp_dash_prof_right_side_body_emp_social_media_link">
+                                            <label class="J9_emp_dash_prof_right_side_body_emp_social_media_link_number">Network {{ forloop.counter }}</label>
+                                            <input name="social_media_link" type="text" value="{{ link }}">
+                                        </div>
                                     {% endfor %}
+                                {% else %}
+                                    <div class="J9_emp_dash_prof_right_side_body_emp_social_media_link">
+                                        <label class="J9_emp_dash_prof_right_side_body_emp_social_media_link_number">Network 1</label>
+                                        <input name="social_media_link" type="text">
+                                    </div>
+                                {% endif %}
                             </div>
 
                             <a href="#" onclick="J9_rec_social_media_add_link()"
