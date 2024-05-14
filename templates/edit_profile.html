@@ -22,7 +22,8 @@
 
 
       <fieldset class="M7-fieldset">
-
+        
+        <form action="{% url 'save_profile' %}" method="post" enctype="multipart/form-data">
         <table class="M7-table">
           <tr class="M7-tr">
             <td class="M7-td">
@@ -34,21 +35,32 @@
             <td class="M7-td">
               <button class="M7-p_img_button_clear" type="button">Delete</button>
             </td>
+            <td class="M7-td">
+                      
+          <button class="M7-edit" type="submit">Save Changes</button>
+      
+            </td>
           </tr>
 
         </table>
 
         <br>
 
-        <form action="{% url 'save_profile' %}" method="post">
           {% csrf_token %}
-          <input type="file" name="profile_photo">
+          <input type="file" name="profile_photo"  accept="image/*">
 
           <div>
 
-            <label for="fname" class="M7-label">Full Name: </label> <br><br>
+            <label for="fname" class="M7-label">First Name: </label> <br><br>
             <input type="text" name="fname" id="fname" class="M7-field" required
-              value=" {{ user.first_name }} {{ user.last_name }}">
+              value=" {{ user.first_name }}">
+
+          </div>
+          <div>
+
+            <label for="lname" class="M7-label">Last Name: </label> <br><br>
+            <input type="text" name="lname" id="lname" class="M7-field" required
+              value=" {{ user.last_name }}">
 
           </div>
 
@@ -253,9 +265,7 @@
 
       <div class="">
 
-        <a href="">
-          <button class="M7-edit" type="submit">Save Changes</button>
-        </a>
+
 
         <a href="profile.html">
           <button class="M7-p_img_button_clear" type="reset">Cancel</button>

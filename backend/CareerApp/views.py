@@ -170,15 +170,18 @@ def edit_profile(request):
 
 
 def save_profile(request):
+    current_user = get_user_model().objects.get(id=request.user.id)
+    
     user = request.user
-    applicant_user = Applicant.objects.get(user=user)
-
+    applicant_user = Applicant.objects.get(user=user.id)
+    print("here")
     if request.method == "POST":
         # Get data from the form
 
         profile_photo = request.FILES.get("profile_photo")
 
         fname = request.POST.get("fname")
+        lname = request.POST.get("lname")
         pemail = request.POST.get("pemail")
         bio = request.POST.get("bio")
 
@@ -194,12 +197,15 @@ def save_profile(request):
         city = request.POST.get("city")
         zip = request.POST.get("zip")
         state = request.POST.get("state")
-
+        print(profile_photo)
         # Create a new instance of MyModel and set the values
-        user.photo = profile_photo
+        if profile_photo:
+            current_user.photo = profile_photo
+            print("heere")
 
-        user.first_name = fname
-        user.email = pemail
+        current_user.first_name = fname
+        current_user.last_name = lname
+        current_user.email = pemail
         applicant_user.bio = bio
 
         applicant_user.company_name = cname
@@ -215,11 +221,10 @@ def save_profile(request):
         applicant_user.country = country
         applicant_user.zip = zip
         applicant_user.state = state
-
-        user.save()
+        current_user.save()
         applicant_user.save()
 
-    return render(request, "profile.html", {"applicant_user": applicant_user})
+    return redirect("profile")
 
 
 # def viewCandidate(request):
