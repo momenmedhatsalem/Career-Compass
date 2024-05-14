@@ -70,6 +70,8 @@ function showmatches(search_results) {
     console.log(search_results);
     console.log(search_results[0]);
 
+    card_id = 1;
+
     // we update the total number of results found to the langth of 'search_results'
     document.getElementById("num_of_results").innerHTML = search_results.length;
 
@@ -91,20 +93,21 @@ function showmatches(search_results) {
     {
         console.log(search_results[0]);
         document.getElementById("result-grid").innerHTML +=
-        '<div class="M7-card1 M7-filter-item">' +
+        "<div class=\"M7-card1 M7-filter-item\" id=\"" + card_id + "\">" +
         "<fieldset>" +
-        
         "<h4>" +
         result['title'] +
         "</h4>" +
         "<p>" +
         result['salary'] + "$ | " + result['exp'] + " Exp. years | " + result['country'] +
         "</p>" +
-        '<a href="#">' +
-        '<button class="M7-button" style="display: inline;">Apply</button>' +
-        "</a>" +
+        //'<a href="#">' +
+        '<button class="M7-button" style="display: inline;"' +
+        ' onclick="view_job_details(' + result['job_id']  + ', \'' + result['rec_username'] + '\')">Apply</button>' +
+        //"</a>" +
         "</fieldset>" +
         "</div>";
+        card_id++;
     }
 
     // test
@@ -136,5 +139,15 @@ function sort(dir) {
 
     // then show results again to display them after sorting
     showmatches(search_results)
+}
+
+
+function view_job_details(job_id, rec_username)
+{
+    dest_job_id = job_id;
+    dest_rec_username = rec_username;
+
+    window.location.href = "/job/" + job_id + "/" + rec_username + "/";
+    
 }
 
