@@ -123,7 +123,7 @@ def education(request):
         endDate = request.POST.get('endDate')  # Handle optional end date
         description = request.POST.get('description')
         applicant = Applicant.objects.get(pk=applicant_id)  # Retrieve applicant
-        education = Education.objects.get(applicant=applicant_id,title=title)
+        education = Education.objects.all().filter(applicant=applicant_id,title=title)
 
         if education is None:
             education = Education(
@@ -155,7 +155,7 @@ def experience(request):
         endDate = request.POST.get('endDate')  # Handle optional end date
         description = request.POST.get('description')
         applicant = Applicant.objects.get(pk=applicant_id)  # Retrieve applicant
-        experience = Experience.objects.get(applicant=applicant_id,title=title)
+        experience = Experience.objects.all().filter(applicant=applicant_id,title=title)
 
         if experience is None:
             experience = Experience(
