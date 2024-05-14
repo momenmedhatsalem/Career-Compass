@@ -104,7 +104,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 @login_required
 def upload_resume(request):
-    if request.method == 'POST' and request.FILES['resumeFile']:
+    if request.method == 'POST' and request.FILES['resumeFile'] is not None:
         resume_file = request.FILES['resumeFile']
         # Save the resume file or process it further
         applicant = Applicant.objects.get(user=request.user.id)
@@ -118,21 +118,28 @@ def education(request):
     if request.method == 'POST':
         applicant_id = request.user.id
         title = request.POST.get('title')
-        institution = request.POST.get('institution')
-        start_date = request.POST.get('start_date')  # Assuming date-parsing logic is handled
-        end_date = request.POST.get('end_date')  # Handle optional end date
+        Academy = request.POST.get('Academy')
+        startDate = request.POST.get('startDate')  # Assuming date-parsing logic is handled
+        endDate = request.POST.get('endDate')  # Handle optional end date
         description = request.POST.get('description')
-
-
         applicant = Applicant.objects.get(pk=applicant_id)  # Retrieve applicant
-        education = Education(
-            applicant=applicant,
-            title=title,
-            institution=institution,
-            start_date=start_date,
-            end_date=end_date,
-            description=description,
+        education = Education.objects.all().filter(applicant=applicant_id,title=title)
+
+        if education is None:
+            education = Education(
+                applicant=applicant,
+                title=title,
+                Academy=Academy,
+                startDate=startDate,
+                endDate=endDate,
+                description=description,
         )
+        else:
+            education.Academy=Academy
+            education.startDate=startDate
+            education.endDate=endDate
+            education.description=description
+
         education.save()
 
         return redirect('profile') 
@@ -140,24 +147,32 @@ def education(request):
 
 @login_required
 def experience(request):
-    experience = Experience.objects.get(applicant=request.user.id)
-    if experience:
-        experience.title = request.POST.get('title')
-        experience.Company = request.POST.get('Academy')
-        experience.startDate = request.POST.get('startDate')
-        experience.endDate = request.POST.get('endDate')
-        experience.description = request.POST.get('description')
+    if request.method == 'POST':
+        applicant_id = request.user.id
+        title = request.POST.get('title')
+        Company = request.POST.get('Company')
+        startDate = request.POST.get('startDate')  # Assuming date-parsing logic is handled
+        endDate = request.POST.get('endDate')  # Handle optional end date
+        description = request.POST.get('description')
+        applicant = Applicant.objects.get(pk=applicant_id)  # Retrieve applicant
+        experience = Experience.objects.all().filter(applicant=applicant_id,title=title)
+
+        if experience is None:
+            experience = Experience(
+                applicant=applicant,
+                title=title,
+                Company=Company,
+                startDate=startDate,
+                endDate=endDate,
+                description=description,
+        )
+        else:
+            experience.Company=Company
+            experience.startDate=startDate
+            experience.endDate=endDate
+            experience.description=description
+
         experience.save()
-    else :
-        newexperience = Experience.objects.create(
-            applicant=request.user.id,
-            title = request.POST.get('title'),
-            Company = request.POST.get('Academy'),
-            startDate = request.POST.get('startDate'),
-            endDate = request.POST.get('endDate'),
-            description = request.POST.get('description'),)
-        newexperience.save()
-        
-    experiences = Experience.objects.get(applicant=request.user.id)
-    return redirect('profile') 
+
+        return redirect('profile') 
 

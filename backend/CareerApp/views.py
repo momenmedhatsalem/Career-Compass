@@ -219,7 +219,7 @@ def save_profile(request):
         user.save()
         applicant_user.save()
 
-    return render(request, "profile.html", {"applicant_user": applicant_user})
+    return redirect("profile")
 
 
 # def viewCandidate(request):
@@ -261,6 +261,8 @@ def filter_search(request):
                     'salary': job.MaxSalary,
                     'exp': job.years_of_experience,
                     'country': job.country,
+                    'job_id': job.job_id,
+                    'rec_username': job.recruiter.recruiter_name
                 })
                 # else we move on to the next one
     

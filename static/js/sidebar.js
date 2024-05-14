@@ -81,22 +81,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const content = document.createElement('div');
     content.classList.add('j0-accordion-content');
     const titleInput = createInput('title', 'Title*', 'text', 'Product designer(google)');
-    const academyInput = createInput('academy', 'Academy*', 'text', 'Google Arts Collage & University');
-    const startYearSelect = createSelect('starYear', 'Start Year*', [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014]);
-    const endYearSelect = createSelect('endYear', 'End Year*', [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014]);
-    const subjectTextarea = createTextarea('subject', 'Subject*', 'Write something..');
+    const AcademyInput = createInput('Academy', 'Academy*', 'text', 'Google Arts Collage & University');
+    const startDateSelect = createSelect('startDate', 'startDate*', [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014]);
+    const endDateSelect = createSelect('endDate', 'endDate*', [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014]);
+    const descriptionTextarea = createTextarea('description', 'description*', 'Write something..');
 
     // Append input fields and labels to content
     content.appendChild(titleInput.label);
     content.appendChild(titleInput.input);
-    content.appendChild(academyInput.label);
-    content.appendChild(academyInput.input);
-    content.appendChild(startYearSelect.label);
-    content.appendChild(startYearSelect.select);
-    content.appendChild(endYearSelect.label);
-    content.appendChild(endYearSelect.select);
-    content.appendChild(subjectTextarea.label);
-    content.appendChild(subjectTextarea.textarea);
+    content.appendChild(AcademyInput.label);
+    content.appendChild(AcademyInput.input);
+    content.appendChild(startDateSelect.label);
+    content.appendChild(startDateSelect.select);
+    content.appendChild(endDateSelect.label);
+    content.appendChild(endDateSelect.select);
+    content.appendChild(descriptionTextarea.label);
+    content.appendChild(descriptionTextarea.textarea);
 
     // Append header and content to the new accordion
     newAccordion.appendChild(header);
@@ -183,22 +183,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const content = document.createElement('div');
     content.classList.add('j0-accordion-content');
     const titleInput = createInput('title', 'Title*', 'text', 'Product designer(google)');
-    const academyInput = createInput('Company', 'Company*', 'text', 'Google Arts Collage & University');
-    const startYearSelect = createSelect('starYear', 'Start Year*', [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014]);
-    const endYearSelect = createSelect('endYear', 'End Year*', [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014]);
-    const subjectTextarea = createTextarea('subject', 'Subject*', 'Write something..');
+    const CompanyInput = createInput('Company', 'Company*', 'text', 'Google Arts Collage & University');
+    const startDate = createSelect('startDate', 'startDate*', [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014]);
+    const endDate = createSelect('endDate', 'endDate*', [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014]);
+    const descriptionTextarea = createTextarea('description', 'description*', 'Write something..');
 
     // Append input fields and labels to content
     content.appendChild(titleInput.label);
     content.appendChild(titleInput.input);
-    content.appendChild(academyInput.label);
-    content.appendChild(academyInput.input);
-    content.appendChild(startYearSelect.label);
-    content.appendChild(startYearSelect.select);
-    content.appendChild(endYearSelect.label);
-    content.appendChild(endYearSelect.select);
-    content.appendChild(subjectTextarea.label);
-    content.appendChild(subjectTextarea.textarea);
+    content.appendChild(CompanyInput.label);
+    content.appendChild(CompanyInput.input);
+    content.appendChild(startDate.label);
+    content.appendChild(startDate.select);
+    content.appendChild(endDate.label);
+    content.appendChild(endDate.select);
+    content.appendChild(descriptionTextarea.label);
+    content.appendChild(descriptionTextarea.textarea);
 
     // Append header and content to the new accordion
     newAccordion.appendChild(header);
