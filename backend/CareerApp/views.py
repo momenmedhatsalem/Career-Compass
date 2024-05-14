@@ -219,7 +219,7 @@ def save_profile(request):
         user.save()
         applicant_user.save()
 
-    return render(request, "profile.html", {"applicant_user": applicant_user})
+    return redirect("profile")
 
 
 # def viewCandidate(request):
