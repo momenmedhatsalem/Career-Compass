@@ -14,7 +14,8 @@ function save(id){
     button = document.getElementById("back"+id);
     if (button.style.background === 'linear-gradient(-226deg, rgb(0, 255, 91), rgb(109, 235, 237), rgb(40, 199, 250))' ){
         button.style.background ='linear-gradient(45deg, #f40f43, #ff8900, #ff003a)'; 
-
+        save_button = document.getElementById("save_button"+id);
+        save_button.innerHTML = 'unsave';
         const url = '/saved_candidate/'; 
         const data = {
             id_for_applicant: id,
@@ -38,7 +39,9 @@ function save(id){
     }
     else{
         button.style.background = 'linear-gradient(-226deg, rgb(0, 255, 91), rgb(109, 235, 237), rgb(40, 199, 250))';
-        
+        save_button = document.getElementById("save_button"+id);
+        save_button.innerHTML = 'save';
+
         const url = '/saved_candidate/'; 
         const data = {
             id_for_applicant: id,

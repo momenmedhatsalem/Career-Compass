@@ -58,7 +58,11 @@
                 </li>
                 <li class="buttons-list">
                   <div class="save-button-div">
-                    <button class="save-button " onclick="save(`{{candidate.user.id}}`)" id="x{{candidate.user.id}}" > Save </button>
+                    {% if sav == "saved" %}
+                    <button class="save-button "  id="save_button{{candidate.user.id}}" onclick="save(`{{candidate.user.id}}`)" id="x{{candidate.user.id}}" > UnSave </button>
+                    {% else %}
+                    <button class="save-button "  id="save_button{{candidate.user.id}}" onclick="save(`{{candidate.user.id}}`)" id="x{{candidate.user.id}}" > Save </button>
+                    {% endif %}
                   </div>
                 </li>
               </ul>

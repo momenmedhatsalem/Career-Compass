@@ -173,6 +173,7 @@ ul.information {
     list-style-type: none;
     padding: 0px;
     margin-top: 2vw;
+    margin-bottom: 2vw;
     box-shadow: 0px 0px 15px 3px #38674a;
     min-height: 25vw;
     justify-content: space-around;
@@ -289,7 +290,7 @@ td, tr {
 }
 
 .save-button-div {
-    width: 7vw;
+    width: 9vw;
     margin-bottom: 0.5vw;
     /* font-size: 3vw; */
     /* border: solid; */
