@@ -1,4 +1,7 @@
-
+.main {
+    padding: 5%;
+    background: linear-gradient(90deg, rgb(0, 255, 91), rgb(109, 235, 237), rgb(40, 199, 250));
+}
 .job-name-column {
     position: absolute;
     top: -28px;
@@ -47,6 +50,7 @@ tr.job {
 td{
     display: inline-block;
 }
+
 li[id] {
     /* border: solid; */
     border-radius: 25px;
@@ -64,6 +68,7 @@ li[id] {
     /* margin-top: 28%; */
     box-sizing: border-box;
     /* padding-left: 0px; */
+    /* box-shadow: 0px 0px 5px 5px; */
 }
 li[id]:hover{
     cursor: pointer;
@@ -78,9 +83,9 @@ img.img-person {
     margin-left: 3.3vw;
     margin-top: 1vw;
     border-radius: 50%;
-    border: solid;
-    border-color: #ebebeb;
-    box-shadow: 4px 4px 5px 0px #919191;
+    /* border: solid; */
+    /* border-color: #ebebeb; */
+    box-shadow: 0px 0px 20px 5px #6665659c;
 }
 img {
     width: 50px;
@@ -106,7 +111,8 @@ li.buttons-list {
     /* border: solid; */
     /* border-bottom-left-radius: 25px; */
     /* border-bottom-right-radius: 25px; */
-    margin-left: 3.5vw;
+    margin-left: 3.9vw;
+    margin-right: 3.5vw;    
     /* margin-right: -1vw; */
 }
 a {
@@ -147,6 +153,7 @@ button[value="reject"]:hover{
     transform: scale(1.5);
     cursor: pointer;
 }
+
 ul.information {
     /* list-style: none; */
     /* background: linear-gradient(to bottom, #25c75d, #5acff1); */
@@ -166,13 +173,17 @@ ul.information {
     list-style-type: none;
     padding: 0px;
     margin-top: 2vw;
-    /* box-shadow: 10px 10px 33px 0px gray; */
+    box-shadow: 0px 0px 15px 3px #38674a;
+    min-height: 25vw;
+    justify-content: space-around;
+
+
 }
 li.person-name {
-    /* padding-top: 30%; */
+    padding-top: 0px;
     margin-top: 1vw;
     text-align: center;
-    font-size: 3vw;
+    font-size: 2vw;
     color: #024f05;
 }
 
@@ -197,16 +208,17 @@ ul.jobs {
     flex-direction: row;
     justify-content: space-evenly;
     /* font-size: 1vw; */
-    margin-top: 1vw;
-    margin-bottom: 2vw;
-    margin-left: 1.5vw;
+    /* margin-top: 1vw; */
+    /* margin-bottom: 2vw; */
+    margin-left: 1vw;
+    margin-right: 1vw;
     list-style-type: none;
     padding-left: 0;
 }
 li.job {
     list-style: none;
     /* width: 12vw; */
-    font-size: 1.1vw;
+    font-size: 1.3vw;
     line-height: 2.6vw;
     margin-bottom: 0.5vw;
     text-align: center;
@@ -219,6 +231,7 @@ li.job {
 
 ol.candidate-list {
     /* margin-top: 52px; */
+    background-color: transparent;
     /* width: 95%; */
     /* height: 100%; */
     /* border: solid; */
@@ -232,6 +245,9 @@ ol.candidate-list {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
+    backdrop-filter: blur(10px);
+    border-radius: 2vw;
+    box-shadow: 0px 0px 83px 30px;
 }
 tr.Salary-location-table-header {
     border: none;
@@ -290,6 +306,7 @@ td, tr {
     border-radius: 3vw;
     font-size: 1.9vw;
     line-height: 3vw;
+    border: none;
 }
 .save-button:hover {
     background-color: rgb(98, 255, 98);
@@ -299,4 +316,7 @@ td, tr {
     border: solid;
     border-bottom-left-radius: 23px;
     border-color: black;
+}
+td.Location-value {
+    padding: 0px;
 }

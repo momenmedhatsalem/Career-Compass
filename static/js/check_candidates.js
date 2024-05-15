@@ -12,8 +12,8 @@
 function save(id){
     console.log(id);
     button = document.getElementById("back"+id);
-    if (button.style.background === 'transparent' ){
-        button.style.background ='linear-gradient(-226deg, #00ff5b, #6debed, #28c7fa)'; 
+    if (button.style.background === 'linear-gradient(-226deg, rgb(0, 255, 91), rgb(109, 235, 237), rgb(40, 199, 250))' ){
+        button.style.background ='linear-gradient(45deg, #f40f43, #ff8900, #ff003a)'; 
 
         const url = '/saved_candidate/'; 
         const data = {
@@ -37,7 +37,7 @@ function save(id){
         });
     }
     else{
-        button.style.background = 'transparent';
+        button.style.background = 'linear-gradient(-226deg, rgb(0, 255, 91), rgb(109, 235, 237), rgb(40, 199, 250))';
         
         const url = '/saved_candidate/'; 
         const data = {
