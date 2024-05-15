@@ -19,6 +19,7 @@
 
 <div class="J9_emp_dash_body J9">
 
+    {% include "recruiter_dashboard/aside.html" %}
     <aside class="J9_emp_dash_aside">
         <div class="J9_emp_dash_aside_fixed">
 
@@ -66,35 +67,27 @@
 
     <div class="J9_emp_dash_right_side">
         <div class="J9_emp_dash_right_side_container">
-            <!-- <div class="J9_emp_dash_right_side_top_nav">
-    
-    
-                <p class="J9_emp_dash_right_side_top_nav_post_button" J9_to_path="J9_recruiter_dashboard_post_job">
-                    Post a Job</p>
-    
-            </div> -->
 
             <div class="J9_emp_dash_right_side_body">
+
                 <div class="J9_emp_dash_right_side_body_title">
                     <h2 id="J9_emp_dash_right_side_body_title">Profile</h2>
                 </div>
 
                 <div id="J9_recruiter_dashboard_profile">
-                    <form class="J9_emp_dash_prof_right_side_body_emp_divs" id="J9_employer_profile_form" action="{% url 'save_recruiter_profile' %}" method="post" enctype="multipart/form-data">
+                    <form class="J9_emp_dash_prof_right_side_body_emp_divs" id="J9_employer_profile_form" action="{% url 'save_recruiter_profile' %}" method="post">
                         {% csrf_token %}
                         <div class="J9_emp_dash_prof_right_side_body_emp_information">
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_photo">
-                                <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo %}
-                                    src="{{rec.user.photo.url}}" {% else %} src=" {% static 'images/employer.png' %}" {% endif %} alt="profile photo">
+                                <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo.url != null %}
+                                    src="{{rec.user.photo.url}}" {% else %} src=" {% static "images/employer.png" %} " {% endif %} alt="profile photo">
                                 <div>
-                                    <label class="J9_custom_file_upload">Upload new photo 
-                                        <input id="J9_recruiter_profile_photo" name="profile_photo" type="file"
+                                    <label class="J9_custom_file_upload">Upload new photo <input
+                                            id="J9_recruiter_profile_photo" name="profile_photo" type="file"
                                             accept="image/x-png,image/jpg" /> </label>
                                 </div>
-                                <!-- <form method="post" action="{% url 'delete_rec_photo' %}"> -->
-                                    <!-- {% csrf_token %} -->
-                                <button class="J9_emp_dash_prof_right_side_body_emp_information_photo_delete" type="submit">Delete</button>
-                                <!-- </form> -->
+                                <button
+                                    class="J9_emp_dash_prof_right_side_body_emp_information_photo_delete" {% if rec.user.phone.url == null %} disabled {% endif %}>Delete</button>
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_name">
@@ -118,7 +111,7 @@
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_founded_date">
                                 <label>Founded Date</label>
                                 <input id="J9_emp_dash_prof_right_side_body_emp_information_founded_date"
-                                    name="founded_date" type="date" required value="{{ rec.founded_date|date:"Y-m-d" }}">
+                                    name="founded_date" type="date" required value="{{ rec.founded_date }}">
                             </div>
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_information_company_size">
@@ -151,19 +144,12 @@
 
                             <div class="J9_emp_dash_prof_right_side_body_emp_social_media_links"
                                 id="J9_emp_dash_prof_right_side_body_emp_social_media_links">
-                                {% if rec.social_media %}
-                                    {% for link in rec.social_media %}
-                                        <div class="J9_emp_dash_prof_right_side_body_emp_social_media_link">
-                                            <label class="J9_emp_dash_prof_right_side_body_emp_social_media_link_number">Network {{ forloop.counter }}</label>
-                                            <input name="social_media_link" type="text" value="{{ link }}">
-                                        </div>
+                                {% for link in rec.social_media %}
+                                <div class="J9_emp_dash_prof_right_side_body_emp_social_media_link">
+                                    <label class="J9_emp_dash_prof_right_side_body_emp_social_media_link_number">Network {{forloop.counter}}</label>
+                                    <input name="social_media_link" type="text" value="{{link}}">
+                                </div>
                                     {% endfor %}
-                                {% else %}
-                                    <div class="J9_emp_dash_prof_right_side_body_emp_social_media_link">
-                                        <label class="J9_emp_dash_prof_right_side_body_emp_social_media_link_number">Network 1</label>
-                                        <input name="social_media_link" type="text">
-                                    </div>
-                                {% endif %}
                             </div>
 
                             <a href="#" onclick="J9_rec_social_media_add_link()"
@@ -699,11 +685,11 @@
 
             </div>
 
-
         </div>
     </div>
 
 </div>
+
 <script src="{% static 'js/recruiter_dashboard.js' %}"></script>
 <script src="{% static 'js/recruiter_dashboard_jobs.js' %}"></script>
 <script src="{% static 'js/recruiter_dashboard_post_job.js' %}"></script>

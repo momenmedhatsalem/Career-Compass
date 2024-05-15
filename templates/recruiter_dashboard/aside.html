@@ -1,0 +1,47 @@
+{% load static %}
+
+<aside class="J9_emp_dash_aside">
+    <div class="J9_emp_dash_aside_fixed">
+
+        <div class="J9_emp_dash_aside_logo_prof_pic">
+            <a class="J9_emp_dash_aside_prof_pic" href="{% url "recruiterDashboard" %}">
+                <img {% if rec.user.photo %} src="{{rec.user.photo.url}}"
+                    {% else %}
+                    src=" {% static 'images/employer.png' %}"
+                    {% endif %} alt="profile photo">
+            </a>
+            <h3 id="J9_emp_dash_aside_prof_username">{{ rec.user.username }}</h3>
+        </div>
+
+        <div class="J9_emp_dash_aside_menu_bar">
+            <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_profile">
+                <img J9_to_path="J9_recruiter_dashboard_profile" src="{% static 'icons/profile.svg' %}"
+                    alt="profileIco">
+                <span J9_to_path="J9_recruiter_dashboard_profile">My Profile</span>
+            </p>
+            <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_jobs">
+                <img J9_to_path="J9_recruiter_dashboard_jobs" src="{% static 'icons/list.svg' %}" alt="ListIco">
+                <span J9_to_path="J9_recruiter_dashboard_jobs">My Jobs</span>
+            </p>
+            <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_post_job">
+                <img J9_to_path="J9_recruiter_dashboard_post_job" src="{% static 'icons/pen.svg' %}" alt="penIco">
+                <span J9_to_path="J9_recruiter_dashboard_post_job">Submit Job</span>
+            </p>
+            <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_saved_candidates">
+                <img J9_to_path="J9_recruiter_dashboard_saved_candidates" src="{% static 'icons/bookmark.svg' %}"
+                    alt="BookmarkIco">
+                <span J9_to_path="J9_recruiter_dashboard_saved_candidates">Saved
+                    candidates</span>
+            </p>
+            <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_settings">
+                <img J9_to_path="J9_recruiter_dashboard_settings" src="{% static 'icons/setting.svg' %}" alt="setting">
+                <span J9_to_path="J9_recruiter_dashboard_settings">Account Settings</span>
+            </p>
+
+        </div>
+        <a href="{% url 'logout'%}" class="J9_emp_dash_aside_logout" href="#">
+            <img src="{% static 'icons/logout.svg' %}" alt="LogoutIco">
+            <span>log out</span>
+        </a>
+    </div>
+</aside>

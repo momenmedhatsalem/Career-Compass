@@ -185,7 +185,7 @@ def save_profile(request):
 
     if request.method == "POST":
         # Get data from the form
-
+        
         profile_photo = request.FILES.get("profile_photo")
 
         fname = request.POST.get("fname")
@@ -205,12 +205,9 @@ def save_profile(request):
         zip = request.POST.get("zip")
         state = request.POST.get("state")
         
-        if request.POST.get('delete_profile_photo'):
-            if user.photo:
-                user.photo.delete()
-                user.photo = None
         # Create a new instance of MyModel and set the values
-        user.photo = profile_photo
+        if profile_photo is not None:
+            user.photo = profile_photo
 
         user.first_name = fname
         user.email = pemail
@@ -327,7 +324,7 @@ def save_recruiter_profile(request):
     if request.method == "POST":
         # Get data from the form
 
-        user.photo = request.FILES.get("profile_photo")
+        rec.user.photo = request.FILES.get("profile_photo")
         rec.website = request.POST.get("rec_website")
         rec.founded_date = request.POST.get("founded_date")
         rec.company_size = request.POST.get("company_size")
