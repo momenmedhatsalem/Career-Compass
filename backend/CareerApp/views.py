@@ -131,10 +131,20 @@ def jobs(request):
 
 def checkCandidates(request):
     all_candidates =Applicant.objects.all()
-    print(all_candidates[0].city)
     all_applications = Application.objects.all()
-    print(all_applications)
-    return render(request, "check_candidates.html",{"candidates":all_candidates,"applications":all_applications})
+    all_saved_candidates = SavedCandidate.objects.filter(recruiter = request.user.id)
+    is_saved = dict()
+    for candidate in all_candidates:
+        saved = False
+        for saved_cand in all_saved_candidates:
+            if candidate.user.id == saved_cand.applicant.user.id:
+                saved = True
+                break
+        if saved :
+            is_saved[candidate]= "saved"
+        else:
+            is_saved[candidate]= "unsave"
+    return render(request, "check_candidates.html",{"candidates":all_candidates,"applications":all_applications,"saved":is_saved })
 
 @csrf_exempt  
 @require_http_methods(["PUT"])
@@ -194,7 +204,11 @@ def save_profile(request):
         city = request.POST.get("city")
         zip = request.POST.get("zip")
         state = request.POST.get("state")
-
+        
+        if request.POST.get('delete_profile_photo'):
+            if user.photo:
+                user.photo.delete()
+                user.photo = None
         # Create a new instance of MyModel and set the values
         user.photo = profile_photo
 
@@ -220,6 +234,27 @@ def save_profile(request):
         applicant_user.save()
 
     return redirect("profile")
+
+
+
+
+def delete_profile_photo(request):
+    if request.method == "POST":
+        user = request.user
+        user.photo.delete()  # Delete the actual file from the server
+        user.photo = None  # Set the photo field to None
+        user.save()
+        return redirect("profile")
+    
+def delete_rec_photo(request):
+    if request.method == "POST":
+        user = request.user
+        user.photo.delete()  # Delete the actual file from the server
+        user.photo = None  # Set the photo field to None
+        user.save()
+        return redirect("recruiterDashboard")
+
+
 
 
 # def viewCandidate(request):
@@ -287,12 +322,12 @@ def recruitersignup(request):
 
 
 def save_recruiter_profile(request):
-    rec = Recruiter.objects.get(user = request.user.id)
-
+    user = request.user
+    rec = Recruiter.objects.get(user = user)
     if request.method == "POST":
         # Get data from the form
 
-        rec.user.photo = request.FILES.get("profile_photo")
+        user.photo = request.FILES.get("profile_photo")
         rec.website = request.POST.get("rec_website")
         rec.founded_date = request.POST.get("founded_date")
         rec.company_size = request.POST.get("company_size")
@@ -305,6 +340,7 @@ def save_recruiter_profile(request):
         rec.zip_code = request.POST.get("zip_code")
         rec.state = request.POST.get("state")
         # rec.user.save()
+        user.save()
         rec.save()
     return redirect("recruiterDashboard")
 
@@ -398,6 +434,8 @@ def deleteJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
     job.delete()
     return redirect("recruiterDashboard")
+
+
 @csrf_exempt  
 @require_http_methods(["PUT"])
 def saved_candidate(request):

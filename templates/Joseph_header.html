@@ -57,12 +57,14 @@
     </ul>
   </nav>
   <a class="J9_login_signup_find_post"
-  {% if user.is_applicant != True and user.is_recruiter != True %}
+  {% if not request.user.is_authenticated %}
     id="J9_login_signup" href="{% url 'login' %}"
-  {% elif user.is_applicant %}
+    {% elif user.is_applicant %}
     id="J9_look_for_a_job" href="{% url 'jobs' %}" 
-  {% else %}
+    {% elif user.is_recruiter %}
     id="J9_post_job" href="{% url 'recruiterDashboard' %}"
+    {% else %}
+    id="J9_login_signup" href="{% url 'logout' %}"
   {% endif %}
   >
 
@@ -70,8 +72,10 @@
     Login/Sign up
   {% elif user.is_applicant %}
     look for a job
-  {% else %}
+  {% elif user.is_recruiter %}
     Post a job
+  {% else %}
+  you are an admin, logout
   {% endif %}
 
 </a>

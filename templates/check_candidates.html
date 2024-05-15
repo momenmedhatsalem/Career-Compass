@@ -13,11 +13,40 @@
         <td class="candidates-column">
           <ol class="candidate-list">
             <!-- ------------------------------------------------------------------------------------ -->
-            {% for candidate in candidates %}
+            {% for candidate,sav in saved.items %}
             <li id="{{candidate.user.id}}">
+              {% if sav == "saved" %}
+              <ul class="information" id="back{{candidate.user.id}}" style="background: linear-gradient(-226deg, rgb(0, 255, 91), rgb(109, 235, 237), rgb(40, 199, 250));">
+              {% else %}
               <ul class="information" id="back{{candidate.user.id}}" style="background: transparent;">
+              {% endif %}
                 <img {% if candidate.user.photo %} src="{{candidate.user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %} alt="User Image" class="img-person" style="display: inline-block;">
                 <li class="person-name">  {{candidate.user.first_name}} </li>
+                {% if candidate.city  and candidate.country and candidate.city != "None" and candidate.country != "None"%}
+                <li>
+                  <table class="Salary-location-table">
+                    <tr class="Salary-location-table-values">
+                      <td class="Location-value">{{candidate.city}}, {{candidate.country}}</td>
+                    </tr>
+                  </table>
+                </li>
+                {% elif candidate.city and candidate.city != "None" %}
+                <li>
+                  <table class="Salary-location-table">
+                    <tr class="Salary-location-table-values">
+                      <td class="Location-value">{{candidate.city}}</td>
+                    </tr>
+                  </table>
+                </li>
+                {% elif candidate.country and candidate.country != "None" %}
+                <li>
+                  <table class="Salary-location-table">
+                    <tr class="Salary-location-table-values">
+                      <td class="Location-value">{{candidate.country}}</td>
+                    </tr>
+                  </table>
+                </li>
+                {% endif %}
                 <li class="jobs">
                   <ul class="jobs">
                     {% for application in applications|slice:":3" %}
@@ -27,15 +56,8 @@
                     {% endfor %}
                   </ul>
                 </li>
-                <li>
-                  <table class="Salary-location-table">
-                    <tr class="Salary-location-table-values">
-                      <td class="Location-value">{{candidate.city}}, {{candidate.country}}</td>
-                    </tr>
-                  </table>
-                </li>
                 <li class="buttons-list">
-                  <a href="profile.html" class="view_link"><button type="button" value="View profile">View profile</button></a>
+                  <a href="{% url "viewCandidate" "candidate.user.first_name "  %}" class="view_link"><button type="button" value="View profile">View profile</button></a>
                   <div class="save-button-div">
                     <button class="save-button " onclick="save(`{{candidate.user.id}}`)" id="x{{candidate.user.id}}" > Save </button>
                   </div>
