@@ -44,7 +44,16 @@ def recruiterDashboard(request):
         rec = Recruiter.objects.get(user=request.user)
     # rec_jobs = Job.objects.all().order_by('-creation_date')
     rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('creation_date')
-    return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs})
+    candidates = SavedCandidate.objects.filter(recruiter = request.user.id)
+    applications = Application.objects.all()
+    jobs = dict()
+    for can in candidates:
+        jobs[can]= set()
+        for app in applications:
+            if can.applicant == app.applicant :
+                jobs[can].add(app.job)
+
+    return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs,'candidates': candidates,"jobs":jobs})
 
 
 def search(request):
@@ -448,3 +457,4 @@ def saved_candidate(request):
         savedCa =SavedCandidate.objects.get(applicant = applicant_user ,recruiter = recruiter_user)
         savedCa.delete()
         return JsonResponse({"status": "success", "unsaved": 1}, status=200)
+    
