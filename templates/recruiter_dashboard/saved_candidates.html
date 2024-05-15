@@ -8,13 +8,13 @@
 
       <div class="J9_emp_dash_saved_candidates_right_side_candidate_card">
           <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_photo">
-              <a href="#">  <img {% if candidate.user.photo %} src="{{candidate.user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %} alt="" >  </a>
+              <a href="#">  <img {% if candidate.applicant.user.photo %} src="{{candidate.applicant.user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %} alt="" >  </a>
           </div>      
 
           <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details">
               <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_information">
                   <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_name">
-                      <h3>{{candidate.applicant.user.username}}</h3>
+                      <h3>{{candidate.applicant.user.first_name}}</h3>
                   </div>
                   {% if candidate.applicant.city %}
                   <div
