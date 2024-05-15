@@ -12,8 +12,8 @@
 function save(id){
     console.log(id);
     button = document.getElementById("back"+id);
-    if (button.style.backgroundColor === 'transparent' ){
-        button.style.backgroundColor ='#5acff1'; 
+    if (button.style.background === 'transparent' ){
+        button.style.background ='linear-gradient(-226deg, #00ff5b, #6debed, #28c7fa)'; 
 
         const url = '/saved_candidate/'; 
         const data = {
@@ -37,7 +37,7 @@ function save(id){
         });
     }
     else{
-        button.style.backgroundColor = 'transparent';
+        button.style.background = 'transparent';
         
         const url = '/saved_candidate/'; 
         const data = {

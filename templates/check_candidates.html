@@ -15,8 +15,8 @@
             <!-- ------------------------------------------------------------------------------------ -->
             {% for candidate in candidates %}
             <li id="{{candidate.user.id}}">
-              <ul class="information" id="back{{candidate.user.id}}" style="background-color: transparent;">
-                <img {% if candidate.user.photo %} src="{{candidate.user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %} alt="User Image" class="img-person" style="display: inline-block;">
+              <ul class="information" id="back{{candidate.user.id}}" style="background: transparent;">
+                <img {% if candidate.user.photo %} src="{{candidate.user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %} alt="User Image" class="img-person" style="display: inline-block;">
                 <li class="person-name">  {{candidate.user.first_name}} </li>
                 <li class="jobs">
                   <ul class="jobs">
