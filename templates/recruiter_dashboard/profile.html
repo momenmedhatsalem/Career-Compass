@@ -1,0 +1,151 @@
+{% load static %}
+<div id="J9_recruiter_dashboard_profile">
+    <form class="J9_emp_dash_prof_right_side_body_emp_divs" id="J9_employer_profile_form" action="{% url 'save_recruiter_profile' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="J9_emp_dash_prof_right_side_body_emp_information">
+            <div class="J9_emp_dash_prof_right_side_body_emp_information_photo">
+                <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo %} src="{{rec.user.photo.url}}" {% else %} src="{% static 'images/employer.png' %}" {% endif %} alt="profile photo">
+                <div>
+                    <label class="J9_custom_file_upload">Upload new photo
+                        <input id="J9_recruiter_profile_photo" name="profile_photo" type="file"
+                            accept="image/x-png,image/jpg" /> </label>
+                </div>
+                <!-- <form method="post" action="{% url 'delete_rec_photo' %}"> -->
+                    <!-- {% csrf_token %} -->
+                <button class="J9_emp_dash_prof_right_side_body_emp_information_photo_delete" type="submit">Delete</button>
+                <!-- </form> -->
+            </div>
+
+            <div class="J9_emp_dash_prof_right_side_body_emp_information_name">
+                <label>Employer Name</label>
+                <input id="J9_emp_dash_prof_right_side_body_emp_information_name" class="j9Name"
+                    name="employer_name" type="text" disabled value="{{ rec.user.first_name }}">
+            </div>
+
+            <div class="J9_emp_dash_prof_right_side_body_emp_information_email">
+                <label>Email</label>
+                <input id="J9_emp_dash_prof_right_side_body_emp_information_email" class="j9Email"
+                    name="employer_email" type="email" disabled value="{{ rec.user.email }}">
+            </div>
+
+            <div class="J9_emp_dash_prof_right_side_body_emp_information_website">
+                <label>Website</label>
+                <input id="J9_emp_dash_prof_right_side_body_emp_information_website"
+                    name="rec_website" type="text" {% if rec.website %} value="{{ rec.website }}" {% endif %} placeholder="http://something.com">
+            </div>
+
+            <div class="J9_emp_dash_prof_right_side_body_emp_information_founded_date">
+                <label>Founded Date</label>
+                <input id="J9_emp_dash_prof_right_side_body_emp_information_founded_date"
+                    name="founded_date" type="date" required value="{{ rec.founded_date|date:"Y-m-d" }}">
+            </div>
+
+            <div class="J9_emp_dash_prof_right_side_body_emp_information_company_size">
+                <label>Company Size</label>
+                <input id="J9_emp_dash_prof_right_side_body_emp_information_company_size"
+                    name="company_size" type="number" value="{{ rec.company_size }}" placeholder="600">
+            </div>
+
+            <div class="J9_emp_dash_prof_right_side_body_emp_information_phone_number">
+                <label>Phone Number</label>
+                <input id="J9_emp_dash_prof_right_side_body_emp_information_phone_number"
+                    name="phone_number" type="tel" disabled value="{{ rec.user.phone }}">
+            </div>
+
+            <div class="J9_emp_dash_prof_right_side_body_emp_information_category">
+                <label>Category*</label>
+                <input id="J9_emp_dash_prof_right_side_body_emp_information_category" name="category"
+                    type="text" required {% if rec.category %}  value="{{ rec.category }}" {% endif %} placeholder="Account, Finance, Marketing">
+            </div>
+
+            <div class="J9_emp_dash_prof_right_side_body_emp_information_about_company">
+                <label>About Company*</label>
+                <textarea id="J9_emp_dash_prof_right_side_body_emp_information_about_company" name="about_company" required placeholder="About Company.....">{% if rec.about_company %}{{ rec.about_company }}{% endif %}</textarea>
+            </div>
+
+        </div>
+
+        <div class="J9_emp_dash_prof_right_side_body_emp_social_media">
+            <h3 class="J9_emp_dash_prof_right_side_body_emp_social_media_title">Social Media</h3>
+
+            <div class="J9_emp_dash_prof_right_side_body_emp_social_media_links"
+                id="J9_emp_dash_prof_right_side_body_emp_social_media_links">
+                {% if rec.social_media %}
+                    {% for link in rec.social_media %}
+                        <div class="J9_emp_dash_prof_right_side_body_emp_social_media_link">
+                            <label class="J9_emp_dash_prof_right_side_body_emp_social_media_link_number">Network {{ forloop.counter }}</label>
+                            <input name="social_media_link" type="text" value="{{ link }}">
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="J9_emp_dash_prof_right_side_body_emp_social_media_link">
+                        <label class="J9_emp_dash_prof_right_side_body_emp_social_media_link_number">Network 1</label>
+                        <input name="social_media_link" type="text">
+                    </div>
+                {% endif %}
+            </div>
+
+            <a href="#" onclick="J9_rec_social_media_add_link()"
+                class="J9_emp_dash_prof_right_side_body_emp_social_media_add_link"> <b>+</b> Add
+                more
+                link</a>
+        </div>
+
+        <div class="J9_emp_dash_prof_right_side_body_emp_address_location">
+            <h3 class="J9_emp_dash_prof_right_side_body_emp_address_location_title">Address &amp; Location</h3>
+            </h3>
+            <div class="J9_emp_dash_prof_right_side_body_emp_address">
+                <label>Address*</label>
+                <input id="J9_emp_dash_prof_right_side_body_emp_address" name="address" type="text"
+                    required {% if rec.address %} value="{{ rec.address }}" {% endif %} placeholder="Giza">
+            </div>
+            <div class="J9_emp_dash_prof_right_side_body_emp_location">
+                <div class="J9_emp_dash_prof_right_side_body_emp_location_country">
+                    <label>Country*</label>
+                    <select id="J9_emp_dash_prof_right_side_body_emp_location_country" name="country"
+                        required >
+                        <option value="" selected disabled hidden>Country</option>
+                        {% for country in countries %}
+                        <option {% if rec.country == country %}selected{% endif %} value="{{ country }}">{{ country }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="J9_emp_dash_prof_right_side_body_emp_location_city">
+                    <label>City*</label>
+                    <select id="J9_emp_dash_prof_right_side_body_emp_location_city" name="city"
+                        required>
+                        <option value="" {% if not rec.city %}selected {% endif %} disabled hidden>City</option>
+                        {% for city in cities %}
+                        <option {% if rec.city == city %}selected{% endif %} value="{{ city }}">{{ city }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="J9_emp_dash_prof_right_side_body_emp_location_zip_code">
+                    <label>Zip Code*</label>
+                    <input id="J9_emp_dash_prof_right_side_body_emp_location_zip_code" name="zip_code"
+                        type="number" required {% if rec.zip_code %} value="{{ rec.zip_code }}" {% endif %} placeholder="3740614">
+                </div>
+                <div class="J9_emp_dash_prof_right_side_body_emp_location_state">
+                    <label>State*</label>
+                    <select id="J9_emp_dash_prof_right_side_body_emp_location_state" name="state"
+                        required >
+                        <option value="" {% if not rec.state %}selected {% endif %} disabled hidden>State</option>
+                        {% for state in states %}
+                        <option {% if rec.state == state %}selected{% endif %} value="{{ state }}">{{ state }}</option>
+                        {% endfor %}
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="J9_emp_dash_prof_right_side_body_emp_profile_save_cancel_button">
+            <input id="J9_emp_dash_prof_right_side_body_emp_profile_save_button" type="submit"
+                value="save">
+            <input id="J9_emp_dash_prof_right_side_body_emp_profile_cancel_button" type="reset"
+                value="Cancel">
+        </div>
+
+    </form>
+</div>

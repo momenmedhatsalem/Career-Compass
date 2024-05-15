@@ -1,0 +1,164 @@
+{% load static %}
+
+<div id="J9_recruiter_dashboard_post_job" style="display: none;">
+  <form id="J9_recruiter_add_job_form" class="J9_emp_dash_post_job_right_side_body_container" action="{% url 'post_job' %}" method="post">
+      {% csrf_token %}
+      <div class="J9_emp_dash_post_job_right_side_body_container_job_details">
+          <h3 class="J9_emp_dash_post_job_right_side_body_container_job_details_title">Job Details
+          </h3>
+          <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_id">
+              <label>Job ID*</label><input name="job_id" id="J9_recruiter_add_job_job_id" required
+                  type="number" placeholder="123" />
+          </div>
+          <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_title">
+              <label>Job Title*</label><input name="job_title" id="J9_recruiter_add_job_job_title"
+                  required type="text" placeholder="Software Engineer" />
+          </div>
+          <div class="J9_emp_dash_post_job_right_side_body_container_job_details_company_name">
+              <label>Company Name*</label><input name="company_name"
+                  id="J9_recruiter_add_job_company_name" required type="text"
+                  placeholder="Career compass" value="{{ rec.user.company_name }}" />
+          </div>
+          <div
+              class="J9_emp_dash_post_job_right_side_body_container_job_details_job_status_years_of_experience">
+              <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_status">
+                  <label>Job Status*</label>
+                  <select required name="job_status" id="J9_recruiter_add_job_job_status">
+                      <option>open</option>
+                      <option>closed</option>
+                  </select>
+              </div>
+              <div
+                  class="J9_emp_dash_post_job_right_side_body_container_job_details_years_of_experience">
+                  <label>years of experience*</label><input name="years_of_experience"
+                      id="J9_recruiter_add_job_years_of_experience" required type="number"
+                      placeholder="2" />
+              </div>
+          </div>
+          <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_description">
+              <label>Job Description*</label><textarea name="job_desc"
+                  id="J9_recruiter_add_job_job_desc" required
+                  placeholder="Job Description....."></textarea>
+          </div>
+
+          <div
+              class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category_type_Salary">
+              <div
+                  class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category_type">
+                  <div
+                      class="J9_emp_dash_post_job_right_side_body_container_job_details_job_category">
+                      <label>Job Category*</label>
+                      <select required name="job_category" id="J9_recruiter_add_job_job_category">
+                          <option>Designer</option>
+                          <option>It & Development</option>
+                          <option>Web & Mobile Dev</option>
+                          <option>Writing</option>
+                      </select>
+                  </div>
+                  <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_type">
+                      <label>Job Type*</label>
+                      <select required name="job_type" id="J9_recruiter_add_job_job_type">
+                          <option>Full time</option>
+                          <option>Part time</option>
+                          <option>Hourly-Contract</option>
+                          <option>Fixed-Price</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="J9_emp_dash_post_job_right_side_body_container_job_details_job_salary">
+                  <div
+                      class="J9_emp_dash_post_job_right_side_body_container_job_details_job_salary_type">
+                      <label>Salary*</label>
+                      <select required name="salary" id="J9_recruiter_add_job_salary">
+                          <option>Monthly</option>
+                          <option>Weekly</option>
+                      </select>
+                  </div>
+                  <div
+                      class="J9_emp_dash_post_job_right_side_body_container_job_details_job_salary_min_max">
+                      <div><input name="min_salary" id="J9_recruiter_add_job_min_salary" required
+                              type="number" placeholder="Min" /></div>
+                      <div><input name="max_salary" id="J9_recruiter_add_job_max_salary" required
+                              type="number" placeholder="Max" /></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="J9_emp_dash_post_job_right_side_body_container_skills_experience">
+          <h3>English Experience</h3>
+          <div class="J9_emp_dash_post_job_right_side_body_container_experience">
+              <div>
+                  <label>English Fluency*</label>
+                  <select required name="english_fluency" id="J9_recruiter_add_job_english_fluency">
+                      <option>Basic</option>
+                      <option>Conversational</option>
+                      <option>Fluent</option>
+                      <option>Native/Bilingual</option>
+                  </select>
+              </div>
+              <div>
+                  <label>Experience*</label>
+                  <select required name="experience" id="J9_recruiter_add_job_experience">
+                      <option>Intermediate</option>
+                      <option>No-Experience</option>
+                      <option>Expert</option>
+                  </select>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="J9_emp_dash_post_job_right_side_body_emp_address_location">
+          <h3 class="J9_emp_dash_post_job_right_side_body_emp_address_location_title">Address &
+              Location
+          </h3>
+          <div class="J9_emp_dash_post_job_right_side_body_emp_address">
+              <label>Address*</label>
+              <input name="address" id="J9_recruiter_add_job_address" required type="text"
+                  placeholder="Egypt, Giza, Dokii">
+          </div>
+          <div class="J9_emp_dash_post_job_right_side_body_emp_location">
+              <div class="J9_emp_dash_post_job_right_side_body_emp_location_country">
+                  <label>Country*</label>
+                  <select required name="country" id="J9_recruiter_add_job_country">
+                      <option value="" selected disabled hidden>Country</option>
+                      {% for country in countries %}
+                      <option value="{{ country }}">{{ country }}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+              <div class="J9_emp_dash_post_job_right_side_body_emp_location_city">
+                  <label>City*</label>
+                  <select required name="city" id="J9_recruiter_add_job_city">
+                      <option value="" selected disabled hidden>City</option>
+                      {% for city in cities %}
+                      <option value="{{ city }}">{{ city }}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+              <div class="J9_emp_dash_post_job_right_side_body_emp_location_zip_code">
+                  <label>Zip Code*</label>
+                  <input name="zip_code" id="J9_recruiter_add_job_zip_code" required type="number"
+                      placeholder="3740614">
+              </div>
+              <div class="J9_emp_dash_post_job_right_side_body_emp_location_state">
+                  <label>State*</label>
+                  <select required name="state" id="J9_recruiter_add_job_state">
+                      <option value="" selected disabled hidden>State</option>
+                      {% for state in states %}
+                      <option value="{{ state }}">{{ state }}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+          </div>
+      </div>
+
+      <div class="J9_emp_dash_post_job_right_side_body_emp_profile_save_cancel_button">
+          <input id="J9_emp_dash_post_job_right_side_body_emp_profile_save_button" type="submit"
+              value="Submit">
+          <input id="J9_emp_dash_post_job_right_side_body_emp_profile_cancel_button" type="reset"
+              value="Cancel">
+      </div>
+  </form>
+</div>
