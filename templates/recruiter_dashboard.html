@@ -19,59 +19,13 @@
 
 <div class="J9_emp_dash_body J9">
 
-    <aside class="J9_emp_dash_aside">
-        <div class="J9_emp_dash_aside_fixed">
-
-            <div class="J9_emp_dash_aside_logo_prof_pic">
-                <a class="J9_emp_dash_aside_prof_pic" href="{% url "recruiterDashboard" %}">
-                    <img {% if rec.user.photo %} src="{{rec.user.photo.url}}" {% else %}
-                        src=" {% static 'images/employer.png' %}" {% endif %} alt="profile photo">
-                </a>
-                <h3 id="J9_emp_dash_aside_prof_username" >{{ rec.user.username }}</h3>
-            </div>
-            <div class="J9_emp_dash_aside_menu_bar">
-                <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_profile">
-                    <img J9_to_path="J9_recruiter_dashboard_profile" src="{% static 'icons/profile.svg' %}"
-                        alt="profileIco">
-                    <span J9_to_path="J9_recruiter_dashboard_profile">My Profile</span>
-                </p>
-                <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_jobs">
-                    <img J9_to_path="J9_recruiter_dashboard_jobs" src="{% static 'icons/list.svg' %}" alt="ListIco">
-                    <span J9_to_path="J9_recruiter_dashboard_jobs">My Jobs</span>
-                </p>
-                <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_post_job">
-                    <img J9_to_path="J9_recruiter_dashboard_post_job" src="{% static 'icons/pen.svg' %}" alt="penIco">
-                    <span J9_to_path="J9_recruiter_dashboard_post_job">Submit Job</span>
-                </p>
-                <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_saved_candidates">
-                    <img J9_to_path="J9_recruiter_dashboard_saved_candidates" src="{% static 'icons/bookmark.svg' %}"
-                        alt="BookmarkIco">
-                    <span J9_to_path="J9_recruiter_dashboard_saved_candidates">Saved
-                        candidates</span>
-                </p>
-                <p class="J9_emp_dash_aside_menu_bar_button" J9_to_path="J9_recruiter_dashboard_settings">
-                    <img J9_to_path="J9_recruiter_dashboard_settings" src="{% static 'icons/setting.svg' %}"
-                        alt="setting">
-                    <span J9_to_path="J9_recruiter_dashboard_settings">Account
-                        Settings</span>
-                </p>
-
-            </div>
-            <a href="{% url 'logout'%}" class="J9_emp_dash_aside_logout" href="#">
-                <img src="{% static 'icons/logout.svg' %}" alt="LogoutIco">
-                <span>log out</span>
-            </a>
-        </div>
-    </aside>
+    {% include "recruiter_dashboard/aside.html" %}
 
     <div class="J9_emp_dash_right_side">
         <div class="J9_emp_dash_right_side_container">
-            <!-- <div class="J9_emp_dash_right_side_top_nav">
-                <p class="J9_emp_dash_right_side_top_nav_post_button" J9_to_path="J9_recruiter_dashboard_post_job">
-                    Post a Job</p>
-            </div> -->
 
             <div class="J9_emp_dash_right_side_body">
+
                 <div class="J9_emp_dash_right_side_body_title">
                     <h2 id="J9_emp_dash_right_side_body_title">Profile</h2>
                 </div>
@@ -81,12 +35,14 @@
                 {% include "recruiter_dashboard/post_job.html" %}
                 {% include "recruiter_dashboard/saved_candidates.html" %}
                 {% include "recruiter_dashboard/settings.html" %}
+
             </div>
 
         </div>
     </div>
 
 </div>
+
 <script src="{% static 'js/recruiter_dashboard.js' %}"></script>
 <script src="{% static 'js/recruiter_dashboard_jobs.js' %}"></script>
 <script src="{% static 'js/recruiter_dashboard_post_job.js' %}"></script>
