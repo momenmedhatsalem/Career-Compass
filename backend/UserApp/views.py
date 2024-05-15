@@ -140,7 +140,7 @@ def education(request):
             education.endDate=endDate
             education.description=description
 
-        education.save()
+        # education.save()
 
         return redirect('profile') 
 
