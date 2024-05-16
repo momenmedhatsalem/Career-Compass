@@ -214,7 +214,6 @@ def save_profile(request):
         zip = request.POST.get("zip")
         state = request.POST.get("state")
         
-        # Create a new instance of MyModel and set the values
         if profile_photo is not None:
             user.photo = profile_photo
 
