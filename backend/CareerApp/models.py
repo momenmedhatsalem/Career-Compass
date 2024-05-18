@@ -10,8 +10,8 @@ class JobCategory(models.Model):
         return self.name
 
 class Job(models.Model):
-    id = models.AutoField(primary_key=True)
-    job_id = models.IntegerField(default=None)
+    job_id = models.AutoField(primary_key=True)
+    id = models.IntegerField(default=0, blank=True, null=True)
     recruiter = models.ForeignKey(Recruiter, on_delete=models.CASCADE, default=None)
     title = models.CharField(max_length=100, default=None)
     company_name = models.CharField(max_length=100, default=None)
@@ -36,7 +36,7 @@ class Job(models.Model):
     def __str__(self):
         return self.title
     class Meta:
-        unique_together = ('job_id', 'recruiter',)
+        unique_together = ('id', 'recruiter',)
 
 
 class SavedJob(models.Model):
