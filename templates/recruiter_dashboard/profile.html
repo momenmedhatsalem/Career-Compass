@@ -5,7 +5,7 @@
         {% csrf_token %}
         <div class="J9_emp_dash_prof_right_side_body_emp_information">
             <div class="J9_emp_dash_prof_right_side_body_emp_information_photo">
-                <img id="J9_recruiter_viewed_profile_photo" {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %}>
+                <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo %} src="{{rec.user.photo.url}}" {% else %} src="{% static 'images/default.png' %}" {% endif %}>
 
                 <div>
                     <label class="J9_custom_file_upload">Upload new photo
@@ -14,7 +14,7 @@
                 </div>
                 
                     
-                <button id="deleteProfilePhoto" class="M7-p_img_button_clear" type="button" data-delete-url="{% url 'delete_profile_photo' %}">Delete</button>
+                <button id="deleteProfilePhoto" class="M7-p_img_button_clear J9_emp_dash_prof_right_side_body_emp_information_photo_delete" type="button" data-delete-url="{% url 'delete_profile_photo' %}">Delete</button>
                 
             </div>
 

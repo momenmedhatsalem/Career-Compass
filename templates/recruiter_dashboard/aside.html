@@ -5,7 +5,7 @@
 
         <div class="J9_emp_dash_aside_logo_prof_pic">
             <a class="J9_emp_dash_aside_prof_pic" href="{% url "recruiterDashboard" %}">
-                <img id="J9_recruiter_viewed_profile_photo" {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %}>
+                <img id="J9_recruiter_viewed_profile_photo" {% if rec.user.photo %} src="{{rec.user.photo.url}}" {% else %} src="{% static 'images/default.png' %}" {% endif %}>
 
             </a>
             <h3 id="J9_emp_dash_aside_prof_username">{{ rec.user.username }}</h3>
