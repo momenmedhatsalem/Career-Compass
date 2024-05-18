@@ -357,29 +357,34 @@ def save_recruiter_profile(request):
     return redirect("recruiterDashboard")
 
 def post_job(request):
-    rec = Recruiter.objects.get(user = request.user)
-    newJob = Job.objects.create(
-        job_id=request.POST.get("job_id"),
-        recruiter=rec,
-        title=request.POST.get("job_title"),
-        company_name=request.POST.get("company_name"),
-        status=request.POST.get("job_status"),
-        years_of_experience=request.POST.get("years_of_experience"),
-        description=request.POST.get("job_desc"),
-        category=request.POST.get("job_category"),
-        type=request.POST.get("job_type"),
-        salary=request.POST.get("salary"),
-        MinSalary=request.POST.get("min_salary"),
-        MaxSalary=request.POST.get("max_salary"),
-        english_fluency=request.POST.get("english_fluency"),
-        experience=request.POST.get("experience"),
-        address=request.POST.get("address"),
-        country=request.POST.get("country"),
-        city=request.POST.get("city"),
-        zip_code=request.POST.get("zip_code"),
-        state=request.POST.get("state"),
-    )
-    newJob.save()
+    if request.method == 'POST':
+        job_id = request.POST.get('job_id')
+        rec = Recruiter.objects.get(user = request.user)
+        if Job.objects.filter(job_id=job_id, recruiter=rec).exists():
+            return JsonResponse({'exists': True}, status=400)
+
+        newJob = Job.objects.create(
+            recruiter=rec,
+            title=request.POST.get("job_title"),
+            company_name=request.POST.get("company_name"),
+            status=request.POST.get("job_status"),
+            years_of_experience=request.POST.get("years_of_experience"),
+            description=request.POST.get("job_desc"),
+            category=request.POST.get("job_category"),
+            type=request.POST.get("job_type"),
+            salary=request.POST.get("salary"),
+            MinSalary=request.POST.get("min_salary"),
+            MaxSalary=request.POST.get("max_salary"),
+            english_fluency=request.POST.get("english_fluency"),
+            experience=request.POST.get("experience"),
+            address=request.POST.get("address"),
+            country=request.POST.get("country"),
+            city=request.POST.get("city"),
+            zip_code=request.POST.get("zip_code"),
+            state=request.POST.get("state"),
+        )
+        newJob.save()
+        return JsonResponse({'exists': False}, status=200)
     return redirect("recruiterDashboard")
 
 from django.contrib.auth import authenticate
