@@ -118,7 +118,6 @@ def jobs(request):
             saved_jobs = SavedJob.objects.filter(applicant=user)
             other_jobs = []
             for j in jobs :
-                print(j.id)
                 exist = False
                 for sj in saved_jobs :
                     if j.job_id == sj.job.job_id :
