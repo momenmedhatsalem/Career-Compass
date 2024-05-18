@@ -7,7 +7,6 @@ urlpatterns = [
     path("edit_profile/", view=views.edit_profile, name="edit_profile"),
     path("save_profile/", view=views.save_profile, name="save_profile"),
     path("delete-profile-photo/", view=views.delete_profile_photo, name="delete_profile_photo"),
-    path("delete-rec-photo/", view=views.delete_rec_photo, name="delete_rec_photo"),
     path("recruiterDashboard/", view=views.recruiterDashboard, name="recruiterDashboard"),
     path("saved_jobs/", view=views.savedJobs, name="saved_jobs"),
     path("search/", view=views.search, name="search"),

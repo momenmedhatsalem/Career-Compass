@@ -217,8 +217,11 @@ def save_profile(request):
         zip = request.POST.get("zip")
         state = request.POST.get("state")
         
-        if profile_photo is not None:
-            user.photo = profile_photo
+        print(profile_photo)
+        # Create a new instance of MyModel and set the values
+        if profile_photo:
+            current_user.photo = profile_photo
+            print("heere")
 
         current_user.first_name = fname
         current_user.last_name = lname
@@ -245,22 +248,17 @@ def save_profile(request):
 
 
 
-
+@csrf_exempt
 def delete_profile_photo(request):
     if request.method == "POST":
-        user = request.user
-        user.photo.delete()  # Delete the actual file from the server
-        user.photo = None  # Set the photo field to None
-        user.save()
+        current_user = get_user_model().objects.get(id=request.user.id)
+
+        current_user.photo.delete()
+        current_user.photo = None  
+        current_user.save()
         return redirect("profile")
     
-def delete_rec_photo(request):
-    if request.method == "POST":
-        user = request.user
-        user.photo.delete()  # Delete the actual file from the server
-        user.photo = None  # Set the photo field to None
-        user.save()
-        return redirect("recruiterDashboard")
+
 
 
 
