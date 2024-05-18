@@ -328,12 +328,18 @@ def recruitersignup(request):
 
 
 def save_recruiter_profile(request):
+    current_user = get_user_model().objects.get(id=request.user.id)
     user = request.user
-    rec = Recruiter.objects.get(user = user)
+    rec = Recruiter.objects.get(user = user.id)
     if request.method == "POST":
         # Get data from the form
 
-        rec.user.photo = request.FILES.get("profile_photo")
+        profile_photo = request.FILES.get("profile_photo") 
+        print(profile_photo)
+        # Create a new instance of MyModel and set the values
+        if profile_photo:
+            current_user.photo = profile_photo
+            print("heere")
         rec.website = request.POST.get("rec_website")
         rec.founded_date = request.POST.get("founded_date")
         rec.company_size = request.POST.get("company_size")
@@ -346,7 +352,7 @@ def save_recruiter_profile(request):
         rec.zip_code = request.POST.get("zip_code")
         rec.state = request.POST.get("state")
         # rec.user.save()
-        user.save()
+        current_user.save()
         rec.save()
     return redirect("recruiterDashboard")
 
