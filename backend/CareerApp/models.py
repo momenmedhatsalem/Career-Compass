@@ -31,17 +31,6 @@ class Job(models.Model):
     zip_code = models.CharField(max_length=10, default=None)
     state = models.CharField(max_length=100, default=None)
 
-    def get_next_id(self):
-        last_job = Job.objects.filter(recruiter=self.recruiter).order_by('-job_id').first()
-        if last_job:
-            return last_job.job_id + 1
-        else:
-            return 1
-
-    def save(self, *args, **kwargs):
-        if not self.pk:
-            self.job_id = self.get_next_id()
-        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
