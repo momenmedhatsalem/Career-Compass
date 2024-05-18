@@ -44,7 +44,7 @@ class Applicant(models.Model):
 class Education (models.Model):
     applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE)
     title =  models.CharField(max_length=200,default="none")
-    Academy =  models.CharField(max_length=200,default="none") 
+    Academy =  models.CharField(max_length=200,default="none",null=True) 
     startDate = models.IntegerField()
     endDate = models.IntegerField()
     description = models.CharField(max_length=200,default="none")
@@ -56,7 +56,7 @@ class Education (models.Model):
 class Experience (models.Model):
     applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE)
     title =  models.CharField(max_length=200,default="none")
-    Company =  models.CharField(max_length=200,default="none")
+    Company =  models.CharField(max_length=200,default="none",null=True)
     startDate = models.IntegerField()
     endDate = models.IntegerField()
     description = models.CharField(max_length=200,default="none")

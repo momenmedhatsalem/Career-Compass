@@ -118,21 +118,28 @@ def education(request):
     if request.method == 'POST':
         applicant_id = request.user.id
         title = request.POST.get('title')
-        institution = request.POST.get('institution')
-        start_date = request.POST.get('start_date')  # Assuming date-parsing logic is handled
-        end_date = request.POST.get('end_date')  # Handle optional end date
+        Academy = request.POST.get('Academy')
+        startDate = request.POST.get('startDate')  # Assuming date-parsing logic is handled
+        endDate = request.POST.get('endDate')  # Handle optional end date
         description = request.POST.get('description')
-
-
         applicant = Applicant.objects.get(pk=applicant_id)  # Retrieve applicant
-        education = Education(
-            applicant=applicant,
-            title=title,
-            institution=institution,
-            start_date=start_date,
-            end_date=end_date,
-            description=description,
+        education = Education.objects.get(applicant=applicant_id,title=title)
+
+        if education is None:
+            education = Education(
+                applicant=applicant,
+                title=title,
+                Academy=Academy,
+                startDate=startDate,
+                endDate=endDate,
+                description=description,
         )
+        else:
+            education.Academy=Academy
+            education.startDate=startDate
+            education.endDate=endDate
+            education.description=description
+
         education.save()
 
         return redirect('profile') 
