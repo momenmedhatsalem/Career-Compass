@@ -356,14 +356,16 @@ def save_recruiter_profile(request):
         rec.save()
     return redirect("recruiterDashboard")
 
+@csrf_exempt
 def post_job(request):
     if request.method == 'POST':
         job_id = request.POST.get('job_id')
         rec = Recruiter.objects.get(user = request.user)
         if Job.objects.filter(job_id=job_id, recruiter=rec).exists():
-            return JsonResponse({'exists': True}, status=400)
+            return JsonResponse({'exists': True}, status=200)
 
         newJob = Job.objects.create(
+            job_id = job_id,
             recruiter=rec,
             title=request.POST.get("job_title"),
             company_name=request.POST.get("company_name"),
