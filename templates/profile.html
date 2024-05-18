@@ -25,7 +25,7 @@
 
 
       <div class="j0profile-pic">
-        <img src="{% static 'Editing.png' %}" alt="Profile Picture">
+        <img {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {%endif%} alt="User Image">
       </div>
       <ul class="j0menu">
         <!-- <li><a href="#"><img src="{% static 'icon_1.png' %}" alt="Dashboard"><span>Dashboard</span></a></li> -->
@@ -79,15 +79,15 @@
         <fieldset class="M7-fieldset">
 
           <legend class="M7-p_img">
-            <img {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %}
+            <img {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %}
               alt="User Image" class="M7-p_img" style="display: inline-block;">
           </legend>
 
 
           <div>
 
-            <label for="fname" class="M7-label">Full Name: </label> <br>
-            <input type="text" name="fname" id="fname" value=" {{ user.first_name }} {{ user.last_name }}"
+            <label for="fname" class="M7-label">Name: </label> <br>
+            <input type="text" name="fname" id="fname" value=" {{ user.first_name }}"
               class="M7-field" disabled="yes">
 
           </div>
@@ -268,7 +268,7 @@
           <div>
 
             <label for="zip" class="M7-label">ZIP Code: </label> <br>
-            <input type="number" name="zip" id="zip" value="{{ applicant_user.zip }}" class="M7-field" disabled="yes">
+            <input type="number" name="zip" id="zip" value="{{ applicant_user.zip }}" class="M7-field" style="width: 100%;" disabled="yes">
 
           </div>
 
@@ -391,30 +391,30 @@
           {% csrf_token %}
           <div id="accordion-container-skills">
             {% for experience in experiences %}
-            <div class="j0_edu-accordion">
-              <div class="j0-accordion-header">experience 1 <span style="float: right;">^</span>
+            <div class="j0-skills-accordion">
+              <div class="j0-accordion-header">"{{ experience.title }}" <span style="float: right;">^</span>
               </div>
               <div class="j0-accordion-content" style="display: none;"><label for="title">Title*</label>
-                <input type="text" id="title" name="title" placeholder="Product designer(google)"
-                  value="{{ experience.title }}">
-                <label for="academy">Academy*</label>
-                <input type="text" id="academy" name="academy" placeholder="Google Arts Collage &amp; University"
-                  value="{{ experience.Academy }}">
-                <label for="starYear">Start Year*</label>
-                <input for="number" id="starYear" name="starYear" placeholder="2022" value="{{ experience.startDate }}">
-                <label for="endYear">End Year*</label>
-                <input for="number" id="endYear" name="endYear" placeholder="2026" value="{{ experience.endDate }}">
-                <label for="subject">Subject*</label>
-                <textarea id="subject" name="subject" placeholder="Write something.."
+                <input type="text" name="title" placeholder="Product designer(google)" value="{{ experience.title }}">
+                <label for="Company">Company*</label>
+                <input type="text" name="Company" placeholder="Google Arts Collage &amp; University"
+                  value="{{ experience.Company }}">
+                <label for="startDate">Start Year*</label>
+                <input type="number" name="startDate" placeholder="2022" value="{{ experience.startDate }}">
+                <label for="endDate">End Year*</label>
+                <input type="number" name="endDate" placeholder="2026" value="{{ experience.endDate }}">
+                <label for="description">Subject*</label>
+                <textarea name="description" placeholder="Write something.."
                   style="height: 200px;">"{{ experience.description }}"</textarea>
               </div>
             </div>
             {% endfor %}
-
-            <button type="submit">Confirm and submit</button>
+          </div>
+          <button type="submit">submit</button>
         </form>
         <button id="j0-skill-btn" class="j0_btn">+ Add more</button>
       </div>
+
       <!--------------------------------------jonathan------------------------------------------ -->
   </section>
 

@@ -55,3 +55,6 @@ function getElementValueById(id) {
   var element = document.getElementById(id);
   return element ? element.value : "";
 }
+
+
+

@@ -321,12 +321,7 @@ li img {
     margin-bottom: 15px;
 }
 
-.j0-remove-btn {
-    font-size: 15px;
-    font-weight: 700;
-    color: #00c853;
-    cursor: pointer;
-}
+
 
 .j0_btn {
     font-size: 15px;
@@ -423,6 +418,31 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: none;
+}
+
+input[type=number] {
+    width: 40%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    float: left;
+}
+
+button[type=submit] {
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 7px;
+    line-height: 30px;
+    padding: 10px 10px;
+    text-align: center;
+    background: #00B0ff;
+    transition: all .2s ease-in-out 0s;
+    /* margin-right: 1rem !important; */
+    position: relative !important;
+    max-width: 120px;
+    max-height: 50px;
+    float:inline-end;
 }
 
 select {

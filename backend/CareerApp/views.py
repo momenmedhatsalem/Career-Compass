@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from UserApp.models import Applicant, Recruiter, Experience,Education
-from .models import SavedJob , Job, Application
+from .models import SavedJob , Job, Application ,SavedCandidate
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -44,7 +44,16 @@ def recruiterDashboard(request):
         rec = Recruiter.objects.get(user=request.user)
     # rec_jobs = Job.objects.all().order_by('-creation_date')
     rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('creation_date')
-    return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs})
+    candidates = SavedCandidate.objects.filter(recruiter = request.user.id)
+    applications = Application.objects.all()
+    jobs = dict()
+    for can in candidates:
+        jobs[can]= set()
+        for app in applications:
+            if can.applicant == app.applicant :
+                jobs[can].add(app.job)
+
+    return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs,'candidates': candidates,"jobs":jobs})
 
 
 def search(request):
@@ -132,10 +141,20 @@ def jobs(request):
 
 def checkCandidates(request):
     all_candidates =Applicant.objects.all()
-    print(all_candidates[0].city)
     all_applications = Application.objects.all()
-    print(all_applications)
-    return render(request, "check_candidates.html",{"candidates":all_candidates,"applications":all_applications})
+    all_saved_candidates = SavedCandidate.objects.filter(recruiter = request.user.id)
+    is_saved = dict()
+    for candidate in all_candidates:
+        saved = False
+        for saved_cand in all_saved_candidates:
+            if candidate.user.id == saved_cand.applicant.user.id:
+                saved = True
+                break
+        if saved :
+            is_saved[candidate]= "saved"
+        else:
+            is_saved[candidate]= "unsave"
+    return render(request, "check_candidates.html",{"candidates":all_candidates,"applications":all_applications,"saved":is_saved })
 
 @csrf_exempt  
 @require_http_methods(["PUT"])
@@ -178,7 +197,7 @@ def save_profile(request):
     print("here")
     if request.method == "POST":
         # Get data from the form
-
+        
         profile_photo = request.FILES.get("profile_photo")
 
         fname = request.POST.get("fname")
@@ -198,11 +217,9 @@ def save_profile(request):
         city = request.POST.get("city")
         zip = request.POST.get("zip")
         state = request.POST.get("state")
-        print(profile_photo)
-        # Create a new instance of MyModel and set the values
-        if profile_photo:
-            current_user.photo = profile_photo
-            print("heere")
+        
+        if profile_photo is not None:
+            user.photo = profile_photo
 
         current_user.first_name = fname
         current_user.last_name = lname
@@ -226,6 +243,27 @@ def save_profile(request):
         applicant_user.save()
 
     return redirect("profile")
+
+
+
+
+def delete_profile_photo(request):
+    if request.method == "POST":
+        user = request.user
+        user.photo.delete()  # Delete the actual file from the server
+        user.photo = None  # Set the photo field to None
+        user.save()
+        return redirect("profile")
+    
+def delete_rec_photo(request):
+    if request.method == "POST":
+        user = request.user
+        user.photo.delete()  # Delete the actual file from the server
+        user.photo = None  # Set the photo field to None
+        user.save()
+        return redirect("recruiterDashboard")
+
+
 
 
 # def viewCandidate(request):
@@ -267,6 +305,8 @@ def filter_search(request):
                     'salary': job.MaxSalary,
                     'exp': job.years_of_experience,
                     'country': job.country,
+                    'job_id': job.job_id,
+                    'rec_username': job.recruiter.user.username
                 })
                 # else we move on to the next one
     
@@ -291,8 +331,8 @@ def recruitersignup(request):
 
 
 def save_recruiter_profile(request):
-    rec = Recruiter.objects.get(user = request.user.id)
-
+    user = request.user
+    rec = Recruiter.objects.get(user = user)
     if request.method == "POST":
         # Get data from the form
 
@@ -309,6 +349,7 @@ def save_recruiter_profile(request):
         rec.zip_code = request.POST.get("zip_code")
         rec.state = request.POST.get("state")
         # rec.user.save()
+        user.save()
         rec.save()
     return redirect("recruiterDashboard")
 
@@ -402,3 +443,21 @@ def deleteJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
     job.delete()
     return redirect("recruiterDashboard")
+
+
+@csrf_exempt  
+@require_http_methods(["PUT"])
+def saved_candidate(request):
+    data = json.loads(request.body)
+    id_for_applicant =data['id_for_applicant']
+    action = data['action']
+    recruiter_user = Recruiter.objects.get(user=request.user.id)
+    applicant_user = Applicant.objects.get(user=id_for_applicant)
+    if action == "save":
+        newSavedCandidate = SavedCandidate.objects.create(applicant = applicant_user , recruiter = recruiter_user )
+        return JsonResponse({"status": "success", "save": 1}, status=200)
+    else:
+        savedCa =SavedCandidate.objects.get(applicant = applicant_user ,recruiter = recruiter_user)
+        savedCa.delete()
+        return JsonResponse({"status": "success", "unsaved": 1}, status=200)
+    

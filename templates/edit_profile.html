@@ -27,13 +27,18 @@
         <table class="M7-table">
           <tr class="M7-tr">
             <td class="M7-td">
-              <img {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/arrow.png" {% endif %} alt="User Image" class="M7-p_img">
+              <img {% if user.photo %} src="{{user.photo.url}}" {% else %} src="../static/media/images/default.jpg" 
+              {% endif %} alt="User Image" class="M7-p_img">
             </td>
             <td class="M7-td">
               <!-- <button class="M7-p_img_button" onclick="change_img()" type="button">Change Profile Image</button> -->
             </td>
             <td class="M7-td">
-              <button class="M7-p_img_button_clear" type="button">Delete</button>
+              <!-- <form method="post" action="{% url 'delete_profile_photo' %}"> -->
+              {% csrf_token %}
+              <button name="delete_profile_photo" class="M7-p_img_button_clear" type="submit">Delete</button>
+              <!-- </form> -->
+
             </td>
             <td class="M7-td">
                       
@@ -46,21 +51,15 @@
 
         <br>
 
+        <form action="{% url 'save_profile' %}" method="post" enctype="multipart/form-data">
           {% csrf_token %}
           <input type="file" name="profile_photo"  accept="image/*">
 
           <div>
 
-            <label for="fname" class="M7-label">First Name: </label> <br><br>
+            <label for="fname" class="M7-label">Name: </label> <br><br>
             <input type="text" name="fname" id="fname" class="M7-field" required
               value=" {{ user.first_name }}">
-
-          </div>
-          <div>
-
-            <label for="lname" class="M7-label">Last Name: </label> <br><br>
-            <input type="text" name="lname" id="lname" class="M7-field" required
-              value=" {{ user.last_name }}">
 
           </div>
 

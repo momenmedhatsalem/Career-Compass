@@ -6,10 +6,13 @@ urlpatterns = [
     path("profile/", view=views.profile, name="profile"),
     path("edit_profile/", view=views.edit_profile, name="edit_profile"),
     path("save_profile/", view=views.save_profile, name="save_profile"),
+    path("delete-profile-photo/", view=views.delete_profile_photo, name="delete_profile_photo"),
+    path("delete-rec-photo/", view=views.delete_rec_photo, name="delete_rec_photo"),
     path("recruiterDashboard/", view=views.recruiterDashboard, name="recruiterDashboard"),
     path("saved_jobs/", view=views.savedJobs, name="saved_jobs"),
     path("search/", view=views.search, name="search"),
     path("filter_search/", view=views.filter_search, name="filter_search"),
+    #path('job/<int:job_id>/<str:recruiter_username>/', views.load_Job_details, name='load_Job_details'),
     path("about/", view=views.about, name="about"),
     path("jobs/", view=views.jobs, name="jobs"),
     path("index/", view=views.index, name="index"),
@@ -21,6 +24,8 @@ urlpatterns = [
     path("saveRecSettings/", view=views.saveRecSettings, name="saveRecSettings"),
     path("apply_to_job/", view=views.apply_to_job, name="apply_to_job"),
     path("Confirmation/", view=views.Confirmation, name="Confirmation"),
+    path("saved_candidate/", view=views.saved_candidate, name="save_candidate"),
+
 
 
     
