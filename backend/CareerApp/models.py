@@ -11,7 +11,7 @@ class JobCategory(models.Model):
 
 class Job(models.Model):
     job_id = models.AutoField(primary_key=True)
-    id = models.IntegerField(default=0, blank=True, null=True)
+    id = models.IntegerField()
     recruiter = models.ForeignKey(Recruiter, on_delete=models.CASCADE, default=None)
     title = models.CharField(max_length=100, default=None)
     company_name = models.CharField(max_length=100, default=None)
