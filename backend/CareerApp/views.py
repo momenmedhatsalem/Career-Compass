@@ -407,7 +407,7 @@ def saveRecSettings(request):
     return redirect("recruiterDashboard")
 
 def viewJob(request, job_id, recruiter_username):
-    job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
+    job = get_object_or_404(Job, job_id=job_id, recruiter__user__username=recruiter_username)
     saved = False
     if request.user.is_authenticated :
         if request.user.is_applicant: 
@@ -422,7 +422,7 @@ def viewJob(request, job_id, recruiter_username):
         return render(request, 'Job_Details.html', {'job': job,'saved':0})
 
 def editJob(request, job_id, recruiter_username):
-    job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
+    job = get_object_or_404(Job, job_id=job_id, recruiter__user__username=recruiter_username)
     if request.method == 'POST':
         # Handle the job editing form submission
         job.job_id = request.POST.get("job-id")
@@ -450,7 +450,7 @@ def editJob(request, job_id, recruiter_username):
         return render(request, 'edit_Job.html', {'job': job,"countries":countries, "cities":cities, "states":states})
 
 def deleteJob(request, job_id, recruiter_username):
-    job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
+    job = get_object_or_404(Job, job_id=job_id, recruiter__user__username=recruiter_username)
     job.delete()
     return redirect("recruiterDashboard")
 
