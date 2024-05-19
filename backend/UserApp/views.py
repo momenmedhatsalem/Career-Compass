@@ -145,34 +145,47 @@ def education(request):
         return redirect('profile') 
 
 
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from .models import Applicant, Experience
+
 @login_required
-def experience(request):
+def save_experience(request):
     if request.method == 'POST':
         applicant_id = request.user.id
+        experience_id = request.POST.get('experience_id')  # Get the experience ID from the form
         title = request.POST.get('title')
-        Company = request.POST.get('Company')
-        startDate = request.POST.get('startDate')  # Assuming date-parsing logic is handled
-        endDate = request.POST.get('endDate')  # Handle optional end date
+        company = request.POST.get('Company')
+        start_date = request.POST.get('startDate')
+        end_date = request.POST.get('endDate')
         description = request.POST.get('description')
-        applicant = Applicant.objects.get(pk=applicant_id)  # Retrieve applicant
-        experience = Experience.objects.all().filter(applicant=applicant_id,title=title)
-
-        if experience is None:
+        
+        try:
+            applicant = Applicant.objects.get(user=applicant_id)
+        except Applicant.DoesNotExist:
+            # Handle the case where the applicant does not exist
+            return redirect('error_page')  # Replace 'error_page' with your actual error page
+        print(experience_id)
+        if experience_id:
+            # Update the existing experience
+            experience = get_object_or_404(Experience, id=experience_id, applicant=applicant)
+            experience.title = title
+            experience.Company = company
+            experience.startDate = start_date
+            experience.endDate = end_date
+            experience.description = description
+        else:
+            # Create a new experience
             experience = Experience(
                 applicant=applicant,
                 title=title,
-                Company=Company,
-                startDate=startDate,
-                endDate=endDate,
-                description=description,
-        )
-        else:
-            experience.Company=Company
-            experience.startDate=startDate
-            experience.endDate=endDate
-            experience.description=description
+                Company=company,
+                startDate=start_date,
+                endDate=end_date,
+                description=description
+            )
 
         experience.save()
-
-        return redirect('profile') 
+        
+    return redirect('profile')  
 

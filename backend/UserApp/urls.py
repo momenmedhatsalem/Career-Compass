@@ -26,6 +26,6 @@ urlpatterns = [
     path("candidate/<str:candidate_username>/", view=views.viewCandidate, name="viewCandidate"),
     path('uploadResume/', views.upload_resume, name='upload_resume'),
     path('profile/', views.education, name='education'),
-    path('profile/', views.experience, name='experience'),
+    path('save_experience/', views.save_experience, name='save_experience'),
 ]
 

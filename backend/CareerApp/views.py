@@ -29,6 +29,7 @@ def profile(request):
 
 
         # User is an applicant
+        print(experiences)
         return render(request, "profile.html", {"applicant_user": applicant_user,"educations": educations,"experiences": experiences})
     elif user.is_recruiter:
         # User is a recruiter
