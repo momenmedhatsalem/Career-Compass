@@ -71,6 +71,17 @@ def savedJobs(request):
 
     return render(request, "saved_jobs.html", {"jobs": saved_jobs})
 
+@login_required
+def appliedjobs(request):
+    if not request.user.is_applicant:
+        # User is a recruiter
+        return redirect("home")
+    user = Applicant.objects.get(user=request.user.id)
+    applied_jobs = Application.objects.filter(applicant=user)
+    print(applied_jobs)
+
+    return render(request, "applied_jobs.html", {"jobs": applied_jobs})
+
 @csrf_exempt  
 @require_http_methods(["PUT"])
 def receive_job_to_save_it(request):
@@ -162,9 +173,10 @@ def apply_to_job(request):
     data = json.loads(request.body)
     job_id = data["job"]
     applicant_id = data["applicant"]
-    job = Job.objects.get(job_id =job_id)
+    job = Job.objects.get(id = id)
     applicant = Applicant.objects.get(user =applicant_id ) 
     new_application = Application.objects.create(job = job,applicant = applicant )
+    new_application.save()
     return JsonResponse({'success': True, 'redirect_url': '/Confirmation/'})
 
 

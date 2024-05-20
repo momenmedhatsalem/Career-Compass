@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="main">
+    <div class="all-jobs">
+      <!-- ------------------------------------------------------------------------------------------------------------ -->
+      {% for applied_jobs in jobs %} 
+      <div class="job" id="{{saved_job.job.job_id}}">
+          <div class="desc">
+            <div class="job-name"> {{applied_jobs.job.title}} </div> 
+            <div class="salary"> ${{applied_jobs.job.MinSalary}} - {{applied_jobs.job.MaxSalary}} / {{applied_jobs.job.salary}}</div>
+            <div class="city"> {{applied_jobs.job.city}}, {{applied_jobs.job.country}}</div>
+            <div class="description">{{applied_jobs.job.description}} </div>  
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="{{saved_job.job.job_id}}">unsaved</button> 
+            <a  href="{% url 'viewJob' job_id=saved_job.job.job_id recruiter_username=saved_job.job.recruiter.user.username %}" class="view-ancor"> <button type="button" class="view-button"  value="view" name="{{saved_job.job.job_id}}" onclick="view(name)">view</button></a>
+        </div>
+        </div>
+        {% endfor %}
+        <!-- ----------------------------------------------------------------------------------------------- -->
+    </div>
+    <div>
+
+        </section>
+
+    </div>
+
+<script src="{% static 'js/saved_jobs.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'css/saved_jobs.css' %}">
+{% endblock %}

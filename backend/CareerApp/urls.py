@@ -9,6 +9,7 @@ urlpatterns = [
     path("delete-profile-photo/", view=views.delete_profile_photo, name="delete_profile_photo"),
     path("recruiterDashboard/", view=views.recruiterDashboard, name="recruiterDashboard"),
     path("saved_jobs/", view=views.savedJobs, name="saved_jobs"),
+    path("applied_jobs/", view=views.appliedjobs, name="applied_jobs"),
     path("search/", view=views.search, name="search"),
     path("filter_search/", view=views.filter_search, name="filter_search"),
     #path('job/<int:job_id>/<str:recruiter_username>/', views.load_Job_details, name='load_Job_details'),
