@@ -36,6 +36,7 @@
               <a class="view-button"  href="{% url 'viewJob' job_id=job.job_id recruiter_username=job.recruiter.user.username %}"> View details</a>
             </td>
         {% endfor %}   
+        
         {% for job in jobs %}
         <td class="td">
           <h3>

@@ -22,15 +22,17 @@
               {% endif %}
                 <img {% if candidate.user.photo %} src="{{candidate.user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %} alt="User Image"  onclick="window.location.href='{% url "viewCandidate" candidate.user.username  %}'" title="view details" class="img-person" style="display: inline-block;">
                 <li class="person-name" onclick="window.location.href='{% url "viewCandidate" candidate.user.username  %}'" >  {{candidate.user.first_name}} </li>
-                {% if candidate.city  and candidate.country and candidate.city != "None" and candidate.country != "None"%}
-                <li>
-                  <table class="Salary-location-table">
-                    <tr class="Salary-location-table-values">
-                      <td class="Location-value">{{candidate.city}}, {{candidate.country}}</td>
-                    </tr>
-                  </table>
-                </li>
-                {% elif candidate.city and candidate.city != "None" %}
+                <div class="J9_fixed_height">
+
+                  {% if candidate.city  and candidate.country and candidate.city != "None" and candidate.country != "None"%}
+                  <li>
+                    <table class="Salary-location-table">
+                      <tr class="Salary-location-table-values">
+                        <td class="Location-value">{{candidate.city}}, {{candidate.country}}</td>
+                      </tr>
+                    </table>
+                  </li>
+                  {% elif candidate.city and candidate.city != "None" %}
                 <li>
                   <table class="Salary-location-table">
                     <tr class="Salary-location-table-values">
@@ -48,14 +50,15 @@
                 </li>
                 {% endif %}
                 <li class="jobs">
-                  <ul class="jobs">
-                    {% for application in applications|slice:":3" %}
-                        {% if application.applicant.user.id == candidate.user.id %}
-                          <li class="job">{{ application.job.title }}</li>
-                      {% endif %}
+                  <ul class="jobs J9_scroll_area">
+                    {% for application in applications %}
+                    {% if application.applicant.user.id == candidate.user.id %}
+                    <li class="job">{{ application.job.title }}</li>
+                    {% endif %}
                     {% endfor %}
                   </ul>
                 </li>
+              </div>
                 {% if user.is_recruiter %}
                 <li class="buttons-list">
                   <div class="save-button-div">

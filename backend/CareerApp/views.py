@@ -153,7 +153,7 @@ def jobs(request):
             for j in jobs :
                 exist = False
                 for sj in saved_jobs :
-                    if j.job_id == sj.job.job_id :
+                    if j.id == sj.job.id :
                         exist = True
                         break
                 if not exist:

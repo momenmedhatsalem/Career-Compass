@@ -97,11 +97,30 @@ class job{
 
 //add jos to page 
 
-let array1 = JSON.parse(localStorage.getItem("jobs"))
-let array2 = JSON.parse(localStorage.getItem("my_jobs"));
-let p = document.getElementsByClassName("all-jobs");
-//console.log(array2);
-// for (let job of array1 ){
+// let array1 = JSON.parse(localStorage.getItem("jobs"))
+// let array2 = JSON.parse(localStorage.getItem("my_jobs"));
+// let p = document.getElementsByClassName("all-jobs");
+// //console.log(array2);
+// // for (let job of array1 ){
+// //     let txt = `
+// //                     <div class="job-image-div">
+// //                         <img src="../media/front.png" class="job-img">
+// //                     </div>
+// //                     <div class="desc">
+// //                         <div class="job-name"> ${job.details.title} </div> 
+// //                         <div class="salary"> ${job.details.salary}</div>
+// //                         <div class="city"> ${job.address_and_location.country} , ${job.address_and_location.city}</div>
+// //                         <div class="description">${job.details.description} </div>  
+// //                         <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="${job.details.id}">Delete</button> 
+// //                         <a href="#" class="view-ancor"> <button type="button" class="view-button"  value="view">view</button></a>
+// //                     </div>`;
+// //     let element = document.createElement("div");
+// //     element.setAttribute("class","job");
+// //     element.setAttribute("id",job.details.id);
+// //     element.innerHTML= txt;
+// //     p[0].appendChild(element);
+// // }
+// for (let job of array2 ){
 //     let txt = `
 //                     <div class="job-image-div">
 //                         <img src="../media/front.png" class="job-img">
@@ -119,23 +138,4 @@ let p = document.getElementsByClassName("all-jobs");
 //     element.setAttribute("id",job.details.id);
 //     element.innerHTML= txt;
 //     p[0].appendChild(element);
-// }
-for (let job of array2 ){
-    let txt = `
-                    <div class="job-image-div">
-                        <img src="../media/front.png" class="job-img">
-                    </div>
-                    <div class="desc">
-                        <div class="job-name"> ${job.details.title} </div> 
-                        <div class="salary"> ${job.details.salary}</div>
-                        <div class="city"> ${job.address_and_location.country} , ${job.address_and_location.city}</div>
-                        <div class="description">${job.details.description} </div>  
-                        <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="${job.details.id}">Delete</button> 
-                        <a href="#" class="view-ancor"> <button type="button" class="view-button"  value="view">view</button></a>
-                    </div>`;
-    let element = document.createElement("div");
-    element.setAttribute("class","job");
-    element.setAttribute("id",job.details.id);
-    element.innerHTML= txt;
-    p[0].appendChild(element);
-    }
+//     }
