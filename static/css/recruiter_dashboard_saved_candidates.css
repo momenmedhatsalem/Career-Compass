@@ -28,7 +28,7 @@
 
 .J9_emp_dash_saved_candidates_right_side_candidate_card_details_information {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   padding-left: 3vw;
   font-size: 1.4vw;

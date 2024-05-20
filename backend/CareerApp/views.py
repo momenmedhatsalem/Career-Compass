@@ -104,7 +104,7 @@ def receive_job_to_save_it(request):
         id_for_job =data['id_for_job_will_save']
         action = data['action']
         jobs = SavedJob.objects.all()
-        retrieve_job = Job.objects.get(job_id = id_for_job)
+        retrieve_job = Job.objects.get(id = id_for_job)
         applicant_user = Applicant.objects.get(user=request.user.id)
         if action == "save":
             newSavedJob = SavedJob.objects.create(applicant = applicant_user , job = retrieve_job )

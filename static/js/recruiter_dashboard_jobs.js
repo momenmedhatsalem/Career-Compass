@@ -94,6 +94,7 @@ function deleteJob(id) {
   } else {
     console.log("Job with the specified id not found.");
   }
+
 }
 
 //-------------------------------------------------------------------------------
@@ -114,3 +115,5 @@ document.addEventListener("DOMContentLoaded", function () {
       element.innerHTML = `${generateRandNum()} Applications`;
     });
 });
+
+//------------------------------------------------------------

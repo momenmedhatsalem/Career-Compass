@@ -16,14 +16,16 @@
                   <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_name">
                       <h3>{{candidate.applicant.user.first_name}}</h3>
                   </div>
-                  {% if candidate.applicant.city %}
-                  <div
-                      class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_location">
-                      <span>Location</span>
-                      <div>{{candidate.applicant.city}}</div>
-                  </div>
-                  {% endif %}
-                  <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions">
+                  <div>
+                      {% if candidate.applicant.city %}
+                      <div
+                          class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_location">
+                          <span>Location</span>
+                          <div>{{candidate.applicant.city}}</div>
+                      </div>
+                      {% endif %}
+                    </div>
+                    <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions">
                     <a href="{% url "viewCandidate" candidate.applicant.user.username  %}"><img src=" {% static "icons/eye2.svg" %} " alt=""></a>
                     <button onclick="save(`{{candidate.applicant.user.id}}`)" ><img style="width : 3vw;" src=" {% static "icons/delete.svg" %} " alt=""></button>
                 </div>

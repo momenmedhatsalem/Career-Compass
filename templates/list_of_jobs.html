@@ -16,7 +16,7 @@
             {{ job.job.title  }}
           </h3>
           <div class="save-button-div">
-            <button class="save-button " onclick="save(`{{job.job.job_id}}`)" id="x{{job.job.job_id}}" style="background-color: green;"><img src="{% static 'saved.png' %}" title="save job" class="save-button-img"> </button>
+            <button class="save-button " onclick="save(`{{job.job.id}}`)" id="x{{job.job.id}}" style="background-color: green;"><img src="{% static 'saved.png' %}" title="save job" class="save-button-img"> </button>
           </div>
           <div class="salary">${{job.job.MinSalary}} - {{job.job.MaxSalary}} / {{job.job.salary}}</div>
           <div class="location">{{job.job.city}}, {{job.job.country}}</div>
@@ -29,7 +29,7 @@
                 {{ job.title  }}
               </h3>
               <div class="save-button-div">
-                <button class="save-button " onclick="save(`{{job.job_id}}`)" id="x{{job.job_id}}" style="background-color: transparent;"><img src="{% static 'saved.png' %}" title="save job" class="save-button-img"> </button>
+                <button class="save-button " onclick="save(`{{job.id}}`)" id="x{{job.id}}" style="background-color: transparent;"><img src="{% static 'saved.png' %}" title="save job" class="save-button-img"> </button>
               </div>
               <div class="salary">${{job.MinSalary}} - {{job.MaxSalary}} / {{job.salary}}</div>
               <div class="location">{{job.city}}, {{job.country}}</div>
