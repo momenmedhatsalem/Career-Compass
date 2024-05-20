@@ -71,6 +71,18 @@ def savedJobs(request):
 
     return render(request, "saved_jobs.html", {"jobs": saved_jobs})
 
+@csrf_exempt  
+@require_http_methods(["PUT"])
+def apply_to_job(request):
+    data = json.loads(request.body)
+    id = data["job"]
+    applicant_id = data["applicant"]
+    job = Job.objects.get(id = id)
+    applicant = Applicant.objects.get(user = applicant_id ) 
+    new_application = Application.objects.create(job = job,applicant = applicant )
+    new_application.save()
+    return JsonResponse({'success': True, 'redirect_url': '/Confirmation/'})
+
 @login_required
 def appliedjobs(request):
     if not request.user.is_applicant:
@@ -167,17 +179,6 @@ def checkCandidates(request):
             is_saved[candidate]= "unsave"
     return render(request, "check_candidates.html",{"candidates":all_candidates,"applications":all_applications,"saved":is_saved })
 
-@csrf_exempt  
-@require_http_methods(["PUT"])
-def apply_to_job(request):
-    data = json.loads(request.body)
-    job_id = data["job"]
-    applicant_id = data["applicant"]
-    job = Job.objects.get(id = id)
-    applicant = Applicant.objects.get(user =applicant_id ) 
-    new_application = Application.objects.create(job = job,applicant = applicant )
-    new_application.save()
-    return JsonResponse({'success': True, 'redirect_url': '/Confirmation/'})
 
 
 def Confirmation(request):
