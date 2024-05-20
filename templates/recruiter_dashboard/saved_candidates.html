@@ -1,0 +1,52 @@
+{% load static %}
+<div id="J9_recruiter_dashboard_saved_candidates" style="display: none;">
+  <a href="/checkCandidates">
+      <h3>All Candidates</h3>
+  </a>
+  <div class="J9_emp_dash_saved_candidates_right_side_body_container">
+    {% for candidate,job in jobs.items %}
+
+      <div class="J9_emp_dash_saved_candidates_right_side_candidate_card">
+          <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_photo">
+              <a href="#">  <img {% if candidate.applicant.user.photo %} src="{{candidate.applicant.user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %} alt="" >  </a>
+          </div>      
+
+          <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details">
+              <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_information">
+                  <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_name">
+                      <h3>{{candidate.applicant.user.first_name}}</h3>
+                  </div>
+                  {% if candidate.applicant.city %}
+                  <div
+                      class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_location">
+                      <span>Location</span>
+                      <div>{{candidate.applicant.city}}</div>
+                  </div>
+                  {% endif %}
+                  <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions">
+                    <a href="{% url "viewCandidate" candidate.applicant.user.username  %}"><img src=" {% static "icons/eye2.svg" %} " alt=""></a>
+                    <div class="div">
+                        <button
+                            class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button"><span></span></button>
+                        <ul
+                            class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
+                            <li><a href="{% url "viewCandidate" candidate.applicant.user.username  %}"><img src=" {% static "icons/eye2.svg" %} " alt="">view</a>
+                            </li>
+                            <li><a href="#"><img src=" {% static "icons/delete.svg" %} " alt="">delete</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+              <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skills">
+                {% for j in job %}  
+                <span
+                      class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skill">{{j.title}}</span>
+                      {% endfor %}
+
+              </div>
+          </div>
+      </div>
+    {% endfor %}
+</div>
+    </div>

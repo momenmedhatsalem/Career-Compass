@@ -86,8 +86,11 @@
 
           <div>
 
-            <label for="fname" class="M7-label">Full Name: </label> <br>
-            <input type="text" name="fname" id="fname" value=" {{ user.first_name }} {{ user.last_name }}"
+            <label for="fname" class="M7-label">First Name: </label> <br>
+            <input type="text" name="fname" id="fname" value=" {{ user.first_name }}"
+            class="M7-field" disabled="yes">
+            <label for="lname" class="M7-label">Last Name: </label> <br>
+            <input type="text" name="lname" id="lname" value=" {{ user.last_name }}"
               class="M7-field" disabled="yes">
 
           </div>
@@ -268,7 +271,7 @@
           <div>
 
             <label for="zip" class="M7-label">ZIP Code: </label> <br>
-            <input type="number" name="zip" id="zip" value="{{ applicant_user.zip }}" class="M7-field" disabled="yes">
+            <input type="number" name="zip" id="zip" value="{{ applicant_user.zip }}" class="M7-field" style="width: 100%;" disabled="yes">
 
           </div>
 
@@ -387,7 +390,7 @@
       <!-- experience -->
       <div class="tab" id="j0_skills">
         <h4 class="j0-title-three"> Skills & Experience</h4>
-        <form method="post" action="{% url 'experience' %}">
+        <form method="post" action="{% url 'save_experience' %}">
           {% csrf_token %}
           <div id="accordion-container-skills">
             {% for experience in experiences %}
@@ -395,17 +398,18 @@
               <div class="j0-accordion-header">"{{ experience.title }}" <span style="float: right;">^</span>
               </div>
               <div class="j0-accordion-content" style="display: none;"><label for="title">Title*</label>
-                <input type="text" name="title" placeholder="Product designer(google)" value="{{ experience.title }}">
+                <input type="hidden" name="experience_id" value="{{ experience.id }}">
+                <input required type="text" name="title" placeholder="Product designer(google)" value="{{ experience.title }}">
                 <label for="Company">Company*</label>
-                <input type="text" name="Company" placeholder="Google Arts Collage &amp; University"
+                <input required type="text" name="Company" placeholder="Google Arts Collage &amp; University"
                   value="{{ experience.Company }}">
                 <label for="startDate">Start Year*</label>
-                <input type="number" name="startDate" placeholder="2022" value="{{ experience.startDate }}">
+                <input required type="number" name="startDate" placeholder="2022" value="{{ experience.startDate }}">
                 <label for="endDate">End Year*</label>
-                <input type="number" name="endDate" placeholder="2026" value="{{ experience.endDate }}">
+                <input required type="number" name="endDate" placeholder="2026" value="{{ experience.endDate }}">
                 <label for="description">Subject*</label>
                 <textarea name="description" placeholder="Write something.."
-                  style="height: 200px;">"{{ experience.description }}"</textarea>
+                  style="height: 200px;">{{ experience.description }}</textarea>
               </div>
             </div>
             {% endfor %}
