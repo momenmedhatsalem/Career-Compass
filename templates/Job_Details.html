@@ -27,7 +27,7 @@
       <div class="J9_view_apy_job_details">
         <h3 class="J9_view_plapply_job_details_title">Job Details</h3>
 
-        {% if user.is_recruiter %}
+        {% if user.is_recruiter and job.recruiter.user == user %}
         <div class="J9_view_apply_job_details_job_id">
           <label>Job ID</label>
           <input type="number" value="{{ job.job_id }}" disabled/>

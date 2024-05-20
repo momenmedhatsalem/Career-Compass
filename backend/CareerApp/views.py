@@ -445,7 +445,7 @@ def editJob(request, job_id, recruiter_username):
         job.zip_code = request.POST.get("zip_code")
         job.state = request.POST.get("state")
         job.save()
-        return redirect('viewJob', job_id=job_id, recruiter_username=recruiter_username)
+        return redirect('viewJob', job_id=job.job_id, recruiter_username=recruiter_username)
     else:
         # Render the job editing form
         return render(request, 'edit_Job.html', {'job': job,"countries":countries, "cities":cities, "states":states})

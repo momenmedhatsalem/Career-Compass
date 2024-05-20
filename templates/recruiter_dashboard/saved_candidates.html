@@ -25,17 +25,7 @@
                   {% endif %}
                   <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions">
                     <a href="{% url "viewCandidate" candidate.applicant.user.username  %}"><img src=" {% static "icons/eye2.svg" %} " alt=""></a>
-                    <div class="div">
-                        <button
-                            class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_button"><span></span></button>
-                        <ul
-                            class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_actions_ul">
-                            <li><a href="{% url "viewCandidate" candidate.applicant.user.username  %}"><img src=" {% static "icons/eye2.svg" %} " alt="">view</a>
-                            </li>
-                            <li><a href="#"><img src=" {% static "icons/delete.svg" %} " alt="">delete</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <button onclick="save(`{{candidate.applicant.user.id}}`)" ><img style="width : 3vw;" src=" {% static "icons/delete.svg" %} " alt=""></button>
                 </div>
             </div>
               <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details_skills">
