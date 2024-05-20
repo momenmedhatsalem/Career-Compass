@@ -82,6 +82,7 @@ def appliedjobs(request):
 
     return render(request, "applied_jobs.html", {"jobs": applied_jobs})
 
+
 @csrf_exempt  
 @require_http_methods(["PUT"])
 def receive_job_to_save_it(request):
