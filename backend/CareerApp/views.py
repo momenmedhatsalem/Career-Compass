@@ -79,8 +79,15 @@ def apply_to_job(request):
     applicant_id = data["applicant"]
     job = Job.objects.get(id = id)
     applicant = Applicant.objects.get(user = applicant_id ) 
-    new_application = Application.objects.create(job = job,applicant = applicant )
-    new_application.save()
+    
+    print(Application.objects.filter(job = Job.objects.get(id = id),applicant = applicant).exists())
+
+    if not Application.objects.filter(job = Job.objects.get(id = id),applicant = applicant).exists():
+        new_application = Application.objects.create(job = job,applicant = applicant )
+        new_application.save()
+    
+        
+    
     return JsonResponse({'success': True, 'redirect_url': '/Confirmation/'})
 
 @login_required
@@ -90,7 +97,7 @@ def appliedjobs(request):
         return redirect("home")
     user = Applicant.objects.get(user=request.user.id)
     applied_jobs = Application.objects.filter(applicant=user)
-    print(applied_jobs)
+    #print(applied_jobs)
     #applied_jobs.delete()
 
     return render(request, "applied_jobs.html", {"jobs": applied_jobs})
