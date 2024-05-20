@@ -14,7 +14,7 @@
             <div class="city"> {{applied_jobs.job.city}}, {{applied_jobs.job.country}}</div>
             <div class="description">{{applied_jobs.job.description}} </div>  
             
-            <a  href="" class="view-ancor"> <button type="button" class="view-button"  value="view" name="{{applied_jobs.job.id}}" onclick="view(name)">View</button></a>
+            <a  href="{% url 'viewJob' job_id=applied_jobs.job.job_id recruiter_username=applied_jobs.job.recruiter.user.username %}" class="view-ancor"> <button type="button" class="view-button"  value="view" name="{{applied_jobs.job.id}}" onclick="view(name)">View</button></a>
         </div>
         </div>
         {% endfor %}
