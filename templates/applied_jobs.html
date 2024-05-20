@@ -7,14 +7,14 @@
     <div class="all-jobs">
       <!-- ------------------------------------------------------------------------------------------------------------ -->
       {% for applied_jobs in jobs %} 
-      <div class="job" id="{{saved_job.job.job_id}}">
+      <div class="job" id="{{applied_jobs.job.id}}">
           <div class="desc">
             <div class="job-name"> {{applied_jobs.job.title}} </div> 
             <div class="salary"> ${{applied_jobs.job.MinSalary}} - {{applied_jobs.job.MaxSalary}} / {{applied_jobs.job.salary}}</div>
             <div class="city"> {{applied_jobs.job.city}}, {{applied_jobs.job.country}}</div>
             <div class="description">{{applied_jobs.job.description}} </div>  
-            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="{{saved_job.job.job_id}}">Unapply</button> 
-            <a  href="" class="view-ancor"> <button type="button" class="view-button"  value="view" name="{{saved_job.job.job_id}}" onclick="view(name)">View</button></a>
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="{{applied_jobs.job.id}}">Unapply</button> 
+            <a  href="" class="view-ancor"> <button type="button" class="view-button"  value="view" name="{{applied_jobs.job.id}}" onclick="view(name)">View</button></a>
         </div>
         </div>
         {% endfor %}
