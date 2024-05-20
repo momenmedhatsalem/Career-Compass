@@ -29,7 +29,6 @@ def profile(request):
 
 
         # User is an applicant
-        print(experiences)
         return render(request, "profile.html", {"applicant_user": applicant_user,"educations": educations,"experiences": experiences})
     elif user.is_recruiter:
         # User is a recruiter
@@ -45,16 +44,7 @@ def recruiterDashboard(request):
         rec = Recruiter.objects.get(user=request.user)
     # rec_jobs = Job.objects.all().order_by('-creation_date')
     rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('creation_date')
-    candidates = SavedCandidate.objects.filter(recruiter = request.user.id)
-    applications = Application.objects.all()
-    jobs = dict()
-    for can in candidates:
-        jobs[can]= set()
-        for app in applications:
-            if can.applicant == app.applicant :
-                jobs[can].add(app.job)
-
-    return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs,'candidates': candidates,"jobs":jobs})
+    return render(request, "recruiter_dashboard.html", {"rec": rec,"countries":countries ,'cities': cities, "states": states,"rec_jobs": rec_jobs})
 
 
 def search(request):
@@ -141,20 +131,10 @@ def jobs(request):
 
 def checkCandidates(request):
     all_candidates =Applicant.objects.all()
+    print(all_candidates[0].city)
     all_applications = Application.objects.all()
-    all_saved_candidates = SavedCandidate.objects.filter(recruiter = request.user.id)
-    is_saved = dict()
-    for candidate in all_candidates:
-        saved = False
-        for saved_cand in all_saved_candidates:
-            if candidate.user.id == saved_cand.applicant.user.id:
-                saved = True
-                break
-        if saved :
-            is_saved[candidate]= "saved"
-        else:
-            is_saved[candidate]= "unsave"
-    return render(request, "check_candidates.html",{"candidates":all_candidates,"applications":all_applications,"saved":is_saved })
+    print(all_applications)
+    return render(request, "check_candidates.html",{"candidates":all_candidates,"applications":all_applications})
 
 @csrf_exempt  
 @require_http_methods(["PUT"])
@@ -190,18 +170,15 @@ def edit_profile(request):
 
 
 def save_profile(request):
-    current_user = get_user_model().objects.get(id=request.user.id)
-    
     user = request.user
-    applicant_user = Applicant.objects.get(user=user.id)
-    print("here")
+    applicant_user = Applicant.objects.get(user=user)
+
     if request.method == "POST":
         # Get data from the form
         
         profile_photo = request.FILES.get("profile_photo")
 
         fname = request.POST.get("fname")
-        lname = request.POST.get("lname")
         pemail = request.POST.get("pemail")
         bio = request.POST.get("bio")
 
@@ -218,15 +195,12 @@ def save_profile(request):
         zip = request.POST.get("zip")
         state = request.POST.get("state")
         
-        print(profile_photo)
         # Create a new instance of MyModel and set the values
-        if profile_photo:
-            current_user.photo = profile_photo
-            print("heere")
+        if profile_photo is not None:
+            user.photo = profile_photo
 
-        current_user.first_name = fname
-        current_user.last_name = lname
-        current_user.email = pemail
+        user.first_name = fname
+        user.email = pemail
         applicant_user.bio = bio
 
         applicant_user.company_name = cname
@@ -242,24 +216,30 @@ def save_profile(request):
         applicant_user.country = country
         applicant_user.zip = zip
         applicant_user.state = state
-        current_user.save()
+
+        user.save()
         applicant_user.save()
 
     return redirect("profile")
 
 
 
-@csrf_exempt
+
 def delete_profile_photo(request):
     if request.method == "POST":
-        current_user = get_user_model().objects.get(id=request.user.id)
-
-        current_user.photo.delete()
-        current_user.photo = None  
-        current_user.save()
+        user = request.user
+        user.photo.delete()  # Delete the actual file from the server
+        user.photo = None  # Set the photo field to None
+        user.save()
         return redirect("profile")
     
-
+def delete_rec_photo(request):
+    if request.method == "POST":
+        user = request.user
+        user.photo.delete()  # Delete the actual file from the server
+        user.photo = None  # Set the photo field to None
+        user.save()
+        return redirect("recruiterDashboard")
 
 
 
@@ -304,7 +284,7 @@ def filter_search(request):
                     'exp': job.years_of_experience,
                     'country': job.country,
                     'job_id': job.job_id,
-                    'rec_username': job.recruiter.user.username
+                    'rec_username': job.recruiter.recruiter_name
                 })
                 # else we move on to the next one
     
@@ -329,18 +309,12 @@ def recruitersignup(request):
 
 
 def save_recruiter_profile(request):
-    current_user = get_user_model().objects.get(id=request.user.id)
     user = request.user
-    rec = Recruiter.objects.get(user = user.id)
+    rec = Recruiter.objects.get(user = user)
     if request.method == "POST":
         # Get data from the form
-
-        profile_photo = request.FILES.get("profile_photo") 
-        print(profile_photo)
-        # Create a new instance of MyModel and set the values
-        if profile_photo:
-            current_user.photo = profile_photo
-            print("heere")
+        if request.FILES.get("profile_photo") is not None :
+            user.photo = request.FILES.get("profile_photo")
         rec.website = request.POST.get("rec_website")
         rec.founded_date = request.POST.get("founded_date")
         rec.company_size = request.POST.get("company_size")
@@ -353,41 +327,34 @@ def save_recruiter_profile(request):
         rec.zip_code = request.POST.get("zip_code")
         rec.state = request.POST.get("state")
         # rec.user.save()
-        current_user.save()
+        user.save()
         rec.save()
     return redirect("recruiterDashboard")
 
-@csrf_exempt
 def post_job(request):
-    if request.method == 'POST':
-        job_id = request.POST.get('job_id')
-        rec = Recruiter.objects.get(user = request.user)
-        if Job.objects.filter(job_id=job_id, recruiter=rec).exists():
-            return JsonResponse({'exists': True}, status=200)
-
-        newJob = Job.objects.create(
-            job_id = job_id,
-            recruiter=rec,
-            title=request.POST.get("job_title"),
-            company_name=request.POST.get("company_name"),
-            status=request.POST.get("job_status"),
-            years_of_experience=request.POST.get("years_of_experience"),
-            description=request.POST.get("job_desc"),
-            category=request.POST.get("job_category"),
-            type=request.POST.get("job_type"),
-            salary=request.POST.get("salary"),
-            MinSalary=request.POST.get("min_salary"),
-            MaxSalary=request.POST.get("max_salary"),
-            english_fluency=request.POST.get("english_fluency"),
-            experience=request.POST.get("experience"),
-            address=request.POST.get("address"),
-            country=request.POST.get("country"),
-            city=request.POST.get("city"),
-            zip_code=request.POST.get("zip_code"),
-            state=request.POST.get("state"),
-        )
-        newJob.save()
-        return JsonResponse({'exists': False}, status=200)
+    rec = Recruiter.objects.get(user = request.user)
+    newJob = Job.objects.create(
+        job_id=request.POST.get("job_id"),
+        recruiter=rec,
+        title=request.POST.get("job_title"),
+        company_name=request.POST.get("company_name"),
+        status=request.POST.get("job_status"),
+        years_of_experience=request.POST.get("years_of_experience"),
+        description=request.POST.get("job_desc"),
+        category=request.POST.get("job_category"),
+        type=request.POST.get("job_type"),
+        salary=request.POST.get("salary"),
+        MinSalary=request.POST.get("min_salary"),
+        MaxSalary=request.POST.get("max_salary"),
+        english_fluency=request.POST.get("english_fluency"),
+        experience=request.POST.get("experience"),
+        address=request.POST.get("address"),
+        country=request.POST.get("country"),
+        city=request.POST.get("city"),
+        zip_code=request.POST.get("zip_code"),
+        state=request.POST.get("state"),
+    )
+    newJob.save()
     return redirect("recruiterDashboard")
 
 from django.contrib.auth import authenticate
@@ -408,7 +375,7 @@ def saveRecSettings(request):
     return redirect("recruiterDashboard")
 
 def viewJob(request, job_id, recruiter_username):
-    job = get_object_or_404(Job, job_id=job_id, recruiter__user__username=recruiter_username)
+    job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
     saved = False
     if request.user.is_authenticated :
         if request.user.is_applicant: 
@@ -423,7 +390,7 @@ def viewJob(request, job_id, recruiter_username):
         return render(request, 'Job_Details.html', {'job': job,'saved':0})
 
 def editJob(request, job_id, recruiter_username):
-    job = get_object_or_404(Job, job_id=job_id, recruiter__user__username=recruiter_username)
+    job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
     if request.method == 'POST':
         # Handle the job editing form submission
         job.job_id = request.POST.get("job-id")
@@ -451,11 +418,9 @@ def editJob(request, job_id, recruiter_username):
         return render(request, 'edit_Job.html', {'job': job,"countries":countries, "cities":cities, "states":states})
 
 def deleteJob(request, job_id, recruiter_username):
-    job = get_object_or_404(Job, job_id=job_id, recruiter__user__username=recruiter_username)
+    job = get_object_or_404(Job, pk=job_id, recruiter__user__username=recruiter_username)
     job.delete()
     return redirect("recruiterDashboard")
-
-
 @csrf_exempt  
 @require_http_methods(["PUT"])
 def saved_candidate(request):
@@ -471,4 +436,3 @@ def saved_candidate(request):
         savedCa =SavedCandidate.objects.get(applicant = applicant_user ,recruiter = recruiter_user)
         savedCa.delete()
         return JsonResponse({"status": "success", "unsaved": 1}, status=200)
-    

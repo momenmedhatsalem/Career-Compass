@@ -56,24 +56,5 @@ function getElementValueById(id) {
   return element ? element.value : "";
 }
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    document.getElementById('deleteProfilePhoto').addEventListener('click', function() {
-        var deleteUrl = this.getAttribute("data-delete-url");
-        var csrfToken = "{{ csrf_token }}";
-
-        var deleteForm = document.createElement("form");
-        deleteForm.method = "POST";
-        deleteForm.action = deleteUrl;
-
-        var csrfInput = document.createElement("input");
-        csrfInput.type = "hidden";
-        csrfInput.name = "csrfmiddlewaretoken";
-        csrfInput.value = csrfToken;
-        deleteForm.appendChild(csrfInput);
-
-        document.body.appendChild(deleteForm);
-        deleteForm.submit();
-    });
-    });
 

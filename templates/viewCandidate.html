@@ -8,14 +8,13 @@
 <!-- <script src="{% static 'js/logout.js' %}"></script> -->
 <!-- <script src="{% static 'js/sidebar.js' %}"></script> -->
 <!-- <script src="{% static 'js/show_profile_info.js' %}"></script> -->
-<section class="J9_main" style="min-height: 34.5vh;">
-  {% if viewedCandidate %}
+<section class="J9_main">
   <div class="J9_AppliedCanProf_header">
-    <h1>{{viewedCandidate.user.first_name}} Profile</h1>
+    <h1>Your Profile</h1>
   </div>
 
   <div class="J9_AppliedCanProf_body">
-    <img class="J9_AppliedCanProf_pic" {% if viewedCandidate.user.photo %} src="{{viewedCandidate.user.photo.url}}" {% else %} src="{% static 'Editing.png' %}" {%endif%} alt="User Image">
+    <img class="J9_AppliedCanProf_pic" src="{% static 'Editing.png' %}" alt="User Image">
 
     <div>
       <div>
@@ -85,10 +84,6 @@
     </div>
 
   </div>
-  {% else %}
-  <h1>that is not a valid candidate</h1>
-
-  {% endif %}
 </section>
 </div>
 </div>
