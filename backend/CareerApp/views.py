@@ -79,6 +79,7 @@ def appliedjobs(request):
     user = Applicant.objects.get(user=request.user.id)
     applied_jobs = Application.objects.filter(applicant=user)
     print(applied_jobs)
+    #applied_jobs.delete()
 
     return render(request, "applied_jobs.html", {"jobs": applied_jobs})
 
@@ -172,7 +173,7 @@ def checkCandidates(request):
 @require_http_methods(["PUT"])
 def apply_to_job(request):
     data = json.loads(request.body)
-    job_id = data["job"]
+    id = data["job"]
     applicant_id = data["applicant"]
     job = Job.objects.get(id = id)
     applicant = Applicant.objects.get(user = applicant_id ) 
