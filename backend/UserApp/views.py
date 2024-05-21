@@ -127,32 +127,40 @@ from .models import Education,Experience
 def education(request):
     if request.method == 'POST':
         applicant_id = request.user.id
+        education_id = request.POST.get('education_id')  # Get the experience ID from the form
         title = request.POST.get('title')
         Academy = request.POST.get('Academy')
-        startDate = request.POST.get('startDate')  # Assuming date-parsing logic is handled
-        endDate = request.POST.get('endDate')  # Handle optional end date
+        start_date = request.POST.get('startDate')
+        end_date = request.POST.get('endDate')
         description = request.POST.get('description')
-        applicant = Applicant.objects.get(pk=applicant_id)  # Retrieve applicant
-        education = Education.objects.all().filter(applicant=applicant_id,title=title)
-
-        if education is None:
+        
+        try:
+            applicant = Applicant.objects.get(user=applicant_id)
+        except Applicant.DoesNotExist:
+            # Handle the case where the applicant does not exist
+            return redirect('error_page')  # Replace 'error_page' with your actual error page
+        if education_id:
+            # Update the existing experience
+            education = get_object_or_404(Education, id=education_id, applicant=applicant)
+            education.title = title
+            education.Academy = Academy
+            education.startDate = start_date
+            education.endDate = end_date
+            education.description = description
+        else:
+            # Create a new experience
             education = Education(
                 applicant=applicant,
                 title=title,
                 Academy=Academy,
-                startDate=startDate,
-                endDate=endDate,
-                description=description,
-        )
-        else:
-            education.Academy=Academy
-            education.startDate=startDate
-            education.endDate=endDate
-            education.description=description
+                startDate=start_date,
+                endDate=end_date,
+                description=description
+            )
 
-        # education.save()
-
-        return redirect('profile') 
+        education.save()
+        
+    return redirect('profile')  
 
 
 from django.shortcuts import render, redirect, get_object_or_404
@@ -175,7 +183,6 @@ def save_experience(request):
         except Applicant.DoesNotExist:
             # Handle the case where the applicant does not exist
             return redirect('error_page')  # Replace 'error_page' with your actual error page
-        print(experience_id)
         if experience_id:
             # Update the existing experience
             experience = get_object_or_404(Experience, id=experience_id, applicant=applicant)
