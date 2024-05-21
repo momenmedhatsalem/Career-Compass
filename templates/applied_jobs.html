@@ -6,6 +6,9 @@
 <section class="main">
     <div class="all-jobs">
       <!-- ------------------------------------------------------------------------------------------------------------ -->
+    {% if not applied_jobs %}
+      <h3>You have not applied to any Job</h3>
+      {% endif %}
       {% for applied_jobs in jobs %} 
       <div class="job" id="{{applied_jobs.job.id}}">
           <div class="desc">

@@ -6,6 +6,10 @@
 <section class="main">
     <div class="all-jobs">
       <!-- ------------------------------------------------------------------------------------------------------------ -->
+      {% if not saved_jobs %}
+      <h3>You don't have any saved Jobs</h3>
+      {% endif %}
+
       {% for saved_job in jobs %} 
       <div class="job" id="{{saved_job.job.job_id}}">
           <div class="desc">

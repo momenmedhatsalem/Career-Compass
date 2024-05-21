@@ -37,10 +37,16 @@
               alt="Education"><span>Education</span></button></li>
         <li><button onclick="manageTabs('j0_skills')"><img src="{% static 'skills.png' %}" alt="Skills"><span>Skills &
               Experience</span></button></li>
-        <li><button onclick="manageTabs('j0_saved')">
-            <a href="/saved_jobs/">
+        <li><button>
+            <a href="{% url 'saved_jobs' %}">
               <img src="{% static 'saved.png' %}" alt="Skills">
               <span>Saved jobs</span>
+            </a>
+          </button></li>
+        <li><button>
+            <a href="{% url 'applied_jobs' %}">
+              <img src="{% static 'check-mark.png' %}" alt="Skills">
+              <span>Applied jobs</span>
             </a>
           </button></li>
         <li><a href="{% url 'logout'%}"><span>Logout</span></a></li>
