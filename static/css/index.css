@@ -143,6 +143,12 @@ a {
   background-color: #00c853;
   color: #eee;
 }
+.J9_login_signup_find_post[id ~= "J9_post_job"]{
+  width: 10vw;
+}
+.J9_login_signup_find_post[id ~= "J9_look_for_a_job"]{
+  width: 12vw;
+}
 /* .J9_login_signup {
   grid-area: login_in_grid;
   width: 100%;
