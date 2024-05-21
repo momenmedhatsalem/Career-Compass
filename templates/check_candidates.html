@@ -50,13 +50,13 @@
                 </li>
                 {% endif %}
                 <li class="jobs">
-                  <ul class="jobs J9_scroll_area">
+                  <div class="jobs J9_scroll_area">
                     {% for application in applications %}
-                    {% if application.applicant.user.id == candidate.user.id %}
-                    <li class="job">{{ application.job.title }}</li>
+                    {% if application.applicant.user.id == candidate.user.id and application.job.recruiter.user == user %}
+                    <button class="job"><a href="{% url 'viewJob' job_id=application.job.id recruiter_username=application.job.recruiter.user.username %}">{{ application.job.title }}</a></button>
                     {% endif %}
                     {% endfor %}
-                  </ul>
+                  </div>
                 </li>
               </div>
                 {% if user.is_recruiter %}
