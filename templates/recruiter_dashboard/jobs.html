@@ -17,11 +17,11 @@
               {% for job, application_count in rec_jobs %}
               <tr class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row" id="J9_job{{job.job_id}}">
                   <td class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_title">
-                      <div>{{job.title}}</div>
+                      <div><a style="color:#ffa500;" href="{% url 'viewJob' job_id=job.job_id recruiter_username=job.recruiter.user.username %}">{{job.title}}</a></div>
                       <div>{{job.type}} . {{job.country}}</div>
                   </td>
                   <td>{{job.creation_date|date:"M d, Y, g:i a"}}</td>
-                  <td>{{application_count}} Applications</td>
+                  <td><a style="color:#000;" href="{% url 'checkCandidates' %}">{{application_count}} Applications</a></td>
                   <td>
                       <div
                       {% if job.status == "open" %}
@@ -37,12 +37,11 @@
                           <button class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button">
                           <span></span>
                           </button>
-                          <ul class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
-                          <li><a href="{% url 'viewJob' job_id=job.job_id recruiter_username=job.recruiter.user.username %}"><img src=" {% static "icons/eye.svg" %} ">View</a>
-                          </li>
-                          <li><a href="{% url "editJob" job_id=job.job_id recruiter_username=job.recruiter.user.username  %}" ><img src=" {% static "icons/edit.svg" %} ">Edit</a>
-                          </li>
+                          <ul style="display: none;" class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_ul">
+                          <li><a href="{% url 'viewJob' job_id=job.job_id recruiter_username=job.recruiter.user.username %}"><img src=" {% static "icons/eye.svg" %} ">View</a></li>
+                          <li><a href="{% url "editJob" job_id=job.job_id recruiter_username=job.recruiter.user.username  %}" ><img src=" {% static "icons/edit.svg" %} ">Edit</a></li>
                           <li><a onclick="J9_delete_job({{job.job_id}}, '{{job.recruiter.user.username}}')" href="#" ><img src=" {% static "icons/delete.svg" %} ">Delete</a></li>
+                          <li><a href="{% url 'checkCandidates' %}" ><img src=" {% static "icons/profile.svg" %} ">check Candidates</a></li>
                           </ul>
                       </div>
                   </td>
