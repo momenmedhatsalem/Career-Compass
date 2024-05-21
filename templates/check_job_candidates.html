@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}List of candidates{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/candidates_list.css' %}">
+
+  
+  <!-- ========== Joseph ========== -->
+  <section class="main">
+    <table>
+      <tr class="job">
+        <td class="candidates-column">
+          <ol class="candidate-list">
+            <!-- ------------------------------------------------------------------------------------ -->
+            {% for candidate,sav in saved.items %}
+            <li id="{{candidate.user.id}}" >
+              {% if sav == "saved" %}
+              <ul class="information" id="back{{candidate.user.id}}" style="background: linear-gradient(45deg, #f40f43, #ff8900, #ff003a);">
+              {% else %}
+              <ul class="information" id="back{{candidate.user.id}}" style="background: linear-gradient(-226deg, rgb(0, 255, 91), rgb(109, 235, 237), rgb(40, 199, 250));">
+              {% endif %}
+                <img {% if candidate.user.photo %} src="{{candidate.user.photo.url}}" {% else %} src="{% static 'media/images/default.jpg' %}" {% endif %} alt="User Image"  onclick="window.location.href='{% url "viewCandidate" candidate.user.username  %}'" title="view details" class="img-person" style="display: inline-block;">
+                <li class="person-name" onclick="window.location.href='{% url "viewCandidate" candidate.user.username  %}'" >  {{candidate.user.first_name}} </li>
+                <div class="J9_fixed_height">
+
+                  {% if candidate.city  and candidate.country and candidate.city != "None" and candidate.country != "None"%}
+                  <li>
+                    <table class="Salary-location-table">
+                      <tr class="Salary-location-table-values">
+                        <td class="Location-value">{{candidate.city}}, {{candidate.country}}</td>
+                      </tr>
+                    </table>
+                  </li>
+                  {% elif candidate.city and candidate.city != "None" %}
+                <li>
+                  <table class="Salary-location-table">
+                    <tr class="Salary-location-table-values">
+                      <td class="Location-value">{{candidate.city}}</td>
+                    </tr>
+                  </table>
+                </li>
+                {% elif candidate.country and candidate.country != "None" %}
+                <li>
+                  <table class="Salary-location-table">
+                    <tr class="Salary-location-table-values">
+                      <td class="Location-value">{{candidate.country}}</td>
+                    </tr>
+                  </table>
+                </li>
+                {% endif %}
+                <li class="jobs">
+                  <div class="jobs J9_scroll_area">
+                    {% for application in applications %}
+                    {% if application.applicant.user.id == candidate.user.id and application.job.recruiter.user == user %}
+                    <button class="job"><a href="{% url 'viewJob' job_id=application.job.id recruiter_username=application.job.recruiter.user.username %}">{{ application.job.title }}</a></button>
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                </li>
+              </div>
+                {% if user.is_recruiter %}
+                <li class="buttons-list">
+                  <div class="save-button-div">
+                    {% if sav == "saved" %}
+                    <button class="save-button "  id="save_button{{candidate.user.id}}" onclick="save(`{{candidate.user.id}}`)" id="x{{candidate.user.id}}" > UnSave </button>
+                    {% else %}
+                    <button class="save-button "  id="save_button{{candidate.user.id}}" onclick="save(`{{candidate.user.id}}`)" id="x{{candidate.user.id}}" > Save </button>
+                    {% endif %}
+                  </div>
+                </li>
+                {% endif %}
+              </ul>
+            </li>
+            {% endfor %}
+            <!-- --------------------------------------------------------------------------------------- -->
+            <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+          </ol>
+
+        </td>
+      </tr>
+    </table>
+    </div>
+    <div>
+  </section>
+
+<script src="{% static 'js/check_candidates.js' %}"></script>
+
+{% endblock %}

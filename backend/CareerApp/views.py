@@ -195,6 +195,27 @@ def checkCandidates(request):
     return render(request, "check_candidates.html",{"candidates":all_candidates,"applications":all_applications,"saved":is_saved })
 
 
+def checkJobCandidates(request, job_id, recruiter_username):
+    job = get_object_or_404(Job, job_id=job_id, recruiter__user__username=recruiter_username)
+
+    all_Job_applications = Application.objects.all().filter(job = job)
+    all_job_candidates = []
+    for application in all_Job_applications:
+        all_job_candidates.append(application.applicant)
+    all_saved_candidates = SavedCandidate.objects.filter(recruiter = request.user.id)
+    is_saved = dict()
+    for candidate in all_job_candidates:
+        saved = False
+        for saved_cand in all_saved_candidates:
+            if candidate.user.id == saved_cand.applicant.user.id:
+                saved = True
+                break
+        if saved :
+            is_saved[candidate]= "saved"
+        else:
+            is_saved[candidate]= "unsave"
+    return render(request, "check_job_candidates.html",{"candidates":all_job_candidates,"applications":all_Job_applications,"saved":is_saved })
+
 
 def Confirmation(request):
     return render(request, "Confirmation.html")
