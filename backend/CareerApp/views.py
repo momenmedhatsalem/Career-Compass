@@ -432,6 +432,7 @@ def saveRecSettings(request):
 def viewJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, job_id=job_id, recruiter__user__username=recruiter_username)
     saved = False
+    applied = False
     if request.user.is_authenticated :
         if request.user.is_applicant: 
             all_saved_jobs = SavedJob.objects.all()
@@ -439,10 +440,17 @@ def viewJob(request, job_id, recruiter_username):
                 if j.job.job_id == job_id and j.applicant.user.username == request.user.username :
                     saved = True
                     break
+            try:
+                applicant = Applicant.objects.get(user=request.user)
+                applied_job = Application.objects.get(job=job, applicant=applicant)
+                applied = True
+            except Application.DoesNotExist:
+                applied = False
+
     if saved :
-        return render(request, 'Job_Details.html', {'job': job,'saved':1})
+        return render(request, 'Job_Details.html', {'job': job,'saved':1, 'applied':applied})
     else:
-        return render(request, 'Job_Details.html', {'job': job,'saved':0})
+        return render(request, 'Job_Details.html', {'job': job,'saved':0, 'applied':applied})
 
 def editJob(request, job_id, recruiter_username):
     job = get_object_or_404(Job, job_id=job_id, recruiter__user__username=recruiter_username)

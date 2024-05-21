@@ -170,7 +170,7 @@
       <p>January 1, 2025</p>
     </div> {% endcomment %}
 
-    {% if user.is_applicant %}
+    {% if user.is_applicant and not applied %}
     <button class="apply_button" onclick="confirmApplication({{job.id}},{{user.id}})">Apply</button>
     {% elif user.is_recruiter and job.recruiter.user.username == user.username%}
     <a class="J9_edit_button" href="{% url "editJob" job_id=job.job_id recruiter_username=job.recruiter.user.username  %}" >Edit</a>
