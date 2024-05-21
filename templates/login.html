@@ -6,6 +6,14 @@
  <section class="main">
     <h1>Log In</h1>
     <div>
+          <!-- Display messages -->
+    {% if error_message %}
+        <ul class="messages">
+            
+                <li >{{ error_message }}</li>
+            
+        </ul>
+    {% endif %}
       <form class="loginform" method="post" action="{% url 'login' %}">
                 {% csrf_token %}
         <div>

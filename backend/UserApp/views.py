@@ -6,9 +6,12 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 
-from django.shortcuts import render, redirect, reverse
+
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
-from django.contrib.auth import authenticate, login
+from django.urls import reverse
+from django.contrib.auth import get_user_model, authenticate, login
+from django.contrib import messages
 from .models import Applicant, Recruiter
 
 def signup(request, mode):
@@ -23,36 +26,43 @@ def signup(request, mode):
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         password1 = request.POST.get('password')
+        password2 = request.POST.get('confirmpass')
 
-        if mode == "applicant":
-            user = get_user_model().objects.create_user(username=username,
-                                                  email=email, phone=phone, password=password1,
-                                                  first_name=first_name, last_name=last_name, 
-                                                  is_applicant=True)
-            Applicant.objects.create(user=user)
-        elif mode == "recruiter":
-            user = get_user_model().objects.create_user(username=username,
-                                                    email=email, phone=phone, password=password1,
-                                                    first_name=first_name, last_name=last_name, 
-                                                    is_recruiter=True)
-            company_name = request.POST.get('company_name')
-            user = Recruiter.objects.create(user=user, company_name=company_name)
-        
+        if password1 != password2:
+            messages.error(request, "Passwords do not match.")
+            return render(request, 'signup.html' if mode == "applicant" else 'recruitersignup.html')
+
+        try:
+            if mode == "applicant":
+                user = get_user_model().objects.create_user(username=username,
+                                                            email=email, phone=phone, password=password1,
+                                                            first_name=first_name, last_name=last_name, 
+                                                            is_applicant=True)
+                Applicant.objects.create(user=user)
+            elif mode == "recruiter":
+                user = get_user_model().objects.create_user(username=username,
+                                                            email=email, phone=phone, password=password1,
+                                                            first_name=first_name, last_name=last_name, 
+                                                            is_recruiter=True)
+                company_name = request.POST.get('company_name')
+                Recruiter.objects.create(user=user, company_name=company_name)
+        except Exception as e:
+            if 'unique' in str(e).lower():
+                messages.error(request, "Username or email already taken.")
+            else:
+                messages.error(request, "An error occurred: " + str(e))
+            return render(request, 'signup.html' if mode == "applicant" else 'recruitersignup.html')
+
         # Log in the user after signup
         user = authenticate(username=email, password=password1)
         if user is not None:
             login(request, user, backend='UserApp.authentication.EmailAuthenticationBackend')
             return redirect('profile') if mode == "applicant" else redirect('recruiterDashboard')
         else:
-            # Handle authentication failure
-            return HttpResponse("Authentication failed")
-
+            messages.error(request, "Authentication failed.")
+            return render(request, 'signup.html' if mode == "applicant" else 'recruitersignup.html')
     else:
-        if mode == "applicant":
-            return render(request, 'signup.html')
-        elif mode == "recruiter":
-            return render(request, 'recruitersignup.html')
-
+        return render(request, 'signup.html' if mode == "applicant" else 'recruitersignup.html')
 
 
 from django.shortcuts import render, redirect
@@ -63,10 +73,10 @@ def login_user(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-        print("logg")
+        
         # Authenticate user
         user = authenticate(username=email, password=password)
-        print("user" ,user)
+        
         if user is not None:
             login(request, user, backend='UserApp.authentication.EmailAuthenticationBackend')
             return redirect('profile')  

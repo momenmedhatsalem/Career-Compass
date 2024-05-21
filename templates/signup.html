@@ -10,6 +10,14 @@
 
     <h1>Sign Up</h1>
     <div>
+          <!-- Display messages -->
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
       <form class="signupform" method="post" action="{% url 'signup' 'applicant' %}">
         {% csrf_token %}
         <div>
