@@ -14,14 +14,14 @@
           </thead>
           <tbody id="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body"
               class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body">
-              {% for job in rec_jobs %}
+              {% for job, application_count in rec_jobs %}
               <tr class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row" id="J9_job{{job.job_id}}">
                   <td class="J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_title">
                       <div>{{job.title}}</div>
                       <div>{{job.type}} . {{job.country}}</div>
                   </td>
                   <td>{{job.creation_date|date:"M d, Y, g:i a"}}</td>
-                  <td class="J9_randomNumberOfApplications"></td>
+                  <td>{{application_count}} Applications</td>
                   <td>
                       <div
                       {% if job.status == "open" %}

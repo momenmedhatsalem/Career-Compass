@@ -45,8 +45,14 @@ def recruiterDashboard(request):
         rec = Recruiter.objects.get(user=request.user)
     # rec_jobs = Job.objects.all().order_by('-creation_date')
     rec_jobs = Job.objects.all().filter(recruiter=rec).order_by('creation_date')
-    candidates = SavedCandidate.objects.filter(recruiter = request.user.id)
+        # Create a list to store jobs and their application counts
+    jobs_with_application_counts = [
+        (job, Application.objects.filter(job=job).count()) for job in rec_jobs
+    ]
+    rec_jobs = jobs_with_application_counts
     applications = Application.objects.all()
+
+    candidates = SavedCandidate.objects.filter(recruiter = request.user.id)
     jobs = dict()
     for can in candidates:
         jobs[can]= set()

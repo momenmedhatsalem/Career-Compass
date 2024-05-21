@@ -1,6 +1,6 @@
 //delete job
 function remove(num){
-    let response = window.confirm("Are you sure you want to unsaved this job?");
+    let response = window.confirm("Are you sure you want to unsave this job?");
     if (response){
         const url = '/receive_job_to_save_it/'; 
         const data = {

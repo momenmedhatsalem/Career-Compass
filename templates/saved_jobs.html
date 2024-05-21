@@ -17,7 +17,7 @@
             <div class="salary"> ${{saved_job.job.MinSalary}} - {{saved_job.job.MaxSalary}} / {{saved_job.job.salary}}</div>
             <div class="city"> {{saved_job.job.city}}, {{saved_job.job.country}}</div>
             <div class="description">{{saved_job.job.description}} </div>  
-            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="{{saved_job.job.job_id}}">unsaved</button> 
+            <button type="button" value="Delete" class="delete-button" onclick="remove(name)" name="{{saved_job.job.job_id}}">unsave</button> 
             <a  href="{% url 'viewJob' job_id=saved_job.job.job_id recruiter_username=saved_job.job.recruiter.user.username %}" class="view-ancor"> <button type="button" class="view-button"  value="view" name="{{saved_job.job.job_id}}" onclick="view(name)">view</button></a>
         </div>
         </div>
