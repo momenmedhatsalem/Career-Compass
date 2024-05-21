@@ -214,7 +214,7 @@ def checkJobCandidates(request, job_id, recruiter_username):
             is_saved[candidate]= "saved"
         else:
             is_saved[candidate]= "unsave"
-    return render(request, "check_job_candidates.html",{"candidates":all_job_candidates,"applications":all_Job_applications,"saved":is_saved })
+    return render(request, "check_candidates.html",{"candidates":all_job_candidates,"applications":all_Job_applications,"saved":is_saved })
 
 
 def Confirmation(request):
