@@ -186,7 +186,7 @@ def save_experience(request):
                 
         try:
             experience = Experience.objects.get(applicant=applicant_id, title=title)
-        except Education.DoesNotExist:
+        except Experience.DoesNotExist:
             experience = Experience(
                 applicant=get_object_or_404(Applicant, user_id=applicant_id),
                 title=title,
