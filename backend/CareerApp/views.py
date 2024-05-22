@@ -115,6 +115,7 @@ def receive_job_to_save_it(request):
     try:
         data = json.loads(request.body)
         id_for_job =data['id_for_job_will_save']
+        print(data)
         action = data['action']
         jobs = SavedJob.objects.all()
         retrieve_job = Job.objects.get(id = id_for_job)

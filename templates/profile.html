@@ -401,7 +401,7 @@
           <div id="accordion-container-skills">
             {% for experience in experiences %}
             <div class="j0-skills-accordion">
-              <div class="j0-accordion-header">"{{ experience.title }}" <span style="float: right;">^</span>
+              <div class="j0-accordion-header">{{ experience.title }} <span style="float: right;">^</span>
               </div>
               <div class="j0-accordion-content" style="display: none;"><label for="title">Title*</label>
                 <input type="hidden" name="experience_id" value="{{ experience.id }}">
