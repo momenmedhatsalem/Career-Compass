@@ -258,6 +258,7 @@
    flex-direction: row;
    margin: auto;
    flex-basis: 200;
+   margin-right: 6rem;
 }
 
 .M7-about-p11 {
@@ -305,7 +306,7 @@
 
     margin-left: 5rem;
 
-    margin-right: 10rem;
+    margin-right: 5rem;
 
     
 }
