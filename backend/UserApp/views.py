@@ -122,46 +122,12 @@ def upload_resume(request):
         applicant.save()
         return redirect('profile') 
 
-from .models import Education,Experience
-@login_required
-def education(request):
-    if request.method == 'POST':
-        applicant_id = request.user.id
-        education_id = request.POST.get('education_id')  # Get the experience ID from the form
-        title = request.POST.get('title')
-        Academy = request.POST.get('Academy')
-        start_date = request.POST.get('startDate')
-        end_date = request.POST.get('endDate')
-        description = request.POST.get('description')
-        
-        try:
-            applicant = Applicant.objects.get(user=applicant_id)
-        except Applicant.DoesNotExist:
-            # Handle the case where the applicant does not exist
-            return redirect('error_page')  # Replace 'error_page' with your actual error page
-        if education_id:
-            # Update the existing experience
-            education = get_object_or_404(Education, id=education_id, applicant=applicant)
-            education.title = title
-            education.Academy = Academy
-            education.startDate = start_date
-            education.endDate = end_date
-            education.description = description
-        else:
-            # Create a new experience
-            education = Education(
-                applicant=applicant,
-                title=title,
-                Academy=Academy,
-                startDate=start_date,
-                endDate=end_date,
-                description=description
-            )
 
-        education.save()
-        
-    return redirect('profile')  
 
+
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from .models import Applicant, Experience
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
@@ -171,18 +137,15 @@ from .models import Applicant, Experience
 def save_experience(request):
     if request.method == 'POST':
         applicant_id = request.user.id
-        experience_id = request.POST.get('experience_id')  # Get the experience ID from the form
+        experience_id = request.POST.get('experience_id')
         title = request.POST.get('title')
         company = request.POST.get('Company')
         start_date = request.POST.get('startDate')
         end_date = request.POST.get('endDate')
         description = request.POST.get('description')
         
-        try:
-            applicant = Applicant.objects.get(user=applicant_id)
-        except Applicant.DoesNotExist:
-            # Handle the case where the applicant does not exist
-            return redirect('error_page')  # Replace 'error_page' with your actual error page
+        applicant = get_object_or_404(Applicant, user_id=applicant_id)
+        
         if experience_id:
             # Update the existing experience
             experience = get_object_or_404(Experience, id=experience_id, applicant=applicant)
@@ -204,5 +167,4 @@ def save_experience(request):
 
         experience.save()
         
-    return redirect('profile')  
-
+    return redirect('profile')
