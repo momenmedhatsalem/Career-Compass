@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then((data) => {
           if (data.exists) {
-            alert("The job ID already exists for this recruiter.");
+            alert("The job ID already exists for you.");
           } else {
             alert("Job posted successfully.");
             form.reset(); // Optionally reset the form here

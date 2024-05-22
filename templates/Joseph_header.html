@@ -4,7 +4,7 @@
 <header class="J9_header" style="background-color: #ccc;">
 
 
-  <a href="/index" class="J9_header_logo">
+  <a href="{% url "jobs" %}" class="J9_header_logo">
     <img class="J9_header_logo" src="{% static 'images/logopng.png' %}" width="100px" />
   </a>
 
@@ -15,18 +15,18 @@
       </li>
 
       <li class="J9_nav_ul_item_in_header">
-        <a href="/jobs">Jobs</a>
+        <a href="{% url "jobs" %}">Jobs</a>
       </li>
 
       <li class="J9_nav_ul_item_in_header J9_explore">
         <a href="#">Explore</a>
         <div class="J9_explore_cols">
           <div class="J9_explore_col">
-            <a href="/index">Home</a>
+            <a href="{% url "index" %}">Home</a>
           </div>
 
           <div class="J9_explore_col">
-            <a href="/about">About Us</a>
+            <a href="{% url "search" %}">Search</a>
           </div>
 
           <div class="J9_explore_col">
@@ -51,7 +51,7 @@
       </li>
 
       <li class="J9_nav_ul_item_in_header">
-        <a href="/about">About Us</a>
+        <a href="{% url "about" %}">About Us</a>
       </li>
 
     </ul>

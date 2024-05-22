@@ -20,7 +20,7 @@
               {% else %}
               <ul class="information" id="back{{candidate.user.id}}" style="background: linear-gradient(-226deg, rgb(0, 255, 91), rgb(109, 235, 237), rgb(40, 199, 250));">
               {% endif %}
-                <img {% if candidate.user.photo %} src="{{candidate.user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %} alt="User Image"  onclick="window.location.href='{% url "viewCandidate" candidate.user.username  %}'" title="view details" class="img-person" style="display: inline-block;">
+                <img {% if candidate.user.photo %} src="{{candidate.user.photo.url}}" {% else %} src="{% static 'media/images/default.jpg' %}" {% endif %} alt="User Image"  onclick="window.location.href='{% url "viewCandidate" candidate.user.username  %}'" title="view details" class="img-person" style="display: inline-block;">
                 <li class="person-name" onclick="window.location.href='{% url "viewCandidate" candidate.user.username  %}'" >  {{candidate.user.first_name}} </li>
                 <div class="J9_fixed_height">
 

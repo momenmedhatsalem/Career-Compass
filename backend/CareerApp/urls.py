@@ -17,6 +17,8 @@ urlpatterns = [
     path("jobs/", view=views.jobs, name="jobs"),
     path("index/", view=views.index, name="index"),
     path("checkCandidates/", view=views.checkCandidates, name="checkCandidates"),
+    # path("checkJobCandidates/<int:job_id>/<str:recruiter_username>/", view=views.checkJobCandidates, name="checkJobCandidates"),
+    path("check/<str:recruiter_username>/appliedCandidatesForJob/<int:job_id>/", view=views.checkJobCandidates, name="checkJobCandidates"),
     path("edit_Job/", view=views.edit_Job, name="edit_Job"),
     path('save_recruiter_profile/', views.save_recruiter_profile, name='save_recruiter_profile'),
     path("receive_job_to_save_it/", view=views.receive_job_to_save_it, name="receive_job_to_save_it"), 

@@ -74,6 +74,7 @@
 
 .J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots {
   float: right;
+  position: relative;
 }
 
 .J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button {
@@ -91,7 +92,7 @@
   height: 4px;
   border-radius: 50%;
   background: rgba(43, 43, 43, 0.35);
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button
@@ -109,7 +110,7 @@
   border: none;
   border-radius: 50%;
   background: rgba(43, 43, 43, 0.35);
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_button
@@ -131,6 +132,7 @@
   box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
   justify-items: start;
+  left: -13vw;
 }
 
 .J9_emp_dash_jobs_right_side_body_emp_jobs_table_body_row_action_dots a {
