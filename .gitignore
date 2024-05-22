@@ -1,4 +1,4 @@
 
 .Joseph
 venv
-db.sqlite3
+.venv
