@@ -5,3 +5,5 @@ db.sqlite3
 /backend/backend/__pycache__
 /backend/CareerApp/__pycache__
 /backend/UserApp/migrations/__pycache__
+/backend/UserApp/migrations/__pycache__
+/backend/UserApp/__pycache__
