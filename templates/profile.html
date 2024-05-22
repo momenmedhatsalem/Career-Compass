@@ -362,36 +362,35 @@
 
 
       <!-- education -->
-      <div class="tab" id="j0_education">
-        <h4 class="j0-title-three"> Education</h4>
-        <form method="post" action="{% url 'education' %}">
-          {% csrf_token %}
-          <div id="accordion-container-edu">
-            {% for education in educations %}
-            <div class="j0_edu-accordion">
-              <div class="j0-accordion-header">"{{ education.title }}" <span style="float: right;">^</span>
-              </div>
-              <div class="j0-accordion-content" style="display: none;"><label for="title">Title*</label>
-                <input type="text" name="title" placeholder="Product designer(google)" value="{{ education.title }}">
-                <label for="Academy">Academy*</label>
-                <input type="text" name="Academy" placeholder="Google Arts Collage &amp; University"
-                  value="{{ education.Academy }}">
-                <label for="startDate">Start Year*</label>
-                <input type="number" name="startDate" placeholder="2022" value="{{ education.startDate }}">
-                <label for="endDate">End Year*</label>
-                <input type="number" name="endDate" placeholder="2026" value="{{ education.endDate }}">
-                <label for="description">Subject*</label>
-                <textarea name="description" placeholder="Write something.."
-                  style="height: 200px;">"{{ education.description }}"</textarea>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-          <button type="submit">submit</button>
-        </form>
-        <button id="j0-edu-btn" class="j0_btn">+ Add more</button>
+<!-- education -->
+<div class="tab" id="j0_education">
+  <h4 class="j0-title-three"> Education</h4>
+  <form method="post" action="{% url 'education' %}">
+    {% csrf_token %}
+    <div id="accordion-container-education">
+      {% for education in educations %}
+      <div class="j0-education-accordion">
+        <div class="j0-accordion-header">{{ education.title }} <span style="float: right;">^</span></div>
+        <div class="j0-accordion-content" style="display: none;">
+          <input type="hidden" name="education_id" value="{{ education.id }}">
+          <label for="title">Title*</label>
+          <input required type="text" name="title" placeholder="Bachelor of Science" value="{{ education.title }}">
+          <label for="Academy">Academy*</label>
+          <input required type="text" name="Academy" placeholder="Harvard University" value="{{ education.Academy }}">
+          <label for="startDate">Start Year*</label>
+          <input required type="number" name="startDate" placeholder="2018" value="{{ education.startDate }}">
+          <label for="endDate">End Year*</label>
+          <input required type="number" name="endDate" placeholder="2022" value="{{ education.endDate }}">
+          <label for="description">Description*</label>
+          <textarea name="description" placeholder="Write something.." style="height: 200px;">{{ education.description }}</textarea>
+        </div>
       </div>
-
+      {% endfor %}
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <button id="j0-education-btn" class="j0_btn">+ Add more</button>
+</div>
 
 <!-- experience -->
 <div class="tab" id="j0_skills">

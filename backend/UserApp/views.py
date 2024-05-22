@@ -122,7 +122,42 @@ def upload_resume(request):
         applicant.save()
         return redirect('profile') 
 
+from .models import Education,Experience
+@login_required
+def education(request):
+    if request.method == 'POST':
+        applicant_id = request.user.id
+        education_id = request.POST.get('education_id')
+        title = request.POST.get('title')
+        academy = request.POST.get('Academy')
+        start_date = request.POST.get('startDate')
+        end_date = request.POST.get('endDate')
+        description = request.POST.get('description')
+        
+        applicant = get_object_or_404(Applicant, user_id=applicant_id)
+        
+        if education_id:
+            # Update the existing education
+            education = get_object_or_404(Education, id=education_id, applicant=applicant)
+            education.title = title
+            education.Academy = academy
+            education.startDate = start_date
+            education.endDate = end_date
+            education.description = description
+        else:
+            # Create a new education
+            education = Education(
+                applicant=applicant,
+                title=title,
+                Academy=academy,
+                startDate=start_date,
+                endDate=end_date,
+                description=description
+            )
 
+        education.save()
+        
+    return redirect('profile')
 
 
 from django.shortcuts import render, redirect, get_object_or_404
