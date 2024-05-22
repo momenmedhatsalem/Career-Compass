@@ -172,31 +172,18 @@ from .models import Applicant, Experience
 def save_experience(request):
     if request.method == 'POST':
         applicant_id = request.user.id
-<<<<<<< HEAD
-        # experience_id = request.POST.get('experience_id')  # Get the experience ID from the form
-=======
         experience_id = request.POST.get('experience_id')
->>>>>>> 5ee51c6f7f3e7bebe0742d285801426793d08177
         title = request.POST.get('title')
         company = request.POST.get('Company')
         start_date = request.POST.get('startDate')
         end_date = request.POST.get('endDate')
         description = request.POST.get('description')
         
-<<<<<<< HEAD
-        try:
-            applicant = Applicant.objects.get(user=applicant_id)
-        except Applicant.DoesNotExist:
-            # Handle the case where the applicant does not exist
-            return redirect('error_page')  # Replace 'error_page' with your actual error page
-        experience_id= Experience.objects.filter(applicant=applicant_id , title = title)
-=======
         applicant = get_object_or_404(Applicant, user_id=applicant_id)
         
->>>>>>> 5ee51c6f7f3e7bebe0742d285801426793d08177
         if experience_id:
             # Update the existing experience
-            # experience = get_object_or_404(Experience, id=experience_id, applicant=applicant)
+            experience = get_object_or_404(Experience, id=experience_id, applicant=applicant)
             experience.title = title
             experience.Company = company
             experience.startDate = start_date
