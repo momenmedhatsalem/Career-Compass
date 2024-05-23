@@ -169,9 +169,6 @@ def save_experience(request):
             return redirect('profile')
         
 
-        if description == "del":
-            Experience.objects.filter(applicant=applicant_id, title=title).delete()
-            return redirect('profile')  
                 
         try:
             experience = Experience.objects.get(applicant=applicant_id, title=title)
