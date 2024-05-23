@@ -105,12 +105,11 @@ def viewCandidate(request, candidate_username):
 
 
 
-# from django.shortcuts import render, redirect
-# from django.http import HttpResponseBadRequest, JsonResponse
-from django.contrib.auth.decorators import login_required
-# from .models import Resume
 
-# views.py
+from django.contrib.auth.decorators import login_required
+
+
+
 from django.shortcuts import render
 @login_required
 def upload_resume(request):
@@ -132,7 +131,8 @@ def education(request):
         start_date = request.POST.get('startDate')
         end_date = request.POST.get('endDate')
         description = request.POST.get('description')
-
+        if not title:
+            return redirect('profile')
         if description == "del":
             Education.objects.filter(applicant=applicant_id, title=title).delete()
             return redirect('profile')  
@@ -166,10 +166,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Applicant, Experience
 
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from .models import Applicant, Experience
-
 @login_required
 def save_experience(request):
     if request.method == 'POST':
@@ -179,7 +175,10 @@ def save_experience(request):
         start_date = request.POST.get('startDate')
         end_date = request.POST.get('endDate')
         description = request.POST.get('description')
+        if not title:
+            return redirect('profile')
         
+
         if description == "del":
             Experience.objects.filter(applicant=applicant_id, title=title).delete()
             return redirect('profile')  
