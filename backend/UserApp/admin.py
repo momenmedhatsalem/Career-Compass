@@ -1,14 +1,12 @@
 from django.contrib import admin
 from .models import Applicant, Recruiter,CustomUser
 
-# Define custom admin classes for Applicant and Recruiter models
 class ApplicantAdmin(admin.ModelAdmin):
-    list_display = ('user', 'bio', 'resume')  # Specify fields to display in the list view
+    list_display = ('user', 'bio', 'resume') 
 
 class RecruiterAdmin(admin.ModelAdmin):
-    list_display = ('user', 'company_name', 'about_company', 'website')  # Specify fields to display in the list view
+    list_display = ('user', 'company_name', 'about_company', 'website')  
 
-# Register the models and their corresponding admin classes
 admin.site.register(Applicant, ApplicantAdmin)
 admin.site.register(Recruiter, RecruiterAdmin)
 admin.site.register(CustomUser)

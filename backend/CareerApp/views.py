@@ -128,19 +128,7 @@ def receive_job_to_save_it(request):
         return JsonResponse({"status": "success", "data_received": data}, status=200)
     except json.JSONDecodeError:
         return JsonResponse({"status": "error", "message": "Invalid JSON"}, status=400)
-    # if request.method == "POST" and request.is_ajax():
-    #     data_received = request.POST
-    #     job_id = data_received.get("id")
-    #     selected_job = Job.objects.filter(job_id=job_id)
-    #     SavedJob.objects.create(
-    #         Applicant=Applicant.objects.get(user=request.user), job=selected_job
-    #     )
 
-    #     # Return a JSON response
-    #     response_data = {"message": "Data received successfully"}
-    #     return JsonResponse(response_data)
-    # else:
-    #     return JsonResponse({"error": "Invalid request"})
 
 
 def about(request):
@@ -167,15 +155,7 @@ def jobs(request):
                     other_jobs.append(j)
             return render(request, "list_of_jobs.html", {"other_jobs": other_jobs , "saved_jobs":saved_jobs})
     return render(request, "list_of_jobs.html", {"jobs": jobs })
-    # # if request.user is Applicant :
-    #     sjobs = SavedJob.objects.all().filter(applicant = request.user)
-    #     print(sjobs)
-    #     # jobs = Job.objects.all()
-    #     # print(jobs)
-    #     return render(request, "list_of_jobs.html", {"jobs": jobs,"saved_jobs":sjobs})
-    # # else:
-    #     jobs = Job.objects.all()
-    #     return render(request, "list_of_jobs.html", {"jobs": jobs})
+
 
 
 def checkCandidates(request):
@@ -314,8 +294,7 @@ def delete_profile_photo(request):
 
 
 
-# def viewCandidate(request):
-#     return render(request, "viewCandidate.html")
+
 
 @csrf_exempt
 def filter_search(request):
@@ -364,7 +343,7 @@ def filter_search(request):
     #if the method is not 'POST' we just render the same page
     return render(request, "search.html")
 
-                        #     Thank You very much ^^
+                        
 
 def login(request):
     return render(request, "login.html")
@@ -390,7 +369,7 @@ def save_recruiter_profile(request):
         # Create a new instance of MyModel and set the values
         if profile_photo:
             current_user.photo = profile_photo
-            print("heere")
+            
         rec.website = request.POST.get("rec_website")
         rec.founded_date = request.POST.get("founded_date")
         rec.company_size = request.POST.get("company_size")
@@ -402,7 +381,7 @@ def save_recruiter_profile(request):
         rec.city = request.POST.get("city")
         rec.zip_code = request.POST.get("zip_code")
         rec.state = request.POST.get("state")
-        # rec.user.save()
+        
         current_user.save()
         rec.save()
     return redirect("recruiterDashboard")
