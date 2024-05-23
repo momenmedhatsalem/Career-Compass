@@ -1,18 +1,11 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login
 from .models import CustomUser, Applicant, Recruiter
 from django.http import HttpResponseRedirect
-from django.urls import reverse
-from django.contrib.auth import get_user_model
 
-
-from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth import get_user_model, authenticate, login
 from django.contrib import messages
-from .models import Applicant, Recruiter
+
 
 def signup(request, mode):
     if mode not in ["applicant", "recruiter"]:
@@ -66,8 +59,7 @@ def signup(request, mode):
 
 
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
-from .models import CustomUser, Applicant, Recruiter
+
 
 def login_user(request):
     if request.method == 'POST':
@@ -90,7 +82,6 @@ def login_user(request):
         return render(request, 'login.html')
 
 from django.contrib.auth import logout
-from django.shortcuts import redirect
 
 def logout_user(request):
     logout(request)  # Log out the user
@@ -110,7 +101,6 @@ from django.contrib.auth.decorators import login_required
 
 
 
-from django.shortcuts import render
 @login_required
 def upload_resume(request):
     if request.method == 'POST' and request.FILES['resumeFile'] is not None:

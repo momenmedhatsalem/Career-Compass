@@ -38,7 +38,7 @@ class Applicant(models.Model):
         verbose_name_plural = 'Applicants'
 
     def __str__(self):
-        return self.user.email  # Accessing the email address of the associated user
+        return self.user.email  
 
 
 class Education (models.Model):
@@ -95,5 +95,5 @@ class Recruiter(models.Model):
         verbose_name_plural = 'Recruiters'
 
     def __str__(self):
-        return self.user.email  # Accessing the email address of the associated user
+        return self.user.email 
 
