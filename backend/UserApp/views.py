@@ -127,27 +127,23 @@ from .models import Education,Experience
 def education(request):
     if request.method == 'POST':
         applicant_id = request.user.id
-        education_id = request.POST.get('education_id')
         title = request.POST.get('title')
         academy = request.POST.get('Academy')
         start_date = request.POST.get('startDate')
         end_date = request.POST.get('endDate')
         description = request.POST.get('description')
-        
-        applicant = get_object_or_404(Applicant, user_id=applicant_id)
-        
-        if education_id:
-            # Update the existing education
-            education = get_object_or_404(Education, id=education_id, applicant=applicant)
-            education.title = title
-            education.Academy = academy
-            education.startDate = start_date
-            education.endDate = end_date
-            education.description = description
-        else:
-            # Create a new education
+
+        if description == "del":
+            Education.objects.filter(applicant=applicant_id, title=title).delete()
+            return redirect('profile')  
+
+        try:
+            # Attempt to get a single education object for update
+            education = Education.objects.get(applicant=applicant_id, title=title)
+        except Education.DoesNotExist:
+            # Education not found, create a new one
             education = Education(
-                applicant=applicant,
+                applicant=get_object_or_404(Applicant, user_id=applicant_id),
                 title=title,
                 Academy=academy,
                 startDate=start_date,
@@ -155,9 +151,15 @@ def education(request):
                 description=description
             )
 
+        education.title = title
+        education.Academy = academy
+        education.startDate = start_date
+        education.endDate = end_date
+        education.description = description
         education.save()
-        
-    return redirect('profile')
+
+        return redirect('profile')
+
 
 
 from django.shortcuts import render, redirect, get_object_or_404
@@ -172,34 +174,32 @@ from .models import Applicant, Experience
 def save_experience(request):
     if request.method == 'POST':
         applicant_id = request.user.id
-        experience_id = request.POST.get('experience_id')
         title = request.POST.get('title')
         company = request.POST.get('Company')
         start_date = request.POST.get('startDate')
         end_date = request.POST.get('endDate')
         description = request.POST.get('description')
         
-        applicant = get_object_or_404(Applicant, user_id=applicant_id)
-        
-        if experience_id:
-            # Update the existing experience
-            experience = get_object_or_404(Experience, id=experience_id, applicant=applicant)
-            experience.title = title
-            experience.Company = company
-            experience.startDate = start_date
-            experience.endDate = end_date
-            experience.description = description
-        else:
-            # Create a new experience
+        if description == "del":
+            Experience.objects.filter(applicant=applicant_id, title=title).delete()
+            return redirect('profile')  
+                
+        try:
+            experience = Experience.objects.get(applicant=applicant_id, title=title)
+        except Experience.DoesNotExist:
             experience = Experience(
-                applicant=applicant,
+                applicant=get_object_or_404(Applicant, user_id=applicant_id),
                 title=title,
                 Company=company,
                 startDate=start_date,
                 endDate=end_date,
                 description=description
             )
-
+        experience.title = title
+        experience.Company = company
+        experience.startDate = start_date
+        experience.endDate = end_date
+        experience.description = description
         experience.save()
         
     return redirect('profile')
