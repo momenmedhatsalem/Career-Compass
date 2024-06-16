@@ -148,3 +148,16 @@ img:hover{
     font-size: 15px;
     background-color: gainsboro;
 }
+.salary-title {
+    width: 50%;
+    font-size: 25px;
+    color: mediumseagreen;
+    margin-bottom: 15px;
+}
+.location-title {
+    width: 50%;
+    font-size: 25px;
+    color: mediumseagreen;
+    margin-bottom: 15px;
+
+}

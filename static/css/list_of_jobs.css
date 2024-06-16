@@ -65,22 +65,34 @@ h3 {
     width: 80%;
     margin-left: 10%;
     margin-top: 2%;
-    font-size: 27px;
+    font-size: 30px;
     text-align: center;
+}
+.salary-title {
+    width: 50%;
+    font-size: 25px;
+    color: mediumseagreen;
+}
+.location-title {
+    width: 50%;
+    font-size: 25px;
+    color: mediumseagreen;
 }
 
 .salary {
     width: 50%;
-    font-size: 23px;
+    font-size: 20px;
     text-align: center;
     margin-bottom: 25px;
     color: rgba(36, 64, 52, .7);
+    margin-top: 15px;
 }
 .location {
     width: 50%;
     text-align: center;
     font-size: 23px;
     color: rgba(36, 64, 52, .7);
+    margin-top: 15px;
 }
 .view-button {
     width: 35%;
