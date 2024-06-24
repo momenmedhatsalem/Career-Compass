@@ -8,7 +8,7 @@
 
       <div class="J9_emp_dash_saved_candidates_right_side_candidate_card">
           <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_photo">
-              <a href="#">  <img {% if candidate.applicant.user.photo %} src="{{candidate.applicant.user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %} alt="" >  </a>
+              <a href="{% url "viewCandidate" candidate.applicant.user.username  %}">  <img {% if candidate.applicant.user.photo %} src="{{candidate.applicant.user.photo.url}}" {% else %} src="../static/media/images/default.jpg" {% endif %} alt="" >  </a>
           </div>      
 
           <div class="J9_emp_dash_saved_candidates_right_side_candidate_card_details">
