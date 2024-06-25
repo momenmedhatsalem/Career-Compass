@@ -4,8 +4,52 @@
 
 var search_by = "";
 old_option = "title";
+
+
     
 function set_search_by(opt = "title") {
+
+    //document.getElementById("search_text") = "";
+
+    if(opt == "title")
+    {
+        document.getElementById("jobs").innerHTML =
+        "   <option value=\"Software Developer\">Software Developer</option> \
+            <option value=\"Front-end Developer\">Front-end Developer</option> \
+            <option value=\"Back-end Developer\">Back-end Developer</option> \
+            <option value=\"Full-stack Developer\">Full-stack Developer</option> \
+            <option value=\"Graphics Designer\">Graphics Designer</option> \
+            <option value=\"Project Manager\">Project Manager</option> \
+            <option value=\"Game Developer\">Game Developer</option> \
+            <option value=\"Sales Manager\">Sales Manager</option> \
+            <option value=\"Intern\">Intern</option> ";
+    }
+    else if(opt == "years")
+    {
+        document.getElementById("jobs").innerHTML =
+           "<option value=\"0\">0</option> \
+            <option value=\"1\">1</option> \
+            <option value=\"2\">2</option> \
+            <option value=\"3\">3</option> \
+            <option value=\"4\">4</option> \
+            <option value=\"5\">5</option> \
+            <option value=\"7\">7</option> \
+            <option value=\"10\">10</option> ";
+    }
+    else if(opt == "country")
+    {   
+        document.getElementById("jobs").innerHTML =
+           "<option value=\"Egypt\">Egypt</option> \
+            <option value=\"USA\">USA</option> \
+            <option value=\"Germany\">Germany</option> \
+            <option value=\"France\">France</option> \
+            <option value=\"Spain\">Spain</option> \
+            <option value=\"Bahrain\">Bahrain</option> \
+            <option value=\"Saudi Arabia\">Saudi Arabia</option> \
+            <option value=\"Russia\">Russia</option> ";
+    }
+    
+
     // change css of past selected mode back to normal
     document.getElementById(old_option).style.backgroundColor = "#ddd";
     document.getElementById(old_option).style.color = "black";
