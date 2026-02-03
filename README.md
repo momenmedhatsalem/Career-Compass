@@ -52,6 +52,3 @@ Career Compass streamlines the recruitment process by providing an interactive p
 - Clean separation between frontend and backend
 - Scalable foundation for future features (e.g., messaging, analytics)
 
-## 🌐 Repository
-
-GitHub: https://github.com/momenmedhatsalem/Career-Compass
